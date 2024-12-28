@@ -2,6 +2,8 @@ package org.bukkit.plugin;
 
 /**
  * Represents the order in which a plugin should be initialized and enabled
+ *
+ * @since 1.0.0
  */
 public enum PluginLoadOrder {
 

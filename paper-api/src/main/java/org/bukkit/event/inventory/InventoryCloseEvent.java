@@ -42,6 +42,9 @@ public class InventoryCloseEvent extends InventoryEvent {
         return reason;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public enum Reason {
         /**
          * Unknown reason

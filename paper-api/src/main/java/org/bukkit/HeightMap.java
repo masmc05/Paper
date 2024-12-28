@@ -4,6 +4,7 @@ package org.bukkit;
  * Further information regarding heightmaps.
  *
  * @see <a href="https://minecraft.wiki/w/Chunk_format">Minecraft Wiki</a>
+ * @since 1.15.2
  */
 public enum HeightMap {
 

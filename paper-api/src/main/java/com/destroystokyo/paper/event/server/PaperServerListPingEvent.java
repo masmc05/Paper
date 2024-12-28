@@ -374,6 +374,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      *
      * @param name name of the listed player
      * @param id   UUID of the listed player
+     * @since 1.20.6
      */
     public record ListedPlayerInfo(@NotNull String name, @NotNull UUID id) {
     }

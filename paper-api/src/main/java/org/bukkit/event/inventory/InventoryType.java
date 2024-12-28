@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
  * See {@link org.bukkit.Bukkit#createInventory} for more information.
  *
  * @see org.bukkit.Bukkit#createInventory(InventoryHolder, InventoryType)
+ * @since 1.1.0
  */
 public enum InventoryType {
 
@@ -175,6 +176,7 @@ public enum InventoryType {
      * Gets the inventory's default title.
      *
      * @return the inventory's default title
+     * @since 1.16.5
      */
     public net.kyori.adventure.text.@NotNull Component defaultTitle() {
         return defaultTitleComponent;
@@ -218,6 +220,7 @@ public enum InventoryType {
      * </ul>
      *
      * @return the corresponding {@link MenuType}
+     * @since 1.21.1
      */
     @Nullable
     public MenuType getMenuType() {
@@ -229,6 +232,7 @@ public enum InventoryType {
      * {@link org.bukkit.Bukkit#createInventory} methods.
      *
      * @return if this InventoryType can be created and shown to a player
+     * @since 1.13
      */
     public boolean isCreatable() {
         return isCreatable;

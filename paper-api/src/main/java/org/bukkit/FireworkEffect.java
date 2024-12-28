@@ -19,6 +19,8 @@ public final class FireworkEffect implements ConfigurationSerializable {
 
     /**
      * The type or shape of the effect.
+     *
+     * @since 1.4.6
      */
     public enum Type implements net.kyori.adventure.translation.Translatable { // Paper - Adventure translations
         /**
@@ -53,6 +55,9 @@ public final class FireworkEffect implements ConfigurationSerializable {
             this.name = name;
         }
 
+        /**
+         * @since 1.17.1
+         */
         @Override
         public @NotNull String translationKey() {
             return "item.minecraft.firework_star.shape." + this.name;

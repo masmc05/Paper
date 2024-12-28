@@ -36,6 +36,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * A list of all Effects that can happen to entities.
+ *
+ * @since 1.1.0
  */
 public enum EntityEffect {
 
@@ -396,6 +398,7 @@ public enum EntityEffect {
      * Gets entity superclass which this affect is applicable to.
      *
      * @return applicable class
+     * @since 1.12.2
      */
     @NotNull
     public Class<? extends Entity> getApplicable() {
@@ -407,6 +410,7 @@ public enum EntityEffect {
      *
      * @param entity the entity to check
      * @return true if applicable
+     * @since 1.20.2
      */
     public boolean isApplicableTo(@NotNull Entity entity) {
         Preconditions.checkArgument(entity != null, "Entity cannot be null");
@@ -419,6 +423,7 @@ public enum EntityEffect {
      *
      * @param clazz the entity class to check
      * @return true if applicable
+     * @since 1.20.2
      */
     public boolean isApplicableTo(@NotNull Class<? extends Entity> clazz) {
         Preconditions.checkArgument(clazz != null, "Class cannot be null");

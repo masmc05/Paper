@@ -67,3 +67,4 @@ public class PlayerStartSpectatingEntityEvent extends PlayerEvent implements Can
         return HANDLER_LIST;
     }
 }
+

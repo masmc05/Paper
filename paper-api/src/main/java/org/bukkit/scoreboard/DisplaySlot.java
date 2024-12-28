@@ -3,6 +3,8 @@ package org.bukkit.scoreboard;
 import net.kyori.adventure.text.format.NamedTextColor; // Paper
 /**
  * Locations for displaying objectives to the player
+ *
+ * @since 1.5.1
  */
 public enum DisplaySlot {
     // Paper start
@@ -42,6 +44,7 @@ public enum DisplaySlot {
      * Get the string id of this display slot.
      *
      * @return the string id
+     * @since 1.17.1
      */
     public @org.jetbrains.annotations.NotNull String getId() {
         return id;

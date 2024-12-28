@@ -241,8 +241,8 @@ public interface Mob extends LivingEntity, Lootable, io.papermc.paper.entity.Lea
       * Set if Mob is left-handed
       *
       * @param leftHanded True if left-handed
-     * @since 1.17.1
-      */
+      * @since 1.17.1
+     */
     public void setLeftHanded(boolean leftHanded);
     // Paper end - left-handed API
 

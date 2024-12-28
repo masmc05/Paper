@@ -2,6 +2,8 @@ package org.bukkit;
 
 /**
  * Represents various types of portals that can be made in a world.
+ *
+ * @since 1.1.0
  */
 public enum PortalType {
 

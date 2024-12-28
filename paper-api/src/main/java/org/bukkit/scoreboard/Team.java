@@ -336,6 +336,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @param entities the entities to add
      * @throws IllegalArgumentException if entities are null
      * @throws IllegalStateException if this team has been unregistered
+     * @since 1.18.1
      */
     default void addEntities(@NotNull org.bukkit.entity.Entity @NotNull ...entities) {
         this.addEntities(java.util.List.of(entities));
@@ -363,6 +364,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @param entries the entries to add
      * @throws IllegalArgumentException if entries are null
      * @throws IllegalStateException if this team has been unregistered
+     * @since 1.18.1
      */
     default void addEntries(@NotNull String... entries) throws IllegalStateException, IllegalArgumentException {
         this.addEntries(java.util.List.of(entries));
@@ -412,6 +414,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @return if any of the entities were a part of this team
      * @throws IllegalArgumentException if entities is null
      * @throws IllegalStateException if this team has been unregistered
+     * @since 1.18.1
      */
     default boolean removeEntities(@NotNull org.bukkit.entity.Entity @NotNull ... entities) throws IllegalStateException, IllegalArgumentException {
         return this.removeEntities(java.util.List.of(entities));
@@ -437,6 +440,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @return if any of the entries were a part of this team
      * @throws IllegalArgumentException if entries is null
      * @throws IllegalStateException if this team has been unregistered
+     * @since 1.18.1
      */
     default boolean removeEntries(@NotNull String... entries) throws IllegalStateException, IllegalArgumentException {
         return this.removeEntries(java.util.List.of(entries));
@@ -542,6 +546,8 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
 
     /**
      * Represents an option which may be applied to this team.
+     *
+     * @since 1.9.4
      */
     public enum Option {
 
@@ -561,6 +567,8 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
 
     /**
      * How an option may be applied to members of this team.
+     *
+     * @since 1.9.4
      */
     public enum OptionStatus {
 

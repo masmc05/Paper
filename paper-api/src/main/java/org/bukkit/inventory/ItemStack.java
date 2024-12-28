@@ -1042,6 +1042,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      * Set itemflags which should be ignored when rendering a ItemStack in the Client. This Method does silently ignore double set itemFlags.
      *
      * @param itemFlags The hideflags which shouldn't be rendered
+     * @since 1.12.2
      */
     public void addItemFlags(@NotNull ItemFlag... itemFlags) {
         ItemMeta itemMeta = getItemMeta();
@@ -1056,6 +1057,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      * Remove specific set of itemFlags. This tells the Client it should render it again. This Method does silently ignore double removed itemFlags.
      *
      * @param itemFlags Hideflags which should be removed
+     * @since 1.12.2
      */
     public void removeItemFlags(@NotNull ItemFlag... itemFlags) {
         ItemMeta itemMeta = getItemMeta();

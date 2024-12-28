@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
  * An enum to specify a rotation based orientation, like that on a clock.
  * <p>
  * It represents how something is viewed, as opposed to cardinal directions.
+ *
+ * @since 1.4.5
  */
 public enum Rotation {
 

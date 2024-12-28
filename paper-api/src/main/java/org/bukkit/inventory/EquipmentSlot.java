@@ -4,6 +4,9 @@ import java.util.function.Supplier;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.8
+ */
 public enum EquipmentSlot {
 
     HAND(() -> EquipmentSlotGroup.MAINHAND),
@@ -39,6 +42,7 @@ public enum EquipmentSlot {
      * either {@link #HAND} or {@link #OFF_HAND}
      *
      * @return whether this is a hand slot
+     * @since 1.19.2
      */
     public boolean isHand() {
         return this == HAND || this == OFF_HAND;
@@ -50,6 +54,7 @@ public enum EquipmentSlot {
      * @return the opposite hand
      * @throws IllegalArgumentException if this equipment slot is not a hand
      * @see #isHand()
+     * @since 1.20.6
      */
     public @NotNull EquipmentSlot getOppositeHand() {
         return switch (this) {
@@ -66,6 +71,7 @@ public enum EquipmentSlot {
      * {@link #LEGS}, {@link #FEET}, or {@link #BODY}
      *
      * @return whether this is an armor slot
+     * @since 1.19.2
      */
     public boolean isArmor() {
         return this == HEAD || this == CHEST || this == LEGS || this == FEET || this == BODY;

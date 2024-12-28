@@ -4,6 +4,8 @@ import org.jetbrains.annotations.ApiStatus;
 
 /**
  * Represents a type of death message used by a {@link DamageSource}.
+ *
+ * @since 1.20.4
  */
 @ApiStatus.Experimental
 public enum DeathMessageType {

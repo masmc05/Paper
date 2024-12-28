@@ -826,8 +826,6 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      *
      * @param id the id of the map to get
      * @return a map view if it exists, or null otherwise
-     */
-    /**
      * @since 1.13.2
      */
     // @Deprecated(since = "1.6.2") // Paper - Not a magic value
@@ -2071,8 +2069,8 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      *
      * @param world the world to create the ChunkData for
      * @return a new ChunkData for the world
-     * @since 1.8.8
      *
+     * @since 1.8.8
      */
     @NotNull
     public ChunkGenerator.ChunkData createChunkData(@NotNull World world);
@@ -2086,6 +2084,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * @param style the style of the boss bar
      * @param flags an optional list of flags to set on the boss bar
      * @return the created boss bar
+     * @since 1.9.4
      */
     @NotNull
     BossBar createBossBar(@Nullable String title, @NotNull BarColor color, @NotNull BarStyle style, @NotNull BarFlag... flags);
@@ -2103,6 +2102,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * @param style the style of the boss bar
      * @param flags an optional list of flags to set on the boss bar
      * @return the created boss bar
+     * @since 1.13.2
      */
     @NotNull
     KeyedBossBar createBossBar(@NotNull NamespacedKey key, @Nullable String title, @NotNull BarColor color, @NotNull BarStyle style, @NotNull BarFlag... flags);

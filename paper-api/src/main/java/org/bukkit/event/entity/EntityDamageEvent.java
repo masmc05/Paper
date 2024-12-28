@@ -250,6 +250,7 @@ public class EntityDamageEvent extends EntityEvent implements Cancellable {
      * problems and is in general unsustainable to maintain. It is likely to be
      * removed very soon in a subsequent release. Please see
      * <a href="https://www.spigotmc.org/threads/194446/">this thread</a> for more information.
+     * @since 1.7.10
      */
     @Deprecated(since = "1.12")
     public enum DamageModifier {

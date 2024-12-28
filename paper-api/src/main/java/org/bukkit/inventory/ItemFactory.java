@@ -330,6 +330,7 @@ public interface ItemFactory {
      * @param customName a custom name that should be displayed, if not passed entity name will be displayed
      * @return the {@link net.md_5.bungee.api.chat.hover.content.Content} of that {@link org.bukkit.entity.Entity}
      * @deprecated use {@link org.bukkit.entity.Entity#asHoverEvent(java.util.function.UnaryOperator)}
+     * @since 1.16.2
      */
     @NotNull
     @Deprecated

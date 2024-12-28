@@ -154,6 +154,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * @param items The ItemStacks to remove
      * @return A HashMap containing items that couldn't be removed.
      * @throws IllegalArgumentException if items is null
+     * @since 1.13.1
      */
     @NotNull
     public HashMap<Integer, ItemStack> removeItemAnySlot(@NotNull ItemStack... items) throws IllegalArgumentException;
@@ -187,8 +188,6 @@ public interface Inventory extends Iterable<ItemStack> {
      * methods which look for a specific stack.
      *
      * @return inventory storage contents. Individual items may be null.
-     */
-    /**
      * @since 1.9.4
      */
     public @Nullable ItemStack @NotNull [] getStorageContents(); // Paper - make array elements nullable instead array
@@ -199,8 +198,6 @@ public interface Inventory extends Iterable<ItemStack> {
      * @param items The ItemStacks to use as storage contents
      * @throws IllegalArgumentException If the array has more items than the
      * inventory.
-     */
-    /**
      * @since 1.9.4
      */
     public void setStorageContents(@Nullable ItemStack @NotNull [] items) throws IllegalArgumentException; // Paper - make array elements nullable instead array

@@ -11,6 +11,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * All supported color values for chat
  * @deprecated ChatColor has been deprecated in favor of <a href="https://docs.advntr.dev/text.html">Adventure</a> API. See {@link net.kyori.adventure.text.format.NamedTextColor} for the adventure equivalent of pre-defined text colors
+ * @since 1.0.0
  */
 @Deprecated // Paper
 public enum ChatColor {
@@ -260,6 +261,9 @@ public enum ChatColor {
         this.toString = new String(new char[] {COLOR_CHAR, code});
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     public net.md_5.bungee.api.ChatColor asBungee() {
         return net.md_5.bungee.api.ChatColor.RESET;
@@ -269,6 +273,7 @@ public enum ChatColor {
      * Gets the char value associated with this color
      *
      * @return A char value of this color code
+     * @since 1.1.0
      */
     public char getChar() {
         return code;
@@ -284,6 +289,7 @@ public enum ChatColor {
      * Checks if this code is a format code as opposed to a color code.
      *
      * @return whether this ChatColor is a format code
+     * @since 1.3.1
      */
     public boolean isFormat() {
         return isFormat;
@@ -293,6 +299,7 @@ public enum ChatColor {
      * Checks if this code is a color code as opposed to a format code.
      *
      * @return whether this ChatColor is a color code
+     * @since 1.3.1
      */
     public boolean isColor() {
         return !isFormat && this != RESET;
@@ -304,6 +311,7 @@ public enum ChatColor {
      * @param code Code to check
      * @return Associative {@link org.bukkit.ChatColor} with the given code,
      *     or null if it doesn't exist
+     * @since 1.1.0
      */
     @Nullable
     public static ChatColor getByChar(char code) {
@@ -316,6 +324,7 @@ public enum ChatColor {
      * @param code Code to check
      * @return Associative {@link org.bukkit.ChatColor} with the given code,
      *     or null if it doesn't exist
+     * @since 1.1.0
      */
     @Nullable
     public static ChatColor getByChar(@NotNull String code) {
@@ -350,6 +359,7 @@ public enum ChatColor {
      * @param altColorChar The alternate color code character to replace. Ex: {@literal &}
      * @param textToTranslate Text containing the alternate color code character.
      * @return Text containing the ChatColor.COLOR_CODE color code character.
+     * @since 1.3.1
      */
     @NotNull
     public static String translateAlternateColorCodes(char altColorChar, @NotNull String textToTranslate) {
@@ -370,6 +380,7 @@ public enum ChatColor {
      *
      * @param input Input string to retrieve the colors from.
      * @return Any remaining ChatColors to pass onto the next line.
+     * @since 1.3.1
      */
     @NotNull
     public static String getLastColors(@NotNull String input) {

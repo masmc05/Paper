@@ -2,6 +2,8 @@ package io.papermc.paper.datacomponent.item.consumable;
 
 /**
  * Represents the hand animation that is used when a player is consuming this item.
+ *
+ * @since 1.21.3
  */
 public enum ItemUseAnimation {
     NONE,

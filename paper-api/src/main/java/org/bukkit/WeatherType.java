@@ -2,6 +2,8 @@ package org.bukkit;
 
 /**
  * An enum of all current weather types
+ *
+ * @since 1.5.1
  */
 public enum WeatherType {
 

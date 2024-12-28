@@ -43,6 +43,9 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.1.0
+ */
 public enum EntityType implements Keyed, Translatable, net.kyori.adventure.translation.Translatable, io.papermc.paper.world.flag.FeatureDependant { // Paper - translatable
 
     // These strings MUST match the strings in nms.EntityTypes and are case sensitive.
@@ -388,6 +391,9 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
         return name;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -471,6 +477,7 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
     // Paper start
     /**
      * @throws IllegalArgumentException if the entity does not have a translation key (is probably a custom entity)
+     * @since 1.17.1
      */
     @Override
     public @NotNull String translationKey() {
@@ -482,6 +489,7 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
      * Checks if the entity has default attributes.
      *
      * @return true if it has default attributes
+     * @since 1.17.1
      */
     public boolean hasDefaultAttributes() {
         return org.bukkit.Bukkit.getUnsafe().hasDefaultEntityAttributes(this.key);
@@ -492,6 +500,7 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
      *
      * @return an unmodifiable instance of Attributable for reading default attributes.
      * @throws IllegalArgumentException if the entity does not exist of have default attributes (use {@link #hasDefaultAttributes()} first)
+     * @since 1.17.1
      */
     public @NotNull org.bukkit.attribute.Attributable getDefaultAttributes() {
         return org.bukkit.Bukkit.getUnsafe().getDefaultEntityAttributes(this.key);

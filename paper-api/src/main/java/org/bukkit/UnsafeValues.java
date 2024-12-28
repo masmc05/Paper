@@ -355,10 +355,10 @@ public interface UnsafeValues {
     @Deprecated(since = "1.21.3", forRemoval = true)
     void setBiomeKey(RegionAccessor accessor, int x, int y, int z, NamespacedKey biomeKey);
     // Paper end - namespaced key biome methods
+
     /**
      * @since 1.20.1
      */
-
     String getStatisticCriteriaKey(@NotNull org.bukkit.Statistic statistic); // Paper - fix custom stats criteria creation
 
     // Paper start - spawn egg color visibility
@@ -382,6 +382,7 @@ public interface UnsafeValues {
     @org.jetbrains.annotations.ApiStatus.Internal
     io.papermc.paper.plugin.lifecycle.event.LifecycleEventManager<org.bukkit.plugin.Plugin> createPluginLifecycleEventManager(final org.bukkit.plugin.java.JavaPlugin plugin, final java.util.function.BooleanSupplier registrationCheck);
     // Paper end - lifecycle event API
+
     /**
      * @since 1.20.4
      */

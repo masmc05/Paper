@@ -327,6 +327,8 @@ public interface ArmorStand extends LivingEntity {
 
     /**
      * Represents types of locking mechanisms for ArmorStand equipment.
+     *
+     * @since 1.16.2
      */
     public enum LockType {
 
@@ -431,6 +433,7 @@ public interface ArmorStand extends LivingEntity {
      * Note: Once a slot is disabled, the only way to get an item back it to break the armor stand.
      *
      * @param slots var-arg array of slots to lock
+     * @since 1.13
      */
     void setDisabledSlots(@NotNull org.bukkit.inventory.EquipmentSlot... slots);
 
@@ -442,6 +445,7 @@ public interface ArmorStand extends LivingEntity {
      * Note: Once a slot is disabled, the only way to get an item back it to break the armor stand.
      *
      * @param slots var-arg array of slots to lock
+     * @since 1.13
      */
     void addDisabledSlots(@NotNull final org.bukkit.inventory.EquipmentSlot... slots);
 
@@ -452,6 +456,7 @@ public interface ArmorStand extends LivingEntity {
      * This makes it so a player is able to interact with the Armor Stand to place, remove, or replace an item in the given slot(s)
      *
      * @param slots var-arg array of slots to unlock
+     * @since 1.13
      */
     void removeDisabledSlots(@NotNull final org.bukkit.inventory.EquipmentSlot... slots);
 

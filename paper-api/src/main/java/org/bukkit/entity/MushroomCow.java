@@ -110,6 +110,8 @@ public interface MushroomCow extends Cow, io.papermc.paper.entity.Shearable { //
 
     /**
      * Represents the variant of a cow - ie its color.
+     *
+     * @since 1.14
      */
     public enum Variant {
         /**

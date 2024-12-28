@@ -27,6 +27,8 @@ public interface Salmon extends io.papermc.paper.entity.SchoolableFish { // Pape
 
     /**
      * Represents the variant of a salmon - ie its size.
+     *
+     * @since 1.21.3
      */
     public enum Variant {
 

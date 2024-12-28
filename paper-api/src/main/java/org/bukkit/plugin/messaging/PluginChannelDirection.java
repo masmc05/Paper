@@ -2,6 +2,8 @@ package org.bukkit.plugin.messaging;
 
 /**
  * Represents the different directions a plugin channel may go.
+ *
+ * @since 1.1.0
  */
 public enum PluginChannelDirection {
 

@@ -8,6 +8,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents the various type of game modes that {@link HumanEntity}s may
  * have
+ *
+ * @since 1.0.0
  */
 public enum GameMode implements net.kyori.adventure.translation.Translatable { // Paper - implement Translatable
     /**
@@ -38,6 +40,9 @@ public enum GameMode implements net.kyori.adventure.translation.Translatable { /
     // Paper start - translation keys
     private final String translationKey;
 
+    /**
+     * @since 1.18.2
+     */
     @Override
     public @org.jetbrains.annotations.NotNull String translationKey() {
         return this.translationKey;
@@ -86,6 +91,7 @@ public enum GameMode implements net.kyori.adventure.translation.Translatable { /
      * (i.e. is either {@link #CREATIVE} or {@link #SPECTATOR})
      *
      * @return whether this game mode is invulnerable
+     * @since 1.20.6
      */
     public boolean isInvulnerable() {
         return this == CREATIVE || this == SPECTATOR;

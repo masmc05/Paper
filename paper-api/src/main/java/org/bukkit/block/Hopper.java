@@ -26,3 +26,4 @@ public interface Hopper extends Container, LootableBlockInventory { // Paper
     int getTransferCooldown();
     // Paper end - Expanded Hopper API
 }
+

@@ -1429,8 +1429,6 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * @param reason Reason for ban
      * @return Ban Entry
      * @deprecated use {@link #ban(String, Date, String)} and {@link #banIp(String, Date, String, boolean)}
-     */
-    /**
      * @since 1.12.2
      */
     // For reference, Bukkit defines this as nullable, while they impl isn't, we'll follow API.
@@ -1648,6 +1646,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      *
      * @param message The components to send
      * @deprecated use {@link #sendActionBar(net.kyori.adventure.text.Component)}
+     * @since 1.16.1
      */
     @Deprecated
     public void sendActionBar(@NotNull net.md_5.bungee.api.chat.BaseComponent... message);
@@ -1684,6 +1683,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * @deprecated This is unlikely the API you want to use. See {@link #sendActionBar(String)} for a more proper Action Bar API. This deprecated API may send unsafe items to the client.
      * @param position the screen position
      * @param components the components to send
+     * @since 1.9.4
      */
     @Deprecated
     public default void sendMessage(net.md_5.bungee.api.ChatMessageType position, net.md_5.bungee.api.chat.BaseComponent... components) {
@@ -1696,6 +1696,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * @param header content for the top of the player list
      * @param footer content for the bottom of the player list
      * @deprecated in favour of {@link #sendPlayerListHeaderAndFooter(net.kyori.adventure.text.Component, net.kyori.adventure.text.Component)}
+     * @since 1.9.4
      */
     @Deprecated
     public void setPlayerListHeaderFooter(@Nullable net.md_5.bungee.api.chat.BaseComponent[] header, @Nullable net.md_5.bungee.api.chat.BaseComponent[] footer);
@@ -1728,6 +1729,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      *
      * @param subtitle Subtitle to set
      * @deprecated Use {@link #showTitle(net.kyori.adventure.title.Title)} or {@link #sendTitlePart(net.kyori.adventure.title.TitlePart, Object)}
+     * @since 1.9.4
      */
     @Deprecated
     public void setSubtitle(net.md_5.bungee.api.chat.BaseComponent[] subtitle);
@@ -1747,6 +1749,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      *
      * @param title Title to set
      * @deprecated Use {@link #showTitle(net.kyori.adventure.title.Title)} or {@link #sendTitlePart(net.kyori.adventure.title.TitlePart, Object)}
+     * @since 1.9.4
      */
     @Deprecated
     public void showTitle(@Nullable net.md_5.bungee.api.chat.BaseComponent[] title);
@@ -1770,6 +1773,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * @param stayTicks    ticks to stay visible
      * @param fadeOutTicks ticks to fade-out
      * @deprecated Use {@link #showTitle(net.kyori.adventure.title.Title)} or {@link #sendTitlePart(net.kyori.adventure.title.TitlePart, Object)}
+     * @since 1.9.4
      */
     @Deprecated
     public void showTitle(@Nullable net.md_5.bungee.api.chat.BaseComponent[] title, @Nullable net.md_5.bungee.api.chat.BaseComponent[] subtitle, int fadeInTicks, int stayTicks, int fadeOutTicks);

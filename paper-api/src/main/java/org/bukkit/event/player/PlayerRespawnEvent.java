@@ -123,6 +123,8 @@ public class PlayerRespawnEvent extends PlayerEvent {
 
     /**
      * An enum to specify the reason a respawn event was called.
+     *
+     * @since 1.19.4
      */
     public enum RespawnReason {
 
@@ -152,6 +154,9 @@ public class PlayerRespawnEvent extends PlayerEvent {
         return respawnFlags;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public enum RespawnFlag {
         /**
          * Will use the bed spawn location

@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
  * ConfigurationSerializable} will have no effect.
  *
  * @see ConfigurationSerialization#registerClass(Class, String)
+ * @since 1.0.0
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)

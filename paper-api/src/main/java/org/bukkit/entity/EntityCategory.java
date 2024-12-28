@@ -6,6 +6,8 @@ import org.bukkit.potion.PotionEffectType;
 /**
  * A classification of entities which may behave differently than others or be
  * affected uniquely by enchantments and potion effects among other things.
+ *
+ * @since 1.16.2
  */
 public enum EntityCategory {
 

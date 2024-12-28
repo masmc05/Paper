@@ -18,8 +18,6 @@ public interface MapMeta extends ItemMeta {
      *
      * @return true if this has a map ID number.
      * @see #hasMapView()
-     */
-    /**
      * @since 1.13
      */
     //@Deprecated(since = "1.13.2") // Paper
@@ -34,8 +32,6 @@ public interface MapMeta extends ItemMeta {
      *
      * @return the map ID that is set
      * @see #getMapView()
-     */
-    /**
      * @since 1.13
      */
     // @Deprecated(since = "1.13.2") // Paper

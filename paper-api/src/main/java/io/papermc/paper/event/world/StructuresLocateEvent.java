@@ -169,6 +169,8 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
 
     /**
      * Result for {@link StructuresLocateEvent}.
+     *
+     * @since 1.18.2
      */
     public record Result(Position pos, Structure structure) {
 

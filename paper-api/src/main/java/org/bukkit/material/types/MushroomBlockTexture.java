@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents the different textured blocks of mushroom.
  * @deprecated use BlockData
+ * @since 1.9.4
  */
 @Deprecated // Paper
 public enum MushroomBlockTexture {

@@ -2,6 +2,8 @@ package org.bukkit.event.inventory;
 
 /**
  * An estimation of what the result will be.
+ *
+ * @since 1.6.1
  */
 public enum InventoryAction {
 

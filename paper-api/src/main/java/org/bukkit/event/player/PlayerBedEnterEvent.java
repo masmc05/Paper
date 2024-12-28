@@ -16,6 +16,8 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
 
     /**
      * Represents the default possible outcomes of this event.
+     *
+     * @since 1.13.2
      */
     public enum BedEnterResult {
         /**

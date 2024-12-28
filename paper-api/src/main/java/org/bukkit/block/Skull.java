@@ -129,8 +129,8 @@ public interface Skull extends TileState {
      * see {@link org.bukkit.Instrument}.
      *
      * @param noteBlockSound the key of the sound to be played, or null
-     * @since 1.19.3
      *
+     * @since 1.19.3
      */
     public void setNoteBlockSound(@Nullable NamespacedKey noteBlockSound);
 

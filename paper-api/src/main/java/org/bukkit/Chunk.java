@@ -389,6 +389,8 @@ public interface Chunk extends PersistentDataHolder {
 
     /**
      * An enum to specify the load level of a chunk.
+     *
+     * @since 1.19.4
      */
     public enum LoadLevel {
 

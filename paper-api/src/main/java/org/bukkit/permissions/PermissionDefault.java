@@ -8,6 +8,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents the possible default values for permissions
+ *
+ * @since 1.0.0
  */
 public enum PermissionDefault {
     TRUE("true"),

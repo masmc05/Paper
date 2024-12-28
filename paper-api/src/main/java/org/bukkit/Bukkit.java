@@ -120,8 +120,8 @@ public final class Bukkit {
       * Gets message describing the version server is running.
       *
       * @return message describing the version server is running
-     * @since 1.17
-      */
+      * @since 1.17
+     */
     @NotNull
     public static String getVersionMessage() {
         final io.papermc.paper.ServerBuildInfo version = io.papermc.paper.ServerBuildInfo.buildInfo();
@@ -2411,8 +2411,8 @@ public final class Bukkit {
      *
      * @param world the world to create the ChunkData for
      * @return a new ChunkData for the world
-     * @since 1.8.8
      *
+     * @since 1.8.8
      */
     @NotNull
     public static ChunkGenerator.ChunkData createChunkData(@NotNull World world) {
@@ -2428,6 +2428,7 @@ public final class Bukkit {
      * @param style the style of the boss bar
      * @param flags an optional list of flags to set on the boss bar
      * @return the created boss bar
+     * @since 1.9.4
      */
     @NotNull
     public static BossBar createBossBar(@Nullable String title, @NotNull BarColor color, @NotNull BarStyle style, @NotNull BarFlag... flags) {
@@ -2447,6 +2448,7 @@ public final class Bukkit {
      * @param style the style of the boss bar
      * @param flags an optional list of flags to set on the boss bar
      * @return the created boss bar
+     * @since 1.13.2
      */
     @NotNull
     public static KeyedBossBar createBossBar(@NotNull NamespacedKey key, @Nullable String title, @NotNull BarColor color, @NotNull BarStyle style, @NotNull BarFlag... flags) {

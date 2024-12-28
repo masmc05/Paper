@@ -14,6 +14,8 @@ public interface EnderDragon extends ComplexLivingEntity, Boss, Mob, Enemy {
 
     /**
      * Represents a phase or action that an Ender Dragon can perform.
+     *
+     * @since 1.9.4
      */
     enum Phase {
         /**

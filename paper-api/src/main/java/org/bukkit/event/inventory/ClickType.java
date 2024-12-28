@@ -2,6 +2,8 @@ package org.bukkit.event.inventory;
 
 /**
  * What the client did to trigger this action (not the result).
+ *
+ * @since 1.6.1
  */
 public enum ClickType {
 
@@ -82,6 +84,7 @@ public enum ClickType {
      * Gets whether this ClickType represents the pressing of a mouse button
      *
      * @return true if this ClickType represents the pressing of a mouse button
+     * @since 1.20.1
      */
     public boolean isMouseClick() {
         return (this == ClickType.DOUBLE_CLICK) || (this == ClickType.LEFT) || (this == ClickType.RIGHT) || (this == ClickType.MIDDLE)

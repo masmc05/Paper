@@ -2,6 +2,8 @@ package org.bukkit.block.structure;
 
 /**
  * Represents how a {@link org.bukkit.block.Structure} can be rotated.
+ *
+ * @since 1.12.2
  */
 public enum StructureRotation {
 

@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
  * <p>
  * When the server settings dictate 'default' warnings, warnings are printed
  * if the {@link #value()} is true.
+ *
+ * @since 1.3.1
  */
 @Target({ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)

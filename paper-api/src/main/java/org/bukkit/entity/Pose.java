@@ -2,6 +2,8 @@ package org.bukkit.entity;
 
 /**
  * Represents an entity body pose.
+ *
+ * @since 1.14
  */
 public enum Pose {
 

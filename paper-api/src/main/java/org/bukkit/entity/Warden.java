@@ -104,6 +104,9 @@ public interface Warden extends Monster {
     @NotNull
     AngerLevel getAngerLevel();
 
+    /**
+     * @since 1.19.2
+     */
     public enum AngerLevel {
 
         /**

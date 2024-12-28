@@ -15,6 +15,8 @@ public class Note {
 
     /**
      * An enum holding tones.
+     *
+     * @since 1.0.0
      */
     public enum Tone {
         G(0x1, true),

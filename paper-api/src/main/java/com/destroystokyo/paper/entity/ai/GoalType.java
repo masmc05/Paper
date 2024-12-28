@@ -2,6 +2,8 @@ package com.destroystokyo.paper.entity.ai;
 
 /**
  * Represents the subtype of a goal. Used by minecraft to disable certain types of goals if needed.
+ *
+ * @since 1.15.2
  */
 public enum GoalType {
 

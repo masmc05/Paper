@@ -8,6 +8,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents various types of worlds that may exist
+ *
+ * @since 1.1.0
  */
 public enum WorldType {
     NORMAL("DEFAULT"),

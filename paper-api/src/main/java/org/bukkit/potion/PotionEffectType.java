@@ -396,6 +396,8 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
 
     /**
      * Category of {@link PotionEffectType}s
+     *
+     * @since 1.18.1
      */
     public enum Category {
 

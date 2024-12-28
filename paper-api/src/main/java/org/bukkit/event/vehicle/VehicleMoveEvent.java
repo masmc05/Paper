@@ -42,10 +42,10 @@ public class VehicleMoveEvent extends VehicleEvent {
         return to.clone(); // Paper - clone to avoid changes
     }
 
+
     /**
      * @since 1.1.0
      */
-
     @NotNull
     @Override
     public HandlerList getHandlers() {

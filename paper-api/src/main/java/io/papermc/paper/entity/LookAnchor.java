@@ -9,6 +9,7 @@ import org.bukkit.entity.LivingEntity;
  *
  * @see org.bukkit.entity.Player#lookAt(Position, LookAnchor)
  * @see org.bukkit.entity.Player#lookAt(Entity, LookAnchor, LookAnchor)
+ * @since 1.19
  */
 public enum LookAnchor {
     /**

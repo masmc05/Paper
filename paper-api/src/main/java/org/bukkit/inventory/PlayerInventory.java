@@ -28,8 +28,6 @@ public interface PlayerInventory extends Inventory {
      * {@link #getArmorContents()}
      *
      * @return All additional ItemStacks. Individual items can be null.
-     */
-    /**
      * @since 1.9.4
      */
     public @Nullable ItemStack @NotNull [] getExtraContents(); // Paper - make array elements nullable instead array

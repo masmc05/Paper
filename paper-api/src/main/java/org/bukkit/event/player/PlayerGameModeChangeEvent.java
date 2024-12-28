@@ -115,6 +115,9 @@ public class PlayerGameModeChangeEvent extends PlayerEvent implements Cancellabl
         this.cancelMessage = message;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public enum Cause {
 
         /**

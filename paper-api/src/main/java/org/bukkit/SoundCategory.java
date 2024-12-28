@@ -2,6 +2,8 @@ package org.bukkit;
 
 /**
  * An Enum of categories for sounds.
+ *
+ * @since 1.11
  */
 public enum SoundCategory implements net.kyori.adventure.sound.Sound.Source.Provider { // Paper - implement Sound.Source.Provider
 
@@ -16,6 +18,9 @@ public enum SoundCategory implements net.kyori.adventure.sound.Sound.Source.Prov
     AMBIENT,
     VOICE;
 
+    /**
+     * @since 1.17
+     */
     // Paper start - implement Sound.Source.Provider
     @Override
     public net.kyori.adventure.sound.Sound.@org.jetbrains.annotations.NotNull Source soundSource() {

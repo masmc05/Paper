@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * This enum reflects and matches each potion state that can be obtained from
  * the Creative mode inventory
+ *
+ * @since 1.1.0
  */
 public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDependant { // Paper - feature flag API
     WATER("water"),
@@ -83,6 +85,7 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
 
     /**
      * @return a list of all effects this potion type has
+     * @since 1.20.2
      */
     @NotNull
     public List<PotionEffect> getPotionEffects() {
@@ -105,6 +108,7 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
      * such as Potion of Fire Resistance II.
      *
      * @return true if the potion type can be upgraded;
+     * @since 1.9.4
      */
     public boolean isUpgradeable() {
         return internalPotionDataSupplier.get().isUpgradeable();
@@ -115,6 +119,7 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
      * This refers to the extended duration potions
      *
      * @return true if the potion type can be extended
+     * @since 1.9.4
      */
     public boolean isExtendable() {
         return internalPotionDataSupplier.get().isExtendable();
@@ -141,6 +146,9 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
         return null;
     }
 
+    /**
+     * @since 1.20.2
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {

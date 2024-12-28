@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a countable statistic, which is tracked by the server.
+ *
+ * @since 1.0.0
  */
 public enum Statistic implements Keyed {
     DAMAGE_DEALT,
@@ -110,6 +112,7 @@ public enum Statistic implements Keyed {
      * Gets the type of this statistic.
      *
      * @return the type of this statistic
+     * @since 1.7.10
      */
     @NotNull
     public Type getType() {
@@ -143,6 +146,9 @@ public enum Statistic implements Keyed {
         return type == Type.BLOCK;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -152,6 +158,8 @@ public enum Statistic implements Keyed {
     /**
      * The type of statistic.
      *
+     *
+     * @since 1.7.10
      */
     public enum Type {
         /**

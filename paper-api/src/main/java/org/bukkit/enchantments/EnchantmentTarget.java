@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents the applicable target for a {@link Enchantment}
+ *
+ * @since 1.1.0
  */
 public enum EnchantmentTarget {
     /**
@@ -234,6 +236,7 @@ public enum EnchantmentTarget {
      *
      * @param item The item to check
      * @return True if the target includes the item
+     * @since 1.3.1
      */
     public abstract boolean includes(@NotNull Material item);
 
@@ -242,6 +245,7 @@ public enum EnchantmentTarget {
      *
      * @param item The item to check
      * @return True if the target includes the item
+     * @since 1.3.1
      */
     public boolean includes(@NotNull ItemStack item) {
         return includes(item.getType());

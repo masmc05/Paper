@@ -4,6 +4,8 @@ package com.destroystokyo.paper.entity.villager;
  * A type of reputation gained with a {@link org.bukkit.entity.Villager Villager}.
  * <p>
  * All types but {@link #MAJOR_POSITIVE} are shared to other villagers.
+ *
+ * @since 1.15.2
  */
 public enum ReputationType {
     /**

@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
  * See the
  * <a href="https://minecraft.wiki/w/Loot_table#List_of_loot_tables">
  * Minecraft Wiki</a> for more information on loot tables.
+ *
+ * @since 1.13
  */
 public enum LootTables implements Keyed {
 
@@ -254,6 +256,7 @@ public enum LootTables implements Keyed {
      * equivalent to calling {@code Bukkit.getLootTable(this.getKey());}.
      *
      * @return the associated LootTable
+     * @since 1.13.1
      */
     @NotNull
     public LootTable getLootTable() {

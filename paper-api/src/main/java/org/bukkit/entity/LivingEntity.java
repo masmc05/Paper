@@ -449,8 +449,6 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param count amount of arrows in entity's body
      * @param fireEvent whether to fire the {@link org.bukkit.event.entity.ArrowBodyCountChangeEvent} event
-     */
-    /**
      * @since 1.19.3
      */
     void setArrowsInBody(int count, boolean fireEvent); // Paper

@@ -145,6 +145,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * @param location New location to teleport this entity to
      * @param teleportFlags Flags to be used in this teleportation
      * @return <code>true</code> if the teleport was successful
+     * @since 1.19.3
      */
     default boolean teleport(@NotNull Location location, @NotNull io.papermc.paper.entity.TeleportFlag @NotNull... teleportFlags) {
         return this.teleport(location, TeleportCause.PLUGIN, teleportFlags);
@@ -340,8 +341,6 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * To hide such entities from players completely, see {@link Player#hideEntity(org.bukkit.plugin.Plugin, Entity)}.
      *
      * @param invisible If the entity is invisible
-     */
-    /**
      * @since 1.20.4
      */
     void setInvisible(boolean invisible); // Paper - moved up from LivingEntity
@@ -350,8 +349,6 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Gets whether the entity is invisible or not.
      *
      * @return Whether the entity is invisible
-     */
-    /**
      * @since 1.20.4
      */
     boolean isInvisible(); // Paper - moved up from LivingEntity

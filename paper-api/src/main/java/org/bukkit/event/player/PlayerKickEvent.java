@@ -169,6 +169,9 @@ public class PlayerKickEvent extends PlayerEvent implements Cancellable {
         return cause;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public enum Cause {
 
         PLUGIN,

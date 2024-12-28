@@ -4,6 +4,7 @@ package org.bukkit.inventory;
  * A ItemFlag can hide some Attributes from ItemStacks
  * @apiNote Setting these without also setting the data they are hiding
  * may not result in the item flag being persisted in the ItemMeta/ItemStack.
+ * @since 1.8
  */
 public enum ItemFlag {
 

@@ -21,6 +21,8 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
 
     /**
      * Represents the generation (or level of copying) of a written book
+     *
+     * @since 1.9.4
      */
     enum Generation {
         /**
@@ -250,6 +252,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
      * 1024 characters per page.
      *
      * @param pages A list of strings, each being a page
+     * @since 1.16.5
      */
     void addPages(net.kyori.adventure.text.@NotNull Component @NotNull ... pages);
 

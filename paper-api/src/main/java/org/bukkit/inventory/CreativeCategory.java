@@ -2,6 +2,8 @@ package org.bukkit.inventory;
 
 /**
  * Represents a category in the creative inventory.
+ *
+ * @since 1.18.2
  */
 public enum CreativeCategory implements net.kyori.adventure.translation.Translatable { // Paper
 

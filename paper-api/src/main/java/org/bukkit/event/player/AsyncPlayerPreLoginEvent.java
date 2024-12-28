@@ -321,6 +321,8 @@ public class AsyncPlayerPreLoginEvent extends Event {
 
     /**
      * Basic kick reasons for communicating to plugins
+     *
+     * @since 1.3.2
      */
     public enum Result {
 

@@ -5,6 +5,8 @@ import org.jetbrains.annotations.ApiStatus;
 
 /**
  * A means of damage scaling with respect to the server's difficulty.
+ *
+ * @since 1.20.4
  */
 @ApiStatus.Experimental
 public enum DamageScaling {

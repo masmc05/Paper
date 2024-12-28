@@ -57,6 +57,8 @@ public interface ExperienceOrb extends Entity {
 
     /**
      * Reasons for why this Experience Orb was spawned
+     *
+     * @since 1.12.2
      */
     enum SpawnReason {
         /**

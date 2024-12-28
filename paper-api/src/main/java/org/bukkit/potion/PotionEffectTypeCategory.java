@@ -2,6 +2,8 @@ package org.bukkit.potion;
 
 /**
  * Represents a category of {@link PotionEffectType} and its effect on an entity.
+ *
+ * @since 1.20.6
  */
 public enum PotionEffectTypeCategory {
 

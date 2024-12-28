@@ -4,6 +4,7 @@ import java.util.EventListener;
 import org.jetbrains.annotations.NotNull;
 
 /**
+ *
  * @since 1.3.1
  */
 public interface ConversationAbandonedListener extends EventListener {

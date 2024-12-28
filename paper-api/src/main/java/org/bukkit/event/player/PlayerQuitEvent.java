@@ -107,6 +107,9 @@ public class PlayerQuitEvent extends PlayerEvent {
         return this.reason;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public enum QuitReason {
         /**
          * The player left on their own behalf.

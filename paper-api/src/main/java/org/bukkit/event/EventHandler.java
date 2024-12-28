@@ -7,6 +7,8 @@ import java.lang.annotation.Target;
 
 /**
  * An annotation to mark methods as being event handler methods
+ *
+ * @since 1.1.0
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

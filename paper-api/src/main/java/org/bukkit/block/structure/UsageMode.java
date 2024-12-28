@@ -2,6 +2,8 @@ package org.bukkit.block.structure;
 
 /**
  * Represents how a {@link org.bukkit.block.Structure} can be used.
+ *
+ * @since 1.12.2
  */
 public enum UsageMode {
 

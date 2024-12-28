@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents the face of a block
+ *
+ * @since 1.0.0
  */
 public enum BlockFace {
     NORTH(0, 0, -1),
@@ -74,6 +76,7 @@ public enum BlockFace {
      * Gets the normal vector corresponding to this block face.
      *
      * @return the normal vector
+     * @since 1.13.2
      */
     @NotNull
     public Vector getDirection() {
@@ -89,6 +92,7 @@ public enum BlockFace {
      * Cartesian space (ie NORTH, SOUTH, EAST, WEST, UP, DOWN).
      *
      * @return Cartesian status
+     * @since 1.16.5
      */
     public boolean isCartesian() {
         switch (this) {

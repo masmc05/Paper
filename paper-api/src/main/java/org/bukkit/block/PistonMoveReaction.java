@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents how a block or entity will react when interacting with a piston
  * when it is extending or retracting.
+ *
+ * @since 1.0.0
  */
 public enum PistonMoveReaction {
 

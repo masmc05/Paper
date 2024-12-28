@@ -31,6 +31,9 @@ public final class ClientOption<T> {
         return this.type;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public enum ChatVisibility implements Translatable {
         FULL("full"),
         SYSTEM("system"),
@@ -50,6 +53,9 @@ public final class ClientOption<T> {
             this.name = name;
         }
 
+        /**
+         * @since 1.17.1
+         */
         @Override
         public String translationKey() {
             if (this == UNKNOWN) {
@@ -59,6 +65,9 @@ public final class ClientOption<T> {
         }
     }
 
+    /**
+     * @since 1.21.3
+     */
     public enum ParticleVisibility implements Translatable {
         ALL("all"),
         DECREASED("decreased"),

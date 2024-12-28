@@ -64,6 +64,8 @@ public interface Wither extends Monster, Boss, com.destroystokyo.paper.entity.Ra
 
     /**
      * Represents one of the Wither's heads.
+     *
+     * @since 1.18.2
      */
     enum Head {
 

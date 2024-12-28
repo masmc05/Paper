@@ -134,6 +134,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * An enum of all material IDs accepted by the official server and client
+ *
+ * @since 1.0.0
  */
 @SuppressWarnings({"DeprecatedIsStillUsed", "deprecation"}) // Paper
 public enum Material implements Keyed, Translatable, net.kyori.adventure.translation.Translatable { // Paper
@@ -4822,6 +4824,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
 
     /**
      * @return If the type is either AIR, CAVE_AIR or VOID_AIR
+     * @since 1.13.1
      */
     public boolean isEmpty() {
         switch (this) {
@@ -4834,6 +4837,9 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     }
     // Paper end
 
+    /**
+     * @since 1.17.1
+     */
     // Paper start - add Translatable
     @Override
     public @NotNull String translationKey() {
@@ -4883,6 +4889,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return true if collidable
      * @throws IllegalArgumentException if {@link #isBlock()} is false
+     * @since 1.17.1
      */
     public boolean isCollidable() {
         if (this.isBlock()) {
@@ -4908,12 +4915,16 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Checks if this constant is a legacy material.
      *
      * @return legacy status
+     * @since 1.13
      */
     // @Deprecated(since = "1.13") // Paper - this is useful, don't deprecate
     public boolean isLegacy() {
         return legacy;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -4949,6 +4960,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * properties initialized to unspecified defaults.
      *
      * @return new data instance
+     * @since 1.13
      */
     @NotNull
     public BlockData createBlockData() {
@@ -4961,6 +4973,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @param consumer consumer to run on new instance before returning
      * @return new data instance
+     * @since 1.13
      */
     @NotNull
     public BlockData createBlockData(@Nullable Consumer<? super BlockData> consumer) {
@@ -4975,6 +4988,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @param data data string
      * @return new data instance
      * @throws IllegalArgumentException if the specified data is not valid
+     * @since 1.13
      */
     @NotNull
     public BlockData createBlockData(@Nullable String data) throws IllegalArgumentException {
@@ -5035,6 +5049,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Checks if this Material is edible.
      *
      * @return true if this Material is edible.
+     * @since 1.1.0
      */
     public boolean isEdible() {
         ItemType type = asItemType();
@@ -5069,6 +5084,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @param name Name of the material to get
      * @param legacyName whether this is a legacy name lookup
      * @return Material if found, or null
+     * @since 1.13
      */
     @Nullable
     public static Material getMaterial(@NotNull String name, boolean legacyName) {
@@ -5110,6 +5126,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @param legacyName whether this is a legacy name (see
      * {@link #getMaterial(java.lang.String, boolean)}
      * @return Material if found, or null
+     * @since 1.13
      */
     @Nullable
     public static Material matchMaterial(@NotNull final String name, boolean legacyName) {
@@ -5134,6 +5151,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
 
     /**
      * @return True if this material represents a playable music disk.
+     * @since 1.1.0
      */
     public boolean isRecord() {
         ItemType type = asItemType();
@@ -5144,6 +5162,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Check if the material is a block and solid (can be built upon)
      *
      * @return True if this material is a block and solid
+     * @since 1.4.5
      */
     public boolean isSolid() {
         BlockType type = asBlockType();
@@ -5154,6 +5173,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Check if the material is an air block.
      *
      * @return True if this material is an air block.
+     * @since 1.14.4
      */
     public boolean isAir() {
         BlockType type = asBlockType();
@@ -5166,6 +5186,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @return True if this material is a block and does not block any light
      * @deprecated currently does not have an implementation which is well
      * linked to the underlying server. Contributions welcome.
+     * @since 1.4.5
      */
     @Deprecated(since = "1.13")
     public boolean isTransparent() {
@@ -5363,6 +5384,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Check if the material is a block and can catch fire
      *
      * @return True if this material is a block and can catch fire
+     * @since 1.4.5
      */
     public boolean isFlammable() {
         BlockType type = asBlockType();
@@ -5373,6 +5395,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Check if the material is a block and can burn away
      *
      * @return True if this material is a block and can burn away
+     * @since 1.4.5
      */
     public boolean isBurnable() {
         BlockType type = asBlockType();
@@ -5383,6 +5406,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Checks if this Material can be used as fuel in a Furnace
      *
      * @return true if this Material can be used as fuel.
+     * @since 1.11.2
      */
     public boolean isFuel() {
         ItemType type = asItemType();
@@ -5406,6 +5430,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * block, see the <a href="https://minecraft.wiki/w/Opacity">Minecraft Wiki</a>.
      *
      * @return True if this material is a block and occludes light
+     * @since 1.4.5
      */
     public boolean isOccluding() {
         BlockType type = asBlockType();
@@ -5414,6 +5439,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
 
     /**
      * @return True if this material is affected by gravity.
+     * @since 1.5.1
      */
     public boolean hasGravity() {
         BlockType type = asBlockType();
@@ -5424,6 +5450,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Checks if this Material is an obtainable item.
      *
      * @return true if this material is an item
+     * @since 1.12.2
      */
     public boolean isItem() {
         return asItemType() != null;
@@ -5447,6 +5474,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @deprecated This method is not comprehensive and does not accurately reflect what block types are
      * interactable. Many "interactions" are defined on the item not block, and many are conditional on some other world state
      * checks being true.
+     * @since 1.13
      */
     @Deprecated // Paper
     public boolean isInteractable() {
@@ -5462,6 +5490,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Only available when {@link #isBlock()} is true.
      *
      * @return the hardness of that material.
+     * @since 1.13
      */
     public float getHardness() {
         BlockType type = asBlockType();
@@ -5479,6 +5508,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Only available when {@link #isBlock()} is true.
      *
      * @return the blast resistance of that material.
+     * @since 1.13
      */
     public float getBlastResistance() {
         BlockType type = asBlockType();
@@ -5497,6 +5527,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Only available when {@link #isBlock()} is true.
      *
      * @return the slipperiness of this block
+     * @since 1.17
      */
     public float getSlipperiness() {
         BlockType type = asBlockType();
@@ -5511,6 +5542,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Only available when {@link #isItem()} is true.
      *
      * @return the item left behind when crafting, or null if nothing is.
+     * @since 1.15.2
      */
     @Nullable
     public Material getCraftingRemainingItem() {
@@ -5525,6 +5557,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * For most items this will be {@link EquipmentSlot#HAND}.
      *
      * @return the best EquipmentSlot for this Material
+     * @since 1.16.5
      */
     @NotNull
     public EquipmentSlot getEquipmentSlot() {
@@ -5611,6 +5644,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return the immutable {@link Multimap} with the respective default
      * Attributes and modifiers, or an empty map if no attributes are set.
+     * @since 1.20.6
      */
     public @NotNull @org.jetbrains.annotations.Unmodifiable Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers() {
         final ItemType type = this.asItemType();
@@ -5632,6 +5666,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @param slot the {@link EquipmentSlot} to check
      * @return the immutable {@link Multimap} with the respective default
      * Attributes and modifiers, or an empty map if no attributes are set.
+     * @since 1.18.1
      */
     @NotNull
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(@NotNull EquipmentSlot slot) {
@@ -5644,6 +5679,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Get the {@link CreativeCategory} to which this material belongs.
      *
      * @return the creative category. null if does not belong to a category
+     * @since 1.18.2
      */
     @Nullable
     public CreativeCategory getCreativeCategory() {
@@ -5681,6 +5717,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return the translation key of the block associated with this material,
      * or null if this material does not have an associated block
+     * @since 1.19.3
      */
     @Nullable
     public String getBlockTranslationKey() {
@@ -5694,6 +5731,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return the translation key of the item associated with this material, or
      * null if this material does not have an associated item.
+     * @since 1.19.3
      */
     @Nullable
     public String getItemTranslationKey() {
@@ -5722,6 +5760,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return true if this material is compostable
      * @see #getCompostChance()
+     * @since 1.20.6
      */
     public boolean isCompostable() {
         return isItem() && asItemType().isCompostable();
@@ -5740,6 +5779,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @return the chance that this material will successfully compost
      * @throws IllegalArgumentException if the material is not compostable
      * @see #isCompostable()
+     * @since 1.20.6
      */
     public float getCompostChance() {
         ItemType type = asItemType();
@@ -5794,6 +5834,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @param type the data component type
      * @return {@code true} if there is a default value
      * @throws IllegalArgumentException if {@link #isItem()} is {@code false}
+     * @since 1.21.3
      */
     public boolean hasDefaultData(final io.papermc.paper.datacomponent.@NotNull DataComponentType type) {
         Preconditions.checkArgument(this.asItemType() != null);
@@ -5805,6 +5846,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return an immutable set of data component types
      * @throws IllegalArgumentException if {@link #isItem()} is {@code false}
+     * @since 1.21.3
      */
     public java.util.@org.jetbrains.annotations.Unmodifiable @NotNull Set<io.papermc.paper.datacomponent.DataComponentType> getDefaultDataTypes() {
         Preconditions.checkArgument(this.asItemType() != null);

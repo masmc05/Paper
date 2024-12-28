@@ -12,6 +12,7 @@ public interface Horse extends AbstractHorse {
 
     /**
      * @deprecated different variants are differing classes
+     * @since 1.6.2
      */
     @Deprecated(since = "1.11")
     public enum Variant {
@@ -48,6 +49,8 @@ public interface Horse extends AbstractHorse {
 
     /**
      * Represents the base color that the horse has.
+     *
+     * @since 1.6.2
      */
     public enum Color {
         /**
@@ -83,6 +86,8 @@ public interface Horse extends AbstractHorse {
 
     /**
      * Represents the style, or markings, that the horse has.
+     *
+     * @since 1.6.2
      */
     public enum Style {
         /**

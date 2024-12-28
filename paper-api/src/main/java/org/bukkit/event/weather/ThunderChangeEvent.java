@@ -77,6 +77,9 @@ public class ThunderChangeEvent extends WeatherEvent implements Cancellable {
         return this.cause;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public enum Cause {
         COMMAND,
         NATURAL,

@@ -8,6 +8,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A list of effects that the server is able to send to players.
+ *
+ * @since 1.0.0
  */
 public enum Effect {
     /**
@@ -474,6 +476,7 @@ public enum Effect {
     /**
      * @return The type of the effect.
      * @deprecated some effects can be both or neither
+     * @since 1.1.0
      */
     @NotNull
     @Deprecated // Paper - both
@@ -484,6 +487,7 @@ public enum Effect {
     /**
      * @return The class which represents data for this effect, or null if
      *     none
+     * @since 1.1.0
      */
     @Nullable
     public Class<?> getData() {
@@ -531,6 +535,7 @@ public enum Effect {
     /**
      * Represents the type of an effect.
      * @deprecated not representative of what Effect does
+     * @since 1.1.0
      */
     @Deprecated // Paper
     public enum Type { SOUND, VISUAL }

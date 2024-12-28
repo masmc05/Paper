@@ -18,6 +18,7 @@ import org.jetbrains.annotations.Nullable;
  * Keys may only contain lowercase alphanumeric characters, periods,
  * underscores, hyphens, and forward slashes.
  *
+ *
  * @since 1.12
  */
 public final class NamespacedKey implements net.kyori.adventure.key.Key, com.destroystokyo.paper.Namespaced { // Paper - implement Key and Namespaced

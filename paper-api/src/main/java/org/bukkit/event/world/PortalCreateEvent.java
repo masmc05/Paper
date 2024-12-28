@@ -95,6 +95,8 @@ public class PortalCreateEvent extends WorldEvent implements Cancellable {
 
     /**
      * An enum to specify the various reasons for a portal's creation
+     *
+     * @since 1.1.0
      */
     public enum CreateReason {
         /**

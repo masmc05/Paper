@@ -8,6 +8,8 @@ package org.bukkit.event;
  * <p>
  * Listeners are called in following order:
  * {@link #LOWEST} -> {@link #LOW} -> {@link #NORMAL} -> {@link #HIGH} -> {@link #HIGHEST} -> {@link #MONITOR}
+ *
+ * @since 1.1.0
  */
 public enum EventPriority {
 

@@ -2,6 +2,8 @@ package org.bukkit;
 
 /**
  * Tree and organic structure types.
+ *
+ * @since 1.0.0
  */
 public enum TreeType {
 

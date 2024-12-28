@@ -76,10 +76,10 @@ public class PlayerAttemptPickupItemEvent extends PlayerEvent implements Cancell
         return this.flyAtPlayer;
     }
 
+
     /**
      * @since 1.12.2
      */
-
     @Override
     public boolean isCancelled() {
         return this.cancelled;

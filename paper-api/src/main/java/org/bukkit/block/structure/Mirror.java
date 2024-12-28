@@ -3,6 +3,8 @@ package org.bukkit.block.structure;
 /**
  * Represents how a {@link org.bukkit.block.Structure} can be mirrored upon
  * being loaded.
+ *
+ * @since 1.12.2
  */
 public enum Mirror {
 

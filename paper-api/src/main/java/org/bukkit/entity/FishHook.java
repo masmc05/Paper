@@ -333,6 +333,8 @@ public interface FishHook extends Projectile {
 
     /**
      * Represents a state in which a fishing hook may be.
+     *
+     * @since 1.16.5
      */
     public enum HookState {
 

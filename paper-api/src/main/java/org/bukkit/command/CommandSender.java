@@ -32,6 +32,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * @see #sendMessage(net.kyori.adventure.text.Component)
      * @see #sendPlainMessage(String)
      * @see #sendRichMessage(String)
+     * @since 1.1.0
      */
     @org.jetbrains.annotations.ApiStatus.Obsolete // Paper
     public void sendMessage(@NotNull String... messages);
@@ -176,6 +177,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      *
      * @param message MiniMessage content
      * @param resolvers resolvers to use
+     * @since 1.20.1
      */
     default void sendRichMessage(final @NotNull String message, final net.kyori.adventure.text.minimessage.tag.resolver.@NotNull TagResolver... resolvers) {
         this.sendMessage(net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(message, resolvers));

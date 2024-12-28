@@ -3,6 +3,8 @@ package org.bukkit.event.inventory;
 /**
  * Represents the effect of a drag that will be applied to an Inventory in an
  * InventoryDragEvent.
+ *
+ * @since 1.6.1
  */
 public enum DragType {
     /**

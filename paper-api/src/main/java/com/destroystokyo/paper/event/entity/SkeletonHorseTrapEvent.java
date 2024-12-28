@@ -66,3 +66,4 @@ public class SkeletonHorseTrapEvent extends EntityEvent implements Cancellable {
         return HANDLER_LIST;
     }
 }
+

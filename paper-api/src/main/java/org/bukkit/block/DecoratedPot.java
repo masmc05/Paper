@@ -76,6 +76,8 @@ public interface DecoratedPot extends io.papermc.paper.block.TileStateInventoryH
     /**
      * A side on a decorated pot. Sides are relative to the facing state of a
      * {@link org.bukkit.block.data.type.DecoratedPot}.
+     *
+     * @since 1.20.1
      */
     public static enum Side {
         BACK,

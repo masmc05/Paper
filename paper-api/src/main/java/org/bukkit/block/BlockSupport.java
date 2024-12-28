@@ -8,6 +8,8 @@ package org.bukkit.block;
  * that require a full, center, or rigid face. On the contrary, all sides except the
  * bottom of a camp fire cannot support any blocks, while the bottom face can support
  * blocks that require a full or center face (such as a ceiling button).
+ *
+ * @since 1.19
  */
 public enum BlockSupport {
 

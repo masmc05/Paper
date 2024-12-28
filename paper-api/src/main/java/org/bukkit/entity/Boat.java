@@ -145,6 +145,7 @@ public interface Boat extends Vehicle, io.papermc.paper.entity.Leashable { // Pa
     /**
      * Represents the type of boats.
      * @deprecated different boats types are now different entity types
+     * @since 1.19
      */
     @Deprecated(since = "1.21.2")
     public enum Type {
@@ -178,6 +179,8 @@ public interface Boat extends Vehicle, io.papermc.paper.entity.Leashable { // Pa
 
     /**
      * Represents the status of the boat.
+     *
+     * @since 1.19
      */
     public enum Status {
 

@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
 
+/**
+ * @since 1.16.2
+ */
 @NullMarked
 public enum MoonPhase {
     FULL_MOON(0L),

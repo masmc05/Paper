@@ -6,6 +6,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents the various difficulty levels that are available.
+ *
+ * @since 1.0.0
  */
 public enum Difficulty implements net.kyori.adventure.translation.Translatable { // Paper - Adventure translations
     /**
@@ -51,6 +53,9 @@ public enum Difficulty implements net.kyori.adventure.translation.Translatable {
         return value;
     }
 
+    /**
+     * @since 1.17.1
+     */
     // Paper start
     @Override
     public @org.jetbrains.annotations.NotNull String translationKey() {

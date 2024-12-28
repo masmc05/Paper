@@ -6,6 +6,9 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.9.4
+ */
 public enum Particle implements Keyed {
     POOF("poof"),
     EXPLOSION("explosion"),
@@ -191,6 +194,9 @@ public enum Particle implements Keyed {
         return dataType;
     }
 
+    /**
+     * @since 1.20.2
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -206,6 +212,7 @@ public enum Particle implements Keyed {
      * Creates a {@link com.destroystokyo.paper.ParticleBuilder}
      *
      * @return a {@link com.destroystokyo.paper.ParticleBuilder} for the particle
+     * @since 1.12.2
      */
     @NotNull
     public com.destroystokyo.paper.ParticleBuilder builder() {
@@ -216,6 +223,8 @@ public enum Particle implements Keyed {
     /**
      * Options which can be applied to dust particles - a particle
      * color and size.
+     *
+     * @since 1.13
      */
     public static class DustOptions {
 
@@ -250,6 +259,8 @@ public enum Particle implements Keyed {
 
     /**
      * Options which can be applied to a color transitioning dust particles.
+     *
+     * @since 1.17
      */
     public static class DustTransition extends DustOptions {
 
@@ -275,6 +286,8 @@ public enum Particle implements Keyed {
 
     /**
      * Options which can be applied to trail particles - a location, color and duration.
+     *
+     * @since 1.21.4
      */
     @ApiStatus.Experimental
     public static class Trail {

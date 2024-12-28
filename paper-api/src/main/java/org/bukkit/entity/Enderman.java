@@ -18,8 +18,6 @@ public interface Enderman extends Monster {
      *
      * May conditionally fail if the random location was not valid
      * @return If the enderman teleported successfully or not
-     */
-    /**
      * @since 1.12.2
      */
 

@@ -886,6 +886,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param classes The classes representing the types of entity to match
      * @return A List of all Entities currently residing in this world that
      *     match one or more of the given classes/interfaces
+     * @since 1.1.0
      */
     @NotNull
     public Collection<Entity> getEntitiesByClasses(@NotNull Class<?>... classes);
@@ -1122,8 +1123,8 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
       * @param predicate a predicate used to filter results
       * @param <T> the entity type
       * @return the collection of entities near location. This will always be a non-null collection.
-     * @since 1.12.2
-      */
+      * @since 1.12.2
+     */
      default <T extends Entity> @NotNull Collection<T> getNearbyEntitiesByType(@Nullable Class<? extends Entity> clazz, final @NotNull Location loc, final double xRadius, final double yRadius, final double zRadius, final @Nullable Predicate<? super T> predicate) {
          if (clazz == null) {
             clazz = Entity.class;
@@ -4381,6 +4382,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @return a BiomeSearchResult containing the closest {@link Location} and
      *         {@link Biome}, or null if no biome was found.
      * @see #locateNearestBiome(Location, int, int, int, Biome...)
+     * @since 1.20.2
      */
     @Nullable
     BiomeSearchResult locateNearestBiome(@NotNull Location origin, int radius, @NotNull Biome... biomes);
@@ -4408,6 +4410,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @return a BiomeSearchResult containing the closest {@link Location} and
      *         {@link Biome}, or null if no biome was found.
      * @see #locateNearestBiome(Location, int, Biome...)
+     * @since 1.20.2
      */
     @Nullable
     BiomeSearchResult locateNearestBiome(@NotNull Location origin, int radius, int horizontalInterval, int verticalInterval, @NotNull Biome... biomes);

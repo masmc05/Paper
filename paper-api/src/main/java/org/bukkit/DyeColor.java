@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * All supported color values for dyes and cloth
+ *
+ * @since 1.0.0
  */
 public enum DyeColor {
 
@@ -109,6 +111,7 @@ public enum DyeColor {
      * @return A byte containing the dye data value of this color
      * @see #getWoolData()
      * @deprecated Magic value
+     * @since 1.4.6
      */
     @Deprecated(since = "1.6.2")
     public byte getDyeData() {
@@ -119,6 +122,7 @@ public enum DyeColor {
      * Gets the color that this dye represents.
      *
      * @return The {@link Color} that this dye represents
+     * @since 1.4.5
      */
     @NotNull
     public Color getColor() {
@@ -129,6 +133,7 @@ public enum DyeColor {
      * Gets the firework color that this dye represents.
      *
      * @return The {@link Color} that this dye represents
+     * @since 1.4.6
      */
     @NotNull
     public Color getFireworkColor() {
@@ -162,6 +167,7 @@ public enum DyeColor {
      *     it doesn't exist
      * @see #getByWoolData(byte)
      * @deprecated Magic value
+     * @since 1.4.6
      */
     @Deprecated(since = "1.6.2")
     @Nullable
@@ -179,6 +185,7 @@ public enum DyeColor {
      * @param color Color value to get the dye by
      * @return The {@link DyeColor} representing the given value, or null if
      *     it doesn't exist
+     * @since 1.4.5
      */
     @Nullable
     public static DyeColor getByColor(@NotNull final Color color) {
@@ -191,6 +198,7 @@ public enum DyeColor {
      * @param color Color value to get dye by
      * @return The {@link DyeColor} representing the given value, or null if
      *     it doesn't exist
+     * @since 1.4.6
      */
     @Nullable
     public static DyeColor getByFireworkColor(@NotNull final Color color) {

@@ -4,6 +4,9 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.0.0
+ */
 public enum Instrument {
 
     /**
@@ -120,6 +123,7 @@ public enum Instrument {
      * Will be null for {@link Instrument#CUSTOM_HEAD}
      *
      * @return the sound or null
+     * @since 1.20.2
      */
     @Nullable
     public Sound getSound() {

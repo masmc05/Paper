@@ -149,6 +149,7 @@ public interface ItemMeta extends Cloneable, ConfigurationSerializable, Persiste
      *
      * @param component the name component to set
      * @deprecated use {@link #displayName(Component)}
+     * @since 1.16.1
      */
     @Deprecated
     void setDisplayNameComponent(@Nullable net.md_5.bungee.api.chat.BaseComponent[] component);
@@ -489,6 +490,7 @@ public interface ItemMeta extends Cloneable, ConfigurationSerializable, Persiste
      * Set itemflags which should be ignored when rendering a ItemStack in the Client. This Method does silently ignore double set itemFlags.
      *
      * @param itemFlags The hideflags which shouldn't be rendered
+     * @since 1.8
      */
     void addItemFlags(@NotNull ItemFlag... itemFlags);
 
@@ -496,6 +498,7 @@ public interface ItemMeta extends Cloneable, ConfigurationSerializable, Persiste
      * Remove specific set of itemFlags. This tells the Client it should render it again. This Method does silently ignore double removed itemFlags.
      *
      * @param itemFlags Hideflags which should be removed
+     * @since 1.8
      */
     void removeItemFlags(@NotNull ItemFlag... itemFlags);
 
