@@ -54,6 +54,7 @@ public final class ClientOption<T> {
         }
 
         /**
+         * {@inheritDoc}
          * @since 1.17.1
          */
         @Override

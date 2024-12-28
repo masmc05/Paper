@@ -56,6 +56,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
         }
 
         /**
+         * {@inheritDoc}
          * @since 1.17.1
          */
         @Override

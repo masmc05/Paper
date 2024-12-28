@@ -371,6 +371,7 @@ public final class GameRule<T> implements net.kyori.adventure.translation.Transl
     }
 
     /**
+     * {@inheritDoc}
      * @since 1.17.1
      */
     // Paper start

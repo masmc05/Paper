@@ -281,6 +281,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
     }
 
     /**
+     * {@inheritDoc}
      * @since 1.16.5
      */
     @Override

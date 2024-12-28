@@ -63,6 +63,7 @@ import org.jetbrains.annotations.Nullable;
 public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginMessageRecipient, net.kyori.adventure.identity.Identified, net.kyori.adventure.bossbar.BossBarViewer, com.destroystokyo.paper.network.NetworkClient { // Paper
 
     /**
+     * {@inheritDoc}
      * @since 1.16.5
      */
     // Paper start

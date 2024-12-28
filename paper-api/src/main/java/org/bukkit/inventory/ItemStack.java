@@ -722,6 +722,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
     }
 
     /**
+     * {@inheritDoc}
      * @since 1.16.5
      */
     @NotNull

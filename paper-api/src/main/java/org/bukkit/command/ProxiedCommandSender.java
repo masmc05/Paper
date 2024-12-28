@@ -25,6 +25,7 @@ public interface ProxiedCommandSender extends CommandSender, net.kyori.adventure
     CommandSender getCallee();
 
     /**
+     * {@inheritDoc}
      * @since 1.16.5
      */
     // Paper start
@@ -34,6 +35,7 @@ public interface ProxiedCommandSender extends CommandSender, net.kyori.adventure
     }
 
     /**
+     * {@inheritDoc}
      * @since 1.16.5
      */
     @NotNull

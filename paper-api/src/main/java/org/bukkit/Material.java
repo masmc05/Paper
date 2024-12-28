@@ -4838,6 +4838,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     // Paper end
 
     /**
+     * {@inheritDoc}
      * @since 1.17.1
      */
     // Paper start - add Translatable

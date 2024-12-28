@@ -1163,6 +1163,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
         public void onLoad(@NotNull Chunk chunk);
 
         /**
+         * {@inheritDoc}
          * @since 1.13.1
          */
         // backwards compat to old api
@@ -1679,6 +1680,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
     public List<Player> getPlayers();
 
     /**
+     * {@inheritDoc}
      * @since 1.16.5
      */
     // Paper start

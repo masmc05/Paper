@@ -419,6 +419,7 @@ public interface Inventory extends Iterable<ItemStack> {
     // Paper end
 
     /**
+     * {@inheritDoc}
      * @since 1.1.0
      */
     @NotNull

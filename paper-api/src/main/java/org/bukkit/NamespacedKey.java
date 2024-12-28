@@ -261,6 +261,7 @@ public final class NamespacedKey implements net.kyori.adventure.key.Key, com.des
     }
 
     /**
+     * {@inheritDoc}
      * @since 1.16.5
      */
     // Paper start
@@ -271,6 +272,7 @@ public final class NamespacedKey implements net.kyori.adventure.key.Key, com.des
     }
 
     /**
+     * {@inheritDoc}
      * @since 1.16.5
      */
     @NotNull
@@ -280,6 +282,7 @@ public final class NamespacedKey implements net.kyori.adventure.key.Key, com.des
     }
 
     /**
+     * {@inheritDoc}
      * @since 1.16.5
      */
     @NotNull

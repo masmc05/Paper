@@ -1032,6 +1032,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
     net.kyori.adventure.text.@NotNull Component teamDisplayName();
 
     /**
+     * {@inheritDoc}
      * @since 1.16.5
      */
     @NotNull

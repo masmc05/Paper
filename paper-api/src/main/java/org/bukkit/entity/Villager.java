@@ -336,6 +336,7 @@ public interface Villager extends AbstractVillager {
         }
 
         /**
+         * {@inheritDoc}
          * @since 1.17.1
          */
         // Paper start

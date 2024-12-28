@@ -54,6 +54,7 @@ public enum Difficulty implements net.kyori.adventure.translation.Translatable {
     }
 
     /**
+     * {@inheritDoc}
      * @since 1.17.1
      */
     // Paper start

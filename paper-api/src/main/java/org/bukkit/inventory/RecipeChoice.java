@@ -52,6 +52,7 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
     RecipeChoice clone();
 
     /**
+     * {@inheritDoc}
      * @since 1.13.2
      */
     @Override
@@ -182,6 +183,7 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
         }
 
         /**
+         * {@inheritDoc}
          * @since 1.20.6
          */
         // Paper start - check valid ingredients
@@ -294,6 +296,7 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
         }
 
         /**
+         * {@inheritDoc}
          * @since 1.20.6
          */
         // Paper start - check valid ingredients

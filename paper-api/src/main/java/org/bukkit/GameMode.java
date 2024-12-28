@@ -41,6 +41,7 @@ public enum GameMode implements net.kyori.adventure.translation.Translatable { /
     private final String translationKey;
 
     /**
+     * {@inheritDoc}
      * @since 1.18.2
      */
     @Override

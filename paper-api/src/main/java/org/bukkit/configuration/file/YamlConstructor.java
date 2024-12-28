@@ -31,6 +31,7 @@ public class YamlConstructor extends SafeConstructor {
     }
 
     /**
+     * {@inheritDoc}
      * @since 1.18.1
      */
     @Override

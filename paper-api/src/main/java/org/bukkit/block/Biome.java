@@ -131,6 +131,7 @@ public interface Biome extends OldEnum<Biome>, Keyed, net.kyori.adventure.transl
     }
 
     /**
+     * {@inheritDoc}
      * @since 1.19
      */
     // Paper start

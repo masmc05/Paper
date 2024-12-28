@@ -149,6 +149,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
     public net.kyori.adventure.text.@NotNull Component name();
 
     /**
+     * {@inheritDoc}
      * @since 1.16.5
      */
     @Override

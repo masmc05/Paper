@@ -19,6 +19,7 @@ public enum SoundCategory implements net.kyori.adventure.sound.Sound.Source.Prov
     VOICE;
 
     /**
+     * {@inheritDoc}
      * @since 1.17
      */
     // Paper start - implement Sound.Source.Provider

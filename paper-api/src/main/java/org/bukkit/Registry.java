@@ -590,6 +590,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
         }
 
         /**
+         * {@inheritDoc}
          * @since 1.21.1
          */
         @NotNull
@@ -603,6 +604,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
         }
 
         /**
+         * {@inheritDoc}
          * @since 1.20.1
          */
         @NotNull
