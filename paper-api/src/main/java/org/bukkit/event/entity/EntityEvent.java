@@ -21,6 +21,7 @@ public abstract class EntityEvent extends Event {
      * Returns the Entity involved in this event
      *
      * @return Entity who is involved in this event
+     * @since 1.0.0
      */
     @NotNull
     public Entity getEntity() {

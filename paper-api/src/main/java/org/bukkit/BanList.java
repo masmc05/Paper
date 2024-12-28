@@ -18,6 +18,7 @@ public interface BanList<T> {
     /**
      * Represents a ban-type that a {@link BanList} may track.
      * @deprecated use {@link io.papermc.paper.ban.BanListType} to enforce the correct return value at compile time.
+     * @since 1.7.10
      */
     @Deprecated(since = "1.20.4") // Paper - BanList Type Improvements
     public enum Type {
@@ -48,6 +49,7 @@ public interface BanList<T> {
      * @param target entry parameter to search for
      * @return the corresponding entry, or null if none found
      * @deprecated see {@link #getBanEntry(Object)}
+     * @since 1.7.10
      */
     @Deprecated(since = "1.20.1")
     @Nullable
@@ -77,6 +79,7 @@ public interface BanList<T> {
      * @return the entry for the newly created ban, or the entry for the
      *     (updated) previous ban
      * @deprecated see {@link #addBan(Object, String, Date, String)}
+     * @since 1.7.10
      */
     @Deprecated(since = "1.20.1")
     @Nullable
@@ -132,6 +135,7 @@ public interface BanList<T> {
      *
      * @return an immutable set containing every entry tracked by this list
      * @deprecated This return a generic class, prefer use {@link #getEntries()}
+     * @since 1.7.10
      */
     @Deprecated(since = "1.20.1")
     @NotNull
@@ -167,6 +171,7 @@ public interface BanList<T> {
      * @return true if a {@link BanEntry} exists for the target, indicating an
      *     active ban status, false otherwise
      * @deprecated see {@link #isBanned(Object)}
+     * @since 1.7.10
      */
     @Deprecated(since = "1.20.1")
     public boolean isBanned(@NotNull String target);
@@ -189,6 +194,7 @@ public interface BanList<T> {
      * @param target the target to remove from this list
      *
      * @deprecated see {@link #pardon(Object)}
+     * @since 1.7.10
      */
     @Deprecated(since = "1.20.1")
     public void pardon(@NotNull String target);

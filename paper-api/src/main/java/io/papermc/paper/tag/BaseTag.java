@@ -72,12 +72,18 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         }
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
         return key;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     @Override
     public Set<T> getValues() {
@@ -89,6 +95,9 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         return tagged.contains(item);
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C add(@NotNull Tag<T>...tags) {
         for (Tag<T> tag : tags) {
@@ -104,6 +113,9 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         return (C) this;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C add(@NotNull Collection<T> collection) {
         this.checkLock();
@@ -111,26 +123,41 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         return (C) this;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C add(@NotNull Predicate<T> filter) {
         return add(getAllPossibleValues().stream().filter(globalPredicates.stream().reduce(Predicate::or).orElse(t -> true)).filter(filter).collect(Collectors.toSet()));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C contains(@NotNull String with) {
         return add(value -> getName(value).contains(with));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C endsWith(@NotNull String with) {
         return add(value -> getName(value).endsWith(with));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C startsWith(@NotNull String with) {
         return add(value -> getName(value).startsWith(with));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C not(@NotNull Tag<T>...tags) {
         for (Tag<T> tag : tags) {
@@ -146,6 +173,9 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         return (C) this;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C not(@NotNull Collection<T> values) {
         this.checkLock();
@@ -153,27 +183,42 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         return (C) this;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C not(@NotNull Predicate<T> filter) {
         not(getAllPossibleValues().stream().filter(globalPredicates.stream().reduce(Predicate::or).orElse(t -> true)).filter(filter).collect(Collectors.toSet()));
         return (C) this;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C notContains(@NotNull String with) {
         return not(value -> getName(value).contains(with));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C notEndsWith(@NotNull String with) {
         return not(value -> getName(value).endsWith(with));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C notStartsWith(@NotNull String with) {
         return not(value -> getName(value).startsWith(with));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C ensureSize(@NotNull String label, int size) {
         long actual = this.tagged.stream().filter(globalPredicates.stream().reduce(Predicate::or).orElse(t -> true)).count();

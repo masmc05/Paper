@@ -9,6 +9,7 @@ import org.bukkit.Material;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class SmoothBrick extends TexturedMaterial {
@@ -42,6 +43,9 @@ public class SmoothBrick extends TexturedMaterial {
         super(type, data);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public List<Material> getTextures() {
         return textures;

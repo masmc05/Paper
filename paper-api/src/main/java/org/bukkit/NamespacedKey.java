@@ -122,12 +122,18 @@ public final class NamespacedKey implements net.kyori.adventure.key.Key, com.des
         Preconditions.checkArgument(string.length() <= Short.MAX_VALUE, "NamespacedKey must be less than 32768 characters", string); // Paper - Fix improper length validation
     }
 
+    /**
+     * @since 1.12
+     */
     @NotNull
     @Override // Paper
     public String getNamespace() {
         return namespace;
     }
 
+    /**
+     * @since 1.12
+     */
     @NotNull
     @Override // Paper
     public String getKey() {
@@ -177,6 +183,7 @@ public final class NamespacedKey implements net.kyori.adventure.key.Key, com.des
      *
      * @param key the key to use
      * @return new key in the Minecraft namespace
+     * @since 1.12
      */
     @NotNull
     public static NamespacedKey minecraft(@NotNull String key) {

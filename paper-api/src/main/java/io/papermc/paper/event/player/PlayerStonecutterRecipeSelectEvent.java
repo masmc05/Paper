@@ -27,33 +27,54 @@ public class PlayerStonecutterRecipeSelectEvent extends PlayerEvent implements C
         this.stonecuttingRecipe = stonecuttingRecipe;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public StonecutterInventory getStonecutterInventory() {
         return this.stonecutterInventory;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public StonecuttingRecipe getStonecuttingRecipe() {
         return this.stonecuttingRecipe;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public void setStonecuttingRecipe(final StonecuttingRecipe stonecuttingRecipe) {
         this.stonecuttingRecipe = stonecuttingRecipe;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

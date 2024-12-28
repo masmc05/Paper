@@ -16,6 +16,7 @@ public interface ShulkerBox extends Container, LootableBlockInventory, Lidded { 
      * Get the {@link DyeColor} corresponding to this ShulkerBox
      *
      * @return the {@link DyeColor} of this ShulkerBox, or null if default
+     * @since 1.11
      */
     @Nullable
     public DyeColor getColor();

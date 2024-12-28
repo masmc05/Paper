@@ -26,12 +26,18 @@ public class InactivityConversationCanceller implements ConversationCanceller {
         this.timeoutSeconds = timeoutSeconds;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setConversation(@NotNull Conversation conversation) {
         this.conversation = conversation;
         startTimer();
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean cancelBasedOnInput(@NotNull ConversationContext context, @NotNull String input) {
         // Reset the inactivity timer

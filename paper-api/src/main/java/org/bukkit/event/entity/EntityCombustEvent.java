@@ -28,11 +28,17 @@ public class EntityCombustEvent extends EntityEvent implements Cancellable {
         this.cancel = false;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -69,6 +75,7 @@ public class EntityCombustEvent extends EntityEvent implements Cancellable {
      * @param duration the time in seconds to be alight for.
      * @see #setDuration(float)
      * @deprecated duration is now a float
+     * @since 1.1.0
      */
     @Deprecated(since = "1.21", forRemoval = true)
     public void setDuration(int duration) {

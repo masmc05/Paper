@@ -52,6 +52,7 @@ public interface BanEntry<T> {
      *
      * @return the target name or IP address
      * @deprecated See {@link #getBanTarget()}
+     * @since 1.7.10
      */
     @Deprecated(since = "1.20.1")
     @NotNull
@@ -70,6 +71,7 @@ public interface BanEntry<T> {
      * Gets the date this ban entry was created.
      *
      * @return the creation date
+     * @since 1.7.10
      */
     @NotNull
     public Date getCreated();
@@ -79,6 +81,7 @@ public interface BanEntry<T> {
      *
      * @param created the new created date, cannot be null
      * @see #save() saving changes
+     * @since 1.7.10
      */
     public void setCreated(@NotNull Date created);
 
@@ -89,6 +92,7 @@ public interface BanEntry<T> {
      * player name.
      *
      * @return the source of the ban
+     * @since 1.7.10
      */
     @NotNull
     public String getSource();
@@ -101,6 +105,7 @@ public interface BanEntry<T> {
      *
      * @param source the new source where null values become empty strings
      * @see #save() saving changes
+     * @since 1.7.10
      */
     public void setSource(@NotNull String source);
 
@@ -108,6 +113,7 @@ public interface BanEntry<T> {
      * Gets the date this ban expires on, or null for no defined end date.
      *
      * @return the expiration date
+     * @since 1.7.10
      */
     @Nullable
     public Date getExpiration();
@@ -119,6 +125,7 @@ public interface BanEntry<T> {
      * @param expiration the new expiration date, or null to indicate an
      *     eternity
      * @see #save() saving changes
+     * @since 1.7.10
      */
     public void setExpiration(@Nullable Date expiration);
 
@@ -126,6 +133,7 @@ public interface BanEntry<T> {
      * Gets the reason for this ban.
      *
      * @return the ban reason, or null if not set
+     * @since 1.7.10
      */
     @Nullable
     public String getReason();
@@ -136,6 +144,7 @@ public interface BanEntry<T> {
      * @param reason the new reason, null values assume the implementation
      *     default
      * @see #save() saving changes
+     * @since 1.7.10
      */
     public void setReason(@Nullable String reason);
 
@@ -144,6 +153,8 @@ public interface BanEntry<T> {
      * <p>
      * Saving the ban entry of an unbanned player will cause the player to be
      * banned once again.
+     *
+     * @since 1.7.10
      */
     public void save();
 

@@ -36,17 +36,24 @@ public class PlayerAnimationEvent extends PlayerEvent implements Cancellable {
      * Get the type of this animation event
      *
      * @return the animation type
+     * @since 1.0.0
      */
     @NotNull
     public PlayerAnimationType getAnimationType() {
         return animationType;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.isCancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.isCancelled = cancel;

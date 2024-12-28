@@ -38,11 +38,17 @@ public class PlayerGameModeChangeEvent extends PlayerEvent implements Cancellabl
         this.cancelMessage = cancelMessage; // Paper
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
@@ -52,6 +58,7 @@ public class PlayerGameModeChangeEvent extends PlayerEvent implements Cancellabl
      * Gets the GameMode the player is switched to.
      *
      * @return  player's new GameMode
+     * @since 1.0.0
      */
     @NotNull
     public GameMode getNewGameMode() {

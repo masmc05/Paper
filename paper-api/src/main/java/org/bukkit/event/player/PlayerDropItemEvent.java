@@ -25,17 +25,24 @@ public class PlayerDropItemEvent extends PlayerEvent implements Cancellable {
      * Gets the ItemDrop created by the player
      *
      * @return ItemDrop created by the player
+     * @since 1.0.0
      */
     @NotNull
     public Item getItemDrop() {
         return drop;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;

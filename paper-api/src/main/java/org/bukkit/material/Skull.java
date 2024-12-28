@@ -8,6 +8,7 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.4.5
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Skull extends MaterialData implements Directional {
@@ -39,6 +40,9 @@ public class Skull extends MaterialData implements Directional {
         super(type, data);
     }
 
+    /**
+     * @since 1.4.5
+     */
     @Override
     public void setFacingDirection(BlockFace face) {
         int data;
@@ -68,6 +72,9 @@ public class Skull extends MaterialData implements Directional {
         setData((byte) data);
     }
 
+    /**
+     * @since 1.4.5
+     */
     @Override
     public BlockFace getFacing() {
         int data = getData();

@@ -56,6 +56,7 @@ public class PlayerItemConsumeEvent extends PlayerEvent implements Cancellable {
      * #setItem(org.bukkit.inventory.ItemStack)} instead.
      *
      * @return an ItemStack for the item being consumed
+     * @since 1.5.1
      */
     @NotNull
     public ItemStack getItem() {
@@ -66,6 +67,7 @@ public class PlayerItemConsumeEvent extends PlayerEvent implements Cancellable {
      * Set the item being consumed
      *
      * @param item the item being consumed
+     * @since 1.5.1
      */
     public void setItem(@Nullable ItemStack item) {
         if (item == null) {
@@ -111,22 +113,34 @@ public class PlayerItemConsumeEvent extends PlayerEvent implements Cancellable {
     }
     // Paper end
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public boolean isCancelled() {
         return this.isCancelled;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.isCancelled = cancel;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

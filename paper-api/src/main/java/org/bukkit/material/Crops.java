@@ -14,6 +14,7 @@ import org.bukkit.Material;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Crops extends MaterialData {
@@ -74,6 +75,7 @@ public class Crops extends MaterialData {
      * returned.
      *
      * @return CropState of this crop
+     * @since 1.0.0
      */
     public CropState getState() {
         switch (getItemType()) {
@@ -105,6 +107,7 @@ public class Crops extends MaterialData {
      * VERY_TALL will change to RIPE
      *
      * @param state New growth state of this crop
+     * @since 1.0.0
      */
     public void setState(CropState state) {
         switch (getItemType()) {

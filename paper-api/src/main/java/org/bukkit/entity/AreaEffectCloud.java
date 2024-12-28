@@ -23,6 +23,7 @@ public interface AreaEffectCloud extends Entity {
      * Gets the duration which this cloud will exist for (in ticks).
      *
      * @return cloud duration
+     * @since 1.9.4
      */
     int getDuration();
 
@@ -30,6 +31,7 @@ public interface AreaEffectCloud extends Entity {
      * Sets the duration which this cloud will exist for (in ticks).
      *
      * @param duration cloud duration
+     * @since 1.9.4
      */
     void setDuration(int duration);
 
@@ -38,6 +40,7 @@ public interface AreaEffectCloud extends Entity {
      * effect is applied.
      *
      * @return wait time
+     * @since 1.9.4
      */
     int getWaitTime();
 
@@ -46,6 +49,7 @@ public interface AreaEffectCloud extends Entity {
      * effect is applied.
      *
      * @param waitTime wait time
+     * @since 1.9.4
      */
     void setWaitTime(int waitTime);
 
@@ -53,6 +57,7 @@ public interface AreaEffectCloud extends Entity {
      * Gets the time that an entity will be immune from subsequent exposure.
      *
      * @return reapplication delay
+     * @since 1.9.4
      */
     int getReapplicationDelay();
 
@@ -60,6 +65,7 @@ public interface AreaEffectCloud extends Entity {
      * Sets the time that an entity will be immune from subsequent exposure.
      *
      * @param delay reapplication delay
+     * @since 1.9.4
      */
     void setReapplicationDelay(int delay);
 
@@ -68,6 +74,7 @@ public interface AreaEffectCloud extends Entity {
      * applies an effect to an entity.
      *
      * @return duration on use delta
+     * @since 1.9.4
      */
     int getDurationOnUse();
 
@@ -76,6 +83,7 @@ public interface AreaEffectCloud extends Entity {
      * applies an effect to an entity.
      *
      * @param duration duration on use delta
+     * @since 1.9.4
      */
     void setDurationOnUse(int duration);
 
@@ -83,6 +91,7 @@ public interface AreaEffectCloud extends Entity {
      * Gets the initial radius of the cloud.
      *
      * @return radius
+     * @since 1.9.4
      */
     float getRadius();
 
@@ -90,6 +99,7 @@ public interface AreaEffectCloud extends Entity {
      * Sets the initial radius of the cloud.
      *
      * @param radius radius
+     * @since 1.9.4
      */
     void setRadius(float radius);
 
@@ -98,6 +108,7 @@ public interface AreaEffectCloud extends Entity {
      * applies an effect to an entity.
      *
      * @return radius on use delta
+     * @since 1.9.4
      */
     float getRadiusOnUse();
 
@@ -106,6 +117,7 @@ public interface AreaEffectCloud extends Entity {
      * applies an effect to an entity.
      *
      * @param radius radius on use delta
+     * @since 1.9.4
      */
     void setRadiusOnUse(float radius);
 
@@ -113,6 +125,7 @@ public interface AreaEffectCloud extends Entity {
      * Gets the amount that the radius of this cloud will decrease by each tick.
      *
      * @return radius per tick delta
+     * @since 1.9.4
      */
     float getRadiusPerTick();
 
@@ -120,6 +133,7 @@ public interface AreaEffectCloud extends Entity {
      * Gets the amount that the radius of this cloud will decrease by each tick.
      *
      * @param radius per tick delta
+     * @since 1.9.4
      */
     void setRadiusPerTick(float radius);
 
@@ -127,6 +141,7 @@ public interface AreaEffectCloud extends Entity {
      * Gets the particle which this cloud will be composed of
      *
      * @return particle the set particle type
+     * @since 1.9.4
      */
     @NotNull
     Particle getParticle();
@@ -135,6 +150,7 @@ public interface AreaEffectCloud extends Entity {
      * Sets the particle which this cloud will be composed of
      *
      * @param particle the new particle type
+     * @since 1.9.4
      */
     void setParticle(@NotNull Particle particle);
 
@@ -153,6 +169,7 @@ public interface AreaEffectCloud extends Entity {
      *
      * @param data PotionData to set the base potion state to
      * @deprecated Upgraded / extended potions are now their own {@link PotionType} use {@link #setBasePotionType} instead.
+     * @since 1.9.4
      */
     @Deprecated(since = "1.20.6")
     void setBasePotionData(@Nullable PotionData data);
@@ -162,6 +179,7 @@ public interface AreaEffectCloud extends Entity {
      *
      * @return a PotionData object
      * @deprecated Upgraded / extended potions are now their own {@link PotionType} use {@link #getBasePotionType()} instead.
+     * @since 1.9.4
      */
     @Nullable
     @Deprecated(since = "1.20.6")
@@ -188,6 +206,7 @@ public interface AreaEffectCloud extends Entity {
      * Checks for the presence of custom potion effects.
      *
      * @return true if custom potion effects are applied
+     * @since 1.9.4
      */
     boolean hasCustomEffects();
 
@@ -199,6 +218,7 @@ public interface AreaEffectCloud extends Entity {
      * this method.
      *
      * @return the immutable list of custom potion effects
+     * @since 1.9.4
      */
     @NotNull
     List<PotionEffect> getCustomEffects();
@@ -210,6 +230,7 @@ public interface AreaEffectCloud extends Entity {
      * @param overwrite true if any existing effect of the same type should be
      * overwritten
      * @return true if the effect was added as a result of this call
+     * @since 1.9.4
      */
     boolean addCustomEffect(@NotNull PotionEffect effect, boolean overwrite);
 
@@ -218,6 +239,7 @@ public interface AreaEffectCloud extends Entity {
      *
      * @param type the potion effect type to remove
      * @return true if the an effect was removed as a result of this call
+     * @since 1.9.4
      */
     boolean removeCustomEffect(@NotNull PotionEffectType type);
 
@@ -226,11 +248,14 @@ public interface AreaEffectCloud extends Entity {
      *
      * @param type the potion effect type to check for
      * @return true if the potion has this effect
+     * @since 1.9.4
      */
     boolean hasCustomEffect(@Nullable PotionEffectType type);
 
     /**
      * Removes all custom potion effects from this cloud.
+     *
+     * @since 1.9.4
      */
     void clearCustomEffects();
 
@@ -238,6 +263,7 @@ public interface AreaEffectCloud extends Entity {
      * Gets the color of this cloud. Will be applied as a tint to its particles.
      *
      * @return cloud color
+     * @since 1.9.4
      */
     @NotNull
     Color getColor();
@@ -246,6 +272,7 @@ public interface AreaEffectCloud extends Entity {
      * Sets the color of this cloud. Will be applied as a tint to its particles.
      *
      * @param color cloud color
+     * @since 1.9.4
      */
     void setColor(@NotNull Color color);
 
@@ -253,6 +280,7 @@ public interface AreaEffectCloud extends Entity {
      * Retrieve the original source of this cloud.
      *
      * @return the {@link ProjectileSource} that threw the LingeringPotion
+     * @since 1.9.4
      */
     @Nullable
     public ProjectileSource getSource();
@@ -261,6 +289,7 @@ public interface AreaEffectCloud extends Entity {
      * Set the original source of this cloud.
      *
      * @param source the {@link ProjectileSource} that threw the LingeringPotion
+     * @since 1.9.4
      */
     public void setSource(@Nullable ProjectileSource source);
 

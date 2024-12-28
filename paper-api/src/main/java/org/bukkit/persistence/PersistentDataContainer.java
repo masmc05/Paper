@@ -43,6 +43,7 @@ public interface PersistentDataContainer extends io.papermc.paper.persistence.Pe
      * @param key the key to remove
      *
      * @throws IllegalArgumentException if the provided key is null
+     * @since 1.14
      */
     void remove(@NotNull NamespacedKey key);
     // Paper - move to PersistentDataContainerView

@@ -29,6 +29,8 @@ public class EnderDragonShootFireballEvent extends EntityEvent implements Cancel
 
     /**
      * The enderdragon shooting the fireball
+     *
+     * @since 1.13
      */
     @Override
     public EnderDragon getEntity() {
@@ -37,26 +39,39 @@ public class EnderDragonShootFireballEvent extends EntityEvent implements Cancel
 
     /**
      * @return The fireball being shot
+     * @since 1.13
      */
     public DragonFireball getFireball() {
         return this.fireball;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

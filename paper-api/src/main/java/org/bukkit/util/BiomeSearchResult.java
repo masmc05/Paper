@@ -18,6 +18,7 @@ public interface BiomeSearchResult {
      * Return the biome which was found.
      *
      * @return the found biome.
+     * @since 1.20.2
      */
     @NotNull
     Biome getBiome();
@@ -26,6 +27,7 @@ public interface BiomeSearchResult {
      * Return the location of the biome.
      *
      * @return the location the biome was found.
+     * @since 1.20.2
      */
     @NotNull
     Location getLocation();

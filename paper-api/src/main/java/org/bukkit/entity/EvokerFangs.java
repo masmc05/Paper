@@ -13,6 +13,7 @@ public interface EvokerFangs extends Entity {
      * Gets the {@link LivingEntity} which summoned the fangs.
      *
      * @return the {@link LivingEntity} which summoned the fangs
+     * @since 1.11
      */
     @Nullable
     LivingEntity getOwner();
@@ -21,6 +22,7 @@ public interface EvokerFangs extends Entity {
      * Sets the {@link LivingEntity} which summoned the fangs.
      *
      * @param owner the {@link LivingEntity} which summoned the fangs
+     * @since 1.11
      */
     void setOwner(@Nullable LivingEntity owner);
 

@@ -21,6 +21,7 @@ public interface AdvancementRequirements {
      * Get all the requirements present in this advancement.
      *
      * @return an unmodifiable copy of all requirements.
+     * @since 1.21.3
      */
     @NotNull
     List<AdvancementRequirement> getRequirements();

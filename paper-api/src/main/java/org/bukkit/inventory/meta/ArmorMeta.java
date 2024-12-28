@@ -18,6 +18,7 @@ public interface ArmorMeta extends ItemMeta {
      * Check whether or not this item has an armor trim.
      *
      * @return true if has a trim, false otherwise
+     * @since 1.19.4
      */
     boolean hasTrim();
 
@@ -25,6 +26,7 @@ public interface ArmorMeta extends ItemMeta {
      * Set the {@link ArmorTrim}.
      *
      * @param trim the trim to set, or null to remove it
+     * @since 1.19.4
      */
     void setTrim(@Nullable ArmorTrim trim);
 
@@ -32,6 +34,7 @@ public interface ArmorMeta extends ItemMeta {
      * Get the {@link ArmorTrim}.
      *
      * @return the armor trim, or null if none
+     * @since 1.19.4
      */
     @Nullable
     ArmorTrim getTrim();

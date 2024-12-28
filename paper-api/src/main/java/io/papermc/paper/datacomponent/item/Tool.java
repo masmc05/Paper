@@ -23,6 +23,9 @@ import org.jspecify.annotations.Nullable;
 @ApiStatus.NonExtendable
 public interface Tool {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static Tool.Builder tool() {
         return ItemComponentTypesBridge.bridge().tool();
@@ -43,6 +46,7 @@ public interface Tool {
      *                          <li>{@link TriState#NOT_SET} - The default drop behavior is used.</li>
      *                        </ul>
      * @return A new {@link Rule} instance representing the mining rule.
+     * @since 1.21.3
      */
     static Rule rule(final RegistryKeySet<BlockType> blocks, final @Nullable Float speed, final TriState correctForDrops) {
         return ItemComponentTypesBridge.bridge().rule(blocks, speed, correctForDrops);
@@ -52,6 +56,7 @@ public interface Tool {
      * Mining speed to use if no rules match and don't override mining speed.
      *
      * @return default mining speed
+     * @since 1.21.3
      */
     @Contract(pure = true)
     float defaultMiningSpeed();
@@ -60,6 +65,7 @@ public interface Tool {
      * Amount of durability to remove each time a block is mined with this tool.
      *
      * @return durability
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @NonNegative int damagePerBlock();
@@ -68,10 +74,14 @@ public interface Tool {
      * List of rule entries.
      *
      * @return rules
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<Tool.Rule> rules();
 
+    /**
+     * @since 1.21.3
+     */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
     interface Rule {
@@ -80,6 +90,7 @@ public interface Tool {
          * Blocks to match.
          *
          * @return blocks
+         * @since 1.21.3
          */
         RegistryKeySet<BlockType> blocks();
 
@@ -89,6 +100,7 @@ public interface Tool {
          * {@code true} will cause the block to mine at its most efficient speed, and drop items if the targeted block requires that.
          *
          * @return speed override
+         * @since 1.21.3
          */
         @Nullable Float speed();
 
@@ -96,12 +108,15 @@ public interface Tool {
          * Overrides whether this tool is considered 'correct' if present and matched.
          *
          * @return a tri-state
+         * @since 1.21.3
          */
         TriState correctForDrops();
     }
 
     /**
      * Builder for {@link Tool}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -113,6 +128,7 @@ public interface Tool {
          * @param damage durability to remove
          * @return the builder for chaining
          * @see #damagePerBlock()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder damagePerBlock(@NonNegative int damage);
@@ -123,6 +139,7 @@ public interface Tool {
          * @param miningSpeed mining speed
          * @return the builder for chaining
          * @see #defaultMiningSpeed()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder defaultMiningSpeed(float miningSpeed);
@@ -143,6 +160,7 @@ public interface Tool {
          * @param rules rules
          * @return the builder for chaining
          * @see #rules()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addRules(Collection<Rule> rules);

@@ -15,6 +15,7 @@ public interface Beehive extends EntityBlockStorage<Bee> {
      * Get the hive's flower location.
      *
      * @return flower location or null
+     * @since 1.15
      */
     @Nullable
     Location getFlower();
@@ -23,6 +24,7 @@ public interface Beehive extends EntityBlockStorage<Bee> {
      * Set the hive's flower location.
      *
      * @param location or null
+     * @since 1.15
      */
     void setFlower(@Nullable Location location);
 

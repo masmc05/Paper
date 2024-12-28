@@ -48,6 +48,7 @@ public class EntityPortalReadyEvent extends EntityEvent implements Cancellable {
      * or {@link EntityPortalEvent}.
      *
      * @return the world the portal will teleport the entity to.
+     * @since 1.19
      */
     public @Nullable World getTargetWorld() {
         return this.targetWorld;
@@ -62,6 +63,7 @@ public class EntityPortalReadyEvent extends EntityEvent implements Cancellable {
      * or {@link EntityPortalEvent}.
      *
      * @param targetWorld the world
+     * @since 1.19
      */
     public void setTargetWorld(final @Nullable World targetWorld) {
         this.targetWorld = targetWorld;
@@ -71,26 +73,39 @@ public class EntityPortalReadyEvent extends EntityEvent implements Cancellable {
      * Gets the portal type for this event.
      *
      * @return the portal type
+     * @since 1.19
      */
     public PortalType getPortalType() {
         return this.portalType;
     }
 
+    /**
+     * @since 1.19
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.19
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.19
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

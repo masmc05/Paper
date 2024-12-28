@@ -34,6 +34,7 @@ public class FurnaceExtractEvent extends BlockExpEvent {
      * Get the player that triggered the event
      *
      * @return the relevant player
+     * @since 1.4.5
      */
     @NotNull
     public Player getPlayer() {
@@ -44,6 +45,7 @@ public class FurnaceExtractEvent extends BlockExpEvent {
      * Get the Material of the item being retrieved
      *
      * @return the material of the item
+     * @since 1.4.5
      */
     @NotNull
     public Material getItemType() {
@@ -54,6 +56,7 @@ public class FurnaceExtractEvent extends BlockExpEvent {
      * Get the item count being retrieved
      *
      * @return the amount of the item
+     * @since 1.4.5
      */
     public int getItemAmount() {
         return itemAmount;

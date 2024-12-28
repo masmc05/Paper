@@ -16,6 +16,7 @@ public interface Stairs extends Bisected, Directional, Waterlogged {
      * Gets the value of the 'shape' property.
      *
      * @return the 'shape' value
+     * @since 1.13
      */
     @NotNull
     Shape getShape();
@@ -29,6 +30,8 @@ public interface Stairs extends Bisected, Directional, Waterlogged {
 
     /**
      * The shape of a stair block - used for constructing corners.
+     *
+     * @since 1.13
      */
     public enum Shape {
         /**

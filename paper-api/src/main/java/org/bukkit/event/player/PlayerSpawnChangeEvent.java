@@ -11,6 +11,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * This event is fired when the spawn point of the player is changed.
  * @deprecated use {@link com.destroystokyo.paper.event.player.PlayerSetSpawnEvent}
+ * @since 1.19.4
  */
 @Deprecated(forRemoval = true) // Paper
 public class PlayerSpawnChangeEvent extends PlayerEvent implements Cancellable {
@@ -32,6 +33,7 @@ public class PlayerSpawnChangeEvent extends PlayerEvent implements Cancellable {
      * Gets the cause of spawn change.
      *
      * @return change cause
+     * @since 1.19.4
      */
     @NotNull
     public Cause getCause() {
@@ -43,6 +45,7 @@ public class PlayerSpawnChangeEvent extends PlayerEvent implements Cancellable {
      * rules.
      *
      * @return true if is forced
+     * @since 1.19.4
      */
     public boolean isForced() {
         return this.forced;
@@ -53,6 +56,7 @@ public class PlayerSpawnChangeEvent extends PlayerEvent implements Cancellable {
      * rules.
      *
      * @param forced true if forced
+     * @since 1.19.4
      */
     public void setForced(boolean forced) {
         this.forced = forced;
@@ -62,6 +66,7 @@ public class PlayerSpawnChangeEvent extends PlayerEvent implements Cancellable {
      * Gets the new spawn to be set.
      *
      * @return new spawn location
+     * @since 1.19.4
      */
     @Nullable
     public Location getNewSpawn() {
@@ -72,6 +77,7 @@ public class PlayerSpawnChangeEvent extends PlayerEvent implements Cancellable {
      * Sets the new spawn location.
      *
      * @param newSpawn new spawn location, with non-null world
+     * @since 1.19.4
      */
     public void setNewSpawn(@Nullable Location newSpawn) {
         if (newSpawn != null) {
@@ -82,27 +88,42 @@ public class PlayerSpawnChangeEvent extends PlayerEvent implements Cancellable {
         }
     }
 
+    /**
+     * @since 1.19.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
     }
 
+    /**
+     * @since 1.19.4
+     */
     public enum Cause {
 
         /**

@@ -14,6 +14,7 @@ public interface DaylightDetector extends AnaloguePowerable {
      * Gets the value of the 'inverted' property.
      *
      * @return the 'inverted' value
+     * @since 1.13
      */
     boolean isInverted();
 
@@ -21,6 +22,7 @@ public interface DaylightDetector extends AnaloguePowerable {
      * Sets the value of the 'inverted' property.
      *
      * @param inverted the new 'inverted' value
+     * @since 1.13
      */
     void setInverted(boolean inverted);
 }

@@ -164,12 +164,18 @@ public class EntityPortalEvent extends EntityTeleportEvent {
         return creationRadius;
     }
 
+    /**
+     * @since 1.4.7
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.4.7
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

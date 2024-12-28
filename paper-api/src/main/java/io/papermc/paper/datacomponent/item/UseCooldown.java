@@ -22,6 +22,7 @@ public interface UseCooldown {
      *
      * @param seconds the duration in seconds; must be positive
      * @return builder
+     * @since 1.21.3
      */
     @Contract(value = "_ -> new", pure = true)
     static UseCooldown.Builder useCooldown(final float seconds) {
@@ -32,6 +33,7 @@ public interface UseCooldown {
      * The amount of seconds the cooldown will be active for.
      *
      * @return cooldown seconds
+     * @since 1.21.3
      */
     @Contract(pure = true)
     float seconds();
@@ -42,10 +44,14 @@ public interface UseCooldown {
      * This allows items to share cooldowns with other items in the same cooldown group, if present.
      *
      * @return cooldown group, or null if not present
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable Key cooldownGroup();
 
+    /**
+     * @since 1.21.3
+     */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<UseCooldown> {
@@ -59,6 +65,7 @@ public interface UseCooldown {
          * @param key the unique resource location; can be null
          * @return the builder for chaining
          * @see #cooldownGroup()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder cooldownGroup(@Nullable Key key);

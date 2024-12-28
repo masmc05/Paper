@@ -14,6 +14,7 @@ public interface AnaloguePowerable extends BlockData {
      * Gets the value of the 'power' property.
      *
      * @return the 'power' value
+     * @since 1.13
      */
     int getPower();
 
@@ -21,6 +22,7 @@ public interface AnaloguePowerable extends BlockData {
      * Sets the value of the 'power' property.
      *
      * @param power the new 'power' value
+     * @since 1.13
      */
     void setPower(int power);
 
@@ -28,6 +30,7 @@ public interface AnaloguePowerable extends BlockData {
      * Gets the maximum allowed value of the 'power' property.
      *
      * @return the maximum 'power' value
+     * @since 1.13
      */
     int getMaximumPower();
 }

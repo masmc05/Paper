@@ -22,6 +22,7 @@ public interface Palette {
      * once the structure is placed into the world.
      *
      * @return The blocks in this palette
+     * @since 1.17.1
      */
     @NotNull
     List<BlockState> getBlocks();
@@ -30,6 +31,7 @@ public interface Palette {
      * Gets the number of blocks stored in this palette.
      *
      * @return The number of blocks in this palette
+     * @since 1.17.1
      */
     int getBlockCount();
 }

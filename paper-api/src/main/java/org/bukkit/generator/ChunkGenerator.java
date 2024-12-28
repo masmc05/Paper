@@ -230,6 +230,7 @@ public abstract class ChunkGenerator {
          * @param z - 0-15
          * @return Biome value
          * @deprecated biomes are now 3-dimensional
+         * @since 1.3.1
          */
         @NotNull
         @Deprecated(since = "1.15")
@@ -254,6 +255,7 @@ public abstract class ChunkGenerator {
          * @param z - 0-15
          * @param bio - Biome value
          * @deprecated biomes are now 3-dimensional
+         * @since 1.3.1
          */
         @Deprecated(since = "1.15")
         void setBiome(int x, int z, @NotNull Biome bio);
@@ -320,6 +322,7 @@ public abstract class ChunkGenerator {
      * @param x X-coordinate of the block to test
      * @param z Z-coordinate of the block to test
      * @return true if the location is valid, otherwise false
+     * @since 1.0.0
      */
     public boolean canSpawn(@NotNull World world, int x, int z) {
         Block highest = world.getBlockAt(x, world.getHighestBlockYAt(x, z), z);
@@ -341,6 +344,7 @@ public abstract class ChunkGenerator {
      *
      * @param world World to apply to
      * @return List containing any amount of BlockPopulators
+     * @since 1.0.0
      */
     @NotNull
     public List<BlockPopulator> getDefaultPopulators(@NotNull World world) {
@@ -356,6 +360,7 @@ public abstract class ChunkGenerator {
      * @param world The world to locate a spawn point for
      * @param random Random generator to use in the calculation
      * @return Location containing a new spawn point, otherwise null
+     * @since 1.0.0
      */
     @Nullable
     public Location getFixedSpawnLocation(@NotNull World world, @NotNull Random random) {
@@ -644,6 +649,7 @@ public abstract class ChunkGenerator {
          * Setting blocks at or above this height will do nothing.
          *
          * @return the maximum height
+         * @since 1.8.8
          */
         public int getMaxHeight();
 
@@ -669,6 +675,7 @@ public abstract class ChunkGenerator {
          * @param y the y location in the chunk from minHeight (inclusive) - maxHeight (exclusive)
          * @param z the z location in the chunk from 0-15 inclusive
          * @param material the type to set the block to
+         * @since 1.8.8
          */
         public void setBlock(int x, int y, int z, @NotNull Material material);
 
@@ -682,6 +689,7 @@ public abstract class ChunkGenerator {
          * @param z the z location in the chunk from 0-15 inclusive
          * @param material the type to set the block to
          * @deprecated use {@link #setBlock(int, int, int, BlockData)}
+         * @since 1.8.8
          */
         @Deprecated // Paper
         public void setBlock(int x, int y, int z, @NotNull MaterialData material);
@@ -712,6 +720,7 @@ public abstract class ChunkGenerator {
          * @param yMax maximum y location (exclusive) in the chunk to set
          * @param zMax maximum z location (exclusive) in the chunk to set
          * @param material the type to set the blocks to
+         * @since 1.8.8
          */
         public void setRegion(int xMin, int yMin, int zMin, int xMax, int yMax, int zMax, @NotNull Material material);
 
@@ -729,6 +738,7 @@ public abstract class ChunkGenerator {
          * @param zMax maximum z location (exclusive) in the chunk to set
          * @param material the type to set the blocks to
          * @deprecated use {@link #setRegion(int, int, int, int, int, int, BlockData)}
+         * @since 1.8.8
          */
         @Deprecated // Paper
         public void setRegion(int xMin, int yMin, int zMin, int xMax, int yMax, int zMax, @NotNull MaterialData material);
@@ -759,6 +769,7 @@ public abstract class ChunkGenerator {
          * @param y the y location in the chunk from minHeight (inclusive) - maxHeight (exclusive)
          * @param z the z location in the chunk from 0-15 inclusive
          * @return the type of the block or Material.AIR if x, y or z are outside the chunk's bounds
+         * @since 1.8.8
          */
         @NotNull
         public Material getType(int x, int y, int z);
@@ -773,6 +784,7 @@ public abstract class ChunkGenerator {
          * @param z the z location in the chunk from 0-15 inclusive
          * @return the type and data of the block or the MaterialData for air if x, y or z are outside the chunk's bounds
          * @deprecated use {@link #getBlockData(int, int, int)}
+         * @since 1.8.8
          */
         @NotNull
         @Deprecated // Paper
@@ -802,6 +814,7 @@ public abstract class ChunkGenerator {
          * @param z the z location in the chunk from 0-15 inclusive
          * @return the block data value or air if x, y or z are outside the chunk's bounds
          * @deprecated Uses magic values
+         * @since 1.8.8
          */
         @Deprecated(since = "1.8.8")
         public byte getData(int x, int y, int z);

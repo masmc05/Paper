@@ -56,6 +56,9 @@ public class VersionCommand extends BukkitCommand {
         this.setAliases(Arrays.asList("ver", "about"));
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String currentAlias, @NotNull String[] args) {
         if (!testPermission(sender)) return true;

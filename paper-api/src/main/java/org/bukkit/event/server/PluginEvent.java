@@ -19,6 +19,7 @@ public abstract class PluginEvent extends ServerEvent {
      * Gets the plugin involved in this event
      *
      * @return Plugin for this event
+     * @since 1.0.0
      */
     @NotNull
     public Plugin getPlugin() {

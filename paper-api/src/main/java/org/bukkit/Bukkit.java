@@ -79,6 +79,7 @@ public final class Bukkit {
      * Gets the current {@link Server} singleton
      *
      * @return Server instance being ran
+     * @since 1.0.0
      */
     @NotNull
     public static Server getServer() {
@@ -106,6 +107,7 @@ public final class Bukkit {
      * This cannot be done if the Server is already set.
      *
      * @param server Server instance
+     * @since 1.0.0
      */
     public static void setServer(@NotNull Server server) {
         if (Bukkit.server != null) {
@@ -134,6 +136,7 @@ public final class Bukkit {
      *
      * @return name of this server implementation
      * @see io.papermc.paper.ServerBuildInfo#brandName()
+     * @since 1.0.0
      */
     @NotNull
     public static String getName() {
@@ -145,6 +148,7 @@ public final class Bukkit {
      *
      * @return version of this server implementation
      * @see io.papermc.paper.ServerBuildInfo
+     * @since 1.0.0
      */
     @NotNull
     public static String getVersion() {
@@ -155,6 +159,7 @@ public final class Bukkit {
      * Gets the Bukkit version that this server is running.
      *
      * @return version of Bukkit
+     * @since 1.0.0
      */
     @NotNull
     public static String getBukkitVersion() {
@@ -202,6 +207,7 @@ public final class Bukkit {
      * snapshots, {@link ImmutableList#copyOf(Collection)} is recommended.
      *
      * @return a view of currently online players.
+     * @since 1.0.0
      */
     @NotNull
     public static Collection<? extends Player> getOnlinePlayers() {
@@ -212,6 +218,7 @@ public final class Bukkit {
      * Get the maximum amount of players which can login to this server.
      *
      * @return the amount of players this server allows
+     * @since 1.0.0
      */
     public static int getMaxPlayers() {
         return server.getMaxPlayers();
@@ -231,6 +238,7 @@ public final class Bukkit {
      * Get the game port that the server runs on.
      *
      * @return the port number of this server
+     * @since 1.0.0
      */
     public static int getPort() {
         return server.getPort();
@@ -240,6 +248,7 @@ public final class Bukkit {
      * Get the view distance from this server.
      *
      * @return the view distance from this server.
+     * @since 1.0.0
      */
     public static int getViewDistance() {
         return server.getViewDistance();
@@ -261,6 +270,7 @@ public final class Bukkit {
      *
      * @return the IP string that this server is bound to, otherwise empty
      *     string
+     * @since 1.0.0
      */
     @NotNull
     public static String getIp() {
@@ -312,6 +322,7 @@ public final class Bukkit {
      * Gets whether this server allows the Nether or not.
      *
      * @return whether this server allows the Nether or not
+     * @since 1.0.0
      */
     public static boolean getAllowNether() {
         return server.getAllowNether();
@@ -348,6 +359,7 @@ public final class Bukkit {
      *
      * @deprecated use {@link #getDatapackManager()}
      * @return the manager
+     * @since 1.19.4
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20")
@@ -428,6 +440,7 @@ public final class Bukkit {
      * Gets whether this server has a whitelist or not.
      *
      * @return whether this server has a whitelist or not
+     * @since 1.0.0
      */
     public static boolean hasWhitelist() {
         return server.hasWhitelist();
@@ -437,6 +450,7 @@ public final class Bukkit {
      * Sets if the server is whitelisted.
      *
      * @param value true for whitelist on, false for off
+     * @since 1.0.0
      */
     public static void setWhitelist(boolean value) {
         server.setWhitelist(value);
@@ -472,6 +486,7 @@ public final class Bukkit {
      * Gets a list of whitelisted players.
      *
      * @return a set containing all whitelisted players
+     * @since 1.0.0
      */
     @NotNull
     public static Set<OfflinePlayer> getWhitelistedPlayers() {
@@ -480,6 +495,8 @@ public final class Bukkit {
 
     /**
      * Reloads the whitelist from disk.
+     *
+     * @since 1.0.0
      */
     public static void reloadWhitelist() {
         server.reloadWhitelist();
@@ -494,6 +511,7 @@ public final class Bukkit {
      * @param message the message
      * @return the number of players
      * @deprecated in favour of {@link Server#broadcast(net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public static int broadcastMessage(@NotNull String message) {
@@ -533,6 +551,7 @@ public final class Bukkit {
      * The update folder name is relative to the plugins folder.
      *
      * @return the name of the update folder
+     * @since 1.0.0
      */
     @NotNull
     public static String getUpdateFolder() {
@@ -749,6 +768,7 @@ public final class Bukkit {
      *
      * @param name the name to look up
      * @return a player if one was found, null otherwise
+     * @since 1.0.0
      */
     @Nullable
     public static Player getPlayer(@NotNull String name) {
@@ -760,6 +780,7 @@ public final class Bukkit {
      *
      * @param name Exact name of the player to retrieve
      * @return a player object if one was found, null otherwise
+     * @since 1.0.0
      */
     @Nullable
     public static Player getPlayerExact(@NotNull String name) {
@@ -775,6 +796,7 @@ public final class Bukkit {
      *
      * @param name the (partial) name to match
      * @return list of all possible players
+     * @since 1.0.0
      */
     @NotNull
     public static List<Player> matchPlayer(@NotNull String name) {
@@ -812,6 +834,7 @@ public final class Bukkit {
      * Gets the plugin manager for interfacing with plugins.
      *
      * @return a plugin manager for this Server instance
+     * @since 1.0.0
      */
     @NotNull
     public static PluginManager getPluginManager() {
@@ -822,6 +845,7 @@ public final class Bukkit {
      * Gets the scheduler for managing scheduled events.
      *
      * @return a scheduling service for this server
+     * @since 1.0.0
      */
     @NotNull
     public static BukkitScheduler getScheduler() {
@@ -832,6 +856,7 @@ public final class Bukkit {
      * Gets a services manager.
      *
      * @return s services manager
+     * @since 1.0.0
      */
     @NotNull
     public static ServicesManager getServicesManager() {
@@ -842,6 +867,7 @@ public final class Bukkit {
      * Gets a list of all worlds on this server.
      *
      * @return a list of worlds
+     * @since 1.0.0
      */
     @NotNull
     public static List<World> getWorlds() {
@@ -872,6 +898,7 @@ public final class Bukkit {
      *
      * @param creator the options to use when creating the world
      * @return newly created or loaded world
+     * @since 1.0.0
      */
     @Nullable
     public static World createWorld(@NotNull WorldCreator creator) {
@@ -887,6 +914,7 @@ public final class Bukkit {
      * @param name Name of the world to unload
      * @param save whether to save the chunks before unloading
      * @return true if successful, false otherwise
+     * @since 1.0.0
      */
     public static boolean unloadWorld(@NotNull String name, boolean save) {
         return server.unloadWorld(name, save);
@@ -901,6 +929,7 @@ public final class Bukkit {
      * @param world the world to unload
      * @param save whether to save the chunks before unloading
      * @return true if successful, false otherwise
+     * @since 1.0.0
      */
     public static boolean unloadWorld(@NotNull World world, boolean save) {
         return server.unloadWorld(world, save);
@@ -911,6 +940,7 @@ public final class Bukkit {
      *
      * @param name the name of the world to retrieve
      * @return a world with the given name, or null if none exists
+     * @since 1.0.0
      */
     @Nullable
     public static World getWorld(@NotNull String name) {
@@ -922,6 +952,7 @@ public final class Bukkit {
      *
      * @param uid a unique-id of the world to retrieve
      * @return a world with the given Unique ID, or null if none exists
+     * @since 1.0.0
      */
     @Nullable
     public static World getWorld(@NotNull UUID uid) {
@@ -984,6 +1015,7 @@ public final class Bukkit {
      *
      * @param world the world the map will belong to
      * @return a newly created map view
+     * @since 1.0.0
      */
     @NotNull
     public static MapView createMap(@NotNull World world) {
@@ -1079,6 +1111,8 @@ public final class Bukkit {
 
     /**
      * Reloads the server, refreshing settings and plugin information.
+     *
+     * @since 1.0.0
      */
     public static void reload() {
         server.reload();
@@ -1137,6 +1171,7 @@ public final class Bukkit {
      *
      * @param name the name of the command to retrieve
      * @return a plugin command if found, null otherwise
+     * @since 1.0.0
      */
     @Nullable
     public static PluginCommand getPluginCommand(@NotNull String name) {
@@ -1145,6 +1180,8 @@ public final class Bukkit {
 
     /**
      * Writes loaded players to disk.
+     *
+     * @since 1.0.0
      */
     public static void savePlayers() {
         server.savePlayers();
@@ -1159,6 +1196,7 @@ public final class Bukkit {
      * @return returns false if no target is found
      * @throws CommandException thrown when the executor for the given command
      *     fails with an unhandled exception
+     * @since 1.0.0
      */
     public static boolean dispatchCommand(@NotNull CommandSender sender, @NotNull String commandLine) throws CommandException {
         return server.dispatchCommand(sender, commandLine);
@@ -1170,6 +1208,7 @@ public final class Bukkit {
      * @param recipe the recipe to add
      * @return true if the recipe was added, false if it wasn't for some
      *     reason
+     * @since 1.0.0
      */
     @Contract("null -> false")
     public static boolean addRecipe(@Nullable Recipe recipe) {
@@ -1418,6 +1457,7 @@ public final class Bukkit {
      * Gets a list of command aliases defined in the server properties.
      *
      * @return a map of aliases to command names
+     * @since 1.0.0
      */
     @NotNull
     public static Map<String, String[]> getCommandAliases() {
@@ -1428,6 +1468,7 @@ public final class Bukkit {
      * Gets the radius, in blocks, around each worlds spawn point to protect.
      *
      * @return spawn radius, or 0 if none
+     * @since 1.0.0
      */
     public static int getSpawnRadius() {
         return server.getSpawnRadius();
@@ -1437,6 +1478,7 @@ public final class Bukkit {
      * Sets the radius, in blocks, around each worlds spawn point to protect.
      *
      * @param value new spawn radius, or 0 if none
+     * @since 1.0.0
      */
     public static void setSpawnRadius(int value) {
         server.setSpawnRadius(value);
@@ -1491,6 +1533,7 @@ public final class Bukkit {
      * Gets whether the Server is in online mode or not.
      *
      * @return true if the server authenticates clients, false otherwise
+     * @since 1.0.0
      */
     public static boolean getOnlineMode() {
         return server.getOnlineMode();
@@ -1500,6 +1543,7 @@ public final class Bukkit {
      * Gets whether this server allows flying or not.
      *
      * @return true if the server allows flight, false otherwise
+     * @since 1.0.0
      */
     public static boolean getAllowFlight() {
         return server.getAllowFlight();
@@ -1517,6 +1561,8 @@ public final class Bukkit {
 
     /**
      * Shutdowns the server, stopping everything.
+     *
+     * @since 1.0.0
      */
     public static void shutdown() {
         server.shutdown();
@@ -1559,6 +1605,7 @@ public final class Bukkit {
      *     permissibles} must have to receive the broadcast
      * @return number of message recipients
      * @deprecated in favour of {@link #broadcast(net.kyori.adventure.text.Component, String)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public static int broadcast(@NotNull String message, @NotNull String permission) {
@@ -1578,6 +1625,7 @@ public final class Bukkit {
      * @param name the name the player to retrieve
      * @return an offline player
      * @see #getOfflinePlayer(java.util.UUID)
+     * @since 1.0.0
      */
     // @Deprecated(since = "1.7.5") // Paper
     @NotNull
@@ -1675,6 +1723,7 @@ public final class Bukkit {
      * Gets a set containing all current IPs that are banned.
      *
      * @return a set containing banned IP addresses
+     * @since 1.0.0
      */
     @NotNull
     public static Set<String> getIPBans() {
@@ -1687,6 +1736,7 @@ public final class Bukkit {
      * @param address the IP address to ban
      *
      * @deprecated see {@link #banIP(InetAddress)}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20.1")
     public static void banIP(@NotNull String address) {
@@ -1699,6 +1749,7 @@ public final class Bukkit {
      * @param address the IP address to unban
      *
      * @deprecated see {@link #unbanIP(InetAddress)}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20.1")
     public static void unbanIP(@NotNull String address) {
@@ -1729,6 +1780,7 @@ public final class Bukkit {
      * Gets a set containing all banned players.
      *
      * @return a set containing banned players
+     * @since 1.0.0
      */
     @NotNull
     public static Set<OfflinePlayer> getBannedPlayers() {
@@ -1769,6 +1821,7 @@ public final class Bukkit {
      * Gets a set containing all player operators.
      *
      * @return a set containing player operators
+     * @since 1.0.0
      */
     @NotNull
     public static Set<OfflinePlayer> getOperators() {
@@ -1801,6 +1854,7 @@ public final class Bukkit {
      * for this server.
      *
      * @return a console command sender
+     * @since 1.0.0
      */
     @NotNull
     public static ConsoleCommandSender getConsoleSender() {
@@ -1826,6 +1880,7 @@ public final class Bukkit {
      * Gets the folder that contains all of the various {@link World}s.
      *
      * @return folder that contains all worlds
+     * @since 1.0.0
      */
     @NotNull
     public static File getWorldContainer() {

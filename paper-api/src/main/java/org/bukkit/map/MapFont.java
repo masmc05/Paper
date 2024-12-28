@@ -40,6 +40,7 @@ public class MapFont {
      * @param ch The character to get the sprite for.
      * @return The CharacterSprite associated with the character, or null if
      *     there is none.
+     * @since 1.0.0
      */
     @Nullable
     public CharacterSprite getChar(char ch) {
@@ -52,6 +53,7 @@ public class MapFont {
      *
      * @param text The text.
      * @return The width in pixels.
+     * @since 1.0.0
      */
     public int getWidth(@NotNull String text) {
         if (!isValid(text)) {
@@ -84,6 +86,7 @@ public class MapFont {
      * Get the height of this font.
      *
      * @return The height of the font.
+     * @since 1.0.0
      */
     public int getHeight() {
         return height;
@@ -95,6 +98,7 @@ public class MapFont {
      * @param text The text.
      * @return True if the string contains only defined characters, false
      *     otherwise.
+     * @since 1.0.0
      */
     public boolean isValid(@NotNull String text) {
         for (int i = 0; i < text.length(); ++i) {
@@ -107,6 +111,8 @@ public class MapFont {
 
     /**
      * Represents the graphics for a single character in a MapFont.
+     *
+     * @since 1.0.0
      */
     public static class CharacterSprite {
 
@@ -130,6 +136,7 @@ public class MapFont {
          * @param row The row, in the range [0,8).
          * @param col The column, in the range [0,8).
          * @return True if the pixel is solid, false if transparent.
+         * @since 1.0.0
          */
         public boolean get(int row, int col) {
             if (row < 0 || col < 0 || row >= height || col >= width) return false;
@@ -140,6 +147,7 @@ public class MapFont {
          * Get the width of the character sprite.
          *
          * @return The width of the character.
+         * @since 1.0.0
          */
         public int getWidth() {
             return width;
@@ -149,6 +157,7 @@ public class MapFont {
          * Get the height of the character sprite.
          *
          * @return The height of the character.
+         * @since 1.0.0
          */
         public int getHeight() {
             return height;

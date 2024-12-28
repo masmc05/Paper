@@ -54,6 +54,7 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
      * @return the durability-to-xp operation
      * @deprecated the mending enchantment uses enchantment effects to compute how much durability is granted per xp.
      * The enchantment effects operation are too complex to reliably offer the inverse function.
+     * @since 1.19.4
      */
     @Contract("-> fail")
     @Deprecated(forRemoval = true, since = "1.21")
@@ -69,6 +70,7 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
      * @param durabilityToXpOp the durability-to-xp operation
      * @deprecated the mending enchantment uses enchantment effects to compute how much durability is granted per xp.
      * The enchantment effects operation are too complex to reliably offer the inverse function.
+     * @since 1.19.4
      */
     @Contract("_ -> fail")
     @Deprecated(forRemoval = true, since = "1.21")
@@ -100,6 +102,7 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
      * This is not necessarily the item the player is holding.
      *
      * @return the item to be repaired
+     * @since 1.12.2
      */
     @NotNull
     public ItemStack getItem() {
@@ -122,6 +125,7 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
      * Get the experience orb triggering the event.
      *
      * @return the experience orb
+     * @since 1.12.2
      */
     @NotNull
     public ExperienceOrb getExperienceOrb() {
@@ -135,6 +139,7 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
      * or the remaining damage left on the item, whichever is smaller.
      *
      * @return how much damage will be repaired by the experience orb
+     * @since 1.12.2
      */
     public int getRepairAmount() {
         return repairAmount;
@@ -146,27 +151,40 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
      * Half of this value will be subtracted from the experience orb which initiated this event.
      *
      * @param amount how much damage will be repaired on the item
+     * @since 1.12.2
      */
     public void setRepairAmount(int amount) {
         this.repairAmount = amount;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

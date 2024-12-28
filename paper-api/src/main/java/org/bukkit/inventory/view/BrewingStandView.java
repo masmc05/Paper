@@ -25,6 +25,7 @@ public interface BrewingStandView extends InventoryView {
      * The default maximum fuel level in minecraft is 20.
      *
      * @return The amount of fuel level left
+     * @since 1.21
      */
     int getFuelLevel();
 
@@ -32,6 +33,7 @@ public interface BrewingStandView extends InventoryView {
      * Gets the amount of brewing ticks left.
      *
      * @return The amount of ticks left for the brewing task
+     * @since 1.21
      */
     int getBrewingTicks();
 
@@ -40,6 +42,7 @@ public interface BrewingStandView extends InventoryView {
      *
      * @param level the level of the fuel, which is no less than 0
      * @throws IllegalArgumentException if the level is less than 0
+     * @since 1.21
      */
     void setFuelLevel(final int level) throws IllegalArgumentException;
 
@@ -48,6 +51,7 @@ public interface BrewingStandView extends InventoryView {
      *
      * @param ticks the ticks left, which is no less than 0
      * @throws IllegalArgumentException if the ticks are less than 0
+     * @since 1.21
      */
     void setBrewingTicks(final int ticks) throws IllegalArgumentException;
 

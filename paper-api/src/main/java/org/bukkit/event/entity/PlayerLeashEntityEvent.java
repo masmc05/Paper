@@ -37,6 +37,7 @@ public class PlayerLeashEntityEvent extends Event implements Cancellable {
      * Returns the entity that is holding the leash.
      *
      * @return The leash holder
+     * @since 1.6.2
      */
     @NotNull
     public Entity getLeashHolder() {
@@ -47,6 +48,7 @@ public class PlayerLeashEntityEvent extends Event implements Cancellable {
      * Returns the entity being leashed.
      *
      * @return The entity
+     * @since 1.6.2
      */
     @NotNull
     public Entity getEntity() {
@@ -57,6 +59,7 @@ public class PlayerLeashEntityEvent extends Event implements Cancellable {
      * Returns the player involved in this event
      *
      * @return Player who is involved in this event
+     * @since 1.6.2
      */
     @NotNull
     public final Player getPlayer() {
@@ -74,22 +77,34 @@ public class PlayerLeashEntityEvent extends Event implements Cancellable {
         return hand;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

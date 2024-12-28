@@ -11,6 +11,7 @@ public interface Hoglin extends Animals, Enemy {
      * Gets whether the hoglin is immune to zombification.
      *
      * @return Whether the hoglin is immune to zombification
+     * @since 1.16.1
      */
     public boolean isImmuneToZombification();
 
@@ -18,6 +19,7 @@ public interface Hoglin extends Animals, Enemy {
      * Sets whether the hoglin is immune to zombification.
      *
      * @param flag Whether the hoglin is immune to zombification
+     * @since 1.16.1
      */
     public void setImmuneToZombification(boolean flag);
 
@@ -25,6 +27,7 @@ public interface Hoglin extends Animals, Enemy {
      * Get whether the hoglin is able to be hunted by piglins.
      *
      * @return Whether the hoglin is able to be hunted by piglins
+     * @since 1.16.1
      */
     public boolean isAbleToBeHunted();
 
@@ -32,6 +35,7 @@ public interface Hoglin extends Animals, Enemy {
      * Sets whether the hoglin is able to be hunted by piglins.
      *
      * @param flag Whether the hoglin is able to be hunted by piglins.
+     * @since 1.16.1
      */
     public void setIsAbleToBeHunted(boolean flag);
 
@@ -42,6 +46,7 @@ public interface Hoglin extends Animals, Enemy {
      *
      * @return conversion time
      * @throws IllegalStateException if {@link #isConverting()} is false.
+     * @since 1.16.1
      */
     public int getConversionTime();
 
@@ -57,6 +62,7 @@ public interface Hoglin extends Animals, Enemy {
      * conversion use {@link #setImmuneToZombification(boolean)}.
      *
      * @param time new conversion counter
+     * @since 1.16.1
      */
     public void setConversionTime(int time);
 
@@ -64,6 +70,7 @@ public interface Hoglin extends Animals, Enemy {
      * Get if this entity is in the process of converting to a Zoglin.
      *
      * @return conversion status
+     * @since 1.16.1
      */
     boolean isConverting();
 }

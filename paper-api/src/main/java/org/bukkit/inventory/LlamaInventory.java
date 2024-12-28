@@ -14,6 +14,7 @@ public interface LlamaInventory extends SaddledHorseInventory {
      * Gets the item in the llama's decor slot.
      *
      * @return the decor item
+     * @since 1.11
      */
     @Nullable
     ItemStack getDecor();
@@ -22,6 +23,7 @@ public interface LlamaInventory extends SaddledHorseInventory {
      * Sets the item in the llama's decor slot.
      *
      * @param stack the new item
+     * @since 1.11
      */
     void setDecor(@Nullable ItemStack stack);
 }

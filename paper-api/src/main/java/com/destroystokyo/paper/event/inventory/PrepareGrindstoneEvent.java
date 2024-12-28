@@ -23,6 +23,9 @@ public class PrepareGrindstoneEvent extends PrepareResultEvent {
         super(inventory, result);
     }
 
+    /**
+     * @since 1.15.2
+     */
     @NotNull
     @Override
     public GrindstoneInventory getInventory() {

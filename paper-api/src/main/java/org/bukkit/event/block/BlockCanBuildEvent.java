@@ -73,6 +73,7 @@ public class BlockCanBuildEvent extends BlockEvent {
      * built here or not.
      *
      * @return boolean whether or not the block can be built
+     * @since 1.0.0
      */
     public boolean isBuildable() {
         return buildable;
@@ -83,6 +84,7 @@ public class BlockCanBuildEvent extends BlockEvent {
      *
      * @param cancel true if you want to allow the block to be built here
      *     despite Minecraft's default behaviour
+     * @since 1.0.0
      */
     public void setBuildable(boolean cancel) {
         this.buildable = cancel;
@@ -92,6 +94,7 @@ public class BlockCanBuildEvent extends BlockEvent {
      * Gets the Material that we are trying to place.
      *
      * @return The Material that we are trying to place
+     * @since 1.0.0
      */
     @NotNull
     public Material getMaterial() {

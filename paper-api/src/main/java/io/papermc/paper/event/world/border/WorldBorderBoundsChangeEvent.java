@@ -36,6 +36,7 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
      * Gets if this change is an instant change or over-time change.
      *
      * @return the change type
+     * @since 1.16.5
      */
     public Type getType() {
         return this.type;
@@ -45,6 +46,7 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
      * Gets the old size or the world border.
      *
      * @return the old size
+     * @since 1.16.5
      */
     public double getOldSize() {
         return this.oldSize;
@@ -54,6 +56,7 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
      * Gets the new size of the world border.
      *
      * @return the new size
+     * @since 1.16.5
      */
     public double getNewSize() {
         return this.newSize;
@@ -63,6 +66,7 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
      * Sets the new size of the world border.
      *
      * @param newSize the new size
+     * @since 1.16.5
      */
     public void setNewSize(final double newSize) {
         this.newSize = Math.min(this.worldBorder.getMaxSize(), Math.max(1.0D, newSize));
@@ -72,6 +76,7 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
      * Gets the time in milliseconds for the change. Will be 0 if instant.
      *
      * @return the time in milliseconds for the change
+     * @since 1.16.5
      */
     public long getDuration() {
         return this.duration;
@@ -82,6 +87,7 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
      * {@link Type#STARTED_MOVE}.
      *
      * @param duration the time in milliseconds for the change
+     * @since 1.16.5
      */
     public void setDuration(final long duration) {
         // PAIL: TODO: Magic Values
@@ -91,25 +97,40 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
         }
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public enum Type {
         STARTED_MOVE,
         INSTANT_MOVE

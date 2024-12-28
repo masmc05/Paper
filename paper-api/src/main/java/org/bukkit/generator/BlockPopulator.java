@@ -36,6 +36,7 @@ public abstract class BlockPopulator {
      * @param random The random generator to use
      * @param source The chunk to generate for
      * @deprecated Use {@link #populate(WorldInfo, Random, int, int, LimitedRegion)}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.17.1")
     public void populate(@NotNull World world, @NotNull Random random, @NotNull Chunk source) {

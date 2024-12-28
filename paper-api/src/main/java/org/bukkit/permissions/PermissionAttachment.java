@@ -34,6 +34,7 @@ public class PermissionAttachment {
      * Gets the plugin responsible for this attachment
      *
      * @return Plugin responsible for this permission attachment
+     * @since 1.0.0
      */
     @NotNull
     public Plugin getPlugin() {
@@ -45,6 +46,7 @@ public class PermissionAttachment {
      * {@link Permissible}. May be null.
      *
      * @param ex Object to be called when this is removed
+     * @since 1.0.0
      */
     public void setRemovalCallback(@Nullable PermissionRemovedExecutor ex) {
         removed = ex;
@@ -55,6 +57,7 @@ public class PermissionAttachment {
      * attachment was removed from a {@link Permissible}. May be null.
      *
      * @return Object to be called when this is removed
+     * @since 1.0.0
      */
     @Nullable
     public PermissionRemovedExecutor getRemovalCallback() {
@@ -65,6 +68,7 @@ public class PermissionAttachment {
      * Gets the Permissible that this is attached to
      *
      * @return Permissible containing this attachment
+     * @since 1.0.0
      */
     @NotNull
     public Permissible getPermissible() {
@@ -79,6 +83,7 @@ public class PermissionAttachment {
      * copy.
      *
      * @return Copy of all permissions and values expressed by this attachment
+     * @since 1.0.0
      */
     @NotNull
     public Map<String, Boolean> getPermissions() {
@@ -90,6 +95,7 @@ public class PermissionAttachment {
      *
      * @param name Name of the permission
      * @param value New value of the permission
+     * @since 1.0.0
      */
     public void setPermission(@NotNull String name, boolean value) {
         permissions.put(name.toLowerCase(Locale.ROOT), value);
@@ -101,6 +107,7 @@ public class PermissionAttachment {
      *
      * @param perm Permission to set
      * @param value New value of the permission
+     * @since 1.0.0
      */
     public void setPermission(@NotNull Permission perm, boolean value) {
         setPermission(perm.getName(), value);
@@ -113,6 +120,7 @@ public class PermissionAttachment {
      * happen.
      *
      * @param name Name of the permission to remove
+     * @since 1.0.0
      */
     public void unsetPermission(@NotNull String name) {
         permissions.remove(name.toLowerCase(Locale.ROOT));
@@ -126,6 +134,7 @@ public class PermissionAttachment {
      * happen.
      *
      * @param perm Permission to remove
+     * @since 1.0.0
      */
     public void unsetPermission(@NotNull Permission perm) {
         unsetPermission(perm.getName());
@@ -136,6 +145,7 @@ public class PermissionAttachment {
      *
      * @return true if the permissible was removed successfully, false if it
      *     did not exist
+     * @since 1.0.0
      */
     public boolean remove() {
         try {

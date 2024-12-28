@@ -81,6 +81,7 @@ public class Conversation {
      * Gets the entity for whom this conversation is mediating.
      *
      * @return The entity.
+     * @since 1.1.0
      */
     @NotNull
     public Conversable getForWhom() {
@@ -93,6 +94,7 @@ public class Conversation {
      * conversation.
      *
      * @return The conversation modality.
+     * @since 1.1.0
      */
     public boolean isModal() {
         return modal;
@@ -138,6 +140,7 @@ public class Conversation {
      * conversation.
      *
      * @return The ConversationPrefix in use.
+     * @since 1.1.0
      */
     @NotNull
     public ConversationPrefix getPrefix() {
@@ -168,6 +171,7 @@ public class Conversation {
      * Gets the list of {@link ConversationCanceller}s
      *
      * @return The list.
+     * @since 1.1.0
      */
     @NotNull
     public List<ConversationCanceller> getCancellers() {
@@ -178,6 +182,7 @@ public class Conversation {
      * Returns the Conversation's {@link ConversationContext}.
      *
      * @return The ConversationContext.
+     * @since 1.1.0
      */
     @NotNull
     public ConversationContext getContext() {
@@ -187,6 +192,8 @@ public class Conversation {
     /**
      * Displays the first prompt of this conversation and begins redirecting
      * the user's chat responses.
+     *
+     * @since 1.1.0
      */
     public void begin() {
         if (currentPrompt == null) {
@@ -200,6 +207,7 @@ public class Conversation {
      * Returns Returns the current state of the conversation.
      *
      * @return The current state of the conversation.
+     * @since 1.1.0
      */
     @NotNull
     public ConversationState getState() {
@@ -217,6 +225,7 @@ public class Conversation {
      * determined by the current prompt) is then displayed to the user.
      *
      * @param input The user's chat text.
+     * @since 1.1.0
      */
     public void acceptInput(@NotNull String input) {
         if (currentPrompt != null) {
@@ -263,6 +272,8 @@ public class Conversation {
     /**
      * Abandons and resets the current conversation. Restores the user's
      * normal chat behavior.
+     *
+     * @since 1.1.0
      */
     public void abandon() {
         abandon(new ConversationAbandonedEvent(this, new ManuallyAbandonedConversationCanceller()));
@@ -289,6 +300,8 @@ public class Conversation {
     /**
      * Displays the next user prompt and abandons the conversation if the next
      * prompt is null.
+     *
+     * @since 1.1.0
      */
     public void outputNextPrompt() {
         if (currentPrompt == null) {
@@ -302,6 +315,9 @@ public class Conversation {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     public enum ConversationState {
         UNSTARTED,
         STARTED,

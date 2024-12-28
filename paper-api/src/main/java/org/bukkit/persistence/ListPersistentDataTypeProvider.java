@@ -36,6 +36,7 @@ public final class ListPersistentDataTypeProvider {
      * storing lists of bytes.
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public ListPersistentDataType<Byte, Byte> bytes() {
@@ -47,6 +48,7 @@ public final class ListPersistentDataTypeProvider {
      * storing lists of shorts.
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public ListPersistentDataType<Short, Short> shorts() {
@@ -58,6 +60,7 @@ public final class ListPersistentDataTypeProvider {
      * storing lists of integers.
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public ListPersistentDataType<Integer, Integer> integers() {
@@ -69,6 +72,7 @@ public final class ListPersistentDataTypeProvider {
      * storing lists of longs.
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public ListPersistentDataType<Long, Long> longs() {
@@ -80,6 +84,7 @@ public final class ListPersistentDataTypeProvider {
      * storing lists of floats.
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public ListPersistentDataType<Float, Float> floats() {
@@ -91,6 +96,7 @@ public final class ListPersistentDataTypeProvider {
      * storing lists of doubles.
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public ListPersistentDataType<Double, Double> doubles() {
@@ -102,6 +108,7 @@ public final class ListPersistentDataTypeProvider {
      * storing lists of booleans.
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public ListPersistentDataType<Byte, Boolean> booleans() {
@@ -113,6 +120,7 @@ public final class ListPersistentDataTypeProvider {
      * storing lists of strings.
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public ListPersistentDataType<String, String> strings() {
@@ -124,6 +132,7 @@ public final class ListPersistentDataTypeProvider {
      * storing lists of byte arrays.
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public ListPersistentDataType<byte[], byte[]> byteArrays() {
@@ -135,6 +144,7 @@ public final class ListPersistentDataTypeProvider {
      * storing lists of int arrays.
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public ListPersistentDataType<int[], int[]> integerArrays() {
@@ -146,6 +156,7 @@ public final class ListPersistentDataTypeProvider {
      * storing lists of long arrays.
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public ListPersistentDataType<long[], long[]> longArrays() {
@@ -157,6 +168,7 @@ public final class ListPersistentDataTypeProvider {
      * persistent data containers..
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public ListPersistentDataType<PersistentDataContainer, PersistentDataContainer> dataContainers() {
@@ -173,6 +185,7 @@ public final class ListPersistentDataTypeProvider {
      * @param <C> the generic type of the complex values yielded back by the
      * persistent data types.
      * @return the created list persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     public <P, C> ListPersistentDataType<P, C> listTypeFrom(@NotNull final PersistentDataType<P, C> elementType) {

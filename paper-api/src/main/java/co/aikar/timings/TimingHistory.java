@@ -54,6 +54,7 @@ import static co.aikar.util.JSONUtil.*;
  * Internal.
  *
  * @deprecated Timings will be removed in the future
+ * @since 1.9.4
  */
 @Deprecated(forRemoval = true)
 @SuppressWarnings({"deprecation", "SuppressionAnnotation", "Convert2Lambda", "Anonymous2MethodRef"})
@@ -345,11 +346,20 @@ public class TimingHistory {
     }
 
 
+    /**
+     * @since 1.9.4
+     */
     private static class Counter {
         private int count = 0;
+        /**
+         * @since 1.9.4
+         */
         public int increment() {
             return ++count;
         }
+        /**
+         * @since 1.9.4
+         */
         public int count() {
             return count;
         }

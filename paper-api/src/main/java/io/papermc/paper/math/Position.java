@@ -25,6 +25,7 @@ public interface Position {
      * Gets the block x value for this position
      *
      * @return the block x value
+     * @since 1.19.3
      */
     int blockX();
 
@@ -32,6 +33,7 @@ public interface Position {
      * Gets the block x value for this position
      *
      * @return the block x value
+     * @since 1.19.3
      */
     int blockY();
 
@@ -39,6 +41,7 @@ public interface Position {
      * Gets the block x value for this position
      *
      * @return the block x value
+     * @since 1.19.3
      */
     int blockZ();
 
@@ -46,6 +49,7 @@ public interface Position {
      * Gets the x value for this position
      *
      * @return the x value
+     * @since 1.19.3
      */
     double x();
 
@@ -53,6 +57,7 @@ public interface Position {
      * Gets the y value for this position
      *
      * @return the y value
+     * @since 1.19.3
      */
     double y();
 
@@ -60,6 +65,7 @@ public interface Position {
      * Gets the z value for this position
      *
      * @return the z value
+     * @since 1.19.3
      */
     double z();
 
@@ -67,6 +73,7 @@ public interface Position {
      * Checks of this position represents a {@link BlockPosition}
      *
      * @return true if block
+     * @since 1.19.3
      */
     boolean isBlock();
 
@@ -74,6 +81,7 @@ public interface Position {
      * Checks if this position represents a {@link FinePosition}
      *
      * @return true if fine
+     * @since 1.19.3
      */
     boolean isFine();
 
@@ -93,6 +101,7 @@ public interface Position {
      * @param y y value to offset
      * @param z z value to offset
      * @return the offset position
+     * @since 1.19.3
      */
     Position offset(int x, int y, int z);
 
@@ -103,6 +112,7 @@ public interface Position {
      * @param y y value to offset
      * @param z z value to offset
      * @return the offset position
+     * @since 1.19.3
      */
     FinePosition offset(double x, double y, double z);
 
@@ -110,6 +120,7 @@ public interface Position {
      * Returns a new position at the center of the block position this represents
      *
      * @return a new center position
+     * @since 1.19.3
      */
     @Contract(value = "-> new", pure = true)
     default FinePosition toCenter() {
@@ -121,6 +132,7 @@ public interface Position {
      * or itself if it already is a block position
      *
      * @return the block position
+     * @since 1.19.3
      */
     @Contract(pure = true)
     BlockPosition toBlock();
@@ -129,6 +141,7 @@ public interface Position {
      * Converts this position to a vector
      *
      * @return a new vector
+     * @since 1.19.3
      */
     @Contract(value = "-> new", pure = true)
     default Vector toVector() {
@@ -140,6 +153,7 @@ public interface Position {
      *
      * @param world the world for the location object
      * @return a new location
+     * @since 1.19.3
      */
     @Contract(value = "_ -> new", pure = true)
     default Location toLocation(final World world) {
@@ -153,6 +167,7 @@ public interface Position {
      * @param y y coord
      * @param z z coord
      * @return a position with those coords
+     * @since 1.19.3
      */
     @Contract(value = "_, _, _ -> new", pure = true)
     static BlockPosition block(final int x, final int y, final int z) {
@@ -164,6 +179,7 @@ public interface Position {
      *
      * @param location the location to copy the position of
      * @return a new position at that location
+     * @since 1.19.3
      */
     @Contract(value = "_ -> new", pure = true)
     static BlockPosition block(final Location location) {
@@ -177,6 +193,7 @@ public interface Position {
      * @param y y coord
      * @param z z coord
      * @return a position with those coords
+     * @since 1.19.3
      */
     @Contract(value = "_, _, _ -> new", pure = true)
     static FinePosition fine(final double x, final double y, final double z) {
@@ -188,6 +205,7 @@ public interface Position {
      *
      * @param location the location to copy the position of
      * @return a new position at that location
+     * @since 1.19.3
      */
     @Contract(value = "_ -> new", pure = true)
     static FinePosition fine(final Location location) {

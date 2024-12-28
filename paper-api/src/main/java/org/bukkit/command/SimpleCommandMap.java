@@ -54,6 +54,8 @@ public class SimpleCommandMap implements CommandMap {
 
     /**
      * {@inheritDoc}
+     *
+     * @since 1.0.0
      */
     @Override
     public void registerAll(@NotNull String fallbackPrefix, @NotNull List<Command> commands) {
@@ -66,6 +68,8 @@ public class SimpleCommandMap implements CommandMap {
 
     /**
      * {@inheritDoc}
+     *
+     * @since 1.0.0
      */
     @Override
     public boolean register(@NotNull String fallbackPrefix, @NotNull Command command) {
@@ -74,6 +78,8 @@ public class SimpleCommandMap implements CommandMap {
 
     /**
      * {@inheritDoc}
+     *
+     * @since 1.0.0
      */
     @Override
     public boolean register(@NotNull String label, @NotNull String fallbackPrefix, @NotNull Command command) {
@@ -143,6 +149,8 @@ public class SimpleCommandMap implements CommandMap {
 
     /**
      * {@inheritDoc}
+     *
+     * @since 1.0.0
      */
     @Override
     public boolean dispatch(@NotNull CommandSender sender, @NotNull String commandLine) throws CommandException {
@@ -185,6 +193,9 @@ public class SimpleCommandMap implements CommandMap {
         return true;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public synchronized void clearCommands() {
         for (Map.Entry<String, Command> entry : knownCommands.entrySet()) {
@@ -194,6 +205,9 @@ public class SimpleCommandMap implements CommandMap {
         setDefaultCommands();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @Nullable
     public Command getCommand(@NotNull String name) {
@@ -277,6 +291,9 @@ public class SimpleCommandMap implements CommandMap {
         return Collections.unmodifiableCollection(knownCommands.values());
     }
 
+    /**
+     * @since 1.0.0
+     */
     public void registerServerAliases() {
         Map<String, String[]> values = server.getCommandAliases();
 

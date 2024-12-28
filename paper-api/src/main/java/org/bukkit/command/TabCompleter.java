@@ -23,6 +23,7 @@ public interface TabCompleter {
      *     partial argument to be completed
      * @return A List of possible completions for the final argument, or null
      *     to default to the command executor
+     * @since 1.3.2
      */
     @Nullable
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args);

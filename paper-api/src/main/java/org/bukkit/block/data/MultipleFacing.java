@@ -22,6 +22,7 @@ public interface MultipleFacing extends BlockData {
      *
      * @param face to check
      * @return if face is enabled
+     * @since 1.13
      */
     boolean hasFace(@NotNull BlockFace face);
 
@@ -30,6 +31,7 @@ public interface MultipleFacing extends BlockData {
      *
      * @param face to set
      * @param has the face
+     * @since 1.13
      */
     void setFace(@NotNull BlockFace face, boolean has);
 
@@ -37,6 +39,7 @@ public interface MultipleFacing extends BlockData {
      * Get all of the faces which are enabled on this block.
      *
      * @return all faces enabled
+     * @since 1.13
      */
     @NotNull
     Set<BlockFace> getFaces();
@@ -45,6 +48,7 @@ public interface MultipleFacing extends BlockData {
      * Gets all of this faces which may be set on this block.
      *
      * @return all allowed faces
+     * @since 1.13
      */
     @NotNull
     Set<BlockFace> getAllowedFaces();

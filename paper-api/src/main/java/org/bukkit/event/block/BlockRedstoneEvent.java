@@ -24,6 +24,7 @@ public class BlockRedstoneEvent extends BlockEvent {
      * Gets the old current of this block
      *
      * @return The previous current
+     * @since 1.0.0
      */
     public int getOldCurrent() {
         return oldCurrent;
@@ -33,6 +34,7 @@ public class BlockRedstoneEvent extends BlockEvent {
      * Gets the new current of this block
      *
      * @return The new current
+     * @since 1.0.0
      */
     public int getNewCurrent() {
         return newCurrent;
@@ -42,6 +44,7 @@ public class BlockRedstoneEvent extends BlockEvent {
      * Sets the new current of this block
      *
      * @param newCurrent The new current to set
+     * @since 1.0.0
      */
     public void setNewCurrent(int newCurrent) {
         this.newCurrent = newCurrent;

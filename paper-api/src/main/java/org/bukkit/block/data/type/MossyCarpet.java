@@ -20,6 +20,7 @@ public interface MossyCarpet extends BlockData {
      * Gets the value of the 'bottom' property.
      *
      * @return the 'bottom' value
+     * @since 1.21.3
      */
     boolean isBottom();
 
@@ -27,6 +28,7 @@ public interface MossyCarpet extends BlockData {
      * Sets the value of the 'bottom' property.
      *
      * @param bottom the new 'bottom' value
+     * @since 1.21.3
      */
     void setBottom(boolean bottom);
 
@@ -35,6 +37,7 @@ public interface MossyCarpet extends BlockData {
      *
      * @param face to check
      * @return if face is enabled
+     * @since 1.21.3
      */
     @NotNull
     Height getHeight(@NotNull BlockFace face);
@@ -49,6 +52,8 @@ public interface MossyCarpet extends BlockData {
 
     /**
      * The different heights a face may have.
+     *
+     * @since 1.21.3
      */
     public enum Height {
         /**

@@ -36,6 +36,7 @@ public class TransmuteRecipe extends CraftingRecipe implements ComplexRecipe {
      * Gets the input material, which will be transmuted.
      *
      * @return the input from transmutation
+     * @since 1.21.3
      */
     @NotNull
     public RecipeChoice getInput() {
@@ -46,6 +47,7 @@ public class TransmuteRecipe extends CraftingRecipe implements ComplexRecipe {
      * Gets the additional material required to cause the transmutation.
      *
      * @return the ingredient material
+     * @since 1.21.3
      */
     @NotNull
     public RecipeChoice getMaterial() {

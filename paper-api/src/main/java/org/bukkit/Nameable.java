@@ -44,6 +44,7 @@ public interface Nameable {
      *
      * @deprecated in favour of {@link #customName()}
      * @return name of the mob/block or null
+     * @since 1.11
      */
     @Deprecated // Paper
     @Nullable
@@ -60,6 +61,7 @@ public interface Nameable {
      *
      * @deprecated in favour of {@link #customName(net.kyori.adventure.text.Component)}
      * @param name the name to set
+     * @since 1.11
      */
     @Deprecated // Paper
     public void setCustomName(@Nullable String name);

@@ -8,6 +8,7 @@ import org.bukkit.SandstoneType;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.3.1
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Sandstone extends MaterialData {
@@ -38,6 +39,7 @@ public class Sandstone extends MaterialData {
      * Gets the current type of this sandstone
      *
      * @return SandstoneType of this sandstone
+     * @since 1.3.1
      */
     public SandstoneType getType() {
         return SandstoneType.getByData(getData());
@@ -47,6 +49,7 @@ public class Sandstone extends MaterialData {
      * Sets the type of this sandstone
      *
      * @param type New type of this sandstone
+     * @since 1.3.1
      */
     public void setType(SandstoneType type) {
         setData(type.getData());

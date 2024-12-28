@@ -61,11 +61,17 @@ public class EntityDamageEvent extends EntityEvent implements Cancellable {
         this.damageSource = damageSource;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
@@ -139,6 +145,7 @@ public class EntityDamageEvent extends EntityEvent implements Cancellable {
      *
      * @return The raw amount of damage caused by the event
      * @see DamageModifier#BASE
+     * @since 1.0.0
      */
     public double getDamage() {
         return getDamage(DamageModifier.BASE);
@@ -209,6 +216,7 @@ public class EntityDamageEvent extends EntityEvent implements Cancellable {
      * is required.
      *
      * @return a DamageCause value detailing the cause of the damage.
+     * @since 1.0.0
      */
     @NotNull
     public DamageCause getCause() {
@@ -303,6 +311,8 @@ public class EntityDamageEvent extends EntityEvent implements Cancellable {
 
     /**
      * An enum to specify the cause of the damage
+     *
+     * @since 1.0.0
      */
     public enum DamageCause {
 

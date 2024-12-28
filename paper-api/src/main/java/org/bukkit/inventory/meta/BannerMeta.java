@@ -13,6 +13,7 @@ public interface BannerMeta extends ItemMeta {
      * Returns a list of patterns on this banner
      *
      * @return the patterns
+     * @since 1.8
      */
     @NotNull
     List<Pattern> getPatterns();
@@ -21,6 +22,7 @@ public interface BannerMeta extends ItemMeta {
      * Sets the patterns used on this banner
      *
      * @param patterns the new list of patterns
+     * @since 1.8
      */
     void setPatterns(@NotNull List<Pattern> patterns);
 
@@ -29,6 +31,7 @@ public interface BannerMeta extends ItemMeta {
      * patterns
      *
      * @param pattern the new pattern to add
+     * @since 1.8
      */
     void addPattern(@NotNull Pattern pattern);
 
@@ -38,6 +41,7 @@ public interface BannerMeta extends ItemMeta {
      * @param i the index
      * @return the pattern
      * @throws IndexOutOfBoundsException when index is not in [0, numberOfPatterns()) range
+     * @since 1.8
      */
     @NotNull
     Pattern getPattern(int i);
@@ -48,6 +52,7 @@ public interface BannerMeta extends ItemMeta {
      * @param i the index
      * @return the removed pattern
      * @throws IndexOutOfBoundsException when index is not in [0, numberOfPatterns()) range
+     * @since 1.8
      */
     @NotNull
     Pattern removePattern(int i);
@@ -58,6 +63,7 @@ public interface BannerMeta extends ItemMeta {
      * @param i       the index
      * @param pattern the new pattern
      * @throws IndexOutOfBoundsException when index is not in [0, numberOfPatterns()) range
+     * @since 1.8
      */
     void setPattern(int i, @NotNull Pattern pattern);
 
@@ -66,6 +72,7 @@ public interface BannerMeta extends ItemMeta {
      * banner
      *
      * @return the number of patterns
+     * @since 1.8
      */
     int numberOfPatterns();
 }

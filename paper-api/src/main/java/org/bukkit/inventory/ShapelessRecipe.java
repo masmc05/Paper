@@ -47,6 +47,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param ingredient The ingredient to add.
      * @return The changed recipe, so you can chain calls.
      * @deprecated use {@link #addIngredient(RecipeChoice)}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated
@@ -59,6 +60,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      *
      * @param ingredient The ingredient to add.
      * @return The changed recipe, so you can chain calls.
+     * @since 1.0.0
      */
     @NotNull
     public ShapelessRecipe addIngredient(@NotNull Material ingredient) {
@@ -72,6 +74,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param rawdata The data value, or -1 to allow any data value.
      * @return The changed recipe, so you can chain calls.
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -86,6 +89,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param ingredient The ingredient to add.
      * @return The changed recipe, so you can chain calls.
      * @deprecated use {@link #addIngredient(int, Material)}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -99,6 +103,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param count How many to add (can't be more than 9!)
      * @param ingredient The ingredient to add.
      * @return The changed recipe, so you can chain calls.
+     * @since 1.0.0
      */
     @NotNull
     public ShapelessRecipe addIngredient(int count, @NotNull Material ingredient) {
@@ -113,6 +118,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param rawdata The data value, or -1 to allow any data value.
      * @return The changed recipe, so you can chain calls.
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -225,6 +231,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param ingredient The ingredient to remove
      * @return The changed recipe.
      * @deprecated use {@link #removeIngredient(Material)}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -312,6 +319,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      *
      * @return The input list
      * @deprecated Use {@link #getChoiceList()} instead for more complete data.
+     * @since 1.0.0
      */
     @Deprecated // Paper
     @NotNull

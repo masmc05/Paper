@@ -27,6 +27,7 @@ public class VillagerAcquireTradeEvent extends EntityEvent implements Cancellabl
      * Get the recipe to be acquired.
      *
      * @return the new recipe
+     * @since 1.9.4
      */
     @NotNull
     public MerchantRecipe getRecipe() {
@@ -37,33 +38,49 @@ public class VillagerAcquireTradeEvent extends EntityEvent implements Cancellabl
      * Set the recipe to be acquired.
      *
      * @param recipe the new recipe
+     * @since 1.9.4
      */
     public void setRecipe(@NotNull MerchantRecipe recipe) {
         this.recipe = recipe;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public AbstractVillager getEntity() {
         return (AbstractVillager) super.getEntity();
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -15,12 +15,16 @@ public abstract class PotionEffectTypeWrapper extends PotionEffectType {
      * Get the potion type bound to this wrapper.
      *
      * @return The potion effect type
+     * @since 1.1.0
      */
     @NotNull
     public PotionEffectType getType() {
         return this;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isInstant() {
         return getType().isInstant();

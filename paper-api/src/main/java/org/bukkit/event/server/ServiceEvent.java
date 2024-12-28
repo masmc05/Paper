@@ -16,6 +16,9 @@ public abstract class ServiceEvent extends ServerEvent {
         this.provider = provider;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public RegisteredServiceProvider<?> getProvider() {
         return provider;

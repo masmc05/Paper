@@ -25,6 +25,9 @@ public class EnderDragonChangePhaseEvent extends EntityEvent implements Cancella
         this.setNewPhase(newPhase);
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public EnderDragon getEntity() {
@@ -36,6 +39,7 @@ public class EnderDragonChangePhaseEvent extends EntityEvent implements Cancella
      * when a dragon is first spawned and hasn't yet been assigned a phase.
      *
      * @return the current dragon phase
+     * @since 1.9.4
      */
     @Nullable
     public EnderDragon.Phase getCurrentPhase() {
@@ -46,6 +50,7 @@ public class EnderDragonChangePhaseEvent extends EntityEvent implements Cancella
      * Gets the new phase that the dragon will switch to.
      *
      * @return the new dragon phase
+     * @since 1.9.4
      */
     @NotNull
     public EnderDragon.Phase getNewPhase() {
@@ -62,22 +67,34 @@ public class EnderDragonChangePhaseEvent extends EntityEvent implements Cancella
         this.newPhase = newPhase;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

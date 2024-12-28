@@ -22,6 +22,7 @@ public interface Levelled extends BlockData {
      * Gets the value of the 'level' property.
      *
      * @return the 'level' value
+     * @since 1.13
      */
     int getLevel();
 
@@ -29,6 +30,7 @@ public interface Levelled extends BlockData {
      * Sets the value of the 'level' property.
      *
      * @param level the new 'level' value
+     * @since 1.13
      */
     void setLevel(int level);
 
@@ -36,6 +38,7 @@ public interface Levelled extends BlockData {
      * Gets the maximum allowed value of the 'level' property.
      *
      * @return the maximum 'level' value
+     * @since 1.13
      */
     int getMaximumLevel();
 

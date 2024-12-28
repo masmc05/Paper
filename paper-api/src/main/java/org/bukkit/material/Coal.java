@@ -8,6 +8,7 @@ import org.bukkit.Material;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Coal extends MaterialData {
@@ -38,6 +39,7 @@ public class Coal extends MaterialData {
      * Gets the current type of this coal
      *
      * @return CoalType of this coal
+     * @since 1.0.0
      */
     public CoalType getType() {
         return CoalType.getByData(getData());
@@ -47,6 +49,7 @@ public class Coal extends MaterialData {
      * Sets the type of this coal
      *
      * @param type New type of this coal
+     * @since 1.0.0
      */
     public void setType(CoalType type) {
         setData(type.getData());

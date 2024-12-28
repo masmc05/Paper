@@ -31,6 +31,7 @@ public interface EnchantmentRegistryEntry {
      * enchantment.
      *
      * @return the description component.
+     * @since 1.21
      */
     Component description();
 
@@ -38,6 +39,7 @@ public interface EnchantmentRegistryEntry {
      * Provides the registry key set referencing the items this enchantment is supported on.
      *
      * @return the registry key set.
+     * @since 1.21
      */
     RegistryKeySet<ItemType> supportedItems();
 
@@ -50,6 +52,7 @@ public interface EnchantmentRegistryEntry {
      * which enchantments can even show up in an enchantment table.
      *
      * @return the registry key set.
+     * @since 1.21
      */
     @Nullable RegistryKeySet<ItemType> primaryItems();
 
@@ -58,6 +61,7 @@ public interface EnchantmentRegistryEntry {
      *
      * @return the weight value.
      * @see <a href="https://minecraft.wiki/w/Enchanting">https://minecraft.wiki/w/Enchanting</a> for examplary weights.
+     * @since 1.21
      */
     @Range(from = 1, to = 1024) int weight();
 
@@ -65,6 +69,7 @@ public interface EnchantmentRegistryEntry {
      * Provides the maximum level this enchantment can have when applied.
      *
      * @return the maximum level.
+     * @since 1.21
      */
     @Range(from = 1, to = 255) int maxLevel();
 
@@ -76,6 +81,7 @@ public interface EnchantmentRegistryEntry {
      * @return the enchantment cost.
      * @see <a href="https://minecraft.wiki/w/Enchanting/Levels">https://minecraft.wiki/w/Enchanting/Levels</a> for
      * examplary costs.
+     * @since 1.21
      */
     EnchantmentCost minimumCost();
 
@@ -87,6 +93,7 @@ public interface EnchantmentRegistryEntry {
      * @return the enchantment cost.
      * @see <a href="https://minecraft.wiki/w/Enchanting/Levels">https://minecraft.wiki/w/Enchanting/Levels</a> for
      * examplary costs.
+     * @since 1.21
      */
     EnchantmentCost maximumCost();
 
@@ -99,6 +106,7 @@ public interface EnchantmentRegistryEntry {
      * </p>
      *
      * @return the anvil cost of this enchantment
+     * @since 1.21
      */
     @Range(from = 0, to = Integer.MAX_VALUE) int anvilCost();
 
@@ -110,6 +118,7 @@ public interface EnchantmentRegistryEntry {
      *
      * @return a list of equipment slot groups.
      * @see Enchantment#getActiveSlotGroups()
+     * @since 1.21
      */
     @Unmodifiable List<EquipmentSlotGroup> activeSlots();
 
@@ -120,6 +129,7 @@ public interface EnchantmentRegistryEntry {
      * said item.
      *
      * @return a registry set of enchantments exclusive to this one.
+     * @since 1.21
      */
     RegistryKeySet<Enchantment> exclusiveWith();
 
@@ -137,6 +147,8 @@ public interface EnchantmentRegistryEntry {
      *     <li>{@link #anvilCost(int)}</li>
      *     <li>{@link #activeSlots(Iterable)}</li>
      * </ul>
+     *
+     * @since 1.21
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -148,6 +160,7 @@ public interface EnchantmentRegistryEntry {
          *
          * @param description the description component.
          * @return this builder instance.
+         * @since 1.21
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder description(Component description);
@@ -164,6 +177,7 @@ public interface EnchantmentRegistryEntry {
          * @return this builder instance.
          * @see RegistrySet#keySet(RegistryKey, TypedKey[])
          * @see io.papermc.paper.registry.event.RegistryFreezeEvent#getOrCreateTag(TagKey)
+         * @since 1.21
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder supportedItems(RegistryKeySet<ItemType> supportedItems);
@@ -185,6 +199,7 @@ public interface EnchantmentRegistryEntry {
          * @return this builder instance.
          * @see RegistrySet#keySet(RegistryKey, TypedKey[])
          * @see io.papermc.paper.registry.event.RegistryFreezeEvent#getOrCreateTag(TagKey)
+         * @since 1.21
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder primaryItems(@Nullable RegistryKeySet<ItemType> primaryItems);
@@ -195,6 +210,7 @@ public interface EnchantmentRegistryEntry {
          * @param weight the weight value.
          * @return this builder instance.
          * @see <a href="https://minecraft.wiki/w/Enchanting">https://minecraft.wiki/w/Enchanting</a> for examplary weights.
+         * @since 1.21
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder weight(@Range(from = 1, to = 1024) int weight);
@@ -204,6 +220,7 @@ public interface EnchantmentRegistryEntry {
          *
          * @param maxLevel the maximum level.
          * @return this builder instance.
+         * @since 1.21
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder maxLevel(@Range(from = 1, to = 255) int maxLevel);
@@ -244,6 +261,7 @@ public interface EnchantmentRegistryEntry {
          * @param anvilCost the anvil cost of this enchantment
          * @return this builder instance.
          * @see Enchantment#getAnvilCost()
+         * @since 1.21
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder anvilCost(@Range(from = 0, to = Integer.MAX_VALUE) int anvilCost);
@@ -257,6 +275,7 @@ public interface EnchantmentRegistryEntry {
          * @param activeSlots a list of equipment slot groups.
          * @return this builder instance.
          * @see Enchantment#getActiveSlotGroups()
+         * @since 1.21
          */
         @Contract(value = "_ -> this", mutates = "this")
         default Builder activeSlots(final EquipmentSlotGroup... activeSlots) {
@@ -272,6 +291,7 @@ public interface EnchantmentRegistryEntry {
          * @param activeSlots a list of equipment slot groups.
          * @return this builder instance.
          * @see Enchantment#getActiveSlotGroups()
+         * @since 1.21
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder activeSlots(Iterable<EquipmentSlotGroup> activeSlots);
@@ -288,6 +308,7 @@ public interface EnchantmentRegistryEntry {
          * @return this builder instance.
          * @see RegistrySet#keySet(RegistryKey, TypedKey[])
          * @see io.papermc.paper.registry.event.RegistryFreezeEvent#getOrCreateTag(TagKey)
+         * @since 1.21
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder exclusiveWith(RegistryKeySet<Enchantment> exclusiveWith);
@@ -295,6 +316,8 @@ public interface EnchantmentRegistryEntry {
 
     /**
      * The enchantment cost interface represents the cost of applying an enchantment, split up into its different components.
+     *
+     * @since 1.21
      */
     interface EnchantmentCost {
 
@@ -302,6 +325,7 @@ public interface EnchantmentRegistryEntry {
          * Returns the base cost of this enchantment cost, no matter what level the enchantment has.
          *
          * @return the cost in levels.
+         * @since 1.21
          */
         int baseCost();
 
@@ -310,6 +334,7 @@ public interface EnchantmentRegistryEntry {
          * This cost is applied per level above the first.
          *
          * @return the cost added to the {@link #baseCost()} for each level above the first.
+         * @since 1.21
          */
         int additionalPerLevelCost();
 
@@ -319,6 +344,7 @@ public interface EnchantmentRegistryEntry {
          * @param baseCost the base cost of the enchantment cost as returned by {@link #baseCost()}
          * @param additionalPerLevelCost the additional cost per level, as returned by {@link #additionalPerLevelCost()}
          * @return the created instance.
+         * @since 1.21
          */
         @Contract(value = "_,_ -> new", pure = true)
         static EnchantmentCost of(final int baseCost, final int additionalPerLevelCost) {

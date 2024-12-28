@@ -46,6 +46,7 @@ public class EntityRegainHealthEvent extends EntityEvent implements Cancellable 
      * Gets the amount of regained health
      *
      * @return The amount of health regained
+     * @since 1.0.0
      */
     public double getAmount() {
         return amount;
@@ -61,11 +62,17 @@ public class EntityRegainHealthEvent extends EntityEvent implements Cancellable 
         this.amount = amount;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
@@ -76,6 +83,7 @@ public class EntityRegainHealthEvent extends EntityEvent implements Cancellable 
      *
      * @return A RegainReason detailing the reason for the entity regaining
      *     health
+     * @since 1.0.0
      */
     @NotNull
     public RegainReason getRegainReason() {
@@ -101,6 +109,8 @@ public class EntityRegainHealthEvent extends EntityEvent implements Cancellable 
 
     /**
      * An enum to specify the type of health regaining that is occurring
+     *
+     * @since 1.0.0
      */
     public enum RegainReason {
 

@@ -39,6 +39,7 @@ public class PlayerLecternPageChangeEvent extends PlayerEvent implements Cancell
      * Gets the lectern involved.
      *
      * @return the Lectern
+     * @since 1.16.4
      */
     public Lectern getLectern() {
         return this.lectern;
@@ -48,6 +49,7 @@ public class PlayerLecternPageChangeEvent extends PlayerEvent implements Cancell
      * Gets the current ItemStack on the lectern.
      *
      * @return the ItemStack on the Lectern
+     * @since 1.16.4
      */
     public ItemStack getBook() {
         return this.book;
@@ -57,6 +59,7 @@ public class PlayerLecternPageChangeEvent extends PlayerEvent implements Cancell
      * Gets the page change direction. This is essentially returns which button the player clicked, left or right.
      *
      * @return the page change direction
+     * @since 1.16.4
      */
     public PageChangeDirection getPageChangeDirection() {
         return this.pageChangeDirection;
@@ -66,6 +69,7 @@ public class PlayerLecternPageChangeEvent extends PlayerEvent implements Cancell
      * Gets the page changed from. <i>Pages are 0-indexed.</i>
      *
      * @return the page changed from
+     * @since 1.16.4
      */
     public int getOldPage() {
         return this.oldPage;
@@ -75,6 +79,7 @@ public class PlayerLecternPageChangeEvent extends PlayerEvent implements Cancell
      * Gets the page changed to. <i>Pages are 0-indexed.</i>
      *
      * @return the page changed to
+     * @since 1.16.4
      */
     public int getNewPage() {
         return this.newPage;
@@ -85,30 +90,46 @@ public class PlayerLecternPageChangeEvent extends PlayerEvent implements Cancell
      * Page indices that are greater than the number of pages will show the last page.
      *
      * @param newPage the new paged changed to
+     * @since 1.16.4
      */
     public void setNewPage(final int newPage) {
         this.newPage = newPage;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public enum PageChangeDirection {
         LEFT,
         RIGHT,

@@ -17,6 +17,9 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface FoodProperties extends BuildableDataComponent<FoodProperties, FoodProperties.Builder> {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static FoodProperties.Builder food() {
         return ItemComponentTypesBridge.bridge().food();
@@ -26,6 +29,7 @@ public interface FoodProperties extends BuildableDataComponent<FoodProperties, F
      * Number of food points to restore when eaten.
      *
      * @return the nutrition
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @NonNegative int nutrition();
@@ -34,6 +38,7 @@ public interface FoodProperties extends BuildableDataComponent<FoodProperties, F
      * Amount of saturation to restore when eaten.
      *
      * @return the saturation
+     * @since 1.21.3
      */
     @Contract(pure = true)
     float saturation();
@@ -42,12 +47,15 @@ public interface FoodProperties extends BuildableDataComponent<FoodProperties, F
      * If {@code true}, this food can be eaten even if not hungry.
      *
      * @return can always be eaten
+     * @since 1.21.3
      */
     @Contract(pure = true)
     boolean canAlwaysEat();
 
     /**
      * Builder for {@link FoodProperties}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -60,6 +68,7 @@ public interface FoodProperties extends BuildableDataComponent<FoodProperties, F
          * @param canAlwaysEat true to allow always eating
          * @return the builder for chaining
          * @see #canAlwaysEat()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder canAlwaysEat(boolean canAlwaysEat);
@@ -70,6 +79,7 @@ public interface FoodProperties extends BuildableDataComponent<FoodProperties, F
          * @param saturation the saturation
          * @return the builder for chaining
          * @see #saturation()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder saturation(float saturation);
@@ -80,6 +90,7 @@ public interface FoodProperties extends BuildableDataComponent<FoodProperties, F
          * @param nutrition the nutrition, must be non-negative
          * @return the builder for chaining
          * @see #nutrition()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder nutrition(@NonNegative int nutrition);

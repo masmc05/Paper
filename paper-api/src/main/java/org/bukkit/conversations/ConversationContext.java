@@ -34,6 +34,7 @@ public class ConversationContext {
      * Gets the plugin that owns this conversation.
      *
      * @return The owning plugin.
+     * @since 1.1.0
      */
     @Nullable
     public Plugin getPlugin() {
@@ -44,6 +45,7 @@ public class ConversationContext {
      * Gets the subject of the conversation.
      *
      * @return The subject of the conversation.
+     * @since 1.1.0
      */
     @NotNull
     public Conversable getForWhom() {
@@ -70,6 +72,7 @@ public class ConversationContext {
      *
      * @param key The session data key.
      * @return The requested session data.
+     * @since 1.1.0
      */
     @Nullable
     public Object getSessionData(@NotNull Object key) {
@@ -83,6 +86,7 @@ public class ConversationContext {
      *
      * @param key The session data key.
      * @param value The session data value.
+     * @since 1.1.0
      */
     public void setSessionData(@NotNull Object key, @Nullable Object value) {
         sessionData.put(key, value);

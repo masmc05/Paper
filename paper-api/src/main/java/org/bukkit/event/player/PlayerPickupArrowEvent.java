@@ -23,6 +23,7 @@ public class PlayerPickupArrowEvent extends PlayerPickupItemEvent {
      * Get the arrow being picked up by the player
      *
      * @return The arrow being picked up
+     * @since 1.9.4
      */
     @NotNull
     public AbstractArrow getArrow() {

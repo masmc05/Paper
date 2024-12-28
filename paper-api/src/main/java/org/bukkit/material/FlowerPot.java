@@ -9,6 +9,7 @@ import org.bukkit.TreeSpecies;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.4.5
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class FlowerPot extends MaterialData {
@@ -39,6 +40,7 @@ public class FlowerPot extends MaterialData {
      *
      * @return material MaterialData for the block currently in the flower pot
      *     or null if empty
+     * @since 1.4.5
      */
     public MaterialData getContents() {
         switch (getData()) {
@@ -73,6 +75,7 @@ public class FlowerPot extends MaterialData {
      * Set the contents of the flower pot
      *
      * @param materialData MaterialData of the block to put in the flower pot.
+     * @since 1.4.5
      */
     public void setContents(MaterialData materialData) {
         Material mat = materialData.getItemType();

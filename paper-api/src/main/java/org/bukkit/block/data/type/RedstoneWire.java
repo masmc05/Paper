@@ -18,6 +18,7 @@ public interface RedstoneWire extends AnaloguePowerable {
      *
      * @param face to check
      * @return connection type
+     * @since 1.13
      */
     @NotNull
     Connection getFace(@NotNull BlockFace face);
@@ -34,12 +35,15 @@ public interface RedstoneWire extends AnaloguePowerable {
      * Gets all of this faces which may be set on this block.
      *
      * @return all allowed faces
+     * @since 1.13
      */
     @NotNull
     Set<BlockFace> getAllowedFaces();
 
     /**
      * The way in which a redstone wire can connect to an adjacent block face.
+     *
+     * @since 1.13
      */
     public enum Connection {
         /**

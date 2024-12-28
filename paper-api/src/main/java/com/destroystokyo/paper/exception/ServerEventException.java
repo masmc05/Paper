@@ -38,6 +38,7 @@ public class ServerEventException extends ServerPluginException {
      * Gets the listener which threw the exception
      *
      * @return event listener
+     * @since 1.9.4
      */
     public Listener getListener() {
         return listener;
@@ -47,6 +48,7 @@ public class ServerEventException extends ServerPluginException {
      * Gets the event which caused the exception
      *
      * @return event
+     * @since 1.9.4
      */
     public Event getEvent() {
         return event;

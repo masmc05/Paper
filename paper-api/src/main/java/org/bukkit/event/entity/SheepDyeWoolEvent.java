@@ -25,6 +25,9 @@ public class SheepDyeWoolEvent extends io.papermc.paper.event.entity.EntityDyeEv
         super(sheep, color, player); // Paper
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public Sheep getEntity() {

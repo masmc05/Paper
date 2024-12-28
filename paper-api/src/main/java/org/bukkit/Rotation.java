@@ -51,6 +51,7 @@ public enum Rotation {
      * Rotate clockwise by 90 degrees.
      *
      * @return the relative rotation
+     * @since 1.4.5
      */
     @NotNull
     public Rotation rotateClockwise() {
@@ -61,6 +62,7 @@ public enum Rotation {
      * Rotate counter-clockwise by 90 degrees.
      *
      * @return the relative rotation
+     * @since 1.4.5
      */
     @NotNull
     public Rotation rotateCounterClockwise() {

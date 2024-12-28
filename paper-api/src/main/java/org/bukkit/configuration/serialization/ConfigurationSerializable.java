@@ -32,6 +32,7 @@ public interface ConfigurationSerializable {
      * the {@link ConfigurationSerializable} interface javadocs.
      *
      * @return Map containing the current state of this class
+     * @since 1.0.0
      */
     @NotNull
     public Map<String, Object> serialize();

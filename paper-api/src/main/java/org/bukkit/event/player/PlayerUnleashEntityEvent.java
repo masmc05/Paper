@@ -41,6 +41,7 @@ public class PlayerUnleashEntityEvent extends EntityUnleashEvent implements Canc
      * Returns the player who is unleashing the entity.
      *
      * @return The player
+     * @since 1.6.2
      */
     @NotNull
     public Player getPlayer() {
@@ -58,11 +59,17 @@ public class PlayerUnleashEntityEvent extends EntityUnleashEvent implements Canc
         return hand;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

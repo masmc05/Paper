@@ -29,6 +29,10 @@ public class PluginLogger extends Logger {
         setLevel(Level.ALL);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.1.0
+     */
     @Override
     public void log(@NotNull LogRecord logRecord) {
         logRecord.setMessage(pluginName + logRecord.getMessage());

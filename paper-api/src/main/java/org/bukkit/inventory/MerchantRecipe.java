@@ -101,22 +101,34 @@ public class MerchantRecipe implements Recipe {
     }
     // Paper end
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public ItemStack getResult() {
         return result.clone(); // Paper
     }
 
+    /**
+     * @since 1.9.4
+     */
     public void addIngredient(@NotNull ItemStack item) {
         Preconditions.checkState(ingredients.size() < 2, "MerchantRecipe can only have maximum 2 ingredients");
         Preconditions.checkArgument(!item.isEmpty(), "Recipe cannot have an empty itemstack ingredient."); // Paper
         ingredients.add(item.clone());
     }
 
+    /**
+     * @since 1.9.4
+     */
     public void removeIngredient(int index) {
         ingredients.remove(index);
     }
 
+    /**
+     * @since 1.9.4
+     */
     public void setIngredients(@NotNull List<ItemStack> ingredients) {
         Preconditions.checkState(ingredients.size() <= 2, "MerchantRecipe can only have maximum 2 ingredients");
         this.ingredients = new ArrayList<ItemStack>();
@@ -126,6 +138,9 @@ public class MerchantRecipe implements Recipe {
         }
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public List<ItemStack> getIngredients() {
         List<ItemStack> copy = new ArrayList<ItemStack>();
@@ -224,6 +239,7 @@ public class MerchantRecipe implements Recipe {
      * Get the number of times this trade has been used.
      *
      * @return the number of uses
+     * @since 1.9.4
      */
     public int getUses() {
         return uses;
@@ -233,6 +249,7 @@ public class MerchantRecipe implements Recipe {
      * Set the number of times this trade has been used.
      *
      * @param uses the number of uses
+     * @since 1.9.4
      */
     public void setUses(int uses) {
         this.uses = uses;
@@ -242,6 +259,7 @@ public class MerchantRecipe implements Recipe {
      * Get the maximum number of uses this trade has.
      *
      * @return the maximum number of uses
+     * @since 1.9.4
      */
     public int getMaxUses() {
         return maxUses;
@@ -251,6 +269,7 @@ public class MerchantRecipe implements Recipe {
      * Set the maximum number of uses this trade has.
      *
      * @param maxUses the maximum number of time this trade can be used
+     * @since 1.9.4
      */
     public void setMaxUses(int maxUses) {
         this.maxUses = maxUses;
@@ -261,6 +280,7 @@ public class MerchantRecipe implements Recipe {
      *
      * @return whether to reward experience to the player for completing this
      * trade
+     * @since 1.9.4
      */
     public boolean hasExperienceReward() {
         return experienceReward;
@@ -271,6 +291,7 @@ public class MerchantRecipe implements Recipe {
      *
      * @param flag whether to reward experience to the player for completing
      * this trade
+     * @since 1.9.4
      */
     public void setExperienceReward(boolean flag) {
         this.experienceReward = flag;

@@ -15,6 +15,7 @@ public interface AttributeInstance {
      * The attribute pertaining to this instance.
      *
      * @return the attribute
+     * @since 1.9.4
      */
     @NotNull
     Attribute getAttribute();
@@ -23,6 +24,7 @@ public interface AttributeInstance {
      * Base value of this instance before modifiers are applied.
      *
      * @return base value
+     * @since 1.9.4
      */
     double getBaseValue();
 
@@ -30,6 +32,7 @@ public interface AttributeInstance {
      * Set the base value of this instance.
      *
      * @param value new base value
+     * @since 1.9.4
      */
     void setBaseValue(double value);
 
@@ -37,6 +40,7 @@ public interface AttributeInstance {
      * Get all modifiers present on this instance.
      *
      * @return a copied collection of all modifiers
+     * @since 1.9.4
      */
     @NotNull
     Collection<AttributeModifier> getModifiers();
@@ -65,6 +69,7 @@ public interface AttributeInstance {
      * @param uuid the UUID of the modifier
      * @return the modifier, if it exists
      * @deprecated use {@link #getModifier(net.kyori.adventure.key.Key)}, modifiers are no longer stored by UUID
+     * @since 1.20.2
      */
     @Deprecated(forRemoval = true, since = "1.21")
     @org.jetbrains.annotations.Nullable AttributeModifier getModifier(@NotNull java.util.UUID uuid);
@@ -74,6 +79,7 @@ public interface AttributeInstance {
      *
      * @param uuid the UUID of the modifier
      * @deprecated use {@link #removeModifier(net.kyori.adventure.key.Key)}, modifiers are no longer stored by UUID
+     * @since 1.20.2
      */
     @Deprecated(forRemoval = true, since = "1.21")
     void removeModifier(@NotNull java.util.UUID uuid);
@@ -83,6 +89,7 @@ public interface AttributeInstance {
      * Add a modifier to this instance.
      *
      * @param modifier to add
+     * @since 1.9.4
      */
     void addModifier(@NotNull AttributeModifier modifier);
 
@@ -101,6 +108,7 @@ public interface AttributeInstance {
      * Remove a modifier from this instance.
      *
      * @param modifier to remove
+     * @since 1.9.4
      */
     void removeModifier(@NotNull AttributeModifier modifier);
 
@@ -109,6 +117,7 @@ public interface AttributeInstance {
      * applied.
      *
      * @return the total attribute value
+     * @since 1.9.4
      */
     double getValue();
 

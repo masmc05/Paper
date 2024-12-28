@@ -26,6 +26,7 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
      * @param namespacedKey the key
      * @return the event or null
      * @deprecated Use {@link Registry#get(NamespacedKey)} instead.
+     * @since 1.19.3
      */
     @Nullable
     @Deprecated(since = "1.20.1")
@@ -38,6 +39,7 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
      *
      * @return the memoryKeys
      * @deprecated use {@link Registry#iterator()}.
+     * @since 1.19.3
      */
     @NotNull
     @Deprecated(since = "1.20.1")
@@ -54,6 +56,7 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
     /**
      * @deprecated use {@link Registry#getKey(Keyed)}, {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)},
      * and {@link io.papermc.paper.registry.RegistryKey#INSTRUMENT}. MusicInstruments can exist without a key.
+     * @since 1.19.3
      */
     @Deprecated(forRemoval = true, since = "1.20.5")
     @Override
@@ -62,6 +65,7 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
     /**
      * @deprecated use {@link Registry#getKey(Keyed)}, {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)},
      * and {@link io.papermc.paper.registry.RegistryKey#INSTRUMENT}. MusicInstruments can exist without a key.
+     * @since 1.21.3
      */
     @Deprecated(forRemoval = true, since = "1.20.5")
     @Override
@@ -75,6 +79,7 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
     /**
      * @deprecated this method assumes that the instrument description
      * always be a translatable component which is not guaranteed.
+     * @since 1.20.1
      */
     @Override
     @Deprecated(forRemoval = true)

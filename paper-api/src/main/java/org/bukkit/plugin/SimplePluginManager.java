@@ -43,6 +43,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Handles all plugin management from the Server
+ *
+ * @since 1.0.0
  */
 @Deprecated(forRemoval = true) // Paper - This implementation may be replaced in a future version of Paper.
 // Plugins may still reflect into this class to modify permission logic for the time being.
@@ -77,6 +79,7 @@ public final class SimplePluginManager implements PluginManager {
      * @param loader Class name of the PluginLoader to register
      * @throws IllegalArgumentException Thrown when the given Class is not a
      *     valid PluginLoader
+     * @since 1.0.0
      */
     @Override
     public void registerInterface(@NotNull Class<? extends PluginLoader> loader) throws IllegalArgumentException {
@@ -113,6 +116,7 @@ public final class SimplePluginManager implements PluginManager {
      *
      * @param directory Directory to check for plugins
      * @return A list of all plugins loaded
+     * @since 1.0.0
      */
     @Override
     @NotNull
@@ -120,6 +124,9 @@ public final class SimplePluginManager implements PluginManager {
         // Paper start - extra jars
         return this.loadPlugins(directory, java.util.Collections.emptyList());
     }
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     public Plugin[] loadPlugins(final @NotNull File directory, final @NotNull List<File> extraPluginJars) {
         // Paper end
@@ -150,6 +157,7 @@ public final class SimplePluginManager implements PluginManager {
      *
      * @param files List of files containing plugins to load
      * @return A list of all plugins loaded
+     * @since 1.20.6
      */
     @NotNull
     public Plugin[] loadPlugins(@NotNull File[] files) {
@@ -408,6 +416,7 @@ public final class SimplePluginManager implements PluginManager {
      *     valid plugin
      * @throws UnknownDependencyException If a required dependency could not
      *     be found
+     * @since 1.0.0
      */
     @Override
     @Nullable
@@ -468,6 +477,7 @@ public final class SimplePluginManager implements PluginManager {
      *
      * @param name Name of the plugin to check
      * @return Plugin if it exists, otherwise null
+     * @since 1.0.0
      */
     @Override
     @Nullable
@@ -476,6 +486,9 @@ public final class SimplePluginManager implements PluginManager {
         return lookupNames.get(name.replace(' ', '_').toLowerCase(java.util.Locale.ENGLISH)); // Paper
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @NotNull
     public synchronized Plugin[] getPlugins() {
@@ -490,6 +503,7 @@ public final class SimplePluginManager implements PluginManager {
      *
      * @param name Name of the plugin to check
      * @return true if the plugin is enabled, otherwise false
+     * @since 1.0.0
      */
     @Override
     public boolean isPluginEnabled(@NotNull String name) {
@@ -504,6 +518,7 @@ public final class SimplePluginManager implements PluginManager {
      *
      * @param plugin Plugin to check
      * @return true if the plugin is enabled, otherwise false
+     * @since 1.0.0
      */
     @Override
     public boolean isPluginEnabled(@Nullable Plugin plugin) {
@@ -515,6 +530,9 @@ public final class SimplePluginManager implements PluginManager {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void enablePlugin(@NotNull final Plugin plugin) {
         if (true) {this.paperPluginManager.enablePlugin(plugin); return;} // Paper
@@ -536,6 +554,9 @@ public final class SimplePluginManager implements PluginManager {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void disablePlugins() {
         if (true) {this.paperPluginManager.disablePlugins(); return;} // Paper
@@ -545,6 +566,9 @@ public final class SimplePluginManager implements PluginManager {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void disablePlugin(@NotNull final Plugin plugin) {
         if (true) {this.paperPluginManager.disablePlugin(plugin); return;} // Paper
@@ -602,6 +626,9 @@ public final class SimplePluginManager implements PluginManager {
     }
     // Paper end
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void clearPlugins() {
         if (true) {this.paperPluginManager.clearPlugins(); return;} // Paper
@@ -622,6 +649,7 @@ public final class SimplePluginManager implements PluginManager {
      * Calls an event with the given details.
      *
      * @param event Event details
+     * @since 1.0.0
      */
     @Override
     public void callEvent(@NotNull Event event) {
@@ -678,6 +706,9 @@ public final class SimplePluginManager implements PluginManager {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void registerEvents(@NotNull Listener listener, @NotNull Plugin plugin) {
         if (true) {this.paperPluginManager.registerEvents(listener, plugin); return;} // Paper
@@ -691,6 +722,9 @@ public final class SimplePluginManager implements PluginManager {
 
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void registerEvent(@NotNull Class<? extends Event> event, @NotNull Listener listener, @NotNull EventPriority priority, @NotNull EventExecutor executor, @NotNull Plugin plugin) {
         registerEvent(event, listener, priority, executor, plugin, false);
@@ -707,6 +741,7 @@ public final class SimplePluginManager implements PluginManager {
      * @param plugin Plugin to register
      * @param ignoreCancelled Do not call executor if event was already
      *     cancelled
+     * @since 1.1.0
      */
     @Override
     public void registerEvent(@NotNull Class<? extends Event> event, @NotNull Listener listener, @NotNull EventPriority priority, @NotNull EventExecutor executor, @NotNull Plugin plugin, boolean ignoreCancelled) {
@@ -760,6 +795,9 @@ public final class SimplePluginManager implements PluginManager {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @Nullable
     public Permission getPermission(@NotNull String name) {
@@ -767,12 +805,18 @@ public final class SimplePluginManager implements PluginManager {
         return permissions.get(name.toLowerCase(Locale.ROOT));
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void addPermission(@NotNull Permission perm) {
         if (true) {this.paperPluginManager.addPermission(perm); return;} // Paper
         addPermission(perm, true);
     }
 
+    /**
+     * @since 1.12
+     */
     @Deprecated(since = "1.12")
     public void addPermission(@NotNull Permission perm, boolean dirty) {
         if (true) {this.paperPluginManager.addPermission(perm); return;} // Paper - This just has a performance implication, use the better api to avoid this.
@@ -786,6 +830,9 @@ public final class SimplePluginManager implements PluginManager {
         calculatePermissionDefault(perm, dirty);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @NotNull
     public Set<Permission> getDefaultPermissions(boolean op) {
@@ -793,18 +840,27 @@ public final class SimplePluginManager implements PluginManager {
         return ImmutableSet.copyOf(defaultPerms.get(op));
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void removePermission(@NotNull Permission perm) {
         if (true) {this.paperPluginManager.removePermission(perm); return;} // Paper
         removePermission(perm.getName());
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void removePermission(@NotNull String name) {
         if (true) {this.paperPluginManager.removePermission(name); return;} // Paper
         permissions.remove(name.toLowerCase(Locale.ROOT));
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void recalculatePermissionDefaults(@NotNull Permission perm) {
         if (true) {this.paperPluginManager.recalculatePermissionDefaults(perm); return;} // Paper
@@ -831,6 +887,9 @@ public final class SimplePluginManager implements PluginManager {
         }
     }
 
+    /**
+     * @since 1.12
+     */
     @Deprecated(since = "1.12")
     public void dirtyPermissibles() {
         dirtyPermissibles(true);
@@ -845,6 +904,9 @@ public final class SimplePluginManager implements PluginManager {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void subscribeToPermission(@NotNull String permission, @NotNull Permissible permissible) {
         if (true) {this.paperPluginManager.subscribeToPermission(permission, permissible); return;} // Paper
@@ -859,6 +921,9 @@ public final class SimplePluginManager implements PluginManager {
         map.put(permissible, true);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void unsubscribeFromPermission(@NotNull String permission, @NotNull Permissible permissible) {
         if (true) {this.paperPluginManager.unsubscribeFromPermission(permission, permissible); return;} // Paper
@@ -874,6 +939,9 @@ public final class SimplePluginManager implements PluginManager {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @NotNull
     public Set<Permissible> getPermissionSubscriptions(@NotNull String permission) {
@@ -888,6 +956,9 @@ public final class SimplePluginManager implements PluginManager {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void subscribeToDefaultPerms(boolean op, @NotNull Permissible permissible) {
         if (true) {this.paperPluginManager.subscribeToDefaultPerms(op, permissible); return;} // Paper
@@ -901,6 +972,9 @@ public final class SimplePluginManager implements PluginManager {
         map.put(permissible, true);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void unsubscribeFromDefaultPerms(boolean op, @NotNull Permissible permissible) {
         if (true) {this.paperPluginManager.unsubscribeFromDefaultPerms(op, permissible); return;} // Paper
@@ -915,6 +989,9 @@ public final class SimplePluginManager implements PluginManager {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @NotNull
     public Set<Permissible> getDefaultPermSubscriptions(boolean op) {
@@ -928,6 +1005,9 @@ public final class SimplePluginManager implements PluginManager {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @NotNull
     public Set<Permission> getPermissions() {
@@ -935,6 +1015,9 @@ public final class SimplePluginManager implements PluginManager {
         return new HashSet<Permission>(permissions.values());
     }
 
+    /**
+     * @since 1.15.2
+     */
     public boolean isTransitiveDepend(@NotNull PluginDescriptionFile plugin, @NotNull PluginDescriptionFile depend) {
         Preconditions.checkArgument(plugin != null, "plugin");
         Preconditions.checkArgument(depend != null, "depend");
@@ -953,6 +1036,9 @@ public final class SimplePluginManager implements PluginManager {
         return false;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean useTimings() {
         if (true) {return this.paperPluginManager.useTimings();} // Paper
@@ -963,12 +1049,16 @@ public final class SimplePluginManager implements PluginManager {
      * Sets whether or not per event timing code should be used
      *
      * @param use True if per event timing code should be used
+     * @since 1.1.0
      */
     @Deprecated(forRemoval = true)
     public void useTimings(boolean use) {
         co.aikar.timings.Timings.setTimingsEnabled(use); // Paper
     }
 
+    /**
+     * @since 1.9.4
+     */
     // Paper start
     public void clearPermissions() {
         if (true) {this.paperPluginManager.clearPermissions(); return;} // Paper
@@ -977,16 +1067,25 @@ public final class SimplePluginManager implements PluginManager {
         defaultPerms.get(false).clear();
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public boolean isTransitiveDependency(io.papermc.paper.plugin.configuration.PluginMeta pluginMeta, io.papermc.paper.plugin.configuration.PluginMeta dependencyConfig) {
         return this.paperPluginManager.isTransitiveDependency(pluginMeta, dependencyConfig);
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public void overridePermissionManager(@NotNull Plugin plugin, @Nullable io.papermc.paper.plugin.PermissionManager permissionManager) {
         this.paperPluginManager.overridePermissionManager(plugin, permissionManager);
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public void addPermissions(@NotNull List<Permission> perm) {
         this.paperPluginManager.addPermissions(perm);

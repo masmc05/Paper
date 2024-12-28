@@ -30,17 +30,24 @@ public class EntityChangeBlockEvent extends EntityEvent implements Cancellable {
      * Gets the block the entity is changing
      *
      * @return the block that is changing
+     * @since 1.1.0
      */
     @NotNull
     public Block getBlock() {
         return block;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -50,6 +57,7 @@ public class EntityChangeBlockEvent extends EntityEvent implements Cancellable {
      * Gets the Material that the block is changing into
      *
      * @return the material that the block is changing into
+     * @since 1.1.0
      */
     @NotNull
     public Material getTo() {
@@ -67,12 +75,18 @@ public class EntityChangeBlockEvent extends EntityEvent implements Cancellable {
         return to.clone(); // Paper - clone because mutation isn't used
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -51,6 +51,7 @@ public class Transformation {
      * Gets the translation component of this transformation.
      *
      * @return translation component
+     * @since 1.19.4
      */
     @NotNull
     public Vector3f getTranslation() {
@@ -61,6 +62,7 @@ public class Transformation {
      * Gets the left rotation component of this transformation.
      *
      * @return left rotation component
+     * @since 1.19.4
      */
     @NotNull
     public Quaternionf getLeftRotation() {
@@ -71,6 +73,7 @@ public class Transformation {
      * Gets the scale component of this transformation.
      *
      * @return scale component
+     * @since 1.19.4
      */
     @NotNull
     public Vector3f getScale() {
@@ -81,6 +84,7 @@ public class Transformation {
      * Gets the right rotation component of this transformation.
      *
      * @return right rotation component
+     * @since 1.19.4
      */
     @NotNull
     public Quaternionf getRightRotation() {

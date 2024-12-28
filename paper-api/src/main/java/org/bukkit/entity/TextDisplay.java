@@ -16,6 +16,7 @@ public interface TextDisplay extends Display {
      *
      * @return the displayed text.
      * @deprecated in favour of {@link #text()}
+     * @since 1.19.4
      */
     @Nullable
     @Deprecated // Paper
@@ -26,6 +27,7 @@ public interface TextDisplay extends Display {
      *
      * @param text the new text
      * @deprecated in favour of {@link #text(net.kyori.adventure.text.Component)}
+     * @since 1.19.4
      */
     @Deprecated // Paper
     void setText(@Nullable String text);
@@ -35,6 +37,7 @@ public interface TextDisplay extends Display {
      * Gets the displayed text.
      *
      * @return the displayed text
+     * @since 1.19.4
      */
     net.kyori.adventure.text.@NotNull Component text();
 
@@ -42,6 +45,7 @@ public interface TextDisplay extends Display {
      * Sets the displayed text.
      *
      * @param text the new text
+     * @since 1.19.4
      */
     void text(net.kyori.adventure.text.@Nullable Component text);
     // Paper end
@@ -50,6 +54,7 @@ public interface TextDisplay extends Display {
      * Gets the maximum line width before wrapping.
      *
      * @return the line width
+     * @since 1.19.4
      */
     int getLineWidth();
 
@@ -57,6 +62,7 @@ public interface TextDisplay extends Display {
      * Sets the maximum line width before wrapping.
      *
      * @param width new line width
+     * @since 1.19.4
      */
     void setLineWidth(int width);
 
@@ -64,6 +70,7 @@ public interface TextDisplay extends Display {
      * Gets the text background color.
      *
      * @return the background color
+     * @since 1.19.4
      */
     @Nullable
     Color getBackgroundColor();
@@ -72,6 +79,7 @@ public interface TextDisplay extends Display {
      * Sets the text background color.
      *
      * @param color new background color
+     * @since 1.19.4
      */
     void setBackgroundColor(@Nullable Color color);
 
@@ -79,6 +87,7 @@ public interface TextDisplay extends Display {
      * Gets the text opacity.
      *
      * @return opacity or -1 if not set
+     * @since 1.19.4
      */
     byte getTextOpacity();
 
@@ -86,6 +95,7 @@ public interface TextDisplay extends Display {
      * Sets the text opacity.
      *
      * @param opacity new opacity or -1 if default
+     * @since 1.19.4
      */
     void setTextOpacity(byte opacity);
 
@@ -93,6 +103,7 @@ public interface TextDisplay extends Display {
      * Gets if the text is shadowed.
      *
      * @return shadow status
+     * @since 1.19.4
      */
     boolean isShadowed();
 
@@ -100,6 +111,7 @@ public interface TextDisplay extends Display {
      * Sets if the text is shadowed.
      *
      * @param shadow if shadowed
+     * @since 1.19.4
      */
     void setShadowed(boolean shadow);
 
@@ -107,6 +119,7 @@ public interface TextDisplay extends Display {
      * Gets if the text is see through.
      *
      * @return see through status
+     * @since 1.19.4
      */
     boolean isSeeThrough();
 
@@ -114,6 +127,7 @@ public interface TextDisplay extends Display {
      * Sets if the text is see through.
      *
      * @param seeThrough if see through
+     * @since 1.19.4
      */
     void setSeeThrough(boolean seeThrough);
 
@@ -121,6 +135,7 @@ public interface TextDisplay extends Display {
      * Gets if the text has its default background.
      *
      * @return default background
+     * @since 1.19.4
      */
     boolean isDefaultBackground();
 
@@ -128,6 +143,7 @@ public interface TextDisplay extends Display {
      * Sets if the text has its default background.
      *
      * @param defaultBackground if default
+     * @since 1.19.4
      */
     void setDefaultBackground(boolean defaultBackground);
 
@@ -135,6 +151,7 @@ public interface TextDisplay extends Display {
      * Gets the text alignment for this display.
      *
      * @return text alignment
+     * @since 1.19.4
      */
     @NotNull
     TextAlignment getAlignment();
@@ -148,6 +165,8 @@ public interface TextDisplay extends Display {
 
     /**
      * Represents possible text alignments for this display.
+     *
+     * @since 1.19.4
      */
     public enum TextAlignment {
 

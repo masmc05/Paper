@@ -26,18 +26,25 @@ public class PlayerLinksSendEvent extends PlayerEvent {
      * Gets the links to be sent, for modification.
      *
      * @return the links
+     * @since 1.21
      */
     @NotNull
     public ServerLinks getLinks() {
         return links;
     }
 
+    /**
+     * @since 1.21
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.21
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

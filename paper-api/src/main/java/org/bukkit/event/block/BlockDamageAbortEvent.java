@@ -27,6 +27,7 @@ public class BlockDamageAbortEvent extends BlockEvent {
      * Gets the player that stopped damaging the block involved in this event.
      *
      * @return The player that stopped damaging the block
+     * @since 1.18.1
      */
     @NotNull
     public Player getPlayer() {
@@ -37,18 +38,25 @@ public class BlockDamageAbortEvent extends BlockEvent {
      * Gets the ItemStack for the item currently in the player's hand.
      *
      * @return The ItemStack for the item currently in the player's hand
+     * @since 1.18.1
      */
     @NotNull
     public ItemStack getItemInHand() {
         return itemstack;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

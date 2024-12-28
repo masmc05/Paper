@@ -16,11 +16,17 @@ public final class DefaultPermissions {
 
     private DefaultPermissions() {}
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static Permission registerPermission(@NotNull Permission perm) {
         return registerPermission(perm, true);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static Permission registerPermission(@NotNull Permission perm, boolean withLegacy) {
         Permission result = perm;
@@ -41,18 +47,27 @@ public final class DefaultPermissions {
         return result;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static Permission registerPermission(@NotNull Permission perm, @NotNull Permission parent) {
         parent.getChildren().put(perm.getName(), true);
         return registerPermission(perm);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static Permission registerPermission(@NotNull String name, @Nullable String desc) {
         Permission perm = registerPermission(new Permission(name, desc));
         return perm;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static Permission registerPermission(@NotNull String name, @Nullable String desc, @NotNull Permission parent) {
         Permission perm = registerPermission(name, desc);
@@ -60,12 +75,18 @@ public final class DefaultPermissions {
         return perm;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static Permission registerPermission(@NotNull String name, @Nullable String desc, @Nullable PermissionDefault def) {
         Permission perm = registerPermission(new Permission(name, desc, def));
         return perm;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static Permission registerPermission(@NotNull String name, @Nullable String desc, @Nullable PermissionDefault def, @NotNull Permission parent) {
         Permission perm = registerPermission(name, desc, def);
@@ -73,12 +94,18 @@ public final class DefaultPermissions {
         return perm;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static Permission registerPermission(@NotNull String name, @Nullable String desc, @Nullable PermissionDefault def, @Nullable Map<String, Boolean> children) {
         Permission perm = registerPermission(new Permission(name, desc, def, children));
         return perm;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static Permission registerPermission(@NotNull String name, @Nullable String desc, @Nullable PermissionDefault def, @Nullable Map<String, Boolean> children, @NotNull Permission parent) {
         Permission perm = registerPermission(name, desc, def, children);
@@ -86,6 +113,9 @@ public final class DefaultPermissions {
         return perm;
     }
 
+    /**
+     * @since 1.0.0
+     */
     public static void registerCorePermissions() {
         Permission parent = registerPermission(ROOT, "Gives the user the ability to use all CraftBukkit utilities and commands");
 

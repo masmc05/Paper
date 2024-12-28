@@ -13,6 +13,7 @@ public interface SeaPickle extends Waterlogged {
      * Gets the value of the 'pickles' property.
      *
      * @return the 'pickles' value
+     * @since 1.13
      */
     int getPickles();
 
@@ -20,6 +21,7 @@ public interface SeaPickle extends Waterlogged {
      * Sets the value of the 'pickles' property.
      *
      * @param pickles the new 'pickles' value
+     * @since 1.13
      */
     void setPickles(int pickles);
 
@@ -27,6 +29,7 @@ public interface SeaPickle extends Waterlogged {
      * Gets the minimum allowed value of the 'pickles' property.
      *
      * @return the minimum 'pickles' value
+     * @since 1.13
      */
     int getMinimumPickles();
 
@@ -34,6 +37,7 @@ public interface SeaPickle extends Waterlogged {
      * Gets the maximum allowed value of the 'pickles' property.
      *
      * @return the maximum 'pickles' value
+     * @since 1.13
      */
     int getMaximumPickles();
 }

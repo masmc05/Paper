@@ -54,6 +54,7 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
      * Returns the bucket used in this event
      *
      * @return the used bucket
+     * @since 1.0.0
      */
     @NotNull
     public Material getBucket() {
@@ -64,6 +65,7 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
      * Get the resulting item in hand after the bucket event
      *
      * @return ItemStack hold in hand after the event.
+     * @since 1.0.0
      */
     @Nullable
     public ItemStack getItemStack() {
@@ -74,6 +76,7 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
      * Set the item in hand after the event
      *
      * @param itemStack the new held ItemStack after the bucket event.
+     * @since 1.0.0
      */
     public void setItemStack(@Nullable ItemStack itemStack) {
         this.itemStack = itemStack;
@@ -94,6 +97,7 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
      * Return the block clicked
      *
      * @return the clicked block
+     * @since 1.0.0
      */
     @NotNull
     public Block getBlockClicked() {
@@ -104,6 +108,7 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
      * Get the face on the clicked block
      *
      * @return the clicked face
+     * @since 1.0.0
      */
     @NotNull
     public BlockFace getBlockFace() {
@@ -121,11 +126,17 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
         return hand;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

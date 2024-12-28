@@ -19,6 +19,7 @@ public interface DamageSource {
      * Get the {@link DamageType}.
      *
      * @return the damage type
+     * @since 1.20.4
      */
     @NotNull
     public DamageType getDamageType();
@@ -32,6 +33,7 @@ public interface DamageSource {
      * shooter/thrower would be returned.
      *
      * @return an Entity or null
+     * @since 1.20.4
      */
     @Nullable
     public Entity getCausingEntity();
@@ -44,6 +46,7 @@ public interface DamageSource {
      * receiver was damaged by a projectile, the projectile would be returned.
      *
      * @return an Entity or null
+     * @since 1.20.4
      */
     @Nullable
     public Entity getDirectEntity();
@@ -53,6 +56,7 @@ public interface DamageSource {
      * be present if an entity did not cause the damage.
      *
      * @return the location, or null if none
+     * @since 1.20.4
      */
     @Nullable
     public Location getDamageLocation();
@@ -68,6 +72,7 @@ public interface DamageSource {
      * returned.
      *
      * @return the source of the location or null.
+     * @since 1.20.4
      */
     @Nullable
     public Location getSourceLocation();
@@ -80,6 +85,7 @@ public interface DamageSource {
      * skeleton shot an arrow or a player threw a potion.
      *
      * @return {@code true} if is indirect, {@code false} otherwise.
+     * @since 1.20.4
      */
     public boolean isIndirect();
 
@@ -87,6 +93,7 @@ public interface DamageSource {
      * Get the amount of hunger exhaustion caused by this damage.
      *
      * @return the amount of hunger exhaustion caused.
+     * @since 1.20.4
      */
     public float getFoodExhaustion();
 
@@ -94,6 +101,7 @@ public interface DamageSource {
      * Gets if this source of damage scales with difficulty.
      *
      * @return {@code True} if scales.
+     * @since 1.20.4
      */
     public boolean scalesWithDifficulty();
 
@@ -102,6 +110,7 @@ public interface DamageSource {
      *
      * @param damageType the {@link DamageType} to use
      * @return a {@link DamageSource.Builder}
+     * @since 1.20.4
      */
     @NotNull
     @SuppressWarnings("deprecation")
@@ -112,6 +121,8 @@ public interface DamageSource {
     /**
      * Utility class to make building a {@link DamageSource} easier. Only a
      * {@link DamageType} is required.
+     *
+     * @since 1.20.4
      */
     public static interface Builder {
 
@@ -121,6 +132,7 @@ public interface DamageSource {
          * @param entity the entity
          * @return this instance. Allows for chained method calls
          * @see DamageSource#getCausingEntity()
+         * @since 1.20.4
          */
         @NotNull
         public Builder withCausingEntity(@NotNull Entity entity);
@@ -131,6 +143,7 @@ public interface DamageSource {
          * @param entity the entity
          * @return this instance. Allows for chained method calls
          * @see DamageSource#getDirectEntity()
+         * @since 1.20.4
          */
         @NotNull
         public Builder withDirectEntity(@NotNull Entity entity);
@@ -141,6 +154,7 @@ public interface DamageSource {
          * @param location the location where the damage occurred
          * @return this instance. Allows for chained method calls
          * @see DamageSource#getSourceLocation()
+         * @since 1.20.4
          */
         @NotNull
         public Builder withDamageLocation(@NotNull Location location);
@@ -150,6 +164,7 @@ public interface DamageSource {
          * parameters.
          *
          * @return the damage source instance
+         * @since 1.20.4
          */
         @NotNull
         public DamageSource build();

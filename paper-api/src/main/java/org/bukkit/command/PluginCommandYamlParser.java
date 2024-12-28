@@ -13,6 +13,9 @@ import org.jetbrains.annotations.NotNull;
  */
 public class PluginCommandYamlParser {
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static List<Command> parse(@NotNull Plugin plugin) {
         List<Command> pluginCmds = new ArrayList<Command>();

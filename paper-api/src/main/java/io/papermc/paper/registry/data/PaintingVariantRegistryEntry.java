@@ -23,6 +23,7 @@ public interface PaintingVariantRegistryEntry {
      *
      * @return the width.
      * @see Art#getBlockWidth()
+     * @since 1.21.3
      */
     @Range(from = 1, to = 16) int width();
 
@@ -31,6 +32,7 @@ public interface PaintingVariantRegistryEntry {
      *
      * @return the height.
      * @see Art#getBlockHeight()
+     * @since 1.21.3
      */
     @Range(from = 1, to = 16) int height();
 
@@ -39,6 +41,7 @@ public interface PaintingVariantRegistryEntry {
      *
      * @return the title.
      * @see Art#title()
+     * @since 1.21.3
      */
     @Nullable Component title();
 
@@ -47,6 +50,7 @@ public interface PaintingVariantRegistryEntry {
      *
      * @return the author.
      * @see Art#author()
+     * @since 1.21.3
      */
     @Nullable Component author();
 
@@ -55,6 +59,7 @@ public interface PaintingVariantRegistryEntry {
      *
      * @return the asset id.
      * @see Art#assetId()
+     * @since 1.21.3
      */
     Key assetId();
 
@@ -67,6 +72,8 @@ public interface PaintingVariantRegistryEntry {
      *     <li>{@link #height(int)}</li>
      *     <li>{@link #assetId(Key)}</li>
      * </ul>
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -79,6 +86,7 @@ public interface PaintingVariantRegistryEntry {
          * @return this builder instance.
          * @see PaintingVariantRegistryEntry#width()
          * @see Art#getBlockWidth()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder width(@Range(from = 1, to = 16) int width);
@@ -90,6 +98,7 @@ public interface PaintingVariantRegistryEntry {
          * @return this builder instance.
          * @see PaintingVariantRegistryEntry#height()
          * @see Art#getBlockHeight()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder height(@Range(from = 1, to = 16) int height);
@@ -101,6 +110,7 @@ public interface PaintingVariantRegistryEntry {
          * @return this builder instance.
          * @see PaintingVariantRegistryEntry#title()
          * @see Art#title()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder title(@Nullable Component title);
@@ -112,6 +122,7 @@ public interface PaintingVariantRegistryEntry {
          * @return this builder instance.
          * @see PaintingVariantRegistryEntry#author()
          * @see Art#author()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder author(@Nullable Component author);
@@ -123,6 +134,7 @@ public interface PaintingVariantRegistryEntry {
          * @return this builder instance.
          * @see PaintingVariantRegistryEntry#assetId()
          * @see Art#assetId()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder assetId(Key assetId);

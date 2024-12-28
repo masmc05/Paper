@@ -18,6 +18,9 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface WritableBookContent {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static WritableBookContent.Builder writeableBookContent() {
         return ItemComponentTypesBridge.bridge().writeableBookContent();
@@ -27,12 +30,15 @@ public interface WritableBookContent {
      * Holds the pages that can be written to for this component.
      *
      * @return pages, as filtered objects
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<Filtered<String>> pages();
 
     /**
      * Builder for {@link WritableBookContent}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -44,6 +50,7 @@ public interface WritableBookContent {
          * @param page page
          * @return the builder for chaining
          * @see #pages()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addPage(String page);
@@ -54,6 +61,7 @@ public interface WritableBookContent {
          * @param pages pages
          * @return the builder for chaining
          * @see #pages()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addPages(List<String> pages);
@@ -64,6 +72,7 @@ public interface WritableBookContent {
          * @param page page
          * @return the builder for chaining
          * @see #pages()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addFilteredPage(Filtered<String> page);
@@ -74,6 +83,7 @@ public interface WritableBookContent {
          * @param pages pages
          * @return the builder for chaining
          * @see #pages()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addFilteredPages(List<Filtered<String>> pages);

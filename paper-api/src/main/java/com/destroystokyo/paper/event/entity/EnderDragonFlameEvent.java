@@ -29,6 +29,8 @@ public class EnderDragonFlameEvent extends EntityEvent implements Cancellable {
 
     /**
      * The enderdragon involved in this event
+     *
+     * @since 1.13
      */
     @Override
     public EnderDragon getEntity() {
@@ -37,26 +39,39 @@ public class EnderDragonFlameEvent extends EntityEvent implements Cancellable {
 
     /**
      * @return The area effect cloud spawned in this collision
+     * @since 1.13
      */
     public AreaEffectCloud getAreaEffectCloud() {
         return this.areaEffectCloud;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

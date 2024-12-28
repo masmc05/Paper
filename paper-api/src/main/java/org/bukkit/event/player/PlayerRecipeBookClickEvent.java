@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Called when a player clicks a recipe in the recipe book.
  * @deprecated use {@link com.destroystokyo.paper.event.player.PlayerRecipeBookClickEvent}
+ * @since 1.20.1
  */
 @Deprecated(forRemoval = true) // Paper
 @org.bukkit.Warning(false) // Paper
@@ -32,6 +33,7 @@ public class PlayerRecipeBookClickEvent extends PlayerEvent {
      * This <em>will not</em> reflect any changes made with {@link setRecipe}.
      *
      * @return the original recipe
+     * @since 1.20.1
      */
     @NotNull
     public Recipe getOriginalRecipe() {
@@ -43,6 +45,7 @@ public class PlayerRecipeBookClickEvent extends PlayerEvent {
      * This <em>will</em> reflect changes made with {@link setRecipe}.
      *
      * @return the recipe
+     * @since 1.20.1
      */
     @NotNull
     public Recipe getRecipe() {
@@ -59,6 +62,7 @@ public class PlayerRecipeBookClickEvent extends PlayerEvent {
      * be of the same type as the original recipe.
      *
      * @param recipe the recipe to be used
+     * @since 1.20.1
      */
     public void setRecipe(@NotNull Recipe recipe) {
         Preconditions.checkArgument(recipe != null, "recipe cannot be null");
@@ -76,6 +80,7 @@ public class PlayerRecipeBookClickEvent extends PlayerEvent {
      * copy will be moved.
      *
      * @return whether as many copies as possible should be moved
+     * @since 1.20.1
      */
     public boolean isShiftClick() {
         return this.shiftClick;
@@ -86,17 +91,24 @@ public class PlayerRecipeBookClickEvent extends PlayerEvent {
      * of this recipe as possible into the appropriate slots.
      *
      * @param shiftClick whether as many copies as possible should be moved
+     * @since 1.20.1
      */
     public void setShiftClick(boolean shiftClick) {
         this.shiftClick = shiftClick;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

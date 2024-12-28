@@ -1459,6 +1459,7 @@ public interface Tag<T extends Keyed> extends Keyed {
      * Gets an immutable set of all tagged items.
      *
      * @return set of tagged items
+     * @since 1.13
      */
     @NotNull
     Set<T> getValues();

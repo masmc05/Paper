@@ -30,16 +30,23 @@ public class BeaconDeactivatedEvent extends BlockEvent {
      * (which can occur after the deactivation of a now broken beacon)
      *
      * @return The beacon that got deactivated, or {@code null} if it does not exist.
+     * @since 1.16.5
      */
     public @Nullable Beacon getBeacon() {
         return this.block.getType() == Material.BEACON ? (Beacon) this.block.getState() : null;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

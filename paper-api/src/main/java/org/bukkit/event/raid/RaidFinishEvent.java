@@ -31,18 +31,25 @@ public class RaidFinishEvent extends RaidEvent {
      * end would not be included in this list.</b>
      *
      * @return winners
+     * @since 1.14.4
      */
     @NotNull
     public List<Player> getWinners() {
         return Collections.unmodifiableList(winners);
     }
 
+    /**
+     * @since 1.14.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.14.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

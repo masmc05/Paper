@@ -82,6 +82,7 @@ public enum MushroomBlockTexture {
      *
      * @return A byte containing the data value of this mushroom block face
      * @deprecated Magic value
+     * @since 1.9.4
      */
     @Deprecated(since = "1.9")
     public byte getData() {
@@ -92,6 +93,7 @@ public enum MushroomBlockTexture {
      * Gets the face that has cap texture.
      *
      * @return The cap face
+     * @since 1.9.4
      */
     @Nullable
     public BlockFace getCapFace() {
@@ -105,6 +107,7 @@ public enum MushroomBlockTexture {
      * @return The {@link MushroomBlockTexture} representing the given value, or
      * null if it doesn't exist
      * @deprecated Magic value
+     * @since 1.9.4
      */
     @Deprecated(since = "1.9")
     @Nullable
@@ -120,6 +123,7 @@ public enum MushroomBlockTexture {
      * face, or null if it doesn't exist
      *
      * @see BlockFace
+     * @since 1.9.4
      */
     @Nullable
     public static MushroomBlockTexture getCapByFace(@Nullable final BlockFace face) {

@@ -384,6 +384,7 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
      *
      * @return the entity type's name
      * @deprecated Magic value
+     * @since 1.1.0
      */
     @Deprecated(since = "1.6.2")
     @Nullable
@@ -402,6 +403,9 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
         return key;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Nullable
     public Class<? extends Entity> getEntityClass() {
         return clazz;
@@ -412,6 +416,7 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
      *
      * @return the raw type id
      * @deprecated Magic value
+     * @since 1.1.0
      */
     @Deprecated(since = "1.6.2")
     public short getTypeId() {
@@ -441,6 +446,7 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
      * @param id the raw type id
      * @return the matching entity type or null
      * @deprecated Magic value
+     * @since 1.1.0
      */
     @Deprecated(since = "1.6.2")
     @Nullable
@@ -458,15 +464,22 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
      * information in order to spawn.
      *
      * @return False if the entity type cannot be spawned
+     * @since 1.1.0
      */
     public boolean isSpawnable() {
         return independent;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public boolean isAlive() {
         return living;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     @NotNull
     @Deprecated(forRemoval = true) // Paper
@@ -512,6 +525,7 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
      *
      * @param world the world to check
      * @return true if this EntityType can be used to spawn an Entity for this World.
+     * @since 1.19.4
      */
     @Deprecated(forRemoval = true, since = "1.20") // Paper
     public boolean isEnabledByFeature(@NotNull World world) {

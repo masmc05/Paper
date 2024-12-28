@@ -34,30 +34,51 @@ public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable 
         this.message = message;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public FailReason getFailReason() {
         return this.failReason;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public Block getBed() {
         return this.bed;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public boolean getWillExplode() {
         return this.willExplode;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public void setWillExplode(final boolean willExplode) {
         this.willExplode = willExplode;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public @Nullable Component getMessage() {
         return this.message;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public void setMessage(final @Nullable Component message) {
         this.message = message;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -68,21 +89,32 @@ public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable 
      * <p>
      * <b>NOTE</b>: This does not cancel the player getting in the bed, but any messages/explosions
      * that may occur because of the interaction.
+     *
+     * @since 1.16.5
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public enum FailReason {
         /**
          * The world doesn't allow sleeping (ex. Nether or The End). Entering

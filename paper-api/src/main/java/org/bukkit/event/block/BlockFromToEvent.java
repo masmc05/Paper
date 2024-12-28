@@ -38,6 +38,7 @@ public class BlockFromToEvent extends BlockEvent implements Cancellable {
      * Gets the BlockFace that the block is moving to.
      *
      * @return The BlockFace that the block is moving to
+     * @since 1.0.0
      */
     @NotNull
     public BlockFace getFace() {
@@ -48,6 +49,7 @@ public class BlockFromToEvent extends BlockEvent implements Cancellable {
      * Convenience method for getting the faced Block.
      *
      * @return The faced Block
+     * @since 1.0.0
      */
     @NotNull
     public Block getToBlock() {
@@ -57,11 +59,17 @@ public class BlockFromToEvent extends BlockEvent implements Cancellable {
         return to;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;

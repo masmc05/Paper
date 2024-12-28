@@ -29,6 +29,7 @@ public interface RegionScheduler {
      * @param chunkX The chunk X coordinate of the region that owns the task
      * @param chunkZ The chunk Z coordinate of the region that owns the task
      * @param run    The task to execute
+     * @since 1.20.1
      */
     void execute(@NotNull Plugin plugin, @NotNull World world, int chunkX, int chunkZ, @NotNull Runnable run);
 
@@ -38,6 +39,7 @@ public interface RegionScheduler {
      * @param plugin   The plugin that owns the task
      * @param location The location at which the region executing should own
      * @param run      The task to execute
+     * @since 1.20.1
      */
     default void execute(@NotNull Plugin plugin, @NotNull Location location, @NotNull Runnable run) {
         this.execute(plugin, location.getWorld(), location.getBlockX() >> 4, location.getBlockZ() >> 4, run);
@@ -52,6 +54,7 @@ public interface RegionScheduler {
      * @param chunkZ The chunk Z coordinate of the region that owns the task
      * @param task   The task to execute
      * @return The {@link ScheduledTask} that represents the scheduled task.
+     * @since 1.20.1
      */
     @NotNull ScheduledTask run(@NotNull Plugin plugin, @NotNull World world, int chunkX, int chunkZ, @NotNull Consumer<ScheduledTask> task);
 
@@ -62,6 +65,7 @@ public interface RegionScheduler {
      * @param location The location at which the region executing should own
      * @param task     The task to execute
      * @return The {@link ScheduledTask} that represents the scheduled task.
+     * @since 1.20.1
      */
     default @NotNull ScheduledTask run(@NotNull Plugin plugin, @NotNull Location location, @NotNull Consumer<ScheduledTask> task) {
         return this.run(plugin, location.getWorld(), location.getBlockX() >> 4, location.getBlockZ() >> 4, task);
@@ -77,6 +81,7 @@ public interface RegionScheduler {
      * @param task       The task to execute
      * @param delayTicks The delay, in ticks.
      * @return The {@link ScheduledTask} that represents the scheduled task.
+     * @since 1.20.1
      */
     @NotNull ScheduledTask runDelayed(@NotNull Plugin plugin, @NotNull World world, int chunkX, int chunkZ, @NotNull Consumer<ScheduledTask> task,
                                       long delayTicks);
@@ -89,6 +94,7 @@ public interface RegionScheduler {
      * @param task       The task to execute
      * @param delayTicks The delay, in ticks.
      * @return The {@link ScheduledTask} that represents the scheduled task.
+     * @since 1.20.1
      */
     default @NotNull ScheduledTask runDelayed(@NotNull Plugin plugin, @NotNull Location location, @NotNull Consumer<ScheduledTask> task,
                                               long delayTicks) {
@@ -107,6 +113,7 @@ public interface RegionScheduler {
      * @param initialDelayTicks The initial delay, in ticks.
      * @param periodTicks       The period, in ticks.
      * @return The {@link ScheduledTask} that represents the scheduled task.
+     * @since 1.20.1
      */
     @NotNull ScheduledTask runAtFixedRate(@NotNull Plugin plugin, @NotNull World world, int chunkX, int chunkZ, @NotNull Consumer<ScheduledTask> task,
                                           long initialDelayTicks, long periodTicks);
@@ -121,6 +128,7 @@ public interface RegionScheduler {
      * @param initialDelayTicks The initial delay, in ticks.
      * @param periodTicks       The period, in ticks.
      * @return The {@link ScheduledTask} that represents the scheduled task.
+     * @since 1.20.1
      */
     default @NotNull ScheduledTask runAtFixedRate(@NotNull Plugin plugin, @NotNull Location location, @NotNull Consumer<ScheduledTask> task,
                                                   long initialDelayTicks, long periodTicks) {

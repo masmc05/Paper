@@ -10,6 +10,7 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.1.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Vine extends MaterialData {
@@ -78,6 +79,7 @@ public class Vine extends MaterialData {
      *
      * @param face The face to check.
      * @return Whether it is attached to that face.
+     * @since 1.1.0
      */
     public boolean isOnFace(BlockFace face) {
         switch (face) {
@@ -108,6 +110,7 @@ public class Vine extends MaterialData {
      * Attach the vine to the specified face of an adjacent block.
      *
      * @param face The face to attach.
+     * @since 1.1.0
      */
     public void putOnFace(BlockFace face) {
         switch (face) {
@@ -150,6 +153,7 @@ public class Vine extends MaterialData {
      * Detach the vine from the specified face of an adjacent block.
      *
      * @param face The face to detach.
+     * @since 1.1.0
      */
     public void removeFromFace(BlockFace face) {
         switch (face) {

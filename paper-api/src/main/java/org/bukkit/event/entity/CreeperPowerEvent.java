@@ -30,11 +30,17 @@ public class CreeperPowerEvent extends EntityEvent implements Cancellable {
         this.cause = cause;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return canceled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         canceled = cancel;
@@ -53,6 +59,7 @@ public class CreeperPowerEvent extends EntityEvent implements Cancellable {
      * Gets the lightning bolt which is striking the Creeper.
      *
      * @return The Entity for the lightning bolt which is striking the Creeper
+     * @since 1.0.0
      */
     @Nullable
     public LightningStrike getLightning() {
@@ -63,6 +70,7 @@ public class CreeperPowerEvent extends EntityEvent implements Cancellable {
      * Gets the cause of the creeper being (un)powered.
      *
      * @return A PowerCause value detailing the cause of change in power.
+     * @since 1.0.0
      */
     @NotNull
     public PowerCause getCause() {
@@ -88,6 +96,8 @@ public class CreeperPowerEvent extends EntityEvent implements Cancellable {
 
     /**
      * An enum to specify the cause of the change in power
+     *
+     * @since 1.0.0
      */
     public enum PowerCause {
 

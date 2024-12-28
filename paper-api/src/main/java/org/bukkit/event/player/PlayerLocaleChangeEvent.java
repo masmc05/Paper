@@ -37,6 +37,7 @@ public class PlayerLocaleChangeEvent extends PlayerEvent {
      * @return the player's new locale
      * @see Player#getLocale()
      * @deprecated in favour of {@link #locale()}
+     * @since 1.12
      */
     @NotNull
     @Deprecated // Paper
@@ -44,12 +45,18 @@ public class PlayerLocaleChangeEvent extends PlayerEvent {
         return locale;
     }
 
+    /**
+     * @since 1.12
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.12
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

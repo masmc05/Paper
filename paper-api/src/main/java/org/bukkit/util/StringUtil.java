@@ -52,6 +52,7 @@ public class StringUtil {
      *     provided
      * @throws NullPointerException if prefix is null
      * @throws IllegalArgumentException if string is null
+     * @since 1.3.2
      */
     public static boolean startsWithIgnoreCase(@NotNull final String string, @NotNull final String prefix) throws IllegalArgumentException, NullPointerException {
         Preconditions.checkArgument(string != null, "Cannot check a null string for a match");

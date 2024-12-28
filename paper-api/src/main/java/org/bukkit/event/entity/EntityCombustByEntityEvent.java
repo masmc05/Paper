@@ -25,6 +25,7 @@ public class EntityCombustByEntityEvent extends EntityCombustEvent {
      * Get the entity that caused the combustion event.
      *
      * @return the Entity that set the combustee alight.
+     * @since 1.1.0
      */
     @NotNull
     public Entity getCombuster() {

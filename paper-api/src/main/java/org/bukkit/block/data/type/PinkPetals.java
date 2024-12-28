@@ -13,6 +13,7 @@ public interface PinkPetals extends Directional {
      * Gets the value of the 'flower_amount' property.
      *
      * @return the 'flower_amount' value
+     * @since 1.19.4
      */
     int getFlowerAmount();
 
@@ -20,6 +21,7 @@ public interface PinkPetals extends Directional {
      * Sets the value of the 'flower_amount' property.
      *
      * @param flower_amount the new 'flower_amount' value
+     * @since 1.19.4
      */
     void setFlowerAmount(int flower_amount);
 
@@ -37,6 +39,7 @@ public interface PinkPetals extends Directional {
      * Gets the maximum allowed value of the 'flower_amount' property.
      *
      * @return the maximum 'flower_amount' value
+     * @since 1.19.4
      */
     int getMaximumFlowerAmount();
 }

@@ -27,11 +27,17 @@ public class EntityToggleGlideEvent extends EntityEvent implements Cancellable {
         this.isGliding = isGliding;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -42,17 +48,24 @@ public class EntityToggleGlideEvent extends EntityEvent implements Cancellable {
      * false if the entity stops gliding.
      *
      * @return new gliding state
+     * @since 1.9.4
      */
     public boolean isGliding() {
         return isGliding;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

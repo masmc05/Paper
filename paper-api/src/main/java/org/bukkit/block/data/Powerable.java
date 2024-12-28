@@ -12,6 +12,7 @@ public interface Powerable extends BlockData {
      * Gets the value of the 'powered' property.
      *
      * @return the 'powered' value
+     * @since 1.13
      */
     boolean isPowered();
 
@@ -19,6 +20,7 @@ public interface Powerable extends BlockData {
      * Sets the value of the 'powered' property.
      *
      * @param powered the new 'powered' value
+     * @since 1.13
      */
     void setPowered(boolean powered);
 }

@@ -27,6 +27,7 @@ public class SlimeChangeDirectionEvent extends SlimePathfindEvent {
      * Get the new chosen yaw
      *
      * @return Chosen yaw
+     * @since 1.13
      */
     public float getNewYaw() {
         return this.yaw;
@@ -36,6 +37,7 @@ public class SlimeChangeDirectionEvent extends SlimePathfindEvent {
      * Set the new chosen yaw
      *
      * @param yaw Chosen yaw
+     * @since 1.13
      */
     public void setNewYaw(final float yaw) {
         this.yaw = yaw;

@@ -46,6 +46,7 @@ public class InventoryMoveItemEvent extends Event implements Cancellable {
      * Gets the Inventory that the ItemStack is being taken from
      *
      * @return Inventory that the ItemStack is being taken from
+     * @since 1.5.1
      */
     @NotNull
     public Inventory getSource() {
@@ -57,6 +58,7 @@ public class InventoryMoveItemEvent extends Event implements Cancellable {
      * be removed from the source inventory.
      *
      * @return ItemStack
+     * @since 1.5.1
      */
     @NotNull
     public ItemStack getItem() {
@@ -69,6 +71,7 @@ public class InventoryMoveItemEvent extends Event implements Cancellable {
      * inventory.
      *
      * @param itemStack The ItemStack
+     * @since 1.5.1
      */
     public void setItem(@NotNull ItemStack itemStack) {
         Preconditions.checkArgument(itemStack != null, "ItemStack cannot be null.  Cancel the event if you want nothing to be transferred.");
@@ -79,6 +82,7 @@ public class InventoryMoveItemEvent extends Event implements Cancellable {
      * Gets the Inventory that the ItemStack is being put into
      *
      * @return Inventory that the ItemStack is being put into
+     * @since 1.5.1
      */
     @NotNull
     public Inventory getDestination() {
@@ -90,28 +94,41 @@ public class InventoryMoveItemEvent extends Event implements Cancellable {
      * either the destination or source Inventory.
      *
      * @return Inventory that initiated the transfer
+     * @since 1.5.1
      */
     @NotNull
     public Inventory getInitiator() {
         return didSourceInitiate ? sourceInventory : destinationInventory;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

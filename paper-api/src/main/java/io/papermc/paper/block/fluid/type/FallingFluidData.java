@@ -13,6 +13,7 @@ public interface FallingFluidData extends FluidData {
      * Get if this liquid is falling.
      *
      * @return true if falling
+     * @since 1.20.4
      */
     boolean isFalling();
 }

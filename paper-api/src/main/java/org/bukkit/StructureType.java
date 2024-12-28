@@ -191,6 +191,7 @@ public final class StructureType implements Keyed {
      * commands.
      *
      * @return the name of this structure
+     * @since 1.13.1
      */
     @NotNull
     public String getName() {
@@ -202,6 +203,7 @@ public final class StructureType implements Keyed {
      * this is null, this structure will not appear on explorer maps.
      *
      * @return the {@link org.bukkit.map.MapCursor.Type} or null.
+     * @since 1.13.1
      */
     @Nullable
     public MapCursor.Type getMapIcon() {
@@ -245,6 +247,7 @@ public final class StructureType implements Keyed {
      * Get all registered {@link StructureType}s.
      *
      * @return an immutable copy of registered structure types.
+     * @since 1.13.1
      */
     @NotNull
     public static Map<String, StructureType> getStructureTypes() {

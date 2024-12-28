@@ -8,6 +8,7 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.3.1
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class TripwireHook extends SimpleAttachableMaterialData implements Redstone {
@@ -35,6 +36,7 @@ public class TripwireHook extends SimpleAttachableMaterialData implements Redsto
      * Test if tripwire is connected
      *
      * @return true if connected, false if not
+     * @since 1.3.1
      */
     public boolean isConnected() {
         return (getData() & 0x4) != 0;
@@ -44,6 +46,7 @@ public class TripwireHook extends SimpleAttachableMaterialData implements Redsto
      * Set tripwire connection state
      *
      * @param connected - true if connected, false if not
+     * @since 1.3.1
      */
     public void setConnected(boolean connected) {
         int dat = getData() & (0x8 | 0x3);
@@ -57,6 +60,7 @@ public class TripwireHook extends SimpleAttachableMaterialData implements Redsto
      * Test if hook is currently activated
      *
      * @return true if activated, false if not
+     * @since 1.3.1
      */
     public boolean isActivated() {
         return (getData() & 0x8) != 0;
@@ -66,6 +70,7 @@ public class TripwireHook extends SimpleAttachableMaterialData implements Redsto
      * Set hook activated state
      *
      * @param act - true if activated, false if not
+     * @since 1.3.1
      */
     public void setActivated(boolean act) {
         int dat = getData() & (0x4 | 0x3);
@@ -75,6 +80,9 @@ public class TripwireHook extends SimpleAttachableMaterialData implements Redsto
         setData((byte) dat);
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public void setFacingDirection(BlockFace face) {
         int dat = getData() & 0xC;
@@ -95,6 +103,9 @@ public class TripwireHook extends SimpleAttachableMaterialData implements Redsto
         setData((byte) dat);
     }
 
+    /**
+     * @since 1.3.2
+     */
     @Override
     public BlockFace getAttachedFace() {
         switch (getData() & 0x3) {
@@ -110,6 +121,9 @@ public class TripwireHook extends SimpleAttachableMaterialData implements Redsto
         return null;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean isPowered() {
         return isActivated();

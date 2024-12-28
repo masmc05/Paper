@@ -49,6 +49,7 @@ public interface DamageEffect {
      * Get the {@link Sound} played for this {@link DamageEffect}.
      *
      * @return the sound
+     * @since 1.20.4
      */
     @NotNull
     public Sound getSound();

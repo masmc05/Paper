@@ -13,6 +13,7 @@ public interface ComplexEntityPart extends Entity {
      * Gets the parent {@link ComplexLivingEntity} of this part.
      *
      * @return Parent complex entity
+     * @since 1.0.0
      */
     @NotNull
     public ComplexLivingEntity getParent();

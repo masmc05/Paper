@@ -21,6 +21,7 @@ public class ConfigurationOptions {
      * Returns the {@link Configuration} that this object is responsible for.
      *
      * @return Parent configuration
+     * @since 1.0.0
      */
     @NotNull
     public Configuration configuration() {
@@ -35,6 +36,7 @@ public class ConfigurationOptions {
      * only in how you access the data. The default value is '.'.
      *
      * @return Path separator
+     * @since 1.0.0
      */
     public char pathSeparator() {
         return pathSeparator;
@@ -49,6 +51,7 @@ public class ConfigurationOptions {
      *
      * @param value Path separator
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public ConfigurationOptions pathSeparator(char value) {
@@ -69,6 +72,7 @@ public class ConfigurationOptions {
      * false.
      *
      * @return Whether or not defaults are directly copied
+     * @since 1.0.0
      */
     public boolean copyDefaults() {
         return copyDefaults;
@@ -88,6 +92,7 @@ public class ConfigurationOptions {
      *
      * @param value Whether or not defaults are directly copied
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public ConfigurationOptions copyDefaults(boolean value) {

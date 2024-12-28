@@ -46,6 +46,7 @@ public interface Goat extends Animals {
      * offer home loans.
      *
      * @return screaming status
+     * @since 1.17
      */
     boolean isScreaming();
 
@@ -56,6 +57,7 @@ public interface Goat extends Animals {
      * offer home loans.
      *
      * @param screaming screaming status
+     * @since 1.17
      */
     void setScreaming(boolean screaming);
 

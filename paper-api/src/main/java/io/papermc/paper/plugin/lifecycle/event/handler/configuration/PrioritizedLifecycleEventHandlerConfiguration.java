@@ -25,6 +25,7 @@ public interface PrioritizedLifecycleEventHandlerConfiguration<O extends Lifecyc
      *
      * @param priority the numerical priority
      * @return this configuration for chaining
+     * @since 1.20.4
      */
     @Contract("_ -> this")
     PrioritizedLifecycleEventHandlerConfiguration<O> priority(int priority);
@@ -35,6 +36,7 @@ public interface PrioritizedLifecycleEventHandlerConfiguration<O extends Lifecyc
      * to observe any changes from previously ran handlers.
      *
      * @return this configuration for chaining
+     * @since 1.20.4
      */
     @Contract("-> this")
     PrioritizedLifecycleEventHandlerConfiguration<O> monitor();

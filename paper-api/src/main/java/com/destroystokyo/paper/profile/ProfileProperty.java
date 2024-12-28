@@ -32,6 +32,7 @@ public final class ProfileProperty {
 
     /**
      * @return The property name, ie "textures"
+     * @since 1.12.2
      */
     public String getName() {
         return this.name;
@@ -39,6 +40,7 @@ public final class ProfileProperty {
 
     /**
      * @return The property value, likely to be base64 encoded
+     * @since 1.12.2
      */
     public String getValue() {
         return this.value;
@@ -46,6 +48,7 @@ public final class ProfileProperty {
 
     /**
      * @return A signature from Mojang for signed properties
+     * @since 1.12.2
      */
     public @Nullable String getSignature() {
         return this.signature;
@@ -53,6 +56,7 @@ public final class ProfileProperty {
 
     /**
      * @return If this property has a signature or not
+     * @since 1.12.2
      */
     public boolean isSigned() {
         return this.signature != null;

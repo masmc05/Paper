@@ -8,6 +8,7 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Torch extends SimpleAttachableMaterialData {
@@ -33,6 +34,7 @@ public class Torch extends SimpleAttachableMaterialData {
      * Gets the face that this block is attached on
      *
      * @return BlockFace attached to
+     * @since 1.0.0
      */
     @Override
     public BlockFace getAttachedFace() {
@@ -57,6 +59,9 @@ public class Torch extends SimpleAttachableMaterialData {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setFacingDirection(BlockFace face) {
         byte data;

@@ -16,6 +16,7 @@ public interface InventoryView {
     /**
      * Represents various extra properties of certain inventory windows.
      * @deprecated use {@link InventoryView} and its children
+     * @since 1.1.0
      */
     @Deprecated(forRemoval = true, since = "1.21")
     public enum Property {
@@ -116,6 +117,9 @@ public interface InventoryView {
             style = appliesTo;
         }
 
+        /**
+         * @since 1.1.0
+         */
         @NotNull
         public InventoryType getType() {
             return style;
@@ -136,6 +140,7 @@ public interface InventoryView {
      * Get the upper inventory involved in this transaction.
      *
      * @return the inventory
+     * @since 1.1.0
      */
     @NotNull
     public Inventory getTopInventory();
@@ -144,6 +149,7 @@ public interface InventoryView {
      * Get the lower inventory involved in this transaction.
      *
      * @return the inventory
+     * @since 1.1.0
      */
     @NotNull
     public Inventory getBottomInventory();
@@ -152,6 +158,7 @@ public interface InventoryView {
      * Get the player viewing.
      *
      * @return the player
+     * @since 1.1.0
      */
     @NotNull
     public HumanEntity getPlayer();
@@ -162,6 +169,7 @@ public interface InventoryView {
      * since that is common to all windows.
      *
      * @return the inventory type
+     * @since 1.1.0
      */
     @NotNull
     public InventoryType getType();
@@ -174,6 +182,7 @@ public interface InventoryView {
      *
      * @param slot The ID as returned by InventoryClickEvent.getRawSlot()
      * @param item The new item to put in the slot, or null to clear it.
+     * @since 1.1.0
      */
     public void setItem(int slot, @Nullable ItemStack item);
 
@@ -182,6 +191,7 @@ public interface InventoryView {
      *
      * @param slot The ID as returned by InventoryClickEvent.getRawSlot()
      * @return The item currently in the slot.
+     * @since 1.1.0
      */
     @Nullable
     public ItemStack getItem(int slot);
@@ -191,6 +201,7 @@ public interface InventoryView {
      *
      * @param item The item to put on the cursor, or null to remove the item
      *     on their cursor.
+     * @since 1.1.0
      */
     public void setCursor(@Nullable ItemStack item);
 
@@ -199,6 +210,7 @@ public interface InventoryView {
      *
      * @return The item on the player's cursor, or an empty stack
      * if they aren't holding one.
+     * @since 1.1.0
      */
     @NotNull // Paper - fix nullability
     public ItemStack getCursor();
@@ -230,6 +242,7 @@ public interface InventoryView {
      *
      * @param rawSlot The raw slot ID.
      * @return The converted slot ID.
+     * @since 1.1.0
      */
     public int convertSlot(int rawSlot);
 
@@ -248,6 +261,8 @@ public interface InventoryView {
 
     /**
      * Closes the inventory view.
+     *
+     * @since 1.1.0
      */
     public void close();
 
@@ -259,6 +274,7 @@ public interface InventoryView {
      * the two inventories if for example some slots are not being used.
      *
      * @return The total size
+     * @since 1.1.0
      */
     public int countSlots();
 
@@ -291,6 +307,7 @@ public interface InventoryView {
      *
      * @return The title.
      * @deprecated in favour of {@link #title()}
+     * @since 1.1.0
      */
     @Deprecated // Paper
     @NotNull

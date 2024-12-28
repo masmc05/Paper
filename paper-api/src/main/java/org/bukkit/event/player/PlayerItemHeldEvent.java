@@ -26,6 +26,7 @@ public class PlayerItemHeldEvent extends PlayerEvent implements Cancellable {
      * Gets the previous held slot index
      *
      * @return Previous slot index
+     * @since 1.0.0
      */
     public int getPreviousSlot() {
         return previous;
@@ -35,6 +36,7 @@ public class PlayerItemHeldEvent extends PlayerEvent implements Cancellable {
      * Gets the new held slot index
      *
      * @return New slot index
+     * @since 1.0.0
      */
     public int getNewSlot() {
         return current;

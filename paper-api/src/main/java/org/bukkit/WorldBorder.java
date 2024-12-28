@@ -21,6 +21,8 @@ public interface WorldBorder {
 
     /**
      * Resets the border to default values.
+     *
+     * @since 1.8
      */
     public void reset();
 
@@ -28,6 +30,7 @@ public interface WorldBorder {
      * Gets the current side length of the border.
      *
      * @return The current side length of the border.
+     * @since 1.8
      */
     public double getSize();
 
@@ -37,6 +40,7 @@ public interface WorldBorder {
      * @param newSize The new size of the border.
      *
      * @throws IllegalArgumentException if newSize is less than 1.0D or greater than {@link #getMaxSize()}
+     * @since 1.8
      */
     public void setSize(double newSize);
 
@@ -47,6 +51,7 @@ public interface WorldBorder {
      * @param seconds The time in seconds in which the border grows or shrinks from the previous size to that being set.
      *
      * @throws IllegalArgumentException if newSize is less than 1.0D or greater than {@link #getMaxSize()}
+     * @since 1.8
      */
     public void setSize(double newSize, long seconds);
 
@@ -66,6 +71,7 @@ public interface WorldBorder {
      * Gets the current border center.
      *
      * @return The current border center.
+     * @since 1.8
      */
     @NotNull
     public Location getCenter();
@@ -77,6 +83,7 @@ public interface WorldBorder {
      * @param z The new center z-coordinate.
      *
      * @throws IllegalArgumentException if the absolute value of x or z is higher than {@link #getMaxCenterCoordinate()}
+     * @since 1.8
      */
     public void setCenter(double x, double z);
 
@@ -86,6 +93,7 @@ public interface WorldBorder {
      * @param location The new location of the border center. (Only x/z used)
      *
      * @throws IllegalArgumentException if location is <code>null</code> or the absolute value of {@link Location#getX()} or {@link Location#getZ()} is higher than {@link #getMaxCenterCoordinate()}
+     * @since 1.8
      */
     public void setCenter(@NotNull Location location);
 
@@ -93,6 +101,7 @@ public interface WorldBorder {
      * Gets the current border damage buffer.
      *
      * @return The current border damage buffer.
+     * @since 1.8
      */
     public double getDamageBuffer();
 
@@ -100,6 +109,7 @@ public interface WorldBorder {
      * Sets the amount of blocks a player may safely be outside the border before taking damage.
      *
      * @param blocks The amount of blocks. (The default is 5 blocks.)
+     * @since 1.8
      */
     public void setDamageBuffer(double blocks);
 
@@ -107,6 +117,7 @@ public interface WorldBorder {
      * Gets the current border damage amount.
      *
      * @return The current border damage amount.
+     * @since 1.8
      */
     public double getDamageAmount();
 
@@ -114,6 +125,7 @@ public interface WorldBorder {
      * Sets the amount of damage a player takes when outside the border plus the border buffer.
      *
      * @param damage The amount of damage. (The default is 0.2 damage per second per block.)
+     * @since 1.8
      */
     public void setDamageAmount(double damage);
 
@@ -121,6 +133,7 @@ public interface WorldBorder {
      * Gets the current border warning time in seconds.
      *
      * @return The current border warning time in seconds.
+     * @since 1.8
      */
     public int getWarningTime();
 
@@ -128,6 +141,7 @@ public interface WorldBorder {
      * Sets the warning time that causes the screen to be tinted red when a contracting border will reach the player within the specified time.
      *
      * @param seconds The amount of time in seconds. (The default is 15 seconds.)
+     * @since 1.8
      */
     public void setWarningTime(int seconds);
 
@@ -135,6 +149,7 @@ public interface WorldBorder {
      * Gets the current border warning distance.
      *
      * @return The current border warning distance.
+     * @since 1.8
      */
     public int getWarningDistance();
 
@@ -142,6 +157,7 @@ public interface WorldBorder {
      * Sets the warning distance that causes the screen to be tinted red when the player is within the specified number of blocks from the border.
      *
      * @param distance The distance in blocks. (The default is 5 blocks.)
+     * @since 1.8
      */
     public void setWarningDistance(int distance);
 

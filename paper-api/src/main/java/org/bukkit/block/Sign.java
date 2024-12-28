@@ -62,6 +62,7 @@ public interface Sign extends TileState, Colorable {
      *
      * @return Array of Strings containing each line of text
      * @deprecated  A sign may have multiple writable sides now. Use {@link Sign#getSide(Side)} and {@link SignSide#lines()}.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20")
     @NotNull
@@ -76,6 +77,7 @@ public interface Sign extends TileState, Colorable {
      * @return Text on the given line
      * @throws IndexOutOfBoundsException Thrown when the line does not exist
      * @deprecated A sign may have multiple writable sides now. Use {@link #getSide(Side)} and {@link SignSide#line(int)}.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20")
     @NotNull
@@ -91,6 +93,7 @@ public interface Sign extends TileState, Colorable {
      * @param line New text to set at the specified index
      * @throws IndexOutOfBoundsException If the index is out of the range 0..3
      * @deprecated A sign may have multiple writable sides now. Use {@link #getSide(Side)} and {@link SignSide#line(int, net.kyori.adventure.text.Component)}.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20")
     public void setLine(int index, @NotNull String line) throws IndexOutOfBoundsException;

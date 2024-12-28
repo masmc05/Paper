@@ -9,6 +9,7 @@ public interface Slime extends Mob, Enemy {
 
     /**
      * @return The size of the slime
+     * @since 1.0.0
      */
     public int getSize();
 
@@ -24,6 +25,7 @@ public interface Slime extends Mob, Enemy {
      * slime to its max health (assuming it's alive).
      *
      * @param sz The new size of the slime.
+     * @since 1.0.0
      */
     public void setSize(int sz);
 

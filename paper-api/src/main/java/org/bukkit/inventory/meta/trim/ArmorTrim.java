@@ -35,6 +35,7 @@ public class ArmorTrim {
      * Get the {@link TrimMaterial} for this armor trim.
      *
      * @return the material
+     * @since 1.19.4
      */
     @NotNull
     public TrimMaterial getMaterial() {
@@ -45,6 +46,7 @@ public class ArmorTrim {
      * Get the {@link TrimPattern} for this armor trim.
      *
      * @return the pattern
+     * @since 1.19.4
      */
     @NotNull
     public TrimPattern getPattern() {

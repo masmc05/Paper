@@ -18,6 +18,7 @@ public interface Door extends Bisected, Directional, Openable, Powerable {
      * Gets the value of the 'hinge' property.
      *
      * @return the 'hinge' value
+     * @since 1.13
      */
     @NotNull
     Hinge getHinge();
@@ -31,6 +32,8 @@ public interface Door extends Bisected, Directional, Openable, Powerable {
 
     /**
      * The hinge of a door.
+     *
+     * @since 1.13
      */
     public enum Hinge {
         /**

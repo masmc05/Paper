@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see <a href="https://minecraft.wiki/w/Data_pack">Minecraft wiki</a>
  * @deprecated use {@link io.papermc.paper.datapack.Datapack}
+ * @since 1.19.4
  */
 @Deprecated(forRemoval = true, since = "1.20") // Paper
 public interface DataPack extends Keyed {
@@ -18,6 +19,7 @@ public interface DataPack extends Keyed {
      * Gets the title of the data pack.
      *
      * @return the title
+     * @since 1.19.4
      */
     @NotNull
     public String getTitle();
@@ -26,6 +28,7 @@ public interface DataPack extends Keyed {
      * Gets the description of the data pack.
      *
      * @return the description
+     * @since 1.19.4
      */
     @NotNull
     public String getDescription();
@@ -40,6 +43,7 @@ public interface DataPack extends Keyed {
      * @return the pack version
      * @see #getMinSupportedPackFormat()
      * @see #getMaxSupportedPackFormat()
+     * @since 1.19.4
      */
     public int getPackFormat();
 
@@ -52,6 +56,7 @@ public interface DataPack extends Keyed {
      * <a href="https://minecraft.wiki/w/Data_pack#Pack_format">Minecraft Wiki</a>.
      *
      * @return the min pack version supported
+     * @since 1.20.2
      */
     public int getMinSupportedPackFormat();
 
@@ -64,6 +69,7 @@ public interface DataPack extends Keyed {
      * <a href="https://minecraft.wiki/w/Data_pack#Pack_format">Minecraft Wiki</a>.
      *
      * @return the max pack version supported
+     * @since 1.20.2
      */
     public int getMaxSupportedPackFormat();
 
@@ -71,6 +77,7 @@ public interface DataPack extends Keyed {
      * Gets if the data pack is enabled on the server.
      *
      * @return True if is enabled
+     * @since 1.19.4
      */
     public boolean isEnabled();
 
@@ -78,6 +85,7 @@ public interface DataPack extends Keyed {
      * Gets if the data pack is required on the server.
      *
      * @return True if is required
+     * @since 1.19.4
      */
     public boolean isRequired();
 
@@ -85,6 +93,7 @@ public interface DataPack extends Keyed {
      * Gets the compatibility of this data pack with the server.
      *
      * @return an enum
+     * @since 1.19.4
      */
     @NotNull
     public Compatibility getCompatibility();
@@ -93,6 +102,7 @@ public interface DataPack extends Keyed {
      * Gets a set of features requested by this data pack.
      *
      * @return a set of features
+     * @since 1.19.4
      */
     @NotNull
     public Set<FeatureFlag> getRequestedFeatures();
@@ -101,12 +111,15 @@ public interface DataPack extends Keyed {
      * Gets the source of this data pack.
      *
      * @return the source
+     * @since 1.19.4
      */
     @NotNull
     public Source getSource();
 
     /**
      * Show the compatibility of the data pack with the server.
+     *
+     * @since 1.19.4
      */
     public enum Compatibility {
 
@@ -126,6 +139,8 @@ public interface DataPack extends Keyed {
 
     /**
      * Represent the source of a data pack.
+     *
+     * @since 1.19.4
      */
     public enum Source {
         DEFAULT,

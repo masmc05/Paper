@@ -33,6 +33,7 @@ public abstract class HelpTopic {
      *
      * @param player The Player in question.
      * @return True of the Player can see this help topic, false otherwise.
+     * @since 1.1.0
      */
     public abstract boolean canSee(@NotNull CommandSender player);
 
@@ -56,6 +57,7 @@ public abstract class HelpTopic {
      * Returns the name of this help topic.
      *
      * @return The topic name.
+     * @since 1.1.0
      */
     @NotNull
     public String getName() {
@@ -66,6 +68,7 @@ public abstract class HelpTopic {
      * Returns a brief description that will be displayed in the topic index.
      *
      * @return A brief topic description.
+     * @since 1.1.0
      */
     @NotNull
     public String getShortText() {
@@ -83,6 +86,7 @@ public abstract class HelpTopic {
      *     sub-permissions in custom implementations.
      *
      * @return A full topic description.
+     * @since 1.1.0
      */
     @NotNull
     public String getFullText(@NotNull CommandSender forWho) {
@@ -102,6 +106,7 @@ public abstract class HelpTopic {
      *     leave alone.
      * @param amendedFullText The new topic full text to use, or null to leave
      *     alone.
+     * @since 1.1.0
      */
     public void amendTopic(@Nullable String amendedShortText, @Nullable String amendedFullText) {
         shortText = applyAmendment(shortText, amendedShortText);

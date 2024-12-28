@@ -30,11 +30,17 @@ public class WeatherChangeEvent extends WeatherEvent implements Cancellable {
         this.cause = Cause.UNKNOWN; // Paper
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return canceled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         canceled = cancel;
@@ -44,6 +50,7 @@ public class WeatherChangeEvent extends WeatherEvent implements Cancellable {
      * Gets the state of weather that the world is being set to
      *
      * @return true if the weather is being set to raining, false otherwise
+     * @since 1.0.0
      */
     public boolean toWeatherState() {
         return to;

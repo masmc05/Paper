@@ -26,6 +26,9 @@ public class MultipleCommandAlias extends Command {
         return commands;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String[] args) {
         boolean result = false;

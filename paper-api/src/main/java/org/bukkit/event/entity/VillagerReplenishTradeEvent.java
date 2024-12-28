@@ -32,6 +32,7 @@ public class VillagerReplenishTradeEvent extends EntityEvent implements Cancella
      * Get the recipe to replenish.
      *
      * @return the replenished recipe
+     * @since 1.9.4
      */
     @NotNull
     public MerchantRecipe getRecipe() {
@@ -42,6 +43,7 @@ public class VillagerReplenishTradeEvent extends EntityEvent implements Cancella
      * Set the recipe to replenish.
      *
      * @param recipe the replenished recipe
+     * @since 1.9.4
      */
     public void setRecipe(@NotNull MerchantRecipe recipe) {
         this.recipe = recipe;
@@ -53,6 +55,7 @@ public class VillagerReplenishTradeEvent extends EntityEvent implements Cancella
      * @return the extra uses added
      * @deprecated MC 1.14 has changed how villagers restock their trades. Use
      * {@link MerchantRecipe#getUses()}.
+     * @since 1.9.4
      */
     @Deprecated(since = "1.18.1")
     public int getBonus() {
@@ -65,33 +68,49 @@ public class VillagerReplenishTradeEvent extends EntityEvent implements Cancella
      * @param bonus the extra uses added
      * @deprecated MC 1.14 has changed how villagers restock their trades. This
      * has no effect anymore.
+     * @since 1.9.4
      */
     @Deprecated(since = "1.18.1")
     public void setBonus(int bonus) {
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public AbstractVillager getEntity() {
         return (AbstractVillager) super.getEntity();
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

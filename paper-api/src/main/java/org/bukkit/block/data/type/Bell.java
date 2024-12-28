@@ -15,6 +15,7 @@ public interface Bell extends Directional, Powerable {
      * Gets the value of the 'attachment' property.
      *
      * @return the 'attachment' value
+     * @since 1.14
      */
     @NotNull
     Attachment getAttachment();
@@ -28,6 +29,8 @@ public interface Bell extends Directional, Powerable {
 
     /**
      * What the bell is attached to.
+     *
+     * @since 1.14
      */
     public enum Attachment {
 

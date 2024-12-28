@@ -23,6 +23,7 @@ public interface TileStateInventoryHolder extends TileState, BlockInventoryHolde
      * snapshot instead.
      *
      * @return the inventory
+     * @since 1.21.1
      */
     @Override
     Inventory getInventory();
@@ -36,6 +37,7 @@ public interface TileStateInventoryHolder extends TileState, BlockInventoryHolde
      * called.
      *
      * @return the captured inventory snapshot
+     * @since 1.21.1
      */
     Inventory getSnapshotInventory();
 }

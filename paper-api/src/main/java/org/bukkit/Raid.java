@@ -17,6 +17,7 @@ public interface Raid extends org.bukkit.persistence.PersistentDataHolder { // P
      * Get whether this raid started.
      *
      * @return whether raid is started
+     * @since 1.14.4
      */
     boolean isStarted();
 
@@ -24,6 +25,7 @@ public interface Raid extends org.bukkit.persistence.PersistentDataHolder { // P
      * Gets the amount of ticks this raid has existed.
      *
      * @return active ticks
+     * @since 1.14.4
      */
     long getActiveTicks();
 
@@ -31,6 +33,7 @@ public interface Raid extends org.bukkit.persistence.PersistentDataHolder { // P
      * Gets the Bad Omen level of this raid.
      *
      * @return Bad Omen level (between 0 and 5)
+     * @since 1.14.4
      */
     int getBadOmenLevel();
 
@@ -42,6 +45,7 @@ public interface Raid extends org.bukkit.persistence.PersistentDataHolder { // P
      *
      * @param badOmenLevel new Bad Omen level (from 0-5)
      * @throws IllegalArgumentException if invalid Bad Omen level
+     * @since 1.14.4
      */
     void setBadOmenLevel(int badOmenLevel);
 
@@ -49,6 +53,7 @@ public interface Raid extends org.bukkit.persistence.PersistentDataHolder { // P
      * Gets the center location where the raid occurs.
      *
      * @return location
+     * @since 1.14.4
      */
     @NotNull
     Location getLocation();
@@ -60,6 +65,7 @@ public interface Raid extends org.bukkit.persistence.PersistentDataHolder { // P
      * {@link #isStarted()} instead.
      *
      * @return Raids status
+     * @since 1.14.4
      */
     @NotNull
     RaidStatus getStatus();
@@ -68,6 +74,7 @@ public interface Raid extends org.bukkit.persistence.PersistentDataHolder { // P
      * Gets the number of raider groups which have spawned.
      *
      * @return total spawned groups
+     * @since 1.14.4
      */
     int getSpawnedGroups();
 
@@ -78,6 +85,7 @@ public interface Raid extends org.bukkit.persistence.PersistentDataHolder { // P
      * present).
      *
      * @return total groups
+     * @since 1.14.4
      */
     int getTotalGroups();
 
@@ -85,6 +93,7 @@ public interface Raid extends org.bukkit.persistence.PersistentDataHolder { // P
      * Gets the number of waves in this raid (exclude the additional wave).
      *
      * @return number of waves
+     * @since 1.14.4
      */
     int getTotalWaves();
 
@@ -92,6 +101,7 @@ public interface Raid extends org.bukkit.persistence.PersistentDataHolder { // P
      * Gets the sum of all raider's health.
      *
      * @return total raiders health
+     * @since 1.14.4
      */
     float getTotalHealth();
 
@@ -99,6 +109,7 @@ public interface Raid extends org.bukkit.persistence.PersistentDataHolder { // P
      * Get the UUID of all heroes in this raid.
      *
      * @return a set of unique ids
+     * @since 1.14.4
      */
     @NotNull
     Set<UUID> getHeroes();
@@ -107,12 +118,15 @@ public interface Raid extends org.bukkit.persistence.PersistentDataHolder { // P
      * Gets all remaining {@link Raider} in the present wave.
      *
      * @return a list of current raiders
+     * @since 1.14.4
      */
     @NotNull
     List<Raider> getRaiders();
 
     /**
      * Represents the status of a {@link Raid}.
+     *
+     * @since 1.14.4
      */
     public enum RaidStatus {
 

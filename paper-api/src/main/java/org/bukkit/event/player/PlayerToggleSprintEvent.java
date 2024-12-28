@@ -24,16 +24,23 @@ public class PlayerToggleSprintEvent extends PlayerEvent implements Cancellable 
      * Gets whether the player is now sprinting or not.
      *
      * @return sprinting state
+     * @since 1.0.0
      */
     public boolean isSprinting() {
         return isSprinting;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;

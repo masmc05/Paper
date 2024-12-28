@@ -128,6 +128,7 @@ public final class MapCursor {
      * Get the X position of this cursor.
      *
      * @return The X coordinate.
+     * @since 1.0.0
      */
     public byte getX() {
         return x;
@@ -137,6 +138,7 @@ public final class MapCursor {
      * Get the Y position of this cursor.
      *
      * @return The Y coordinate.
+     * @since 1.0.0
      */
     public byte getY() {
         return y;
@@ -146,6 +148,7 @@ public final class MapCursor {
      * Get the direction of this cursor.
      *
      * @return The facing of the cursor, from 0 to 15.
+     * @since 1.0.0
      */
     public byte getDirection() {
         return direction;
@@ -155,6 +158,7 @@ public final class MapCursor {
      * Get the type of this cursor.
      *
      * @return The type (color/style) of the map cursor.
+     * @since 1.0.0
      */
     @NotNull
     public Type getType() {
@@ -176,6 +180,7 @@ public final class MapCursor {
      * Get the visibility status of this cursor.
      *
      * @return True if visible, false otherwise.
+     * @since 1.0.0
      */
     public boolean isVisible() {
         return visible;
@@ -185,6 +190,7 @@ public final class MapCursor {
      * Set the X position of this cursor.
      *
      * @param x The X coordinate.
+     * @since 1.0.0
      */
     public void setX(byte x) {
         this.x = x;
@@ -194,6 +200,7 @@ public final class MapCursor {
      * Set the Y position of this cursor.
      *
      * @param y The Y coordinate.
+     * @since 1.0.0
      */
     public void setY(byte y) {
         this.y = y;
@@ -203,6 +210,7 @@ public final class MapCursor {
      * Set the direction of this cursor.
      *
      * @param direction The facing of the cursor, from 0 to 15.
+     * @since 1.0.0
      */
     public void setDirection(byte direction) {
         Preconditions.checkArgument(direction >= 0 && direction <= 15, "direction must be between 0 and 15 but is %s", direction);
@@ -223,6 +231,7 @@ public final class MapCursor {
      *
      * @param type The type (color/style) of the map cursor.
      * @deprecated use {@link #setType(Type)}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2", forRemoval = true) // Paper
     public void setRawType(byte type) {
@@ -235,6 +244,7 @@ public final class MapCursor {
      * Set the visibility status of this cursor.
      *
      * @param visible True if visible.
+     * @since 1.0.0
      */
     public void setVisible(boolean visible) {
         this.visible = visible;
@@ -379,6 +389,7 @@ public final class MapCursor {
          * @param name of the type.
          * @return the type with the given name.
          * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+         * @since 1.0.0
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -391,6 +402,7 @@ public final class MapCursor {
         /**
          * @return an array of all known map cursor types.
          * @deprecated use {@link Registry#iterator()}.
+         * @since 1.0.0
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

@@ -34,6 +34,7 @@ public enum ItemRarity {
      * Gets the color formatting associated with this rarity.
      *
      * @return the color
+     * @since 1.20.6
      */
     public net.kyori.adventure.text.format.@org.jetbrains.annotations.NotNull TextColor color() {
         return this.color;

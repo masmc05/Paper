@@ -23,6 +23,7 @@ public interface RegistrarEvent<R extends Registrar> extends LifecycleEvent {
      * Get the registrar related to this event.
      *
      * @return the registrar
+     * @since 1.20.4
      */
     @Contract(pure = true)
     R registrar();

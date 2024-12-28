@@ -28,11 +28,17 @@ public class ExplosionPrimeEvent extends EntityEvent implements Cancellable {
         this(explosive, explosive.getYield(), explosive.isIncendiary());
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -42,6 +48,7 @@ public class ExplosionPrimeEvent extends EntityEvent implements Cancellable {
      * Gets the radius of the explosion
      *
      * @return returns the radius of the explosion
+     * @since 1.0.0
      */
     public float getRadius() {
         return radius;
@@ -51,6 +58,7 @@ public class ExplosionPrimeEvent extends EntityEvent implements Cancellable {
      * Sets the radius of the explosion
      *
      * @param radius the radius of the explosion
+     * @since 1.0.0
      */
     public void setRadius(float radius) {
         this.radius = radius;
@@ -60,6 +68,7 @@ public class ExplosionPrimeEvent extends EntityEvent implements Cancellable {
      * Gets whether this explosion will create fire or not
      *
      * @return true if this explosion will create fire
+     * @since 1.0.0
      */
     public boolean getFire() {
         return fire;
@@ -69,6 +78,7 @@ public class ExplosionPrimeEvent extends EntityEvent implements Cancellable {
      * Sets whether this explosion will create fire or not
      *
      * @param fire true if you want this explosion to create fire
+     * @since 1.0.0
      */
     public void setFire(boolean fire) {
         this.fire = fire;

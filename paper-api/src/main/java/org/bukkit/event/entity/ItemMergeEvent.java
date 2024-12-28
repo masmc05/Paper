@@ -19,16 +19,25 @@ public class ItemMergeEvent extends EntityEvent implements Cancellable {
         this.target = target;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     @Override
     public Item getEntity() {
@@ -39,18 +48,25 @@ public class ItemMergeEvent extends EntityEvent implements Cancellable {
      * Gets the Item entity the main Item is being merged into.
      *
      * @return The Item being merged with
+     * @since 1.8.8
      */
     @NotNull
     public Item getTarget() {
         return target;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

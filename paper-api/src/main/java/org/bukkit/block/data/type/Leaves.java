@@ -18,6 +18,7 @@ public interface Leaves extends Waterlogged {
      * Gets the value of the 'persistent' property.
      *
      * @return the persistent value
+     * @since 1.13
      */
     boolean isPersistent();
 
@@ -25,6 +26,7 @@ public interface Leaves extends Waterlogged {
      * Sets the value of the 'persistent' property.
      *
      * @param persistent the new 'persistent' value
+     * @since 1.13
      */
     void setPersistent(boolean persistent);
 
@@ -32,6 +34,7 @@ public interface Leaves extends Waterlogged {
      * Gets the value of the 'distance' property.
      *
      * @return the 'distance' value
+     * @since 1.13
      */
     int getDistance();
 
@@ -39,6 +42,7 @@ public interface Leaves extends Waterlogged {
      * Sets the value of the 'distance' property.
      *
      * @param distance the new 'distance' value
+     * @since 1.13
      */
     void setDistance(int distance);
 

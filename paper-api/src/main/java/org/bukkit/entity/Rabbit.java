@@ -9,6 +9,7 @@ public interface Rabbit extends Animals {
 
     /**
      * @return The type of rabbit.
+     * @since 1.8
      */
     @NotNull
     public Type getRabbitType();
@@ -39,6 +40,8 @@ public interface Rabbit extends Animals {
 
     /**
      * Represents the various types a Rabbit might be.
+     *
+     * @since 1.8
      */
     public enum Type {
 

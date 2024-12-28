@@ -28,6 +28,7 @@ public class PlayerItemCooldownEvent extends PlayerItemGroupCooldownEvent {
      * Get the material of the item affected by the cooldown.
      *
      * @return material affected by the cooldown
+     * @since 1.16.4
      */
     public Material getType() {
         return this.type;

@@ -39,6 +39,7 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
      * @return parsed value
      * @throws CommandSyntaxException if an error occurs while parsing
      * @see #parse(StringReader, Object)
+     * @since 1.20.6
      */
     @Override
     T parse(final StringReader reader) throws CommandSyntaxException;
@@ -68,6 +69,7 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
      * the type that is sent to the client.
      *
      * @return native argument type
+     * @since 1.20.6
      */
     ArgumentType<N> getNativeType();
 
@@ -77,6 +79,7 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
      * This helps differentiate and tell the player what the possible inputs are.
      *
      * @return client set examples
+     * @since 1.20.6
      */
     @Override
     @ApiStatus.NonExtendable
@@ -91,6 +94,7 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
      * @param builder suggestion builder
      * @return suggestions
      * @param <S> context type
+     * @since 1.20.6
      */
     @Override
     default <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> context, final SuggestionsBuilder builder) {
@@ -107,10 +111,15 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
      *
      * @param <T> custom type
      * @param <N> type with an argument native to vanilla Minecraft (from {@link ArgumentTypes})
+     * @since 1.20.6
      */
     @ApiStatus.Experimental
     interface Converted<T, N> extends CustomArgumentType<T, N> {
 
+        /**
+         * {@inheritDoc}
+         * @since 1.20.6
+         */
         @ApiStatus.NonExtendable
         @Override
         default T parse(final StringReader reader) throws CommandSyntaxException {

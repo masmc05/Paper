@@ -16,6 +16,7 @@ public interface EntityBlockStorage<T extends Entity> extends TileState {
      * Check if the block is completely full of entities.
      *
      * @return True if block is full
+     * @since 1.15.2
      */
     boolean isFull();
 
@@ -23,6 +24,7 @@ public interface EntityBlockStorage<T extends Entity> extends TileState {
      * Get the amount of entities currently in this block.
      *
      * @return Amount of entities currently in this block
+     * @since 1.15.2
      */
     int getEntityCount();
 
@@ -30,6 +32,7 @@ public interface EntityBlockStorage<T extends Entity> extends TileState {
      * Get the maximum amount of entities this block can hold.
      *
      * @return Maximum amount of entities this block can hold
+     * @since 1.15.2
      */
     int getMaxEntities();
 
@@ -37,6 +40,7 @@ public interface EntityBlockStorage<T extends Entity> extends TileState {
      * Set the maximum amount of entities this block can hold.
      *
      * @param max Maximum amount of entities this block can hold
+     * @since 1.15.2
      */
     void setMaxEntities(int max);
 
@@ -44,6 +48,7 @@ public interface EntityBlockStorage<T extends Entity> extends TileState {
      * Release all the entities currently stored in the block.
      *
      * @return List of all entities which were released
+     * @since 1.15.2
      */
     @NotNull
     List<T> releaseEntities();

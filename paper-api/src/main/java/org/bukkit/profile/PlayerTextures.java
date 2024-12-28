@@ -17,6 +17,8 @@ public interface PlayerTextures {
 
     /**
      * The different Minecraft skin models.
+     *
+     * @since 1.18.1
      */
     enum SkinModel {
         /**
@@ -33,11 +35,14 @@ public interface PlayerTextures {
      * Checks if the profile stores no textures.
      *
      * @return <code>true</code> if the profile stores no textures
+     * @since 1.18.1
      */
     boolean isEmpty();
 
     /**
      * Clears the textures.
+     *
+     * @since 1.18.1
      */
     void clear();
 
@@ -45,6 +50,7 @@ public interface PlayerTextures {
      * Gets the URL that points to the player's skin.
      *
      * @return the URL of the player's skin, or <code>null</code> if not set
+     * @since 1.18.1
      */
     @Nullable
     URL getSkin();
@@ -60,6 +66,7 @@ public interface PlayerTextures {
      *
      * @param skinUrl the URL of the player's skin, or <code>null</code> to
      * unset it
+     * @since 1.18.1
      */
     void setSkin(@Nullable URL skinUrl);
 
@@ -87,6 +94,7 @@ public interface PlayerTextures {
      * This returns {@link SkinModel#CLASSIC} if no skin is set.
      *
      * @return the model of the player's skin
+     * @since 1.18.1
      */
     @NotNull
     SkinModel getSkinModel();
@@ -95,6 +103,7 @@ public interface PlayerTextures {
      * Gets the URL that points to the player's cape.
      *
      * @return the URL of the player's cape, or <code>null</code> if not set
+     * @since 1.18.1
      */
     @Nullable
     URL getCape();
@@ -109,6 +118,7 @@ public interface PlayerTextures {
      *
      * @param capeUrl the URL of the player's cape, or <code>null</code> to
      * unset it
+     * @since 1.18.1
      */
     void setCape(@Nullable URL capeUrl);
 
@@ -116,6 +126,7 @@ public interface PlayerTextures {
      * Gets the timestamp at which the profile was last updated.
      *
      * @return the timestamp, or <code>0</code> if unknown
+     * @since 1.18.1
      */
     long getTimestamp();
 
@@ -124,6 +135,7 @@ public interface PlayerTextures {
      *
      * @return <code>true</code> if the textures are signed and the signature is
      * valid
+     * @since 1.18.1
      */
     boolean isSigned();
 }

@@ -66,6 +66,9 @@ public class LazyMetadataValue extends MetadataValueAdapter {
         super(owningPlugin);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @Nullable
     public Object value() {
@@ -97,6 +100,9 @@ public class LazyMetadataValue extends MetadataValueAdapter {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public synchronized void invalidate() {
         if (cacheStrategy != CacheStrategy.CACHE_ETERNALLY) {
@@ -106,6 +112,8 @@ public class LazyMetadataValue extends MetadataValueAdapter {
 
     /**
      * Describes possible caching strategies for metadata.
+     *
+     * @since 1.1.0
      */
     public enum CacheStrategy {
         /**

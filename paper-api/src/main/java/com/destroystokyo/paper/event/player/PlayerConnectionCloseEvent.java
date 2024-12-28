@@ -55,6 +55,8 @@ public class PlayerConnectionCloseEvent extends Event {
 
     /**
      * Returns the {@code UUID} of the player disconnecting.
+     *
+     * @since 1.13.2
      */
     public UUID getPlayerUniqueId() {
         return this.playerUniqueId;
@@ -62,6 +64,8 @@ public class PlayerConnectionCloseEvent extends Event {
 
     /**
      * Returns the name of the player disconnecting.
+     *
+     * @since 1.13.2
      */
     public String getPlayerName() {
         return this.playerName;
@@ -69,16 +73,24 @@ public class PlayerConnectionCloseEvent extends Event {
 
     /**
      * Returns the player's IP address.
+     *
+     * @since 1.13.2
      */
     public InetAddress getIpAddress() {
         return this.ipAddress;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

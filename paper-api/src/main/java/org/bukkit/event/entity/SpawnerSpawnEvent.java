@@ -25,6 +25,7 @@ public class SpawnerSpawnEvent extends EntitySpawnEvent {
      * spawner.
      *
      * @return the spawner tile state
+     * @since 1.6.1
      */
     @org.jetbrains.annotations.Nullable // Paper
     public CreatureSpawner getSpawner() {

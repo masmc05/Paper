@@ -18,6 +18,7 @@ public interface Lockable {
      * Checks if the container has a valid (non empty) key.
      *
      * @return true if the key is valid.
+     * @since 1.10.2
      */
     boolean isLocked();
 
@@ -26,6 +27,7 @@ public interface Lockable {
      *
      * @return the key needed.
      * @deprecated locks are not necessarily pure strings
+     * @since 1.10.2
      */
     @NotNull
     @Deprecated(since = "1.21.2")
@@ -37,6 +39,7 @@ public interface Lockable {
      *
      * @param key the key required to access the container.
      * @deprecated locks are not necessarily pure strings
+     * @since 1.10.2
      */
     @Deprecated(since = "1.21.2")
     void setLock(@Nullable String key);

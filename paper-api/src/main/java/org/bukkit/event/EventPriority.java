@@ -49,6 +49,9 @@ public enum EventPriority {
         this.slot = slot;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public int getSlot() {
         return slot;
     }

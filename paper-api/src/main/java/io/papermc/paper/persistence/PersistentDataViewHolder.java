@@ -21,6 +21,7 @@ public interface PersistentDataViewHolder {
      * {@link PersistentDataViewHolder} is impossible.
      *
      * @return the persistent data container view
+     * @since 1.21
      */
     PersistentDataContainerView getPersistentDataContainer();
 }

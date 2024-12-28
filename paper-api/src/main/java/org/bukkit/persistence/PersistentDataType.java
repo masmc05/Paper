@@ -119,6 +119,7 @@ public interface PersistentDataType<P, C> {
      * Returns the primitive data type of this tag.
      *
      * @return the class
+     * @since 1.14
      */
     @NotNull
     Class<P> getPrimitiveType();
@@ -127,6 +128,7 @@ public interface PersistentDataType<P, C> {
      * Returns the complex object type the primitive value resembles.
      *
      * @return the class type
+     * @since 1.14
      */
     @NotNull
     Class<C> getComplexType();
@@ -160,6 +162,7 @@ public interface PersistentDataType<P, C> {
      * provide default implementations for the primitive types.
      *
      * @param <P> the generic type of the primitive objects
+     * @since 1.14
      */
     class PrimitivePersistentDataType<P> implements PersistentDataType<P, P> {
 
@@ -169,12 +172,20 @@ public interface PersistentDataType<P, C> {
             this.primitiveType = primitiveType;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.14
+         */
         @NotNull
         @Override
         public Class<P> getPrimitiveType() {
             return primitiveType;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.14
+         */
         @NotNull
         @Override
         public Class<P> getComplexType() {
@@ -203,24 +214,40 @@ public interface PersistentDataType<P, C> {
      */
     class BooleanPersistentDataType implements PersistentDataType<Byte, Boolean> {
 
+        /**
+         * {@inheritDoc}
+         * @since 1.19.4
+         */
         @NotNull
         @Override
         public Class<Byte> getPrimitiveType() {
             return Byte.class;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.19.4
+         */
         @NotNull
         @Override
         public Class<Boolean> getComplexType() {
             return Boolean.class;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.19.4
+         */
         @NotNull
         @Override
         public Byte toPrimitive(@NotNull Boolean complex, @NotNull PersistentDataAdapterContext context) {
             return (byte) (complex ? 1 : 0);
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.19.4
+         */
         @NotNull
         @Override
         public Boolean fromPrimitive(@NotNull Byte primitive, @NotNull PersistentDataAdapterContext context) {

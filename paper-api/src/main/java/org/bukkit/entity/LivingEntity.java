@@ -35,6 +35,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets the height of the living entity's eyes above its Location.
      *
      * @return height of the living entity's eyes above its location
+     * @since 1.0.0
      */
     public double getEyeHeight();
 
@@ -44,6 +45,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param ignorePose if set to true, the effects of pose changes, eg
      *     sneaking and gliding will be ignored
      * @return height of the living entity's eyes above its location
+     * @since 1.0.0
      */
     public double getEyeHeight(boolean ignorePose);
 
@@ -51,6 +53,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Get a Location detailing the current eye position of the living entity.
      *
      * @return a location at the eyes of the living entity
+     * @since 1.0.0
      */
     @NotNull
     public Location getEyeLocation();
@@ -97,6 +100,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @return block that the living entity has targeted,
      *     or null if no block is within maxDistance
      * @deprecated use {@link #getTargetBlockExact(int)}
+     * @since 1.13.1
      */
     @Deprecated(forRemoval = true, since = "1.19.3")
     @Nullable
@@ -162,6 +166,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @return TargetBlockInfo about the block the living entity has targeted,
      *     or null if no block is targeted
      * @deprecated use {@link #rayTraceBlocks(double)}
+     * @since 1.13.1
      */
     @Deprecated(forRemoval = true, since = "1.19.3")
     @Nullable
@@ -212,6 +217,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @return TargetEntityInfo about the entity being targeted,
      *     or null if no entity is targeted
      * @deprecated use {@link #rayTraceEntities(int)}
+     * @since 1.13.1
      */
     @Deprecated(forRemoval = true, since = "1.19.3")
     @Nullable
@@ -240,6 +246,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @return TargetEntityInfo about the entity being targeted,
      *     or null if no entity is targeted
      * @deprecated use {@link #rayTraceEntities(int, boolean)}
+     * @since 1.13.1
      */
     @Deprecated(forRemoval = true, since = "1.19.3")
     @Nullable
@@ -350,6 +357,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * ticks.
      *
      * @return amount of air remaining
+     * @since 1.0.0
      */
     public int getRemainingAir();
 
@@ -357,6 +365,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Sets the amount of air that the living entity has remaining, in ticks.
      *
      * @param ticks amount of air remaining
+     * @since 1.0.0
      */
     public void setRemainingAir(int ticks);
 
@@ -364,6 +373,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Returns the maximum amount of air the living entity can have, in ticks.
      *
      * @return maximum amount of air
+     * @since 1.0.0
      */
     public int getMaximumAir();
 
@@ -371,6 +381,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Sets the maximum amount of air the living entity can have, in ticks.
      *
      * @param ticks maximum amount of air
+     * @since 1.0.0
      */
     public void setMaximumAir(int ticks);
 
@@ -381,6 +392,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @return the item being used by the player, or null if they are not using
      * an item
      * @deprecated Use {@link #getActiveItem()}
+     * @since 1.20.4
      */
     @Nullable
     @Deprecated(forRemoval = true, since = "1.20.4") // Paper
@@ -391,6 +403,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @return The number of ticks remaining
      * @deprecated use {@link #getActiveItemRemainingTime()}
+     * @since 1.20.4
      */
     @Deprecated(forRemoval = true, since = "1.20.4") // Paper
     public int getItemInUseTicks();
@@ -402,6 +415,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param ticks The number of ticks remaining
      * @deprecated use {@link #setActiveItemRemainingTime(int)}
+     * @since 1.20.4
      */
     @Deprecated(forRemoval = true, since = "1.20.4") // Paper
     public void setItemInUseTicks(int ticks);
@@ -532,6 +546,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * damage.
      *
      * @return maximum no damage ticks
+     * @since 1.0.0
      */
     public int getMaximumNoDamageTicks();
 
@@ -539,6 +554,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Sets the living entity's current maximum no damage ticks.
      *
      * @param ticks maximum amount of no damage ticks
+     * @since 1.0.0
      */
     public void setMaximumNoDamageTicks(int ticks);
 
@@ -550,6 +566,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * entity.
      *
      * @return damage taken since the last no damage ticks time period
+     * @since 1.0.0
      */
     public double getLastDamage();
 
@@ -565,6 +582,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Returns the living entity's current no damage ticks.
      *
      * @return amount of no damage ticks
+     * @since 1.0.0
      */
     public int getNoDamageTicks();
 
@@ -572,6 +590,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Sets the living entity's current no damage ticks.
      *
      * @param ticks amount of no damage ticks
+     * @since 1.0.0
      */
     public void setNoDamageTicks(int ticks);
 
@@ -1134,6 +1153,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @return the entity category
      * @deprecated entity groupings are now managed by tags, not categories
+     * @since 1.16.2
      */
     @NotNull
     @Deprecated(since = "1.20.5", forRemoval = true) @org.jetbrains.annotations.Contract("-> fail") // Paper

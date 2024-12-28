@@ -19,12 +19,18 @@ public class ServiceRegisterEvent extends ServiceEvent {
         super(registeredProvider);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

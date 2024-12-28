@@ -28,6 +28,9 @@ public class PiglinBarterEvent extends EntityEvent implements Cancellable {
         this.outcome = outcome;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     @Override
     public Piglin getEntity() {
@@ -38,6 +41,7 @@ public class PiglinBarterEvent extends EntityEvent implements Cancellable {
      * Gets the input of the barter.
      *
      * @return The item that was used to barter with
+     * @since 1.16.5
      */
     @NotNull
     public ItemStack getInput() {
@@ -48,28 +52,41 @@ public class PiglinBarterEvent extends EntityEvent implements Cancellable {
      * Returns a mutable list representing the outcome of the barter.
      *
      * @return A mutable list of the item the player will receive
+     * @since 1.16.5
      */
     @NotNull
     public List<ItemStack> getOutcome() {
         return outcome;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

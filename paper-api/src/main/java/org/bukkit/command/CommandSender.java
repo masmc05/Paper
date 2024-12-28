@@ -21,6 +21,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * @see #sendMessage(net.kyori.adventure.text.Component)
      * @see #sendPlainMessage(String)
      * @see #sendRichMessage(String)
+     * @since 1.0.0
      */
     @org.jetbrains.annotations.ApiStatus.Obsolete // Paper
     public void sendMessage(@NotNull String message);
@@ -65,6 +66,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * Returns the server instance that this command is running on
      *
      * @return Server instance
+     * @since 1.0.0
      */
     @NotNull
     public Server getServer();
@@ -73,6 +75,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * Gets the name of this command sender
      *
      * @return Name of the sender
+     * @since 1.0.0
      */
     @NotNull
     public String getName();
@@ -88,6 +91,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
          *
          * @param component the components to send
          * @deprecated use {@code sendMessage} methods that accept {@link net.kyori.adventure.text.Component}
+         * @since 1.12
          */
         @Deprecated // Paper
         public void sendMessage(@NotNull net.md_5.bungee.api.chat.BaseComponent component) {
@@ -99,6 +103,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
          *
          * @param components the components to send
          * @deprecated use {@code sendMessage} methods that accept {@link net.kyori.adventure.text.Component}
+         * @since 1.12
          */
         @Deprecated // Paper
         public void sendMessage(@NotNull net.md_5.bungee.api.chat.BaseComponent... components) {

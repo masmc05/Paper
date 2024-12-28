@@ -13,6 +13,7 @@ public interface Panda extends Animals, Sittable {
      * Gets this Panda's main gene.
      *
      * @return main gene
+     * @since 1.14
      */
     @NotNull
     Gene getMainGene();
@@ -28,6 +29,7 @@ public interface Panda extends Animals, Sittable {
      * Gets this Panda's hidden gene.
      *
      * @return hidden gene
+     * @since 1.14
      */
     @NotNull
     Gene getHiddenGene();
@@ -171,6 +173,7 @@ public interface Panda extends Animals, Sittable {
      *
      * @param onBack is on its back
      * @deprecated use {@link #setOnBack(boolean)}
+     * @since 1.18.1
      */
     @Deprecated(forRemoval = true, since = "1.19")
     default void setIsOnBack(boolean onBack) {
@@ -182,6 +185,7 @@ public interface Panda extends Animals, Sittable {
      *
      * @param sitting is currently sitting
      * @deprecated use {@link #setSitting(boolean)}
+     * @since 1.18.1
      */
     @Deprecated(forRemoval = true, since = "1.19")
     default void setIsSitting(boolean sitting) {
@@ -219,6 +223,9 @@ public interface Panda extends Animals, Sittable {
     Gene getCombinedGene();
     // Paper end - Panda API
 
+    /**
+     * @since 1.14
+     */
     public enum Gene {
 
         NORMAL(false),
@@ -240,6 +247,7 @@ public interface Panda extends Animals, Sittable {
          * propagate to children.
          *
          * @return recessive status
+         * @since 1.14
          */
         public boolean isRecessive() {
             return recessive;

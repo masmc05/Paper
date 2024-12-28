@@ -198,6 +198,7 @@ public interface Criteria {
      * Get the name of this criteria (its unique id).
      *
      * @return the name
+     * @since 1.19.2
      */
     @NotNull
     public String getName();
@@ -207,6 +208,7 @@ public interface Criteria {
      * cannot have their scores changed.
      *
      * @return true if read only, false otherwise
+     * @since 1.19.2
      */
     public boolean isReadOnly();
 
@@ -214,6 +216,7 @@ public interface Criteria {
      * Get the {@link RenderType} used by default for this criteria.
      *
      * @return the default render type
+     * @since 1.19.2
      */
     @NotNull
     public RenderType getDefaultRenderType();
@@ -243,6 +246,7 @@ public interface Criteria {
      * {@link Material#isBlock()} is false
      * @throws IllegalArgumentException if {@link Statistic#getType()} is {@link Type#ITEM}, but
      * {@link Material#isItem()} is false
+     * @since 1.19.2
      */
     @NotNull
     public static Criteria statistic(@NotNull Statistic statistic, @NotNull Material material) {
@@ -300,6 +304,7 @@ public interface Criteria {
      * @param entityType the relevant entity type
      * @return the criteria
      * @throws IllegalArgumentException if {@link Statistic#getType()} is not {@link Type#ENTITY}
+     * @since 1.19.2
      */
     @NotNull
     public static Criteria statistic(@NotNull Statistic statistic, @NotNull EntityType entityType) {
@@ -333,6 +338,7 @@ public interface Criteria {
      *
      * @param statistic the statistic for which to get a criteria
      * @return the criteria
+     * @since 1.19.2
      */
     @NotNull
     public static Criteria statistic(@NotNull Statistic statistic) {
@@ -345,6 +351,7 @@ public interface Criteria {
      *
      * @param name the criteria name
      * @return the created criteria
+     * @since 1.19.2
      */
     @NotNull
     public static Criteria create(@NotNull String name) {

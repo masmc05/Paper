@@ -14,6 +14,7 @@ public interface ServerOperator {
      * Checks if this object is a server operator
      *
      * @return true if this is an operator, otherwise false
+     * @since 1.0.0
      */
     public boolean isOp();
 
@@ -21,6 +22,7 @@ public interface ServerOperator {
      * Sets the operator status of this object
      *
      * @param value New operator value
+     * @since 1.0.0
      */
     public void setOp(boolean value);
 }

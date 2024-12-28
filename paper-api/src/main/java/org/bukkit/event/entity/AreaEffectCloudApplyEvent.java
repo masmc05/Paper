@@ -39,6 +39,9 @@ public class AreaEffectCloudApplyEvent extends EntityEvent implements Cancellabl
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     @NotNull
     public AreaEffectCloud getEntity() {
@@ -54,18 +57,25 @@ public class AreaEffectCloudApplyEvent extends EntityEvent implements Cancellabl
      * or {@link AreaEffectCloud#getRadiusOnUse()}
      *
      * @return the affected entity list
+     * @since 1.9.4
      */
     @NotNull
     public List<LivingEntity> getAffectedEntities() {
         return affectedEntities;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -33,6 +33,7 @@ public class BlockShearEntityEvent extends BlockEvent implements Cancellable {
      * Gets the entity that was sheared.
      *
      * @return the entity that was sheared.
+     * @since 1.14
      */
     @NotNull
     public Entity getEntity() {
@@ -43,28 +44,41 @@ public class BlockShearEntityEvent extends BlockEvent implements Cancellable {
      * Gets the item used to shear this sheep.
      *
      * @return the item used to shear this sheep.
+     * @since 1.14
      */
     @NotNull
     public ItemStack getTool() {
         return tool.clone();
     }
 
+    /**
+     * @since 1.14
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.14
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

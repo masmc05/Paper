@@ -19,6 +19,7 @@ public interface EntitySnapshot {
      *
      * @param world the world to create the entity in
      * @return a copy of this entity.
+     * @since 1.20.4
      */
     @NotNull
     Entity createEntity(@NotNull World world);
@@ -28,6 +29,7 @@ public interface EntitySnapshot {
      *
      * @param to the location to copy to
      * @return the new entity.
+     * @since 1.20.4
      */
     @NotNull
     Entity createEntity(@NotNull Location to);
@@ -36,6 +38,7 @@ public interface EntitySnapshot {
      * Gets the type of entity this template holds.
      *
      * @return the type
+     * @since 1.20.4
      */
     @NotNull
     EntityType getEntityType();

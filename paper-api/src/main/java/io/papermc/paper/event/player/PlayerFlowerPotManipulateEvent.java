@@ -37,6 +37,7 @@ public class PlayerFlowerPotManipulateEvent extends PlayerEvent implements Cance
      * Gets the flowerpot that is involved in this event.
      *
      * @return the flowerpot that is involved with this event
+     * @since 1.16.4
      */
     public Block getFlowerpot() {
         return this.flowerpot;
@@ -47,6 +48,7 @@ public class PlayerFlowerPotManipulateEvent extends PlayerEvent implements Cance
      * Check if placing with {@link #isPlacing()}.
      *
      * @return the item placed, or taken from, the flowerpot
+     * @since 1.16.4
      */
     public ItemStack getItem() {
         return this.item;
@@ -56,26 +58,39 @@ public class PlayerFlowerPotManipulateEvent extends PlayerEvent implements Cance
      * Gets if the item is being placed into the flowerpot.
      *
      * @return if the item is being placed into the flowerpot
+     * @since 1.16.4
      */
     public boolean isPlacing() {
         return this.placing;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

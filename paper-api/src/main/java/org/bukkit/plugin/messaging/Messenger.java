@@ -37,6 +37,7 @@ public interface Messenger {
      * @param channel Channel name to check.
      * @return True if the channel is reserved, otherwise false.
      * @throws IllegalArgumentException Thrown if channel is null.
+     * @since 1.1.0
      */
     public boolean isReservedChannel(@NotNull String channel);
 
@@ -47,6 +48,7 @@ public interface Messenger {
      * @param plugin Plugin that wishes to send messages through the channel.
      * @param channel Channel to register.
      * @throws IllegalArgumentException Thrown if plugin or channel is null.
+     * @since 1.1.0
      */
     public void registerOutgoingPluginChannel(@NotNull Plugin plugin, @NotNull String channel);
 
@@ -59,6 +61,7 @@ public interface Messenger {
      *     channel.
      * @param channel Channel to unregister.
      * @throws IllegalArgumentException Thrown if plugin or channel is null.
+     * @since 1.1.0
      */
     public void unregisterOutgoingPluginChannel(@NotNull Plugin plugin, @NotNull String channel);
 
@@ -68,6 +71,7 @@ public interface Messenger {
      *
      * @param plugin Plugin that no longer wishes to send plugin messages.
      * @throws IllegalArgumentException Thrown if plugin is null.
+     * @since 1.1.0
      */
     public void unregisterOutgoingPluginChannel(@NotNull Plugin plugin);
 
@@ -82,6 +86,7 @@ public interface Messenger {
      *     method.
      * @throws IllegalArgumentException Thrown if plugin, channel or listener
      *     is null, or the listener is already registered for this channel.
+     * @since 1.1.0
      */
     @NotNull
     public PluginMessageListenerRegistration registerIncomingPluginChannel(@NotNull Plugin plugin, @NotNull String channel, @NotNull PluginMessageListener listener);
@@ -96,6 +101,7 @@ public interface Messenger {
      * @param listener Listener to stop receiving messages on.
      * @throws IllegalArgumentException Thrown if plugin, channel or listener
      *     is null.
+     * @since 1.1.0
      */
     public void unregisterIncomingPluginChannel(@NotNull Plugin plugin, @NotNull String channel, @NotNull PluginMessageListener listener);
 
@@ -107,6 +113,7 @@ public interface Messenger {
      * @param plugin Plugin that wishes to unregister from this channel.
      * @param channel Channel to unregister.
      * @throws IllegalArgumentException Thrown if plugin or channel is null.
+     * @since 1.1.0
      */
     public void unregisterIncomingPluginChannel(@NotNull Plugin plugin, @NotNull String channel);
 
@@ -116,6 +123,7 @@ public interface Messenger {
      *
      * @param plugin Plugin that wishes to unregister from this channel.
      * @throws IllegalArgumentException Thrown if plugin is null.
+     * @since 1.1.0
      */
     public void unregisterIncomingPluginChannel(@NotNull Plugin plugin);
 
@@ -123,6 +131,7 @@ public interface Messenger {
      * Gets a set containing all the outgoing plugin channels.
      *
      * @return List of all registered outgoing plugin channels.
+     * @since 1.1.0
      */
     @NotNull
     public Set<String> getOutgoingChannels();
@@ -135,6 +144,7 @@ public interface Messenger {
      * @return List of all registered outgoing plugin channels that a plugin
      *     is registered to.
      * @throws IllegalArgumentException Thrown if plugin is null.
+     * @since 1.1.0
      */
     @NotNull
     public Set<String> getOutgoingChannels(@NotNull Plugin plugin);
@@ -143,6 +153,7 @@ public interface Messenger {
      * Gets a set containing all the incoming plugin channels.
      *
      * @return List of all registered incoming plugin channels.
+     * @since 1.1.0
      */
     @NotNull
     public Set<String> getIncomingChannels();
@@ -155,6 +166,7 @@ public interface Messenger {
      * @return List of all registered incoming plugin channels that the plugin
      *     is registered for.
      * @throws IllegalArgumentException Thrown if plugin is null.
+     * @since 1.1.0
      */
     @NotNull
     public Set<String> getIncomingChannels(@NotNull Plugin plugin);
@@ -166,6 +178,7 @@ public interface Messenger {
      * @param plugin Plugin to retrieve registrations for.
      * @return List of all registrations that the plugin has.
      * @throws IllegalArgumentException Thrown if plugin is null.
+     * @since 1.1.0
      */
     @NotNull
     public Set<PluginMessageListenerRegistration> getIncomingChannelRegistrations(@NotNull Plugin plugin);
@@ -177,6 +190,7 @@ public interface Messenger {
      * @param channel Channel to retrieve registrations for.
      * @return List of all registrations that are on the channel.
      * @throws IllegalArgumentException Thrown if channel is null.
+     * @since 1.1.0
      */
     @NotNull
     public Set<PluginMessageListenerRegistration> getIncomingChannelRegistrations(@NotNull String channel);
@@ -189,6 +203,7 @@ public interface Messenger {
      * @param channel Channel to filter registrations by.
      * @return List of all registrations that the plugin has.
      * @throws IllegalArgumentException Thrown if plugin or channel is null.
+     * @since 1.1.0
      */
     @NotNull
     public Set<PluginMessageListenerRegistration> getIncomingChannelRegistrations(@NotNull Plugin plugin, @NotNull String channel);
@@ -201,6 +216,7 @@ public interface Messenger {
      *
      * @param registration Registration to check.
      * @return True if the registration is valid, otherwise false.
+     * @since 1.1.0
      */
     public boolean isRegistrationValid(@NotNull PluginMessageListenerRegistration registration);
 
@@ -211,6 +227,7 @@ public interface Messenger {
      * @param plugin Plugin to check registration for.
      * @param channel Channel to test for.
      * @return True if the channel is registered, else false.
+     * @since 1.1.0
      */
     public boolean isIncomingChannelRegistered(@NotNull Plugin plugin, @NotNull String channel);
 
@@ -221,6 +238,7 @@ public interface Messenger {
      * @param plugin Plugin to check registration for.
      * @param channel Channel to test for.
      * @return True if the channel is registered, else false.
+     * @since 1.1.0
      */
     public boolean isOutgoingChannelRegistered(@NotNull Plugin plugin, @NotNull String channel);
 
@@ -230,6 +248,7 @@ public interface Messenger {
      * @param source Source of the message.
      * @param channel Channel that the message was sent by.
      * @param message Raw payload of the message.
+     * @since 1.1.0
      */
     public void dispatchIncomingMessage(@NotNull Player source, @NotNull String channel, @NotNull byte[] message);
 }

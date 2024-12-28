@@ -15,6 +15,7 @@ public interface Lectern extends Directional, Powerable {
      * Gets the value of the 'has_book' property.
      *
      * @return the 'has_book' value
+     * @since 1.14
      */
     boolean hasBook();
 }

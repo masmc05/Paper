@@ -22,6 +22,7 @@ public interface Lootable {
      *
      * @param table the Loot Table this {@link org.bukkit.block.Container} or
      * {@link org.bukkit.entity.Mob} will have.
+     * @since 1.13
      */
     void setLootTable(@Nullable LootTable table);
 
@@ -33,6 +34,7 @@ public interface Lootable {
      * an empty loot table.
      *
      * @return the Loot Table attached to this block or entity.
+     * @since 1.13
      */
     @Nullable
     LootTable getLootTable();
@@ -43,12 +45,14 @@ public interface Lootable {
      *
      * @param table the Loot Table this {@link org.bukkit.block.Container} or {@link org.bukkit.entity.Mob} will have.
      * @param seed the seed to used to generate loot. Default is 0.
+     * @since 1.13
      */
     void setLootTable(final @Nullable LootTable table, final long seed);
 
     /**
      * Returns whether or not this object has a Loot Table
      * @return Has a loot table
+     * @since 1.13
      */
     default boolean hasLootTable() {
         return this.getLootTable() != null;
@@ -56,6 +60,8 @@ public interface Lootable {
 
     /**
      * Clears the associated Loot Table to this object
+     *
+     * @since 1.13
      */
     default void clearLootTable() {
         this.setLootTable(null);
@@ -66,6 +72,7 @@ public interface Lootable {
      * Set the seed used when this Loot Table generates loot.
      *
      * @param seed the seed to used to generate loot. Default is 0.
+     * @since 1.13
      */
     void setSeed(long seed);
 
@@ -75,6 +82,7 @@ public interface Lootable {
      * The seed is used when generating loot.
      *
      * @return the seed
+     * @since 1.13
      */
     long getSeed();
 }

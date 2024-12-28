@@ -37,6 +37,7 @@ public class PlayerPickItemEvent extends PlayerEvent implements Cancellable {
      * Returns the slot the item that is being picked goes into.
      *
      * @return hotbar slot (0-8 inclusive)
+     * @since 1.20.1
      */
     public @Range(from = 0, to = 8) int getTargetSlot() {
         return this.targetSlot;
@@ -46,6 +47,7 @@ public class PlayerPickItemEvent extends PlayerEvent implements Cancellable {
      * Changes the slot the item that is being picked goes into.
      *
      * @param targetSlot hotbar slot (0-8 inclusive)
+     * @since 1.20.1
      */
     public void setTargetSlot(final @Range(from = 0, to = 8) int targetSlot) {
         Preconditions.checkArgument(targetSlot >= 0 && targetSlot <= 8, "Target slot must be in range 0 - 8 (inclusive)");
@@ -59,6 +61,7 @@ public class PlayerPickItemEvent extends PlayerEvent implements Cancellable {
      * If this is the case and the player is in creative mode, the item will be spawned in.
      *
      * @return player inventory slot (0-35 inclusive, or {@code -1} if not in the player inventory)
+     * @since 1.20.1
      */
     public @Range(from = -1, to = 35) int getSourceSlot() {
         return this.sourceSlot;
@@ -70,27 +73,40 @@ public class PlayerPickItemEvent extends PlayerEvent implements Cancellable {
      * If set to {@code -1} and the player is in creative mode, the item will be spawned in.
      *
      * @param sourceSlot player inventory slot (0-35 inclusive, or {@code -1} if not in the player inventory)
+     * @since 1.20.1
      */
     public void setSourceSlot(final @Range(from = -1, to = 35) int sourceSlot) {
         Preconditions.checkArgument(sourceSlot >= -1 && sourceSlot <= 35, "Source slot must be in range of the player's inventory slot, or -1");
         this.sourceSlot = sourceSlot;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

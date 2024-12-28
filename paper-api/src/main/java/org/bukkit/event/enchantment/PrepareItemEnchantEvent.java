@@ -38,6 +38,7 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
      * Gets the player enchanting the item
      *
      * @return enchanting player
+     * @since 1.1.0
      */
     @NotNull
     public Player getEnchanter() {
@@ -48,6 +49,7 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
      * Gets the block being used to enchant the item
      *
      * @return the block used for enchanting
+     * @since 1.1.0
      */
     @NotNull
     public Block getEnchantBlock() {
@@ -58,6 +60,7 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
      * Gets the item to be enchanted.
      *
      * @return ItemStack of item
+     * @since 1.1.0
      */
     @NotNull
     public ItemStack getItem() {
@@ -69,6 +72,7 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
      *
      * @return experience level costs offered
      * @deprecated Use {@link #getOffers()} instead of this method
+     * @since 1.1.0
      */
     @NotNull
     @Deprecated(since = "1.20.5")
@@ -97,6 +101,7 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
      * Get enchantment bonus in effect - corresponds to number of bookshelves
      *
      * @return enchantment bonus
+     * @since 1.1.0
      */
     public int getEnchantmentBonus() {
         return bonus;
@@ -111,22 +116,34 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
         return (EnchantmentView) super.getView();
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

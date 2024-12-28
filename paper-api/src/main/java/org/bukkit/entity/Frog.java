@@ -21,6 +21,7 @@ public interface Frog extends Animals {
      * Gets the tongue target of this frog.
      *
      * @return tongue target or null if not set
+     * @since 1.19
      */
     @Nullable
     Entity getTongueTarget();
@@ -29,6 +30,7 @@ public interface Frog extends Animals {
      * Sets the tongue target of this frog.
      *
      * @param target tongue target or null to clear
+     * @since 1.19
      */
     void setTongueTarget(@Nullable Entity target);
 
@@ -36,6 +38,7 @@ public interface Frog extends Animals {
      * Get the variant of this frog.
      *
      * @return frog variant
+     * @since 1.19
      */
     @NotNull
     Variant getVariant();
@@ -49,6 +52,8 @@ public interface Frog extends Animals {
 
     /**
      * Represents the variant of a frog - ie its color.
+     *
+     * @since 1.19
      */
     interface Variant extends OldEnum<Variant>, Keyed {
 
@@ -74,6 +79,7 @@ public interface Frog extends Animals {
          * @param name of the frog variant.
          * @return the frog variant with the given name.
          * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+         * @since 1.19
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -86,6 +92,7 @@ public interface Frog extends Animals {
         /**
          * @return an array of all known frog variants.
          * @deprecated use {@link Registry#iterator()}.
+         * @since 1.19
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

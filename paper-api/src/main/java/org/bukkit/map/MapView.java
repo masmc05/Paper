@@ -15,6 +15,8 @@ public interface MapView {
 
     /**
      * An enum representing all possible scales a map can be set to.
+     *
+     * @since 1.0.0
      */
     public static enum Scale {
         CLOSEST(0),
@@ -65,6 +67,7 @@ public interface MapView {
      * Get the ID of this map item for use with {@link MapMeta}.
      *
      * @return The ID of the map.
+     * @since 1.0.0
      */
     public int getId();
 
@@ -73,6 +76,7 @@ public interface MapView {
      * MapRenderer is plugin-provided.
      *
      * @return Whether the map is virtual.
+     * @since 1.0.0
      */
     public boolean isVirtual();
 
@@ -80,6 +84,7 @@ public interface MapView {
      * Get the scale of this map.
      *
      * @return The scale of the map.
+     * @since 1.0.0
      */
     @NotNull
     public Scale getScale();
@@ -95,6 +100,7 @@ public interface MapView {
      * Get the center X position of this map.
      *
      * @return The center X position.
+     * @since 1.0.0
      */
     public int getCenterX();
 
@@ -102,6 +108,7 @@ public interface MapView {
      * Get the center Z position of this map.
      *
      * @return The center Z position.
+     * @since 1.0.0
      */
     public int getCenterZ();
 
@@ -109,6 +116,7 @@ public interface MapView {
      * Set the center X position of this map.
      *
      * @param x The center X position.
+     * @since 1.0.0
      */
     public void setCenterX(int x);
 
@@ -116,6 +124,7 @@ public interface MapView {
      * Set the center Z position of this map.
      *
      * @param z The center Z position.
+     * @since 1.0.0
      */
     public void setCenterZ(int z);
 
@@ -125,6 +134,7 @@ public interface MapView {
      * null if the world the map is associated with is not loaded.
      *
      * @return The World this map is associated with.
+     * @since 1.0.0
      */
     @Nullable
     public World getWorld();
@@ -134,6 +144,7 @@ public interface MapView {
      * the internal renderer, and may also be used by external renderers.
      *
      * @param world The World to associate this map with.
+     * @since 1.0.0
      */
     public void setWorld(@NotNull World world);
 
@@ -141,6 +152,7 @@ public interface MapView {
      * Get a list of MapRenderers currently in effect.
      *
      * @return A {@code List<MapRenderer>} containing each map renderer.
+     * @since 1.0.0
      */
     @NotNull
     public List<MapRenderer> getRenderers();
@@ -149,6 +161,7 @@ public interface MapView {
      * Add a renderer to this map.
      *
      * @param renderer The MapRenderer to add.
+     * @since 1.0.0
      */
     public void addRenderer(@NotNull MapRenderer renderer);
 
@@ -157,6 +170,7 @@ public interface MapView {
      *
      * @param renderer The MapRenderer to remove.
      * @return True if the renderer was successfully removed.
+     * @since 1.0.0
      */
     public boolean removeRenderer(@Nullable MapRenderer renderer);
 

@@ -23,6 +23,7 @@ public interface ArgumentResolver<T> {
      * command source stack.
      * @param sourceStack source stack
      * @return resolved
+     * @since 1.20.6
      */
     T resolve(CommandSourceStack sourceStack) throws CommandSyntaxException;
 }

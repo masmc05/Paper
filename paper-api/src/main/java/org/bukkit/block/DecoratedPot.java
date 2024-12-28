@@ -53,6 +53,7 @@ public interface DecoratedPot extends io.papermc.paper.block.TileStateInventoryH
      *
      * @return the sherds
      * @deprecated in favor of {@link #getSherds()}
+     * @since 1.19.4
      */
     @Deprecated(since = "1.20.1")
     @NotNull

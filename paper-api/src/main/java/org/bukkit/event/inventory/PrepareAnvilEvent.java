@@ -20,6 +20,9 @@ public class PrepareAnvilEvent extends com.destroystokyo.paper.event.inventory.P
         super(inventory, result);
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public AnvilInventory getInventory() {
@@ -35,6 +38,7 @@ public class PrepareAnvilEvent extends com.destroystokyo.paper.event.inventory.P
      * greater or equals to zero in order to allow that.
      *
      * @param result result item
+     * @since 1.9.4
      */
     public void setResult(@Nullable ItemStack result) {
         super.setResult(result);

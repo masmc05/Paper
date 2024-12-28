@@ -13,6 +13,7 @@ public interface BigDripleaf extends Dripleaf {
      * Gets the value of the 'tilt' property.
      *
      * @return the 'tilt' value
+     * @since 1.17
      */
     @NotNull
     Tilt getTilt();
@@ -26,6 +27,8 @@ public interface BigDripleaf extends Dripleaf {
 
     /**
      * The tilt of a leaf.
+     *
+     * @since 1.17
      */
     public enum Tilt {
         /**

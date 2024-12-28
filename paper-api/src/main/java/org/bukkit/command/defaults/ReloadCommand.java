@@ -24,6 +24,9 @@ public class ReloadCommand extends BukkitCommand {
     @org.jetbrains.annotations.ApiStatus.Internal // Paper
     public static final String RELOADING_DISABLED_MESSAGE = "A lifecycle event handler has been registered which makes reloading plugins not possible"; // Paper
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String currentAlias, @NotNull String[] args) { // Paper
         if (!testPermission(sender)) return true;

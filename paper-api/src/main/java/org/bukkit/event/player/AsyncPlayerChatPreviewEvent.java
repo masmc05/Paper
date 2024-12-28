@@ -24,12 +24,18 @@ public class AsyncPlayerChatPreviewEvent extends AsyncPlayerChatEvent {
         super(async, who, message, players);
     }
 
+    /**
+     * @since 1.19.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.19.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -32,6 +32,7 @@ public interface LifecycleEventType<O extends LifecycleEventOwner, E extends Lif
      * Gets the name of the lifecycle event.
      *
      * @return the name
+     * @since 1.20.4
      */
     @Contract(pure = true)
     String name();
@@ -43,6 +44,7 @@ public interface LifecycleEventType<O extends LifecycleEventOwner, E extends Lif
      * @param handler the event handler
      * @return a new configuration
      * @see LifecycleEventManager#registerEventHandler(LifecycleEventHandlerConfiguration)
+     * @since 1.20.4
      */
     @Contract("_ -> new")
     C newHandler(LifecycleEventHandler<? super E> handler);
@@ -55,6 +57,7 @@ public interface LifecycleEventType<O extends LifecycleEventOwner, E extends Lif
      *
      * @param <O> the required owner type
      * @param <E> the event object type
+     * @since 1.20.4
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -67,6 +70,7 @@ public interface LifecycleEventType<O extends LifecycleEventOwner, E extends Lif
      *
      * @param <O> the required owner type
      * @param <E> the event object type
+     * @since 1.20.4
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable

@@ -36,6 +36,7 @@ public interface DatapackManager {
      * to get the latest pack information.
      *
      * @return all the packs known to the server
+     * @since 1.16.5
      */
     @Unmodifiable Collection<Datapack> getPacks();
 
@@ -44,6 +45,7 @@ public interface DatapackManager {
      * to get the latest pack information.
      *
      * @return all the packs which are currently enabled
+     * @since 1.16.5
      */
     @Unmodifiable Collection<Datapack> getEnabledPacks();
 }

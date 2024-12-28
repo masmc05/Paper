@@ -53,6 +53,7 @@ public class PreFillProfileEvent extends Event {
 
     /**
      * @return The profile that needs its properties filled
+     * @since 1.12.2
      */
     public PlayerProfile getPlayerProfile() {
         return this.profile;
@@ -64,16 +65,23 @@ public class PreFillProfileEvent extends Event {
      *
      * @param properties The properties to set/append
      * @see PlayerProfile#setProperties(Collection)
+     * @since 1.12.2
      */
     public void setProperties(final Collection<ProfileProperty> properties) {
         this.profile.setProperties(properties);
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

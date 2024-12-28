@@ -16,6 +16,7 @@ public interface Sapling extends BlockData {
      * Gets the value of the 'stage' property.
      *
      * @return the 'stage' value
+     * @since 1.13
      */
     int getStage();
 
@@ -23,6 +24,7 @@ public interface Sapling extends BlockData {
      * Sets the value of the 'stage' property.
      *
      * @param stage the new 'stage' value
+     * @since 1.13
      */
     void setStage(int stage);
 
@@ -30,6 +32,7 @@ public interface Sapling extends BlockData {
      * Gets the maximum allowed value of the 'stage' property.
      *
      * @return the maximum 'stage' value
+     * @since 1.13
      */
     int getMaximumStage();
 }

@@ -22,6 +22,7 @@ public interface AbstractSkeleton extends Monster, com.destroystokyo.paper.entit
      *
      * @return Current type
      * @deprecated should check what class instance this is.
+     * @since 1.17
      */
     @Deprecated(since = "1.17")
     @NotNull

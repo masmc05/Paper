@@ -28,6 +28,7 @@ public class SlimeTargetLivingEntityEvent extends SlimePathfindEvent {
      * Get the targeted entity
      *
      * @return Targeted entity
+     * @since 1.13
      */
     public LivingEntity getTarget() {
         return this.target;

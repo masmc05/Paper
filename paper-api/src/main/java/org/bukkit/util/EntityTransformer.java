@@ -26,6 +26,7 @@ public interface EntityTransformer {
      *
      * @return {@code true} if the entity should be spawned otherwise
      * {@code false}
+     * @since 1.20.2
      */
     boolean transform(@NotNull LimitedRegion region, int x, int y, int z, @NotNull Entity entity, boolean allowedToSpawn);
 }

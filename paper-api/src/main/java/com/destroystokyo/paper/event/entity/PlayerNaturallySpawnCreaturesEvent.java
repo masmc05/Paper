@@ -28,6 +28,7 @@ public class PlayerNaturallySpawnCreaturesEvent extends PlayerEvent implements C
 
     /**
      * @return The radius of chunks around this player to be included in natural spawn selection
+     * @since 1.12.2
      */
     public byte getSpawnRadius() {
         return this.radius;
@@ -35,6 +36,7 @@ public class PlayerNaturallySpawnCreaturesEvent extends PlayerEvent implements C
 
     /**
      * @param radius The radius of chunks around this player to be included in natural spawn selection
+     * @since 1.12.2
      */
     public void setSpawnRadius(final byte radius) {
         this.radius = radius;
@@ -42,6 +44,7 @@ public class PlayerNaturallySpawnCreaturesEvent extends PlayerEvent implements C
 
     /**
      * @return If this player's chunks will be excluded from natural spawns
+     * @since 1.12.2
      */
     @Override
     public boolean isCancelled() {
@@ -50,17 +53,24 @@ public class PlayerNaturallySpawnCreaturesEvent extends PlayerEvent implements C
 
     /**
      * @param cancel {@code true} if you wish to cancel this event, and not include this player's chunks for natural spawning
+     * @since 1.12.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

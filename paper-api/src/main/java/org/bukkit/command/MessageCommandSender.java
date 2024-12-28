@@ -17,10 +17,14 @@ import org.jetbrains.annotations.Nullable;
  * For when all you care about is just messaging
  *
  * @deprecated Timings will be removed in the future
+ * @since 1.11.2
  */
 @Deprecated(forRemoval = true)
 public interface MessageCommandSender extends CommandSender {
 
+    /**
+     * @since 1.11.2
+     */
     @Override
     default void sendMessage(@NotNull String[] messages) {
         for (String message : messages) {
@@ -28,11 +32,17 @@ public interface MessageCommandSender extends CommandSender {
         }
     }
 
+    /**
+     * @since 1.16.3
+     */
     @Override
     default void sendMessage(@Nullable UUID sender, @NotNull String message) {
         sendMessage(message);
     }
 
+    /**
+     * @since 1.16.3
+     */
     @Override
     default void sendMessage(@Nullable UUID sender, @NotNull String[] messages) {
         for (String message : messages) {
@@ -40,12 +50,18 @@ public interface MessageCommandSender extends CommandSender {
         }
     }
 
+    /**
+     * @since 1.11.2
+     */
     @NotNull
     @Override
     default Server getServer() {
         return Bukkit.getServer();
     }
 
+    /**
+     * @since 1.17.1
+     */
     // Paper start
     @Override
     default net.kyori.adventure.text.@org.jetbrains.annotations.NotNull Component name() {
@@ -53,82 +69,127 @@ public interface MessageCommandSender extends CommandSender {
     }
     // Paper end
 
+    /**
+     * @since 1.11.2
+     */
     @NotNull
     @Override
     default String getName() {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Override
     default boolean isOp() {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Override
     default void setOp(boolean value) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Override
     default boolean isPermissionSet(@NotNull String name) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Override
     default boolean isPermissionSet(@NotNull Permission perm) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Override
     default boolean hasPermission(@NotNull String name) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Override
     default boolean hasPermission(@NotNull Permission perm) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @NotNull
     @Override
     default PermissionAttachment addAttachment(@NotNull Plugin plugin, @NotNull String name, boolean value) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @NotNull
     @Override
     default PermissionAttachment addAttachment(@NotNull Plugin plugin) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @NotNull
     @Override
     default PermissionAttachment addAttachment(@NotNull Plugin plugin, @NotNull String name, boolean value, int ticks) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @NotNull
     @Override
     default PermissionAttachment addAttachment(@NotNull Plugin plugin, int ticks) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Override
     default void removeAttachment(@NotNull PermissionAttachment attachment) {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Override
     default void recalculatePermissions() {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.11.2
+     */
     @NotNull
     @Override
     default Set<PermissionAttachmentInfo> getEffectivePermissions() {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.12
+     */
     @NotNull
     @Override
     default Spigot spigot() {

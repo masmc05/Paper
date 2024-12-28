@@ -40,6 +40,7 @@ public class EntityUnleashEvent extends EntityEvent implements org.bukkit.event.
      * Returns the reason for the unleashing.
      *
      * @return The reason
+     * @since 1.6.2
      */
     @NotNull
     public UnleashReason getReason() {
@@ -84,17 +85,26 @@ public class EntityUnleashEvent extends EntityEvent implements org.bukkit.event.
     }
     // Paper end
 
+    /**
+     * @since 1.6.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
     }
 
+    /**
+     * @since 1.6.2
+     */
     public enum UnleashReason {
         /**
          * When the entity's leashholder has died or logged out, and so is

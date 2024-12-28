@@ -39,6 +39,7 @@ public final class PluginMessageListenerRegistration {
      * Gets the plugin channel that this registration is about.
      *
      * @return Plugin channel.
+     * @since 1.1.0
      */
     @NotNull
     public String getChannel() {
@@ -49,6 +50,7 @@ public final class PluginMessageListenerRegistration {
      * Gets the registered listener described by this registration.
      *
      * @return Registered listener.
+     * @since 1.1.0
      */
     @NotNull
     public PluginMessageListener getListener() {
@@ -59,6 +61,7 @@ public final class PluginMessageListenerRegistration {
      * Gets the plugin that this registration is for.
      *
      * @return Registered plugin.
+     * @since 1.1.0
      */
     @NotNull
     public Plugin getPlugin() {
@@ -69,6 +72,7 @@ public final class PluginMessageListenerRegistration {
      * Checks if this registration is still valid.
      *
      * @return True if this registration is still valid, otherwise false.
+     * @since 1.1.0
      */
     public boolean isValid() {
         return messenger.isRegistrationValid(this);

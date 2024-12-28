@@ -26,6 +26,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      *
      * @param slot The slot for the new equippable to be equippable in.
      * @return a new builder
+     * @since 1.21.3
      */
     @Contract(value = "_ -> new", pure = true)
     static Equippable.Builder equippable(final EquipmentSlot slot) {
@@ -36,6 +37,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Gets the equipment slot this item can be equipped in.
      *
      * @return the equipment slot
+     * @since 1.21.3
      */
     @Contract(pure = true)
     EquipmentSlot slot();
@@ -44,6 +46,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Gets the equip sound key.
      *
      * @return the equip sound key
+     * @since 1.21.3
      */
     @Contract(pure = true)
     Key equipSound();
@@ -61,6 +64,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Gets the camera overlay key if present.
      *
      * @return the camera overlay key or null
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable Key cameraOverlay();
@@ -70,6 +74,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * May be null if all entities are allowed.
      *
      * @return the set of allowed entities
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable RegistryKeySet<EntityType> allowedEntities();
@@ -78,6 +83,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Checks if the item is dispensable.
      *
      * @return true if dispensable, false otherwise
+     * @since 1.21.3
      */
     @Contract(pure = true)
     boolean dispensable();
@@ -86,6 +92,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Checks if the item is swappable.
      *
      * @return true if swappable, false otherwise
+     * @since 1.21.3
      */
     @Contract(pure = true)
     boolean swappable();
@@ -94,6 +101,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Checks if the item takes damage when the wearer is hurt.
      *
      * @return true if it damages on hurt, false otherwise
+     * @since 1.21.3
      */
     @Contract(pure = true)
     boolean damageOnHurt();
@@ -112,6 +120,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param sound the equip sound key
          * @return the builder for chaining
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder equipSound(Key sound);
@@ -131,6 +140,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param cameraOverlay the camera overlay key, nullable
          * @return the builder for chaining
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder cameraOverlay(@Nullable Key cameraOverlay);
@@ -140,6 +150,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param allowedEntities the set of allowed entity types, or null if any
          * @return the builder for chaining
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder allowedEntities(@Nullable RegistryKeySet<EntityType> allowedEntities);
@@ -149,6 +160,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param dispensable true if dispensable
          * @return the builder for chaining
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder dispensable(boolean dispensable);
@@ -158,6 +170,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param swappable true if swappable
          * @return the builder for chaining
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder swappable(boolean swappable);
@@ -167,6 +180,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param damageOnHurt true if it damages on hurt
          * @return the builder for chaining
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder damageOnHurt(boolean damageOnHurt);

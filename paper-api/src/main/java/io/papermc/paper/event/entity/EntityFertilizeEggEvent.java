@@ -51,6 +51,9 @@ public class EntityFertilizeEggEvent extends EntityEvent implements Cancellable 
         this.experience = experience;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public LivingEntity getEntity() {
         return (LivingEntity) super.getEntity();
@@ -61,6 +64,7 @@ public class EntityFertilizeEggEvent extends EntityEvent implements Cancellable 
      * may that be by setting a block that later hatches or dropping an egg that has to be placed.
      *
      * @return The "mother" entity.
+     * @since 1.19.3
      */
     public LivingEntity getMother() {
         return this.mother;
@@ -71,6 +75,7 @@ public class EntityFertilizeEggEvent extends EntityEvent implements Cancellable 
      * creation.
      *
      * @return the other parent
+     * @since 1.19.3
      */
     public LivingEntity getFather() {
         return this.father;
@@ -81,6 +86,7 @@ public class EntityFertilizeEggEvent extends EntityEvent implements Cancellable 
      * conception.
      *
      * @return The Entity who initiated fertilization.
+     * @since 1.19.3
      */
     public @Nullable Player getBreeder() {
         return this.breeder;
@@ -90,6 +96,7 @@ public class EntityFertilizeEggEvent extends EntityEvent implements Cancellable 
      * The ItemStack that was used to initiate fertilization, if present.
      *
      * @return ItemStack used to initiate fertilization.
+     * @since 1.19.3
      */
     public @Nullable ItemStack getBredWith() {
         return this.bredWith;
@@ -99,6 +106,7 @@ public class EntityFertilizeEggEvent extends EntityEvent implements Cancellable 
      * Get the amount of experience granted by fertilization.
      *
      * @return experience amount
+     * @since 1.19.3
      */
     public int getExperience() {
         return this.experience;
@@ -109,26 +117,39 @@ public class EntityFertilizeEggEvent extends EntityEvent implements Cancellable 
      * If the amount is negative or zero, no experience will be dropped.
      *
      * @param experience experience amount
+     * @since 1.19.3
      */
     public void setExperience(final int experience) {
         this.experience = experience;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.3
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -31,6 +31,7 @@ public interface OfflinePlayer extends ServerOperator, AnimalTamer, Configuratio
      * instance of the player is still online, see {@link OfflinePlayer#isConnected()}.
      *
      * @return true if they are online
+     * @since 1.0.0
      */
     public boolean isOnline();
 
@@ -54,6 +55,7 @@ public interface OfflinePlayer extends ServerOperator, AnimalTamer, Configuratio
      * it is recommended that you use {@link #getUniqueId()} instead.
      *
      * @return Player name or null if we have not seen a name for this player yet
+     * @since 1.0.0
      */
     @Override
     @Nullable
@@ -86,6 +88,7 @@ public interface OfflinePlayer extends ServerOperator, AnimalTamer, Configuratio
      * Checks if this player has had their profile banned.
      *
      * @return true if banned, otherwise false
+     * @since 1.0.0
      */
     public boolean isBanned();
     // Paper start
@@ -210,6 +213,7 @@ public interface OfflinePlayer extends ServerOperator, AnimalTamer, Configuratio
      * Checks if this player is whitelisted or not
      *
      * @return true if whitelisted
+     * @since 1.0.0
      */
     public boolean isWhitelisted();
 
@@ -217,6 +221,7 @@ public interface OfflinePlayer extends ServerOperator, AnimalTamer, Configuratio
      * Sets if this player is whitelisted or not
      *
      * @param value true if whitelisted
+     * @since 1.0.0
      */
     public void setWhitelisted(boolean value);
 
@@ -227,6 +232,7 @@ public interface OfflinePlayer extends ServerOperator, AnimalTamer, Configuratio
      * it will return null.
      *
      * @return Online player
+     * @since 1.0.0
      */
     @Nullable
     public Player getPlayer();

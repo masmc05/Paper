@@ -59,6 +59,7 @@ public interface MetadataStore<T> {
      *
      * @param owningPlugin the plugin requesting the invalidation.
      * @throws IllegalArgumentException If plugin is null
+     * @since 1.1.0
      */
     public void invalidateAll(@NotNull Plugin owningPlugin);
 }

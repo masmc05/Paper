@@ -18,6 +18,7 @@ public interface SkullMeta extends ItemMeta {
      *
      * @return the owner if the skull
      * @deprecated see {@link #getOwningPlayer()}.
+     * @since 1.4.5
      */
     @Deprecated(since = "1.12.1")
     @Nullable
@@ -27,6 +28,7 @@ public interface SkullMeta extends ItemMeta {
      * Checks to see if the skull has an owner.
      *
      * @return true if the skull has an owner
+     * @since 1.4.5
      */
     boolean hasOwner();
 
@@ -36,6 +38,7 @@ public interface SkullMeta extends ItemMeta {
      * @param owner the new owner of the skull
      * @return true if the owner was successfully set
      * @deprecated see {@link #setOwningPlayer(org.bukkit.OfflinePlayer)}.
+     * @since 1.4.5
      */
     @Deprecated(since = "1.12.1")
     boolean setOwner(@Nullable String owner);

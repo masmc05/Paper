@@ -61,6 +61,9 @@ public class GenericCommandHelpTopic extends HelpTopic {
         fullText = sb.toString();
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean canSee(@NotNull CommandSender sender) {
         if (!command.isRegistered()) {

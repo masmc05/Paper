@@ -14,6 +14,7 @@ public interface Attachable extends Directional {
      * Gets the face that this block is attached on
      *
      * @return BlockFace attached to
+     * @since 1.0.0
      */
     @NotNull
     public BlockFace getAttachedFace();

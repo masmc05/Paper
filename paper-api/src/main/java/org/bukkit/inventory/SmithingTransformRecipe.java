@@ -47,6 +47,7 @@ public class SmithingTransformRecipe extends SmithingRecipe {
      * Get the template recipe item.
      *
      * @return template choice
+     * @since 1.19.4
      */
     @NotNull // Paper - fix issues with recipe api - prevent null choices
     public RecipeChoice getTemplate() {

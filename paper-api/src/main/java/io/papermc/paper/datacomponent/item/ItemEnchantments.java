@@ -20,11 +20,17 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface ItemEnchantments extends ShownInTooltip<ItemEnchantments> {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_, _ -> new", pure = true)
     static ItemEnchantments itemEnchantments(final Map<Enchantment, @IntRange(from = 1, to = 255) Integer> enchantments, final boolean showInTooltip) {
         return itemEnchantments().addAll(enchantments).showInTooltip(showInTooltip).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static ItemEnchantments.Builder itemEnchantments() {
         return ItemComponentTypesBridge.bridge().enchantments();
@@ -34,12 +40,15 @@ public interface ItemEnchantments extends ShownInTooltip<ItemEnchantments> {
      * Enchantments currently present on this item.
      *
      * @return enchantments
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable Map<Enchantment, @IntRange(from = 1, to = 255) Integer> enchantments();
 
     /**
      * Builder for {@link ItemEnchantments}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -52,6 +61,7 @@ public interface ItemEnchantments extends ShownInTooltip<ItemEnchantments> {
          * @param level level
          * @return the builder for chaining
          * @see #enchantments()
+         * @since 1.21.3
          */
         @Contract(value = "_, _ -> this", mutates = "this")
         Builder add(Enchantment enchantment, @IntRange(from = 1, to = 255) int level);
@@ -62,6 +72,7 @@ public interface ItemEnchantments extends ShownInTooltip<ItemEnchantments> {
          * @param enchantments enchantments
          * @return the builder for chaining
          * @see #enchantments()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addAll(Map<Enchantment, @IntRange(from = 1, to = 255) Integer> enchantments);

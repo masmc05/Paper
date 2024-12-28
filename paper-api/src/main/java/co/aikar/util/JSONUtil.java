@@ -15,6 +15,8 @@ import java.util.Map;
 
 /**
  * Provides Utility methods that assist with generating JSON Objects
+ *
+ * @since 1.9.4
  */
 @SuppressWarnings({"rawtypes", "SuppressionAnnotation"})
 @Deprecated(forRemoval = true)
@@ -27,12 +29,16 @@ public final class JSONUtil {
      * @param key Key to use
      * @param obj Value to use
      * @return JSONPair
+     * @since 1.9.4
      */
     @NotNull
     public static JSONPair pair(@NotNull String key, @Nullable Object obj) {
         return new JSONPair(key, obj);
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static JSONPair pair(long key, @Nullable Object obj) {
         return new JSONPair(String.valueOf(key), obj);
@@ -69,6 +75,7 @@ public final class JSONUtil {
      *
      * @param data Data to build JSON array from
      * @return List
+     * @since 1.9.4
      */
     @NotNull
     public static List toArray(@NotNull Object... data) {
@@ -88,6 +95,9 @@ public final class JSONUtil {
         return toArrayMapper(Lists.newArrayList(collection), mapper);
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static <E> List toArrayMapper(@NotNull Iterable<E> collection, @NotNull Function<E, Object> mapper) {
         List array = Lists.newArrayList();
@@ -113,6 +123,9 @@ public final class JSONUtil {
         return toObjectMapper(Lists.newArrayList(collection), mapper);
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static <E> Map toObjectMapper(@NotNull Iterable<E> collection, @NotNull Function<E, JSONPair> mapper) {
         Map object = Maps.newLinkedHashMap();
@@ -127,6 +140,8 @@ public final class JSONUtil {
 
     /**
      * Simply stores a key and a value, used internally by many methods below.
+     *
+     * @since 1.9.4
      */
     @SuppressWarnings("PublicInnerClass")
     public static class JSONPair {

@@ -24,25 +24,40 @@ public class LootableInventoryReplenishEvent extends PlayerEvent implements Canc
         this.inventory = inventory;
     }
 
+    /**
+     * @since 1.9.4
+     */
     public LootableInventory getInventory() {
         return this.inventory;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

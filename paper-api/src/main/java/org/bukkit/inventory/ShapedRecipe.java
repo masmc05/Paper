@@ -62,6 +62,7 @@ public class ShapedRecipe extends CraftingRecipe {
      *
      * @param shape The rows of the recipe (up to 3 rows).
      * @return The changed recipe, so you can chain calls.
+     * @since 1.0.0
      */
     @NotNull
     public ShapedRecipe shape(@NotNull final String... shape) {
@@ -110,6 +111,7 @@ public class ShapedRecipe extends CraftingRecipe {
      * @throws IllegalArgumentException if the {@code key} is a space character
      * @throws IllegalArgumentException if the {@code key} does not appear in the shape.
      * @deprecated use {@link #setIngredient(char, RecipeChoice)}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -128,6 +130,7 @@ public class ShapedRecipe extends CraftingRecipe {
      * @return The changed recipe, so you can chain calls.
      * @throws IllegalArgumentException if the {@code key} is a space character
      * @throws IllegalArgumentException if the {@code key} does not appear in the shape.
+     * @since 1.0.0
      */
     @NotNull
     public ShapedRecipe setIngredient(char key, @NotNull Material ingredient) {
@@ -147,6 +150,7 @@ public class ShapedRecipe extends CraftingRecipe {
      * @throws IllegalArgumentException if the {@code key} is a space character
      * @throws IllegalArgumentException if the {@code key} does not appear in the shape.
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -201,6 +205,7 @@ public class ShapedRecipe extends CraftingRecipe {
      *
      * @return The mapping of character to ingredients.
      * @deprecated Use {@link #getChoiceMap()} instead for more complete data.
+     * @since 1.0.0
      */
     @Deprecated // Paper
     @NotNull
@@ -240,6 +245,7 @@ public class ShapedRecipe extends CraftingRecipe {
      *
      * @return The recipe's shape.
      * @throws NullPointerException when not set yet
+     * @since 1.0.0
      */
     @NotNull
     public String[] getShape() {

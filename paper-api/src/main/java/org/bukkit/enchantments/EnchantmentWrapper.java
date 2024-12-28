@@ -16,6 +16,7 @@ public abstract class EnchantmentWrapper extends Enchantment {
      * Gets the enchantment bound to this wrapper
      *
      * @return Enchantment
+     * @since 1.1.0
      */
     @NotNull
     public Enchantment getEnchantment() {

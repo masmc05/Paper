@@ -12,6 +12,7 @@ public interface ProxiedCommandSender extends CommandSender, net.kyori.adventure
      * Returns the CommandSender which triggered this proxied command
      *
      * @return the caller which triggered the command
+     * @since 1.8
      */
     @NotNull
     CommandSender getCaller();
@@ -20,6 +21,7 @@ public interface ProxiedCommandSender extends CommandSender, net.kyori.adventure
      * Returns the CommandSender which is being used to call the command
      *
      * @return the caller which the command is being run as
+     * @since 1.8
      */
     @NotNull
     CommandSender getCallee();

@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
  * Represents the different species of trees regardless of size.
  *
  * @deprecated Deprecated, see usage methods for replacement(s)
+ * @since 1.0.0
  */
 @Deprecated(since = "1.19", forRemoval = true)
 public enum TreeSpecies {
@@ -50,6 +51,7 @@ public enum TreeSpecies {
      *
      * @return A byte containing the data value of this tree species
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public byte getData() {
@@ -63,6 +65,7 @@ public enum TreeSpecies {
      * @return The {@link TreeSpecies} representing the given value, or null
      *     if it doesn't exist
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     @Nullable

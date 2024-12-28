@@ -27,6 +27,7 @@ public class PlayerSpawnLocationEvent extends PlayerEvent {
      * For new players, the default spawn location is spawn of the main Bukkit world.
      *
      * @return the spawn location
+     * @since 1.7.10
      */
     @NotNull
     public Location getSpawnLocation() {
@@ -37,17 +38,24 @@ public class PlayerSpawnLocationEvent extends PlayerEvent {
      * Sets player's spawn location.
      *
      * @param location the spawn location
+     * @since 1.7.10
      */
     public void setSpawnLocation(@NotNull Location location) {
         this.spawnLocation = location.clone();
     }
 
+    /**
+     * @since 1.7.10
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.7.10
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

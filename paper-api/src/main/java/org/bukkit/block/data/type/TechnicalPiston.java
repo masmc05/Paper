@@ -15,6 +15,7 @@ public interface TechnicalPiston extends Directional {
      * Gets the value of the 'type' property.
      *
      * @return the 'type' value
+     * @since 1.13
      */
     @NotNull
     Type getType();
@@ -28,6 +29,8 @@ public interface TechnicalPiston extends Directional {
 
     /**
      * Different piston variants.
+     *
+     * @since 1.13
      */
     public enum Type {
         /**

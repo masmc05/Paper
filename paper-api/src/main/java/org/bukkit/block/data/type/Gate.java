@@ -16,6 +16,7 @@ public interface Gate extends Directional, Openable, Powerable {
      * Gets the value of the 'in_wall' property.
      *
      * @return the 'in_wall' value
+     * @since 1.13
      */
     boolean isInWall();
 
@@ -23,6 +24,7 @@ public interface Gate extends Directional, Openable, Powerable {
      * Sets the value of the 'in_wall' property.
      *
      * @param inWall the new 'in_wall' value
+     * @since 1.13
      */
     void setInWall(boolean inWall);
 }

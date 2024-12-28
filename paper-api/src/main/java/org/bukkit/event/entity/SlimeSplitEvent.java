@@ -20,11 +20,17 @@ public class SlimeSplitEvent extends EntityEvent implements Cancellable {
         this.count = count;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -43,6 +49,7 @@ public class SlimeSplitEvent extends EntityEvent implements Cancellable {
      * Gets the amount of smaller slimes to spawn
      *
      * @return the amount of slimes to spawn
+     * @since 1.0.0
      */
     public int getCount() {
         return count;
@@ -52,6 +59,7 @@ public class SlimeSplitEvent extends EntityEvent implements Cancellable {
      * Sets how many smaller slimes will spawn on the split
      *
      * @param count the amount of slimes to spawn
+     * @since 1.0.0
      */
     public void setCount(int count) {
         this.count = count;

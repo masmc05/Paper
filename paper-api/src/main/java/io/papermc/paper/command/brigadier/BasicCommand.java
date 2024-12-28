@@ -23,6 +23,7 @@ public interface BasicCommand {
      *
      * @param commandSourceStack the commandSourceStack of the command
      * @param args the arguments of the command ignoring repeated spaces
+     * @since 1.20.6
      */
     @ApiStatus.OverrideOnly
     void execute(CommandSourceStack commandSourceStack, String[] args);
@@ -33,6 +34,7 @@ public interface BasicCommand {
      * @param commandSourceStack the commandSourceStack of the command
      * @param args the arguments of the command including repeated spaces
      * @return a collection of suggestions
+     * @since 1.20.6
      */
     @ApiStatus.OverrideOnly
     default Collection<String> suggest(final CommandSourceStack commandSourceStack, final String[] args) {

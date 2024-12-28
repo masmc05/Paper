@@ -16,6 +16,10 @@ public class AuthorNagException extends RuntimeException {
         this.message = message;
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.0.0
+     */
     @Override
     public String getMessage() {
         return message;

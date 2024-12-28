@@ -48,6 +48,7 @@ public class EventException extends Exception {
      * If applicable, returns the Exception that triggered this Exception
      *
      * @return Inner exception, or null if one does not exist
+     * @since 1.0.0
      */
     @Override
     public Throwable getCause() {

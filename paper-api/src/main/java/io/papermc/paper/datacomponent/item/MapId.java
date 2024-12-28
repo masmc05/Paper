@@ -14,6 +14,9 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.Experimental
 public interface MapId {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static MapId mapId(final int id) {
         return ItemComponentTypesBridge.bridge().mapId(id);
@@ -23,6 +26,7 @@ public interface MapId {
      * The map id.
      *
      * @return id
+     * @since 1.21.3
      */
     @Contract(pure = true)
     int id();

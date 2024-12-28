@@ -17,6 +17,7 @@ public interface Wolf extends Tameable, Sittable, io.papermc.paper.entity.Collar
      * Checks if this wolf is angry
      *
      * @return Anger true if angry
+     * @since 1.0.0
      */
     public boolean isAngry();
 
@@ -27,6 +28,7 @@ public interface Wolf extends Tameable, Sittable, io.papermc.paper.entity.Collar
      *
      * @param angry true if angry
      * @see #setTarget(org.bukkit.entity.LivingEntity)
+     * @since 1.0.0
      */
     public void setAngry(boolean angry);
 

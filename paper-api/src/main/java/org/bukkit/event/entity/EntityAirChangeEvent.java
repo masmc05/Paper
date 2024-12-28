@@ -27,6 +27,7 @@ public class EntityAirChangeEvent extends EntityEvent implements Cancellable {
      * Gets the amount of air the entity has left (measured in ticks).
      *
      * @return amount of air remaining
+     * @since 1.10.2
      */
     public int getAmount() {
         return amount;
@@ -36,27 +37,40 @@ public class EntityAirChangeEvent extends EntityEvent implements Cancellable {
      * Sets the amount of air remaining for the entity (measured in ticks.
      *
      * @param amount amount of air remaining
+     * @since 1.10.2
      */
     public void setAmount(int amount) {
         this.amount = amount;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

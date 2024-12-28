@@ -28,6 +28,7 @@ public class VehicleDamageEvent extends VehicleEvent implements Cancellable {
      * Gets the Entity that is attacking the vehicle
      *
      * @return the Entity that is attacking the vehicle
+     * @since 1.0.0
      */
     @Nullable
     public Entity getAttacker() {
@@ -38,6 +39,7 @@ public class VehicleDamageEvent extends VehicleEvent implements Cancellable {
      * Gets the damage done to the vehicle
      *
      * @return the damage done to the vehicle
+     * @since 1.0.0
      */
     public double getDamage() {
         return damage;
@@ -53,11 +55,17 @@ public class VehicleDamageEvent extends VehicleEvent implements Cancellable {
         this.damage = damage;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

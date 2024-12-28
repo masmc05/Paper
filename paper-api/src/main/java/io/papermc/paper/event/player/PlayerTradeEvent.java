@@ -26,6 +26,7 @@ public class PlayerTradeEvent extends PlayerPurchaseEvent {
      * Gets the Villager or Wandering trader associated with this event
      *
      * @return the villager or wandering trader
+     * @since 1.16.4
      */
     public AbstractVillager getVillager() {
         return this.villager;

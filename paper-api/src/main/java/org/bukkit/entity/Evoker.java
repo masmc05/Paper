@@ -15,6 +15,7 @@ public interface Evoker extends Spellcaster {
      *
      * @deprecated future versions of Minecraft have additional spell casting
      * entities.
+     * @since 1.11
      */
     @Deprecated(since = "1.11.2")
     public enum Spell {
@@ -52,6 +53,7 @@ public interface Evoker extends Spellcaster {
      * @deprecated future versions of Minecraft have additional spell casting
      * entities.
      *
+     * @since 1.11
      */
     @Deprecated(since = "1.11.2")
     @NotNull

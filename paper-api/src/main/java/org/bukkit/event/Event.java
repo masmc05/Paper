@@ -59,6 +59,7 @@ public abstract class Event {
      * simple name}.
      *
      * @return name of this event
+     * @since 1.0.0
      */
     @NotNull
     public String getEventName() {
@@ -101,6 +102,9 @@ public abstract class Event {
         return async;
     }
 
+    /**
+     * @since 1.0.0
+     */
     public enum Result {
 
         /**

@@ -15,6 +15,7 @@ public interface SculkSensor extends AnaloguePowerable, Waterlogged {
      * Gets the value of the 'sculk_sensor_phase' property.
      *
      * @return the 'sculk_sensor_phase' value
+     * @since 1.17
      */
     @NotNull
     Phase getPhase();
@@ -28,6 +29,8 @@ public interface SculkSensor extends AnaloguePowerable, Waterlogged {
 
     /**
      * The Phase of the sensor.
+     *
+     * @since 1.17
      */
     public enum Phase {
 

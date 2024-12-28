@@ -40,6 +40,7 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
      * Gets the type of slot being altered.
      *
      * @return type of slot being altered
+     * @since 1.12.2
      */
     public SlotType getSlotType() {
         return this.slotType;
@@ -49,6 +50,7 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
      * Gets the existing item that's being replaced
      *
      * @return old item
+     * @since 1.12.2
      */
     public ItemStack getOldItem() {
         return this.oldItem;
@@ -58,20 +60,30 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
      * Gets the new item that's replacing the old
      *
      * @return new item
+     * @since 1.12.2
      */
     public ItemStack getNewItem() {
         return this.newItem;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public enum SlotType {
         HEAD(NETHERITE_HELMET, DIAMOND_HELMET, GOLDEN_HELMET, IRON_HELMET, CHAINMAIL_HELMET, LEATHER_HELMET, CARVED_PUMPKIN, PLAYER_HEAD, SKELETON_SKULL, ZOMBIE_HEAD, CREEPER_HEAD, WITHER_SKELETON_SKULL, TURTLE_HELMET, DRAGON_HEAD, PIGLIN_HEAD),
         CHEST(NETHERITE_CHESTPLATE, DIAMOND_CHESTPLATE, GOLDEN_CHESTPLATE, IRON_CHESTPLATE, CHAINMAIL_CHESTPLATE, LEATHER_CHESTPLATE, ELYTRA),
@@ -89,6 +101,7 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
          * armor slot.
          *
          * @return immutable set of material types
+         * @since 1.12.2
          */
         public Set<Material> getTypes() {
             return this.types;
@@ -99,6 +112,7 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
          *
          * @param material material to get slot by
          * @return slot type the material will go in, or {@code null} if it won't
+         * @since 1.12.2
          */
         public static @Nullable SlotType getByMaterial(final Material material) {
             for (final SlotType slotType : values()) {
@@ -114,6 +128,7 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
          *
          * @param material material to check
          * @return whether this material can be equipped
+         * @since 1.12.2
          */
         public static boolean isEquipable(final Material material) {
             return getByMaterial(material) != null;

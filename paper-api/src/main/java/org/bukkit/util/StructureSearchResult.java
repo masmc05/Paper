@@ -19,6 +19,7 @@ public interface StructureSearchResult {
      * Return the structure which was found.
      *
      * @return the found structure.
+     * @since 1.19
      */
     @NotNull
     Structure getStructure();
@@ -27,6 +28,7 @@ public interface StructureSearchResult {
      * Return the location of the structure.
      *
      * @return the location the structure was found.
+     * @since 1.19
      */
     @NotNull
     Location getLocation();

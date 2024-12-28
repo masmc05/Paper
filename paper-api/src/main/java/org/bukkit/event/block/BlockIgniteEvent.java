@@ -39,11 +39,17 @@ public class BlockIgniteEvent extends BlockEvent implements Cancellable {
         this.cancel = false;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -53,6 +59,7 @@ public class BlockIgniteEvent extends BlockEvent implements Cancellable {
      * Gets the cause of block ignite.
      *
      * @return An IgniteCause value detailing the cause of block ignition
+     * @since 1.0.0
      */
     @NotNull
     public IgniteCause getCause() {
@@ -63,6 +70,7 @@ public class BlockIgniteEvent extends BlockEvent implements Cancellable {
      * Gets the player who ignited this block
      *
      * @return The Player that placed/ignited the fire block, or null if not ignited by a Player.
+     * @since 1.0.0
      */
     @Nullable
     public Player getPlayer() {
@@ -97,6 +105,8 @@ public class BlockIgniteEvent extends BlockEvent implements Cancellable {
 
     /**
      * An enum to specify the cause of the ignite
+     *
+     * @since 1.0.0
      */
     public enum IgniteCause {
 

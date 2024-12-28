@@ -38,6 +38,7 @@ public class PortalCreateEvent extends WorldEvent implements Cancellable {
      * Gets an array list of all the blocks associated with the created portal
      *
      * @return array list of all the blocks associated with the created portal
+     * @since 1.0.0
      */
     @NotNull
     public List<BlockState> getBlocks() {
@@ -55,11 +56,17 @@ public class PortalCreateEvent extends WorldEvent implements Cancellable {
         return entity;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;

@@ -23,11 +23,17 @@ public class EntityTargetEvent extends EntityEvent implements Cancellable {
         this.reason = reason;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -37,6 +43,7 @@ public class EntityTargetEvent extends EntityEvent implements Cancellable {
      * Returns the reason for the targeting
      *
      * @return The reason
+     * @since 1.0.0
      */
     @NotNull
     public TargetReason getReason() {
@@ -50,6 +57,7 @@ public class EntityTargetEvent extends EntityEvent implements Cancellable {
      * forgets its target.
      *
      * @return The entity
+     * @since 1.0.0
      */
     @Nullable
     public Entity getTarget() {
@@ -67,6 +75,7 @@ public class EntityTargetEvent extends EntityEvent implements Cancellable {
      * will cause the entity to be reset.
      *
      * @param target The entity to target
+     * @since 1.0.0
      */
     public void setTarget(@Nullable Entity target) {
         this.target = target;
@@ -91,6 +100,8 @@ public class EntityTargetEvent extends EntityEvent implements Cancellable {
 
     /**
      * An enum to specify the reason for the targeting
+     *
+     * @since 1.0.0
      */
     public enum TargetReason {
 

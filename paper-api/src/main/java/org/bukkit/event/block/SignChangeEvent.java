@@ -58,6 +58,7 @@ public class SignChangeEvent extends BlockEvent implements Cancellable {
      * Gets the player changing the sign involved in this event.
      *
      * @return the Player involved in this event
+     * @since 1.0.0
      */
     @NotNull
     public Player getPlayer() {
@@ -108,6 +109,7 @@ public class SignChangeEvent extends BlockEvent implements Cancellable {
      *
      * @return the String array for the sign's lines new text
      * @deprecated in favour of {@link #lines()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -124,6 +126,7 @@ public class SignChangeEvent extends BlockEvent implements Cancellable {
      * @throws IndexOutOfBoundsException thrown when the provided index is {@literal > 3
      *     or < 0}
      * @deprecated in favour of {@link #line(int)}
+     * @since 1.0.0
      */
     @Nullable
     @Deprecated // Paper
@@ -139,6 +142,7 @@ public class SignChangeEvent extends BlockEvent implements Cancellable {
      * @throws IndexOutOfBoundsException thrown when the provided index is {@literal > 3
      *     or < 0}
      * @deprecated in favour of {@link #line(int, net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void setLine(int index, @Nullable String line) throws IndexOutOfBoundsException {
@@ -156,11 +160,17 @@ public class SignChangeEvent extends BlockEvent implements Cancellable {
         return side;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;

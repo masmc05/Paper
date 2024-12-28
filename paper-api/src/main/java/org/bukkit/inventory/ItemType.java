@@ -56,6 +56,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * at compile time.
      *
      * @param <M> the generic type of the item meta that represents the item type.
+     * @since 1.20.6
      */
     interface Typed<M extends ItemMeta> extends ItemType {
 
@@ -63,6 +64,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
          * Gets the ItemMeta class of this ItemType
          *
          * @return the ItemMeta class of this ItemType
+         * @since 1.20.6
          */
         @Override
         @NotNull
@@ -74,6 +76,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
          * @param metaConfigurator an optional consumer of the items {@link ItemMeta} that is called.
          *                         May be null if no intent exists to mutate the item meta at this point.
          * @return the created and configured item stack.
+         * @since 1.20.6
          */
         @NotNull
         ItemStack createItemStack(@Nullable Consumer<? super M> metaConfigurator);
@@ -85,6 +88,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
          * @param metaConfigurator an optional consumer of the items {@link ItemMeta} that is called.
          *                         May be null if no intent exists to mutate the item meta at this point.
          * @return the created and configured item stack.
+         * @since 1.20.6
          */
         @NotNull
         ItemStack createItemStack(int amount, @Nullable Consumer<? super M> metaConfigurator);
@@ -2235,6 +2239,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * Yields this item type as a typed version of itself with a plain {@link ItemMeta} representing it.
      *
      * @return the typed item type.
+     * @since 1.20.6
      */
     @NotNull
     Typed<ItemMeta> typed();
@@ -2245,6 +2250,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * @param itemMetaType the class type of the {@link ItemMeta} to type this {@link ItemType} with.
      * @param <M> the generic type of the item meta to type this item type with.
      * @return the typed item type.
+     * @since 1.20.6
      */
     @NotNull
     <M extends ItemMeta> Typed<M> typed(@NotNull Class<M> itemMetaType);
@@ -2253,6 +2259,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * Constructs a new itemstack with this item type that has the amount 1.
      *
      * @return the constructed item stack.
+     * @since 1.20.6
      */
     @NotNull
     ItemStack createItemStack();
@@ -2262,6 +2269,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      *
      * @param amount the amount of the item stack.
      * @return the constructed item stack.
+     * @since 1.20.6
      */
     @NotNull
     ItemStack createItemStack(int amount);
@@ -2271,6 +2279,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      *
      * @return true if there is a corresponding BlockType, otherwise false
      * @see #getBlockType()
+     * @since 1.20.6
      */
     boolean hasBlockType();
 
@@ -2281,6 +2290,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      *
      * @return the corresponding BlockType
      * @see #hasBlockType()
+     * @since 1.20.6
      */
     @NotNull
     BlockType getBlockType();
@@ -2289,6 +2299,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * Gets the ItemMeta class of this ItemType
      *
      * @return the ItemMeta class of this ItemType
+     * @since 1.20.6
      */
     @NotNull
     Class<? extends ItemMeta> getItemMetaClass();
@@ -2297,6 +2308,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * Gets the maximum amount of this item type that can be held in a stack
      *
      * @return Maximum stack size for this item type
+     * @since 1.20.6
      */
     int getMaxStackSize();
 
@@ -2304,6 +2316,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * Gets the maximum durability of this item type
      *
      * @return Maximum durability for this item type
+     * @since 1.20.6
      */
     short getMaxDurability();
 
@@ -2311,11 +2324,13 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * Checks if this item type is edible.
      *
      * @return true if this item type is edible.
+     * @since 1.20.6
      */
     boolean isEdible();
 
     /**
      * @return True if this item type represents a playable music disk.
+     * @since 1.20.6
      */
     boolean isRecord();
 
@@ -2323,6 +2338,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * Checks if this item type can be used as fuel in a Furnace
      *
      * @return true if this item type can be used as fuel.
+     * @since 1.20.6
      */
     boolean isFuel();
 
@@ -2332,6 +2348,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      *
      * @return true if this item type is compostable
      * @see #getCompostChance()
+     * @since 1.20.6
      */
     boolean isCompostable();
 
@@ -2348,6 +2365,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * @return the chance that this item type will successfully compost
      * @throws IllegalArgumentException if this item type is not compostable
      * @see #isCompostable()
+     * @since 1.20.6
      */
     float getCompostChance();
 
@@ -2356,6 +2374,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * ingredient.
      *
      * @return the item left behind when crafting, or null if nothing is.
+     * @since 1.20.6
      */
     @Nullable
     ItemType getCraftingRemainingItem();
@@ -2381,6 +2400,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      *
      * @return the immutable {@link Multimap} with the respective default
      * Attributes and modifiers, or an empty map if no attributes are set.
+     * @since 1.20.6
      */
     @NotNull @org.jetbrains.annotations.Unmodifiable Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers();
     // Paper end - improve default item attribute API
@@ -2395,6 +2415,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * @param slot the {@link EquipmentSlot} to check
      * @return the immutable {@link Multimap} with the respective default
      * Attributes and modifiers, or an empty map if no attributes are set.
+     * @since 1.20.6
      */
     @NotNull
     Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(@NotNull EquipmentSlot slot);
@@ -2404,6 +2425,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      *
      * @return the creative category. null if does not belong to a category
      * @deprecated creative categories no longer exist on the server
+     * @since 1.20.6
      */
     @Nullable
     @Deprecated(since = "1.20.6")
@@ -2415,6 +2437,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      * @param world the world to check
      * @return true if this ItemType can be used in this World.
      * @deprecated use {@link io.papermc.paper.world.flag.FeatureFlagSetHolder#isEnabled(io.papermc.paper.world.flag.FeatureDependant)}
+     * @since 1.20.6
      */
     @Deprecated(forRemoval = true, since = "1.21.1") // Paper
     boolean isEnabledByFeature(@NotNull World world);
@@ -2424,6 +2447,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
      *
      * @return the converted Material or null
      * @deprecated only for internal use
+     * @since 1.20.6
      */
     @Nullable
     @Deprecated(since = "1.20.6")
@@ -2432,6 +2456,7 @@ public interface ItemType extends Keyed, Translatable, net.kyori.adventure.trans
     // Paper start - add Translatable
     /**
      * @deprecated use {@link #translationKey()} and {@link net.kyori.adventure.text.Component#translatable(net.kyori.adventure.translation.Translatable)}
+     * @since 1.20.6
      */
     @Deprecated(forRemoval = true)
     @Override

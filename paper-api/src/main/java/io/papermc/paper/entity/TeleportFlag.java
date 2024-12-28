@@ -21,6 +21,7 @@ public sealed interface TeleportFlag permits TeleportFlag.EntityState, TeleportF
      * @apiNote The relative flags exposed in the API do *not* mirror all flags known to vanilla, as relative flags concerning
      * the position are non-applicable given teleports always expect an absolute location.
      * @see org.bukkit.entity.Player#teleport(Location, PlayerTeleportEvent.TeleportCause, TeleportFlag...)
+     * @since 1.19.3
      */
     enum Relative implements TeleportFlag {
         /**
@@ -84,6 +85,8 @@ public sealed interface TeleportFlag permits TeleportFlag.EntityState, TeleportF
     /**
      * Represents flags that effect the entity's state on
      * teleportation.
+     *
+     * @since 1.19.3
      */
     enum EntityState implements TeleportFlag {
         /**

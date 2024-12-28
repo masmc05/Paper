@@ -173,6 +173,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param y Y-coordinate of the block
      * @param z Z-coordinate of the block
      * @return Block at the given coordinates
+     * @since 1.0.0
      */
     @NotNull
     public Block getBlockAt(int x, int y, int z);
@@ -182,6 +183,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @param location Location of the block
      * @return Block at the given location
+     * @since 1.0.0
      */
     @NotNull
     public Block getBlockAt(@NotNull Location location);
@@ -229,6 +231,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param x X-coordinate of the block
      * @param z Z-coordinate of the block
      * @return Highest non-empty block
+     * @since 1.0.0
      */
     @NotNull
     public Block getHighestBlockAt(int x, int z);
@@ -238,6 +241,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @param location Coordinates to get the highest block
      * @return Highest non-empty block
+     * @since 1.0.0
      */
     @NotNull
     public Block getHighestBlockAt(@NotNull Location location);
@@ -275,6 +279,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param x X-coordinate of the chunk
      * @param z Z-coordinate of the chunk
      * @return Chunk at the given coordinates
+     * @since 1.0.0
      */
     @NotNull
     public Chunk getChunkAt(int x, int z);
@@ -296,6 +301,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @param location Location of the chunk
      * @return Chunk at the given location
+     * @since 1.0.0
      */
     @NotNull
     public Chunk getChunkAt(@NotNull Location location);
@@ -305,6 +311,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @param block Block to get the containing chunk from
      * @return The chunk that contains the given block
+     * @since 1.0.0
      */
     @NotNull
     public Chunk getChunkAt(@NotNull Block block);
@@ -361,6 +368,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @param chunk The chunk to check
      * @return true if the chunk is loaded, otherwise false
+     * @since 1.0.0
      */
     public boolean isChunkLoaded(@NotNull Chunk chunk);
 
@@ -368,6 +376,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Gets an array of all loaded {@link Chunk}s
      *
      * @return Chunk[] containing all loaded chunks
+     * @since 1.0.0
      */
     @NotNull
     public Chunk[] getLoadedChunks();
@@ -380,6 +389,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * getChunkAt which will only temporarily load the requested chunk.</b>
      *
      * @param chunk The chunk to load
+     * @since 1.0.0
      */
     public void loadChunk(@NotNull Chunk chunk);
 
@@ -389,6 +399,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param x X-coordinate of the chunk
      * @param z Z-coordinate of the chunk
      * @return true if the chunk is loaded, otherwise false
+     * @since 1.0.0
      */
     public boolean isChunkLoaded(int x, int z);
 
@@ -432,6 +443,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @param x X-coordinate of the chunk
      * @param z Z-coordinate of the chunk
+     * @since 1.0.0
      */
     public void loadChunk(int x, int z);
 
@@ -447,6 +459,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param generate Whether or not to generate a chunk if it doesn't
      *     already exist
      * @return true if the chunk has loaded successfully, otherwise false
+     * @since 1.0.0
      */
     public boolean loadChunk(int x, int z, boolean generate);
 
@@ -458,6 +471,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @param chunk the chunk to unload
      * @return true if the chunk has unloaded successfully, otherwise false
+     * @since 1.0.0
      */
     public boolean unloadChunk(@NotNull Chunk chunk);
 
@@ -470,6 +484,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param x X-coordinate of the chunk
      * @param z Z-coordinate of the chunk
      * @return true if the chunk has unloaded successfully, otherwise false
+     * @since 1.0.0
      */
     public boolean unloadChunk(int x, int z);
 
@@ -481,6 +496,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param z Z-coordinate of the chunk
      * @param save Whether or not to save the chunk
      * @return true if the chunk has unloaded successfully, otherwise false
+     * @since 1.0.0
      */
     public boolean unloadChunk(int x, int z, boolean save);
 
@@ -491,6 +507,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param x X-coordinate of the chunk
      * @param z Z-coordinate of the chunk
      * @return true is the queue attempt was successful, otherwise false
+     * @since 1.0.0
      */
     public boolean unloadChunkRequest(int x, int z);
 
@@ -504,6 +521,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @deprecated regenerating a single chunk is not likely to produce the same
      * chunk as before as terrain decoration may be spread across chunks. It may
      * or may not change blocks in the adjacent chunks as well.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.13")
     public boolean regenerateChunk(int x, int z);
@@ -515,6 +533,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param z Z-coordinate of the chunk
      * @return Whether the chunk was actually refreshed
      *
+     * @since 1.0.0
      */
     // @Deprecated(since = "1.8") // Paper
     public boolean refreshChunk(int x, int z);
@@ -694,6 +713,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param location Location to drop the item
      * @param item ItemStack to drop
      * @return ItemDrop entity created as a result of this method
+     * @since 1.0.0
      */
     @NotNull
     public Item dropItem(@NotNull Location location, @NotNull ItemStack item);
@@ -717,6 +737,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param location Location to drop the item
      * @param item ItemStack to drop
      * @return ItemDrop entity created as a result of this method
+     * @since 1.0.0
      */
     @NotNull
     public Item dropItemNaturally(@NotNull Location location, @NotNull ItemStack item);
@@ -742,6 +763,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param speed Speed of the arrow. A recommend speed is 0.6
      * @param spread Spread of the arrow. A recommend spread is 12
      * @return Arrow entity spawned as a result of this method
+     * @since 1.0.0
      */
     @NotNull
     public Arrow spawnArrow(@NotNull Location location, @NotNull Vector direction, float speed, float spread);
@@ -768,6 +790,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param location Location to spawn the tree
      * @param type Type of the tree to create
      * @return true if the tree was created successfully, otherwise false
+     * @since 1.0.0
      */
     public boolean generateTree(@NotNull Location location, @NotNull TreeType type);
 
@@ -781,6 +804,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @return true if the tree was created successfully, otherwise false
      * @see #generateTree(org.bukkit.Location, java.util.Random, org.bukkit.TreeType, java.util.function.Consumer)
      * @deprecated this method does not handle tile entities (bee nests)
+     * @since 1.0.0
      */
     @Deprecated(since = "1.17.1")
     public boolean generateTree(@NotNull Location loc, @NotNull TreeType type, @NotNull BlockChangeDelegate delegate);
@@ -790,6 +814,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @param loc The location to strike lightning
      * @return The lightning entity.
+     * @since 1.0.0
      */
     @NotNull
     public LightningStrike strikeLightning(@NotNull Location loc);
@@ -799,6 +824,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @param loc The location to strike lightning
      * @return The lightning entity.
+     * @since 1.0.0
      */
     @NotNull
     public LightningStrike strikeLightningEffect(@NotNull Location loc);
@@ -840,6 +866,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Get a list of all entities in this World
      *
      * @return A List of all Entities currently residing in this world
+     * @since 1.0.0
      */
     @NotNull
     public List<Entity> getEntities();
@@ -848,6 +875,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Get a list of all living entities in this World
      *
      * @return A List of all LivingEntities currently residing in this world
+     * @since 1.0.0
      */
     @NotNull
     public List<LivingEntity> getLivingEntities();
@@ -1160,6 +1188,9 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      */
     @Deprecated(since = "1.13.1")
     public static interface ChunkLoadCallback extends java.util.function.Consumer<Chunk> {
+        /**
+         * @since 1.9.4
+         */
         public void onLoad(@NotNull Chunk chunk);
 
         /**
@@ -1675,6 +1706,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Get a list of all players in this World
      *
      * @return A list of all Players currently residing in this world
+     * @since 1.0.0
      */
     @NotNull
     public List<Player> getPlayers();
@@ -2052,6 +2084,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Gets the default spawn {@link Location} of this world
      *
      * @return The spawn location of this world
+     * @since 1.0.0
      */
     @NotNull
     public Location getSpawnLocation();
@@ -2086,6 +2119,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param y Y coordinate
      * @param z Z coordinate
      * @return True if it was successfully set.
+     * @since 1.0.0
      */
     public boolean setSpawnLocation(int x, int y, int z);
 
@@ -2096,6 +2130,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @return The current relative time
      * @see #getFullTime() Returns an absolute time of this world
+     * @since 1.0.0
      */
     public long getTime();
 
@@ -2111,6 +2146,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param time The new relative time to set the in-game time to (in
      *     hours*1000)
      * @see #setFullTime(long) Sets the absolute time of this world
+     * @since 1.0.0
      */
     public void setTime(long time);
 
@@ -2119,6 +2155,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @return The current absolute time
      * @see #getTime() Returns a relative time of this world
+     * @since 1.0.0
      */
     public long getFullTime();
 
@@ -2130,6 +2167,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @param time The new absolute time to set this world to
      * @see #setTime(long) Sets the relative time of this world
+     * @since 1.0.0
      */
     public void setFullTime(long time);
 
@@ -2158,6 +2196,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Returns whether the world has an ongoing storm.
      *
      * @return Whether there is an ongoing storm
+     * @since 1.0.0
      */
     public boolean hasStorm();
 
@@ -2169,6 +2208,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * ticks to reset the world's clear weather.
      *
      * @param hasStorm Whether there is rain and snow
+     * @since 1.0.0
      */
     public void setStorm(boolean hasStorm);
 
@@ -2176,6 +2216,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Get the remaining time in ticks of the current conditions.
      *
      * @return Time in ticks
+     * @since 1.0.0
      */
     public int getWeatherDuration();
 
@@ -2183,6 +2224,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Set the remaining time in ticks of the current conditions.
      *
      * @param duration Time in ticks
+     * @since 1.0.0
      */
     public void setWeatherDuration(int duration);
 
@@ -2190,6 +2232,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Returns whether there is thunder.
      *
      * @return Whether there is thunder
+     * @since 1.0.0
      */
     public boolean isThundering();
 
@@ -2200,6 +2243,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * ticks to reset the world's clear weather.
      *
      * @param thundering Whether it is thundering
+     * @since 1.0.0
      */
     public void setThundering(boolean thundering);
 
@@ -2207,6 +2251,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Get the thundering duration.
      *
      * @return Duration in ticks
+     * @since 1.0.0
      */
     public int getThunderDuration();
 
@@ -2214,6 +2259,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Set the thundering duration.
      *
      * @param duration Duration in ticks
+     * @since 1.0.0
      */
     public void setThunderDuration(int duration);
 
@@ -2259,6 +2305,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param z Z coordinate
      * @param power The power of explosion, where 4F is TNT
      * @return false if explosion was canceled, otherwise true
+     * @since 1.0.0
      */
     public boolean createExplosion(double x, double y, double z, float power);
 
@@ -2272,6 +2319,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param power The power of explosion, where 4F is TNT
      * @param setFire Whether or not to set blocks on fire
      * @return false if explosion was canceled, otherwise true
+     * @since 1.0.0
      */
     public boolean createExplosion(double x, double y, double z, float power, boolean setFire);
 
@@ -2318,6 +2366,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param loc Location to blow up
      * @param power The power of explosion, where 4F is TNT
      * @return false if explosion was canceled, otherwise true
+     * @since 1.0.0
      */
     public boolean createExplosion(@NotNull Location loc, float power);
 
@@ -2329,6 +2378,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param power The power of explosion, where 4F is TNT
      * @param setFire Whether or not to set blocks on fire
      * @return false if explosion was canceled, otherwise true
+     * @since 1.0.0
      */
     public boolean createExplosion(@NotNull Location loc, float power, boolean setFire);
 
@@ -2474,6 +2524,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Gets the current PVP setting for this world.
      *
      * @return True if PVP is enabled
+     * @since 1.0.0
      */
     public boolean getPVP();
 
@@ -2481,6 +2532,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Sets the PVP setting for this world.
      *
      * @param pvp True/False whether PVP should be Enabled.
+     * @since 1.0.0
      */
     public void setPVP(boolean pvp);
 
@@ -2488,6 +2540,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Gets the chunk generator for this world
      *
      * @return ChunkGenerator associated with this world
+     * @since 1.0.0
      */
     @Nullable
     public ChunkGenerator getGenerator();
@@ -2503,6 +2556,8 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
 
     /**
      * Saves world to disk
+     *
+     * @since 1.0.0
      */
     public void save();
 
@@ -2510,6 +2565,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Gets a list of all applied {@link BlockPopulator}s for this World
      *
      * @return List containing any or none BlockPopulators
+     * @since 1.0.0
      */
     @NotNull
     public List<BlockPopulator> getPopulators();
@@ -2619,6 +2675,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *     hear the sound
      * @param effect the {@link Effect}
      * @param data a data bit needed for some effects
+     * @since 1.0.0
      */
     public void playEffect(@NotNull Location location, @NotNull Effect effect, int data);
 
@@ -2630,6 +2687,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param effect the {@link Effect}
      * @param data a data bit needed for some effects
      * @param radius the radius around the location
+     * @since 1.0.0
      */
     public void playEffect(@NotNull Location location, @NotNull Effect effect, int data, int radius);
 
@@ -2669,6 +2727,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param includeBiomeTemp - if true, snapshot includes per-coordinate
      *     raw biome temperature
      * @return The empty snapshot.
+     * @since 1.0.0
      */
     @NotNull
     public ChunkSnapshot getEmptyChunkSnapshot(int x, int z, boolean includeBiome, boolean includeBiomeTemp);
@@ -2680,6 +2739,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *     world.
      * @param allowAnimals - if true, animals are allowed to spawn in this
      *     world.
+     * @since 1.0.0
      */
     public void setSpawnFlags(boolean allowMonsters, boolean allowAnimals);
 
@@ -2687,6 +2747,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Gets whether animals can spawn in this world.
      *
      * @return whether animals can spawn in this world.
+     * @since 1.0.0
      */
     public boolean getAllowAnimals();
 
@@ -2694,6 +2755,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Gets whether monsters can spawn in this world.
      *
      * @return whether monsters can spawn in this world.
+     * @since 1.0.0
      */
     public boolean getAllowMonsters();
 
@@ -2704,6 +2766,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param z Z coordinate of the block
      * @return Biome of the requested block
      * @deprecated biomes are now 3-dimensional
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.15")
@@ -2734,6 +2797,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param z Z coordinate of the block
      * @return Temperature of the requested block
      * @deprecated biomes are now 3-dimensional
+     * @since 1.0.0
      */
     @Deprecated(since = "1.15")
     public double getTemperature(int x, int z);
@@ -2765,6 +2829,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param z Z coordinate of the block
      * @return Humidity of the requested block
      * @deprecated biomes are now 3-dimensional
+     * @since 1.0.0
      */
     @Deprecated(since = "1.15")
     public double getHumidity(int x, int z);
@@ -2880,6 +2945,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * This is often half of {@link #getMaxHeight()}
      *
      * @return Sea level
+     * @since 1.0.0
      */
     public int getSeaLevel();
 
@@ -2889,6 +2955,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @return true if the world's spawn area will be kept loaded into memory.
      * @deprecated use {@link GameRule#SPAWN_CHUNK_RADIUS} for finer control
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20.5")
     public boolean getKeepSpawnInMemory();
@@ -2900,6 +2967,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * @param keepLoaded if true then the world's spawn area will be kept
      *     loaded into memory.
      * @deprecated use {@link GameRule#SPAWN_CHUNK_RADIUS} for finer control
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20.5")
     public void setKeepSpawnInMemory(boolean keepLoaded);
@@ -2908,6 +2976,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Gets whether or not the world will automatically save
      *
      * @return true if the world will automatically save, otherwise false
+     * @since 1.0.0
      */
     public boolean isAutoSave();
 
@@ -2916,6 +2985,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      *
      * @param value true if the world should automatically save, otherwise
      *     false
+     * @since 1.0.0
      */
     public void setAutoSave(boolean value);
 
@@ -2923,6 +2993,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Sets the Difficulty of the world.
      *
      * @param difficulty the new difficulty you want to set the world to
+     * @since 1.0.0
      */
     public void setDifficulty(@NotNull Difficulty difficulty);
 
@@ -2930,6 +3001,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Gets the Difficulty of the world.
      *
      * @return The difficulty of the world.
+     * @since 1.0.0
      */
     @NotNull
     public Difficulty getDifficulty();
@@ -2954,6 +3026,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
      * Gets the folder of this world on disk.
      *
      * @return The folder of this world.
+     * @since 1.0.0
      */
     @NotNull
     public File getWorldFolder();
@@ -4318,6 +4391,9 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
     void sendGameEvent(@Nullable Entity sourceEntity, @NotNull GameEvent gameEvent, @NotNull Vector position);
     // Paper end
 
+    /**
+     * @since 1.6.1
+     */
     // Spigot start
     @Deprecated(forRemoval = true) // Paper
     public class Spigot {
@@ -4330,6 +4406,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
          * @return The lightning entity.
          * @deprecated sound is now client side and cannot be removed
          * @see World#strikeLightning(org.bukkit.Location)
+         * @since 1.7.10
          */
         @NotNull
         @Deprecated(since = "1.20.4")
@@ -4345,6 +4422,7 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
          * @return The lightning entity.
          * @deprecated sound is now client side and cannot be removed
          * @see World#strikeLightningEffect(org.bukkit.Location)
+         * @since 1.7.10
          */
         @NotNull
         @Deprecated(since = "1.20.4")
@@ -4571,6 +4649,8 @@ public interface World extends RegionAccessor, WorldInfo, PluginMessageRecipient
 
     /**
      * Represents various map environment types that a world may be
+     *
+     * @since 1.0.0
      */
     public enum Environment {
 

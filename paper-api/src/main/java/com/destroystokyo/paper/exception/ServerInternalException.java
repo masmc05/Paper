@@ -27,6 +27,9 @@ public class ServerInternalException extends ServerException {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 
+    /**
+     * @since 1.9.4
+     */
     public static void reportInternalException(Throwable cause) {
         try {
             Bukkit.getPluginManager().callEvent(new ServerExceptionEvent(new ServerInternalException(cause)));

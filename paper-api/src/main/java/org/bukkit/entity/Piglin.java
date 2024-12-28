@@ -16,6 +16,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * Get whether the piglin is able to hunt hoglins.
      *
      * @return Whether the piglin is able to hunt hoglins
+     * @since 1.16.1
      */
     public boolean isAbleToHunt();
 
@@ -23,6 +24,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * Sets whether the piglin is able to hunt hoglins.
      *
      * @param flag Whether the piglin is able to hunt hoglins.
+     * @since 1.16.1
      */
     public void setIsAbleToHunt(boolean flag);
 

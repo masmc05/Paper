@@ -29,6 +29,7 @@ public class FluidLevelChangeEvent extends BlockEvent implements Cancellable {
      * Gets the new data of the changed block.
      *
      * @return new data
+     * @since 1.13.2
      */
     @NotNull
     public BlockData getNewData() {
@@ -40,6 +41,7 @@ public class FluidLevelChangeEvent extends BlockEvent implements Cancellable {
      * the old one.
      *
      * @param newData the new data
+     * @since 1.13.2
      */
     public void setNewData(@NotNull BlockData newData) {
         Preconditions.checkArgument(newData != null, "newData null");
@@ -48,22 +50,34 @@ public class FluidLevelChangeEvent extends BlockEvent implements Cancellable {
         this.newData = newData.clone();
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

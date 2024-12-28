@@ -12,6 +12,7 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Diode extends MaterialData implements Directional, Redstone {
@@ -92,6 +93,7 @@ public class Diode extends MaterialData implements Directional, Redstone {
      * Sets the delay of the repeater.
      *
      * @param delay The new delay (1-4)
+     * @since 1.0.0
      */
     public void setDelay(int delay) {
         if (delay > 4) {
@@ -109,6 +111,7 @@ public class Diode extends MaterialData implements Directional, Redstone {
      * Gets the delay of the repeater in ticks.
      *
      * @return The delay (1-4)
+     * @since 1.0.0
      */
     public int getDelay() {
         return (getData() >> 2) + 1;
@@ -120,6 +123,7 @@ public class Diode extends MaterialData implements Directional, Redstone {
      * @param face The direction to set this diode to
      *
      * @see BlockFace
+     * @since 1.0.0
      */
     @Override
     public void setFacingDirection(BlockFace face) {
@@ -151,6 +155,7 @@ public class Diode extends MaterialData implements Directional, Redstone {
      * @return The direction this diode is facing
      *
      * @see BlockFace
+     * @since 1.0.0
      */
     @Override
     public BlockFace getFacing() {
@@ -186,6 +191,7 @@ public class Diode extends MaterialData implements Directional, Redstone {
      * Checks if the diode is powered.
      *
      * @return true if the diode is powered
+     * @since 1.9.4
      */
     @Override
     public boolean isPowered() {

@@ -21,11 +21,17 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface WrittenBookContent {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_, _ -> new", pure = true)
     static WrittenBookContent.Builder writtenBookContent(final String title, final String author) {
         return writtenBookContent(Filtered.of(title, null), author);
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_, _ -> new", pure = true)
     static WrittenBookContent.Builder writtenBookContent(final Filtered<String> title, final String author) {
         return ItemComponentTypesBridge.bridge().writtenBookContent(title, author);
@@ -35,6 +41,7 @@ public interface WrittenBookContent {
      * Title of this book.
      *
      * @return title
+     * @since 1.21.3
      */
     @Contract(pure = true)
     Filtered<String> title();
@@ -43,6 +50,7 @@ public interface WrittenBookContent {
      * Player name of the author of this book.
      *
      * @return author
+     * @since 1.21.3
      */
     @Contract(pure = true)
     String author();
@@ -51,6 +59,7 @@ public interface WrittenBookContent {
      * The number of times this book has been copied (0 = original).
      *
      * @return generation
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @IntRange(from = 0, to = 3) int generation();
@@ -59,6 +68,7 @@ public interface WrittenBookContent {
      * Gets the pages of this book.
      *
      * @return pages
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<Filtered<Component>> pages();
@@ -68,12 +78,15 @@ public interface WrittenBookContent {
      * If {@code false}, will be resolved when opened by a player.
      *
      * @return resolved
+     * @since 1.21.3
      */
     @Contract(pure = true)
     boolean resolved();
 
     /**
      * Builder for {@link WrittenBookContent}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -85,6 +98,7 @@ public interface WrittenBookContent {
          * @param title the title
          * @return the builder for chaining
          * @see #title()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder title(String title);
@@ -95,6 +109,7 @@ public interface WrittenBookContent {
          * @param title the title
          * @return the builder for chaining
          * @see #title()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder filteredTitle(Filtered<String> title);
@@ -105,6 +120,7 @@ public interface WrittenBookContent {
          * @param author the author
          * @return the builder for chaining
          * @see #author()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder author(String author);
@@ -115,6 +131,7 @@ public interface WrittenBookContent {
          * @param generation the generation, [0-3]
          * @return the builder for chaining
          * @see #generation()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder generation(@IntRange(from = 0, to = 3) int generation);
@@ -126,6 +143,7 @@ public interface WrittenBookContent {
          * @param resolved resolved
          * @return the builder for chaining
          * @see #resolved()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder resolved(boolean resolved);
@@ -136,6 +154,7 @@ public interface WrittenBookContent {
          * @param page the page
          * @return the builder for chaining
          * @see #pages()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addPage(ComponentLike page);
@@ -146,6 +165,7 @@ public interface WrittenBookContent {
          * @param page the pages
          * @return the builder for chaining
          * @see #pages()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addPages(List<? extends ComponentLike> page);
@@ -156,6 +176,7 @@ public interface WrittenBookContent {
          * @param page the page
          * @return the builder for chaining
          * @see #pages()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addFilteredPage(Filtered<? extends ComponentLike> page);
@@ -166,6 +187,7 @@ public interface WrittenBookContent {
          * @param pages the pages
          * @return the builder for chaining
          * @see #pages()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addFilteredPages(List<Filtered<? extends ComponentLike>> pages);

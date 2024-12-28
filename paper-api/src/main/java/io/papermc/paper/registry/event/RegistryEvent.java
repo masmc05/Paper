@@ -20,6 +20,7 @@ public interface RegistryEvent<T> extends LifecycleEvent {
      * Get the key for the registry this event pertains to.
      *
      * @return the registry key
+     * @since 1.21
      */
     RegistryKey<T> registryKey();
 }

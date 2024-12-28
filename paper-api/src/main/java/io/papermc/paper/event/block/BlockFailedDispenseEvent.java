@@ -25,6 +25,7 @@ public class BlockFailedDispenseEvent extends BlockEvent {
 
     /**
      * @return if the effect should be played
+     * @since 1.16.4
      */
     public boolean shouldPlayEffect() {
         return this.shouldPlayEffect;
@@ -34,6 +35,7 @@ public class BlockFailedDispenseEvent extends BlockEvent {
      * Sets if the effect for empty dispensers should be played
      *
      * @param playEffect if the effect should be played
+     * @since 1.16.4
      */
     public void shouldPlayEffect(final boolean playEffect) {
         this.shouldPlayEffect = playEffect;
@@ -41,6 +43,7 @@ public class BlockFailedDispenseEvent extends BlockEvent {
 
     /**
      * @return {@link #shouldPlayEffect()}
+     * @since 1.16.4
      */
     @Override
     public boolean callEvent() {
@@ -48,11 +51,17 @@ public class BlockFailedDispenseEvent extends BlockEvent {
         return this.shouldPlayEffect();
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

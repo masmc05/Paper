@@ -16,6 +16,7 @@ public interface ItemFrame extends Hanging {
      * Get the item in this frame
      *
      * @return a defensive copy the item in this item frame
+     * @since 1.4.5
      */
     @NotNull
     public ItemStack getItem();
@@ -24,6 +25,7 @@ public interface ItemFrame extends Hanging {
      * Set the item in this frame
      *
      * @param item the new item
+     * @since 1.4.5
      */
     public void setItem(@Nullable ItemStack item);
 
@@ -67,6 +69,7 @@ public interface ItemFrame extends Hanging {
      * Get the rotation of the frame's item
      *
      * @return the direction
+     * @since 1.4.5
      */
     @NotNull
     public Rotation getRotation();
@@ -76,6 +79,7 @@ public interface ItemFrame extends Hanging {
      *
      * @param rotation the new rotation
      * @throws IllegalArgumentException if rotation is null
+     * @since 1.4.5
      */
     public void setRotation(@NotNull Rotation rotation) throws IllegalArgumentException;
 

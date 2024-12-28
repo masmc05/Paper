@@ -96,6 +96,7 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
      * Get the sender completing this command.
      *
      * @return the {@link CommandSender} instance
+     * @since 1.12.2
      */
     public CommandSender getSender() {
         return this.sender;
@@ -110,6 +111,7 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
      * or current player names will not be called.
      *
      * @return a list of offered completions
+     * @since 1.12.2
      */
     public List<String> getCompletions() {
         return this.stringCompletions;
@@ -124,6 +126,7 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
      * The passed collection will be cloned to a new {@code List}. You must call {{@link #getCompletions()}} to mutate from here
      *
      * @param completions the new completions
+     * @since 1.12.2
      */
     public void setCompletions(final List<String> completions) {
         Preconditions.checkArgument(completions != null, "Completions list cannot be null");
@@ -170,6 +173,7 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
      * Return the entire buffer which formed the basis of this completion.
      *
      * @return command buffer, as entered
+     * @since 1.12.2
      */
     public String getBuffer() {
         return this.buffer;
@@ -177,6 +181,7 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
 
     /**
      * @return {@code true} if it is a command being tab completed, {@code false} if it is a chat message.
+     * @since 1.12.2
      */
     public boolean isCommand() {
         return this.isCommand;
@@ -184,6 +189,7 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
 
     /**
      * @return The position looked at by the sender, or {@code null} if none
+     * @since 1.12.2
      */
     public @Nullable Location getLocation() {
         return this.location != null ? this.location.clone() : null;
@@ -194,6 +200,7 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
      * or current player names will not be called.
      *
      * @return Is completions considered handled. Always {@code true} if completions is not empty.
+     * @since 1.12.2
      */
     public boolean isHandled() {
         return !this.completions.isEmpty() || this.handled;
@@ -205,11 +212,15 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
      * or current player names will not be called.
      *
      * @param handled if this completion should be marked as being handled
+     * @since 1.12.2
      */
     public void setHandled(final boolean handled) {
         this.handled = handled;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -219,17 +230,25 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
      * {@inheritDoc}
      * <br>
      * Will provide no completions, and will not fire the synchronous process
+     *
+     * @since 1.12.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
@@ -253,6 +272,7 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
          * Get the suggestion string for this {@link Completion}.
          *
          * @return suggestion string
+         * @since 1.16.5
          */
         String suggestion();
 
@@ -260,9 +280,14 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
          * Get the suggestion tooltip for this {@link Completion}.
          *
          * @return tooltip component
+         * @since 1.16.5
          */
         @Nullable Component tooltip();
 
+        /**
+         * {@inheritDoc}
+         * @since 1.16.5
+         */
         @Override
         default Stream<? extends ExaminableProperty> examinableProperties() {
             return Stream.of(ExaminableProperty.of("suggestion", this.suggestion()), ExaminableProperty.of("tooltip", this.tooltip()));
@@ -273,6 +298,7 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
          *
          * @param suggestion suggestion string
          * @return new completion instance
+         * @since 1.16.5
          */
         static Completion completion(final String suggestion) {
             return new CompletionImpl(suggestion, null);
@@ -286,6 +312,7 @@ public class AsyncTabCompleteEvent extends Event implements Cancellable {
          * @param suggestion suggestion string
          * @param tooltip    tooltip component, or {@code null}
          * @return new completion instance
+         * @since 1.16.5
          */
         static Completion completion(final String suggestion, final @Nullable Component tooltip) {
             return new CompletionImpl(suggestion, tooltip);

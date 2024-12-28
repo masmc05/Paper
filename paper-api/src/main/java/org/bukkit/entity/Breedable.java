@@ -12,6 +12,7 @@ public interface Breedable extends Ageable {
      * maturing or getting ready for mating.
      *
      * @param lock new lock
+     * @since 1.16.2
      */
     public void setAgeLock(boolean lock);
 
@@ -19,6 +20,7 @@ public interface Breedable extends Ageable {
      * Gets the current agelock.
      *
      * @return the current agelock
+     * @since 1.16.2
      */
     public boolean getAgeLock();
 
@@ -26,6 +28,7 @@ public interface Breedable extends Ageable {
      * Return the ability to breed of the animal.
      *
      * @return the ability to breed of the animal
+     * @since 1.16.2
      */
     public boolean canBreed();
 
@@ -34,6 +37,7 @@ public interface Breedable extends Ageable {
      * breed it will instantly grow up.
      *
      * @param breed breedability of the animal
+     * @since 1.16.2
      */
     public void setBreed(boolean breed);
 

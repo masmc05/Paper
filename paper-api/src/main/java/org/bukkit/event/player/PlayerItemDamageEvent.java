@@ -38,6 +38,7 @@ public class PlayerItemDamageEvent extends PlayerEvent implements Cancellable {
      * Gets the item being damaged.
      *
      * @return the item
+     * @since 1.5.1
      */
     @NotNull
     public ItemStack getItem() {
@@ -48,6 +49,7 @@ public class PlayerItemDamageEvent extends PlayerEvent implements Cancellable {
      * Gets the amount of durability damage this item will be taking.
      *
      * @return durability change
+     * @since 1.5.1
      */
     public int getDamage() {
         return damage;
@@ -67,26 +69,41 @@ public class PlayerItemDamageEvent extends PlayerEvent implements Cancellable {
     }
     // Paper end
 
+    /**
+     * @since 1.5.1
+     */
     public void setDamage(int damage) {
         this.damage = damage;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

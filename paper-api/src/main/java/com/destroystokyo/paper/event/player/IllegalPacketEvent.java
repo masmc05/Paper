@@ -29,38 +29,62 @@ public class IllegalPacketEvent extends PlayerEvent {
         this.exceptionMessage = e.getMessage();
     }
 
+    /**
+     * @since 1.11.2
+     */
     public boolean isShouldKick() {
         return this.shouldKick;
     }
 
+    /**
+     * @since 1.11.2
+     */
     public void setShouldKick(boolean shouldKick) {
         this.shouldKick = shouldKick;
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Nullable
     public String getKickMessage() {
         return this.kickMessage;
     }
 
+    /**
+     * @since 1.11.2
+     */
     public void setKickMessage(@Nullable String kickMessage) {
         this.kickMessage = kickMessage;
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Nullable
     public String getType() {
         return this.type;
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Nullable
     public String getExceptionMessage() {
         return this.exceptionMessage;
     }
 
+    /**
+     * @since 1.11.2
+     */
     @NotNull
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.11.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

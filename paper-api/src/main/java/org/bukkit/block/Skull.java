@@ -21,6 +21,7 @@ public interface Skull extends TileState {
      * Checks to see if the skull has an owner
      *
      * @return true if the skull has an owner
+     * @since 1.4.6
      */
     public boolean hasOwner();
 
@@ -29,6 +30,7 @@ public interface Skull extends TileState {
      *
      * @return the owner of the skull or null if the skull does not have an owner
      * @deprecated See {@link #getOwningPlayer()}.
+     * @since 1.4.6
      */
     @Deprecated(since = "1.9.4")
     @Nullable
@@ -43,6 +45,7 @@ public interface Skull extends TileState {
      * @param name the new owner of the skull
      * @return true if the owner was successfully set
      * @deprecated see {@link #setOwningPlayer(org.bukkit.OfflinePlayer)}.
+     * @since 1.4.6
      */
     @Deprecated(since = "1.9.4")
     @Contract("null -> false")
@@ -140,6 +143,7 @@ public interface Skull extends TileState {
      *
      * @return the rotation of the skull
      * @deprecated use {@link BlockData}
+     * @since 1.4.6
      */
     @Deprecated(since = "1.13")
     @NotNull
@@ -151,6 +155,7 @@ public interface Skull extends TileState {
      *
      * @param rotation the rotation of the skull
      * @deprecated use {@link BlockData}
+     * @since 1.4.6
      */
     @Deprecated(since = "1.13")
     public void setRotation(@NotNull BlockFace rotation);
@@ -160,6 +165,7 @@ public interface Skull extends TileState {
      *
      * @return the type of skull
      * @deprecated check {@link Material} instead
+     * @since 1.4.6
      */
     @Deprecated(since = "1.13")
     @NotNull
@@ -170,6 +176,7 @@ public interface Skull extends TileState {
      *
      * @param skullType the type of skull
      * @deprecated check {@link Material} instead
+     * @since 1.4.6
      */
     @Deprecated(since = "1.13")
     @Contract("_ -> fail")

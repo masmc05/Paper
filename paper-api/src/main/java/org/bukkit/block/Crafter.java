@@ -16,6 +16,7 @@ public interface Crafter extends Container, com.destroystokyo.paper.loottable.Lo
      *
      * @return number of ticks remaining
      * @see org.bukkit.block.data.type.Crafter#isCrafting()
+     * @since 1.20.4
      */
     int getCraftingTicks();
 
@@ -25,6 +26,7 @@ public interface Crafter extends Container, com.destroystokyo.paper.loottable.Lo
      *
      * @param ticks number of ticks remaining
      * @see org.bukkit.block.data.type.Crafter#isCrafting()
+     * @since 1.20.4
      */
     void setCraftingTicks(int ticks);
 
@@ -34,6 +36,7 @@ public interface Crafter extends Container, com.destroystokyo.paper.loottable.Lo
      *
      * @param slot slot index
      * @return disabled status
+     * @since 1.20.4
      */
     boolean isSlotDisabled(int slot);
 
@@ -43,6 +46,7 @@ public interface Crafter extends Container, com.destroystokyo.paper.loottable.Lo
      *
      * @param slot slot index
      * @param disabled disabled status
+     * @since 1.20.4
      */
     void setSlotDisabled(int slot, boolean disabled);
 
@@ -50,6 +54,7 @@ public interface Crafter extends Container, com.destroystokyo.paper.loottable.Lo
      * Gets whether this Crafter is powered.
      *
      * @return powered status
+     * @since 1.20.4
      */
     boolean isTriggered();
 
@@ -57,6 +62,7 @@ public interface Crafter extends Container, com.destroystokyo.paper.loottable.Lo
      * Sets whether this Crafter is powered.
      *
      * @param triggered powered status
+     * @since 1.20.4
      */
     void setTriggered(boolean triggered);
 }

@@ -20,6 +20,7 @@ public interface CommandExecutor {
      * @param label Alias of the command which was used
      * @param args Passed command arguments
      * @return true if a valid command, otherwise false
+     * @since 1.0.0
      */
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args);
 }

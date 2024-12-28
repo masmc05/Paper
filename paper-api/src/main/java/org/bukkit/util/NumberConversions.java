@@ -11,6 +11,9 @@ import org.jetbrains.annotations.Nullable;
 public final class NumberConversions {
     private NumberConversions() {}
 
+    /**
+     * @since 1.1.0
+     */
     public static int floor(double num) {
         final int floor = (int) num;
         return floor == num ? floor : floor - (int) (Double.doubleToRawLongBits(num) >>> 63);
@@ -24,6 +27,9 @@ public final class NumberConversions {
         return floor == num ? floor : floor + (int) (~Double.doubleToRawLongBits(num) >>> 63);
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static int round(double num) {
         return floor(num + 0.5d);
     }
@@ -35,6 +41,9 @@ public final class NumberConversions {
         return num * num;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static int toInt(@Nullable Object object) {
         if (object instanceof Number) {
             return ((Number) object).intValue();
@@ -48,6 +57,9 @@ public final class NumberConversions {
         return 0;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static float toFloat(@Nullable Object object) {
         if (object instanceof Number) {
             return ((Number) object).floatValue();
@@ -61,6 +73,9 @@ public final class NumberConversions {
         return 0;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static double toDouble(@Nullable Object object) {
         if (object instanceof Number) {
             return ((Number) object).doubleValue();
@@ -74,6 +89,9 @@ public final class NumberConversions {
         return 0;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static long toLong(@Nullable Object object) {
         if (object instanceof Number) {
             return ((Number) object).longValue();
@@ -87,6 +105,9 @@ public final class NumberConversions {
         return 0;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static short toShort(@Nullable Object object) {
         if (object instanceof Number) {
             return ((Number) object).shortValue();
@@ -100,6 +121,9 @@ public final class NumberConversions {
         return 0;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static byte toByte(@Nullable Object object) {
         if (object instanceof Number) {
             return ((Number) object).byteValue();

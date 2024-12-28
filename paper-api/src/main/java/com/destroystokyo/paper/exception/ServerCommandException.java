@@ -41,6 +41,7 @@ public class ServerCommandException extends ServerException {
      * Gets the command which threw the exception
      *
      * @return exception throwing command
+     * @since 1.9.4
      */
     public Command getCommand() {
         return command;
@@ -50,6 +51,7 @@ public class ServerCommandException extends ServerException {
      * Gets the command sender which executed the command request
      *
      * @return command sender of exception thrown command request
+     * @since 1.9.4
      */
     public CommandSender getCommandSender() {
         return commandSender;
@@ -59,6 +61,7 @@ public class ServerCommandException extends ServerException {
      * Gets the arguments which threw the exception for the command
      *
      * @return arguments of exception thrown command request
+     * @since 1.9.4
      */
     public String[] getArguments() {
         return arguments;

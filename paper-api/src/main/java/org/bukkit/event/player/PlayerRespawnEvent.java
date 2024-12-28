@@ -56,6 +56,7 @@ public class PlayerRespawnEvent extends PlayerEvent {
      * Gets the current respawn location
      *
      * @return Location current respawn location
+     * @since 1.0.0
      */
     @NotNull
     public Location getRespawnLocation() {
@@ -66,6 +67,7 @@ public class PlayerRespawnEvent extends PlayerEvent {
      * Sets the new respawn location
      *
      * @param respawnLocation new location for the respawn
+     * @since 1.0.0
      */
     public void setRespawnLocation(@NotNull Location respawnLocation) {
         Preconditions.checkArgument(respawnLocation != null, "Respawn location can not be null");
@@ -78,6 +80,7 @@ public class PlayerRespawnEvent extends PlayerEvent {
      * Gets whether the respawn location is the player's bed.
      *
      * @return true if the respawn location is the player's bed.
+     * @since 1.0.0
      */
     public boolean isBedSpawn() {
         return this.isBedSpawn;

@@ -18,29 +18,46 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface DeathProtection {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static DeathProtection deathProtection(final List<ConsumeEffect> deathEffects) {
         return deathProtection().addEffects(deathEffects).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static DeathProtection.Builder deathProtection() {
         return ItemComponentTypesBridge.bridge().deathProtection();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     @Unmodifiable List<ConsumeEffect> deathEffects();
 
     /**
      * Builder for {@link DeathProtection}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<DeathProtection> {
 
+        /**
+         * @since 1.21.3
+         */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addEffect(ConsumeEffect effect);
 
+        /**
+         * @since 1.21.3
+         */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addEffects(List<ConsumeEffect> effects);
     }

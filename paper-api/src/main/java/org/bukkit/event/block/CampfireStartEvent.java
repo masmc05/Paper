@@ -28,6 +28,7 @@ public class CampfireStartEvent extends InventoryBlockStartEvent {
      * Gets the CampfireRecipe associated with this event.
      *
      * @return the CampfireRecipe being cooked
+     * @since 1.19.3
      */
     @NotNull
     public CampfireRecipe getRecipe() {
@@ -38,6 +39,7 @@ public class CampfireStartEvent extends InventoryBlockStartEvent {
      * Gets the total cook time associated with this event.
      *
      * @return the total cook time
+     * @since 1.19.3
      */
     public int getTotalCookTime() {
         return cookingTime;
@@ -47,6 +49,7 @@ public class CampfireStartEvent extends InventoryBlockStartEvent {
      * Sets the total cook time for this event.
      *
      * @param cookTime the new total cook time
+     * @since 1.19.3
      */
     public void setTotalCookTime(int cookTime) {
         this.cookingTime = cookTime;

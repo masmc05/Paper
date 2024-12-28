@@ -17,6 +17,7 @@ public interface Rail extends Waterlogged {
      * Gets the value of the 'shape' property.
      *
      * @return the 'shape' value
+     * @since 1.13
      */
     @NotNull
     Shape getShape();
@@ -32,12 +33,15 @@ public interface Rail extends Waterlogged {
      * Gets the shapes which are applicable to this block.
      *
      * @return the allowed 'shape' values
+     * @since 1.13
      */
     @NotNull
     Set<Shape> getShapes();
 
     /**
      * The different types of shapes a rail block can occupy.
+     *
+     * @since 1.13
      */
     public enum Shape {
 

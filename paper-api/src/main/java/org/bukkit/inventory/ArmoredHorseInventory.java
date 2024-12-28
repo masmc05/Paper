@@ -13,6 +13,7 @@ public interface ArmoredHorseInventory extends AbstractHorseInventory {
      * Gets the item in the horse's armor slot.
      *
      * @return the armor item
+     * @since 1.12
      */
     @Nullable ItemStack getArmor();
 
@@ -20,6 +21,7 @@ public interface ArmoredHorseInventory extends AbstractHorseInventory {
      * Sets the item in the horse's armor slot.
      *
      * @param stack the new item
+     * @since 1.12
      */
     void setArmor(@Nullable ItemStack stack);
 }

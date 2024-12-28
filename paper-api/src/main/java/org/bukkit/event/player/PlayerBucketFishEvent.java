@@ -26,6 +26,7 @@ public class PlayerBucketFishEvent extends PlayerBucketEntityEvent {
      * Gets the fish involved with this event.
      *
      * @return The fish involved with this event
+     * @since 1.16.5
      */
     @NotNull
     @Override
@@ -40,6 +41,7 @@ public class PlayerBucketFishEvent extends PlayerBucketEntityEvent {
      *
      * @return The used bucket
      * @deprecated Use {@link #getOriginalBucket()}
+     * @since 1.16.5
      */
     @NotNull
     @Deprecated(since = "1.16.5")
@@ -55,6 +57,7 @@ public class PlayerBucketFishEvent extends PlayerBucketEntityEvent {
      *
      * @return The bucket that the fish will be put into
      * @deprecated Use {@link #getEntityBucket()}
+     * @since 1.16.5
      */
     @NotNull
     @Deprecated(since = "1.16.5")

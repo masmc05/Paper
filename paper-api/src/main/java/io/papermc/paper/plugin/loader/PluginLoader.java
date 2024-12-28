@@ -27,6 +27,7 @@ public interface PluginLoader {
      *
      * @param classpathBuilder a mutable classpath builder that may be used to register custom runtime dependencies
      *                         for the plugin the loader was registered for.
+     * @since 1.19.3
      */
     void classloader(PluginClasspathBuilder classpathBuilder);
 

@@ -33,17 +33,24 @@ public class VehicleExitEvent extends VehicleEvent implements Cancellable {
      * Get the living entity that exited the vehicle.
      *
      * @return The entity.
+     * @since 1.0.0
      */
     @NotNull
     public LivingEntity getExited() {
         return exited;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         // Paper start

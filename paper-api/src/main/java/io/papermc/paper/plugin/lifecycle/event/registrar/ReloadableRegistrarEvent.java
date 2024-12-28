@@ -21,10 +21,14 @@ public interface ReloadableRegistrarEvent<R extends Registrar> extends Registrar
      * Get the cause of this reload.
      *
      * @return the cause
+     * @since 1.20.4
      */
     @Contract(pure = true)
     Cause cause();
 
+    /**
+     * @since 1.20.4
+     */
     @ApiStatus.Experimental
     enum Cause {
         /**

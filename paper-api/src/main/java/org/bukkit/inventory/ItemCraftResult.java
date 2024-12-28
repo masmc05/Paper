@@ -17,6 +17,7 @@ public interface ItemCraftResult {
      * The resulting {@link ItemStack} that was crafted.
      *
      * @return {@link ItemStack} that was crafted.
+     * @since 1.20.2
      */
     @NotNull
     public ItemStack getResult();
@@ -25,6 +26,7 @@ public interface ItemCraftResult {
      * Gets the resulting matrix from the crafting operation.
      *
      * @return resulting matrix
+     * @since 1.20.2
      */
     @NotNull
     public ItemStack[] getResultingMatrix();
@@ -34,6 +36,7 @@ public interface ItemCraftResult {
      * matrix.
      *
      * @return overflow items
+     * @since 1.20.2
      */
     @NotNull
     public List<ItemStack> getOverflowItems();

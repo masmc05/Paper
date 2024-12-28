@@ -16,6 +16,7 @@ public interface Ageable extends BlockData {
      * Gets the value of the 'age' property.
      *
      * @return the 'age' value
+     * @since 1.13
      */
     int getAge();
 
@@ -23,6 +24,7 @@ public interface Ageable extends BlockData {
      * Sets the value of the 'age' property.
      *
      * @param age the new 'age' value
+     * @since 1.13
      */
     void setAge(int age);
 
@@ -30,6 +32,7 @@ public interface Ageable extends BlockData {
      * Gets the maximum allowed value of the 'age' property.
      *
      * @return the maximum 'age' value
+     * @since 1.13
      */
     int getMaximumAge();
 }

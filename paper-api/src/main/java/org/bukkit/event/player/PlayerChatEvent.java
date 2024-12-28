@@ -38,11 +38,17 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
         this.recipients = recipients;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -52,6 +58,7 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
      * Gets the message that the player is attempting to send
      *
      * @return Message the player is attempting to send
+     * @since 1.0.0
      */
     @NotNull
     public String getMessage() {
@@ -62,6 +69,7 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
      * Sets the message that the player will send
      *
      * @param message New message that the player will send
+     * @since 1.0.0
      */
     public void setMessage(@NotNull String message) {
         this.message = message;
@@ -72,6 +80,7 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
      * executed as
      *
      * @param player New player which this event will execute as
+     * @since 1.0.0
      */
     public void setPlayer(@NotNull final Player player) {
         Preconditions.checkArgument(player != null, "Player cannot be null");
@@ -82,6 +91,7 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
      * Gets the format to use to display this chat message
      *
      * @return String.Format compatible format string
+     * @since 1.0.0
      */
     @NotNull
     public String getFormat() {
@@ -92,6 +102,7 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
      * Sets the format to use to display this chat message
      *
      * @param format String.Format compatible format string
+     * @since 1.0.0
      */
     public void setFormat(@NotNull final String format) {
         // Oh for a better way to do this!
@@ -109,6 +120,7 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
      * Gets a set of recipients that this chat message will be displayed to
      *
      * @return All Players who will see this chat message
+     * @since 1.0.0
      */
     @NotNull
     public Set<Player> getRecipients() {

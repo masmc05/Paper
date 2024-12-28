@@ -16,6 +16,7 @@ public interface ChiseledBookshelf extends io.papermc.paper.block.TileStateInven
      * Gets the last interacted inventory slot.
      *
      * @return the last interacted slot
+     * @since 1.19.3
      */
     int getLastInteractedSlot();
 
@@ -23,14 +24,21 @@ public interface ChiseledBookshelf extends io.papermc.paper.block.TileStateInven
      * Sets the last interacted inventory slot.
      *
      * @param lastInteractedSlot the new last interacted slot
+     * @since 1.19.3
      */
     void setLastInteractedSlot(int lastInteractedSlot);
 
+    /**
+     * @since 1.19.3
+     */
     // Paper - move docs to TileStateInventoryHolder
     @NotNull
     @Override
     ChiseledBookshelfInventory getInventory();
 
+    /**
+     * @since 1.19.3
+     */
     @Override // Paper - move docs to TileStateInventoryHolder
     @NotNull
     ChiseledBookshelfInventory getSnapshotInventory();

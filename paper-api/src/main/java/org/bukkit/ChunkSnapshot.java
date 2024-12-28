@@ -18,6 +18,7 @@ public interface ChunkSnapshot {
      * Gets the X-coordinate of this chunk
      *
      * @return X-coordinate
+     * @since 1.0.0
      */
     int getX();
 
@@ -25,6 +26,7 @@ public interface ChunkSnapshot {
      * Gets the Z-coordinate of this chunk
      *
      * @return Z-coordinate
+     * @since 1.0.0
      */
     int getZ();
 
@@ -32,6 +34,7 @@ public interface ChunkSnapshot {
      * Gets name of the world containing this chunk
      *
      * @return Parent World Name
+     * @since 1.0.0
      */
     @NotNull
     String getWorldName();
@@ -55,6 +58,7 @@ public interface ChunkSnapshot {
      * @param y world minHeight (inclusive) - world maxHeight (exclusive)
      * @param z 0-15
      * @return block material type
+     * @since 1.0.0
      */
     @NotNull
     BlockData getBlockData(int x, int y, int z);
@@ -79,6 +83,7 @@ public interface ChunkSnapshot {
      * @param y world minHeight (inclusive) - world maxHeight (exclusive)
      * @param z 0-15
      * @return 0-15
+     * @since 1.0.0
      */
     int getBlockSkyLight(int x, int y, int z);
 
@@ -90,6 +95,7 @@ public interface ChunkSnapshot {
      * @param y world minHeight (inclusive) - world maxHeight (exclusive)
      * @param z 0-15
      * @return 0-15
+     * @since 1.0.0
      */
     int getBlockEmittedLight(int x, int y, int z);
 
@@ -99,6 +105,7 @@ public interface ChunkSnapshot {
      * @param x X-coordinate of the blocks (0-15)
      * @param z Z-coordinate of the blocks (0-15)
      * @return Y-coordinate of the highest non-air block
+     * @since 1.0.0
      */
     int getHighestBlockYAt(int x, int z);
 
@@ -109,6 +116,7 @@ public interface ChunkSnapshot {
      * @param z Z-coordinate (0-15)
      * @return Biome at given coordinate
      * @deprecated biomes are now 3-dimensional
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.15")
@@ -133,6 +141,7 @@ public interface ChunkSnapshot {
      * @param z Z-coordinate (0-15)
      * @return temperature at given coordinate
      * @deprecated biomes are now 3-dimensional
+     * @since 1.0.0
      */
     @Deprecated(since = "1.15")
     double getRawBiomeTemperature(int x, int z);
@@ -152,6 +161,7 @@ public interface ChunkSnapshot {
      * Get world full time when chunk snapshot was captured
      *
      * @return time in ticks
+     * @since 1.0.0
      */
     long getCaptureFullTime();
 

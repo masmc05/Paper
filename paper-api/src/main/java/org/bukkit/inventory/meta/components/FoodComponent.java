@@ -15,6 +15,7 @@ public interface FoodComponent extends ConfigurationSerializable {
      * Gets the food restored by this item when eaten.
      *
      * @return nutrition value
+     * @since 1.20.6
      */
     int getNutrition();
 
@@ -22,6 +23,7 @@ public interface FoodComponent extends ConfigurationSerializable {
      * Sets the food restored by this item when eaten.
      *
      * @param nutrition new nutrition value, must be non-negative
+     * @since 1.20.6
      */
     void setNutrition(int nutrition);
 
@@ -29,6 +31,7 @@ public interface FoodComponent extends ConfigurationSerializable {
      * Gets the saturation restored by this item when eaten.
      *
      * @return saturation value
+     * @since 1.20.6
      */
     float getSaturation();
 
@@ -36,6 +39,7 @@ public interface FoodComponent extends ConfigurationSerializable {
      * Sets the saturation restored by this item when eaten.
      *
      * @param saturation new saturation value
+     * @since 1.20.6
      */
     void setSaturation(float saturation);
 
@@ -43,6 +47,7 @@ public interface FoodComponent extends ConfigurationSerializable {
      * Gets if this item can be eaten even when not hungry.
      *
      * @return true if always edible
+     * @since 1.20.6
      */
     boolean canAlwaysEat();
 
@@ -50,6 +55,7 @@ public interface FoodComponent extends ConfigurationSerializable {
      * Sets if this item can be eaten even when not hungry.
      *
      * @param canAlwaysEat whether always edible
+     * @since 1.20.6
      */
     void setCanAlwaysEat(boolean canAlwaysEat);
 }

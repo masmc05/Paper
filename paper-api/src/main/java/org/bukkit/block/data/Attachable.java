@@ -17,6 +17,7 @@ public interface Attachable extends BlockData {
      * Gets the value of the 'attached' property.
      *
      * @return the 'attached' value
+     * @since 1.13
      */
     boolean isAttached();
 
@@ -24,6 +25,7 @@ public interface Attachable extends BlockData {
      * Sets the value of the 'attached' property.
      *
      * @param attached the new 'attached' value
+     * @since 1.13
      */
     void setAttached(boolean attached);
 }

@@ -29,16 +29,23 @@ public class EntityCompostItemEvent extends CompostItemEvent implements Cancella
      * Gets the entity that interacted with the composter.
      *
      * @return the entity that composted an item.
+     * @since 1.19.3
      */
     public Entity getEntity() {
         return this.entity;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;

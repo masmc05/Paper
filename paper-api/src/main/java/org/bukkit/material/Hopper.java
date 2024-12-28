@@ -11,6 +11,7 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.9.4
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Hopper extends MaterialData implements Directional, Redstone {
@@ -72,6 +73,7 @@ public class Hopper extends MaterialData implements Directional, Redstone {
      *
      * @param isActive True if the hopper is active, false if deactivated as if
      * powered by redstone
+     * @since 1.9.4
      */
     public void setActive(boolean isActive) {
         setData((byte) (getData() & 0x7 | (isActive ? 0x0 : 0x8)));
@@ -81,6 +83,7 @@ public class Hopper extends MaterialData implements Directional, Redstone {
      * Checks whether the hopper is active or not.
      *
      * @return True if the hopper is active, false if deactivated
+     * @since 1.9.4
      */
     public boolean isActive() {
         return (getData() & 0x8) == 0;
@@ -92,6 +95,7 @@ public class Hopper extends MaterialData implements Directional, Redstone {
      * @param face The direction to set this hopper to
      *
      * @see BlockFace
+     * @since 1.9.4
      */
     @Override
     public void setFacingDirection(BlockFace face) {
@@ -124,6 +128,7 @@ public class Hopper extends MaterialData implements Directional, Redstone {
      * @return The direction this hopper is facing
      *
      * @see BlockFace
+     * @since 1.9.4
      */
     @Override
     public BlockFace getFacing() {
@@ -158,6 +163,7 @@ public class Hopper extends MaterialData implements Directional, Redstone {
      * Checks if the hopper is powered.
      *
      * @return true if the hopper is powered
+     * @since 1.9.4
      */
     @Override
     public boolean isPowered() {

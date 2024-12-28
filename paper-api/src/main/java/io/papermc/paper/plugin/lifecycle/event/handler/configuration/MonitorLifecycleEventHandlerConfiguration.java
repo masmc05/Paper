@@ -22,6 +22,7 @@ public interface MonitorLifecycleEventHandlerConfiguration<O extends LifecycleEv
      * to observe changes from previously run handlers.
      *
      * @return this configuration for chaining
+     * @since 1.20.4
      */
     @Contract("-> this")
     MonitorLifecycleEventHandlerConfiguration<O> monitor();

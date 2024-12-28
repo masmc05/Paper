@@ -18,6 +18,7 @@ public interface Colorable {
      * object has a special default color (e.g Shulkers).
      *
      * @return The DyeColor of this object.
+     * @since 1.0.0
      */
     @Nullable
     public DyeColor getColor();
@@ -30,6 +31,7 @@ public interface Colorable {
      *
      * @param color The color of the object, as a DyeColor.
      * @throws NullPointerException if argument is null and this implementation does not support null
+     * @since 1.0.0
      */
     public void setColor(@UndefinedNullability("defined by subclass") DyeColor color);
 

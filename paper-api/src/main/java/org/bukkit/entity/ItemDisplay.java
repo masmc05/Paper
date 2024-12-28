@@ -15,6 +15,7 @@ public interface ItemDisplay extends Display {
      * Gets the displayed item stack.
      *
      * @return the displayed item stack
+     * @since 1.19.4
      */
     @NotNull // Paper
     ItemStack getItemStack();
@@ -23,6 +24,7 @@ public interface ItemDisplay extends Display {
      * Sets the displayed item stack.
      *
      * @param item the new item stack
+     * @since 1.19.4
      */
     void setItemStack(@Nullable ItemStack item);
 
@@ -32,6 +34,7 @@ public interface ItemDisplay extends Display {
      * Defaults to {@link ItemDisplayTransform#FIXED}.
      *
      * @return item display transform
+     * @since 1.19.4
      */
     @NotNull
     ItemDisplayTransform getItemDisplayTransform();
@@ -47,6 +50,8 @@ public interface ItemDisplay extends Display {
 
     /**
      * Represents the item model transform to be applied to the displayed item.
+     *
+     * @since 1.19.4
      */
     public enum ItemDisplayTransform {
 

@@ -15,12 +15,18 @@ public final class HelpTopicComparator implements Comparator<HelpTopic> {
 
     // Singleton implementations
     private static final TopicNameComparator tnc = new TopicNameComparator();
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static TopicNameComparator topicNameComparatorInstance() {
         return tnc;
     }
 
     private static final HelpTopicComparator htc = new HelpTopicComparator();
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HelpTopicComparator helpTopicComparatorInstance() {
         return htc;
@@ -28,14 +34,25 @@ public final class HelpTopicComparator implements Comparator<HelpTopic> {
 
     private HelpTopicComparator() {}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.3.1
+     */
     @Override
     public int compare(@NotNull HelpTopic lhs, @NotNull HelpTopic rhs) {
         return tnc.compare(lhs.getName(), rhs.getName());
     }
 
+    /**
+     * @since 1.3.1
+     */
     public static final class TopicNameComparator implements Comparator<String> {
         private TopicNameComparator() {}
 
+        /**
+         * {@inheritDoc}
+         * @since 1.3.1
+         */
         @Override
         public int compare(@NotNull String lhs, @NotNull String rhs) {
             boolean lhsStartSlash = lhs.startsWith("/");

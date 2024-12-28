@@ -88,6 +88,7 @@ public class RayTraceResult {
      * Gets the exact position of the hit.
      *
      * @return a copy of the exact hit position
+     * @since 1.13.2
      */
     @NotNull
     public Vector getHitPosition() {
@@ -98,6 +99,7 @@ public class RayTraceResult {
      * Gets the hit block.
      *
      * @return the hit block, or <code>null</code> if not available
+     * @since 1.13.2
      */
     @Nullable
     public Block getHitBlock() {
@@ -108,6 +110,7 @@ public class RayTraceResult {
      * Gets the hit block face.
      *
      * @return the hit block face, or <code>null</code> if not available
+     * @since 1.13.2
      */
     @Nullable
     public BlockFace getHitBlockFace() {
@@ -118,6 +121,7 @@ public class RayTraceResult {
      * Gets the hit entity.
      *
      * @return the hit entity, or <code>null</code> if not available
+     * @since 1.13.2
      */
     @Nullable
     public Entity getHitEntity() {

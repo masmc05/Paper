@@ -13,6 +13,7 @@ public interface Parrot extends Tameable, Sittable {
      * Get the variant of this parrot.
      *
      * @return parrot variant
+     * @since 1.12
      */
     @NotNull
     public Variant getVariant();
@@ -34,6 +35,8 @@ public interface Parrot extends Tameable, Sittable {
 
     /**
      * Represents the variant of a parrot - ie its color.
+     *
+     * @since 1.12
      */
     public enum Variant {
         /**

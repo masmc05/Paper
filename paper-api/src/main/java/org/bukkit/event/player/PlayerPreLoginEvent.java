@@ -49,6 +49,7 @@ public class PlayerPreLoginEvent extends Event {
      * Gets the current result of the login, as an enum
      *
      * @return Current Result of the login
+     * @since 1.0.0
      */
     @NotNull
     public Result getResult() {
@@ -104,6 +105,7 @@ public class PlayerPreLoginEvent extends Event {
      *
      * @return Current kick message
      * @deprecated in favour of {@link #kickMessage()}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     @NotNull
@@ -116,6 +118,7 @@ public class PlayerPreLoginEvent extends Event {
      *
      * @param message New kick message
      * @deprecated in favour of {@link #kickMessage(net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void setKickMessage(@NotNull final String message) {
@@ -124,6 +127,8 @@ public class PlayerPreLoginEvent extends Event {
 
     /**
      * Allows the player to log in
+     *
+     * @since 1.0.0
      */
     public void allow() {
         result = Result.ALLOWED;
@@ -147,6 +152,7 @@ public class PlayerPreLoginEvent extends Event {
      * Gets the player's name.
      *
      * @return the player's name
+     * @since 1.0.0
      */
     @NotNull
     public String getName() {
@@ -157,6 +163,7 @@ public class PlayerPreLoginEvent extends Event {
      * Gets the player IP address.
      *
      * @return The IP address
+     * @since 1.0.0
      */
     @NotNull
     public InetAddress getAddress() {
@@ -193,6 +200,8 @@ public class PlayerPreLoginEvent extends Event {
 
     /**
      * Basic kick reasons for communicating to plugins
+     *
+     * @since 1.0.0
      */
     public enum Result {
 

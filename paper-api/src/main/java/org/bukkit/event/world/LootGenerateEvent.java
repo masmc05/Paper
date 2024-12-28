@@ -56,6 +56,7 @@ public class LootGenerateEvent extends WorldEvent implements Cancellable {
      * {@code getLootContext().getLootedEntity()}.
      *
      * @return the entity
+     * @since 1.15.2
      */
     @Nullable
     public Entity getEntity() {
@@ -69,6 +70,7 @@ public class LootGenerateEvent extends WorldEvent implements Cancellable {
      * inventory holder will be null as this event is called post block break.
      *
      * @return the inventory holder
+     * @since 1.15.2
      */
     @Nullable
     public InventoryHolder getInventoryHolder() {
@@ -79,6 +81,7 @@ public class LootGenerateEvent extends WorldEvent implements Cancellable {
      * Get the loot table used to generate loot.
      *
      * @return the loot table
+     * @since 1.15.2
      */
     @NotNull
     public LootTable getLootTable() {
@@ -90,6 +93,7 @@ public class LootGenerateEvent extends WorldEvent implements Cancellable {
      * generation.
      *
      * @return the loot context
+     * @since 1.15.2
      */
     @NotNull
     public LootContext getLootContext() {
@@ -103,6 +107,7 @@ public class LootGenerateEvent extends WorldEvent implements Cancellable {
      * {@link #getLoot()}.
      *
      * @param loot the loot to generate, null to clear all loot
+     * @since 1.15.2
      */
     public void setLoot(@Nullable Collection<ItemStack> loot) {
         this.loot.clear();
@@ -118,6 +123,7 @@ public class LootGenerateEvent extends WorldEvent implements Cancellable {
      * the loot generation. Null items will be treated as air.
      *
      * @return the loot to generate
+     * @since 1.15.2
      */
     @NotNull
     public List<ItemStack> getLoot() {
@@ -130,27 +136,40 @@ public class LootGenerateEvent extends WorldEvent implements Cancellable {
      * {@link LootTable#fillInventory(org.bukkit.inventory.Inventory, java.util.Random, LootContext)}.
      *
      * @return true if plugin caused, false otherwise
+     * @since 1.15.2
      */
     public boolean isPlugin() {
         return plugin;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

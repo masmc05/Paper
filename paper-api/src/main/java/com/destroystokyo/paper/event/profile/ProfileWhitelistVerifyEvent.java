@@ -70,6 +70,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
     /**
      * @return the currently planned message to send to the user if they are not whitelisted
      * @deprecated use {@link #kickMessage()}
+     * @since 1.12
      */
     @Deprecated
     public @Nullable String getKickMessage() {
@@ -79,6 +80,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
     /**
      * @param kickMessage The message to send to the player on kick if not whitelisted. May set to {@code null} to use the server configured default
      * @deprecated Use {@link #kickMessage(Component)}
+     * @since 1.12
      */
     @Deprecated
     public void setKickMessage(final @Nullable String kickMessage) {
@@ -112,6 +114,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
 
     /**
      * @return Whether the player is whitelisted to play on this server (whitelist may be off is why it's true)
+     * @since 1.12
      */
     public boolean isWhitelisted() {
         return this.whitelisted;
@@ -121,6 +124,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
      * Changes the players whitelisted state. {@code false} will deny the login
      *
      * @param whitelisted The new whitelisted state
+     * @since 1.12
      */
     public void setWhitelisted(final boolean whitelisted) {
         this.whitelisted = whitelisted;
@@ -128,6 +132,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
 
     /**
      * @return if the player obtained whitelist status by having op
+     * @since 1.12
      */
     public boolean isOp() {
         return this.isOp;
@@ -135,16 +140,23 @@ public class ProfileWhitelistVerifyEvent extends Event {
 
     /**
      * @return if the server even has whitelist on
+     * @since 1.12
      */
     public boolean isWhitelistEnabled() {
         return this.whitelistEnabled;
     }
 
+    /**
+     * @since 1.12
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

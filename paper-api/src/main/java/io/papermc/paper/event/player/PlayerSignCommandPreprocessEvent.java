@@ -33,6 +33,7 @@ public class PlayerSignCommandPreprocessEvent extends PlayerCommandPreprocessEve
      * Gets the sign that the command originated from.
      *
      * @return the sign
+     * @since 1.16.5
      */
     public Sign getSign() {
         return this.sign;

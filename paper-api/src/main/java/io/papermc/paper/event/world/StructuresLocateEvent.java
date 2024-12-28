@@ -56,6 +56,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * Gets the {@link Location} from which the search is to be conducted.
      *
      * @return {@link Location} where search begins
+     * @since 1.18.2
      */
     public Location getOrigin() {
         return this.origin.clone();
@@ -69,6 +70,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      *
      * @return The result location and structure, if it has been set. {@code null} if it has not.
      * @see World#locateNearestStructure(Location, StructureType, int, boolean)
+     * @since 1.18.2
      */
     public @Nullable Result getResult() {
         return this.result;
@@ -110,6 +112,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * This radius may not always be obeyed during the structure search!
      *
      * @return the search radius (in chunks)
+     * @since 1.18.2
      */
     public int getRadius() {
         return this.radius;
@@ -121,6 +124,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * This radius may not always be obeyed during the structure search!
      *
      * @param radius the search radius (in chunks)
+     * @since 1.18.2
      */
     public void setRadius(final int radius) {
         this.radius = radius;
@@ -132,6 +136,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * As with the search radius, this value is not always obeyed.
      *
      * @return Whether to search for only unexplored structures.
+     * @since 1.18.2
      */
     public boolean shouldFindUnexplored() {
         return this.findUnexplored;
@@ -143,26 +148,39 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * As with the search radius, this value is not always obeyed.
      *
      * @param findUnexplored Whether to search for only unexplored structures.
+     * @since 1.18.2
      */
     public void setFindUnexplored(final boolean findUnexplored) {
         this.findUnexplored = findUnexplored;
     }
 
+    /**
+     * @since 1.18.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.18.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.18.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.18.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
@@ -174,6 +192,9 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      */
     public record Result(Position pos, Structure structure) {
 
+        /**
+         * @since 1.18.2
+         */
         @Deprecated(forRemoval = true)
         public Location position() {
             //noinspection DataFlowIssue

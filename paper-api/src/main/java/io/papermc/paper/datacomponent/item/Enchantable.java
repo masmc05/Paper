@@ -15,6 +15,9 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface Enchantable {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static Enchantable enchantable(final @Positive int level) {
         return ItemComponentTypesBridge.bridge().enchantable(level);
@@ -26,6 +29,7 @@ public interface Enchantable {
      *
      * @return the value
      * @see <a href="https://minecraft.wiki/w/Enchanting_mechanics#Java_Edition_2">Minecraft Wiki</a>
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Positive int value();

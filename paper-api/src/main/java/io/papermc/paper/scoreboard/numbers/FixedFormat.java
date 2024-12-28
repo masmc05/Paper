@@ -16,6 +16,7 @@ public interface FixedFormat extends NumberFormat, ComponentLike {
      * The component shown instead of the number for a score
      *
      * @return the chat component
+     * @since 1.20.4
      */
     Component component();
 

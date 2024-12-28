@@ -26,6 +26,7 @@ public class InventoryEvent extends Event {
      * Gets the primary Inventory involved in this transaction
      *
      * @return The upper inventory.
+     * @since 1.1.0
      */
     @NotNull
     public Inventory getInventory() {
@@ -37,6 +38,7 @@ public class InventoryEvent extends Event {
      * in this event
      *
      * @return A list of people viewing.
+     * @since 1.1.0
      */
     @NotNull
     public List<HumanEntity> getViewers() {
@@ -47,18 +49,25 @@ public class InventoryEvent extends Event {
      * Gets the view object itself
      *
      * @return InventoryView
+     * @since 1.1.0
      */
     @NotNull
     public InventoryView getView() {
         return transaction;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

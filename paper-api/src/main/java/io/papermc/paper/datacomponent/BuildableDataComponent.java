@@ -16,6 +16,7 @@ public interface BuildableDataComponent<C extends BuildableDataComponent<C, B>, 
      * Creates a new builder from this data component.
      *
      * @return a new builder
+     * @since 1.21.3
      */
     @Contract(value = "-> new", pure = true)
     B toBuilder();

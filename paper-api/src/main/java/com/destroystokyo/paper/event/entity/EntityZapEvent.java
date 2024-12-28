@@ -32,6 +32,7 @@ public class EntityZapEvent extends EntityTransformEvent implements Cancellable 
      * Gets the lightning bolt that is striking the entity.
      *
      * @return The lightning bolt responsible for this event
+     * @since 1.10.2
      */
     public LightningStrike getBolt() {
         return this.bolt;
@@ -41,26 +42,39 @@ public class EntityZapEvent extends EntityTransformEvent implements Cancellable 
      * Gets the entity that will replace the struck entity.
      *
      * @return The entity that will replace the struck entity
+     * @since 1.10.2
      */
     public Entity getReplacementEntity() {
         return super.getTransformedEntity();
     }
 
+    /**
+     * @since 1.10.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.10.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

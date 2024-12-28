@@ -42,11 +42,17 @@ public class BlockPlaceEvent extends BlockEvent implements Cancellable {
         cancel = false;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -56,6 +62,7 @@ public class BlockPlaceEvent extends BlockEvent implements Cancellable {
      * Gets the player who placed the block involved in this event.
      *
      * @return The Player who placed the block involved in this event
+     * @since 1.0.0
      */
     @NotNull
     public Player getPlayer() {
@@ -67,6 +74,7 @@ public class BlockPlaceEvent extends BlockEvent implements Cancellable {
      * for reasons of clarity.
      *
      * @return The Block that was placed
+     * @since 1.0.0
      */
     @NotNull
     public Block getBlockPlaced() {
@@ -78,6 +86,7 @@ public class BlockPlaceEvent extends BlockEvent implements Cancellable {
      * mostly.
      *
      * @return The BlockState for the block which was replaced.
+     * @since 1.0.0
      */
     @NotNull
     public BlockState getBlockReplacedState() {
@@ -88,6 +97,7 @@ public class BlockPlaceEvent extends BlockEvent implements Cancellable {
      * Gets the block that this block was placed against
      *
      * @return Block the block that the new block was placed against
+     * @since 1.0.0
      */
     @NotNull
     public Block getBlockAgainst() {
@@ -99,6 +109,7 @@ public class BlockPlaceEvent extends BlockEvent implements Cancellable {
      *
      * @return The ItemStack for the item in the player's hand when they
      *     placed the block
+     * @since 1.0.0
      */
     @NotNull
     public ItemStack getItemInHand() {
@@ -123,6 +134,7 @@ public class BlockPlaceEvent extends BlockEvent implements Cancellable {
      * rule like cactus on dirt.
      *
      * @return boolean whether the server would allow a player to build here
+     * @since 1.0.0
      */
     public boolean canBuild() {
         return this.canBuild;
@@ -133,6 +145,7 @@ public class BlockPlaceEvent extends BlockEvent implements Cancellable {
      * player to be able to build.
      *
      * @param canBuild true if you want the player to be able to build
+     * @since 1.0.0
      */
     public void setBuild(boolean canBuild) {
         this.canBuild = canBuild;

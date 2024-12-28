@@ -83,6 +83,8 @@ public interface DamageType extends Keyed, Translatable {
      * <p>
      * <strong>Note</strong> This translation key is only used if
      * {@link #getDeathMessageType()} is {@link DeathMessageType#DEFAULT}
+     *
+     * @since 1.20.4
      */
     @NotNull
     @Override
@@ -92,6 +94,7 @@ public interface DamageType extends Keyed, Translatable {
      * Get the {@link DamageScaling} for this damage type.
      *
      * @return the damage scaling
+     * @since 1.20.4
      */
     @NotNull
     public DamageScaling getDamageScaling();
@@ -100,6 +103,7 @@ public interface DamageType extends Keyed, Translatable {
      * Get the {@link DamageEffect} for this damage type.
      *
      * @return the damage effect
+     * @since 1.20.4
      */
     @NotNull
     public DamageEffect getDamageEffect();
@@ -108,6 +112,7 @@ public interface DamageType extends Keyed, Translatable {
      * Get the {@link DeathMessageType} for this damage type.
      *
      * @return the death message type
+     * @since 1.20.4
      */
     @NotNull
     public DeathMessageType getDeathMessageType();
@@ -116,6 +121,7 @@ public interface DamageType extends Keyed, Translatable {
      * Get the amount of hunger exhaustion caused by this damage type.
      *
      * @return the exhaustion
+     * @since 1.20.4
      */
     public float getExhaustion();
 }

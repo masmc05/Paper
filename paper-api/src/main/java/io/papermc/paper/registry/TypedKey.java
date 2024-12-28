@@ -19,6 +19,7 @@ public sealed interface TypedKey<T> extends Key permits TypedKeyImpl {
      * Gets the key for the value in the registry.
      *
      * @return the value's key
+     * @since 1.20.2
      */
     @Override
     Key key();
@@ -28,6 +29,7 @@ public sealed interface TypedKey<T> extends Key permits TypedKeyImpl {
      * represents.
      *
      * @return the registry key
+     * @since 1.20.2
      */
     RegistryKey<T> registryKey();
 
@@ -38,6 +40,7 @@ public sealed interface TypedKey<T> extends Key permits TypedKeyImpl {
      * @param key the key for the value in the registry
      * @param <T> value type
      * @return a new key for the value key and registry key
+     * @since 1.20.2
      */
     @ApiStatus.Experimental
     static <T> TypedKey<T> create(final RegistryKey<T> registryKey, final Key key) {

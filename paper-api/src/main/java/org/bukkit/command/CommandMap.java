@@ -24,6 +24,7 @@ public interface CommandMap {
      * @param fallbackPrefix a prefix which is prepended to each command with
      *     a ':' one or more times to make the command unique
      * @param commands a list of commands to register
+     * @since 1.0.0
      */
     public void registerAll(@NotNull String fallbackPrefix, @NotNull List<Command> commands);
 
@@ -46,6 +47,7 @@ public interface CommandMap {
      * @return true if command was registered with the passed in label, false
      *     otherwise, which indicates the fallbackPrefix was used one or more
      *     times
+     * @since 1.0.0
      */
     public boolean register(@NotNull String label, @NotNull String fallbackPrefix, @NotNull Command command);
 
@@ -68,6 +70,7 @@ public interface CommandMap {
      * @return true if command was registered with the passed in label, false
      *     otherwise, which indicates the fallbackPrefix was used one or more
      *     times
+     * @since 1.0.0
      */
     public boolean register(@NotNull String fallbackPrefix, @NotNull Command command);
 
@@ -79,11 +82,14 @@ public interface CommandMap {
      * @return returns false if no target is found, true otherwise.
      * @throws CommandException Thrown when the executor for the given command
      *     fails with an unhandled exception
+     * @since 1.0.0
      */
     public boolean dispatch(@NotNull CommandSender sender, @NotNull String cmdLine) throws CommandException;
 
     /**
      * Clears all registered commands.
+     *
+     * @since 1.0.0
      */
     public void clearCommands();
 
@@ -93,6 +99,7 @@ public interface CommandMap {
      * @param name Name of the command to retrieve
      * @return Command with the specified name or null if a command with that
      *     label doesn't exist
+     * @since 1.0.0
      */
     @Nullable
     public Command getCommand(@NotNull String name);

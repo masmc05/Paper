@@ -32,15 +32,22 @@ public class PlayerUntrackEntityEvent extends PlayerEvent {
      * Gets the entity that will be untracked
      *
      * @return the entity untracked
+     * @since 1.19.2
      */
     public Entity getEntity() {
         return this.entity;
     }
 
+    /**
+     * @since 1.19.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;

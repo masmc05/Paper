@@ -9,6 +9,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.0.0
+ */
 @Deprecated(forRemoval = true) // Paper
 public class PluginsCommand extends BukkitCommand {
     public PluginsCommand(@NotNull String name) {
@@ -19,6 +22,9 @@ public class PluginsCommand extends BukkitCommand {
         this.setAliases(Arrays.asList("pl"));
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String currentAlias, @NotNull String[] args) {
         if (!testPermission(sender)) return true;
@@ -27,6 +33,9 @@ public class PluginsCommand extends BukkitCommand {
         return true;
     }
 
+    /**
+     * @since 1.7.2
+     */
     @NotNull
     @Override
     public List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String[] args) throws IllegalArgumentException {

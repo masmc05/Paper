@@ -23,6 +23,7 @@ public interface ToolComponent extends ConfigurationSerializable {
      *
      * @return the default mining speed
      * @see ToolRule#getSpeed()
+     * @since 1.20.6
      */
     float getDefaultMiningSpeed();
 
@@ -31,6 +32,7 @@ public interface ToolComponent extends ConfigurationSerializable {
      * if no rule explicitly overrides it. 1.0 is standard mining speed.
      *
      * @param speed the speed to set
+     * @since 1.20.6
      */
     void setDefaultMiningSpeed(float speed);
 
@@ -39,6 +41,7 @@ public interface ToolComponent extends ConfigurationSerializable {
      * block is broken.
      *
      * @return the damage per block
+     * @since 1.20.6
      */
     int getDamagePerBlock();
 
@@ -47,6 +50,7 @@ public interface ToolComponent extends ConfigurationSerializable {
      * block is broken.
      *
      * @param damage the damage to set. Must be 0 or a positive integer
+     * @since 1.20.6
      */
     void setDamagePerBlock(int damage);
 
@@ -56,6 +60,7 @@ public interface ToolComponent extends ConfigurationSerializable {
      * @return all tool rules. The mutability of the returned list cannot be
      * guaranteed, but its contents are mutable and can have their values
      * changed
+     * @since 1.20.6
      */
     @NotNull
     List<ToolRule> getRules();
@@ -65,6 +70,7 @@ public interface ToolComponent extends ConfigurationSerializable {
      * will remove any existing tool rules.
      *
      * @param rules the rules to set
+     * @since 1.20.6
      */
     void setRules(@NotNull List<ToolRule> rules);
 
@@ -80,6 +86,7 @@ public interface ToolComponent extends ConfigurationSerializable {
      * broken, or null to use the default tool checking behavior defined by
      * Minecraft
      * @return the {@link ToolRule} instance that was added to this tool
+     * @since 1.20.6
      */
     @NotNull
     ToolRule addRule(@NotNull Material block, @Nullable Float speed, @Nullable Boolean correctForDrops);
@@ -96,6 +103,7 @@ public interface ToolComponent extends ConfigurationSerializable {
      * items when broken, or null to use the default tool checking behavior
      * defined by Minecraft
      * @return the {@link ToolRule} instance that was added to this tool
+     * @since 1.20.6
      */
     @NotNull
     ToolRule addRule(@NotNull Collection<Material> blocks, @Nullable Float speed, @Nullable Boolean correctForDrops);
@@ -115,6 +123,7 @@ public interface ToolComponent extends ConfigurationSerializable {
      * @return the {@link ToolRule} instance that was added to this tool
      * @throws IllegalArgumentException if the passed {@code tag} is not a block
      * tag
+     * @since 1.20.6
      */
     @NotNull
     ToolRule addRule(@NotNull Tag<Material> tag, @Nullable Float speed, @Nullable Boolean correctForDrops);
@@ -130,6 +139,8 @@ public interface ToolComponent extends ConfigurationSerializable {
 
     /**
      * A rule governing use of this tool and overriding attributes per-block.
+     *
+     * @since 1.20.6
      */
     public interface ToolRule extends ConfigurationSerializable {
 
@@ -137,6 +148,7 @@ public interface ToolComponent extends ConfigurationSerializable {
          * Get a collection of the block types to which this tool rule applies.
          *
          * @return the blocks
+         * @since 1.20.6
          */
         @NotNull
         Collection<Material> getBlocks();
@@ -145,6 +157,7 @@ public interface ToolComponent extends ConfigurationSerializable {
          * Set the block type to which this rule applies.
          *
          * @param block the block type
+         * @since 1.20.6
          */
         void setBlocks(@NotNull Material block);
 
@@ -152,6 +165,7 @@ public interface ToolComponent extends ConfigurationSerializable {
          * Set the block types to which this rule applies.
          *
          * @param blocks the block types
+         * @since 1.20.6
          */
         void setBlocks(@NotNull Collection<Material> blocks);
 
@@ -162,6 +176,7 @@ public interface ToolComponent extends ConfigurationSerializable {
          * @param tag the block tag
          * @throws IllegalArgumentException if the passed {@code tag} is not a
          * block tag
+         * @since 1.20.6
          */
         void setBlocks(@NotNull Tag<Material> tag);
 
@@ -171,6 +186,7 @@ public interface ToolComponent extends ConfigurationSerializable {
          * mining speed.
          *
          * @return the mining speed, or null if the default speed is used
+         * @since 1.20.6
          */
         @Nullable
         Float getSpeed();
@@ -179,6 +195,7 @@ public interface ToolComponent extends ConfigurationSerializable {
          * Set the mining speed of this rule. 1.0 is standard mining speed.
          *
          * @param speed the mining speed, or null to use the default speed
+         * @since 1.20.6
          */
         void setSpeed(@Nullable Float speed);
 
@@ -190,6 +207,7 @@ public interface ToolComponent extends ConfigurationSerializable {
          *
          * @return true if correct for drops, false otherwise, or null to
          * fallback to vanilla tool checking behavior
+         * @since 1.20.6
          */
         @Nullable
         Boolean isCorrectForDrops();
@@ -200,6 +218,7 @@ public interface ToolComponent extends ConfigurationSerializable {
          *
          * @param correct whether or not this rule is correct for drops, or null
          * to fallback to vanilla tool checking behavior
+         * @since 1.20.6
          */
         void setCorrectForDrops(@Nullable Boolean correct);
     }

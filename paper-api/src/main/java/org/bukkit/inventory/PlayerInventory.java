@@ -17,6 +17,7 @@ public interface PlayerInventory extends Inventory {
      * @return all the ItemStacks from the armor slots. Individual items can be
      * null and are returned in a fixed order starting from the boots and going
      * up to the helmet
+     * @since 1.0.0
      */
     public @Nullable ItemStack @NotNull [] getArmorContents(); // Paper - make array elements nullable instead array
 
@@ -36,6 +37,7 @@ public interface PlayerInventory extends Inventory {
      * Return the ItemStack from the helmet slot
      *
      * @return The ItemStack in the helmet slot
+     * @since 1.0.0
      */
     @Nullable
     public ItemStack getHelmet();
@@ -44,6 +46,7 @@ public interface PlayerInventory extends Inventory {
      * Return the ItemStack from the chestplate slot
      *
      * @return The ItemStack in the chestplate slot
+     * @since 1.0.0
      */
     @Nullable
     public ItemStack getChestplate();
@@ -52,6 +55,7 @@ public interface PlayerInventory extends Inventory {
      * Return the ItemStack from the leg slot
      *
      * @return The ItemStack in the leg slot
+     * @since 1.0.0
      */
     @Nullable
     public ItemStack getLeggings();
@@ -60,6 +64,7 @@ public interface PlayerInventory extends Inventory {
      * Return the ItemStack from the boots slot
      *
      * @return The ItemStack in the boots slot
+     * @since 1.0.0
      */
     @Nullable
     public ItemStack getBoots();
@@ -123,6 +128,7 @@ public interface PlayerInventory extends Inventory {
      * Put the given ItemStacks into the armor slots
      *
      * @param items The ItemStacks to use as armour
+     * @since 1.0.0
      */
     public void setArmorContents(@Nullable ItemStack[] items);
 
@@ -141,6 +147,7 @@ public interface PlayerInventory extends Inventory {
      * the ItemStack is a helmet
      *
      * @param helmet The ItemStack to use as helmet
+     * @since 1.0.0
      */
     public void setHelmet(@Nullable ItemStack helmet);
 
@@ -149,6 +156,7 @@ public interface PlayerInventory extends Inventory {
      * if the ItemStack is a chestplate
      *
      * @param chestplate The ItemStack to use as chestplate
+     * @since 1.0.0
      */
     public void setChestplate(@Nullable ItemStack chestplate);
 
@@ -157,6 +165,7 @@ public interface PlayerInventory extends Inventory {
      * ItemStack is a pair of leggings
      *
      * @param leggings The ItemStack to use as leggings
+     * @since 1.0.0
      */
     public void setLeggings(@Nullable ItemStack leggings);
 
@@ -165,6 +174,7 @@ public interface PlayerInventory extends Inventory {
      * ItemStack is a boots
      *
      * @param boots The ItemStack to use as boots
+     * @since 1.0.0
      */
     public void setBoots(@Nullable ItemStack boots);
 
@@ -212,6 +222,7 @@ public interface PlayerInventory extends Inventory {
      * @see #getItemInOffHand()
      * @deprecated players can duel wield now use the methods for the
      *      specific hand instead
+     * @since 1.0.0
      */
     @Deprecated(since = "1.9")
     @NotNull
@@ -225,6 +236,7 @@ public interface PlayerInventory extends Inventory {
      * @see #setItemInOffHand(ItemStack)
      * @deprecated players can duel wield now use the methods for the
      *      specific hand instead
+     * @since 1.0.0
      */
     @Deprecated(since = "1.9")
     public void setItemInHand(@Nullable ItemStack stack);
@@ -233,6 +245,7 @@ public interface PlayerInventory extends Inventory {
      * Get the slot number of the currently held item
      *
      * @return Held item slot number
+     * @since 1.0.0
      */
     public int getHeldItemSlot();
 

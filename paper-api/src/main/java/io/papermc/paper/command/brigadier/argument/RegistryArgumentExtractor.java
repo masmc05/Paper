@@ -23,6 +23,7 @@ public final class RegistryArgumentExtractor {
      * @param <T> the value type
      * @param <S> the sender type
      * @throws IllegalArgumentException if the registry key doesn't match the typed key
+     * @since 1.20.6
      */
     @SuppressWarnings("unchecked")
     public static <T, S> TypedKey<T> getTypedKey(final CommandContext<S> context, final RegistryKey<T> registryKey, final String name) {

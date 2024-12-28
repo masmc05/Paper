@@ -32,6 +32,7 @@ public class BlockPreDispenseEvent extends BlockEvent implements Cancellable {
      * Gets the {@link ItemStack} to be dispensed.
      *
      * @return The item to be dispensed
+     * @since 1.16.5
      */
     public ItemStack getItemStack() {
         return this.itemStack;
@@ -41,26 +42,39 @@ public class BlockPreDispenseEvent extends BlockEvent implements Cancellable {
      * Gets the inventory slot of the dispenser to dispense from.
      *
      * @return The inventory slot
+     * @since 1.16.5
      */
     public int getSlot() {
         return this.slot;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

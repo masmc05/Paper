@@ -35,6 +35,7 @@ public class BlockSpreadEvent extends BlockFormEvent {
      * Gets the source block involved in this event.
      *
      * @return the Block for the source block involved in this event.
+     * @since 1.0.0
      */
     @NotNull
     public Block getSource() {

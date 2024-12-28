@@ -383,6 +383,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @param key non-null key
      * @return item or null if does not exist
+     * @since 1.14
      */
     @Nullable
     T get(@NotNull NamespacedKey key);
@@ -547,6 +548,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * @return registered object or null if does not exist
      * @deprecated this method's behavior is broken and not useful. If you want to get an object
      * based on its vanilla name, or a key, wrap it in a {@link NamespacedKey} object and use {@link #get(NamespacedKey)}
+     * @since 1.19.3
      */
     @Nullable
     @Deprecated(forRemoval = true) // Paper
@@ -583,6 +585,10 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
             this.type = type;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.14
+         */
         @Nullable
         @Override
         public T get(@NotNull NamespacedKey key) {
@@ -613,6 +619,10 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
             return StreamSupport.stream(spliterator(), false);
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.14
+         */
         @NotNull
         @Override
         public Iterator<T> iterator() {

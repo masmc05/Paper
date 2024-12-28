@@ -15,6 +15,7 @@ public interface StructurePiece {
      * Gets the bounding box of this structure piece.
      *
      * @return bounding box of this structure piece
+     * @since 1.20.4
      */
     @NotNull
     public BoundingBox getBoundingBox();

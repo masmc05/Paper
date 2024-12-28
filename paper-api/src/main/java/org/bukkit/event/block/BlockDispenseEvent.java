@@ -33,6 +33,7 @@ public class BlockDispenseEvent extends BlockEvent implements Cancellable {
      * #setItem(org.bukkit.inventory.ItemStack)} instead.
      *
      * @return An ItemStack for the item being dispensed
+     * @since 1.0.0
      */
     @NotNull
     public ItemStack getItem() {
@@ -43,6 +44,7 @@ public class BlockDispenseEvent extends BlockEvent implements Cancellable {
      * Sets the item being dispensed.
      *
      * @param item the item being dispensed
+     * @since 1.0.0
      */
     public void setItem(@NotNull ItemStack item) {
         this.item = item;
@@ -55,6 +57,7 @@ public class BlockDispenseEvent extends BlockEvent implements Cancellable {
      * must use {@link #setVelocity(org.bukkit.util.Vector)} instead.
      *
      * @return A Vector for the dispensed item's velocity
+     * @since 1.0.0
      */
     @NotNull
     public Vector getVelocity() {
@@ -65,16 +68,23 @@ public class BlockDispenseEvent extends BlockEvent implements Cancellable {
      * Sets the velocity of the item being dispensed in meters per tick.
      *
      * @param vel the velocity of the item being dispensed
+     * @since 1.0.0
      */
     public void setVelocity(@NotNull Vector vel) {
         velocity = vel.clone();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;

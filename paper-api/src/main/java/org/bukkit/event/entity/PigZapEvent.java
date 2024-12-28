@@ -26,11 +26,17 @@ public class PigZapEvent extends com.destroystokyo.paper.event.entity.EntityZapE
         this.pigzombie = pigzombie;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return canceled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         canceled = cancel;
@@ -49,6 +55,7 @@ public class PigZapEvent extends com.destroystokyo.paper.event.entity.EntityZapE
      * Gets the bolt which is striking the pig.
      *
      * @return lightning entity
+     * @since 1.0.0
      */
     @NotNull
     public LightningStrike getLightning() {
@@ -61,6 +68,7 @@ public class PigZapEvent extends com.destroystokyo.paper.event.entity.EntityZapE
      *
      * @return resulting entity
      * @deprecated use {@link EntityTransformEvent#getTransformedEntity()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.13.2")

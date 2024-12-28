@@ -28,6 +28,7 @@ public class BlockDispenseArmorEvent extends BlockDispenseEvent {
      * Get the living entity on which the armor was dispensed.
      *
      * @return the target entity
+     * @since 1.13.1
      */
     @NotNull
     public LivingEntity getTargetEntity() {

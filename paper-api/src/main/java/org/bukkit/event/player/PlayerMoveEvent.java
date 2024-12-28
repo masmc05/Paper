@@ -34,6 +34,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * fire an event
      *
      * @return true if this event is cancelled
+     * @since 1.0.0
      */
     @Override
     public boolean isCancelled() {
@@ -49,6 +50,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * fire an event
      *
      * @param cancel true if you wish to cancel this event
+     * @since 1.0.0
      */
     @Override
     public void setCancelled(boolean cancel) {
@@ -59,6 +61,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Gets the location this player moved from
      *
      * @return Location the player moved from
+     * @since 1.0.0
      */
     @NotNull
     public Location getFrom() {
@@ -69,6 +72,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Sets the location to mark as where the player moved from
      *
      * @param from New location to mark as the players previous location
+     * @since 1.0.0
      */
     public void setFrom(@NotNull Location from) {
         validateLocation(from);
@@ -79,6 +83,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Gets the location this player moved to
      *
      * @return Location the player moved to
+     * @since 1.0.0
      */
     @NotNull // Paper
     public Location getTo() {
@@ -89,6 +94,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Sets the location that this player will move to
      *
      * @param to New Location this player will move to
+     * @since 1.0.0
      */
     public void setTo(@NotNull Location to) {
         validateLocation(to);

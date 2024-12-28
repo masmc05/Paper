@@ -63,6 +63,7 @@ public class PlayerQuitEvent extends PlayerEvent {
      *
      * @return string quit message
      * @deprecated in favour of {@link #quitMessage()}
+     * @since 1.0.0
      */
     @Nullable
     @Deprecated // Paper
@@ -75,6 +76,7 @@ public class PlayerQuitEvent extends PlayerEvent {
      *
      * @param quitMessage quit message
      * @deprecated in favour of {@link #quitMessage(net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void setQuitMessage(@Nullable String quitMessage) {

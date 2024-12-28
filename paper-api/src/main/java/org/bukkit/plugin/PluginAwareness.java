@@ -15,6 +15,8 @@ public interface PluginAwareness {
      * Each entry here represents a particular plugin's awareness. These can
      * be checked by using {@link PluginDescriptionFile#getAwareness()}.{@link
      * Set#contains(Object) contains(flag)}.
+     *
+     * @since 1.7.10
      */
     public enum Flags implements PluginAwareness {
         /**

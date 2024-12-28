@@ -20,12 +20,18 @@ public class InventoryCreativeEvent extends InventoryClickEvent {
         this.item = newItem;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @Override
     @NotNull
     public ItemStack getCursor() {
         return item;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @Override
     public void setCursor(@NotNull ItemStack item) {
         this.item = item;

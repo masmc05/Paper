@@ -15,6 +15,7 @@ public interface Projectile extends Entity {
      *
      * @return the {@link ProjectileSource} that shot this projectile
      * @see #getOwnerUniqueId()
+     * @since 1.0.0
      */
     @Nullable
     public ProjectileSource getShooter();
@@ -32,6 +33,7 @@ public interface Projectile extends Entity {
      *
      * @return true if it should bounce.
      * @deprecated does not do anything
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20.2", forRemoval = true)
     public boolean doesBounce();
@@ -42,6 +44,7 @@ public interface Projectile extends Entity {
      *
      * @param doesBounce whether or not it should bounce.
      * @deprecated does not do anything
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20.2", forRemoval = true)
     public void setBounce(boolean doesBounce);

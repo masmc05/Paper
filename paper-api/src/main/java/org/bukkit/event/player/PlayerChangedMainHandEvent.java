@@ -26,18 +26,25 @@ public class PlayerChangedMainHandEvent extends PlayerEvent {
      * available via {@link Player#getMainHand()}.
      *
      * @return the new {@link MainHand} of the player
+     * @since 1.9.4
      */
     @NotNull
     public MainHand getMainHand() {
         return mainHand;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

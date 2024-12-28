@@ -20,6 +20,7 @@ public interface FeatureFlagSetHolder {
      * Checks if this is enabled based on the loaded feature flags.
      *
      * @return true if enabled
+     * @since 1.21.1
      */
     default boolean isEnabled(final FeatureDependant featureDependant) {
         return this.getFeatureFlags().containsAll(featureDependant.requiredFeatures());
@@ -29,6 +30,7 @@ public interface FeatureFlagSetHolder {
      * Get all {@link FeatureFlag FeatureFlags} enabled in this world.
      *
      * @return all enabled {@link FeatureFlag FeatureFlags}
+     * @since 1.21.1
      */
     @Unmodifiable Set<FeatureFlag> getFeatureFlags();
 }

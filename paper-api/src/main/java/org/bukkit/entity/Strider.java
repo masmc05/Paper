@@ -11,6 +11,7 @@ public interface Strider extends Steerable, Vehicle {
      * Check whether or not this strider is out of warm blocks and shivering.
      *
      * @return true if shivering, false otherwise
+     * @since 1.16.1
      */
     public boolean isShivering();
 
@@ -22,6 +23,7 @@ public interface Strider extends Steerable, Vehicle {
      * noticeable difference.
      *
      * @param shivering its new shivering state
+     * @since 1.16.1
      */
     public void setShivering(boolean shivering);
 }

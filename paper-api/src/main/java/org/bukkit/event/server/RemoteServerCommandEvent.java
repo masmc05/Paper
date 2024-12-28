@@ -17,12 +17,18 @@ public class RemoteServerCommandEvent extends ServerCommandEvent {
         super(sender, command);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

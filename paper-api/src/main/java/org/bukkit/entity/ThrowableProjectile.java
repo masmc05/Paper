@@ -12,6 +12,7 @@ public interface ThrowableProjectile extends Projectile {
      * Gets the ItemStack the thrown projectile will display.
      *
      * @return The thrown item display ItemStack
+     * @since 1.15.2
      */
     @NotNull
     ItemStack getItem();
@@ -20,6 +21,7 @@ public interface ThrowableProjectile extends Projectile {
      * Sets the display ItemStack for the thrown projectile.
      *
      * @param item ItemStack set to be displayed
+     * @since 1.15.2
      */
     void setItem(@NotNull ItemStack item);
 }

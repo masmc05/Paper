@@ -26,6 +26,7 @@ public interface LootTable extends Keyed {
      * @param random the random instance to use to generate loot
      * @param context context within to populate loot
      * @return a list of ItemStacks
+     * @since 1.13
      */
     @NotNull
     Collection<ItemStack> populateLoot(@Nullable Random random, @NotNull LootContext context);
@@ -36,6 +37,7 @@ public interface LootTable extends Keyed {
      * @param inventory the inventory to fill
      * @param random the random instance to use to generate loot
      * @param context context within to populate loot
+     * @since 1.13
      */
     void fillInventory(@NotNull Inventory inventory, @Nullable Random random, @NotNull LootContext context);
 }

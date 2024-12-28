@@ -44,6 +44,7 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
      * Gets the player damaging the block involved in this event.
      *
      * @return The player damaging the block involved in this event
+     * @since 1.0.0
      */
     @NotNull
     public Player getPlayer() {
@@ -55,6 +56,7 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
      *
      * @return true if the block should instantly break when damaged by the
      *     player
+     * @since 1.0.0
      */
     public boolean getInstaBreak() {
         return instaBreak;
@@ -65,6 +67,7 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
      *
      * @param bool true if you want the block to instantly break when damaged
      *     by the player
+     * @since 1.0.0
      */
     public void setInstaBreak(boolean bool) {
         this.instaBreak = bool;
@@ -74,6 +77,7 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
      * Gets the ItemStack for the item currently in the player's hand.
      *
      * @return The ItemStack for the item currently in the player's hand
+     * @since 1.0.0
      */
     @NotNull
     public ItemStack getItemInHand() {
@@ -95,11 +99,17 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
     }
     //Paper end
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;

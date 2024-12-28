@@ -12,6 +12,7 @@ public interface BlockCommandSender extends CommandSender {
      * Returns the block this command sender belongs to
      *
      * @return Block for the command sender
+     * @since 1.4.5
      */
     @NotNull
     public Block getBlock();

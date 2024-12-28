@@ -30,6 +30,7 @@ public interface Warden extends Monster {
      *
      * @param entity target entity
      * @return anger level
+     * @since 1.19
      */
     int getAnger(@NotNull Entity entity);
 
@@ -55,6 +56,7 @@ public interface Warden extends Monster {
      * @param entity target entity
      * @param increase number to increase by
      * @see #getAnger(org.bukkit.entity.Entity)
+     * @since 1.19
      */
     void increaseAnger(@NotNull Entity entity, int increase);
 
@@ -67,6 +69,7 @@ public interface Warden extends Monster {
      * @param entity target entity
      * @param anger new anger level
      * @see #getAnger(org.bukkit.entity.Entity)
+     * @since 1.19
      */
     void setAnger(@NotNull Entity entity, int anger);
 

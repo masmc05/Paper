@@ -15,6 +15,7 @@ public interface PermissionRemovedExecutor {
      * Permissible}
      *
      * @param attachment Attachment which was removed
+     * @since 1.0.0
      */
     public void attachmentRemoved(@NotNull PermissionAttachment attachment);
 }

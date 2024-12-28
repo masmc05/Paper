@@ -72,6 +72,9 @@ public class YamlConfiguration extends FileConfiguration {
         yaml = new Yaml(constructor, representer, yamlDumperOptions, yamlLoaderOptions);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public String saveToString() {
@@ -96,6 +99,9 @@ public class YamlConfiguration extends FileConfiguration {
         return writer.toString();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void loadFromString(@NotNull String contents) throws InvalidConfigurationException {
         Preconditions.checkArgument(contents != null, "Contents cannot be null");
@@ -279,6 +285,9 @@ public class YamlConfiguration extends FileConfiguration {
         return list;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public YamlConfigurationOptions options() {
@@ -301,6 +310,7 @@ public class YamlConfiguration extends FileConfiguration {
      * @param file Input file
      * @return Resulting configuration
      * @throws IllegalArgumentException Thrown if file is null
+     * @since 1.0.0
      */
     @NotNull
     public static YamlConfiguration loadConfiguration(@NotNull File file) {

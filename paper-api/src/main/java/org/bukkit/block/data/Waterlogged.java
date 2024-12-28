@@ -11,6 +11,7 @@ public interface Waterlogged extends BlockData {
      * Gets the value of the 'waterlogged' property.
      *
      * @return the 'waterlogged' value
+     * @since 1.13
      */
     boolean isWaterlogged();
 
@@ -18,6 +19,7 @@ public interface Waterlogged extends BlockData {
      * Sets the value of the 'waterlogged' property.
      *
      * @param waterlogged the new 'waterlogged' value
+     * @since 1.13
      */
     void setWaterlogged(boolean waterlogged);
 }

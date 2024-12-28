@@ -27,6 +27,7 @@ public interface ServerLinks {
      * Gets an immutable list of all links.
      *
      * @return immutable list
+     * @since 1.21
      */
     @NotNull
     List<ServerLink> getLinks();
@@ -59,6 +60,7 @@ public interface ServerLinks {
      * @param displayName link name / display text Component
      * @param url link url
      * @return the added link
+     * @since 1.21
      */
     @NotNull
     ServerLink addLink(@NotNull net.kyori.adventure.text.Component displayName, @NotNull URI url);
@@ -71,6 +73,7 @@ public interface ServerLinks {
      * @param url link url
      * @return the added link
      * @deprecated in favour of {@link ServerLinks#addLink(net.kyori.adventure.text.Component, URI)}
+     * @since 1.21
      */
     @Deprecated // Paper - Adventure
     @NotNull
@@ -88,12 +91,15 @@ public interface ServerLinks {
      * Returns a copy of this link collection, unassociated from the server.
      *
      * @return copied links
+     * @since 1.21
      */
     @NotNull
     ServerLinks copy();
 
     /**
      * Represents a server link.
+     *
+     * @since 1.21
      */
     public interface ServerLink {
 
@@ -101,6 +107,7 @@ public interface ServerLinks {
          * Gets the type of this link if it is a known special type.
          *
          * @return type or null
+         * @since 1.21
          */
         @Nullable
         Type getType();
@@ -110,6 +117,7 @@ public interface ServerLinks {
          * Gets the display name/text Component of this link.
          *
          * @return display name Component
+         * @since 1.21
          */
         @NotNull
         net.kyori.adventure.text.Component displayName();
@@ -120,6 +128,7 @@ public interface ServerLinks {
          *
          * @return display name
          * @deprecated in favour of {@link ServerLink#displayName()}
+         * @since 1.21
          */
         @Deprecated // Paper - Adventure
         @NotNull
@@ -129,6 +138,7 @@ public interface ServerLinks {
          * Gets the url of this link.
          *
          * @return link url
+         * @since 1.21
          */
         @NotNull
         URI getUrl();
@@ -137,6 +147,8 @@ public interface ServerLinks {
     /**
      * Represents a known type of link which will be translated by the client
      * and may have special functionality.
+     *
+     * @since 1.21
      */
     public enum Type {
 

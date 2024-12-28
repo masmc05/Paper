@@ -36,6 +36,7 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      * Returns the name of this player
      *
      * @return Player name
+     * @since 1.0.0
      */
     @NotNull
     @Override
@@ -46,6 +47,7 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      *
      * @return The inventory of the player, this also contains the armor
      *     slots.
+     * @since 1.0.0
      */
     @NotNull
     @Override
@@ -312,6 +314,7 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      * @return The ItemStack of the item you are currently holding.
      * @deprecated Humans may now dual wield in their off hand, use explicit
      * methods in {@link PlayerInventory}.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.9")
     @NotNull
@@ -324,6 +327,7 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      * @param item The ItemStack which will end up in the hand
      * @deprecated Humans may now dual wield in their off hand, use explicit
      * methods in {@link PlayerInventory}.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.9")
     public void setItemInHand(@Nullable ItemStack item);
@@ -444,6 +448,7 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      * Get the sleep ticks of the player. This value may be capped.
      *
      * @return slumber ticks
+     * @since 1.0.0
      */
     public int getSleepTicks();
 
@@ -518,6 +523,7 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      * Gets this human's current {@link GameMode}
      *
      * @return Current game mode
+     * @since 1.0.0
      */
     @NotNull
     public GameMode getGameMode();
@@ -526,6 +532,7 @@ public interface HumanEntity extends LivingEntity, AnimalTamer, InventoryHolder 
      * Sets this human's current {@link GameMode}
      *
      * @param mode New game mode
+     * @since 1.0.0
      */
     public void setGameMode(@NotNull GameMode mode);
 

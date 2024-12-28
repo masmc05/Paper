@@ -35,11 +35,17 @@ public final class AsyncChatEvent extends AbstractChatEvent {
         super(async, player, viewers, renderer, message, originalMessage, signedMessage);
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

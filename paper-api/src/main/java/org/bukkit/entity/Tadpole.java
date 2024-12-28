@@ -11,6 +11,7 @@ public interface Tadpole extends Fish {
      * Gets the age of this mob.
      *
      * @return Age
+     * @since 1.19
      */
     public int getAge();
 
@@ -18,6 +19,7 @@ public interface Tadpole extends Fish {
      * Sets the age of this mob.
      *
      * @param age New age
+     * @since 1.19
      */
     public void setAge(int age);
 

@@ -15,6 +15,7 @@ public abstract class StringPrompt implements Prompt {
      *
      * @param context Context information about the conversation.
      * @return True.
+     * @since 1.1.0
      */
     @Override
     public boolean blocksForInput(@NotNull ConversationContext context) {

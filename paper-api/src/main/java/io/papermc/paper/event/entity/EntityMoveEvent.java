@@ -34,6 +34,9 @@ public class EntityMoveEvent extends EntityEvent implements Cancellable {
         this.to = to;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public LivingEntity getEntity() {
         return (LivingEntity) super.getEntity();
@@ -43,6 +46,7 @@ public class EntityMoveEvent extends EntityEvent implements Cancellable {
      * Gets the location this entity moved from
      *
      * @return Location the entity moved from
+     * @since 1.16.5
      */
     public Location getFrom() {
         return this.from;
@@ -52,6 +56,7 @@ public class EntityMoveEvent extends EntityEvent implements Cancellable {
      * Sets the location to mark as where the entity moved from
      *
      * @param from New location to mark as the entity's previous location
+     * @since 1.16.5
      */
     public void setFrom(final Location from) {
         this.validateLocation(from);
@@ -62,6 +67,7 @@ public class EntityMoveEvent extends EntityEvent implements Cancellable {
      * Gets the location this entity moved to
      *
      * @return Location the entity moved to
+     * @since 1.16.5
      */
     public Location getTo() {
         return this.to;
@@ -71,6 +77,7 @@ public class EntityMoveEvent extends EntityEvent implements Cancellable {
      * Sets the location that this entity will move to
      *
      * @param to New Location this entity will move to
+     * @since 1.16.5
      */
     public void setTo(final Location to) {
         this.validateLocation(to);
@@ -81,6 +88,7 @@ public class EntityMoveEvent extends EntityEvent implements Cancellable {
      * Check if the entity has changed position (even within the same block) in the event
      *
      * @return whether the entity has changed position or not
+     * @since 1.16.5
      */
     public boolean hasChangedPosition() {
         return this.hasExplicitlyChangedPosition() || !this.from.getWorld().equals(this.to.getWorld());
@@ -90,6 +98,7 @@ public class EntityMoveEvent extends EntityEvent implements Cancellable {
      * Check if the entity has changed position (even within the same block) in the event, disregarding a possible world change
      *
      * @return whether the entity has changed position or not
+     * @since 1.16.5
      */
     public boolean hasExplicitlyChangedPosition() {
         return this.from.getX() != this.to.getX() || this.from.getY() != this.to.getY() || this.from.getZ() != this.to.getZ();
@@ -99,6 +108,7 @@ public class EntityMoveEvent extends EntityEvent implements Cancellable {
      * Check if the entity has moved to a new block in the event
      *
      * @return whether the entity has moved to a new block or not
+     * @since 1.16.5
      */
     public boolean hasChangedBlock() {
         return this.hasExplicitlyChangedBlock() || !this.from.getWorld().equals(this.to.getWorld());
@@ -108,6 +118,7 @@ public class EntityMoveEvent extends EntityEvent implements Cancellable {
      * Check if the entity has moved to a new block in the event, disregarding a possible world change
      *
      * @return whether the entity has moved to a new block or not
+     * @since 1.16.5
      */
     public boolean hasExplicitlyChangedBlock() {
         return this.from.getBlockX() != this.to.getBlockX() || this.from.getBlockY() != this.to.getBlockY() || this.from.getBlockZ() != this.to.getBlockZ();
@@ -117,6 +128,7 @@ public class EntityMoveEvent extends EntityEvent implements Cancellable {
      * Check if the entity has changed orientation in the event
      *
      * @return whether the entity has changed orientation or not
+     * @since 1.16.5
      */
     public boolean hasChangedOrientation() {
         return this.from.getPitch() != this.to.getPitch() || this.from.getYaw() != this.to.getYaw();
@@ -127,21 +139,33 @@ public class EntityMoveEvent extends EntityEvent implements Cancellable {
         Preconditions.checkArgument(loc.getWorld() != null, "Cannot use null location with null world!");
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -18,11 +18,17 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface ChargedProjectiles {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static ChargedProjectiles chargedProjectiles(final List<ItemStack> projectiles) {
         return chargedProjectiles().addAll(projectiles).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static ChargedProjectiles.Builder chargedProjectiles() {
         return ItemComponentTypesBridge.bridge().chargedProjectiles();
@@ -32,12 +38,15 @@ public interface ChargedProjectiles {
      * Lists the projectiles that are currently loaded into this component.
      *
      * @return the loaded projectiles
+     * @since 1.21.3
      */
     @Contract(value = "-> new", pure = true)
     @Unmodifiable List<ItemStack> projectiles();
 
     /**
      * Builder for {@link ChargedProjectiles}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -49,6 +58,7 @@ public interface ChargedProjectiles {
          * @param stack projectile
          * @return the builder for chaining
          * @see #projectiles()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder add(ItemStack stack);
@@ -59,6 +69,7 @@ public interface ChargedProjectiles {
          * @param stacks projectiles
          * @return the builder for chaining
          * @see #projectiles()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addAll(List<ItemStack> stacks);

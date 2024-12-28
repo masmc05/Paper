@@ -17,6 +17,7 @@ public interface Farmland extends BlockData {
      * Gets the value of the 'moisture' property.
      *
      * @return the 'moisture' value
+     * @since 1.13
      */
     int getMoisture();
 
@@ -24,6 +25,7 @@ public interface Farmland extends BlockData {
      * Sets the value of the 'moisture' property.
      *
      * @param moisture the new 'moisture' value
+     * @since 1.13
      */
     void setMoisture(int moisture);
 
@@ -31,6 +33,7 @@ public interface Farmland extends BlockData {
      * Gets the maximum allowed value of the 'moisture' property.
      *
      * @return the maximum 'moisture' value
+     * @since 1.13
      */
     int getMaximumMoisture();
 }

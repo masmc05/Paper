@@ -116,6 +116,7 @@ public class WorldCreator {
      *
      * @param world World to copy options from
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator copy(@NotNull World world) {
@@ -138,6 +139,7 @@ public class WorldCreator {
      *
      * @param creator World creator to copy options from
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator copy(@NotNull WorldCreator creator) {
@@ -160,6 +162,7 @@ public class WorldCreator {
      * Gets the name of the world that is to be loaded or created.
      *
      * @return World name
+     * @since 1.0.0
      */
     @NotNull
     public String name() {
@@ -170,6 +173,7 @@ public class WorldCreator {
      * Gets the seed that will be used to create this world
      *
      * @return World seed
+     * @since 1.0.0
      */
     public long seed() {
         return seed;
@@ -180,6 +184,7 @@ public class WorldCreator {
      *
      * @param seed World seed
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator seed(long seed) {
@@ -192,6 +197,7 @@ public class WorldCreator {
      * Gets the environment that will be used to create or load the world
      *
      * @return World environment
+     * @since 1.0.0
      */
     @NotNull
     public World.Environment environment() {
@@ -243,6 +249,7 @@ public class WorldCreator {
      * environment will be used.
      *
      * @return Chunk generator
+     * @since 1.0.0
      */
     @Nullable
     public ChunkGenerator generator() {
@@ -257,6 +264,7 @@ public class WorldCreator {
      *
      * @param generator Chunk generator
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator generator(@Nullable ChunkGenerator generator) {
@@ -277,6 +285,7 @@ public class WorldCreator {
      *
      * @param generator Name of the generator to use, in "plugin:id" notation
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator generator(@Nullable String generator) {
@@ -299,6 +308,7 @@ public class WorldCreator {
      * @param output {@link CommandSender} that will receive any error
      *     messages
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator generator(@Nullable String generator, @Nullable CommandSender output) {
@@ -488,6 +498,7 @@ public class WorldCreator {
      * @param keepSpawnInMemory Whether the spawn chunks will be kept loaded
      * @return This object, for chaining
      * @deprecated use {@link #keepSpawnLoaded(net.kyori.adventure.util.TriState)}
+     * @since 1.20.2
      */
     @NotNull
     @Deprecated(forRemoval = true) // Paper
@@ -500,6 +511,7 @@ public class WorldCreator {
      *
      * @return True if the spawn chunks will be kept loaded
      * @deprecated use {@link #keepSpawnLoaded()}
+     * @since 1.20.2
      */
     @Deprecated(forRemoval = true) // Paper
     public boolean keepSpawnInMemory() {
@@ -513,6 +525,7 @@ public class WorldCreator {
      * options may be ignored.
      *
      * @return Newly created or loaded world
+     * @since 1.0.0
      */
     @Nullable
     public World createWorld() {
@@ -524,6 +537,7 @@ public class WorldCreator {
      *
      * @param name Name of the world to load or create
      * @return Resulting WorldCreator
+     * @since 1.0.0
      */
     @NotNull
     public static WorldCreator name(@NotNull String name) {
@@ -545,6 +559,7 @@ public class WorldCreator {
      * @param name Name of the generator to retrieve
      * @param output Where to output if errors are present
      * @return Resulting generator, or null
+     * @since 1.0.0
      */
     @Nullable
     public static ChunkGenerator getGeneratorForName(@NotNull String world, @Nullable String name, @Nullable CommandSender output) {

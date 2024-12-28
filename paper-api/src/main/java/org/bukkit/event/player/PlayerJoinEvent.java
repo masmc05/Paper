@@ -52,6 +52,7 @@ public class PlayerJoinEvent extends PlayerEvent {
      *
      * @return string join message. Can be null
      * @deprecated in favour of {@link #joinMessage()}
+     * @since 1.0.0
      */
     @Nullable
     @Deprecated // Paper
@@ -64,6 +65,7 @@ public class PlayerJoinEvent extends PlayerEvent {
      *
      * @param joinMessage join message. If null, no message will be sent
      * @deprecated in favour of {@link #joinMessage(net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void setJoinMessage(@Nullable String joinMessage) {

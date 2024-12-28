@@ -30,6 +30,7 @@ public interface CommandSourceStack {
      * Gets the location that this command is being executed at.
      *
      * @return a cloned location instance.
+     * @since 1.20.6
      */
     Location getLocation();
 
@@ -39,6 +40,7 @@ public interface CommandSourceStack {
      * It differs to {@link #getExecutor()} as the executor can be changed by a command, e.g. {@literal /execute}.
      *
      * @return the command sender instance
+     * @since 1.20.6
      */
     CommandSender getSender();
 
@@ -48,6 +50,7 @@ public interface CommandSourceStack {
      * than the one that triggered the command.
      *
      * @return entity that executes this command
+     * @since 1.20.6
      */
     @Nullable Entity getExecutor();
 }

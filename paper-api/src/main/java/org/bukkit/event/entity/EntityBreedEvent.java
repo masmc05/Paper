@@ -41,6 +41,9 @@ public class EntityBreedEvent extends EntityEvent implements Cancellable {
         setExperience(experience);
     }
 
+    /**
+     * @since 1.10.2
+     */
     @NotNull
     @Override
     public LivingEntity getEntity() {
@@ -51,6 +54,7 @@ public class EntityBreedEvent extends EntityEvent implements Cancellable {
      * Gets the parent creating this entity.
      *
      * @return The "birth" parent
+     * @since 1.10.2
      */
     @NotNull
     public LivingEntity getMother() {
@@ -61,6 +65,7 @@ public class EntityBreedEvent extends EntityEvent implements Cancellable {
      * Gets the other parent of the newly born entity.
      *
      * @return the other parent
+     * @since 1.10.2
      */
     @NotNull
     public LivingEntity getFather() {
@@ -72,6 +77,7 @@ public class EntityBreedEvent extends EntityEvent implements Cancellable {
      * conception.
      *
      * @return The Entity who initiated breeding.
+     * @since 1.10.2
      */
     @Nullable
     public LivingEntity getBreeder() {
@@ -82,6 +88,7 @@ public class EntityBreedEvent extends EntityEvent implements Cancellable {
      * The ItemStack that was used to initiate breeding, if present.
      *
      * @return ItemStack used to initiate breeding.
+     * @since 1.10.2
      */
     @Nullable
     public ItemStack getBredWith() {
@@ -92,6 +99,7 @@ public class EntityBreedEvent extends EntityEvent implements Cancellable {
      * Get the amount of experience granted by breeding.
      *
      * @return experience amount
+     * @since 1.10.2
      */
     public int getExperience() {
         return experience;
@@ -101,28 +109,41 @@ public class EntityBreedEvent extends EntityEvent implements Cancellable {
      * Set the amount of experience granted by breeding.
      *
      * @param experience experience amount
+     * @since 1.10.2
      */
     public void setExperience(int experience) {
         Preconditions.checkArgument(experience >= 0, "Experience cannot be negative");
         this.experience = experience;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

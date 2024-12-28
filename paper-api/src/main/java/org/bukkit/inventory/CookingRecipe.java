@@ -58,6 +58,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      *
      * @param input The input material.
      * @return The changed recipe, so you can chain calls.
+     * @since 1.14
      */
     @NotNull
     public CookingRecipe setInput(@NotNull Material input) {
@@ -70,6 +71,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      *
      * @return The input material.
      * @deprecated Use {@link #getInputChoice()} instead for more complete data.
+     * @since 1.14
      */
     @Deprecated // Paper
     @NotNull
@@ -82,6 +84,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      *
      * @param input The input choice.
      * @return The changed recipe, so you can chain calls.
+     * @since 1.14
      */
     @NotNull
     public T setInputChoice(@NotNull RecipeChoice input) {
@@ -93,6 +96,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Get the input choice.
      *
      * @return The input choice.
+     * @since 1.14
      */
     @NotNull
     public RecipeChoice getInputChoice() {
@@ -103,6 +107,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Get the result of this recipe.
      *
      * @return The resulting stack.
+     * @since 1.14
      */
     @NotNull
     @Override
@@ -114,6 +119,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Sets the experience given by this recipe.
      *
      * @param experience the experience level
+     * @since 1.14
      */
     public void setExperience(float experience) {
         this.experience = experience;
@@ -123,6 +129,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Get the experience given by this recipe.
      *
      * @return experience level
+     * @since 1.14
      */
     public float getExperience() {
         return experience;
@@ -132,6 +139,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Set the cooking time for this recipe in ticks.
      *
      * @param cookingTime new cooking time
+     * @since 1.14
      */
     public void setCookingTime(int cookingTime) {
         Preconditions.checkArgument(cookingTime >= 0, "cookingTime must be >= 0");
@@ -142,11 +150,15 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Get the cooking time for this recipe in ticks.
      *
      * @return cooking time
+     * @since 1.14
      */
     public int getCookingTime() {
         return cookingTime;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -158,6 +170,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * together when displayed in the client.
      *
      * @return recipe group. An empty string denotes no group. May not be null.
+     * @since 1.14
      */
     @NotNull
     public String getGroup() {
@@ -170,6 +183,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      *
      * @param group recipe group. An empty string denotes no group. May not be
      * null.
+     * @since 1.14
      */
     public void setGroup(@NotNull String group) {
         Preconditions.checkArgument(group != null, "group cannot be null");

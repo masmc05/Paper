@@ -49,6 +49,7 @@ public enum BlockFace {
      * Get the amount of X-coordinates to modify to get the represented block
      *
      * @return Amount of X-coordinates to modify
+     * @since 1.0.0
      */
     public int getModX() {
         return modX;
@@ -58,6 +59,7 @@ public enum BlockFace {
      * Get the amount of Y-coordinates to modify to get the represented block
      *
      * @return Amount of Y-coordinates to modify
+     * @since 1.0.0
      */
     public int getModY() {
         return modY;
@@ -67,6 +69,7 @@ public enum BlockFace {
      * Get the amount of Z-coordinates to modify to get the represented block
      *
      * @return Amount of Z-coordinates to modify
+     * @since 1.0.0
      */
     public int getModZ() {
         return modZ;
@@ -108,6 +111,9 @@ public enum BlockFace {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public BlockFace getOppositeFace() {
         switch (this) {

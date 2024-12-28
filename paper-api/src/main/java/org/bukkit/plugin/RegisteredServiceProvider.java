@@ -22,26 +22,42 @@ public class RegisteredServiceProvider<T> implements Comparable<RegisteredServic
         this.priority = priority;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public Class<T> getService() {
         return service;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public Plugin getPlugin() {
         return plugin;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public T getProvider() {
         return provider;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public ServicePriority getPriority() {
         return priority;
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.0.0
+     */
     @Override
     public int compareTo(@NotNull RegisteredServiceProvider<?> other) {
         if (priority.ordinal() == other.getPriority().ordinal()) {

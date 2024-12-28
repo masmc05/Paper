@@ -16,6 +16,7 @@ public interface LightningStrike extends Entity {
      * Returns whether the strike is an effect that does no damage.
      *
      * @return whether the strike is an effect
+     * @since 1.0.0
      */
     public boolean isEffect();
 
@@ -108,6 +109,7 @@ public interface LightningStrike extends Entity {
          *
          * @return whether the strike is silent.
          * @deprecated sound is now client side and cannot be removed
+         * @since 1.7.10
          */
         @Deprecated(since = "1.20.4")
         public boolean isSilent() {

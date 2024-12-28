@@ -13,6 +13,8 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
 
     /**
      * Represents the base color that the llama has.
+     *
+     * @since 1.11
      */
     public enum Color {
 
@@ -38,6 +40,7 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
      * Gets the llama's color.
      *
      * @return a {@link Color} representing the llama's color
+     * @since 1.11
      */
     @NotNull
     Color getColor();
@@ -54,6 +57,7 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
      * inventory slots and be more threatening to entities.
      *
      * @return llama strength [1,5]
+     * @since 1.11
      */
     int getStrength();
 
@@ -63,9 +67,13 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
      * equal to strength * 3.
      *
      * @param strength llama strength [1,5]
+     * @since 1.11
      */
     void setStrength(int strength);
 
+    /**
+     * @since 1.11
+     */
     @NotNull
     @Override
     LlamaInventory getInventory();

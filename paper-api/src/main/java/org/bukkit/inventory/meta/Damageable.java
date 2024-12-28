@@ -14,6 +14,7 @@ public interface Damageable extends ItemMeta {
      * Checks to see if this item has damage greater than 0.
      *
      * @return true if this has damage > 0
+     * @since 1.13
      */
     boolean hasDamage();
 
@@ -24,6 +25,7 @@ public interface Damageable extends ItemMeta {
      * a damage value is set.
      *
      * @return the damage
+     * @since 1.13
      */
     int getDamage();
 
@@ -32,6 +34,7 @@ public interface Damageable extends ItemMeta {
      *
      * @param damage item damage
      * @see #resetDamage() to reset and clear the damage data component
+     * @since 1.13
      */
     void setDamage(int damage);
 

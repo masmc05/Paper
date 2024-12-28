@@ -35,6 +35,7 @@ public class BlockFertilizeEvent extends BlockEvent implements Cancellable {
      * Gets the player that triggered the fertilization.
      *
      * @return triggering player, or null if not applicable
+     * @since 1.13
      */
     @Nullable
     public Player getPlayer() {
@@ -45,28 +46,41 @@ public class BlockFertilizeEvent extends BlockEvent implements Cancellable {
      * Gets a list of all blocks changed by the fertilization.
      *
      * @return list of all changed blocks
+     * @since 1.13
      */
     @NotNull
     public List<BlockState> getBlocks() {
         return blocks;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

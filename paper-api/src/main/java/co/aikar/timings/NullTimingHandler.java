@@ -28,43 +28,65 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * @deprecated Timings will be removed in the future
+ * @since 1.9.4
  */
 @Deprecated(forRemoval = true)
 public final class NullTimingHandler implements Timing {
     public static final Timing NULL = new NullTimingHandler();
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public Timing startTiming() {
         return this;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void stopTiming() {
 
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public Timing startTimingIfSync() {
         return this;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void stopTimingIfSync() {
 
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void abort() {
 
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Nullable
     @Override
     public TimingHandler getTimingHandler() {
         return null;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void close() {
 

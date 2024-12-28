@@ -30,6 +30,7 @@ public final class PluginCommand extends Command implements PluginIdentifiableCo
      * @param commandLabel The alias of the command used
      * @param args All arguments passed to the command, split via ' '
      * @return true if the command was successful, otherwise false
+     * @since 1.0.0
      */
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String[] args) {
@@ -62,6 +63,7 @@ public final class PluginCommand extends Command implements PluginIdentifiableCo
      * Sets the {@link CommandExecutor} to run when parsing this command
      *
      * @param executor New executor to run
+     * @since 1.0.0
      */
     public void setExecutor(@Nullable CommandExecutor executor) {
         this.executor = executor == null ? owningPlugin : executor;
@@ -71,6 +73,7 @@ public final class PluginCommand extends Command implements PluginIdentifiableCo
      * Gets the {@link CommandExecutor} associated with this command
      *
      * @return CommandExecutor object linked to this command
+     * @since 1.0.0
      */
     @NotNull
     public CommandExecutor getExecutor() {
@@ -105,6 +108,7 @@ public final class PluginCommand extends Command implements PluginIdentifiableCo
      * Gets the owner of this PluginCommand
      *
      * @return Plugin that owns this command
+     * @since 1.0.0
      */
     @Override
     @NotNull

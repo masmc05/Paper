@@ -31,6 +31,7 @@ public class ServerPluginException extends ServerException {
      * Gets the plugin which is directly responsible for the exception being thrown
      *
      * @return plugin which is responsible for the exception throw
+     * @since 1.9.4
      */
     public Plugin getResponsiblePlugin() {
         return responsiblePlugin;

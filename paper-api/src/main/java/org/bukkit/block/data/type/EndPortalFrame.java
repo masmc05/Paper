@@ -14,6 +14,7 @@ public interface EndPortalFrame extends Directional {
      * Gets the value of the 'eye' property.
      *
      * @return the 'eye' value
+     * @since 1.13
      */
     boolean hasEye();
 
@@ -21,6 +22,7 @@ public interface EndPortalFrame extends Directional {
      * Sets the value of the 'eye' property.
      *
      * @param eye the new 'eye' value
+     * @since 1.13
      */
     void setEye(boolean eye);
 }

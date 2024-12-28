@@ -34,6 +34,7 @@ public class EntityTransformEvent extends EntityEvent implements Cancellable {
      *
      * @return The transformed entity.
      * @see #getTransformedEntities()
+     * @since 1.13.2
      */
     @NotNull
     public Entity getTransformedEntity() {
@@ -44,6 +45,7 @@ public class EntityTransformEvent extends EntityEvent implements Cancellable {
      * Gets the entities that the original entity was transformed to.
      *
      * @return The transformed entities.
+     * @since 1.13.2
      */
     @NotNull
     public List<Entity> getTransformedEntities() {
@@ -54,33 +56,49 @@ public class EntityTransformEvent extends EntityEvent implements Cancellable {
      * Gets the reason for the conversion that has occurred.
      *
      * @return The reason for conversion that has occurred.
+     * @since 1.13.2
      */
     @NotNull
     public TransformReason getTransformReason() {
         return transformReason;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
     }
 
+    /**
+     * @since 1.13.2
+     */
     public enum TransformReason {
         /**
          * When a zombie gets cured and a villager is spawned.

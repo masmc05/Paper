@@ -42,6 +42,7 @@ public class VehicleBlockCollisionEvent extends VehicleCollisionEvent {
      * Gets the block the vehicle collided with
      *
      * @return the block the vehicle collided with
+     * @since 1.0.0
      */
     @NotNull
     public Block getBlock() {

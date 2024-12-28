@@ -70,6 +70,7 @@ public class PlayerStatisticIncrementEvent extends PlayerEvent implements Cancel
      * Gets the statistic that is being incremented.
      *
      * @return the incremented statistic
+     * @since 1.7.10
      */
     @NotNull
     public Statistic getStatistic() {
@@ -80,6 +81,7 @@ public class PlayerStatisticIncrementEvent extends PlayerEvent implements Cancel
      * Gets the previous value of the statistic.
      *
      * @return the previous value of the statistic
+     * @since 1.7.10
      */
     public int getPreviousValue() {
         return initialValue;
@@ -89,6 +91,7 @@ public class PlayerStatisticIncrementEvent extends PlayerEvent implements Cancel
      * Gets the new value of the statistic.
      *
      * @return the new value of the statistic
+     * @since 1.7.10
      */
     public int getNewValue() {
         return newValue;
@@ -99,6 +102,7 @@ public class PlayerStatisticIncrementEvent extends PlayerEvent implements Cancel
      * entity statistic otherwise returns null.
      *
      * @return the EntityType of the statistic
+     * @since 1.7.10
      */
     @Nullable
     public EntityType getEntityType() {
@@ -110,28 +114,41 @@ public class PlayerStatisticIncrementEvent extends PlayerEvent implements Cancel
      * or item statistic otherwise returns null.
      *
      * @return the Material of the statistic
+     * @since 1.7.10
      */
     @Nullable
     public Material getMaterial() {
         return material;
     }
 
+    /**
+     * @since 1.7.10
+     */
     @Override
     public boolean isCancelled() {
         return isCancelled;
     }
 
+    /**
+     * @since 1.7.10
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.isCancelled = cancel;
     }
 
+    /**
+     * @since 1.7.10
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.7.10
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

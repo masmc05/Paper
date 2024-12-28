@@ -20,6 +20,9 @@ public class PrepareGrindstoneEvent extends com.destroystokyo.paper.event.invent
         super(inventory, result);
     }
 
+    /**
+     * @since 1.19.3
+     */
     @NotNull
     @Override
     public GrindstoneInventory getInventory() {

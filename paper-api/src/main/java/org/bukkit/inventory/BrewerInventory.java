@@ -15,6 +15,7 @@ public interface BrewerInventory extends Inventory {
      * Get the current ingredient for brewing.
      *
      * @return The ingredient.
+     * @since 1.1.0
      */
     @Nullable
     ItemStack getIngredient();
@@ -23,6 +24,7 @@ public interface BrewerInventory extends Inventory {
      * Set the current ingredient for brewing.
      *
      * @param ingredient The ingredient
+     * @since 1.1.0
      */
     void setIngredient(@Nullable ItemStack ingredient);
 
@@ -44,6 +46,9 @@ public interface BrewerInventory extends Inventory {
      */
     void setFuel(@Nullable ItemStack fuel);
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @Nullable
     BrewingStand getHolder();

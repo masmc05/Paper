@@ -25,6 +25,9 @@ public class PreSpawnerSpawnEvent extends PreCreatureSpawnEvent {
         this.spawnerLocation = spawnerLocation;
     }
 
+    /**
+     * @since 1.13.1
+     */
     public Location getSpawnerLocation() {
         return this.spawnerLocation.clone();
     }

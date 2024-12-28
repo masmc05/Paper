@@ -19,6 +19,8 @@ public interface AbstractVillager extends Breedable, NPC, InventoryHolder, Merch
      * items that a villager might have collected (from harvesting crops, etc.)
      *
      * {@inheritDoc}
+     *
+     * @since 1.14
      */
     @NotNull
     @Override

@@ -37,6 +37,7 @@ public final class LootContext {
      * The {@link Location} to store where the loot will be generated.
      *
      * @return the Location of where the loot will be generated
+     * @since 1.13
      */
     @NotNull
     public Location getLocation() {
@@ -49,6 +50,7 @@ public final class LootContext {
      * loot.
      *
      * @return luck
+     * @since 1.13
      */
     public float getLuck() {
         return luck;
@@ -65,6 +67,7 @@ public final class LootContext {
      *
      * @return the looting level
      * @deprecated no longer functional
+     * @since 1.13
      */
     @Deprecated(since = "1.21")
     public int getLootingModifier() {
@@ -75,6 +78,7 @@ public final class LootContext {
      * Get the {@link Entity} that was killed. Can be null.
      *
      * @return the looted entity or null
+     * @since 1.13
      */
     @Nullable
     public Entity getLootedEntity() {
@@ -86,6 +90,7 @@ public final class LootContext {
      * Can be null.
      *
      * @return the killer entity, or null.
+     * @since 1.13
      */
     @Nullable
     public HumanEntity getKiller() {
@@ -96,6 +101,8 @@ public final class LootContext {
      * Utility class to make building {@link LootContext} easier. The only
      * required argument is {@link Location} with a valid (non-null)
      * {@link org.bukkit.World}.
+     *
+     * @since 1.13
      */
     public static class Builder {
 
@@ -120,6 +127,7 @@ public final class LootContext {
          *
          * @param luck the luck level
          * @return the Builder
+         * @since 1.13
          */
         @NotNull
         public Builder luck(float luck) {
@@ -136,6 +144,7 @@ public final class LootContext {
          * @param modifier the looting level modifier
          * @return the Builder
          * @deprecated no longer functional
+         * @since 1.13
          */
         @NotNull
         @Deprecated(since = "1.21")
@@ -149,6 +158,7 @@ public final class LootContext {
          *
          * @param lootedEntity the looted entity
          * @return the Builder
+         * @since 1.13
          */
         @NotNull
         public Builder lootedEntity(@Nullable Entity lootedEntity) {
@@ -163,6 +173,7 @@ public final class LootContext {
          *
          * @param killer the killer entity
          * @return the Builder
+         * @since 1.13
          */
         @NotNull
         public Builder killer(@Nullable HumanEntity killer) {
@@ -175,6 +186,7 @@ public final class LootContext {
          * parameters.
          *
          * @return a new {@link LootContext} instance
+         * @since 1.13
          */
         @NotNull
         public LootContext build() {

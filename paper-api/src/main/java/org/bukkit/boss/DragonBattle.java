@@ -20,6 +20,7 @@ public interface DragonBattle {
      * Will return null if the dragon has been slain.
      *
      * @return the ender dragon. null if dead
+     * @since 1.15.2
      */
     @Nullable
     public EnderDragon getEnderDragon();
@@ -28,6 +29,7 @@ public interface DragonBattle {
      * Get the boss bar to be displayed for this dragon battle.
      *
      * @return the boss bar
+     * @since 1.15.2
      */
     @NotNull
     public BossBar getBossBar();
@@ -38,6 +40,7 @@ public interface DragonBattle {
      * This location will be at the center of the base (bottom) of the portal.
      *
      * @return the end portal location or null if not generated
+     * @since 1.15.2
      */
     @Nullable
     public Location getEndPortalLocation();
@@ -56,6 +59,7 @@ public interface DragonBattle {
      * Check whether the first dragon has been killed already.
      *
      * @return true if killed before, false otherwise
+     * @since 1.15.2
      */
     public boolean hasBeenPreviouslyKilled();
 
@@ -74,6 +78,8 @@ public interface DragonBattle {
     /**
      * Try to initiate a respawn sequence to summon the dragon as though a player has
      * placed 4 end crystals on the portal.
+     *
+     * @since 1.15.2
      */
     public void initiateRespawn();
 
@@ -94,6 +100,7 @@ public interface DragonBattle {
      * Get this battle's current respawn phase.
      *
      * @return the current respawn phase.
+     * @since 1.15.2
      */
     @NotNull
     public RespawnPhase getRespawnPhase();
@@ -114,11 +121,15 @@ public interface DragonBattle {
     /**
      * Reset the crystals located on the obsidian pillars (remove their beam
      * targets and invulnerability).
+     *
+     * @since 1.15.2
      */
     public void resetCrystals();
 
     /**
      * Represents a phase in the dragon respawn process.
+     *
+     * @since 1.15.2
      */
     public enum RespawnPhase {
 

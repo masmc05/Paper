@@ -32,6 +32,7 @@ public interface Ocelot extends Animals {
      *
      * @return Type of the cat.
      * @deprecated Cats are now a separate entity.
+     * @since 1.2.2
      */
     @NotNull
     @Deprecated(since = "1.19.4")
@@ -50,6 +51,7 @@ public interface Ocelot extends Animals {
      * Represents the various different cat types there are.
      *
      * @deprecated Cats are now a separate entity.
+     * @since 1.2.2
      */
     @Deprecated(since = "1.14")
     public enum Type {
@@ -76,6 +78,7 @@ public interface Ocelot extends Animals {
          *
          * @return Type ID.
          * @deprecated Magic value
+         * @since 1.2.2
          */
         @Deprecated(since = "1.6.2")
         public int getId() {
@@ -88,6 +91,7 @@ public interface Ocelot extends Animals {
          * @param id ID of the cat type to get.
          * @return Resulting type, or null if not found.
          * @deprecated Magic value
+         * @since 1.2.2
          */
         @Deprecated(since = "1.6.2")
         @Nullable

@@ -20,6 +20,7 @@ public interface Datapack {
      * Gets the name/id of this datapack.
      *
      * @return the name of the pack
+     * @since 1.16.5
      */
     @Contract(pure = true)
     String getName();
@@ -52,6 +53,7 @@ public interface Datapack {
      * Gets the compatibility status of this pack.
      *
      * @return the compatibility of the pack
+     * @since 1.16.5
      */
     Compatibility getCompatibility();
 
@@ -67,6 +69,7 @@ public interface Datapack {
      * Gets the enabled state of this pack.
      *
      * @return whether the pack is currently enabled
+     * @since 1.16.5
      */
     boolean isEnabled();
 
@@ -77,6 +80,7 @@ public interface Datapack {
      *
      * @param enabled true to enable, false to disable
      * @apiNote This method may be deprecated in the future as setters on a "snapshot" type are undesirable.
+     * @since 1.16.5
      */
     void setEnabled(boolean enabled);
 
@@ -99,6 +103,9 @@ public interface Datapack {
     @Contract(pure = true, value = "-> new")
     Component computeDisplayName();
 
+    /**
+     * @since 1.16.5
+     */
     enum Compatibility {
         TOO_OLD,
         TOO_NEW,

@@ -12,6 +12,7 @@ public interface PistonHead extends TechnicalPiston {
      * Gets the value of the 'short' property.
      *
      * @return the 'short' value
+     * @since 1.13
      */
     boolean isShort();
 
@@ -19,6 +20,7 @@ public interface PistonHead extends TechnicalPiston {
      * Sets the value of the 'short' property.
      *
      * @param _short the new 'short' value
+     * @since 1.13
      */
     void setShort(boolean _short);
 }

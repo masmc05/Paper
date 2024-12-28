@@ -14,6 +14,7 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Gets the color of the fish's pattern.
      *
      * @return pattern color
+     * @since 1.13
      */
     @NotNull
     DyeColor getPatternColor();
@@ -22,6 +23,7 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Sets the color of the fish's pattern
      *
      * @param color pattern color
+     * @since 1.13
      */
     void setPatternColor(@NotNull DyeColor color);
 
@@ -29,6 +31,7 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Gets the color of the fish's body.
      *
      * @return pattern color
+     * @since 1.13
      */
     @NotNull
     DyeColor getBodyColor();
@@ -37,6 +40,7 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Sets the color of the fish's body
      *
      * @param color body color
+     * @since 1.13
      */
     void setBodyColor(@NotNull DyeColor color);
 
@@ -44,6 +48,7 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Gets the fish's pattern.
      *
      * @return pattern
+     * @since 1.13
      */
     @NotNull
     Pattern getPattern();
@@ -59,6 +64,8 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Enumeration of all different fish patterns. Refer to the
      * <a href="https://minecraft.wiki/w/Fish">Minecraft Wiki</a>
      * for pictures.
+     *
+     * @since 1.13
      */
     public static enum Pattern {
 

@@ -39,6 +39,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Gets the entity's current position
      *
      * @return a new copy of Location containing the position of this entity
+     * @since 1.0.0
      */
     @NotNull
     public Location getLocation();
@@ -61,6 +62,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Sets this entity's velocity in meters per tick
      *
      * @param velocity New velocity to travel with
+     * @since 1.0.0
      */
     public void setVelocity(@NotNull Vector velocity);
 
@@ -68,6 +70,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Gets this entity's current velocity
      *
      * @return Current traveling velocity of this entity
+     * @since 1.0.0
      */
     @NotNull
     public Vector getVelocity();
@@ -123,6 +126,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Gets the current world this entity resides in
      *
      * @return World
+     * @since 1.0.0
      */
     @NotNull
     public World getWorld();
@@ -168,6 +172,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      *
      * @param location New location to teleport this entity to
      * @return <code>true</code> if the teleport was successful
+     * @since 1.0.0
      */
     public boolean teleport(@NotNull Location location);
 
@@ -187,6 +192,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      *
      * @param destination Entity to teleport this entity to
      * @return <code>true</code> if the teleport was successful
+     * @since 1.0.0
      */
     public boolean teleport(@NotNull Entity destination);
 
@@ -242,6 +248,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * @param y 1/2 the size of the box along y axis
      * @param z 1/2 the size of the box along z axis
      * @return {@code List<Entity>} List of entities nearby
+     * @since 1.0.0
      */
     @NotNull
     public List<org.bukkit.entity.Entity> getNearbyEntities(double x, double y, double z);
@@ -254,6 +261,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      *
      * @return the network protocol ID
      * @see #getUniqueId()
+     * @since 1.0.0
      */
     public int getEntityId();
 
@@ -262,6 +270,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * being on fire).
      *
      * @return int fireTicks
+     * @since 1.0.0
      */
     public int getFireTicks();
 
@@ -269,6 +278,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Returns the entity's maximum fire ticks.
      *
      * @return int maxFireTicks
+     * @since 1.0.0
      */
     public int getMaxFireTicks();
 
@@ -277,6 +287,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * being on fire).
      *
      * @param ticks Current ticks remaining
+     * @since 1.0.0
      */
     public void setFireTicks(int ticks);
 
@@ -396,6 +407,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Mark the entity's removal.
      *
      * @throws UnsupportedOperationException if you try to remove a {@link Player} use {@link Player#kickPlayer(String)} in this case instead
+     * @since 1.0.0
      */
     public void remove();
 
@@ -403,6 +415,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Returns true if this entity has been marked for removal.
      *
      * @return True if it is dead.
+     * @since 1.0.0
      */
     public boolean isDead();
 
@@ -419,6 +432,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Gets the {@link Server} that contains this Entity
      *
      * @return Server instance running this Entity
+     * @since 1.0.0
      */
     @Override
     @NotNull
@@ -460,6 +474,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * @return an entity
      * @deprecated entities may have multiple passengers, use
      * {@link #getPassengers()}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.11.2")
     @Nullable
@@ -472,6 +487,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * @return false if it could not be done for whatever reason
      * @deprecated entities may have multiple passengers, use
      * {@link #addPassenger(org.bukkit.entity.Entity)}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.11.2")
     public boolean setPassenger(@NotNull Entity passenger);
@@ -510,6 +526,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Check if a vehicle has passengers.
      *
      * @return True if the vehicle has no passengers.
+     * @since 1.0.0
      */
     public boolean isEmpty();
 
@@ -517,6 +534,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Eject any passenger.
      *
      * @return True if there was a passenger.
+     * @since 1.0.0
      */
     public boolean eject();
 
@@ -524,6 +542,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Returns the distance this entity has fallen
      *
      * @return The distance.
+     * @since 1.0.0
      */
     public float getFallDistance();
 
@@ -531,6 +550,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Sets the fall distance for this entity
      *
      * @param distance The new distance.
+     * @since 1.0.0
      */
     public void setFallDistance(float distance);
 
@@ -539,6 +559,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      *
      * @param event a {@link EntityDamageEvent}
      * @deprecated method is for internal use only and will be removed
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20.4", forRemoval = true)
     public void setLastDamageCause(@Nullable EntityDamageEvent event);
@@ -549,6 +570,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      *
      * @return the last known {@link EntityDamageEvent} or null if hitherto
      *     unharmed
+     * @since 1.0.0
      */
     @Nullable
     public EntityDamageEvent getLastDamageCause();
@@ -557,6 +579,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * Returns a unique and persistent id for this entity
      *
      * @return unique id
+     * @since 1.0.0
      */
     @NotNull
     public UUID getUniqueId();
@@ -567,6 +590,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * This is the equivalent to "age" in entities.
      *
      * @return Age of entity
+     * @since 1.0.0
      */
     public int getTicksLived();
 
@@ -577,6 +601,7 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      * tick.
      *
      * @param value Age of entity
+     * @since 1.0.0
      */
     public void setTicksLived(int value);
 

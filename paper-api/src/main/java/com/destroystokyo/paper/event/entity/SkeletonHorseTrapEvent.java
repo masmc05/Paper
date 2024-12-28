@@ -35,6 +35,9 @@ public class SkeletonHorseTrapEvent extends EntityEvent implements Cancellable {
         this.eligibleHumans = eligibleHumans;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public SkeletonHorse getEntity() {
         return (SkeletonHorse) super.getEntity();
@@ -47,21 +50,33 @@ public class SkeletonHorseTrapEvent extends EntityEvent implements Cancellable {
         return this.eligibleHumans;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

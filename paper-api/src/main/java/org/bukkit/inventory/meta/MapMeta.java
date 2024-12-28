@@ -91,6 +91,7 @@ public interface MapMeta extends ItemMeta {
      * Checks to see if this map is scaling.
      *
      * @return true if this map is scaling
+     * @since 1.4.5
      */
     boolean isScaling();
 
@@ -98,6 +99,7 @@ public interface MapMeta extends ItemMeta {
      * Sets if this map is scaling or not.
      *
      * @param value true to scale
+     * @since 1.4.5
      */
     void setScaling(boolean value);
 

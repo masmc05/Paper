@@ -21,6 +21,7 @@ public interface ZombieVillager extends Zombie {
      * Returns the villager profession of this zombie.
      *
      * @return the profession
+     * @since 1.11
      */
     @Override
     @NotNull // Paper

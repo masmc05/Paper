@@ -26,6 +26,7 @@ public class VehicleMoveEvent extends VehicleEvent {
      * Get the previous position.
      *
      * @return Old position.
+     * @since 1.0.0
      */
     @NotNull
     public Location getFrom() {
@@ -36,6 +37,7 @@ public class VehicleMoveEvent extends VehicleEvent {
      * Get the next position.
      *
      * @return New position.
+     * @since 1.0.0
      */
     @NotNull
     public Location getTo() {

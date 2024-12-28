@@ -29,6 +29,7 @@ public interface Dropper extends Container, LootableBlockInventory { // Paper
      * do nothing.
      *
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.5.1
      */
     public void drop();
 }

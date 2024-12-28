@@ -24,6 +24,7 @@ public class SpawnChangeEvent extends WorldEvent {
      * Gets the previous spawn location
      *
      * @return Location that used to be spawn
+     * @since 1.0.0
      */
     @NotNull
     public Location getPreviousLocation() {

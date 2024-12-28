@@ -26,6 +26,7 @@ public class ChunkLoadEvent extends ChunkEvent {
      * Use a {@link BlockPopulator} instead.
      *
      * @return true if the chunk is new, otherwise false
+     * @since 1.0.0
      */
     public boolean isNewChunk() {
         return newChunk;

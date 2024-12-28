@@ -36,6 +36,9 @@ public class JarLibrary implements ClassPathLibrary {
         this.path = path;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public void register(final LibraryStore store) throws LibraryLoadingException {
         if (Files.notExists(this.path)) {

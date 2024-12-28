@@ -29,6 +29,9 @@ public class EntityCreatePortalEvent extends EntityEvent implements Cancellable 
         this.type = type;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public LivingEntity getEntity() {
@@ -39,17 +42,24 @@ public class EntityCreatePortalEvent extends EntityEvent implements Cancellable 
      * Gets a list of all blocks associated with the portal.
      *
      * @return List of blocks that will be changed.
+     * @since 1.1.0
      */
     @NotNull
     public List<BlockState> getBlocks() {
         return blocks;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
@@ -59,18 +69,25 @@ public class EntityCreatePortalEvent extends EntityEvent implements Cancellable 
      * Gets the type of portal that is trying to be created.
      *
      * @return Type of portal.
+     * @since 1.1.0
      */
     @NotNull
     public PortalType getPortalType() {
         return type;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

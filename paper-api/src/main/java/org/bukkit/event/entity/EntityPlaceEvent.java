@@ -45,6 +45,7 @@ public class EntityPlaceEvent extends EntityEvent implements Cancellable {
      * Returns the player placing the entity
      *
      * @return the player placing the entity
+     * @since 1.13.2
      */
     @Nullable
     public Player getPlayer() {
@@ -55,6 +56,7 @@ public class EntityPlaceEvent extends EntityEvent implements Cancellable {
      * Returns the block that the entity was placed on
      *
      * @return the block that the entity was placed on
+     * @since 1.13.2
      */
     @NotNull
     public Block getBlock() {
@@ -65,6 +67,7 @@ public class EntityPlaceEvent extends EntityEvent implements Cancellable {
      * Returns the face of the block that the entity was placed on
      *
      * @return the face of the block that the entity was placed on
+     * @since 1.13.2
      */
     @NotNull
     public BlockFace getBlockFace() {
@@ -82,22 +85,34 @@ public class EntityPlaceEvent extends EntityEvent implements Cancellable {
         return hand;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

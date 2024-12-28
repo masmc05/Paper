@@ -11,6 +11,7 @@ public interface Sittable {
      * Checks if this animal is sitting
      *
      * @return true if sitting
+     * @since 1.12
      */
     boolean isSitting();
 
@@ -19,6 +20,7 @@ public interface Sittable {
      * was following beforehand.
      *
      * @param sitting true if sitting
+     * @since 1.12
      */
     void setSitting(boolean sitting);
 

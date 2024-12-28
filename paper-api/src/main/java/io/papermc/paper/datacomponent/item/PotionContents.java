@@ -21,6 +21,9 @@ import org.jspecify.annotations.Nullable;
 @ApiStatus.NonExtendable
 public interface PotionContents {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static PotionContents.Builder potionContents() {
         return ItemComponentTypesBridge.bridge().potionContents();
@@ -30,6 +33,7 @@ public interface PotionContents {
      * The potion type in this item: the item will inherit all effects from this.
      *
      * @return potion type, or {@code null} if not present
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable PotionType potion();
@@ -40,6 +44,7 @@ public interface PotionContents {
      * @return color override, or {@code null} if not present
      * @apiNote alpha channel of the color is only relevant
      * for Tipped Arrow
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable Color customColor();
@@ -48,6 +53,7 @@ public interface PotionContents {
      * Additional list of effect instances that this item should apply.
      *
      * @return effects
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<PotionEffect> customEffects();
@@ -57,10 +63,14 @@ public interface PotionContents {
      *
      * @return translation key suffix, or {@code null} if not present
      * @apiNote This is used in the display of tipped arrow and potion items.
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable String customName();
 
+    /**
+     * @since 1.21.3
+     */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<PotionContents> {
@@ -71,6 +81,7 @@ public interface PotionContents {
          * @param type builder
          * @return the builder for chaining
          * @see #potion()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder potion(@Nullable PotionType type);
@@ -82,6 +93,7 @@ public interface PotionContents {
          * @return the builder for chaining
          * @apiNote alpha channel of the color is supported only for Tipped Arrow
          * @see #customColor()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder customColor(@Nullable Color color);
@@ -92,6 +104,7 @@ public interface PotionContents {
          * @param name name
          * @return the builder for chaining
          * @see #customName()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder customName(@Nullable String name);
@@ -102,6 +115,7 @@ public interface PotionContents {
          * @param effect effect
          * @return the builder for chaining
          * @see #customEffects()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addCustomEffect(PotionEffect effect);
@@ -112,6 +126,7 @@ public interface PotionContents {
          * @param effects effects
          * @return the builder for chaining
          * @see #customEffects()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addCustomEffects(List<PotionEffect> effects);

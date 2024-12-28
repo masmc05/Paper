@@ -31,27 +31,40 @@ public class SlimePathfindEvent extends EntityEvent implements Cancellable {
      * The Slime that is pathfinding.
      *
      * @return The Slime that is pathfinding.
+     * @since 1.13
      */
     @Override
     public Slime getEntity() {
         return (Slime) super.getEntity();
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

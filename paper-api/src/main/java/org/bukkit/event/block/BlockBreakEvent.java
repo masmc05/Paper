@@ -44,6 +44,7 @@ public class BlockBreakEvent extends BlockExpEvent implements Cancellable {
      * Gets the Player that is breaking the block involved in this event.
      *
      * @return The Player that is breaking the block involved in this event
+     * @since 1.0.0
      */
     @NotNull
     public Player getPlayer() {
@@ -77,11 +78,17 @@ public class BlockBreakEvent extends BlockExpEvent implements Cancellable {
         return this.dropItems;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;

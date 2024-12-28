@@ -90,6 +90,7 @@ public class PlayerKickEvent extends PlayerEvent implements Cancellable {
      *
      * @return string kick reason
      * @deprecated in favour of {@link #reason()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -102,6 +103,7 @@ public class PlayerKickEvent extends PlayerEvent implements Cancellable {
      *
      * @return string kick reason
      * @deprecated in favour of {@link #leaveMessage()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -109,11 +111,17 @@ public class PlayerKickEvent extends PlayerEvent implements Cancellable {
         return net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer.legacySection().serialize(this.leaveMessage); // Paper
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -124,6 +132,7 @@ public class PlayerKickEvent extends PlayerEvent implements Cancellable {
      *
      * @param kickReason kick reason
      * @deprecated in favour of {@link #reason(net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void setReason(@NotNull String kickReason) {
@@ -135,6 +144,7 @@ public class PlayerKickEvent extends PlayerEvent implements Cancellable {
      *
      * @param leaveMessage leave message
      * @deprecated in favour of {@link #leaveMessage(net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void setLeaveMessage(@NotNull String leaveMessage) {

@@ -28,6 +28,7 @@ public class ChatPaginator {
      * @param unpaginatedString The raw string to break.
      * @param pageNumber The page number to fetch.
      * @return A single chat page.
+     * @since 1.1.0
      */
     @NotNull
     public static ChatPage paginate(@Nullable String unpaginatedString, int pageNumber) {
@@ -42,6 +43,7 @@ public class ChatPaginator {
      * @param lineLength The desired width of a chat line.
      * @param pageHeight The desired number of lines in a page.
      * @return A single chat page.
+     * @since 1.1.0
      */
     @NotNull
     public static ChatPage paginate(@Nullable String unpaginatedString, int pageNumber, int lineLength, int pageHeight) {
@@ -64,6 +66,7 @@ public class ChatPaginator {
      * @param rawString The raw string to break.
      * @param lineLength The length of a line of text.
      * @return An array of word-wrapped lines.
+     * @since 1.1.0
      */
     @NotNull
     public static String[] wordWrap(@Nullable String rawString, int lineLength) {
@@ -146,6 +149,9 @@ public class ChatPaginator {
         return lines.toArray(new String[lines.size()]);
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static class ChatPage {
 
         private String[] lines;
@@ -158,14 +164,23 @@ public class ChatPaginator {
             this.totalPages = totalPages;
         }
 
+        /**
+         * @since 1.1.0
+         */
         public int getPageNumber() {
             return pageNumber;
         }
 
+        /**
+         * @since 1.1.0
+         */
         public int getTotalPages() {
             return totalPages;
         }
 
+        /**
+         * @since 1.1.0
+         */
         @NotNull
         public String[] getLines() {
             return lines;

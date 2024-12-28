@@ -34,6 +34,7 @@ public interface Dispenser extends Container, Nameable, LootableBlockInventory {
      *
      * @return true if successful, otherwise false
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.0.0
      */
     public boolean dispense();
 }

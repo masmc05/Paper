@@ -12,6 +12,7 @@ public interface AdvancementRequirement {
      * Get all required criteria.
      *
      * @return the list of required criteria for this requirement.
+     * @since 1.21.3
      */
     @NotNull
     List<String> getRequiredCriteria();
@@ -21,6 +22,7 @@ public interface AdvancementRequirement {
      *
      * @return true if requirement list contains one criteria, false if
      * multiple.
+     * @since 1.21.3
      */
     boolean isStrict();
 }

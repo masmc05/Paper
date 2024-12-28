@@ -14,6 +14,7 @@ public interface TNTPrimed extends Explosive {
      * Set the number of ticks until the TNT blows up after being primed.
      *
      * @param fuseTicks The fuse ticks
+     * @since 1.0.0
      */
     public void setFuseTicks(int fuseTicks);
 
@@ -22,6 +23,7 @@ public interface TNTPrimed extends Explosive {
      * entity
      *
      * @return the number of ticks until this TNTPrimed explodes
+     * @since 1.0.0
      */
     public int getFuseTicks();
 

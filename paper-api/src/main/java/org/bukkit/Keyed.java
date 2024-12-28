@@ -13,6 +13,7 @@ public interface Keyed extends net.kyori.adventure.key.Keyed { // Paper -- exten
      * Return the namespaced identifier for this object.
      *
      * @return this object's key
+     * @since 1.12
      */
     @NotNull
     NamespacedKey getKey();

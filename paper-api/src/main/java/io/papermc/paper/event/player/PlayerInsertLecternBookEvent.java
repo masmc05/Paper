@@ -37,6 +37,7 @@ public class PlayerInsertLecternBookEvent extends PlayerEvent implements Cancell
      * Gets the block of the lectern involved in this event.
      *
      * @return the block of the lectern
+     * @since 1.21.1
      */
     public Block getBlock() {
         return this.block;
@@ -48,6 +49,7 @@ public class PlayerInsertLecternBookEvent extends PlayerEvent implements Cancell
      *
      * @return a new lectern state snapshot of the involved lectern
      * @throws IllegalStateException if the block at {@link #getBlock()} is no longer a lectern
+     * @since 1.21.1
      */
     public Lectern getLectern() {
         final BlockState state = this.getBlock().getState();
@@ -61,6 +63,7 @@ public class PlayerInsertLecternBookEvent extends PlayerEvent implements Cancell
      * If you want to mutate the item stack that ends up in the lectern, use {@link #setBook(ItemStack)}.
      *
      * @return the book that is being placed
+     * @since 1.21.1
      */
     public ItemStack getBook() {
         return this.book.clone();
@@ -71,27 +74,40 @@ public class PlayerInsertLecternBookEvent extends PlayerEvent implements Cancell
      *
      * @param book the book to insert (non book items will leave the lectern in a locked
      *             state as the menu cannot be opened, preventing item extraction)
+     * @since 1.21.1
      */
     public void setBook(final ItemStack book) {
         Preconditions.checkArgument(book != null, "Cannot set book to null");
         this.book = book.clone();
     }
 
+    /**
+     * @since 1.21.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.21.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.21.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

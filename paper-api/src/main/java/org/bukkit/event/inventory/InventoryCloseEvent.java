@@ -98,18 +98,25 @@ public class InventoryCloseEvent extends InventoryEvent {
      * Returns the player involved in this event
      *
      * @return Player who is involved in this event
+     * @since 1.1.0
      */
     @NotNull
     public final HumanEntity getPlayer() {
         return transaction.getPlayer();
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

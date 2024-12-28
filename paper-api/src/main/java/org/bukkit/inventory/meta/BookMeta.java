@@ -47,6 +47,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
      * Checks for the existence of a title in the book.
      *
      * @return true if the book has a title
+     * @since 1.4.5
      */
     boolean hasTitle();
 
@@ -57,6 +58,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
      * method.
      *
      * @return the title of the book
+     * @since 1.4.5
      */
     @Nullable
     String getTitle();
@@ -68,6 +70,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
      *
      * @param title the title to set
      * @return true if the title was successfully set
+     * @since 1.4.5
      */
     boolean setTitle(@Nullable String title);
 
@@ -75,6 +78,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
      * Checks for the existence of an author in the book.
      *
      * @return true if the book has an author
+     * @since 1.4.5
      */
     boolean hasAuthor();
 
@@ -85,6 +89,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
      * method.
      *
      * @return the author of the book
+     * @since 1.4.5
      */
     @Nullable
     String getAuthor();
@@ -93,6 +98,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
      * Sets the author of the book. Removes author when given null.
      *
      * @param author the author to set
+     * @since 1.4.5
      */
     void setAuthor(@Nullable String author);
 
@@ -131,6 +137,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
     //<editor-fold desc="deprecations" defaultstate="collapsed">
     /**
      * @deprecated use {@link #page(int)}
+     * @since 1.4.5
      */
     @Deprecated
     @Override
@@ -138,6 +145,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
 
     /**
      * @deprecated use {@link #page(int, net.kyori.adventure.text.Component)}
+     * @since 1.4.5
      */
     @Deprecated
     @Override
@@ -145,6 +153,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
 
     /**
      * @deprecated use {@link #pages()}
+     * @since 1.4.5
      */
     @Deprecated
     @Override
@@ -152,6 +161,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
 
     /**
      * @deprecated use {@link #pages(List)}
+     * @since 1.4.5
      */
     @Deprecated
     @Override
@@ -159,6 +169,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
 
     /**
      * @deprecated use {@link #pages(net.kyori.adventure.text.Component...)}
+     * @since 1.4.5
      */
     @Deprecated
     @Override
@@ -166,6 +177,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
 
     /**
      * @deprecated use {@link #addPages(net.kyori.adventure.text.Component...)}
+     * @since 1.4.5
      */
     @Deprecated
     @Override
@@ -261,21 +273,45 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
      */
     interface BookMetaBuilder extends net.kyori.adventure.inventory.Book.Builder {
 
+        /**
+         * {@inheritDoc}
+         * @since 1.16.5
+         */
         @Override
         @NotNull BookMetaBuilder title(net.kyori.adventure.text.@Nullable Component title);
 
+        /**
+         * {@inheritDoc}
+         * @since 1.16.5
+         */
         @Override
         @NotNull BookMetaBuilder author(net.kyori.adventure.text.@Nullable Component author);
 
+        /**
+         * {@inheritDoc}
+         * @since 1.16.5
+         */
         @Override
         @NotNull BookMetaBuilder addPage(net.kyori.adventure.text.@NotNull Component page);
 
+        /**
+         * {@inheritDoc}
+         * @since 1.16.5
+         */
         @Override
         @NotNull BookMetaBuilder pages(net.kyori.adventure.text.@NotNull Component @NotNull ... pages);
 
+        /**
+         * {@inheritDoc}
+         * @since 1.16.5
+         */
         @Override
         @NotNull BookMetaBuilder pages(java.util.@NotNull Collection<net.kyori.adventure.text.Component> pages);
 
+        /**
+         * {@inheritDoc}
+         * @since 1.16.5
+         */
         @Override
         @NotNull BookMeta build();
     }
@@ -300,6 +336,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
          * @param page the page number to get
          * @return the page from the book
          * @deprecated in favour of {@link #page(int)}
+         * @since 1.12.2
          */
         @NotNull
         @Deprecated // Paper
@@ -317,6 +354,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
          * @param page the page number to set
          * @param data the data to set for that page
          * @deprecated in favour of {@link #page(int, net.kyori.adventure.text.Component)}
+         * @since 1.12.2
          */
         @Deprecated // Paper
         public void setPage(int page, @Nullable BaseComponent... data) {
@@ -328,6 +366,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
          *
          * @return list of all the pages in the book
          * @deprecated in favour of {@link #pages()}
+         * @since 1.12.2
          */
         @NotNull
         @Deprecated // Paper
@@ -341,6 +380,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
          *
          * @param pages A list of pages to set the book to use
          * @deprecated in favour of {@link #pages(java.util.List)}
+         * @since 1.12.2
          */
         @Deprecated // Paper
         public void setPages(@NotNull List<BaseComponent[]> pages) {
@@ -353,6 +393,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
          *
          * @param pages A list of component arrays, each being a page
          * @deprecated in favour of {@link #pages(net.kyori.adventure.text.Component...)}
+         * @since 1.12.2
          */
         @Deprecated // Paper
         public void setPages(@NotNull BaseComponent[]... pages) {
@@ -365,6 +406,7 @@ public interface BookMeta extends WritableBookMeta, net.kyori.adventure.inventor
          *
          * @param pages A list of component arrays, each being a page
          * @deprecated in favour of {@link #addPages(net.kyori.adventure.text.Component...)}
+         * @since 1.12.2
          */
         @Deprecated // Paper
         public void addPage(@NotNull BaseComponent[]... pages) {

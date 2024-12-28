@@ -78,6 +78,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * Sets the world that this location resides in
      *
      * @param world New world that this location resides in
+     * @since 1.0.0
      */
     public void setWorld(@Nullable World world) {
         this.world = (world == null) ? null : new WeakReference<>(world);
@@ -104,6 +105,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * @return World that contains this location, or {@code null} if it is not set
      * @throws IllegalArgumentException when world is unloaded
      * @see #isWorldLoaded()
+     * @since 1.0.0
      */
     @UndefinedNullability // Paper
     public World getWorld() {
@@ -131,6 +133,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * Gets the block at the represented location
      *
      * @return Block at the represented location
+     * @since 1.0.0
      */
     @NotNull
     public Block getBlock() {
@@ -141,6 +144,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * Sets the x-coordinate of this location
      *
      * @param x X-coordinate
+     * @since 1.0.0
      */
     public void setX(double x) {
         this.x = x;
@@ -150,6 +154,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * Gets the x-coordinate of this location
      *
      * @return x-coordinate
+     * @since 1.0.0
      */
     public double getX() {
         return x;
@@ -160,6 +165,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * this location is contained with.
      *
      * @return block X
+     * @since 1.0.0
      */
     public int getBlockX() {
         return locToBlock(x);
@@ -169,6 +175,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * Sets the y-coordinate of this location
      *
      * @param y y-coordinate
+     * @since 1.0.0
      */
     public void setY(double y) {
         this.y = y;
@@ -178,6 +185,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * Gets the y-coordinate of this location
      *
      * @return y-coordinate
+     * @since 1.0.0
      */
     public double getY() {
         return y;
@@ -188,6 +196,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * this location is contained with.
      *
      * @return block y
+     * @since 1.0.0
      */
     public int getBlockY() {
         return locToBlock(y);
@@ -197,6 +206,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * Sets the z-coordinate of this location
      *
      * @param z z-coordinate
+     * @since 1.0.0
      */
     public void setZ(double z) {
         this.z = z;
@@ -206,6 +216,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * Gets the z-coordinate of this location
      *
      * @return z-coordinate
+     * @since 1.0.0
      */
     public double getZ() {
         return z;
@@ -216,6 +227,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * this location is contained with.
      *
      * @return block z
+     * @since 1.0.0
      */
     public int getBlockZ() {
         return locToBlock(z);
@@ -234,6 +246,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * decreasing the scale of the previous axis.
      *
      * @param yaw new rotation's yaw
+     * @since 1.0.0
      */
     public void setYaw(float yaw) {
         this.yaw = yaw;
@@ -252,6 +265,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * decreasing the scale of the previous axis.
      *
      * @return the rotation's yaw
+     * @since 1.0.0
      */
     public float getYaw() {
         return yaw;
@@ -268,6 +282,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * Increasing pitch values the equivalent of looking down.
      *
      * @param pitch new incline's pitch
+     * @since 1.0.0
      */
     public void setPitch(float pitch) {
         this.pitch = pitch;
@@ -284,6 +299,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * Increasing pitch values the equivalent of looking down.
      *
      * @return the incline's pitch
+     * @since 1.0.0
      */
     public float getPitch() {
         return pitch;
@@ -295,6 +311,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      *
      * @return a vector pointing the direction of this location's {@link
      *     #getPitch() pitch} and {@link #getYaw() yaw}
+     * @since 1.0.0
      */
     @NotNull
     public Vector getDirection() {
@@ -358,6 +375,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * @return the same location
      * @throws IllegalArgumentException for differing worlds
      * @see Vector
+     * @since 1.0.0
      */
     @NotNull
     public Location add(@NotNull Location vec) {
@@ -377,6 +395,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * @param vec Vector to use
      * @return the same location
      * @see Vector
+     * @since 1.0.0
      */
     @NotNull
     public Location add(@NotNull Vector vec) {
@@ -394,6 +413,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * @param z Z coordinate
      * @return the same location
      * @see Vector
+     * @since 1.0.0
      */
     @NotNull
     public Location add(double x, double y, double z) {
@@ -410,6 +430,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * @return the same location
      * @throws IllegalArgumentException for differing worlds
      * @see Vector
+     * @since 1.0.0
      */
     @NotNull
     public Location subtract(@NotNull Location vec) {
@@ -429,6 +450,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * @param vec The vector to use
      * @return the same location
      * @see Vector
+     * @since 1.0.0
      */
     @NotNull
     public Location subtract(@NotNull Vector vec) {
@@ -447,6 +469,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * @param z Z coordinate
      * @return the same location
      * @see Vector
+     * @since 1.0.0
      */
     @NotNull
     public Location subtract(double x, double y, double z) {
@@ -466,6 +489,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      *
      * @return the magnitude
      * @see Vector
+     * @since 1.0.0
      */
     public double length() {
         return Math.sqrt(NumberConversions.square(x) + NumberConversions.square(y) + NumberConversions.square(z));
@@ -477,6 +501,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      *
      * @return the magnitude
      * @see Vector
+     * @since 1.0.0
      */
     public double lengthSquared() {
         return NumberConversions.square(x) + NumberConversions.square(y) + NumberConversions.square(z);
@@ -493,6 +518,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * @return the distance
      * @throws IllegalArgumentException for differing worlds
      * @see Vector
+     * @since 1.0.0
      */
     public double distance(@NotNull Location o) {
         return Math.sqrt(distanceSquared(o));
@@ -505,6 +531,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * @return the distance
      * @throws IllegalArgumentException for differing worlds
      * @see Vector
+     * @since 1.0.0
      */
     public double distanceSquared(@NotNull Location o) {
         if (o == null) {
@@ -525,6 +552,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      * @param m The factor
      * @return the same location
      * @see Vector
+     * @since 1.0.0
      */
     @NotNull
     public Location multiply(double m) {
@@ -539,6 +567,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      *
      * @return the same location
      * @see Vector
+     * @since 1.0.0
      */
     @NotNull
     public Location zero() {
@@ -1081,6 +1110,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      *
      * @return New Vector containing the coordinates represented by this
      *     Location
+     * @since 1.0.0
      */
     @NotNull
     public Vector toVector() {
@@ -1117,6 +1147,7 @@ public class Location implements Cloneable, ConfigurationSerializable, io.paperm
      *
      * @param loc Precise coordinate
      * @return Block coordinate
+     * @since 1.0.0
      */
     public static int locToBlock(double loc) {
         return NumberConversions.floor(loc);

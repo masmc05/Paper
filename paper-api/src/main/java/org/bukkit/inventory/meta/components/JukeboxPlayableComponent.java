@@ -19,6 +19,7 @@ public interface JukeboxPlayableComponent extends ConfigurationSerializable {
      * Gets the song assigned to this component.
      *
      * @return song, or null if the song does not exist on the server
+     * @since 1.21
      */
     @Nullable
     JukeboxSong getSong();
@@ -27,6 +28,7 @@ public interface JukeboxPlayableComponent extends ConfigurationSerializable {
      * Gets the key of the song assigned to this component.
      *
      * @return the song key
+     * @since 1.21
      */
     @NotNull
     NamespacedKey getSongKey();
@@ -35,6 +37,7 @@ public interface JukeboxPlayableComponent extends ConfigurationSerializable {
      * Sets the song assigned to this component.
      *
      * @param song the song
+     * @since 1.21
      */
     void setSong(@NotNull JukeboxSong song);
 
@@ -42,6 +45,7 @@ public interface JukeboxPlayableComponent extends ConfigurationSerializable {
      * Sets the key of the song assigned to this component.
      *
      * @param song the song key
+     * @since 1.21
      */
     void setSongKey(@NotNull NamespacedKey song);
 
@@ -49,6 +53,7 @@ public interface JukeboxPlayableComponent extends ConfigurationSerializable {
      * Gets if the song will show in the item tooltip.
      *
      * @return if the song will show in the tooltip
+     * @since 1.21
      */
     boolean isShowInTooltip();
 
@@ -56,6 +61,7 @@ public interface JukeboxPlayableComponent extends ConfigurationSerializable {
      * Sets if the song will show in the item tooltip.
      *
      * @param show true if the song will show in the tooltip
+     * @since 1.21
      */
     void setShowInTooltip(boolean show);
 }

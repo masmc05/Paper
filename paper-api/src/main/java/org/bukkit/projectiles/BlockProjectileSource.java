@@ -12,6 +12,7 @@ public interface BlockProjectileSource extends ProjectileSource {
      * Gets the block this projectile source belongs to.
      *
      * @return Block for the projectile source
+     * @since 1.7.10
      */
     @NotNull
     public Block getBlock();

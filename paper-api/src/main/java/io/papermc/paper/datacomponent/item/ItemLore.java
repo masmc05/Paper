@@ -19,11 +19,17 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface ItemLore {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static ItemLore lore(final List<? extends ComponentLike> lines) {
         return lore().lines(lines).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static ItemLore.Builder lore() {
         return ItemComponentTypesBridge.bridge().lore();
@@ -33,6 +39,7 @@ public interface ItemLore {
      * Lists the components that are added to an item's tooltip.
      *
      * @return component list
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<Component> lines();
@@ -41,12 +48,15 @@ public interface ItemLore {
      * Lists the styled components (example: italicized and purple) that are added to an item's tooltip.
      *
      * @return component list
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<Component> styledLines();
 
     /**
      * Builder for {@link ItemLore}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -58,6 +68,7 @@ public interface ItemLore {
          * @param lines components
          * @return the builder for chaining
          * @see #lines()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder lines(List<? extends ComponentLike> lines);
@@ -68,6 +79,7 @@ public interface ItemLore {
          * @param line component
          * @return the builder for chaining
          * @see #lines()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addLine(ComponentLike line);
@@ -78,6 +90,7 @@ public interface ItemLore {
          * @param lines components
          * @return the builder for chaining
          * @see #lines()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addLines(List<? extends ComponentLike> lines);

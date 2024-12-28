@@ -40,17 +40,24 @@ public class BlockFadeEvent extends BlockEvent implements Cancellable {
      *
      * @return The block state of the block that will be fading, melting or
      *     disappearing
+     * @since 1.0.0
      */
     @NotNull
     public BlockState getNewState() {
         return newState;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

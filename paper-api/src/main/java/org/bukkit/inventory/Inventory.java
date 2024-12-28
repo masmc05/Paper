@@ -32,6 +32,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * Returns the size of the inventory
      *
      * @return The size of the inventory
+     * @since 1.0.0
      */
     public int getSize();
 
@@ -67,6 +68,7 @@ public interface Inventory extends Iterable<ItemStack> {
      *
      * @param index The index of the Slot's ItemStack to return
      * @return The ItemStack in the slot
+     * @since 1.0.0
      */
     @Nullable
     public ItemStack getItem(int index);
@@ -76,6 +78,7 @@ public interface Inventory extends Iterable<ItemStack> {
      *
      * @param index The index where to put the ItemStack
      * @param item The ItemStack to set
+     * @since 1.0.0
      */
     public void setItem(int index, @Nullable ItemStack item);
 
@@ -102,6 +105,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * @param items The ItemStacks to add
      * @return A HashMap containing items that didn't fit.
      * @throws IllegalArgumentException if items or any element in it is null
+     * @since 1.0.0
      */
     @NotNull
     public HashMap<Integer, ItemStack> addItem(@NotNull ItemStack... items) throws IllegalArgumentException;
@@ -127,6 +131,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * @return A HashMap containing items that couldn't be removed.
      * @throws IllegalArgumentException if items is null
      * @see #removeItemAnySlot(ItemStack...)
+     * @since 1.0.0
      */
     @NotNull
     public HashMap<Integer, ItemStack> removeItem(@NotNull ItemStack... items) throws IllegalArgumentException;
@@ -164,6 +169,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * Returns all ItemStacks from the inventory
      *
      * @return An array of ItemStacks from the inventory. Individual items may be null.
+     * @since 1.0.0
      */
     public @Nullable ItemStack @NotNull [] getContents(); // Paper - make array elements nullable instead array
 
@@ -175,6 +181,7 @@ public interface Inventory extends Iterable<ItemStack> {
      *     be less than or equal to {@link #getSize()}.
      * @throws IllegalArgumentException If the array has more items than the
      *     inventory.
+     * @since 1.0.0
      */
     public void setContents(@Nullable ItemStack @NotNull [] items) throws IllegalArgumentException; // Paper - make array elements nullable instead array
 
@@ -209,6 +216,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * @param material The material to check for
      * @return true if an ItemStack is found with the given Material
      * @throws IllegalArgumentException if material is null
+     * @since 1.0.0
      */
     public boolean contains(@NotNull Material material) throws IllegalArgumentException;
 
@@ -222,6 +230,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * @param item The ItemStack to match against
      * @return false if item is null, true if any exactly matching ItemStacks
      *     were found
+     * @since 1.0.0
      */
     @Contract("null -> false")
     public boolean contains(@Nullable ItemStack item);
@@ -235,6 +244,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * @return true if amount is less than 1, true if enough ItemStacks were
      *     found to add to the given amount
      * @throws IllegalArgumentException if material is null
+     * @since 1.0.0
      */
     public boolean contains(@NotNull Material material, int amount) throws IllegalArgumentException;
 
@@ -250,6 +260,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * @return false if item is null, true if amount less than 1, true if
      *     amount of exactly matching ItemStacks were found
      * @see #containsAtLeast(ItemStack, int)
+     * @since 1.0.0
      */
     @Contract("null, _ -> false")
     public boolean contains(@Nullable ItemStack item, int amount);
@@ -278,6 +289,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * @param material The material to look for
      * @return A HashMap containing the slot index, ItemStack pairs
      * @throws IllegalArgumentException if material is null
+     * @since 1.0.0
      */
     @NotNull
     public HashMap<Integer, ? extends ItemStack> all(@NotNull Material material) throws IllegalArgumentException;
@@ -293,6 +305,7 @@ public interface Inventory extends Iterable<ItemStack> {
      *
      * @param item The ItemStack to match against
      * @return A map from slot indexes to item at index
+     * @since 1.0.0
      */
     @NotNull
     public HashMap<Integer, ? extends ItemStack> all(@Nullable ItemStack item);
@@ -304,6 +317,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * @param material The material to look for
      * @return The slot index of the given Material or -1 if not found
      * @throws IllegalArgumentException if material is null
+     * @since 1.0.0
      */
     public int first(@NotNull Material material) throws IllegalArgumentException;
 
@@ -314,6 +328,7 @@ public interface Inventory extends Iterable<ItemStack> {
      *
      * @param item The ItemStack to match against
      * @return The slot index of the given ItemStack or -1 if not found
+     * @since 1.0.0
      */
     public int first(@NotNull ItemStack item);
 
@@ -321,6 +336,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * Returns the first empty Slot.
      *
      * @return The first empty Slot found, or -1 if no empty slots.
+     * @since 1.0.0
      */
     public int firstEmpty();
 
@@ -338,6 +354,7 @@ public interface Inventory extends Iterable<ItemStack> {
      *
      * @param material The material to remove
      * @throws IllegalArgumentException if material is null
+     * @since 1.0.0
      */
     public void remove(@NotNull Material material) throws IllegalArgumentException;
 
@@ -348,6 +365,7 @@ public interface Inventory extends Iterable<ItemStack> {
      * stack match
      *
      * @param item The ItemStack to match against
+     * @since 1.0.0
      */
     public void remove(@NotNull ItemStack item);
 
@@ -355,11 +373,14 @@ public interface Inventory extends Iterable<ItemStack> {
      * Clears out a particular slot in the index.
      *
      * @param index The index to empty.
+     * @since 1.0.0
      */
     public void clear(int index);
 
     /**
      * Clears out the whole Inventory.
+     *
+     * @since 1.0.0
      */
     public void clear();
 

@@ -93,6 +93,7 @@ public class MavenLibraryResolver implements ClassPathLibrary {
      *
      * @param dependency the definition of the dependency the maven library resolver should resolve when running
      * @see MavenLibraryResolver#addRepository(RemoteRepository)
+     * @since 1.19.3
      */
     public void addDependency(final Dependency dependency) {
         this.dependencies.add(dependency);
@@ -105,6 +106,7 @@ public class MavenLibraryResolver implements ClassPathLibrary {
      *
      * @param remoteRepository the configuration that defines the maven repository this library resolver should fetch
      * dependencies from
+     * @since 1.19.3
      */
     public void addRepository(final RemoteRepository remoteRepository) {
         this.repositories.add(remoteRepository);
@@ -115,6 +117,7 @@ public class MavenLibraryResolver implements ClassPathLibrary {
      *
      * @param store the library store the then resolved and downloaded dependencies are registered into
      * @throws LibraryLoadingException if resolving a dependency failed
+     * @since 1.19.3
      */
     @Override
     public void register(final LibraryStore store) throws LibraryLoadingException {

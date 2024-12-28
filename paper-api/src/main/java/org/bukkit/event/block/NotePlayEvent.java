@@ -26,11 +26,17 @@ public class NotePlayEvent extends BlockEvent implements Cancellable {
         this.note = note;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
@@ -40,6 +46,7 @@ public class NotePlayEvent extends BlockEvent implements Cancellable {
      * Gets the {@link Instrument} to be used.
      *
      * @return the Instrument
+     * @since 1.3.1
      */
     @NotNull
     public Instrument getInstrument() {
@@ -50,6 +57,7 @@ public class NotePlayEvent extends BlockEvent implements Cancellable {
      * Gets the {@link Note} to be played.
      *
      * @return the Note
+     * @since 1.3.1
      */
     @NotNull
     public Note getNote() {
@@ -64,6 +72,7 @@ public class NotePlayEvent extends BlockEvent implements Cancellable {
      * player head state takes the priority.
      *
      * @param instrument the Instrument. Has no effect if null.
+     * @since 1.3.1
      */
     public void setInstrument(@NotNull Instrument instrument) {
         if (instrument != null) {
@@ -75,6 +84,7 @@ public class NotePlayEvent extends BlockEvent implements Cancellable {
      * Overrides the {@link Note} to be played.
      *
      * @param note the Note. Has no effect if null.
+     * @since 1.3.1
      */
     public void setNote(@NotNull Note note) {
         if (note != null) {
@@ -82,12 +92,18 @@ public class NotePlayEvent extends BlockEvent implements Cancellable {
         }
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

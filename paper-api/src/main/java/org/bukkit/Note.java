@@ -70,6 +70,7 @@ public class Note {
          * Returns if this tone could be sharped.
          *
          * @return if this tone could be sharped.
+         * @since 1.0.0
          */
         public boolean isSharpable() {
             return sharpable;
@@ -239,6 +240,7 @@ public class Note {
      * Returns the octave of this note.
      *
      * @return the octave of this note.
+     * @since 1.0.0
      */
     public int getOctave() {
         return note / Tone.TONES_COUNT;
@@ -252,6 +254,7 @@ public class Note {
      * Returns the tone of this note.
      *
      * @return the tone of this note.
+     * @since 1.0.0
      */
     @NotNull
     public Tone getTone() {
@@ -262,6 +265,7 @@ public class Note {
      * Returns if this note is sharped.
      *
      * @return if this note is sharped.
+     * @since 1.0.0
      */
     public boolean isSharped() {
         byte note = getToneByte();

@@ -28,6 +28,7 @@ public interface PluginMessageRecipient {
      * @throws MessageTooLargeException Thrown if the message is too big.
      * @throws ChannelNotRegisteredException Thrown if the channel is not
      *     registered for this plugin.
+     * @since 1.1.0
      */
     public void sendPluginMessage(@NotNull Plugin source, @NotNull String channel, @NotNull byte[] message);
 
@@ -37,6 +38,7 @@ public interface PluginMessageRecipient {
      * special status.
      *
      * @return Set containing all the channels that this client may accept.
+     * @since 1.1.0
      */
     @NotNull
     public Set<String> getListeningPluginChannels();

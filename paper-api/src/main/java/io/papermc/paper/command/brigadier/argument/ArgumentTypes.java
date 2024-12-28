@@ -51,6 +51,7 @@ public final class ArgumentTypes {
      * single entity.
      *
      * @return argument that takes one entity
+     * @since 1.20.6
      */
     public static ArgumentType<EntitySelectorArgumentResolver> entity() {
         return provider().entity();
@@ -61,6 +62,7 @@ public final class ArgumentTypes {
      * entities.
      *
      * @return argument that takes multiple entities
+     * @since 1.20.6
      */
     public static ArgumentType<EntitySelectorArgumentResolver> entities() {
         return provider().entities();
@@ -71,6 +73,7 @@ public final class ArgumentTypes {
      * singular player entity.
      *
      * @return argument that takes one player
+     * @since 1.20.6
      */
     public static ArgumentType<PlayerSelectorArgumentResolver> player() {
         return provider().player();
@@ -81,6 +84,7 @@ public final class ArgumentTypes {
      * player entities.
      *
      * @return argument that takes multiple players
+     * @since 1.20.6
      */
     public static ArgumentType<PlayerSelectorArgumentResolver> players() {
         return provider().players();
@@ -91,6 +95,7 @@ public final class ArgumentTypes {
      * of player profiles.
      *
      * @return player profile argument
+     * @since 1.20.6
      */
     public static ArgumentType<PlayerProfileListResolver> playerProfiles() {
         return provider().playerProfiles();
@@ -100,6 +105,7 @@ public final class ArgumentTypes {
      * A block position argument.
      *
      * @return block position argument
+     * @since 1.20.6
      */
     public static ArgumentType<BlockPositionResolver> blockPosition() {
         return provider().blockPosition();
@@ -132,6 +138,7 @@ public final class ArgumentTypes {
      * the specific block variant and then the block entity NBT if applicable.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<BlockState> blockState() {
         return provider().blockState();
@@ -142,6 +149,7 @@ public final class ArgumentTypes {
      * specifying item material and item NBT information.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<ItemStack> itemStack() {
         return provider().itemStack();
@@ -151,6 +159,7 @@ public final class ArgumentTypes {
      * An item predicate argument.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<ItemStackPredicate> itemPredicate() {
         return provider().itemStackPredicate();
@@ -160,6 +169,7 @@ public final class ArgumentTypes {
      * An argument for parsing {@link NamedTextColor}s.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<NamedTextColor> namedColor() {
         return provider().namedColor();
@@ -169,6 +179,7 @@ public final class ArgumentTypes {
      * A component argument.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<Component> component() {
         return provider().component();
@@ -178,6 +189,7 @@ public final class ArgumentTypes {
      * A style argument.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<Style> style() {
         return provider().style();
@@ -189,6 +201,7 @@ public final class ArgumentTypes {
      * signed message.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<SignedMessageResolver> signedMessage() {
         return provider().signedMessage();
@@ -198,6 +211,7 @@ public final class ArgumentTypes {
      * A scoreboard display slot argument.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<DisplaySlot> scoreboardDisplaySlot() {
         return provider().scoreboardDisplaySlot();
@@ -207,6 +221,7 @@ public final class ArgumentTypes {
      * A namespaced key argument.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<NamespacedKey> namespacedKey() {
         return provider().namespacedKey();
@@ -216,6 +231,7 @@ public final class ArgumentTypes {
      * A key argument.
      *
      * @return argument
+     * @since 1.20.6
      */
     // include both key types as we are slowly moving to use adventure's key
     public static ArgumentType<Key> key() {
@@ -226,6 +242,7 @@ public final class ArgumentTypes {
      * An inclusive range of integers that may be unbounded on either end.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<IntegerRangeProvider> integerRange() {
         return provider().integerRange();
@@ -235,6 +252,7 @@ public final class ArgumentTypes {
      * An inclusive range of doubles that may be unbounded on either end.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<DoubleRangeProvider> doubleRange() {
         return provider().doubleRange();
@@ -244,6 +262,7 @@ public final class ArgumentTypes {
      * A world argument.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<World> world() {
         return provider().world();
@@ -253,6 +272,7 @@ public final class ArgumentTypes {
      * A game mode argument.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<GameMode> gameMode() {
         return provider().gameMode();
@@ -262,6 +282,7 @@ public final class ArgumentTypes {
      * An argument for getting a heightmap type.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<HeightMap> heightMap() {
         return provider().heightMap();
@@ -271,6 +292,7 @@ public final class ArgumentTypes {
      * A uuid argument.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<UUID> uuid() {
         return provider().uuid();
@@ -280,6 +302,7 @@ public final class ArgumentTypes {
      * An objective criteria argument
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<Criteria> objectiveCriteria() {
         return provider().objectiveCriteria();
@@ -289,6 +312,7 @@ public final class ArgumentTypes {
      * An entity anchor argument.
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<LookAnchor> entityAnchor() {
         return provider().entityAnchor();
@@ -305,6 +329,7 @@ public final class ArgumentTypes {
      * </ul>
      *
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<Integer> time() {
         return time(0);
@@ -322,6 +347,7 @@ public final class ArgumentTypes {
      *
      * @param mintime The minimum time required for this argument.
      * @return argument
+     * @since 1.20.6
      */
     public static ArgumentType<Integer> time(final int mintime) {
         return provider().time(mintime);
@@ -332,6 +358,7 @@ public final class ArgumentTypes {
      *
      * @return argument
      * @see Mirror
+     * @since 1.20.6
      */
     public static ArgumentType<Mirror> templateMirror() {
         return provider().templateMirror();
@@ -342,6 +369,7 @@ public final class ArgumentTypes {
      *
      * @return argument
      * @see StructureRotation
+     * @since 1.20.6
      */
     public static ArgumentType<StructureRotation> templateRotation() {
         return provider().templateRotation();
@@ -353,6 +381,7 @@ public final class ArgumentTypes {
      * @param registryKey the registry's key
      * @return argument
      * @param <T> the registry value type
+     * @since 1.20.6
      */
     public static <T> ArgumentType<T> resource(final RegistryKey<T> registryKey) {
         return provider().resource(registryKey);
@@ -365,6 +394,7 @@ public final class ArgumentTypes {
      * @return argument
      * @param <T> the registry value type
      * @see RegistryArgumentExtractor#getTypedKey(com.mojang.brigadier.context.CommandContext, RegistryKey, String)
+     * @since 1.20.6
      */
     public static <T> ArgumentType<TypedKey<T>> resourceKey(final RegistryKey<T> registryKey) {
         return provider().resourceKey(registryKey);

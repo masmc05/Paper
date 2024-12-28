@@ -10,6 +10,9 @@ import org.jetbrains.annotations.Nullable;
  */
 public interface LecternInventory extends Inventory {
 
+    /**
+     * @since 1.14
+     */
     @Nullable
     @Override
     public Lectern getHolder();

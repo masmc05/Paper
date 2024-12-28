@@ -30,6 +30,7 @@ public interface BlockState extends Metadatable {
      *
      * @return the block represented by this block state
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.0.0
      */
     @NotNull
     Block getBlock();
@@ -39,6 +40,7 @@ public interface BlockState extends Metadatable {
      *
      * @return block specific metadata
      * @deprecated use {@link #getBlockData()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.13")
@@ -78,6 +80,7 @@ public interface BlockState extends Metadatable {
      * Gets the type of this block state.
      *
      * @return block type
+     * @since 1.0.0
      */
     @NotNull
     Material getType();
@@ -87,6 +90,7 @@ public interface BlockState extends Metadatable {
      *
      * @return the light level between 0-15
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.0.0
      */
     byte getLightLevel();
 
@@ -95,6 +99,7 @@ public interface BlockState extends Metadatable {
      *
      * @return the world containing the block represented by this block state
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.0.0
      */
     @NotNull
     World getWorld();
@@ -103,6 +108,7 @@ public interface BlockState extends Metadatable {
      * Gets the x-coordinate of this block state.
      *
      * @return x-coordinate
+     * @since 1.0.0
      */
     int getX();
 
@@ -110,6 +116,7 @@ public interface BlockState extends Metadatable {
      * Gets the y-coordinate of this block state.
      *
      * @return y-coordinate
+     * @since 1.0.0
      */
     int getY();
 
@@ -117,6 +124,7 @@ public interface BlockState extends Metadatable {
      * Gets the z-coordinate of this block state.
      *
      * @return z-coordinate
+     * @since 1.0.0
      */
     int getZ();
 
@@ -152,6 +160,7 @@ public interface BlockState extends Metadatable {
      *
      * @return the containing Chunk
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.0.0
      */
     @NotNull
     Chunk getChunk();
@@ -161,6 +170,7 @@ public interface BlockState extends Metadatable {
      *
      * @param data New block specific metadata
      * @deprecated use {@link #setBlockData(BlockData)}
+     * @since 1.0.0
      */
     @Deprecated(forRemoval = true, since = "1.13")
     void setData(@NotNull MaterialData data);
@@ -177,6 +187,7 @@ public interface BlockState extends Metadatable {
      * Sets the type of this block state.
      *
      * @param type Material to change this block state to
+     * @since 1.0.0
      */
     void setType(@NotNull Material type);
 
@@ -191,6 +202,7 @@ public interface BlockState extends Metadatable {
      *
      * @return true if the update was successful, otherwise false
      * @see #update(boolean)
+     * @since 1.0.0
      */
     boolean update();
 
@@ -203,6 +215,7 @@ public interface BlockState extends Metadatable {
      *
      * @param force true to forcefully set the state
      * @return true if the update was successful, otherwise false
+     * @since 1.0.0
      */
     boolean update(boolean force);
 
@@ -233,6 +246,7 @@ public interface BlockState extends Metadatable {
     /**
      * @return The data as a raw byte.
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public byte getRawData();

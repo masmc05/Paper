@@ -28,6 +28,7 @@ public class ServerTickEndEvent extends Event {
 
     /**
      * @return What tick this was since start (first tick = 1)
+     * @since 1.13.2
      */
     public int getTickNumber() {
         return this.tickNumber;
@@ -35,6 +36,7 @@ public class ServerTickEndEvent extends Event {
 
     /**
      * @return Time in milliseconds of how long this tick took
+     * @since 1.13.2
      */
     public double getTickDuration() {
         return this.tickDuration;
@@ -48,16 +50,23 @@ public class ServerTickEndEvent extends Event {
      * Method will continuously return the updated time remaining value. (return value is not static)
      *
      * @return Amount of nanoseconds remaining before the next tick should start
+     * @since 1.13.2
      */
     public long getTimeRemaining() {
         return this.timeEnd - System.nanoTime();
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

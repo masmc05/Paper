@@ -15,6 +15,7 @@ public interface StructureBlock extends BlockData {
      * Gets the value of the 'mode' property.
      *
      * @return the 'mode' value
+     * @since 1.13
      */
     @NotNull
     Mode getMode();
@@ -28,6 +29,8 @@ public interface StructureBlock extends BlockData {
 
     /**
      * Operating mode of a structure block.
+     *
+     * @since 1.13
      */
     public enum Mode {
         /**

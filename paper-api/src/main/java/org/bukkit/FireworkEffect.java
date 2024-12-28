@@ -70,6 +70,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
      * Construct a firework effect.
      *
      * @return A utility object for building a firework effect
+     * @since 1.4.6
      */
     @NotNull
     public static Builder builder() {
@@ -80,6 +81,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
      * This is a builder for FireworkEffects.
      *
      * @see FireworkEffect#builder()
+     * @since 1.4.6
      */
     public static final class Builder {
         boolean flicker = false;
@@ -108,6 +110,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
          * Add a flicker to the firework effect.
          *
          * @return This object, for chaining
+         * @since 1.4.6
          */
         @NotNull
         public Builder withFlicker() {
@@ -120,6 +123,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
          *
          * @param flicker true if it should flicker, false if not
          * @return This object, for chaining
+         * @since 1.4.6
          */
         @NotNull
         public Builder flicker(boolean flicker) {
@@ -131,6 +135,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
          * Add a trail to the firework effect.
          *
          * @return This object, for chaining
+         * @since 1.4.6
          */
         @NotNull
         public Builder withTrail() {
@@ -143,6 +148,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
          *
          * @param trail true if it should have a trail, false for no trail
          * @return This object, for chaining
+         * @since 1.4.6
          */
         @NotNull
         public Builder trail(boolean trail) {
@@ -156,6 +162,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
          * @param color The color to add
          * @return This object, for chaining
          * @throws IllegalArgumentException If color is null
+         * @since 1.4.6
          */
         @NotNull
         public Builder withColor(@NotNull Color color) throws IllegalArgumentException {
@@ -174,6 +181,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
          * @throws IllegalArgumentException If colors is null
          * @throws IllegalArgumentException If any color is null (may be
          *     thrown after changes have occurred)
+         * @since 1.4.6
          */
         @NotNull
         public Builder withColor(@NotNull Color... colors) throws IllegalArgumentException {
@@ -200,6 +208,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
          * @throws IllegalArgumentException If colors is null
          * @throws IllegalArgumentException If any color is null (may be
          *     thrown after changes have occurred)
+         * @since 1.4.6
          */
         @NotNull
         public Builder withColor(@NotNull Iterable<?> colors) throws IllegalArgumentException {
@@ -224,6 +233,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
          * @throws IllegalArgumentException If colors is null
          * @throws IllegalArgumentException If any color is null (may be
          *     thrown after changes have occurred)
+         * @since 1.4.6
          */
         @NotNull
         public Builder withFade(@NotNull Color color) throws IllegalArgumentException {
@@ -246,6 +256,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
          * @throws IllegalArgumentException If colors is null
          * @throws IllegalArgumentException If any color is null (may be
          *     thrown after changes have occurred)
+         * @since 1.4.6
          */
         @NotNull
         public Builder withFade(@NotNull Color... colors) throws IllegalArgumentException {
@@ -276,6 +287,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
          * @throws IllegalArgumentException If colors is null
          * @throws IllegalArgumentException If any color is null (may be
          *     thrown after changes have occurred)
+         * @since 1.4.6
          */
         @NotNull
         public Builder withFade(@NotNull Iterable<?> colors) throws IllegalArgumentException {
@@ -303,6 +315,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
          * To successfully build, you must have specified at least one color.
          *
          * @return The representative firework effect
+         * @since 1.4.6
          */
         @NotNull
         public FireworkEffect build() {
@@ -342,6 +355,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
      * Get whether the firework effect flickers.
      *
      * @return true if it flickers, false if not
+     * @since 1.4.6
      */
     public boolean hasFlicker() {
         return flicker;
@@ -351,6 +365,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
      * Get whether the firework effect has a trail.
      *
      * @return true if it has a trail, false if not
+     * @since 1.4.6
      */
     public boolean hasTrail() {
         return trail;
@@ -360,6 +375,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
      * Get the primary colors of the firework effect.
      *
      * @return An immutable list of the primary colors
+     * @since 1.4.6
      */
     @NotNull
     public List<Color> getColors() {
@@ -370,6 +386,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
      * Get the fade colors of the firework effect.
      *
      * @return An immutable list of the fade colors
+     * @since 1.4.6
      */
     @NotNull
     public List<Color> getFadeColors() {
@@ -380,6 +397,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
      * Get the type of the firework effect.
      *
      * @return The effect type
+     * @since 1.4.6
      */
     @NotNull
     public Type getType() {
@@ -390,6 +408,7 @@ public final class FireworkEffect implements ConfigurationSerializable {
      * @param map the map to deserialize
      * @return the resulting serializable
      * @see ConfigurationSerializable
+     * @since 1.4.6
      */
     @NotNull
     public static ConfigurationSerializable deserialize(@NotNull Map<String, Object> map) {
@@ -404,6 +423,9 @@ public final class FireworkEffect implements ConfigurationSerializable {
             .build();
     }
 
+    /**
+     * @since 1.4.6
+     */
     @NotNull
     @Override
     public Map<String, Object> serialize() {

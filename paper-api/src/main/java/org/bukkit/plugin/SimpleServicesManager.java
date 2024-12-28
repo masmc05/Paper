@@ -65,6 +65,7 @@ public class SimpleServicesManager implements ServicesManager {
      * Unregister all the providers registered by a particular plugin.
      *
      * @param plugin The plugin
+     * @since 1.0.0
      */
     @Override
     public void unregisterAll(@NotNull Plugin plugin) {
@@ -108,6 +109,7 @@ public class SimpleServicesManager implements ServicesManager {
      *
      * @param service The service interface
      * @param provider The service provider implementation
+     * @since 1.0.0
      */
     @Override
     public void unregister(@NotNull Class<?> service, @NotNull Object provider) {
@@ -156,6 +158,7 @@ public class SimpleServicesManager implements ServicesManager {
      * Unregister a particular provider.
      *
      * @param provider The service provider implementation
+     * @since 1.0.0
      */
     @Override
     public void unregister(@NotNull Object provider) {
@@ -201,6 +204,7 @@ public class SimpleServicesManager implements ServicesManager {
      * @param <T> The service interface
      * @param service The service interface
      * @return provider or null
+     * @since 1.0.0
      */
     @Override
     @Nullable
@@ -224,6 +228,7 @@ public class SimpleServicesManager implements ServicesManager {
      * @param <T> The service interface
      * @param service The service interface
      * @return provider registration or null
+     * @since 1.0.0
      */
     @Override
     @Nullable
@@ -246,6 +251,7 @@ public class SimpleServicesManager implements ServicesManager {
      *
      * @param plugin The plugin
      * @return provider registrations
+     * @since 1.0.0
      */
     @Override
     @NotNull
@@ -270,6 +276,7 @@ public class SimpleServicesManager implements ServicesManager {
      * @param <T> The service interface
      * @param service The service interface
      * @return a copy of the list of registrations
+     * @since 1.0.0
      */
     @Override
     @NotNull
@@ -298,6 +305,7 @@ public class SimpleServicesManager implements ServicesManager {
      * providers for it.
      *
      * @return a copy of the set of known services
+     * @since 1.0.0
      */
     @Override
     @NotNull
@@ -313,6 +321,7 @@ public class SimpleServicesManager implements ServicesManager {
      * @param <T> service
      * @param service service to check
      * @return true if and only if there are registered providers
+     * @since 1.0.0
      */
     @Override
     public <T> boolean isProvidedFor(@NotNull Class<T> service) {

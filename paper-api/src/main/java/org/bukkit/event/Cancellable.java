@@ -12,6 +12,7 @@ public interface Cancellable {
      * be executed in the server, but will still pass to other plugins
      *
      * @return true if this event is cancelled
+     * @since 1.0.0
      */
     public boolean isCancelled();
 
@@ -20,6 +21,7 @@ public interface Cancellable {
      * be executed in the server, but will still pass to other plugins.
      *
      * @param cancel true if you wish to cancel this event
+     * @since 1.0.0
      */
     public void setCancelled(boolean cancel);
 }

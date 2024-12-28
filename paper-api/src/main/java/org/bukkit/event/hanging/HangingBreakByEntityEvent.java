@@ -26,6 +26,7 @@ public class HangingBreakByEntityEvent extends HangingBreakEvent {
      * Gets the entity that removed the hanging entity.
      *
      * @return the entity that removed the hanging entity
+     * @since 1.4.5
      */
     @NotNull // Paper
     public Entity getRemover() {

@@ -18,6 +18,7 @@ public interface ArmorStand extends LivingEntity {
      * @return the held item
      * @see #getEquipment()
      * @deprecated prefer {@link ArmorStand#getItem(EquipmentSlot)} // Paper
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.15.2")
@@ -30,6 +31,7 @@ public interface ArmorStand extends LivingEntity {
      * @see #getEquipment()
      * @deprecated prefer
      * {@link ArmorStand#setItem(EquipmentSlot, ItemStack)} // Paper
+     * @since 1.8
      */
     @Deprecated(since = "1.15.2")
     void setItemInHand(@Nullable ItemStack item);
@@ -40,6 +42,7 @@ public interface ArmorStand extends LivingEntity {
      * @return the worn item
      * @see #getEquipment()
      * @deprecated prefer {@link EntityEquipment#getBoots()}
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.15.2")
@@ -52,6 +55,7 @@ public interface ArmorStand extends LivingEntity {
      * @see #getEquipment()
      * @deprecated prefer
      * {@link EntityEquipment#setBoots(org.bukkit.inventory.ItemStack)}
+     * @since 1.8
      */
     @Deprecated(since = "1.15.2")
     void setBoots(@Nullable ItemStack item);
@@ -62,6 +66,7 @@ public interface ArmorStand extends LivingEntity {
      * @return the worn item
      * @see #getEquipment()
      * @deprecated prefer {@link EntityEquipment#getLeggings()}
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.15.2")
@@ -74,6 +79,7 @@ public interface ArmorStand extends LivingEntity {
      * @see #getEquipment()
      * @deprecated prefer
      * {@link EntityEquipment#setLeggings(org.bukkit.inventory.ItemStack)}
+     * @since 1.8
      */
     @Deprecated(since = "1.15.2")
     void setLeggings(@Nullable ItemStack item);
@@ -84,6 +90,7 @@ public interface ArmorStand extends LivingEntity {
      * @return the worn item
      * @see #getEquipment()
      * @deprecated prefer {@link EntityEquipment#getChestplate()}
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.15.2")
@@ -96,6 +103,7 @@ public interface ArmorStand extends LivingEntity {
      * @see #getEquipment()
      * @deprecated prefer
      * {@link EntityEquipment#setChestplate(org.bukkit.inventory.ItemStack)}
+     * @since 1.8
      */
     @Deprecated(since = "1.15.2")
     void setChestplate(@Nullable ItemStack item);
@@ -106,6 +114,7 @@ public interface ArmorStand extends LivingEntity {
      * @return the worn item
      * @see #getEquipment()
      * @deprecated prefer {@link EntityEquipment#getHelmet()}
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.15.2")
@@ -118,6 +127,7 @@ public interface ArmorStand extends LivingEntity {
      * @see #getEquipment()
      * @deprecated prefer
      * {@link EntityEquipment#setHelmet(org.bukkit.inventory.ItemStack)}
+     * @since 1.8
      */
     @Deprecated(since = "1.15.2")
     void setHelmet(@Nullable ItemStack item);
@@ -127,6 +137,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @return the current pose
+     * @since 1.8
      */
     @NotNull
     EulerAngle getBodyPose();
@@ -136,6 +147,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @param pose the current pose
+     * @since 1.8
      */
     void setBodyPose(@NotNull EulerAngle pose);
 
@@ -144,6 +156,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @return the current pose
+     * @since 1.8
      */
     @NotNull
     EulerAngle getLeftArmPose();
@@ -153,6 +166,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @param pose the current pose
+     * @since 1.8
      */
     void setLeftArmPose(@NotNull EulerAngle pose);
 
@@ -161,6 +175,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @return the current pose
+     * @since 1.8
      */
     @NotNull
     EulerAngle getRightArmPose();
@@ -170,6 +185,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @param pose the current pose
+     * @since 1.8
      */
     void setRightArmPose(@NotNull EulerAngle pose);
 
@@ -178,6 +194,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @return the current pose
+     * @since 1.8
      */
     @NotNull
     EulerAngle getLeftLegPose();
@@ -187,6 +204,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @param pose the current pose
+     * @since 1.8
      */
     void setLeftLegPose(@NotNull EulerAngle pose);
 
@@ -195,6 +213,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @return the current pose
+     * @since 1.8
      */
     @NotNull
     EulerAngle getRightLegPose();
@@ -204,6 +223,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @param pose the current pose
+     * @since 1.8
      */
     void setRightLegPose(@NotNull EulerAngle pose);
 
@@ -212,6 +232,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @return the current pose
+     * @since 1.8
      */
     @NotNull
     EulerAngle getHeadPose();
@@ -221,6 +242,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @param pose the current pose
+     * @since 1.8
      */
     void setHeadPose(@NotNull EulerAngle pose);
 
@@ -228,6 +250,7 @@ public interface ArmorStand extends LivingEntity {
      * Returns whether the armor stand has a base plate.
      *
      * @return whether it has a base plate
+     * @since 1.8
      */
     boolean hasBasePlate();
 
@@ -235,6 +258,7 @@ public interface ArmorStand extends LivingEntity {
      * Sets whether the armor stand has a base plate.
      *
      * @param basePlate whether is has a base plate
+     * @since 1.8
      */
     void setBasePlate(boolean basePlate);
 
@@ -242,6 +266,7 @@ public interface ArmorStand extends LivingEntity {
      * Returns whether the armor stand should be visible or not.
      *
      * @return whether the stand is visible or not
+     * @since 1.8
      */
     boolean isVisible();
 
@@ -249,6 +274,7 @@ public interface ArmorStand extends LivingEntity {
      * Sets whether the armor stand should be visible or not.
      *
      * @param visible whether the stand is visible or not
+     * @since 1.8
      */
     void setVisible(boolean visible);
 
@@ -256,6 +282,7 @@ public interface ArmorStand extends LivingEntity {
      * Returns whether this armor stand has arms.
      *
      * @return whether this has arms or not
+     * @since 1.8
      */
     boolean hasArms();
 
@@ -263,6 +290,7 @@ public interface ArmorStand extends LivingEntity {
      * Sets whether this armor stand has arms.
      *
      * @param arms whether this has arms or not
+     * @since 1.8
      */
     void setArms(boolean arms);
 
@@ -270,6 +298,7 @@ public interface ArmorStand extends LivingEntity {
      * Returns whether this armor stand is scaled down.
      *
      * @return whether this is scaled down
+     * @since 1.8
      */
     boolean isSmall();
 
@@ -277,6 +306,7 @@ public interface ArmorStand extends LivingEntity {
      * Sets whether this armor stand is scaled down.
      *
      * @param small whether this is scaled down
+     * @since 1.8
      */
     void setSmall(boolean small);
 

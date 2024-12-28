@@ -194,10 +194,16 @@ public enum InventoryType {
         this.defaultTitleComponent = net.kyori.adventure.text.Component.text(defaultTitle); // Paper - Adventure
     }
 
+    /**
+     * @since 1.1.0
+     */
     public int getDefaultSize() {
         return size;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Deprecated // Paper
     public String getDefaultTitle() {
@@ -238,6 +244,9 @@ public enum InventoryType {
         return isCreatable;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public enum SlotType {
         /**
          * A result slot in a furnace or crafting inventory.

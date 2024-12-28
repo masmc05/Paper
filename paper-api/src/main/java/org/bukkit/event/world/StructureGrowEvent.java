@@ -38,6 +38,7 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
      * Gets the location of the structure.
      *
      * @return Location of the structure
+     * @since 1.1.0
      */
     @NotNull
     public Location getLocation() {
@@ -49,6 +50,7 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
      * mushroom)
      *
      * @return Structure species
+     * @since 1.1.0
      */
     @NotNull
     public TreeType getSpecies() {
@@ -59,6 +61,7 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
      * Checks if structure was grown using bonemeal.
      *
      * @return True if the structure was grown using bonemeal.
+     * @since 1.1.0
      */
     public boolean isFromBonemeal() {
         return bonemeal;
@@ -69,6 +72,7 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
      *
      * @return Player that created the structure, null if was not created
      *     manually
+     * @since 1.1.0
      */
     @Nullable
     public Player getPlayer() {
@@ -79,28 +83,41 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
      * Gets a list of all blocks associated with the structure.
      *
      * @return list of all blocks associated with the structure.
+     * @since 1.1.0
      */
     @NotNull
     public List<BlockState> getBlocks() {
         return blocks;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

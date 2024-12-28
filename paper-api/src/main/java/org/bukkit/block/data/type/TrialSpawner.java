@@ -16,6 +16,7 @@ public interface TrialSpawner extends BlockData {
      * Gets the value of the 'trial_spawner_state' property.
      *
      * @return the 'trial_spawner_state' value
+     * @since 1.20.4
      */
     @NotNull
     State getTrialSpawnerState();
@@ -43,6 +44,9 @@ public interface TrialSpawner extends BlockData {
      */
     void setOminous(boolean ominous);
 
+    /**
+     * @since 1.20.4
+     */
     public enum State {
 
         INACTIVE,

@@ -16,6 +16,7 @@ public interface StyledFormat extends NumberFormat, StyleBuilderApplicable {
      * The style that is being applied to the number in the score
      *
      * @return the style to apply
+     * @since 1.20.4
      */
     Style style();
 

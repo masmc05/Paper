@@ -33,18 +33,25 @@ public class BellResonateEvent extends BlockEvent {
      * client and cannot be controlled by the server.
      *
      * @return a list of resonated entities
+     * @since 1.19.4
      */
     @NotNull
     public List<LivingEntity> getResonatedEntities() {
         return resonatedEntities;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

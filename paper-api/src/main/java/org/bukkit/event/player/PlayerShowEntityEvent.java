@@ -31,18 +31,25 @@ public class PlayerShowEntityEvent extends PlayerEvent {
      * Gets the entity which has been shown to the player.
      *
      * @return the shown entity
+     * @since 1.18.1
      */
     @NotNull
     public Entity getEntity() {
         return entity;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -32,17 +32,26 @@ public class PlayerInteractAtEntityEvent extends PlayerInteractEntityEvent {
         this.position = position;
     }
 
+    /**
+     * @since 1.8
+     */
     @NotNull
     public Vector getClickedPosition() {
         return position.clone();
     }
 
+    /**
+     * @since 1.8
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.8
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

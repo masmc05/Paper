@@ -24,9 +24,15 @@ public interface Filtered<T> {
         return new Instance<>(raw, filtered);
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(pure = true)
     T raw();
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(pure = true)
     @Nullable
     T filtered();

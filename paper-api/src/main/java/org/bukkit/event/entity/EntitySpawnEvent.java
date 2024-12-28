@@ -22,11 +22,17 @@ public class EntitySpawnEvent extends EntityEvent implements Cancellable {
         super(spawnee);
     }
 
+    /**
+     * @since 1.6.1
+     */
     @Override
     public boolean isCancelled() {
         return canceled;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         canceled = cancel;
@@ -36,18 +42,25 @@ public class EntitySpawnEvent extends EntityEvent implements Cancellable {
      * Gets the location at which the entity is spawning.
      *
      * @return The location at which the entity is spawning
+     * @since 1.6.1
      */
     @NotNull
     public Location getLocation() {
         return getEntity().getLocation();
     }
 
+    /**
+     * @since 1.6.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

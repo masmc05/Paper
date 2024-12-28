@@ -25,6 +25,7 @@ public interface StonecutterView extends InventoryView {
      * Gets the current index of the selected recipe.
      *
      * @return The index of the selected recipe in the stonecutter or -1 if null
+     * @since 1.21
      */
     int getSelectedRecipeIndex();
 
@@ -33,6 +34,7 @@ public interface StonecutterView extends InventoryView {
      *
      * @return A copy of the {@link StonecuttingRecipe}'s currently available
      * for the player
+     * @since 1.21
      */
     @NotNull
     List<StonecuttingRecipe> getRecipes();
@@ -41,6 +43,7 @@ public interface StonecutterView extends InventoryView {
      * Gets the amount of recipes currently available.
      *
      * @return The amount of recipes currently available for the player
+     * @since 1.21
      */
     int getRecipeAmount();
 }

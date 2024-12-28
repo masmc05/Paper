@@ -14,6 +14,7 @@ public interface SizedFireball extends Fireball {
      * Gets the display {@link ItemStack}.
      *
      * @return display ItemStack
+     * @since 1.15.2
      */
     @NotNull
     ItemStack getDisplayItem();
@@ -22,6 +23,7 @@ public interface SizedFireball extends Fireball {
      * Sets the display {@link ItemStack} for the fireball.
      *
      * @param item the ItemStack to display
+     * @since 1.15.2
      */
     void setDisplayItem(@NotNull ItemStack item);
 }

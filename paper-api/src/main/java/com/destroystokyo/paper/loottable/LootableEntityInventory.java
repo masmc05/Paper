@@ -14,6 +14,7 @@ public interface LootableEntityInventory extends LootableInventory {
     /**
      * Gets the entity that is lootable
      * @return The Entity
+     * @since 1.9.4
      */
     Entity getEntity();
 }

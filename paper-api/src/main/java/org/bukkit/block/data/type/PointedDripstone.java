@@ -22,6 +22,7 @@ public interface PointedDripstone extends Waterlogged {
      * Gets the value of the 'vertical_direction' property.
      *
      * @return the 'vertical_direction' value
+     * @since 1.17
      */
     @NotNull
     BlockFace getVerticalDirection();
@@ -30,6 +31,7 @@ public interface PointedDripstone extends Waterlogged {
      * Sets the value of the 'vertical_direction' property.
      *
      * @param direction the new 'vertical_direction' value
+     * @since 1.17
      */
     void setVerticalDirection(@NotNull BlockFace direction);
 
@@ -37,6 +39,7 @@ public interface PointedDripstone extends Waterlogged {
      * Gets the faces which are applicable to this block.
      *
      * @return the allowed 'vertical_direction' values
+     * @since 1.17
      */
     @NotNull
     Set<BlockFace> getVerticalDirections();
@@ -45,6 +48,7 @@ public interface PointedDripstone extends Waterlogged {
      * Gets the value of the 'thickness' property.
      *
      * @return the 'thickness' value
+     * @since 1.17
      */
     @NotNull
     Thickness getThickness();
@@ -59,6 +63,8 @@ public interface PointedDripstone extends Waterlogged {
     /**
      * Represents the thickness of the dripstone, corresponding to its position
      * within a multi-block dripstone formation.
+     *
+     * @since 1.17
      */
     public enum Thickness {
         /**

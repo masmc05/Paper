@@ -33,18 +33,25 @@ public class PlayerCommandSendEvent extends PlayerEvent {
      * Behaviour of adding entries is undefined.
      *
      * @return collection of all commands
+     * @since 1.13
      */
     @NotNull
     public Collection<String> getCommands() {
         return commands;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

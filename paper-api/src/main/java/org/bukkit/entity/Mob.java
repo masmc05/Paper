@@ -132,6 +132,7 @@ public interface Mob extends LivingEntity, Lootable, io.papermc.paper.entity.Lea
      * follow their target.
      *
      * @param target New LivingEntity to target, or null to clear the target
+     * @since 1.13
      */
     public void setTarget(@Nullable LivingEntity target);
 
@@ -139,6 +140,7 @@ public interface Mob extends LivingEntity, Lootable, io.papermc.paper.entity.Lea
      * Gets the current target of this Mob
      *
      * @return Current target of this creature, or null if none exists
+     * @since 1.13
      */
     @Nullable
     public LivingEntity getTarget();

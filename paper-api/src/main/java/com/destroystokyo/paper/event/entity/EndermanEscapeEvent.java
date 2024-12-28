@@ -24,6 +24,9 @@ public class EndermanEscapeEvent extends EntityEvent implements Cancellable {
         this.reason = reason;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public Enderman getEntity() {
         return (Enderman) super.getEntity();
@@ -31,11 +34,15 @@ public class EndermanEscapeEvent extends EntityEvent implements Cancellable {
 
     /**
      * @return The reason the enderman is trying to escape
+     * @since 1.12.2
      */
     public Reason getReason() {
         return this.reason;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -46,21 +53,32 @@ public class EndermanEscapeEvent extends EntityEvent implements Cancellable {
      * <p>
      * If this escape normally had resulted in damage avoidance such as indirect,
      * the enderman will now take damage.
+     *
+     * @since 1.12.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public enum Reason {
         /**
          * The enderman has stopped attacking and ran away

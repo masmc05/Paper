@@ -26,6 +26,7 @@ public class PrepareInventoryResultEvent extends InventoryEvent {
      * Get result item, may be null.
      *
      * @return result item
+     * @since 1.19.3
      */
     @Nullable
     public ItemStack getResult() {
@@ -36,17 +37,24 @@ public class PrepareInventoryResultEvent extends InventoryEvent {
      * Set result item, may be null.
      *
      * @param result result item
+     * @since 1.19.3
      */
     public void setResult(@Nullable ItemStack result) {
         this.result = result;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

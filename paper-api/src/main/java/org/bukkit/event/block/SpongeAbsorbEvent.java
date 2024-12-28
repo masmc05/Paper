@@ -37,28 +37,41 @@ public class SpongeAbsorbEvent extends BlockEvent implements Cancellable {
      * having a type of {@link Material#AIR}.
      *
      * @return list of the to be removed blocks.
+     * @since 1.13
      */
     @NotNull
     public List<BlockState> getBlocks() {
         return blocks;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -174,6 +174,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      * Gets the type of this item
      *
      * @return Type of the items in this stack
+     * @since 1.0.0
      */
     @NotNull
     public Material getType() {
@@ -199,6 +200,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      *
      * Using this method in ItemStacks passed in events will result in undefined behavior.
      * @see ItemStack#withType(Material)
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void setType(@NotNull Material type) {
@@ -224,6 +226,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      * Gets the amount of items in this stack
      *
      * @return Amount of items in this stack
+     * @since 1.0.0
      */
     public int getAmount() {
         return this.craftDelegate.getAmount(); // Paper - delegate
@@ -233,6 +236,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      * Sets the amount of items in this stack
      *
      * @param amount New amount of items in this stack
+     * @since 1.0.0
      */
     public void setAmount(int amount) {
         this.craftDelegate.setAmount(amount); // Paper - delegate
@@ -243,6 +247,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      *
      * @return MaterialData for this item
      * @deprecated cast to {@link org.bukkit.inventory.meta.BlockDataMeta} and use {@link org.bukkit.inventory.meta.BlockDataMeta#getBlockData(Material)}
+     * @since 1.0.0
      */
     @Nullable
     @Deprecated(forRemoval = true, since = "1.13")
@@ -260,6 +265,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      *
      * @param data New MaterialData for this item
      * @deprecated cast to {@link org.bukkit.inventory.meta.BlockDataMeta} and use {@link org.bukkit.inventory.meta.BlockDataMeta#setBlockData(org.bukkit.block.data.BlockData)}
+     * @since 1.0.0
      */
     @Deprecated(forRemoval = true, since = "1.13")
     public void setData(@Nullable MaterialData data) {
@@ -285,6 +291,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      * {@link Damageable#setDamage(int)} should be used instead. This is because
      * any call to this method will be overwritten by subsequent setting of
      * ItemMeta which was created before this call.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.13")
     public void setDurability(final short durability) {
@@ -296,6 +303,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      *
      * @return Durability of this item
      * @deprecated see {@link #setDurability(short)}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.13")
     public short getDurability() {
@@ -310,6 +318,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      * instead.
      *
      * @return The maximum you can stack this item to.
+     * @since 1.0.0
      */
     public int getMaxStackSize() {
         return this.craftDelegate.getMaxStackSize(); // Paper - delegate
@@ -491,6 +500,9 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
         this.craftDelegate.removeEnchantments(); // Paper - delegate
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @NotNull
     @Utility
@@ -518,6 +530,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      * @param args map to deserialize
      * @return deserialized item stack
      * @see ConfigurationSerializable
+     * @since 1.0.0
      */
     @NotNull
     public static ItemStack deserialize(@NotNull Map<String, Object> args) {
@@ -676,6 +689,9 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
 
     // Paper - delegate
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     @NotNull
     @Deprecated(forRemoval = true) // Paper
@@ -889,6 +905,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
 
     /**
      * @deprecated use {@link #getMaxItemUseDuration(org.bukkit.entity.LivingEntity)}; crossbows, later possibly more items require an entity parameter
+     * @since 1.12.2
      */
     @Deprecated(forRemoval = true)
     public int getMaxItemUseDuration() {
@@ -1114,6 +1131,7 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      *
      * @return the itemstack rarity
      * @deprecated Use {@link ItemMeta#hasRarity()} and {@link ItemMeta#getRarity()}
+     * @since 1.16.5
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20.5")

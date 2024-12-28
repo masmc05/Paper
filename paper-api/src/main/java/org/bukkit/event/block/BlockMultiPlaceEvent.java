@@ -39,6 +39,7 @@ public class BlockMultiPlaceEvent extends BlockPlaceEvent {
      * Material type of AIR.
      *
      * @return immutable list of replaced BlockStates
+     * @since 1.7.10
      */
     @NotNull
     public List<BlockState> getReplacedBlockStates() {

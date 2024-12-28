@@ -107,6 +107,7 @@ public interface Biome extends OldEnum<Biome>, Keyed, net.kyori.adventure.transl
      * @param name of the biome.
      * @return the biome with the given name.
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -123,6 +124,7 @@ public interface Biome extends OldEnum<Biome>, Keyed, net.kyori.adventure.transl
     /**
      * @return an array of all known biomes.
      * @deprecated use {@link Registry#iterator()}.
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

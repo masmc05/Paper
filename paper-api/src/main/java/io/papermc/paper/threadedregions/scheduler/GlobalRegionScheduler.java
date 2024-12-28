@@ -20,6 +20,7 @@ public interface GlobalRegionScheduler {
      * Schedules a task to be executed on the global region.
      * @param plugin The plugin that owns the task
      * @param run The task to execute
+     * @since 1.20.1
      */
     void execute(@NotNull Plugin plugin, @NotNull Runnable run);
 
@@ -28,6 +29,7 @@ public interface GlobalRegionScheduler {
      * @param plugin The plugin that owns the task
      * @param task The task to execute
      * @return The {@link ScheduledTask} that represents the scheduled task.
+     * @since 1.20.1
      */
     @NotNull ScheduledTask run(@NotNull Plugin plugin, @NotNull Consumer<ScheduledTask> task);
 
@@ -37,6 +39,7 @@ public interface GlobalRegionScheduler {
      * @param task The task to execute
      * @param delayTicks The delay, in ticks.
      * @return The {@link ScheduledTask} that represents the scheduled task.
+     * @since 1.20.1
      */
     @NotNull ScheduledTask runDelayed(@NotNull Plugin plugin, @NotNull Consumer<ScheduledTask> task, long delayTicks);
 
@@ -48,6 +51,7 @@ public interface GlobalRegionScheduler {
      * @param initialDelayTicks The initial delay, in ticks.
      * @param periodTicks The period, in ticks.
      * @return The {@link ScheduledTask} that represents the scheduled task.
+     * @since 1.20.1
      */
     @NotNull ScheduledTask runAtFixedRate(@NotNull Plugin plugin, @NotNull Consumer<ScheduledTask> task,
                                           long initialDelayTicks, long periodTicks);
@@ -55,6 +59,7 @@ public interface GlobalRegionScheduler {
     /**
      * Attempts to cancel all tasks scheduled by the specified plugin.
      * @param plugin Specified plugin.
+     * @since 1.20.1
      */
      void cancelTasks(@NotNull Plugin plugin);
 }

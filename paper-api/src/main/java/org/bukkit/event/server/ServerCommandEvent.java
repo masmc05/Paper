@@ -57,6 +57,7 @@ public class ServerCommandEvent extends ServerEvent implements Cancellable {
      * console
      *
      * @return Command the user is attempting to execute
+     * @since 1.0.0
      */
     @NotNull
     public String getCommand() {
@@ -67,6 +68,7 @@ public class ServerCommandEvent extends ServerEvent implements Cancellable {
      * Sets the command that the server will execute
      *
      * @param message New message that the server will execute
+     * @since 1.0.0
      */
     public void setCommand(@NotNull String message) {
         this.command = message;
@@ -76,6 +78,7 @@ public class ServerCommandEvent extends ServerEvent implements Cancellable {
      * Get the command sender.
      *
      * @return The sender
+     * @since 1.0.0
      */
     @NotNull
     public CommandSender getSender() {

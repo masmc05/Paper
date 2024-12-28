@@ -19,6 +19,7 @@ public interface Bed extends Directional {
      * Gets the value of the 'part' property.
      *
      * @return the 'part' value
+     * @since 1.13
      */
     @NotNull
     Part getPart();
@@ -34,6 +35,7 @@ public interface Bed extends Directional {
      * Gets the value of the 'occupied' property.
      *
      * @return the 'occupied' value
+     * @since 1.13
      */
     boolean isOccupied();
 
@@ -49,6 +51,8 @@ public interface Bed extends Directional {
 
     /**
      * Horizontal half of a bed.
+     *
+     * @since 1.13
      */
     public enum Part {
 

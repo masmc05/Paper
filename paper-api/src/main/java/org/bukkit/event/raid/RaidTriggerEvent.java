@@ -29,28 +29,41 @@ public class RaidTriggerEvent extends RaidEvent implements Cancellable {
      * Returns the player who triggered the raid.
      *
      * @return triggering player
+     * @since 1.14.4
      */
     @NotNull
     public Player getPlayer() {
         return player;
     }
 
+    /**
+     * @since 1.14.4
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.14.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
 
+    /**
+     * @since 1.14.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.14.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -26,18 +26,25 @@ public class EntityPoseChangeEvent extends EntityEvent {
      * Gets the entity's new pose.
      *
      * @return the new pose
+     * @since 1.14
      */
     @NotNull
     public Pose getPose() {
         return pose;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -16,6 +16,7 @@ public interface Furnace extends Container {
      * Get burn time.
      *
      * @return Burn time
+     * @since 1.0.0
      */
     public short getBurnTime();
 
@@ -26,6 +27,7 @@ public interface Furnace extends Container {
      * less than 0 will extinguish it.
      *
      * @param burnTime Burn time
+     * @since 1.0.0
      */
     public void setBurnTime(short burnTime);
 
@@ -35,6 +37,7 @@ public interface Furnace extends Container {
      * This is the amount of time the item has been cooking for.
      *
      * @return Cook time
+     * @since 1.0.0
      */
     public short getCookTime();
 
@@ -44,6 +47,7 @@ public interface Furnace extends Container {
      * This is the amount of time the item has been cooking for.
      *
      * @param cookTime Cook time
+     * @since 1.0.0
      */
     public void setCookTime(short cookTime);
 

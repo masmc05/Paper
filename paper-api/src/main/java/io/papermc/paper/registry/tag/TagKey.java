@@ -21,6 +21,7 @@ public sealed interface TagKey<T> extends Keyed permits TagKeyImpl {
      * @param key the specific key for the tag
      * @return a new tag key
      * @param <T> the registry value type
+     * @since 1.21
      */
     @Contract(value = "_, _ -> new", pure = true)
     static <T> TagKey<T> create(final RegistryKey<T> registryKey, final Key key) {
@@ -31,6 +32,7 @@ public sealed interface TagKey<T> extends Keyed permits TagKeyImpl {
      * Get the registry key for this tag key.
      *
      * @return the registry key
+     * @since 1.21
      */
     RegistryKey<T> registryKey();
 }

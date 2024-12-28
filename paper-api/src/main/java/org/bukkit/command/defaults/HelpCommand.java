@@ -34,6 +34,9 @@ public class HelpCommand extends BukkitCommand {
         this.setPermission("bukkit.command.help");
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String currentAlias, @NotNull String[] args) {
         if (!testPermission(sender)) return true;

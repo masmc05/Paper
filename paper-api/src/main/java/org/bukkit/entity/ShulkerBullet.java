@@ -11,6 +11,7 @@ public interface ShulkerBullet extends Projectile {
      * Retrieve the target of this bullet.
      *
      * @return the targeted entity
+     * @since 1.9.4
      */
     @Nullable
     Entity getTarget();
@@ -19,6 +20,7 @@ public interface ShulkerBullet extends Projectile {
      * Sets the target of this bullet
      *
      * @param target the entity to target
+     * @since 1.9.4
      */
     void setTarget(@Nullable Entity target);
     // Paper start

@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * @deprecated Timings will be removed in the future
+ * @since 1.11.2
  */
 @Deprecated(forRemoval = true)
 @SuppressWarnings("WeakerAccess")
@@ -39,15 +40,24 @@ public class TimingsReportListener implements net.kyori.adventure.audience.Forwa
         this.onDone = onDone;
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Nullable
     public String getTimingsURL() {
         return timingsURL;
     }
 
+    /**
+     * @since 1.11.2
+     */
     public void done() {
         done(null);
     }
 
+    /**
+     * @since 1.11.2
+     */
     public void done(@Nullable String url) {
         this.timingsURL = url;
         if (onDone != null) {
@@ -60,22 +70,36 @@ public class TimingsReportListener implements net.kyori.adventure.audience.Forwa
         }
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.16.5
+     */
     @Override
     public void sendMessage(final @NotNull net.kyori.adventure.identity.Identity source, final @NotNull net.kyori.adventure.text.Component message, final @NotNull net.kyori.adventure.audience.MessageType type) {
         net.kyori.adventure.audience.ForwardingAudience.super.sendMessage(source, message, type);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.16.5
+     */
     @NotNull
     @Override
     public Iterable<? extends net.kyori.adventure.audience.Audience> audiences() {
         return this.senders;
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Override
     public void sendMessage(@NotNull String message) {
         senders.forEach((sender) -> sender.sendMessage(message));
     }
 
+    /**
+     * @since 1.11.2
+     */
     public void addConsoleIfNeeded() {
         boolean hasConsole = false;
         for (CommandSender sender : this.senders) {

@@ -37,6 +37,7 @@ public class SpawnerEntry {
      * Gets the {@link EntitySnapshot} for this SpawnerEntry.
      *
      * @return the snapshot
+     * @since 1.20.4
      */
     @NotNull
     public EntitySnapshot getSnapshot() {
@@ -47,6 +48,7 @@ public class SpawnerEntry {
      * Sets the {@link EntitySnapshot} for this SpawnerEntry.
      *
      * @param snapshot the snapshot
+     * @since 1.20.4
      */
     public void setSnapshot(@NotNull EntitySnapshot snapshot) {
         Preconditions.checkArgument(snapshot != null, "Snapshot cannot be null");
@@ -58,6 +60,7 @@ public class SpawnerEntry {
      * with higher weight will spawn more often.
      *
      * @return the weight
+     * @since 1.20.4
      */
     public int getSpawnWeight() {
         return spawnWeight;
@@ -68,6 +71,7 @@ public class SpawnerEntry {
      * with higher weight will spawn more often.
      *
      * @param spawnWeight the new spawn weight
+     * @since 1.20.4
      */
     public void setSpawnWeight(int spawnWeight) {
         this.spawnWeight = spawnWeight;
@@ -78,6 +82,7 @@ public class SpawnerEntry {
      * none has been set.
      *
      * @return a copy of the spawn rule or null
+     * @since 1.20.4
      */
     @Nullable
     public SpawnRule getSpawnRule() {
@@ -89,6 +94,7 @@ public class SpawnerEntry {
      * clear the current spawn rule.
      *
      * @param spawnRule the new spawn rule to use or null
+     * @since 1.20.4
      */
     public void setSpawnRule(@Nullable SpawnRule spawnRule) {
         this.spawnRule = spawnRule;
@@ -136,6 +142,7 @@ public class SpawnerEntry {
          * To remove a loot table use the empty loot table.
          *
          * @param table this {@link org.bukkit.entity.Mob} will have.
+         * @since 1.20.6
          */
         public void setEquipmentLootTable(@NotNull LootTable table) {
             Preconditions.checkArgument(table != null, "table cannot be null"); // Paper
@@ -150,6 +157,7 @@ public class SpawnerEntry {
          * empty loot table.
          *
          * @return the loot table for this entity.
+         * @since 1.20.6
          */
         @NotNull
         public LootTable getEquipmentLootTable() {
@@ -162,6 +170,7 @@ public class SpawnerEntry {
          * given value.
          *
          * @return mutable map of drop chances
+         * @since 1.20.6
          */
         @NotNull
         public Map<EquipmentSlot, Float> getDropChances() {

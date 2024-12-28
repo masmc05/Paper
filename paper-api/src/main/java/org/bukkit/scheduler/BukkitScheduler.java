@@ -21,6 +21,7 @@ public interface BukkitScheduler {
      * @param task Task to be executed
      * @param delay Delay in server ticks before executing task
      * @return Task id number (-1 if scheduling failed)
+     * @since 1.0.0
      */
     public int scheduleSyncDelayedTask(@NotNull Plugin plugin, @NotNull Runnable task, long delay);
 
@@ -43,6 +44,7 @@ public interface BukkitScheduler {
      * @param plugin Plugin that owns the task
      * @param task Task to be executed
      * @return Task id number (-1 if scheduling failed)
+     * @since 1.0.0
      */
     public int scheduleSyncDelayedTask(@NotNull Plugin plugin, @NotNull Runnable task);
 
@@ -66,6 +68,7 @@ public interface BukkitScheduler {
      * @param delay Delay in server ticks before executing first repeat
      * @param period Period in server ticks of the task
      * @return Task id number (-1 if scheduling failed)
+     * @since 1.0.0
      */
     public int scheduleSyncRepeatingTask(@NotNull Plugin plugin, @NotNull Runnable task, long delay, long period);
 
@@ -94,6 +97,7 @@ public interface BukkitScheduler {
      * @return Task id number (-1 if scheduling failed)
      * @deprecated This name is misleading, as it does not schedule "a sync"
      *     task, but rather, "an async" task
+     * @since 1.0.0
      */
     @Deprecated(since = "1.4.5")
     public int scheduleAsyncDelayedTask(@NotNull Plugin plugin, @NotNull Runnable task, long delay);
@@ -110,6 +114,7 @@ public interface BukkitScheduler {
      * @return Task id number (-1 if scheduling failed)
      * @deprecated This name is misleading, as it does not schedule "a sync"
      *     task, but rather, "an async" task
+     * @since 1.0.0
      */
     @Deprecated(since = "1.4.5")
     public int scheduleAsyncDelayedTask(@NotNull Plugin plugin, @NotNull Runnable task);
@@ -128,6 +133,7 @@ public interface BukkitScheduler {
      * @return Task id number (-1 if scheduling failed)
      * @deprecated This name is misleading, as it does not schedule "a sync"
      *     task, but rather, "an async" task
+     * @since 1.0.0
      */
     @Deprecated(since = "1.4.5")
     public int scheduleAsyncRepeatingTask(@NotNull Plugin plugin, @NotNull Runnable task, long delay, long period);
@@ -145,6 +151,7 @@ public interface BukkitScheduler {
      * @param plugin Plugin that owns the task
      * @param task Task to be executed
      * @return Future Future object related to the task
+     * @since 1.0.0
      */
     @NotNull
     public <T> Future<T> callSyncMethod(@NotNull Plugin plugin, @NotNull Callable<T> task);
@@ -153,6 +160,7 @@ public interface BukkitScheduler {
      * Removes task from scheduler.
      *
      * @param taskId Id number of task to be removed
+     * @since 1.0.0
      */
     public void cancelTask(int taskId);
 
@@ -161,6 +169,7 @@ public interface BukkitScheduler {
      * scheduler.
      *
      * @param plugin Owner of tasks to be removed
+     * @since 1.0.0
      */
     public void cancelTasks(@NotNull Plugin plugin);
 
@@ -177,6 +186,7 @@ public interface BukkitScheduler {
      * @param taskId The task to check.
      * <p>
      * @return If the task is currently running.
+     * @since 1.0.0
      */
     public boolean isCurrentlyRunning(int taskId);
 
@@ -190,6 +200,7 @@ public interface BukkitScheduler {
      * @param taskId The task to check.
      * <p>
      * @return If the task is queued to be run.
+     * @since 1.0.0
      */
     public boolean isQueued(int taskId);
 
@@ -200,6 +211,7 @@ public interface BukkitScheduler {
      * threads.
      *
      * @return Active workers
+     * @since 1.0.0
      */
     @NotNull
     public List<BukkitWorker> getActiveWorkers();
@@ -209,6 +221,7 @@ public interface BukkitScheduler {
      * related to their order of execution.
      *
      * @return Active workers
+     * @since 1.0.0
      */
     @NotNull
     public List<BukkitTask> getPendingTasks();

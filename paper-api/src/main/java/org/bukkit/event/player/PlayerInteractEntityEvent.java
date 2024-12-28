@@ -28,11 +28,17 @@ public class PlayerInteractEntityEvent extends PlayerEvent implements Cancellabl
         this.hand = hand;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
@@ -42,6 +48,7 @@ public class PlayerInteractEntityEvent extends PlayerEvent implements Cancellabl
      * Gets the entity that was right-clicked by the player.
      *
      * @return entity right clicked by player
+     * @since 1.0.0
      */
     @NotNull
     public Entity getRightClicked() {

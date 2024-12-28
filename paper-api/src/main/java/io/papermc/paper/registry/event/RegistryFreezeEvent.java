@@ -25,6 +25,7 @@ public interface RegistryFreezeEvent<T, B extends RegistryBuilder<T>> extends Re
      * Get the writable registry.
      *
      * @return a writable registry
+     * @since 1.21
      */
     WritableRegistry<T, B> registry();
 
@@ -36,6 +37,7 @@ public interface RegistryFreezeEvent<T, B extends RegistryBuilder<T>> extends Re
      * @param tagKey the tag key
      * @return the tag
      * @param <V> the tag value type
+     * @since 1.21
      */
     <V extends Keyed> Tag<V> getOrCreateTag(TagKey<V> tagKey);
 }

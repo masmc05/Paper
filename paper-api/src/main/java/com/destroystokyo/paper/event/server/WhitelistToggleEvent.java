@@ -27,16 +27,23 @@ public class WhitelistToggleEvent extends Event {
      * Gets whether whitelist is going to be enabled or not
      *
      * @return Whether whitelist is going to be enabled or not
+     * @since 1.13.2
      */
     public boolean isEnabled() {
         return this.enabled;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

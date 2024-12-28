@@ -20,6 +20,7 @@ public interface PersistentDataHolder extends io.papermc.paper.persistence.Persi
      * {@link PersistentDataHolder} is impossible.
      *
      * @return the persistent metadata container
+     * @since 1.14
      */
     @NotNull
     PersistentDataContainer getPersistentDataContainer();

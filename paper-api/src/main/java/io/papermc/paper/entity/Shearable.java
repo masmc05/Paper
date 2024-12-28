@@ -18,6 +18,8 @@ public interface Shearable extends Entity {
      * <p>
      * Some shearing behavior may cause the entity to no longer be valid
      * due to it being replaced by a different entity.
+     *
+     * @since 1.19.4
      */
     default void shear() {
         this.shear(Sound.Source.PLAYER);
@@ -41,6 +43,7 @@ public interface Shearable extends Entity {
      * Gets if the entity would be able to be sheared or not naturally using shears.
      *
      * @return if the entity can be sheared
+     * @since 1.19.4
      */
     boolean readyToBeSheared();
 }

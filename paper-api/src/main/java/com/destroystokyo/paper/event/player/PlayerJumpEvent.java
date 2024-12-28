@@ -44,6 +44,7 @@ public class PlayerJumpEvent extends PlayerEvent implements Cancellable {
      * fire an event
      *
      * @return {@code true} if this event is cancelled
+     * @since 1.12.2
      */
     @Override
     public boolean isCancelled() {
@@ -58,6 +59,7 @@ public class PlayerJumpEvent extends PlayerEvent implements Cancellable {
      * fire an event
      *
      * @param cancel {@code true} if you wish to cancel this event
+     * @since 1.12.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
@@ -68,6 +70,7 @@ public class PlayerJumpEvent extends PlayerEvent implements Cancellable {
      * Gets the location this player jumped from
      *
      * @return Location the player jumped from
+     * @since 1.12.2
      */
     public Location getFrom() {
         return this.from;
@@ -77,6 +80,7 @@ public class PlayerJumpEvent extends PlayerEvent implements Cancellable {
      * Sets the location to mark as where the player jumped from
      *
      * @param from New location to mark as the players previous location
+     * @since 1.12.2
      */
     public void setFrom(final Location from) {
         Preconditions.checkArgument(from != null, "Cannot use null from location!");
@@ -91,16 +95,23 @@ public class PlayerJumpEvent extends PlayerEvent implements Cancellable {
      * has little relation to the arc of the jump at any given point.
      *
      * @return Location the player jumped to
+     * @since 1.12.2
      */
     public Location getTo() {
         return this.to.clone();
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

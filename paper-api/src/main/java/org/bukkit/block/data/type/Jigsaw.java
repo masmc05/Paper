@@ -14,6 +14,7 @@ public interface Jigsaw extends BlockData {
      * Gets the value of the 'orientation' property.
      *
      * @return the 'orientation' value
+     * @since 1.16.1
      */
     @NotNull
     Orientation getOrientation();
@@ -27,6 +28,8 @@ public interface Jigsaw extends BlockData {
 
     /**
      * The directions the Jigsaw can be oriented.
+     *
+     * @since 1.16.1
      */
     public enum Orientation {
 

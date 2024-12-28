@@ -32,6 +32,9 @@ public class MemoryConfiguration extends MemorySection implements Configuration 
         this.defaults = defaults;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void addDefault(@NotNull String path, @Nullable Object value) {
         Preconditions.checkArgument(path != null, "Path may not be null");
@@ -43,6 +46,9 @@ public class MemoryConfiguration extends MemorySection implements Configuration 
         defaults.set(path, value);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void addDefaults(@NotNull Map<String, Object> defaults) {
         Preconditions.checkArgument(defaults != null, "Defaults may not be null");
@@ -52,6 +58,9 @@ public class MemoryConfiguration extends MemorySection implements Configuration 
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void addDefaults(@NotNull Configuration defaults) {
         Preconditions.checkArgument(defaults != null, "Defaults may not be null");
@@ -63,6 +72,9 @@ public class MemoryConfiguration extends MemorySection implements Configuration 
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setDefaults(@NotNull Configuration defaults) {
         Preconditions.checkArgument(defaults != null, "Defaults may not be null");
@@ -70,18 +82,27 @@ public class MemoryConfiguration extends MemorySection implements Configuration 
         this.defaults = defaults;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @Nullable
     public Configuration getDefaults() {
         return defaults;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Nullable
     @Override
     public ConfigurationSection getParent() {
         return null;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @NotNull
     public MemoryConfigurationOptions options() {

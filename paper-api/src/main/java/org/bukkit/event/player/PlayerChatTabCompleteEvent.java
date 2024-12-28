@@ -39,6 +39,7 @@ public class PlayerChatTabCompleteEvent extends PlayerEvent {
      * Gets the chat message being tab-completed.
      *
      * @return the chat message
+     * @since 1.3.2
      */
     @NotNull
     public String getChatMessage() {
@@ -52,6 +53,7 @@ public class PlayerChatTabCompleteEvent extends PlayerEvent {
      * space in the message.
      *
      * @return The last token for the chat message
+     * @since 1.3.2
      */
     @NotNull
     public String getLastToken() {
@@ -62,18 +64,25 @@ public class PlayerChatTabCompleteEvent extends PlayerEvent {
      * This is the collection of completions for this event.
      *
      * @return the current completions
+     * @since 1.3.2
      */
     @NotNull
     public Collection<String> getTabCompletions() {
         return completions;
     }
 
+    /**
+     * @since 1.3.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.3.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -25,16 +25,25 @@ public class ItemDespawnEvent extends EntityEvent implements Cancellable {
         location = loc;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return canceled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         canceled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public Item getEntity() {
@@ -45,18 +54,25 @@ public class ItemDespawnEvent extends EntityEvent implements Cancellable {
      * Gets the location at which the item is despawning.
      *
      * @return The location at which the item is despawning
+     * @since 1.1.0
      */
     @NotNull
     public Location getLocation() {
         return location.clone(); // Paper - clone to avoid changes
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

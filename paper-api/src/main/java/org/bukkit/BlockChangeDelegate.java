@@ -40,6 +40,7 @@ public interface BlockChangeDelegate {
      * Gets the height of the world.
      *
      * @return Height of the world
+     * @since 1.0.0
      */
     public int getHeight();
 

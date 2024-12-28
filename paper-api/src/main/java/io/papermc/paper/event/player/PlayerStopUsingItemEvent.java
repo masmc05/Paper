@@ -30,6 +30,7 @@ public class PlayerStopUsingItemEvent extends PlayerEvent {
      * Gets the exact item the player is releasing
      *
      * @return ItemStack the exact item the player released
+     * @since 1.18.2
      */
     public ItemStack getItem() {
         return this.item;
@@ -39,16 +40,23 @@ public class PlayerStopUsingItemEvent extends PlayerEvent {
      * Gets the number of ticks the item was held for
      *
      * @return int the number of ticks the item was held for
+     * @since 1.18.2
      */
     public int getTicksHeldFor() {
         return this.ticksHeldFor;
     }
 
+    /**
+     * @since 1.18.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.18.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

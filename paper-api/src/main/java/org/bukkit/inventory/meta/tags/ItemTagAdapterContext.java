@@ -19,6 +19,7 @@ public interface ItemTagAdapterContext {
      * Creates a new and empty tag container instance.
      *
      * @return the fresh container instance
+     * @since 1.13.2
      */
     @NotNull
     CustomItemTagContainer newTagContainer();

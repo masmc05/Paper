@@ -8,6 +8,7 @@ import org.bukkit.NetherWartsState;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.5.1
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class NetherWarts extends MaterialData {
@@ -38,6 +39,7 @@ public class NetherWarts extends MaterialData {
      * Gets the current growth state of this nether wart
      *
      * @return NetherWartsState of this nether wart
+     * @since 1.5.1
      */
     public NetherWartsState getState() {
         switch (getData()) {
@@ -56,6 +58,7 @@ public class NetherWarts extends MaterialData {
      * Sets the growth state of this nether wart
      *
      * @param state New growth state of this nether wart
+     * @since 1.5.1
      */
     public void setState(NetherWartsState state) {
         switch (state) {

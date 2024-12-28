@@ -12,11 +12,13 @@ public interface Phantom extends Flying, Enemy {
 
     /**
      * @return The size of the phantom
+     * @since 1.13
      */
     public int getSize();
 
     /**
      * @param sz The new size of the phantom.
+     * @since 1.13
      */
     public void setSize(int sz);
 

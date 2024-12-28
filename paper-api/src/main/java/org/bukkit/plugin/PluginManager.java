@@ -24,6 +24,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      * @param loader Class name of the PluginLoader to register
      * @throws IllegalArgumentException Thrown when the given Class is not a
      *     valid PluginLoader
+     * @since 1.0.0
      */
     @Deprecated(forRemoval = true) // Paper - The PluginLoader system will not function in the near future
     public void registerInterface(@NotNull Class<? extends PluginLoader> loader) throws IllegalArgumentException;
@@ -35,6 +36,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *
      * @param name Name of the plugin to check
      * @return Plugin if it exists, otherwise null
+     * @since 1.0.0
      */
     @Nullable
     public Plugin getPlugin(@NotNull String name);
@@ -43,6 +45,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      * Gets a list of all currently loaded plugins
      *
      * @return Array of Plugins
+     * @since 1.0.0
      */
     @NotNull
     public Plugin[] getPlugins();
@@ -54,6 +57,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *
      * @param name Name of the plugin to check
      * @return true if the plugin is enabled, otherwise false
+     * @since 1.0.0
      */
     public boolean isPluginEnabled(@NotNull String name);
 
@@ -62,6 +66,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *
      * @param plugin Plugin to check
      * @return true if the plugin is enabled, otherwise false
+     * @since 1.0.0
      */
     @Contract("null -> false")
     public boolean isPluginEnabled(@Nullable Plugin plugin);
@@ -79,6 +84,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *     contains an invalid description
      * @throws UnknownDependencyException If a required dependency could not
      *     be resolved
+     * @since 1.0.0
      */
     @Nullable
     public Plugin loadPlugin(@NotNull File file) throws InvalidPluginException, InvalidDescriptionException, UnknownDependencyException;
@@ -88,6 +94,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *
      * @param directory Directory to check for plugins
      * @return A list of all plugins loaded
+     * @since 1.0.0
      */
     @NotNull
     public Plugin[] loadPlugins(@NotNull File directory);
@@ -104,11 +111,15 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
 
     /**
      * Disables all the loaded plugins
+     *
+     * @since 1.0.0
      */
     public void disablePlugins();
 
     /**
      * Disables and removes all plugins
+     *
+     * @since 1.0.0
      */
     public void clearPlugins();
 
@@ -121,6 +132,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *     <p>
      *     <i>Note: This is best-effort basis, and should not be used to test
      *     synchronized state. This is an indicator for flawed flow logic.</i>
+     * @since 1.0.0
      */
     public void callEvent(@NotNull Event event) throws IllegalStateException;
 
@@ -165,6 +177,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      * effect
      *
      * @param plugin Plugin to enable
+     * @since 1.0.0
      */
     public void enablePlugin(@NotNull Plugin plugin);
 
@@ -174,6 +187,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      * Attempting to disable a plugin that is not enabled will have no effect
      *
      * @param plugin Plugin to disable
+     * @since 1.0.0
      */
     public void disablePlugin(@NotNull Plugin plugin);
 
@@ -182,6 +196,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *
      * @param name Name of the permission
      * @return Permission, or null if none
+     * @since 1.0.0
      */
     @Nullable
     public Permission getPermission(@NotNull String name);
@@ -195,6 +210,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      * @param perm Permission to add
      * @throws IllegalArgumentException Thrown when a permission with the same
      *     name already exists
+     * @since 1.0.0
      */
     public void addPermission(@NotNull Permission perm);
 
@@ -208,6 +224,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      * permission from any {@link Permissible}s that have it.
      *
      * @param perm Permission to remove
+     * @since 1.0.0
      */
     public void removePermission(@NotNull Permission perm);
 
@@ -221,6 +238,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      * permission from any {@link Permissible}s that have it.
      *
      * @param name Permission to remove
+     * @since 1.0.0
      */
     public void removePermission(@NotNull String name);
 
@@ -229,6 +247,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *
      * @param op Which set of default permissions to get
      * @return The default permissions
+     * @since 1.0.0
      */
     @NotNull
     public Set<Permission> getDefaultPermissions(boolean op);
@@ -240,6 +259,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      * here.
      *
      * @param perm Permission to recalculate
+     * @since 1.0.0
      */
     public void recalculatePermissionDefaults(@NotNull Permission perm);
 
@@ -252,6 +272,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *
      * @param permission Permission to subscribe to
      * @param permissible Permissible subscribing
+     * @since 1.0.0
      */
     public void subscribeToPermission(@NotNull String permission, @NotNull Permissible permissible);
 
@@ -261,6 +282,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *
      * @param permission Permission to unsubscribe from
      * @param permissible Permissible subscribing
+     * @since 1.0.0
      */
     public void unsubscribeFromPermission(@NotNull String permission, @NotNull Permissible permissible);
 
@@ -270,6 +292,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *
      * @param permission Permission to query for
      * @return Set containing all subscribed permissions
+     * @since 1.0.0
      */
     @NotNull
     public Set<Permissible> getPermissionSubscriptions(@NotNull String permission);
@@ -282,6 +305,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *
      * @param op Default list to subscribe to
      * @param permissible Permissible subscribing
+     * @since 1.0.0
      */
     public void subscribeToDefaultPerms(boolean op, @NotNull Permissible permissible);
 
@@ -290,6 +314,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *
      * @param op Default list to unsubscribe from
      * @param permissible Permissible subscribing
+     * @since 1.0.0
      */
     public void unsubscribeFromDefaultPerms(boolean op, @NotNull Permissible permissible);
 
@@ -299,6 +324,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      *
      * @param op Default list to query for
      * @return Set containing all subscribed permissions
+     * @since 1.0.0
      */
     @NotNull
     public Set<Permissible> getDefaultPermSubscriptions(boolean op);
@@ -309,6 +335,7 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      * This set is a copy and will not be modified live.
      *
      * @return Set containing all current registered permissions
+     * @since 1.0.0
      */
     @NotNull
     public Set<Permission> getPermissions();

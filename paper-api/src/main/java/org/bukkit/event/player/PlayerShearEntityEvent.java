@@ -36,11 +36,17 @@ public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
         this(who, what, new ItemStack(Material.SHEARS), EquipmentSlot.HAND, java.util.Collections.emptyList()); // Paper - custom shear drops
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -50,6 +56,7 @@ public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
      * Gets the entity the player is shearing
      *
      * @return the entity the player is shearing
+     * @since 1.1.0
      */
     @NotNull
     public Entity getEntity() {
@@ -78,12 +85,18 @@ public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
         return hand;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -63,6 +63,7 @@ public interface CustomItemTagContainer {
      * @throws NullPointerException if the key to look up is null
      * @throws NullPointerException if the type to cast the found object to is
      * null
+     * @since 1.13.2
      */
     <T, Z> boolean hasCustomTag(@NotNull NamespacedKey key, @NotNull ItemTagType<T, Z> type);
 
@@ -82,6 +83,7 @@ public interface CustomItemTagContainer {
      * but cannot be access using the given type
      * @throws IllegalArgumentException if no suitable adapter will be found for
      * the {@link ItemTagType#getPrimitiveType()}
+     * @since 1.13.2
      */
     @Nullable
     <T, Z> Z getCustomTag(@NotNull NamespacedKey key, @NotNull ItemTagType<T, Z> type);
@@ -91,6 +93,7 @@ public interface CustomItemTagContainer {
      *
      * @param key the key
      * @throws NullPointerException if the provided key is null
+     * @since 1.13.2
      */
     void removeCustomTag(@NotNull NamespacedKey key);
 
@@ -99,6 +102,7 @@ public interface CustomItemTagContainer {
      * inside it.
      *
      * @return the boolean
+     * @since 1.13.2
      */
     boolean isEmpty();
 
@@ -106,6 +110,7 @@ public interface CustomItemTagContainer {
      * Returns the adapter context this tag container uses.
      *
      * @return the tag context
+     * @since 1.13.2
      */
     @NotNull
     ItemTagAdapterContext getAdapterContext();

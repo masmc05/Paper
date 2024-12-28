@@ -245,6 +245,9 @@ public enum LootTables implements Keyed {
         this.location = location;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {

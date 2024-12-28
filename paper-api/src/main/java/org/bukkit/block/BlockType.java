@@ -139,6 +139,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      *
      * @param <B> the generic type of the block data that represents the block
      * type.
+     * @since 1.20.6
      */
     interface Typed<B extends BlockData> extends BlockType {
 
@@ -146,6 +147,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
          * Gets the BlockData class of this BlockType
          *
          * @return the BlockData class of this BlockType
+         * @since 1.20.6
          */
         @NotNull
         @Override
@@ -157,6 +159,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
          *
          * @param consumer consumer to run on new instance before returning
          * @return new data instance
+         * @since 1.20.6
          */
         @NotNull
         B createBlockData(@Nullable Consumer<? super B> consumer);
@@ -166,6 +169,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
          * properties initialized to unspecified defaults.
          *
          * @return new data instance
+         * @since 1.20.6
          */
         @NotNull
         @Override
@@ -179,6 +183,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
          * @param data data string
          * @return new data instance
          * @throws IllegalArgumentException if the specified data is not valid
+         * @since 1.20.6
          */
         @NotNull
         B createBlockData(@Nullable String data);
@@ -3431,6 +3436,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * Yields this block type as a typed version of itself with a plain {@link BlockData} representing it.
      *
      * @return the typed block type.
+     * @since 1.20.6
      */
     @NotNull
     BlockType.Typed<BlockData> typed();
@@ -3441,6 +3447,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * @param blockDataType the class type of the {@link BlockData} to type this {@link BlockType} with.
      * @param <B>          the generic type of the block data to type this block type with.
      * @return the typed block type.
+     * @since 1.20.6
      */
     @NotNull
     <B extends BlockData> BlockType.Typed<B> typed(@NotNull Class<B> blockDataType);
@@ -3450,6 +3457,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      *
      * @return true if there is a corresponding ItemType, otherwise false
      * @see #getItemType()
+     * @since 1.20.6
      */
     boolean hasItemType();
 
@@ -3461,6 +3469,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * @return the corresponding ItemType
      * @see #hasItemType()
      * @see BlockData#getPlacementMaterial()
+     * @since 1.20.6
      */
     @NotNull
     ItemType getItemType();
@@ -3469,6 +3478,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * Gets the BlockData class of this BlockType
      *
      * @return the BlockData class of this BlockType
+     * @since 1.20.6
      */
     @NotNull
     Class<? extends BlockData> getBlockDataClass();
@@ -3478,6 +3488,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * properties initialized to unspecified defaults.
      *
      * @return new data instance
+     * @since 1.20.6
      */
     @NotNull
     BlockData createBlockData();
@@ -3490,6 +3501,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * @param data data string
      * @return new data instance
      * @throws IllegalArgumentException if the specified data is not valid
+     * @since 1.20.6
      */
     @NotNull
     BlockData createBlockData(@Nullable String data);
@@ -3498,6 +3510,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * Check if the blockt type is solid (can be built upon)
      *
      * @return True if this block type is solid
+     * @since 1.20.6
      */
     boolean isSolid();
 
@@ -3505,6 +3518,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * Check if the block type can catch fire
      *
      * @return True if this block type can catch fire
+     * @since 1.20.6
      */
     boolean isFlammable();
 
@@ -3512,6 +3526,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * Check if the block type can burn away
      *
      * @return True if this block type can burn away
+     * @since 1.20.6
      */
     boolean isBurnable();
 
@@ -3532,11 +3547,13 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * block, see the <a href="https://minecraft.fandom.com/wiki/Opacity">Minecraft Wiki</a>.
      *
      * @return True if this block type occludes light
+     * @since 1.20.6
      */
     boolean isOccluding();
 
     /**
      * @return True if this block type is affected by gravity.
+     * @since 1.20.6
      */
     boolean hasGravity();
 
@@ -3559,6 +3576,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * checks being true.
      *
      * @return true if this block type can be interacted with.
+     * @since 1.20.6
      */
     @Deprecated // Paper
     boolean isInteractable();
@@ -3569,6 +3587,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * This number is used to calculate the time required to break each block.
      *
      * @return the hardness of that block type.
+     * @since 1.20.6
      */
     float getHardness();
 
@@ -3579,6 +3598,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * broken or not.
      *
      * @return the blast resistance of that block type.
+     * @since 1.20.6
      */
     float getBlastResistance();
 
@@ -3591,6 +3611,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * Most blocks have a default slipperiness of {@code 0.6f}.
      *
      * @return the slipperiness of this block
+     * @since 1.20.6
      */
     float getSlipperiness();
 
@@ -3598,6 +3619,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * Check if the block type is an air block.
      *
      * @return True if this block type is an air block.
+     * @since 1.20.6
      */
     boolean isAir();
 
@@ -3607,6 +3629,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * @param world the world to check
      * @return true if this BlockType can be used in this World.
      * @deprecated Use {@link io.papermc.paper.world.flag.FeatureFlagSetHolder#isEnabled(io.papermc.paper.world.flag.FeatureDependant)}
+     * @since 1.20.6
      */
     @Deprecated(forRemoval = true, since = "1.21.1") // Paper
     boolean isEnabledByFeature(@NotNull World world);
@@ -3616,6 +3639,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      *
      * @return the converted Material or null
      * @deprecated only for internal use
+     * @since 1.20.6
      */
     @Nullable
     @Deprecated(since = "1.20.6")
@@ -3624,6 +3648,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
     // Paper start - add Translatable
     /**
      * @deprecated use {@link #translationKey()} and {@link net.kyori.adventure.text.Component#translatable(net.kyori.adventure.translation.Translatable)}
+     * @since 1.20.6
      */
     @Deprecated(forRemoval = true)
     @Override
@@ -3635,6 +3660,7 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * Checks if this block type has collision.
      * <p>
      * @return false if this block never has collision, true if it <b>might</b> have collision
+     * @since 1.20.6
      */
     boolean hasCollision();
     // Paper end - hasCollision API

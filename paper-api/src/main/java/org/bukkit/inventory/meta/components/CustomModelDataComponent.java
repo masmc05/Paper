@@ -18,6 +18,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Gets a list of the custom floats.
      *
      * @return unmodifiable list
+     * @since 1.21.4
      */
     @NotNull
     List<Float> getFloats();
@@ -26,6 +27,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Sets a list of the custom floats.
      *
      * @param floats new list
+     * @since 1.21.4
      */
     void setFloats(@NotNull List<Float> floats);
 
@@ -33,6 +35,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Gets a list of the custom flags.
      *
      * @return unmodifiable list
+     * @since 1.21.4
      */
     @NotNull
     List<Boolean> getFlags();
@@ -41,6 +44,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Sets a list of the custom flags.
      *
      * @param flags new list
+     * @since 1.21.4
      */
     void setFlags(@NotNull List<Boolean> flags);
 
@@ -48,6 +52,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Gets a list of the custom strings.
      *
      * @return unmodifiable list
+     * @since 1.21.4
      */
     @NotNull
     List<String> getStrings();
@@ -56,6 +61,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Sets a list of the custom strings.
      *
      * @param strings new list
+     * @since 1.21.4
      */
     void setStrings(@NotNull List<String> strings);
 
@@ -63,6 +69,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Gets a list of the custom colors.
      *
      * @return unmodifiable list
+     * @since 1.21.4
      */
     @NotNull
     List<Color> getColors();
@@ -71,6 +78,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Sets a list of the custom colors.
      *
      * @param colors new list
+     * @since 1.21.4
      */
     void setColors(@NotNull List<Color> colors);
 }

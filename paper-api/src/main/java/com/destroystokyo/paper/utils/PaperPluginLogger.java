@@ -15,6 +15,9 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 public class PaperPluginLogger extends Logger {
 
+    /**
+     * @since 1.12.2
+     */
     @Deprecated(forRemoval = true)
     public static Logger getLogger(final PluginDescriptionFile description) {
         return getLogger((PluginMeta) description);
@@ -38,6 +41,10 @@ public class PaperPluginLogger extends Logger {
         super(meta.getLoggerPrefix() != null ? meta.getLoggerPrefix() : meta.getName(), null);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.12.2
+     */
     @Override
     public void setParent(final Logger parent) {
         if (this.getParent() != null) {

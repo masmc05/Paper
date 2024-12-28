@@ -13,6 +13,7 @@ public interface Recipe {
      * Get the result of this recipe.
      *
      * @return The result stack
+     * @since 1.0.0
      */
     @NotNull
     ItemStack getResult();

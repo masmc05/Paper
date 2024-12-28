@@ -27,6 +27,9 @@ public final class ClientOption<T> {
         this.type = type;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public Class<T> getType() {
         return this.type;
     }
@@ -81,6 +84,10 @@ public final class ClientOption<T> {
             this.name = name;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.21.3
+         */
         @Override
         public String translationKey() {
             return "options.particles." + this.name;

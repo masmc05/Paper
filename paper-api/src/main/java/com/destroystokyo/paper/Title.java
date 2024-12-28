@@ -185,6 +185,7 @@ public final class Title {
      * Gets the text of this title
      *
      * @return the text
+     * @since 1.9.4
      */
     @NotNull
     public BaseComponent[] getTitle() {
@@ -195,6 +196,7 @@ public final class Title {
      * Gets the text of this title's subtitle
      *
      * @return the text
+     * @since 1.9.4
      */
     @Nullable
     public BaseComponent[] getSubtitle() {
@@ -207,6 +209,7 @@ public final class Title {
      * <p>The returned value is never negative.</p>
      *
      * @return the number of ticks to fade in
+     * @since 1.9.4
      */
     public int getFadeIn() {
         return this.fadeIn;
@@ -218,6 +221,7 @@ public final class Title {
      * <p>The returned value is never negative.</p>
      *
      * @return the number of ticks to stay
+     * @since 1.9.4
      */
     public int getStay() {
         return this.stay;
@@ -229,6 +233,7 @@ public final class Title {
      * <p>The returned value is never negative.</p>
      *
      * @return the number of ticks to fade out
+     * @since 1.9.4
      */
     public int getFadeOut() {
         return this.fadeOut;
@@ -277,6 +282,9 @@ public final class Title {
         send(Bukkit.getOnlinePlayers());
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static Builder builder() {
         return new Builder();
@@ -284,6 +292,8 @@ public final class Title {
 
     /**
      * A builder for creating titles
+     *
+     * @since 1.9.4
      */
     public static final class Builder {
 
@@ -299,6 +309,7 @@ public final class Title {
          * @param title the title text
          * @return this builder instance
          * @throws NullPointerException if the title is null
+         * @since 1.9.4
          */
         @NotNull
         public Builder title(@NotNull BaseComponent title) {
@@ -311,6 +322,7 @@ public final class Title {
          * @param title the title text
          * @return this builder instance
          * @throws NullPointerException if the title is null
+         * @since 1.9.4
          */
         @NotNull
         public Builder title(@NotNull BaseComponent[] title) {
@@ -326,6 +338,7 @@ public final class Title {
          * @param title the title text
          * @return this builder instance
          * @throws NullPointerException if the title is null
+         * @since 1.9.4
          */
         @NotNull
         public Builder title(@NotNull String title) {
@@ -337,6 +350,7 @@ public final class Title {
          *
          * @param subtitle the title text
          * @return this builder instance
+         * @since 1.9.4
          */
         @NotNull
         public Builder subtitle(@Nullable BaseComponent subtitle) {
@@ -348,6 +362,7 @@ public final class Title {
          *
          * @param subtitle the title text
          * @return this builder instance
+         * @since 1.9.4
          */
         @NotNull
         public Builder subtitle(@Nullable BaseComponent[] subtitle) {
@@ -362,6 +377,7 @@ public final class Title {
          *
          * @param subtitle the title text
          * @return this builder instance
+         * @since 1.9.4
          */
         @NotNull
         public Builder subtitle(@Nullable String subtitle) {
@@ -374,6 +390,7 @@ public final class Title {
          * @param fadeIn the number of ticks to fade in
          * @return this builder instance
          * @throws IllegalArgumentException if it is negative
+         * @since 1.9.4
          */
         @NotNull
         public Builder fadeIn(int fadeIn) {
@@ -389,6 +406,7 @@ public final class Title {
          * @param stay the number of ticks to stay
          * @return this builder instance
          * @throws IllegalArgumentException if it is negative
+         * @since 1.9.4
          */
         @NotNull
         public Builder stay(int stay) {
@@ -403,6 +421,7 @@ public final class Title {
          * @param fadeOut the number of ticks to fade out
          * @return this builder instance
          * @throws IllegalArgumentException if it is negative
+         * @since 1.9.4
          */
         @NotNull
         public Builder fadeOut(int fadeOut) {
@@ -416,6 +435,7 @@ public final class Title {
          *
          * @return a title from the values in this builder
          * @throws IllegalStateException if title isn't specified
+         * @since 1.9.4
          */
         @NotNull
         public Title build() {

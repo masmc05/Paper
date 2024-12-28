@@ -24,10 +24,16 @@ public final class GoalKey<T extends Mob> {
         this.namespacedKey = namespacedKey;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public Class<T> getEntityClass() {
         return this.entityClass;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public NamespacedKey getNamespacedKey() {
         return this.namespacedKey;
     }
@@ -54,6 +60,9 @@ public final class GoalKey<T extends Mob> {
             .toString();
     }
 
+    /**
+     * @since 1.15.2
+     */
     public static <A extends Mob> GoalKey<A> of(Class<A> entityClass, NamespacedKey namespacedKey) {
         return new GoalKey<>(entityClass, namespacedKey);
     }

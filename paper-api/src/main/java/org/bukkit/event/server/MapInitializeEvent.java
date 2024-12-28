@@ -21,6 +21,7 @@ public class MapInitializeEvent extends ServerEvent {
      * Gets the map initialized in this event.
      *
      * @return Map for this event
+     * @since 1.0.0
      */
     @NotNull
     public MapView getMap() {

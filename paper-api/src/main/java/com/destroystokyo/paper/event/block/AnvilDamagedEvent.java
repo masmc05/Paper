@@ -30,6 +30,9 @@ public class AnvilDamagedEvent extends InventoryEvent implements Cancellable {
         this.damageState = DamageState.getState(blockData);
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public AnvilInventory getInventory() {
         return (AnvilInventory) super.getInventory();
@@ -39,6 +42,7 @@ public class AnvilDamagedEvent extends InventoryEvent implements Cancellable {
      * Gets the new state of damage on the anvil
      *
      * @return Damage state
+     * @since 1.13
      */
     public DamageState getDamageState() {
         return this.damageState;
@@ -57,6 +61,7 @@ public class AnvilDamagedEvent extends InventoryEvent implements Cancellable {
      * Gets if anvil is breaking on this use
      *
      * @return {@code true} if breaking
+     * @since 1.13
      */
     public boolean isBreaking() {
         return this.damageState == DamageState.BROKEN;
@@ -66,6 +71,7 @@ public class AnvilDamagedEvent extends InventoryEvent implements Cancellable {
      * Sets if anvil is breaking on this use
      *
      * @param breaking {@code true} if breaking
+     * @since 1.13
      */
     public void setBreaking(final boolean breaking) {
         if (breaking) {
@@ -75,27 +81,41 @@ public class AnvilDamagedEvent extends InventoryEvent implements Cancellable {
         }
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
     /**
      * Represents the amount of damage on an anvil block
+     *
+     * @since 1.13
      */
     public enum DamageState {
         FULL(Material.ANVIL),
@@ -113,6 +133,7 @@ public class AnvilDamagedEvent extends InventoryEvent implements Cancellable {
          * Get block material of this state
          *
          * @return Material
+         * @since 1.13
          */
         public Material getMaterial() {
             return this.material;
@@ -124,6 +145,7 @@ public class AnvilDamagedEvent extends InventoryEvent implements Cancellable {
          * @param blockData Block data
          * @return DamageState
          * @throws IllegalArgumentException If non anvil block data is given
+         * @since 1.13
          */
         public static DamageState getState(final @Nullable BlockData blockData) {
             return blockData == null ? BROKEN : getState(blockData.getMaterial());
@@ -135,6 +157,7 @@ public class AnvilDamagedEvent extends InventoryEvent implements Cancellable {
          * @param material Block material
          * @return DamageState
          * @throws IllegalArgumentException If non anvil material is given
+         * @since 1.13
          */
         public static DamageState getState(final @Nullable Material material) {
             if (material == null) {

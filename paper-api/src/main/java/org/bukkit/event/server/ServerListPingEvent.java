@@ -140,6 +140,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      * Get the address the ping is coming from.
      *
      * @return the address
+     * @since 1.0.0
      */
     @NotNull
     public InetAddress getAddress() {
@@ -151,6 +152,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      *
      * @return the message of the day
      * @deprecated in favour of {@link #motd()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -163,6 +165,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      *
      * @param motd the message of the day
      * @deprecated in favour of {@link #motd(net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void setMotd(@NotNull String motd) {
@@ -173,6 +176,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      * Get the number of players sent.
      *
      * @return the number of players
+     * @since 1.0.0
      */
     public int getNumPlayers() {
         int numPlayers = this.numPlayers;
@@ -189,6 +193,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      * Get the maximum number of players sent.
      *
      * @return the maximum number of players
+     * @since 1.0.0
      */
     public int getMaxPlayers() {
         return maxPlayers;
@@ -211,6 +216,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      * Set the maximum number of players sent.
      *
      * @param maxPlayers the maximum number of player
+     * @since 1.0.0
      */
     public void setMaxPlayers(int maxPlayers) {
         this.maxPlayers = maxPlayers;
@@ -262,6 +268,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      * @throws UnsupportedOperationException if the caller of this event does
      *     not support removing players
      * @deprecated the Iterable interface will be removed at some point
+     * @since 1.7.10
      */
     @NotNull
     @Override

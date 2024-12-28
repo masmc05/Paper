@@ -16,6 +16,7 @@ public interface CommandBlockHolder {
      * command, an empty String will be returned instead.
      *
      * @return Command that this CommandBlock will run when activated.
+     * @since 1.17.1
      */
     String getCommand();
 
@@ -25,6 +26,7 @@ public interface CommandBlockHolder {
      * String.
      *
      * @param command Command that this CommandBlock will run when activated.
+     * @since 1.17.1
      */
     void setCommand(@Nullable String command);
 
@@ -32,6 +34,7 @@ public interface CommandBlockHolder {
      * Gets the last output from this command block.
      *
      * @return the last output
+     * @since 1.17.1
      */
     Component lastOutput();
 
@@ -39,6 +42,7 @@ public interface CommandBlockHolder {
      * Sets the last output from this command block.
      *
      * @param lastOutput the last output
+     * @since 1.17.1
      */
     void lastOutput(@Nullable Component lastOutput);
 
@@ -47,6 +51,7 @@ public interface CommandBlockHolder {
      * @see <a href="https://minecraft.wiki/wiki/Command_Block#Success_count">Command_Block#Success_count</a>
      *
      * @return the success count
+     * @since 1.17.1
      */
     int getSuccessCount();
 
@@ -55,6 +60,7 @@ public interface CommandBlockHolder {
      * @see <a href="https://minecraft.wiki/wiki/Command_Block#Success_count">Command_Block#Success_count</a>
      *
      * @param successCount the success count
+     * @since 1.17.1
      */
     void setSuccessCount(int successCount);
 }

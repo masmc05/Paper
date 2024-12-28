@@ -32,6 +32,7 @@ public class PlayerSwapHandItemsEvent extends PlayerEvent implements Cancellable
      * Gets the item switched to the main hand.
      *
      * @return item in the main hand
+     * @since 1.9.4
      */
     @NotNull // Paper
     public ItemStack getMainHandItem() {
@@ -42,6 +43,7 @@ public class PlayerSwapHandItemsEvent extends PlayerEvent implements Cancellable
      * Sets the item in the main hand.
      *
      * @param mainHandItem new item in the main hand
+     * @since 1.9.4
      */
     public void setMainHandItem(@Nullable ItemStack mainHandItem) {
         this.mainHandItem = mainHandItem == null ? ItemStack.empty() : mainHandItem; // Paper
@@ -51,6 +53,7 @@ public class PlayerSwapHandItemsEvent extends PlayerEvent implements Cancellable
      * Gets the item switched to the off hand.
      *
      * @return item in the off hand
+     * @since 1.9.4
      */
     @NotNull // Paper
     public ItemStack getOffHandItem() {
@@ -61,27 +64,40 @@ public class PlayerSwapHandItemsEvent extends PlayerEvent implements Cancellable
      * Sets the item in the off hand.
      *
      * @param offHandItem new item in the off hand
+     * @since 1.9.4
      */
     public void setOffHandItem(@Nullable ItemStack offHandItem) {
         this.offHandItem = offHandItem == null ? ItemStack.empty() : offHandItem; // Paper
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -27,6 +27,7 @@ public interface HelpMap {
      * @param topicName The help topic name to look up.
      * @return A {@link HelpTopic} object matching the topic name or null if
      *     none can be found.
+     * @since 1.1.0
      */
     @Nullable
     public HelpTopic getHelpTopic(@NotNull String topicName);
@@ -44,12 +45,15 @@ public interface HelpMap {
      * Adds a topic to the server's help index.
      *
      * @param topic The new help topic to add.
+     * @since 1.1.0
      */
     public void addTopic(@NotNull HelpTopic topic);
 
     /**
      * Clears out the contents of the help index. Normally called during
      * server reload.
+     *
+     * @since 1.1.0
      */
     public void clear();
 
@@ -69,6 +73,7 @@ public interface HelpMap {
      *     with the {@code commandClass}.
      * @throws IllegalArgumentException Thrown if {@code commandClass} does
      *     not derive from a legal base class.
+     * @since 1.1.0
      */
     public void registerHelpTopicFactory(@NotNull Class<?> commandClass, @NotNull HelpTopicFactory<?> factory);
 

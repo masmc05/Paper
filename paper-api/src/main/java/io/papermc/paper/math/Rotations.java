@@ -23,6 +23,7 @@ public interface Rotations {
      * @param y the angle for the Y axis in degrees
      * @param z the angle for the Z axis in degrees
      * @return Rotations instance holding the provided rotations
+     * @since 1.19.2
      */
     static Rotations ofDegrees(final double x, final double y, final double z) {
         return new RotationsImpl(x, y, z);
@@ -32,6 +33,7 @@ public interface Rotations {
      * Returns the angle on the X axis in degrees
      *
      * @return the angle in degrees
+     * @since 1.19.2
      */
     double x();
 
@@ -39,6 +41,7 @@ public interface Rotations {
      * Returns the angle on the Y axis in degrees
      *
      * @return the angle in degrees
+     * @since 1.19.2
      */
     double y();
 
@@ -46,6 +49,7 @@ public interface Rotations {
      * Returns the angle on the Z axis in degrees
      *
      * @return the angle in degrees
+     * @since 1.19.2
      */
     double z();
 
@@ -55,6 +59,7 @@ public interface Rotations {
      *
      * @param x the angle in degrees
      * @return the resultant Rotations
+     * @since 1.19.2
      */
     Rotations withX(double x);
 
@@ -64,6 +69,7 @@ public interface Rotations {
      *
      * @param y the angle in degrees
      * @return the resultant Rotations
+     * @since 1.19.2
      */
     Rotations withY(double y);
 
@@ -73,6 +79,7 @@ public interface Rotations {
      *
      * @param z the angle in degrees
      * @return the resultant Rotations
+     * @since 1.19.2
      */
     Rotations withZ(double z);
 
@@ -84,6 +91,7 @@ public interface Rotations {
      * @param y the angle to add to the Y axis in degrees
      * @param z the angle to add to the Z axis in degrees
      * @return the resultant Rotations
+     * @since 1.19.2
      */
     Rotations add(double x, double y, double z);
 
@@ -95,6 +103,7 @@ public interface Rotations {
      * @param y the angle to subtract from the Y axis in degrees
      * @param z the angle to subtract from the Z axis in degrees
      * @return the resultant Rotations
+     * @since 1.19.2
      */
     default Rotations subtract(final double x, final double y, final double z) {
         return this.add(-x, -y, -z);

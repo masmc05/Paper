@@ -24,6 +24,7 @@ public interface LeatherArmorMeta extends ItemMeta {
      * @apiNote The method yielding {@link ItemFactory#getDefaultLeatherColor()} is incorrect
      * for {@link Material#WOLF_ARMOR} as its default color differs. Generally, it is recommended to check
      * {@link #isDyed()} to determine if this leather armor is dyed than to compare this color to the default.
+     * @since 1.4.5
      */
     @NotNull
     Color getColor();
@@ -32,6 +33,7 @@ public interface LeatherArmorMeta extends ItemMeta {
      * Sets the color of the armor.
      *
      * @param color the color to set.
+     * @since 1.4.5
      */
     void setColor(@Nullable Color color);
 

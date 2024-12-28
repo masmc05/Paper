@@ -16,6 +16,7 @@ public interface FaceAttachable extends BlockData {
      * Gets the value of the 'face' property.
      *
      * @return the 'face' value
+     * @since 1.15.2
      */
     @NotNull
     AttachedFace getAttachedFace();
@@ -29,6 +30,8 @@ public interface FaceAttachable extends BlockData {
 
     /**
      * The face to which a switch type block is stuck.
+     *
+     * @since 1.15.2
      */
     public enum AttachedFace {
         /**

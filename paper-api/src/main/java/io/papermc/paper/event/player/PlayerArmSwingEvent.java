@@ -25,6 +25,7 @@ public class PlayerArmSwingEvent extends PlayerAnimationEvent {
      * Returns the hand of the arm swing.
      *
      * @return the hand
+     * @since 1.16.5
      */
     public EquipmentSlot getHand() {
         return this.equipmentSlot;

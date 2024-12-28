@@ -22,6 +22,7 @@ public abstract class InventoryInteractEvent extends InventoryEvent implements C
      * Gets the player who performed the click.
      *
      * @return The clicking player.
+     * @since 1.6.1
      */
     @NotNull
     public HumanEntity getWhoClicked() {
@@ -45,6 +46,7 @@ public abstract class InventoryInteractEvent extends InventoryEvent implements C
      * event.
      *
      * @return the Result of this event.
+     * @since 1.6.1
      */
     @NotNull
     public Result getResult() {
@@ -60,6 +62,7 @@ public abstract class InventoryInteractEvent extends InventoryEvent implements C
      * {@inheritDoc}
      *
      * @return whether the event is cancelled
+     * @since 1.6.1
      */
     @Override
     public boolean isCancelled() {
@@ -74,6 +77,7 @@ public abstract class InventoryInteractEvent extends InventoryEvent implements C
      * {@inheritDoc}
      *
      * @param toCancel result becomes DENY if true, ALLOW if false
+     * @since 1.6.1
      */
     @Override
     public void setCancelled(boolean toCancel) {

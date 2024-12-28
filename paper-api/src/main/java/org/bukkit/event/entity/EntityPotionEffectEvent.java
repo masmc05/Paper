@@ -41,6 +41,7 @@ public class EntityPotionEffectEvent extends EntityEvent implements Cancellable 
      *
      * @return The old potion effect or null if the entity did not have the
      * changed effect type.
+     * @since 1.13
      */
     @Nullable
     public PotionEffect getOldEffect() {
@@ -52,6 +53,7 @@ public class EntityPotionEffectEvent extends EntityEvent implements Cancellable 
      *
      * @return The new potion effect or null if the effect of the changed type
      * will be removed.
+     * @since 1.13
      */
     @Nullable
     public PotionEffect getNewEffect() {
@@ -62,6 +64,7 @@ public class EntityPotionEffectEvent extends EntityEvent implements Cancellable 
      * Gets the cause why the effect has changed.
      *
      * @return A Cause value why the effect has changed.
+     * @since 1.13
      */
     @NotNull
     public Cause getCause() {
@@ -72,6 +75,7 @@ public class EntityPotionEffectEvent extends EntityEvent implements Cancellable 
      * Gets the action which will be performed on the potion effect type.
      *
      * @return An action to be performed on the potion effect type.
+     * @since 1.13
      */
     @NotNull
     public Action getAction() {
@@ -82,6 +86,7 @@ public class EntityPotionEffectEvent extends EntityEvent implements Cancellable 
      * Gets the modified potion effect type.
      *
      * @return The effect type which will be modified on the entity.
+     * @since 1.13
      */
     @NotNull
     public PotionEffectType getModifiedType() {
@@ -93,6 +98,7 @@ public class EntityPotionEffectEvent extends EntityEvent implements Cancellable 
      * (Only applicable for the CHANGED Action).
      *
      * @return If the new effect will override the old one.
+     * @since 1.13
      */
     public boolean isOverride() {
         return override;
@@ -103,27 +109,40 @@ public class EntityPotionEffectEvent extends EntityEvent implements Cancellable 
      * applicable for the CHANGED action).
      *
      * @param override If the new effect will override the old one.
+     * @since 1.13
      */
     public void setOverride(boolean override) {
         this.override = override;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
@@ -131,6 +150,8 @@ public class EntityPotionEffectEvent extends EntityEvent implements Cancellable 
 
     /**
      * An enum to specify the action to be performed.
+     *
+     * @since 1.13
      */
     public enum Action {
 
@@ -156,6 +177,8 @@ public class EntityPotionEffectEvent extends EntityEvent implements Cancellable 
 
     /**
      * An enum to specify the cause why an effect was changed.
+     *
+     * @since 1.13
      */
     public enum Cause {
 

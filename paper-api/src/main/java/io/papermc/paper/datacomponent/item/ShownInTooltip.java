@@ -20,6 +20,7 @@ public interface ShownInTooltip<T> {
      * Gets if the data component should be shown in the item's tooltip.
      *
      * @return {@code true} to show in the tooltip
+     * @since 1.21.3
      */
     @Contract(pure = true)
     boolean showInTooltip();
@@ -30,6 +31,7 @@ public interface ShownInTooltip<T> {
      *
      * @param showInTooltip {@code true} to show in the tooltip
      * @return the new data component
+     * @since 1.21.3
      */
     @Contract(value = "_ -> new", pure = true)
     T showInTooltip(boolean showInTooltip);
@@ -38,6 +40,7 @@ public interface ShownInTooltip<T> {
      * A builder for creating a {@link ShownInTooltip} data component.
      *
      * @param <B> builder type
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -49,6 +52,7 @@ public interface ShownInTooltip<T> {
          * @param showInTooltip {@code true} to show in the tooltip
          * @return the builder for chaining
          * @see #showInTooltip()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         B showInTooltip(boolean showInTooltip);

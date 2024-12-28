@@ -25,6 +25,7 @@ public interface Prompt extends Cloneable {
      *
      * @param context Context information about the conversation.
      * @return The text to display.
+     * @since 1.1.0
      */
     @NotNull
     String getPromptText(@NotNull ConversationContext context);
@@ -36,6 +37,7 @@ public interface Prompt extends Cloneable {
      * @param context Context information about the conversation.
      * @return If true, the {@link Conversation} will wait for input before
      *     continuing. If false, {@link #acceptInput(ConversationContext, String)} will be called immediately with {@code null} input.
+     * @since 1.1.0
      */
     boolean blocksForInput(@NotNull ConversationContext context);
 
@@ -46,6 +48,7 @@ public interface Prompt extends Cloneable {
      * @param context Context information about the conversation.
      * @param input The input text from the user.
      * @return The next Prompt in the prompt graph.
+     * @since 1.1.0
      */
     @Nullable
     Prompt acceptInput(@NotNull ConversationContext context, @Nullable String input);

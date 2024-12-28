@@ -31,6 +31,9 @@ public class PermissibleBase implements Permissible {
         recalculatePermissions();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isOp() {
         if (opable == null) {
@@ -40,6 +43,9 @@ public class PermissibleBase implements Permissible {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setOp(boolean value) {
         if (opable == null) {
@@ -49,6 +55,9 @@ public class PermissibleBase implements Permissible {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isPermissionSet(@NotNull String name) {
         if (name == null) {
@@ -58,6 +67,9 @@ public class PermissibleBase implements Permissible {
         return permissions.containsKey(name.toLowerCase(Locale.ROOT));
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isPermissionSet(@NotNull Permission perm) {
         if (perm == null) {
@@ -67,6 +79,9 @@ public class PermissibleBase implements Permissible {
         return isPermissionSet(perm.getName());
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean hasPermission(@NotNull String inName) {
         if (inName == null) {
@@ -91,6 +106,9 @@ public class PermissibleBase implements Permissible {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean hasPermission(@NotNull Permission perm) {
         if (perm == null) {
@@ -108,6 +126,9 @@ public class PermissibleBase implements Permissible {
         return perm.getDefault().getValue(isOp());
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @NotNull
     public synchronized PermissionAttachment addAttachment(@NotNull Plugin plugin, @NotNull String name, boolean value) { // Paper - synchronized
@@ -127,6 +148,9 @@ public class PermissibleBase implements Permissible {
         return result;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @NotNull
     public synchronized PermissionAttachment addAttachment(@NotNull Plugin plugin) { // Paper - synchronized
@@ -144,6 +168,9 @@ public class PermissibleBase implements Permissible {
         return result;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public synchronized void removeAttachment(@NotNull PermissionAttachment attachment) { // Paper - synchronized
         if (attachment == null) {
@@ -163,6 +190,9 @@ public class PermissibleBase implements Permissible {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public synchronized void recalculatePermissions() { // Paper - synchronized
         clearPermissions();
@@ -214,6 +244,9 @@ public class PermissibleBase implements Permissible {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @Nullable
     public synchronized PermissionAttachment addAttachment(@NotNull Plugin plugin, @NotNull String name, boolean value, int ticks) { // Paper
@@ -234,6 +267,9 @@ public class PermissibleBase implements Permissible {
         return result;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @Nullable
     public synchronized PermissionAttachment addAttachment(@NotNull Plugin plugin, int ticks) { // Paper - synchronized
@@ -254,6 +290,9 @@ public class PermissibleBase implements Permissible {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @NotNull
     public synchronized Set<PermissionAttachmentInfo> getEffectivePermissions() { // Paper - synchronized

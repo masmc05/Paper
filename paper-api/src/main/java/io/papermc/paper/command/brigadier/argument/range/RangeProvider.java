@@ -18,6 +18,7 @@ public sealed interface RangeProvider<T extends Comparable<?>> permits DoubleRan
     /**
      * Provides the given range.
      * @return range
+     * @since 1.20.6
      */
     Range<T> range();
 }

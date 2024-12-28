@@ -23,6 +23,7 @@ public interface PluginProviderContext {
      * Provides the plugin's configuration.
      *
      * @return the plugin's configuration
+     * @since 1.19.3
      */
     PluginMeta getConfiguration();
 
@@ -30,6 +31,7 @@ public interface PluginProviderContext {
      * Provides the path to the data directory of the plugin.
      *
      * @return the previously described path
+     * @since 1.19.3
      */
     Path getDataDirectory();
 
@@ -37,6 +39,7 @@ public interface PluginProviderContext {
      * Provides the logger used for this plugin.
      *
      * @return the logger instance
+     * @since 1.19.3
      */
     ComponentLogger getLogger();
 

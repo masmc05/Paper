@@ -26,6 +26,7 @@ public interface Fireball extends Projectile, Explosive {
      * @param direction the direction this fireball should be flying towards
      * @see #setVelocity(Vector)
      * @see #setAcceleration(Vector)
+     * @since 1.0.0
      */
     public void setDirection(@NotNull Vector direction);
 
@@ -37,6 +38,7 @@ public interface Fireball extends Projectile, Explosive {
      * @see #getAcceleration()
      * @deprecated badly named method, returns the value of
      * {@link #getAcceleration()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.20.6")

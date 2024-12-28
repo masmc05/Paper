@@ -14,6 +14,7 @@ public interface Boss extends Entity {
      * Returns the {@link BossBar} of the {@link Boss}
      *
      * @return the {@link BossBar} of the entity
+     * @since 1.13.2
      */
     @Nullable
     BossBar getBossBar();

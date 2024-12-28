@@ -14,6 +14,7 @@ public interface CommandBlock extends Directional {
      * Gets the value of the 'conditional' property.
      *
      * @return the 'conditional' value
+     * @since 1.13
      */
     boolean isConditional();
 
@@ -21,6 +22,7 @@ public interface CommandBlock extends Directional {
      * Sets the value of the 'conditional' property.
      *
      * @param conditional the new 'conditional' value
+     * @since 1.13
      */
     void setConditional(boolean conditional);
 }

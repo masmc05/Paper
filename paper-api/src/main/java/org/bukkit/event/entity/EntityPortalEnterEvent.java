@@ -33,6 +33,7 @@ public class EntityPortalEnterEvent extends EntityEvent implements org.bukkit.ev
      * Gets the portal block the entity is touching
      *
      * @return The portal block the entity is touching
+     * @since 1.0.0
      */
     @NotNull
     public Location getLocation() {

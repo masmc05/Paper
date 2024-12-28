@@ -34,6 +34,7 @@ public class PlayerStartSpectatingEntityEvent extends PlayerEvent implements Can
      * Gets the entity that the player is currently spectating or themselves if they weren't spectating anything
      *
      * @return The entity the player is currently spectating (before they start spectating the new target).
+     * @since 1.13.1
      */
     public Entity getCurrentSpectatorTarget() {
         return this.currentSpectatorTarget;
@@ -43,26 +44,39 @@ public class PlayerStartSpectatingEntityEvent extends PlayerEvent implements Can
      * Gets the new entity that the player will now be spectating
      *
      * @return The entity the player is now going to be spectating.
+     * @since 1.13.1
      */
     public Entity getNewSpectatorTarget() {
         return this.newSpectatorTarget;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

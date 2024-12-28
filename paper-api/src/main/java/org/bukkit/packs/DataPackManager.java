@@ -14,6 +14,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Manager of data packs.
  * @deprecated use {@link io.papermc.paper.datapack.DatapackManager}
+ * @since 1.19.4
  */
 @Deprecated(forRemoval = true, since = "1.20") // Paper
 public interface DataPackManager {
@@ -22,6 +23,7 @@ public interface DataPackManager {
      * Return all the available {@link DataPack}s on the server.
      *
      * @return a Collection of {@link DataPack}
+     * @since 1.19.4
      */
     @NotNull
     public Collection<DataPack> getDataPacks();
@@ -31,6 +33,7 @@ public interface DataPackManager {
      *
      * @param dataPackKey the key of the {@link DataPack}
      * @return the {@link DataPack} or null if it does not exist
+     * @since 1.19.4
      */
     @Nullable
     public DataPack getDataPack(@NotNull NamespacedKey dataPackKey);
@@ -40,6 +43,7 @@ public interface DataPackManager {
      *
      * @param world the world to search
      * @return a Collection of {@link DataPack}
+     * @since 1.19.4
      */
     @NotNull
     public Collection<DataPack> getEnabledDataPacks(@NotNull World world);
@@ -49,6 +53,7 @@ public interface DataPackManager {
      *
      * @param world the world to search
      * @return a Collection of {@link DataPack}
+     * @since 1.19.4
      */
     @NotNull
     public Collection<DataPack> getDisabledDataPacks(@NotNull World world);
@@ -59,6 +64,7 @@ public interface DataPackManager {
      * @param material Material to check (needs to be an {@link Material#isItem()} or {@link Material#isBlock()})
      * @param world World to check
      * @return {@code True} if the Item/Block related to the material is enabled
+     * @since 1.19.4
      */
     public boolean isEnabledByFeature(@NotNull Material material, @NotNull World world);
 
@@ -90,6 +96,7 @@ public interface DataPackManager {
      * @param entityType EntityType to check
      * @param world World to check
      * @return {@code True} if the type of entity is enabled
+     * @since 1.19.4
      */
     public boolean isEnabledByFeature(@NotNull EntityType entityType, @NotNull World world);
 }

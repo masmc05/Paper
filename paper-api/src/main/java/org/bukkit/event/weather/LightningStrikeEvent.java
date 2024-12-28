@@ -28,11 +28,17 @@ public class LightningStrikeEvent extends WeatherEvent implements Cancellable {
         this.cause = cause;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return canceled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         canceled = cancel;
@@ -42,6 +48,7 @@ public class LightningStrikeEvent extends WeatherEvent implements Cancellable {
      * Gets the bolt which is striking the earth.
      *
      * @return lightning entity
+     * @since 1.0.0
      */
     @NotNull
     public LightningStrike getLightning() {

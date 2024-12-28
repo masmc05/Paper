@@ -35,6 +35,7 @@ public interface PluginMeta {
      * Example:<blockquote><pre>name: MyPlugin</pre></blockquote>
      *
      * @return the name of the plugin
+     * @since 1.19.3
      */
     String getName();
 
@@ -42,6 +43,7 @@ public interface PluginMeta {
      * Returns the display name of the plugin, including the version.
      *
      * @return a descriptive name of the plugin and respective version
+     * @since 1.19.3
      */
     default String getDisplayName() {
         return this.getName() + " v" + this.getVersion();
@@ -52,6 +54,7 @@ public interface PluginMeta {
      * A subtype of {@link JavaPlugin} is expected at this location.
      *
      * @return the fully qualified class name of the plugin's main class.
+     * @since 1.19.3
      */
     String getMainClass();
 
@@ -60,6 +63,7 @@ public interface PluginMeta {
      *
      * @return the plugin load order
      * @see PluginLoadOrder for further details regards the available load orders.
+     * @since 1.19.3
      */
     PluginLoadOrder getLoadOrder();
 
@@ -69,6 +73,7 @@ public interface PluginMeta {
      * might be semantic versioning.
      *
      * @return the string representation of the plugin's version
+     * @since 1.19.3
      */
     String getVersion();
 
@@ -79,6 +84,7 @@ public interface PluginMeta {
      *
      * @return the specific overwrite of the logger prefix as defined by the plugin. If the plugin did not define a
      *     custom logger prefix, this method will return null
+     * @since 1.19.3
      */
     @Nullable String getLoggerPrefix();
 
@@ -90,6 +96,7 @@ public interface PluginMeta {
      * If any of the dependencies defined by this list are not installed on the server, this plugin will fail to load.
      *
      * @return an immutable list of required dependency names
+     * @since 1.19.3
      */
     List<String> getPluginDependencies();
 
@@ -102,6 +109,7 @@ public interface PluginMeta {
      * plugin, however the plugin will load even if these dependencies are not installed.
      *
      * @return immutable list of soft dependencies
+     * @since 1.19.3
      */
     List<String> getPluginSoftDependencies();
 
@@ -114,6 +122,7 @@ public interface PluginMeta {
      * are hence not available to the plugin at runtime. They merely load before this plugin.
      *
      * @return immutable list of plugins to load before this plugin
+     * @since 1.19.3
      */
     List<String> getLoadBeforePlugins();
 
@@ -123,6 +132,7 @@ public interface PluginMeta {
      * it provides the expected classes for.
      *
      * @return immutable list of provided plugins/dependencies
+     * @since 1.19.3
      */
     List<String> getProvidedPlugins();
 
@@ -131,6 +141,7 @@ public interface PluginMeta {
      * The author names are in no particular format.
      *
      * @return an immutable list of the plugin's authors
+     * @since 1.19.3
      */
     List<String> getAuthors();
 
@@ -139,6 +150,7 @@ public interface PluginMeta {
      * The names of the contributors are in no particular format.
      *
      * @return an immutable list of the plugin's contributors
+     * @since 1.19.3
      */
     List<String> getContributors();
 
@@ -147,6 +159,7 @@ public interface PluginMeta {
      * provides.
      *
      * @return description or null if the plugin did not define a human readable description.
+     * @since 1.19.3
      */
     @Nullable String getDescription();
 
@@ -155,6 +168,7 @@ public interface PluginMeta {
      * The defined string value is <b>not guaranteed</b> to be in the form of a url.
      *
      * @return a string representation of the website that serves as the main hub for this plugin/its author.
+     * @since 1.19.3
      */
     @Nullable String getWebsite();
 
@@ -162,6 +176,7 @@ public interface PluginMeta {
      * Provides the list of permissions that are defined via the plugin meta instance.
      *
      * @return an immutable list of permissions
+     * @since 1.19.3
      */
     // TODO: Do we even want this? Why not just use the bootstrapper
     List<Permission> getPermissions();
@@ -171,6 +186,7 @@ public interface PluginMeta {
      *
      * @return the bukkit permission default container.
      * @see #getPermissions()
+     * @since 1.19.3
      */
     // TODO: Do we even want this? Why not just use the bootstrapper
     PermissionDefault getPermissionDefault();
@@ -182,6 +198,7 @@ public interface PluginMeta {
      *
      * @return the version string made up of the major and minor version (e.g. 1.18 or 1.19). Minor versions like 1.18.2
      * are unified to their major release version (in this example 1.18)
+     * @since 1.19.3
      */
     @Nullable String getAPIVersion();
 

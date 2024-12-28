@@ -23,22 +23,37 @@ import org.jspecify.annotations.Nullable;
 @ApiStatus.NonExtendable
 public interface ResolvableProfile {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static ResolvableProfile resolvableProfile(final PlayerProfile profile) {
         return ItemComponentTypesBridge.bridge().resolvableProfile(profile);
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static ResolvableProfile.Builder resolvableProfile() {
         return ItemComponentTypesBridge.bridge().resolvableProfile();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(pure = true)
     @Nullable UUID uuid();
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(pure = true)
     @Nullable String name();
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(pure = true)
     @Unmodifiable Collection<ProfileProperty> properties();
 
@@ -69,12 +84,16 @@ public interface ResolvableProfile {
      *     // ...
      * }, runnable -> Bukkit.getScheduler().runTask(plugin, runnable));
      * </pre>
+     *
+     * @since 1.21.3
      */
     @Contract(pure = true)
     CompletableFuture<PlayerProfile> resolve();
 
     /**
      * Builder for {@link ResolvableProfile}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -87,6 +106,7 @@ public interface ResolvableProfile {
          * @param name the name
          * @return the builder for chaining
          * @see #name()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder name(@Pattern("^[!-~]{0,16}$") @Nullable String name);
@@ -97,6 +117,7 @@ public interface ResolvableProfile {
          * @param uuid the UUID
          * @return the builder for chaining
          * @see #uuid()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder uuid(@Nullable UUID uuid);
@@ -107,6 +128,7 @@ public interface ResolvableProfile {
          * @param property the property
          * @return the builder for chaining
          * @see #properties()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addProperty(ProfileProperty property);
@@ -117,6 +139,7 @@ public interface ResolvableProfile {
          * @param properties the properties
          * @return the builder for chaining
          * @see #properties()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addProperties(Collection<ProfileProperty> properties);

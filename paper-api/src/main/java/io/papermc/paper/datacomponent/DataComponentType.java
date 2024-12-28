@@ -17,15 +17,22 @@ public interface DataComponentType extends Keyed {
      * that it will be saved with any itemstack it's attached to.
      *
      * @return {@code true} if persistent, {@code false} otherwise
+     * @since 1.21.3
      */
     boolean isPersistent();
 
+    /**
+     * @since 1.21.3
+     */
     @SuppressWarnings("unused")
     @ApiStatus.NonExtendable
     interface Valued<T> extends DataComponentType {
 
     }
 
+    /**
+     * @since 1.21.3
+     */
     @ApiStatus.NonExtendable
     interface NonValued extends DataComponentType {
 

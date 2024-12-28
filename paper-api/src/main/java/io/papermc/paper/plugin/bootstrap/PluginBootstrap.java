@@ -37,6 +37,7 @@ public interface PluginBootstrap {
      *
      * @param context the server created bootstrap object
      * @return the server requested instance of the plugins main class.
+     * @since 1.19.3
      */
     default JavaPlugin createPlugin(final PluginProviderContext context) {
         return ProviderUtil.loadClass(context.getConfiguration().getMainClass(), JavaPlugin.class, this.getClass().getClassLoader());

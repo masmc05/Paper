@@ -25,23 +25,33 @@ public class RaidStopEvent extends RaidEvent {
      * Returns the stop reason.
      *
      * @return Reason
+     * @since 1.14.4
      */
     @NotNull
     public Reason getReason() {
         return reason;
     }
 
+    /**
+     * @since 1.14.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.14.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
     }
 
+    /**
+     * @since 1.14.4
+     */
     public enum Reason {
 
         /**

@@ -16,6 +16,7 @@ import org.bukkit.material.types.MushroomBlockTexture;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.1.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Mushroom extends MaterialData {
@@ -87,6 +88,7 @@ public class Mushroom extends MaterialData {
 
     /**
      * @return Whether this is a mushroom stem.
+     * @since 1.1.0
      */
     public boolean isStem() {
         return getData() == MushroomBlockTexture.STEM_SIDES.getData() || getData() == MushroomBlockTexture.ALL_STEM.getData();
@@ -102,6 +104,7 @@ public class Mushroom extends MaterialData {
      * {@link #setBlockTexture(org.bukkit.material.types.MushroomBlockTexture)}
      * with {@link MushroomBlockTexture#STEM_SIDES } or
      * {@link MushroomBlockTexture#ALL_STEM}
+     * @since 1.1.0
      */
     @Deprecated(since = "1.9")
     public void setStem() {
@@ -112,6 +115,7 @@ public class Mushroom extends MaterialData {
      * Gets the mushroom texture of this block.
      *
      * @return The mushroom texture of this block
+     * @since 1.9.4
      */
     public MushroomBlockTexture getBlockTexture() {
         return MushroomBlockTexture.getByData(getData());
@@ -121,6 +125,7 @@ public class Mushroom extends MaterialData {
      * Sets the mushroom texture of this block.
      *
      * @param texture The mushroom texture to set
+     * @since 1.9.4
      */
     public void setBlockTexture(MushroomBlockTexture texture) {
         setData(texture.getData());
@@ -131,6 +136,7 @@ public class Mushroom extends MaterialData {
      *
      * @param face The face to check.
      * @return True if it is painted.
+     * @since 1.1.0
      */
     public boolean isFacePainted(BlockFace face) {
         byte data = getData();
@@ -169,6 +175,7 @@ public class Mushroom extends MaterialData {
      *     pores to show.
      *
      * @deprecated Use MushroomBlockType cap options
+     * @since 1.1.0
      */
     @Deprecated(since = "1.9")
     public void setFacePainted(BlockFace face, boolean painted) {
@@ -243,6 +250,7 @@ public class Mushroom extends MaterialData {
     /**
      * @return A set of all faces that are currently painted (an empty set if
      *     it is a stem)
+     * @since 1.1.0
      */
     public Set<BlockFace> getPaintedFaces() {
         EnumSet<BlockFace> faces = EnumSet.noneOf(BlockFace.class);

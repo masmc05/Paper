@@ -28,6 +28,7 @@ public class BrewingStartEvent extends InventoryBlockStartEvent {
      *
      * @return the total brew time
      * @deprecated use {@link #getBrewingTime()} instead
+     * @since 1.19.3
      */
     @Deprecated(since = "1.21", forRemoval = true) // Paper
     public int getTotalBrewTime() {
@@ -39,6 +40,7 @@ public class BrewingStartEvent extends InventoryBlockStartEvent {
      *
      * @param brewTime the new total brew time
      * @deprecated use {@link #setBrewingTime(int)} instead
+     * @since 1.19.3
      */
     @Deprecated(since = "1.21", forRemoval = true) // Paper
     public void setTotalBrewTime(int brewTime) {

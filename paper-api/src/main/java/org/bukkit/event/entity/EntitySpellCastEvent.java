@@ -22,6 +22,9 @@ public class EntitySpellCastEvent extends EntityEvent implements Cancellable {
         this.spell = spell;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @Override
     @NotNull
     public Spellcaster getEntity() {
@@ -35,28 +38,41 @@ public class EntitySpellCastEvent extends EntityEvent implements Cancellable {
      * {@link Spellcaster#getSpell()}.
      *
      * @return the spell to cast
+     * @since 1.16.2
      */
     @NotNull
     public Spellcaster.Spell getSpell() {
         return spell;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @Override
     @NotNull
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

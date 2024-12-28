@@ -75,6 +75,7 @@ public enum ClickType {
      * keyboard.
      *
      * @return true if this ClickType represents the pressing of a key
+     * @since 1.6.1
      */
     public boolean isKeyboardClick() {
         return (this == ClickType.NUMBER_KEY) || (this == ClickType.DROP) || (this == ClickType.CONTROL_DROP) || (this == ClickType.SWAP_OFFHAND);
@@ -96,6 +97,7 @@ public enum ClickType {
      * performed by a Player in creative mode.
      *
      * @return true if this action requires Creative mode
+     * @since 1.6.1
      */
     public boolean isCreativeAction() {
         // Why use middle click?
@@ -106,6 +108,7 @@ public enum ClickType {
      * Gets whether this ClickType represents a right click.
      *
      * @return true if this ClickType represents a right click
+     * @since 1.6.1
      */
     public boolean isRightClick() {
         return (this == ClickType.RIGHT) || (this == ClickType.SHIFT_RIGHT);
@@ -115,6 +118,7 @@ public enum ClickType {
      * Gets whether this ClickType represents a left click.
      *
      * @return true if this ClickType represents a left click
+     * @since 1.6.1
      */
     public boolean isLeftClick() {
         return (this == ClickType.LEFT) || (this == ClickType.SHIFT_LEFT) || (this == ClickType.DOUBLE_CLICK) || (this == ClickType.CREATIVE);
@@ -125,6 +129,7 @@ public enum ClickType {
      * down when the click was made.
      *
      * @return true if the action uses Shift.
+     * @since 1.6.1
      */
     public boolean isShiftClick() {
         return (this == ClickType.SHIFT_LEFT) || (this == ClickType.SHIFT_RIGHT);

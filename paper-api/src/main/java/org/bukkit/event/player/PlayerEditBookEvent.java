@@ -46,6 +46,7 @@ public class PlayerEditBookEvent extends PlayerEvent implements Cancellable {
      * change the existing book meta.
      *
      * @return the book meta currently on the book
+     * @since 1.6.1
      */
     @NotNull
     public BookMeta getPreviousBookMeta() {
@@ -60,6 +61,7 @@ public class PlayerEditBookEvent extends PlayerEvent implements Cancellable {
      * book.
      *
      * @return the book meta that the player is attempting to add
+     * @since 1.6.1
      */
     @NotNull
     public BookMeta getNewBookMeta() {
@@ -75,6 +77,7 @@ public class PlayerEditBookEvent extends PlayerEvent implements Cancellable {
      *
      * @return the inventory slot number that the book item occupies
      * @deprecated books may be signed from off hand
+     * @since 1.6.1
      */
     @Deprecated(since = "1.13.1")
     public int getSlot() {
@@ -86,6 +89,7 @@ public class PlayerEditBookEvent extends PlayerEvent implements Cancellable {
      *
      * @param newBookMeta new book meta
      * @throws IllegalArgumentException if the new book meta is null
+     * @since 1.6.1
      */
     public void setNewBookMeta(@NotNull BookMeta newBookMeta) throws IllegalArgumentException {
         Preconditions.checkArgument(newBookMeta != null, "New book meta must not be null");
@@ -98,6 +102,7 @@ public class PlayerEditBookEvent extends PlayerEvent implements Cancellable {
      * Material changes from BOOK_AND_QUILL to WRITTEN_BOOK.
      *
      * @return true if the book is being signed
+     * @since 1.6.1
      */
     public boolean isSigning() {
         return isSigning;
@@ -108,27 +113,40 @@ public class PlayerEditBookEvent extends PlayerEvent implements Cancellable {
      * Material changes from BOOK_AND_QUILL to WRITTEN_BOOK.
      *
      * @param signing whether or not the book is being signed.
+     * @since 1.6.1
      */
     public void setSigning(boolean signing) {
         isSigning = signing;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;

@@ -66,6 +66,7 @@ public class EntityDeathEvent extends EntityEvent implements org.bukkit.event.Ca
      * question, merely how much should be created after its death.
      *
      * @return Amount of EXP to drop.
+     * @since 1.0.0
      */
     public int getDroppedExp() {
         return dropExp;
@@ -78,6 +79,7 @@ public class EntityDeathEvent extends EntityEvent implements org.bukkit.event.Ca
      * question, merely how much should be created after its death.
      *
      * @param exp Amount of EXP to drop.
+     * @since 1.0.0
      */
     public void setDroppedExp(int exp) {
         this.dropExp = exp;
@@ -87,6 +89,7 @@ public class EntityDeathEvent extends EntityEvent implements org.bukkit.event.Ca
      * Gets all the items which will drop when the entity dies
      *
      * @return Items to drop when the entity dies
+     * @since 1.0.0
      */
     @NotNull
     public List<ItemStack> getDrops() {

@@ -14,6 +14,7 @@ public interface BukkitTask {
      * Returns the taskId for the task.
      *
      * @return Task id number
+     * @since 1.0.0
      */
     public int getTaskId();
 
@@ -21,6 +22,7 @@ public interface BukkitTask {
      * Returns the Plugin that owns this task.
      *
      * @return The Plugin that owns the task
+     * @since 1.0.0
      */
     @NotNull
     public Plugin getOwner();
@@ -29,6 +31,7 @@ public interface BukkitTask {
      * Returns true if the Task is a sync task.
      *
      * @return true if the task is run by main thread
+     * @since 1.0.0
      */
     public boolean isSync();
 

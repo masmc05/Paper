@@ -34,6 +34,7 @@ public class PlayerRecipeBookClickEvent extends PlayerEvent implements Cancellab
      * Gets the namespaced key of the recipe that was clicked by the player
      *
      * @return The namespaced key of the recipe
+     * @since 1.15.2
      */
     public NamespacedKey getRecipe() {
         return this.recipe;
@@ -43,6 +44,7 @@ public class PlayerRecipeBookClickEvent extends PlayerEvent implements Cancellab
      * Changes what recipe is requested. This sets the requested recipe to the recipe with the given key
      *
      * @param recipe The key of the recipe that should be requested
+     * @since 1.15.2
      */
     public void setRecipe(final NamespacedKey recipe) {
         this.recipe = recipe;
@@ -53,6 +55,7 @@ public class PlayerRecipeBookClickEvent extends PlayerEvent implements Cancellab
      * {@code true} if shift is pressed while the recipe is clicked in the recipe book
      *
      * @return {@code true} if shift is pressed while the recipe is clicked
+     * @since 1.15.2
      */
     public boolean isMakeAll() {
         return this.makeAll;
@@ -63,26 +66,39 @@ public class PlayerRecipeBookClickEvent extends PlayerEvent implements Cancellab
      * the player had pressed shift while clicking on the recipe
      *
      * @param makeAll {@code true} if the request should attempt to make the maximum amount of results
+     * @since 1.15.2
      */
     public void setMakeAll(final boolean makeAll) {
         this.makeAll = makeAll;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

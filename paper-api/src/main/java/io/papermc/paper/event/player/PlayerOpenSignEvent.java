@@ -40,6 +40,7 @@ public class PlayerOpenSignEvent extends PlayerEvent implements Cancellable {
      * Gets the sign that was clicked.
      *
      * @return {@link Sign} that was clicked
+     * @since 1.20.1
      */
     public Sign getSign() {
         return this.sign;
@@ -50,6 +51,7 @@ public class PlayerOpenSignEvent extends PlayerEvent implements Cancellable {
      *
      * @return {@link Side} that was clicked
      * @see Sign#getSide(Side)
+     * @since 1.20.1
      */
     public Side getSide() {
         return this.side;
@@ -59,32 +61,47 @@ public class PlayerOpenSignEvent extends PlayerEvent implements Cancellable {
      * The cause of this sign open.
      *
      * @return the cause
+     * @since 1.20.1
      */
     public Cause getCause() {
         return this.cause;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
     /**
      * The cause of the {@link PlayerOpenSignEvent}.
+     *
+     * @since 1.20.1
      */
     public enum Cause {
         /**

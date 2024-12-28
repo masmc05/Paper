@@ -16,6 +16,9 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface DamageResistant {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static DamageResistant damageResistant(final TagKey<DamageType> types) {
         return ItemComponentTypesBridge.bridge().damageResistant(types);
@@ -25,6 +28,7 @@ public interface DamageResistant {
      * The types that this damage type is invincible tp.
      *
      * @return item
+     * @since 1.21.3
      */
     @Contract(value = "-> new", pure = true)
     TagKey<DamageType> types();

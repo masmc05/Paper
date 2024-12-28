@@ -27,28 +27,41 @@ public class PlayerRecipeDiscoverEvent extends PlayerEvent implements Cancellabl
      * Get the namespaced key of the discovered recipe.
      *
      * @return the discovered recipe
+     * @since 1.13.1
      */
     @NotNull
     public NamespacedKey getRecipe() {
         return recipe;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

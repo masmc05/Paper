@@ -14,6 +14,7 @@ public interface AbstractHorseInventory extends Inventory {
      * Gets the item in the horse's saddle slot.
      *
      * @return the saddle item
+     * @since 1.12.2
      */
     @Nullable
     ItemStack getSaddle();
@@ -22,6 +23,7 @@ public interface AbstractHorseInventory extends Inventory {
      * Sets the item in the horse's saddle slot.
      *
      * @param stack the new item
+     * @since 1.12.2
      */
     void setSaddle(@Nullable ItemStack stack);
 }

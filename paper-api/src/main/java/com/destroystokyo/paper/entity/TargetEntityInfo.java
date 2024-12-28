@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents information about a targeted entity
  * @deprecated use {@link org.bukkit.util.RayTraceResult}
+ * @since 1.13.1
  */
 @Deprecated(forRemoval = true, since = "1.19.3")
 public class TargetEntityInfo {
@@ -22,6 +23,7 @@ public class TargetEntityInfo {
      * Get the entity that is targeted
      *
      * @return Targeted entity
+     * @since 1.13.1
      */
     @NotNull
     public Entity getEntity() {
@@ -32,6 +34,7 @@ public class TargetEntityInfo {
      * Get the position the entity is targeted at
      *
      * @return Targeted position
+     * @since 1.13.1
      */
     @NotNull
     public Vector getHitVector() {

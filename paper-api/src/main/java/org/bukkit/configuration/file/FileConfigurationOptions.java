@@ -26,12 +26,18 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
         super(configuration);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public FileConfiguration configuration() {
         return (FileConfiguration) super.configuration();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public FileConfigurationOptions copyDefaults(boolean value) {
@@ -39,6 +45,9 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
         return this;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public FileConfigurationOptions pathSeparator(char value) {
@@ -71,6 +80,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * @return The string header.
      *
      * @deprecated use getHeader() instead.
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.18.1")
@@ -110,6 +120,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * @return This object, for chaining.
      *
      * @deprecated use setHeader() instead
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.18.1")
@@ -193,6 +204,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * @return Whether or not comments are parsed.
      *
      * @deprecated Call {@link #parseComments()} instead.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.18.1")
     public boolean copyHeader() {
@@ -204,6 +216,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * @return This object, for chaining
      *
      * @deprecated Call {@link #parseComments(boolean)} instead.
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.18.1")

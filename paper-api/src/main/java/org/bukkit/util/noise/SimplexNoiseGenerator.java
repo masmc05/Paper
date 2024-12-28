@@ -98,6 +98,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      *
      * @param xin X coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public static double getNoise(double xin) {
         return instance.noise(xin);
@@ -110,6 +111,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * @param xin X coordinate
      * @param yin Y coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public static double getNoise(double xin, double yin) {
         return instance.noise(xin, yin);
@@ -123,6 +125,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * @param yin Y coordinate
      * @param zin Z coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public static double getNoise(double xin, double yin, double zin) {
         return instance.noise(xin, yin, zin);
@@ -137,11 +140,15 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * @param z Z coordinate
      * @param w W coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public static double getNoise(double x, double y, double z, double w) {
         return instance.noise(x, y, z, w);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public double noise(double xin, double yin, double zin) {
         xin += offsetX;
@@ -281,6 +288,9 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
         return 32.0 * (n0 + n1 + n2 + n3);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public double noise(double xin, double yin) {
         xin += offsetX;
@@ -366,6 +376,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * @param z Z coordinate
      * @param w W coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public double noise(double x, double y, double z, double w) {
         x += offsetX;
@@ -517,6 +528,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * Gets the singleton unseeded instance of this generator
      *
      * @return Singleton
+     * @since 1.0.0
      */
     @NotNull
     public static SimplexNoiseGenerator getInstance() {

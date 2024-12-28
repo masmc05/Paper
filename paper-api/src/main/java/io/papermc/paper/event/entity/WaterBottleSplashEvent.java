@@ -51,6 +51,7 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
      * @return an immutable collection of entities
      * @see #doNotDamageAsWaterSensitive(LivingEntity)
      * @see #damageAsWaterSensitive(LivingEntity)
+     * @since 1.19.3
      */
     public @Unmodifiable Collection<LivingEntity> getToDamage() {
         return this.affectedEntities.entrySet().stream().filter(entry -> entry.getValue() > 0).map(Map.Entry::getKey).collect(Collectors.toUnmodifiableSet());
@@ -61,6 +62,7 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
      * will be damaged.
      *
      * @param entity entity to remove
+     * @since 1.19.3
      */
     public void doNotDamageAsWaterSensitive(final LivingEntity entity) {
         this.affectedEntities.remove(entity);
@@ -71,6 +73,7 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
      * will be damaged
      *
      * @param entity entity to add
+     * @since 1.19.3
      */
     public void damageAsWaterSensitive(final LivingEntity entity) {
         this.affectedEntities.put(entity, 1.0);
@@ -85,6 +88,7 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
      * it may change in the future.
      *
      * @return the entities
+     * @since 1.19.3
      */
     public Collection<LivingEntity> getToRehydrate() {
         return this.rehydrate;
@@ -95,6 +99,7 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
      * be extinguished as a result of this event.
      *
      * @return entities to be extinguished
+     * @since 1.19.3
      */
     public Collection<LivingEntity> getToExtinguish() {
         return this.extinguish;
@@ -103,6 +108,7 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
     /**
      * @return a confusing collection, don't use it
      * @deprecated Use {@link #getToDamage()}
+     * @since 1.19.3
      */
     @Deprecated(since = "1.19.3")
     @Override
@@ -115,6 +121,7 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
      *
      * @return a confusing value
      * @deprecated check if {@link #getToDamage()} contains an entity
+     * @since 1.19.3
      */
     @Deprecated(since = "1.19.3")
     @Override
@@ -128,6 +135,7 @@ public class WaterBottleSplashEvent extends PotionSplashEvent {
      * @deprecated use {@link #damageAsWaterSensitive(LivingEntity)}
      * or {@link #doNotDamageAsWaterSensitive(LivingEntity)} to change which entities are
      * damaged
+     * @since 1.19.3
      */
     @Deprecated(since = "1.19.3")
     @Override

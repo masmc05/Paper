@@ -16,6 +16,7 @@ public interface Leashable extends Entity {
      * Returns whether the entity is currently leashed.
      *
      * @return whether the entity is leashed
+     * @since 1.21.1
      */
     boolean isLeashed();
 
@@ -24,6 +25,7 @@ public interface Leashable extends Entity {
      *
      * @return the entity holding the leash
      * @throws IllegalStateException if not currently leashed
+     * @since 1.21.1
      */
     Entity getLeashHolder() throws IllegalStateException;
 
@@ -34,6 +36,7 @@ public interface Leashable extends Entity {
      *
      * @param holder the entity to leash this entity to, or {@code null} to unleash
      * @return whether the operation was successful
+     * @since 1.21.1
      */
     boolean setLeashHolder(@Nullable Entity holder);
 }

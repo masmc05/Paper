@@ -29,27 +29,40 @@ public class BatToggleSleepEvent extends EntityEvent implements Cancellable {
      * Get whether or not the bat is attempting to awaken.
      *
      * @return true if trying to awaken, false otherwise
+     * @since 1.13.1
      */
     public boolean isAwake() {
         return awake;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

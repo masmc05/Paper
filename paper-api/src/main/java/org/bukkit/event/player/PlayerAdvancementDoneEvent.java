@@ -36,6 +36,7 @@ public class PlayerAdvancementDoneEvent extends PlayerEvent {
      * Get the advancement which has been completed.
      *
      * @return completed advancement
+     * @since 1.12
      */
     @NotNull
     public Advancement getAdvancement() {
@@ -68,6 +69,9 @@ public class PlayerAdvancementDoneEvent extends PlayerEvent {
     public void message(@Nullable Component message) {
         this.message = message;
     }
+    /**
+     * @since 1.12
+     */
     // Paper end
     @NotNull
     @Override
@@ -75,6 +79,9 @@ public class PlayerAdvancementDoneEvent extends PlayerEvent {
         return handlers;
     }
 
+    /**
+     * @since 1.12
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

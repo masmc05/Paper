@@ -8,6 +8,7 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class PistonExtensionMaterial extends MaterialData implements Attachable {
@@ -26,6 +27,9 @@ public class PistonExtensionMaterial extends MaterialData implements Attachable 
         super(type, data);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setFacingDirection(BlockFace face) {
         byte data = (byte) (getData() & 0x8);
@@ -50,6 +54,9 @@ public class PistonExtensionMaterial extends MaterialData implements Attachable 
         setData(data);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public BlockFace getFacing() {
         byte dir = (byte) (getData() & 7);
@@ -76,6 +83,7 @@ public class PistonExtensionMaterial extends MaterialData implements Attachable 
      * Checks if this piston extension is sticky, and returns true if so
      *
      * @return true if this piston is "sticky", or false
+     * @since 1.0.0
      */
     public boolean isSticky() {
         return (getData() & 8) == 8;
@@ -85,11 +93,15 @@ public class PistonExtensionMaterial extends MaterialData implements Attachable 
      * Sets whether or not this extension is sticky
      *
      * @param sticky true if sticky, otherwise false
+     * @since 1.0.0
      */
     public void setSticky(boolean sticky) {
         setData((byte) (sticky ? (getData() | 0x8) : (getData() & ~0x8)));
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public BlockFace getAttachedFace() {
         return getFacing().getOppositeFace();

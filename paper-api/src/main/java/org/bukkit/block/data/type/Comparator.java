@@ -15,6 +15,7 @@ public interface Comparator extends Directional, Powerable {
      * Gets the value of the 'mode' property.
      *
      * @return the 'mode' value
+     * @since 1.13
      */
     @NotNull
     Mode getMode();
@@ -28,6 +29,8 @@ public interface Comparator extends Directional, Powerable {
 
     /**
      * The mode in which a comparator will operate in.
+     *
+     * @since 1.13
      */
     public enum Mode {
 

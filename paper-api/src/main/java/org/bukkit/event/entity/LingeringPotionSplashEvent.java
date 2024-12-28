@@ -31,6 +31,9 @@ public class LingeringPotionSplashEvent extends ProjectileHitEvent implements Ca
         this.entity = entity;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public ThrownPotion getEntity() {
@@ -41,6 +44,7 @@ public class LingeringPotionSplashEvent extends ProjectileHitEvent implements Ca
      * Gets the AreaEffectCloud spawned
      *
      * @return The spawned AreaEffectCloud
+     * @since 1.9.4
      */
     @NotNull
     public AreaEffectCloud getAreaEffectCloud() {
@@ -69,22 +73,34 @@ public class LingeringPotionSplashEvent extends ProjectileHitEvent implements Ca
     }
     // Paper end
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

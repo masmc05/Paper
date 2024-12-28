@@ -24,6 +24,7 @@ public interface MerchantView extends InventoryView {
      * Gets the merchant that this view is for.
      *
      * @return The merchant that this view uses
+     * @since 1.21
      */
     @NotNull
     Merchant getMerchant();

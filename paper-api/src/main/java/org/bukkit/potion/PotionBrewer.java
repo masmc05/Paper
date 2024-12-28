@@ -44,6 +44,7 @@ public interface PotionBrewer {
      * @param amplifier The amplifier of the effect
      * @return The resulting potion effect
      * @deprecated use {@link PotionEffectType#createEffect(int, int)} instead.
+     * @since 1.1.0
      */
     @Deprecated(forRemoval = true, since = "1.20.5") // Paper
     @NotNull
@@ -60,6 +61,7 @@ public interface PotionBrewer {
      * @param damage The data value of the potion
      * @return The list of effects
      * @deprecated Non-Functional
+     * @since 1.1.0
      */
     @Deprecated(since = "1.6.2", forRemoval = true) // Paper
     @NotNull
@@ -78,6 +80,7 @@ public interface PotionBrewer {
      * @param extended Whether the potion is extended
      * @return The list of effects
      * @deprecated Upgraded / extended potions are now their own {@link PotionType} use {@link PotionType#getPotionEffects()} instead
+     * @since 1.9.4
      */
     @NotNull
     @Deprecated(since = "1.20.2", forRemoval = true) // Paper

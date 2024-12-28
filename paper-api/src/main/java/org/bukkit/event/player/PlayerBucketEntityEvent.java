@@ -35,6 +35,7 @@ public class PlayerBucketEntityEvent extends PlayerEvent implements Cancellable 
      * Gets the {@link Entity} being put into the bucket.
      *
      * @return The {@link Entity} being put into the bucket
+     * @since 1.16.5
      */
     @NotNull
     public Entity getEntity() {
@@ -47,6 +48,7 @@ public class PlayerBucketEntityEvent extends PlayerEvent implements Cancellable 
      * This refers to the bucket clicked with, eg {@link Material#WATER_BUCKET}.
      *
      * @return The used bucket
+     * @since 1.16.5
      */
     @NotNull
     public ItemStack getOriginalBucket() {
@@ -60,6 +62,7 @@ public class PlayerBucketEntityEvent extends PlayerEvent implements Cancellable 
      * {@link Material#PUFFERFISH_BUCKET}.
      *
      * @return The bucket that the {@link Entity} will be put into
+     * @since 1.16.5
      */
     @NotNull
     public ItemStack getEntityBucket() {
@@ -77,22 +80,34 @@ public class PlayerBucketEntityEvent extends PlayerEvent implements Cancellable 
         return hand;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

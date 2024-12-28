@@ -40,6 +40,7 @@ public interface Structure extends PersistentDataHolder {
      *
      * @return A new vector that represents the size of the structure along each
      * axis.
+     * @since 1.17.1
      */
     @NotNull
     BlockVector getSize();
@@ -48,6 +49,7 @@ public interface Structure extends PersistentDataHolder {
      * Gets a list of available block palettes.
      *
      * @return a list of available variants of this structure.
+     * @since 1.17.1
      */
     @NotNull
     List<Palette> getPalettes();
@@ -56,6 +58,7 @@ public interface Structure extends PersistentDataHolder {
      * Gets the number of palettes in this structure.
      *
      * @return The number of palettes in this structure
+     * @since 1.17.1
      */
     int getPaletteCount();
 
@@ -66,6 +69,7 @@ public interface Structure extends PersistentDataHolder {
      * that is provided once the structure is placed into the world.
      *
      * @return a list of Entities included in the Structure.
+     * @since 1.17.1
      */
     @NotNull
     List<Entity> getEntities();
@@ -74,6 +78,7 @@ public interface Structure extends PersistentDataHolder {
      * Gets the number of entities in this structure.
      *
      * @return The number of entities in this structure
+     * @since 1.17.1
      */
     int getEntityCount();
 
@@ -92,6 +97,7 @@ public interface Structure extends PersistentDataHolder {
      * 0 removing all blocks and 1 spawning the structure in pristine condition.
      * @param random The randomizer used for setting the structure's
      * {@link org.bukkit.loot.LootTable}s and integrity.
+     * @since 1.17.1
      */
     void place(@NotNull Location location, boolean includeEntities, @NotNull StructureRotation structureRotation, @NotNull Mirror mirror, int palette, float integrity, @NotNull Random random);
 
@@ -133,6 +139,7 @@ public interface Structure extends PersistentDataHolder {
      * 0 removing all blocks and 1 spawning the structure in pristine condition.
      * @param random The randomizer used for setting the structure's
      * {@link org.bukkit.loot.LootTable}s and integrity.
+     * @since 1.17.1
      */
     void place(@NotNull RegionAccessor regionAccessor, @NotNull BlockVector location, boolean includeEntities, @NotNull StructureRotation structureRotation, @NotNull Mirror mirror, int palette, float integrity, @NotNull Random random);
 
@@ -174,6 +181,7 @@ public interface Structure extends PersistentDataHolder {
      * @param corner2 The corner opposite from corner1.
      * @param includeEntities true if entities should be included in the saved
      * structure.
+     * @since 1.17.1
      */
     void fill(@NotNull Location corner1, @NotNull Location corner2, boolean includeEntities);
 
@@ -193,6 +201,7 @@ public interface Structure extends PersistentDataHolder {
      * @param includeEntities true if entities should be included in the saved
      * structure.
      * @throws IllegalArgumentException Thrown if size is smaller than 1x1x1
+     * @since 1.17.1
      */
     void fill(@NotNull Location origin, @NotNull BlockVector size, boolean includeEntities);
 }

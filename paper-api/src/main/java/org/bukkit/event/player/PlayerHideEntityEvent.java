@@ -30,18 +30,25 @@ public class PlayerHideEntityEvent extends PlayerEvent {
      * Gets the entity which has been hidden from the player.
      *
      * @return the hidden entity
+     * @since 1.18.1
      */
     @NotNull
     public Entity getEntity() {
         return entity;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

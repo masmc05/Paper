@@ -27,6 +27,7 @@ public class BlockPistonRetractEvent extends BlockPistonEvent {
      * retracting piston is sticky.
      *
      * @return The possible location of the possibly moving block.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.8")
     @NotNull

@@ -28,34 +28,55 @@ public class CreeperIgniteEvent extends EntityEvent implements Cancellable {
         this.ignited = ignited;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public Creeper getEntity() {
         return (Creeper) super.getEntity();
     }
 
+    /**
+     * @since 1.13.1
+     */
     public boolean isIgnited() {
         return this.ignited;
     }
 
+    /**
+     * @since 1.13.1
+     */
     public void setIgnited(final boolean ignited) {
         this.ignited = ignited;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

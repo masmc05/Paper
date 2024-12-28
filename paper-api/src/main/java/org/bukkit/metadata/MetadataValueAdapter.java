@@ -24,42 +24,66 @@ public abstract class MetadataValueAdapter implements MetadataValue {
         this.owningPlugin = new WeakReference<Plugin>(owningPlugin);
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     @Nullable
     public Plugin getOwningPlugin() {
         return owningPlugin.get();
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public int asInt() {
         return NumberConversions.toInt(value());
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public float asFloat() {
         return NumberConversions.toFloat(value());
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public double asDouble() {
         return NumberConversions.toDouble(value());
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public long asLong() {
         return NumberConversions.toLong(value());
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public short asShort() {
         return NumberConversions.toShort(value());
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public byte asByte() {
         return NumberConversions.toByte(value());
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public boolean asBoolean() {
         Object value = value();
@@ -78,6 +102,9 @@ public abstract class MetadataValueAdapter implements MetadataValue {
         return value != null;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     @NotNull
     public String asString() {

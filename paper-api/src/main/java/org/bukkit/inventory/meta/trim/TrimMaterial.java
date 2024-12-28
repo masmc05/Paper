@@ -76,6 +76,7 @@ public interface TrimMaterial extends Keyed, Translatable {
     /**
      * @deprecated this method assumes that {@link #description()} will
      * always be a translatable component which is not guaranteed.
+     * @since 1.20.4
      */
     @Override
     @Deprecated(forRemoval = true)
@@ -86,6 +87,7 @@ public interface TrimMaterial extends Keyed, Translatable {
     /**
      * @deprecated use {@link Registry#getKey(Keyed)}, {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)},
      * and {@link io.papermc.paper.registry.RegistryKey#TRIM_MATERIAL}. TrimMaterials can exist without a key.
+     * @since 1.20.4
      */
     @Deprecated(forRemoval = true, since = "1.20.4")
     @Override
@@ -94,6 +96,7 @@ public interface TrimMaterial extends Keyed, Translatable {
     /**
      * @deprecated use {@link Registry#getKey(Keyed)}, {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)},
      * and {@link io.papermc.paper.registry.RegistryKey#TRIM_MATERIAL}. TrimMaterials can exist without a key.
+     * @since 1.21.3
      */
     @Deprecated(forRemoval = true, since = "1.20.4")
     @Override

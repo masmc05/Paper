@@ -14,6 +14,7 @@ public interface DecoratedPotInventory extends Inventory {
      * Set the item stack in the decorated pot.
      *
      * @param item the new item stack
+     * @since 1.20.4
      */
     public void setItem(@Nullable ItemStack item);
 
@@ -21,10 +22,14 @@ public interface DecoratedPotInventory extends Inventory {
      * Get the item stack in the decorated pot.
      *
      * @return the current item stack
+     * @since 1.20.4
      */
     @Nullable
     public ItemStack getItem();
 
+    /**
+     * @since 1.20.4
+     */
     @Nullable
     @Override
     public DecoratedPot getHolder();

@@ -120,6 +120,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      *
      * @return the friendly name
      * @deprecated in favour of {@link #displayName()}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     @NotNull
@@ -134,6 +135,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      *
      * @param name The new display name.
      * @deprecated in favour of {@link #displayName(net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void setDisplayName(@Nullable String name);
@@ -178,6 +180,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      *
      * @return the player list name
      * @deprecated in favour of {@link #playerListName()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -190,6 +193,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      *
      * @param name new player list name
      * @deprecated in favour of {@link #playerListName(net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void setPlayerListName(@Nullable String name);
@@ -269,6 +273,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Set the target of the player's compass.
      *
      * @param loc Location to point to
+     * @since 1.0.0
      */
     public void setCompassTarget(@NotNull Location loc);
 
@@ -276,6 +281,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Get the previously set compass target.
      *
      * @return location of the target
+     * @since 1.0.0
      */
     @NotNull
     public Location getCompassTarget();
@@ -284,6 +290,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Gets the socket address of this player
      *
      * @return the player's address
+     * @since 1.0.0
      */
     @Nullable
     public InetSocketAddress getAddress();
@@ -346,6 +353,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Sends this sender a message raw
      *
      * @param message Message to be displayed
+     * @since 1.0.0
      */
     @Override
     public void sendRawMessage(@NotNull String message);
@@ -355,6 +363,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      *
      * @param message kick message
      * @deprecated in favour of {@link #kick(net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void kickPlayer(@Nullable String message);
@@ -489,6 +498,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Says a message (or runs a command).
      *
      * @param msg message to print
+     * @since 1.0.0
      */
     public void chat(@NotNull String msg);
 
@@ -497,6 +507,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      *
      * @param command Command to perform
      * @return true if the command was successful, otherwise false
+     * @since 1.0.0
      */
     public boolean performCommand(@NotNull String command);
 
@@ -519,6 +530,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Returns if the player is in sneak mode
      *
      * @return true if player is in sneak mode
+     * @since 1.0.0
      */
     @Override // Paper
     public boolean isSneaking();
@@ -527,6 +539,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Sets the sneak mode the player
      *
      * @param sneak true if player should appear sneaking
+     * @since 1.0.0
      */
     @Override // Paper
     public void setSneaking(boolean sneak);
@@ -535,6 +548,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Gets whether the player is sprinting or not.
      *
      * @return true if player is sprinting.
+     * @since 1.0.0
      */
     public boolean isSprinting();
 
@@ -542,6 +556,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Sets whether the player is sprinting or not.
      *
      * @param sprinting true if the player should be sprinting
+     * @since 1.0.0
      */
     public void setSprinting(boolean sprinting);
 
@@ -549,6 +564,8 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Saves the players current location, health, inventory, motion, and
      * other information into the &lt;uuid&gt;.dat file, in the
      * &lt;level-name&gt;/playerdata/ folder.
+     *
+     * @since 1.0.0
      */
     public void saveData();
 
@@ -559,6 +576,8 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * <p>
      * Note: This will overwrite the players current inventory, health,
      * motion, etc, with the state from the saved dat file.
+     *
+     * @since 1.0.0
      */
     public void loadData();
 
@@ -569,6 +588,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * then nothing will happen.
      *
      * @param isSleeping Whether to ignore.
+     * @since 1.0.0
      */
     public void setSleepingIgnored(boolean isSleeping);
 
@@ -576,6 +596,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Returns whether the player is sleeping ignored.
      *
      * @return Whether player is ignoring sleep.
+     * @since 1.0.0
      */
     public boolean isSleepingIgnored();
 
@@ -588,6 +609,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * @see #getRespawnLocation()
      * @deprecated Misleading name. This method also returns the location of
      * respawn anchors.
+     * @since 1.0.0
      */
     @Nullable
     @Override
@@ -685,6 +707,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * @param instrument The instrument ID.
      * @param note The note ID.
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public void playNote(@NotNull Location loc, byte instrument, byte note);
@@ -697,6 +720,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * @param loc The location to play the note
      * @param instrument The instrument
      * @param note The note
+     * @since 1.0.0
      */
     public void playNote(@NotNull Location loc, @NotNull Instrument instrument, @NotNull Note note);
 
@@ -935,6 +959,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * @param effect the {@link Effect}
      * @param data a data bit needed for some effects
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public void playEffect(@NotNull Location loc, @NotNull Effect effect, int data);
@@ -982,6 +1007,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * @param material The new block
      * @param data The block data
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public void sendBlockChange(@NotNull Location loc, @NotNull Material material, byte data);
@@ -1376,6 +1402,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * used when streaming the map in the normal manner is not desirable.
      *
      * @param map The map to be sent
+     * @since 1.0.0
      */
     public void sendMap(@NotNull MapView map);
 
@@ -1884,6 +1911,8 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
 
     /**
      * Forces an update of the player's entire inventory.
+     *
+     * @since 1.0.0
      */
     // @ApiStatus.Internal // Paper - is valid API
     public void updateInventory();
@@ -1911,6 +1940,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      *     offset from the server time.
      * @param relative When true the player time is kept relative to its world
      *     time.
+     * @since 1.0.0
      */
     public void setPlayerTime(long time, boolean relative);
 
@@ -1918,6 +1948,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Returns the player's current timestamp.
      *
      * @return The player's time
+     * @since 1.0.0
      */
     public long getPlayerTime();
 
@@ -1926,6 +1957,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * the current player's fixed time if the player's time is absolute.
      *
      * @return The player's time
+     * @since 1.0.0
      */
     public long getPlayerTimeOffset();
 
@@ -1935,6 +1967,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * time unless done so with setPlayerTime().
      *
      * @return true if the player's time is relative to the server time.
+     * @since 1.0.0
      */
     public boolean isPlayerTimeRelative();
 
@@ -1943,6 +1976,8 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * with the server time.
      * <p>
      * Equivalent to calling setPlayerTime(0, true).
+     *
+     * @since 1.0.0
      */
     public void resetPlayerTime();
 
@@ -2061,6 +2096,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Gets the players current experience level
      *
      * @return Current experience level
+     * @since 1.0.0
      */
     public int getLevel();
 
@@ -2068,6 +2104,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * Sets the players current experience level
      *
      * @param level New experience level
+     * @since 1.0.0
      */
     public void setLevel(int level);
 
@@ -2078,6 +2115,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * over time and is not currently displayed to the client.
      *
      * @return Current total experience points
+     * @since 1.0.0
      */
     public int getTotalExperience();
 
@@ -2088,6 +2126,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      * over time and is not currently displayed to the client.
      *
      * @param exp New total experience points
+     * @since 1.0.0
      */
     public void setTotalExperience(int exp);
     // Paper start
@@ -2972,6 +3011,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      *
      * @return the most recent hash or null
      * @deprecated This is no longer sent from the client and will always be null
+     * @since 1.9.4
      */
     @Deprecated(forRemoval = true, since = "1.13.2")
     @org.jetbrains.annotations.Contract("-> null")
@@ -3854,6 +3894,7 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
          * has been spoofed or not.
          *
          * @return the player's connection address
+         * @since 1.6.1
          */
         @NotNull
         public InetSocketAddress getRawAddress() {

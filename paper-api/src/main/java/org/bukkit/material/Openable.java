@@ -1,5 +1,8 @@
 package org.bukkit.material;
 
+/**
+ * @since 1.1.0
+ */
 @Deprecated(forRemoval = true, since = "1.13")
 public interface Openable {
 
@@ -7,6 +10,7 @@ public interface Openable {
      * Check to see if the door is open.
      *
      * @return true if the door has swung counterclockwise around its hinge.
+     * @since 1.1.0
      */
     boolean isOpen();
 
@@ -14,6 +18,7 @@ public interface Openable {
      * Configure this door to be either open or closed;
      *
      * @param isOpen True to open the door.
+     * @since 1.1.0
      */
     void setOpen(boolean isOpen);
 }

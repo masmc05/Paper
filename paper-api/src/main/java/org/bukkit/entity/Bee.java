@@ -14,6 +14,7 @@ public interface Bee extends Animals {
      * Get the bee's hive location.
      *
      * @return hive location or null
+     * @since 1.15
      */
     @Nullable
     Location getHive();
@@ -22,6 +23,7 @@ public interface Bee extends Animals {
      * Set the bee's hive location.
      *
      * @param location or null
+     * @since 1.15
      */
     void setHive(@Nullable Location location);
 
@@ -29,6 +31,7 @@ public interface Bee extends Animals {
      * Get the bee's flower location.
      *
      * @return flower location or null
+     * @since 1.15
      */
     @Nullable
     Location getFlower();
@@ -37,6 +40,7 @@ public interface Bee extends Animals {
      * Set the bee's flower location.
      *
      * @param location or null
+     * @since 1.15
      */
     void setFlower(@Nullable Location location);
 
@@ -44,6 +48,7 @@ public interface Bee extends Animals {
      * Get if the bee has nectar.
      *
      * @return nectar
+     * @since 1.15
      */
     boolean hasNectar();
 
@@ -51,6 +56,7 @@ public interface Bee extends Animals {
      * Set if the bee has nectar.
      *
      * @param nectar whether the entity has nectar
+     * @since 1.15
      */
     void setHasNectar(boolean nectar);
 
@@ -58,6 +64,7 @@ public interface Bee extends Animals {
      * Get if the bee has stung.
      *
      * @return has stung
+     * @since 1.15
      */
     boolean hasStung();
 
@@ -65,6 +72,7 @@ public interface Bee extends Animals {
      * Set if the bee has stung.
      *
      * @param stung has stung
+     * @since 1.15
      */
     void setHasStung(boolean stung);
 
@@ -72,6 +80,7 @@ public interface Bee extends Animals {
      * Get the bee's anger level.
      *
      * @return anger level
+     * @since 1.15
      */
     int getAnger();
 
@@ -79,6 +88,7 @@ public interface Bee extends Animals {
      * Set the bee's new anger level.
      *
      * @param anger new anger
+     * @since 1.15
      */
     void setAnger(int anger);
 

@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * The sound group includes break, step, place, hit, and fall sounds.
  * @deprecated use {@link org.bukkit.SoundGroup}
+ * @since 1.14.2
  */
 @Deprecated(forRemoval = true, since = "1.18.2")
 public interface BlockSoundGroup {
@@ -17,6 +18,7 @@ public interface BlockSoundGroup {
      *
      * @return The break sound
      * @deprecated use {@link org.bukkit.SoundGroup#getBreakSound()}
+     * @since 1.14.2
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.18.2")
@@ -27,6 +29,7 @@ public interface BlockSoundGroup {
      *
      * @return The step sound
      * @deprecated use {@link org.bukkit.SoundGroup#getStepSound()}
+     * @since 1.14.2
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.18.2")
@@ -37,6 +40,7 @@ public interface BlockSoundGroup {
      *
      * @return The place sound
      * @deprecated use {@link org.bukkit.SoundGroup#getPlaceSound()}
+     * @since 1.14.2
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.18.2")
@@ -47,6 +51,7 @@ public interface BlockSoundGroup {
      *
      * @return The hit sound
      * @deprecated use {@link org.bukkit.SoundGroup#getHitSound()}
+     * @since 1.14.2
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.18.2")
@@ -57,6 +62,7 @@ public interface BlockSoundGroup {
      *
      * @return The fall sound
      * @deprecated use {@link org.bukkit.SoundGroup#getFallSound()}
+     * @since 1.14.2
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.18.2")

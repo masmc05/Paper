@@ -15,6 +15,7 @@ public interface SculkShrieker extends Waterlogged {
      * Gets the value of the 'can_summon' property.
      *
      * @return the 'can_summon' value
+     * @since 1.19
      */
     boolean isCanSummon();
 
@@ -22,6 +23,7 @@ public interface SculkShrieker extends Waterlogged {
      * Sets the value of the 'can_summon' property.
      *
      * @param can_summon the new 'can_summon' value
+     * @since 1.19
      */
     void setCanSummon(boolean can_summon);
 
@@ -29,6 +31,7 @@ public interface SculkShrieker extends Waterlogged {
      * Gets the value of the 'shrieking' property.
      *
      * @return the 'shrieking' value
+     * @since 1.19
      */
     boolean isShrieking();
 
@@ -36,6 +39,7 @@ public interface SculkShrieker extends Waterlogged {
      * Sets the value of the 'shrieking' property.
      *
      * @param shrieking the new 'shrieking' value
+     * @since 1.19
      */
     void setShrieking(boolean shrieking);
 }

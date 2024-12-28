@@ -53,6 +53,7 @@ public class AsyncPlayerChatEvent extends PlayerEvent implements Cancellable {
      * will be used with {@link #getFormat()}.
      *
      * @return Message the player is attempting to send
+     * @since 1.3.1
      */
     @NotNull
     public String getMessage() {
@@ -64,6 +65,7 @@ public class AsyncPlayerChatEvent extends PlayerEvent implements Cancellable {
      * with {@link #getFormat()}.
      *
      * @param message New message that the player will send
+     * @since 1.3.1
      */
     public void setMessage(@NotNull String message) {
         this.message = message;
@@ -78,6 +80,7 @@ public class AsyncPlayerChatEvent extends PlayerEvent implements Cancellable {
      *
      * @return {@link String#format(String, Object...)} compatible format
      *     string
+     * @since 1.3.1
      */
     @NotNull
     public String getFormat() {
@@ -97,6 +100,7 @@ public class AsyncPlayerChatEvent extends PlayerEvent implements Cancellable {
      *     exception
      * @throws NullPointerException if format is null
      * @see String#format(String, Object...)
+     * @since 1.3.1
      */
     public void setFormat(@NotNull final String format) throws IllegalFormatException, NullPointerException {
         // Oh for a better way to do this!
@@ -122,28 +126,41 @@ public class AsyncPlayerChatEvent extends PlayerEvent implements Cancellable {
      * unmodifiable set.
      *
      * @return All Players who will see this chat message
+     * @since 1.3.1
      */
     @NotNull
     public Set<Player> getRecipients() {
         return recipients;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -18,6 +18,7 @@ public interface Directional extends BlockData {
      * Gets the value of the 'facing' property.
      *
      * @return the 'facing' value
+     * @since 1.13
      */
     @NotNull
     BlockFace getFacing();
@@ -26,6 +27,7 @@ public interface Directional extends BlockData {
      * Sets the value of the 'facing' property.
      *
      * @param facing the new 'facing' value
+     * @since 1.13
      */
     void setFacing(@NotNull BlockFace facing);
 
@@ -33,6 +35,7 @@ public interface Directional extends BlockData {
      * Gets the faces which are applicable to this block.
      *
      * @return the allowed 'facing' values
+     * @since 1.13
      */
     @NotNull
     Set<BlockFace> getFaces();

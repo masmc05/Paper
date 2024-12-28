@@ -30,6 +30,7 @@ public class PlayerTakeLecternBookEvent extends PlayerEvent implements Cancellab
      * Gets the lectern involved.
      *
      * @return the Lectern
+     * @since 1.14.1
      */
     @NotNull
     public Lectern getLectern() {
@@ -40,28 +41,41 @@ public class PlayerTakeLecternBookEvent extends PlayerEvent implements Cancellab
      * Gets the current ItemStack on the lectern.
      *
      * @return the ItemStack on the Lectern
+     * @since 1.14.1
      */
     @Nullable
     public ItemStack getBook() {
         return lectern.getInventory().getItem(0);
     }
 
+    /**
+     * @since 1.14.1
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.14.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.14.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.14.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

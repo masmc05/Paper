@@ -16,6 +16,7 @@ public interface Tripwire extends Attachable, MultipleFacing, Powerable {
      * Gets the value of the 'disarmed' property.
      *
      * @return the 'disarmed' value
+     * @since 1.13
      */
     boolean isDisarmed();
 
@@ -23,6 +24,7 @@ public interface Tripwire extends Attachable, MultipleFacing, Powerable {
      * Sets the value of the 'disarmed' property.
      *
      * @param disarmed the new 'disarmed' value
+     * @since 1.13
      */
     void setDisarmed(boolean disarmed);
 }

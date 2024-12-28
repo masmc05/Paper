@@ -31,6 +31,7 @@ public class RegisteredListener {
      * Gets the listener for this registration
      *
      * @return Registered Listener
+     * @since 1.0.0
      */
     @NotNull
     public Listener getListener() {
@@ -41,6 +42,7 @@ public class RegisteredListener {
      * Gets the plugin for this registration
      *
      * @return Registered Plugin
+     * @since 1.0.0
      */
     @NotNull
     public Plugin getPlugin() {
@@ -51,6 +53,7 @@ public class RegisteredListener {
      * Gets the priority for this registration
      *
      * @return Registered Priority
+     * @since 1.0.0
      */
     @NotNull
     public EventPriority getPriority() {
@@ -62,6 +65,7 @@ public class RegisteredListener {
      *
      * @param event The event
      * @throws EventException If an event handler throws an exception.
+     * @since 1.0.0
      */
     public void callEvent(@NotNull final Event event) throws EventException {
         if (event instanceof Cancellable) {

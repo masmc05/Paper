@@ -339,6 +339,7 @@ public enum ChatColor {
      *
      * @param input String to strip of color
      * @return A copy of the input string, without any coloring
+     * @since 1.0.0
      */
     @Contract("!null -> !null; null -> null")
     @Nullable

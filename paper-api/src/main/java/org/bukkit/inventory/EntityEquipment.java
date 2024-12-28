@@ -151,6 +151,7 @@ public interface EntityEquipment {
      * @see #getItemInOffHand()
      * @deprecated entities can duel wield now use the methods for the
      *      specific hand instead
+     * @since 1.4.5
      */
     @Deprecated(since = "1.9")
     @NotNull
@@ -164,6 +165,7 @@ public interface EntityEquipment {
      * @see #setItemInOffHand(ItemStack)
      * @deprecated entities can duel wield now use the methods for the
      *      specific hand instead
+     * @since 1.4.5
      */
     @Deprecated(since = "1.9")
     void setItemInHand(@Nullable ItemStack stack);
@@ -185,6 +187,7 @@ public interface EntityEquipment {
      * }</pre>
      *
      * @return The helmet being worn
+     * @since 1.4.5
      */
     @org.bukkit.UndefinedNullability("not null for entities, nullable for players") // Paper
     ItemStack getHelmet();
@@ -193,6 +196,7 @@ public interface EntityEquipment {
      * Sets the helmet worn by the entity
      *
      * @param helmet The helmet to put on the entity
+     * @since 1.4.5
      */
     void setHelmet(@Nullable ItemStack helmet);
 
@@ -222,6 +226,7 @@ public interface EntityEquipment {
      * }</pre>
      *
      * @return The chest plate being worn
+     * @since 1.4.5
      */
     @org.bukkit.UndefinedNullability("not null for entities, nullable for players") // Paper
     ItemStack getChestplate();
@@ -230,6 +235,7 @@ public interface EntityEquipment {
      * Sets the chest plate worn by the entity
      *
      * @param chestplate The chest plate to put on the entity
+     * @since 1.4.5
      */
     void setChestplate(@Nullable ItemStack chestplate);
 
@@ -259,6 +265,7 @@ public interface EntityEquipment {
      * }</pre>
      *
      * @return The leggings being worn
+     * @since 1.4.5
      */
     @org.bukkit.UndefinedNullability("not null for entities, nullable for players") // Paper
     ItemStack getLeggings();
@@ -267,6 +274,7 @@ public interface EntityEquipment {
      * Sets the leggings worn by the entity
      *
      * @param leggings The leggings to put on the entity
+     * @since 1.4.5
      */
     void setLeggings(@Nullable ItemStack leggings);
 
@@ -296,6 +304,7 @@ public interface EntityEquipment {
      * }</pre>
      *
      * @return The boots being worn
+     * @since 1.4.5
      */
     @org.bukkit.UndefinedNullability("not null for entities, nullable for players") // Paper
     ItemStack getBoots();
@@ -304,6 +313,7 @@ public interface EntityEquipment {
      * Sets the boots worn by the entity
      *
      * @param boots The boots to put on the entity
+     * @since 1.4.5
      */
     void setBoots(@Nullable ItemStack boots);
 
@@ -336,6 +346,7 @@ public interface EntityEquipment {
      * @return all the ItemStacks from the armor slots. Individual items can be
      * null and are returned in a fixed order starting from the boots and going
      * up to the helmet
+     * @since 1.4.5
      */
     @org.bukkit.UndefinedNullability("not null elements for entities, nullable elements for players") ItemStack @NotNull [] getArmorContents(); // Paper
 
@@ -343,11 +354,14 @@ public interface EntityEquipment {
      * Sets the entities armor to the provided array of ItemStacks
      *
      * @param items The items to set the armor as. Individual items may be null.
+     * @since 1.4.5
      */
     void setArmorContents(@NotNull ItemStack[] items);
 
     /**
      * Clears the entity of all armor and held items
+     *
+     * @since 1.4.5
      */
     void clear();
 
@@ -357,6 +371,7 @@ public interface EntityEquipment {
      * @see #getItemInOffHandDropChance()
      * @deprecated entities can duel wield now use the methods for the specific
      * hand instead
+     * @since 1.4.5
      */
     @Deprecated(since = "1.9")
     float getItemInHandDropChance();
@@ -367,6 +382,7 @@ public interface EntityEquipment {
      * @see #setItemInOffHandDropChance(float)
      * @deprecated entities can duel wield now use the methods for the specific
      * hand instead
+     * @since 1.4.5
      */
     @Deprecated(since = "1.9")
     void setItemInHandDropChance(float chance);
@@ -443,6 +459,7 @@ public interface EntityEquipment {
      * </ul>
      *
      * @return the chance of the helmet being dropped (1 for non-{@link Mob})
+     * @since 1.4.5
      */
     float getHelmetDropChance();
 
@@ -457,6 +474,7 @@ public interface EntityEquipment {
      *
      * @param chance of the helmet being dropped
      * @throws UnsupportedOperationException when called on non-{@link Mob}
+     * @since 1.4.5
      */
     void setHelmetDropChance(float chance);
 
@@ -471,6 +489,7 @@ public interface EntityEquipment {
      * </ul>
      *
      * @return the chance of the chest plate being dropped (1 for non-{@link Mob})
+     * @since 1.4.5
      */
     float getChestplateDropChance();
 
@@ -486,6 +505,7 @@ public interface EntityEquipment {
      *
      * @param chance of the chest plate being dropped
      * @throws UnsupportedOperationException when called on non-{@link Mob}
+     * @since 1.4.5
      */
     void setChestplateDropChance(float chance);
 
@@ -500,6 +520,7 @@ public interface EntityEquipment {
      * </ul>
      *
      * @return the chance of the leggings being dropped (1 for non-{@link Mob})
+     * @since 1.4.5
      */
     float getLeggingsDropChance();
 
@@ -515,6 +536,7 @@ public interface EntityEquipment {
      *
      * @param chance chance of the leggings being dropped
      * @throws UnsupportedOperationException when called on non-{@link Mob}
+     * @since 1.4.5
      */
     void setLeggingsDropChance(float chance);
 
@@ -528,6 +550,7 @@ public interface EntityEquipment {
      * </ul>
      *
      * @return the chance of the boots being dropped (1 for non-{@link Mob})
+     * @since 1.4.5
      */
     float getBootsDropChance();
 
@@ -542,6 +565,7 @@ public interface EntityEquipment {
      *
      * @param chance of the boots being dropped
      * @throws UnsupportedOperationException when called on non-{@link Mob}
+     * @since 1.4.5
      */
     void setBootsDropChance(float chance);
 
@@ -549,6 +573,7 @@ public interface EntityEquipment {
      * Get the entity this EntityEquipment belongs to
      *
      * @return the entity this EntityEquipment belongs to
+     * @since 1.4.5
      */
     @NotNull // Paper
     Entity getHolder();

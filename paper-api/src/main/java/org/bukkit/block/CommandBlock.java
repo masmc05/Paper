@@ -16,6 +16,7 @@ public interface CommandBlock extends TileState, io.papermc.paper.command.Comman
      * command, an empty String will be returned instead.
      *
      * @return Command that this CommandBlock will run when powered.
+     * @since 1.5.1
      */
     @NotNull
     public String getCommand();
@@ -26,6 +27,7 @@ public interface CommandBlock extends TileState, io.papermc.paper.command.Comman
      * String.
      *
      * @param command Command that this CommandBlock will run when powered.
+     * @since 1.5.1
      */
     public void setCommand(@Nullable String command);
 
@@ -36,6 +38,7 @@ public interface CommandBlock extends TileState, io.papermc.paper.command.Comman
      *
      * @return Name of this CommandBlock.
      * @deprecated in favour of {@link #name()}
+     * @since 1.5.1
      */
     @Deprecated // Paper
     @NotNull
@@ -48,6 +51,7 @@ public interface CommandBlock extends TileState, io.papermc.paper.command.Comman
      *
      * @param name New name for this CommandBlock.
      * @deprecated in favour of {@link #name(net.kyori.adventure.text.Component)}
+     * @since 1.5.1
      */
     @Deprecated // Paper
     public void setName(@Nullable String name);

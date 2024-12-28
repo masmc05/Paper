@@ -16,11 +16,17 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface DyedItemColor extends ShownInTooltip<DyedItemColor> {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_, _ -> new", pure = true)
     static DyedItemColor dyedItemColor(final Color color, final boolean showInTooltip) {
         return dyedItemColor().color(color).showInTooltip(showInTooltip).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static DyedItemColor.Builder dyedItemColor() {
         return ItemComponentTypesBridge.bridge().dyedItemColor();
@@ -30,12 +36,15 @@ public interface DyedItemColor extends ShownInTooltip<DyedItemColor> {
      * Color of the item.
      *
      * @return color
+     * @since 1.21.3
      */
     @Contract(value = "-> new", pure = true)
     Color color();
 
     /**
      * Builder for {@link DyedItemColor}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -47,6 +56,7 @@ public interface DyedItemColor extends ShownInTooltip<DyedItemColor> {
          * @param color color
          * @return the builder for chaining
          * @see #color()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder color(Color color);

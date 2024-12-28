@@ -64,6 +64,9 @@ public class Pattern implements ConfigurationSerializable {
         throw new NoSuchElementException(map + " does not contain " + key);
     }
 
+    /**
+     * @since 1.8
+     */
     @NotNull
     @Override
     public Map<String, Object> serialize() {
@@ -77,6 +80,7 @@ public class Pattern implements ConfigurationSerializable {
      * Returns the color of the pattern
      *
      * @return the color of the pattern
+     * @since 1.8
      */
     @NotNull
     public DyeColor getColor() {
@@ -87,6 +91,7 @@ public class Pattern implements ConfigurationSerializable {
      * Returns the type of pattern
      *
      * @return the pattern type
+     * @since 1.8
      */
     @NotNull
     public PatternType getPattern() {

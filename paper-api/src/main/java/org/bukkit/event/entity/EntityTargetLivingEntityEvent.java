@@ -16,6 +16,9 @@ public class EntityTargetLivingEntityEvent extends EntityTargetEvent {
         super(entity, target, reason);
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     @Nullable
     public LivingEntity getTarget() {
@@ -31,6 +34,7 @@ public class EntityTargetLivingEntityEvent extends EntityTargetEvent {
      * Must be a LivingEntity, or null.
      *
      * @param target The entity to target
+     * @since 1.3.1
      */
     @Override
     public void setTarget(@Nullable Entity target) {

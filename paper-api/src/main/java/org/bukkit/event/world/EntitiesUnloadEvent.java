@@ -27,18 +27,25 @@ public class EntitiesUnloadEvent extends ChunkEvent {
      * Get the entities which are being unloaded.
      *
      * @return unmodifiable list of unloaded entities.
+     * @since 1.17.1
      */
     @NotNull
     public List<Entity> getEntities() {
         return entities;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

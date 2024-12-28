@@ -26,6 +26,7 @@ public interface FurnaceView extends InventoryView {
      * See {@link Furnace#getCookTime()} for more information.
      *
      * @return a number between 0 and 1
+     * @since 1.21
      */
     float getCookTime();
 
@@ -35,6 +36,7 @@ public interface FurnaceView extends InventoryView {
      * See {@link Furnace#getBurnTime()} for more information.
      *
      * @return a number between 0 and 1
+     * @since 1.21
      */
     float getBurnTime();
 
@@ -42,6 +44,7 @@ public interface FurnaceView extends InventoryView {
      * Checks whether or not the furnace is burning
      *
      * @return true given that the furnace is burning
+     * @since 1.21
      */
     boolean isBurning();
 
@@ -56,6 +59,7 @@ public interface FurnaceView extends InventoryView {
      *
      * @param cookProgress the current of the cooking
      * @param cookDuration the total cook time
+     * @since 1.21
      */
     void setCookTime(int cookProgress, int cookDuration);
 
@@ -70,6 +74,7 @@ public interface FurnaceView extends InventoryView {
      *
      * @param burnProgress the progress towards the burnDuration
      * @param burnDuration the total duration the view should be lit
+     * @since 1.21
      */
     void setBurnTime(int burnProgress, int burnDuration);
 }

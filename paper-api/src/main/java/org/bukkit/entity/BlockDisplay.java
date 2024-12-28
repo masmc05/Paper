@@ -14,6 +14,7 @@ public interface BlockDisplay extends Display {
      * Gets the displayed block.
      *
      * @return the displayed block
+     * @since 1.19.4
      */
     @NotNull
     public BlockData getBlock();
@@ -22,6 +23,7 @@ public interface BlockDisplay extends Display {
      * Sets the displayed block.
      *
      * @param block the new block
+     * @since 1.19.4
      */
     public void setBlock(@NotNull BlockData block);
 }

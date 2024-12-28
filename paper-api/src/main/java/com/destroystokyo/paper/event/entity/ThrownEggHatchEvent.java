@@ -37,6 +37,7 @@ public class ThrownEggHatchEvent extends Event {
      * Gets the egg involved in this event.
      *
      * @return the egg involved in this event
+     * @since 1.15.2
      */
     public Egg getEgg() {
         return this.egg;
@@ -47,6 +48,7 @@ public class ThrownEggHatchEvent extends Event {
      * would've done without interaction.
      *
      * @return boolean Whether the egg is going to hatch or not
+     * @since 1.15.2
      */
     public boolean isHatching() {
         return this.hatching;
@@ -57,6 +59,7 @@ public class ThrownEggHatchEvent extends Event {
      *
      * @param hatching {@code true} if you want the egg to hatch, {@code false} if you want it
      *                 not to
+     * @since 1.15.2
      */
     public void setHatching(final boolean hatching) {
         this.hatching = hatching;
@@ -66,6 +69,7 @@ public class ThrownEggHatchEvent extends Event {
      * Get the type of the mob being hatched ({@link EntityType#CHICKEN} by default)
      *
      * @return The type of the mob being hatched by the egg
+     * @since 1.15.2
      */
     public EntityType getHatchingType() {
         return this.hatchType;
@@ -75,6 +79,7 @@ public class ThrownEggHatchEvent extends Event {
      * Change the type of mob being hatched by the egg
      *
      * @param hatchType The type of the mob being hatched by the egg
+     * @since 1.15.2
      */
     public void setHatchingType(final EntityType hatchType) {
         Preconditions.checkArgument(hatchType.isSpawnable(), "Can't spawn that entity type from an egg!");
@@ -91,6 +96,7 @@ public class ThrownEggHatchEvent extends Event {
      * </ul>
      *
      * @return The number of mobs going to be hatched by the egg
+     * @since 1.15.2
      */
     public byte getNumHatches() {
         return this.numHatches;
@@ -103,16 +109,23 @@ public class ThrownEggHatchEvent extends Event {
      * {@code false}, this number will not matter
      *
      * @param numHatches The number of mobs coming out of the egg
+     * @since 1.15.2
      */
     public void setNumHatches(final byte numHatches) {
         this.numHatches = numHatches;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

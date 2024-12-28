@@ -14,6 +14,7 @@ public interface ExperienceOrb extends Entity {
      * Gets how much experience is contained within this orb
      *
      * @return Amount of experience
+     * @since 1.0.0
      */
     public int getExperience();
 
@@ -21,6 +22,7 @@ public interface ExperienceOrb extends Entity {
      * Sets how much experience is contained within this orb
      *
      * @param value Amount of experience
+     * @since 1.0.0
      */
     public void setExperience(int value);
     

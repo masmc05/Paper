@@ -13,12 +13,14 @@ public interface ScheduledTask {
     /**
      * Returns the plugin that scheduled this task.
      * @return the plugin that scheduled this task.
+     * @since 1.20.1
      */
     @NotNull Plugin getOwningPlugin();
 
     /**
      * Returns whether this task executes on a fixed period, as opposed to executing only once.
      * @return whether this task executes on a fixed period, as opposed to executing only once.
+     * @since 1.20.1
      */
     boolean isRepeatingTask();
 
@@ -26,18 +28,21 @@ public interface ScheduledTask {
      * Attempts to cancel this task, returning the result of the attempt. In all cases, if the task is currently
      * being executed no attempt is made to halt the task, however any executions in the future are halted.
      * @return the result of the cancellation attempt.
+     * @since 1.20.1
      */
     @NotNull CancelledState cancel();
 
     /**
      * Returns the current execution state of this task.
      * @return the current execution state of this task.
+     * @since 1.20.1
      */
     @NotNull ExecutionState getExecutionState();
 
     /**
      * Returns whether the current execution state is {@link ExecutionState#CANCELLED} or {@link ExecutionState#CANCELLED_RUNNING}.
      * @return whether the current execution state is {@link ExecutionState#CANCELLED} or {@link ExecutionState#CANCELLED_RUNNING}.
+     * @since 1.20.1
      */
     default boolean isCancelled() {
         final ExecutionState state = this.getExecutionState();
@@ -46,6 +51,8 @@ public interface ScheduledTask {
 
     /**
      * Represents the result of attempting to cancel a task.
+     *
+     * @since 1.20.1
      */
     enum CancelledState {
         /**
@@ -83,6 +90,8 @@ public interface ScheduledTask {
 
     /**
      * Represents the current execution state of the task.
+     *
+     * @since 1.20.1
      */
     enum ExecutionState {
         /**

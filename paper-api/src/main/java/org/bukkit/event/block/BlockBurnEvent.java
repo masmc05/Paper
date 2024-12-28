@@ -41,11 +41,17 @@ public class BlockBurnEvent extends BlockEvent implements Cancellable {
         return ignitingBlock;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

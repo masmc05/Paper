@@ -135,6 +135,7 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
      * {@link #getBedEnterResult() default action} is to prevent bed entering.
      *
      * @return boolean cancellation state
+     * @since 1.0.0
      */
     @Override
     public boolean isCancelled() {
@@ -148,6 +149,7 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
      * Canceling this event will prevent use of the bed.
      *
      * @param cancel true if you wish to cancel this event
+     * @since 1.0.0
      */
     @Override
     public void setCancelled(boolean cancel) {
@@ -158,6 +160,7 @@ public class PlayerBedEnterEvent extends PlayerEvent implements Cancellable {
      * Returns the bed block involved in this event.
      *
      * @return the bed block involved in this event
+     * @since 1.0.0
      */
     @NotNull
     public Block getBed() {

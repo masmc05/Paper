@@ -20,6 +20,7 @@ public abstract class HangingEvent extends Event {
      * Gets the hanging entity involved in this event.
      *
      * @return the hanging entity
+     * @since 1.4.5
      */
     @NotNull
     public Hanging getEntity() {

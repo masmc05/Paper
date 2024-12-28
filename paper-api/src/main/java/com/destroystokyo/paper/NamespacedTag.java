@@ -17,6 +17,8 @@ import org.jetbrains.annotations.NotNull;
  * Keys may only contain lowercase alphanumeric characters, periods,
  * underscores, hyphens, and forward slashes.
  *
+ *
+ * @since 1.13.2
  */
 // Paper - entire class, based on org.bukkit.NamespacedKey
 @Deprecated(forRemoval = true, since = "1.20.6")
@@ -84,11 +86,17 @@ public final class NamespacedTag implements com.destroystokyo.paper.Namespaced {
         Preconditions.checkArgument(string.length() < 256, "NamespacedTag must be less than 256 characters (%s)", string);
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     public String getNamespace() {
         return namespace;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     public String getKey() {
         return key;
@@ -124,6 +132,7 @@ public final class NamespacedTag implements com.destroystokyo.paper.Namespaced {
      *
      * @return new key
      * @deprecated should never be used by plugins, for internal use only!!
+     * @since 1.13.2
      */
     @Deprecated
     public static NamespacedTag randomKey() {
@@ -135,6 +144,7 @@ public final class NamespacedTag implements com.destroystokyo.paper.Namespaced {
      *
      * @param key the key to use
      * @return new key in the Minecraft namespace
+     * @since 1.13.2
      */
     @NotNull
     public static NamespacedTag minecraft(@NotNull String key) {

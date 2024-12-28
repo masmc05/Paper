@@ -21,11 +21,17 @@ public class PlayerVelocityEvent extends PlayerEvent implements Cancellable {
         this.velocity = velocity;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -35,6 +41,7 @@ public class PlayerVelocityEvent extends PlayerEvent implements Cancellable {
      * Gets the velocity vector that will be sent to the player
      *
      * @return Vector the player will get
+     * @since 1.0.0
      */
     @NotNull
     public Vector getVelocity() {
@@ -45,6 +52,7 @@ public class PlayerVelocityEvent extends PlayerEvent implements Cancellable {
      * Sets the velocity vector in meters per tick that will be sent to the player
      *
      * @param velocity The velocity vector that will be sent to the player
+     * @since 1.0.0
      */
     public void setVelocity(@NotNull Vector velocity) {
         this.velocity = velocity.clone();

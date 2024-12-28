@@ -35,6 +35,7 @@ import org.jetbrains.annotations.Nullable;
  *
  * @param <K> Key Type of the Map
  * @param <V> Value Type of the Map
+ * @since 1.9.4
  */
 @Deprecated(forRemoval = true)
 public class MRUMapCache<K, V> extends AbstractMap<K, V> {
@@ -45,18 +46,38 @@ public class MRUMapCache<K, V> extends AbstractMap<K, V> {
         this.backingMap = backingMap;
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     public int size() {return backingMap.size();}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     public boolean isEmpty() {return backingMap.isEmpty();}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     public boolean containsKey(@Nullable Object key) {
         return key != null && key.equals(cacheKey) || backingMap.containsKey(key);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     public boolean containsValue(@Nullable Object value) {
         return value != null && value == cacheValue || backingMap.containsValue(value);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @Nullable
     public V get(@Nullable Object key) {
         if (cacheKey != null && cacheKey.equals(key)) {
@@ -72,6 +93,10 @@ public class MRUMapCache<K, V> extends AbstractMap<K, V> {
         return cacheValue = backingMap.put(key, value);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @Nullable
     public V remove(@Nullable Object key) {
         if (key != null && key.equals(cacheKey)) {
@@ -80,20 +105,40 @@ public class MRUMapCache<K, V> extends AbstractMap<K, V> {
         return backingMap.remove(key);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     public void putAll(@NotNull Map<? extends K, ? extends V> m) {backingMap.putAll(m);}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     public void clear() {
         cacheKey = null;
         cacheValue = null;
         backingMap.clear();
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @NotNull
     public Set<K> keySet() {return backingMap.keySet();}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @NotNull
     public Collection<V> values() {return backingMap.values();}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @NotNull
     public Set<Map.Entry<K, V>> entrySet() {return backingMap.entrySet();}
 
@@ -104,6 +149,7 @@ public class MRUMapCache<K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return Map
+     * @since 1.9.4
      */
     @NotNull
     public static <K, V> Map<K, V> of(@NotNull Map<K, V> map) {

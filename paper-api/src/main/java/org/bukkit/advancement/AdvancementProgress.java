@@ -17,6 +17,7 @@ public interface AdvancementProgress {
      * The advancement this progress is concerning.
      *
      * @return the relevant advancement
+     * @since 1.12
      */
     @NotNull
     Advancement getAdvancement();
@@ -25,6 +26,7 @@ public interface AdvancementProgress {
      * Check if all criteria for this advancement have been met.
      *
      * @return true if this advancement is done
+     * @since 1.12
      */
     boolean isDone();
 
@@ -34,6 +36,7 @@ public interface AdvancementProgress {
      * @param criteria the criteria to mark
      * @return true if awarded, false if criteria does not exist or already
      * awarded.
+     * @since 1.12
      */
     boolean awardCriteria(@NotNull String criteria);
 
@@ -42,6 +45,7 @@ public interface AdvancementProgress {
      *
      * @param criteria the criteria to mark
      * @return true if removed, false if criteria does not exist or not awarded
+     * @since 1.12
      */
     boolean revokeCriteria(@NotNull String criteria);
 
@@ -50,6 +54,7 @@ public interface AdvancementProgress {
      *
      * @param criteria the criteria to check
      * @return date awarded or null if unawarded or criteria does not exist
+     * @since 1.12
      */
     @Nullable
     Date getDateAwarded(@NotNull String criteria);
@@ -58,6 +63,7 @@ public interface AdvancementProgress {
      * Get the criteria which have not been awarded.
      *
      * @return unmodifiable copy of criteria remaining
+     * @since 1.12
      */
     @NotNull
     Collection<String> getRemainingCriteria();
@@ -66,6 +72,7 @@ public interface AdvancementProgress {
      * Gets the criteria which have been awarded.
      *
      * @return unmodifiable copy of criteria awarded
+     * @since 1.12
      */
     @NotNull
     Collection<String> getAwardedCriteria();

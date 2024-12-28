@@ -28,6 +28,7 @@ public enum WorldType {
      * Gets the name of this WorldType
      *
      * @return Name of this type
+     * @since 1.1.0
      */
     @NotNull
     public String getName() {
@@ -39,6 +40,7 @@ public enum WorldType {
      *
      * @param name Name of the WorldType to get
      * @return Requested WorldType, or null if not found
+     * @since 1.1.0
      */
     @Nullable
     public static WorldType getByName(@NotNull String name) {

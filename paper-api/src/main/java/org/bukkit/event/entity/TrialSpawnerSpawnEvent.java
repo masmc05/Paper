@@ -21,6 +21,9 @@ public class TrialSpawnerSpawnEvent extends EntitySpawnEvent {
         this.spawner = spawner;
     }
 
+    /**
+     * @since 1.21
+     */
     @NotNull
     public TrialSpawner getTrialSpawner() {
         return spawner;

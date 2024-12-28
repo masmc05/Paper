@@ -21,6 +21,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      *
      * @return Objective name
      * @throws IllegalStateException if this team has been unregistered
+     * @since 1.5.1
      */
     @NotNull
     String getName();
@@ -121,6 +122,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @return Team display name
      * @throws IllegalStateException if this team has been unregistered
      * @deprecated in favour of {@link #displayName()}
+     * @since 1.5.1
      */
     @NotNull
     @Deprecated // Paper
@@ -132,6 +134,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @param displayName New display name
      * @throws IllegalStateException if this team has been unregistered
      * @deprecated in favour of {@link #displayName(net.kyori.adventure.text.Component)}
+     * @since 1.5.1
      */
     @Deprecated // Paper
     void setDisplayName(@NotNull String displayName);
@@ -142,6 +145,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @return Team prefix
      * @throws IllegalStateException if this team has been unregistered
      * @deprecated in favour of {@link #prefix()}
+     * @since 1.5.1
      */
     @NotNull
     @Deprecated // Paper
@@ -153,6 +157,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @param prefix New prefix
      * @throws IllegalStateException if this team has been unregistered
      * @deprecated in favour of {@link #prefix(net.kyori.adventure.text.Component)}
+     * @since 1.5.1
      */
     @Deprecated // Paper
     void setPrefix(@NotNull String prefix);
@@ -163,6 +168,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @return the team's current suffix
      * @throws IllegalStateException if this team has been unregistered
      * @deprecated in favour of {@link #suffix()}
+     * @since 1.5.1
      */
     @NotNull
     @Deprecated // Paper
@@ -174,6 +180,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @param suffix the new suffix for this team.
      * @throws IllegalStateException if this team has been unregistered
      * @deprecated in favour of {@link #suffix(net.kyori.adventure.text.Component)}
+     * @since 1.5.1
      */
     @Deprecated // Paper
     void setSuffix(@NotNull String suffix);
@@ -212,6 +219,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      *
      * @return true if friendly fire is enabled
      * @throws IllegalStateException if this team has been unregistered
+     * @since 1.5.1
      */
     boolean allowFriendlyFire();
 
@@ -220,6 +228,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      *
      * @param enabled true if friendly fire is to be allowed
      * @throws IllegalStateException if this team has been unregistered
+     * @since 1.5.1
      */
     void setAllowFriendlyFire(boolean enabled);
 
@@ -229,6 +238,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      *
      * @return true if team members can see invisible members
      * @throws IllegalStateException if this team has been unregistered
+     * @since 1.5.1
      */
     boolean canSeeFriendlyInvisibles();
 
@@ -238,6 +248,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      *
      * @param enabled true if invisible teammates are to be visible
      * @throws IllegalStateException if this team has been unregistered
+     * @since 1.5.1
      */
     void setCanSeeFriendlyInvisibles(boolean enabled);
 
@@ -271,6 +282,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @throws IllegalStateException if this team has been unregistered
      * @see #getEntries()
      * @deprecated Teams can contain entries that aren't players
+     * @since 1.5.1
      */
     @Deprecated(since = "1.8.6")
     @NotNull
@@ -291,6 +303,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      *
      * @return number of entries on the team
      * @throws IllegalStateException if this team has been unregistered
+     * @since 1.5.1
      */
     int getSize();
 
@@ -299,6 +312,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      *
      * @return Owning scoreboard, or null if this team has been {@link
      *     #unregister() unregistered}
+     * @since 1.5.1
      */
     @Nullable
     Scoreboard getScoreboard();
@@ -311,6 +325,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @param player the player to add
      * @throws IllegalStateException if this team has been unregistered
      * @see #addEntry(String)
+     * @since 1.5.1
      */
     // @Deprecated(since = "1.8.6") // Paper
     void addPlayer(@NotNull OfflinePlayer player);
@@ -391,6 +406,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @return if the player was on this team
      * @throws IllegalStateException if this team has been unregistered
      * @see #removeEntry(String)
+     * @since 1.5.1
      */
     // @Deprecated(since = "1.8.6") // Paper
     boolean removePlayer(@NotNull OfflinePlayer player);
@@ -463,6 +479,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * Unregisters this team from the Scoreboard
      *
      * @throws IllegalStateException if this team has been unregistered
+     * @since 1.5.1
      */
     void unregister();
 
@@ -473,6 +490,7 @@ public interface Team extends net.kyori.adventure.audience.ForwardingAudience { 
      * @return true if the player is a member of this team
      * @throws IllegalStateException if this team has been unregistered
      * @see #hasEntry(String)
+     * @since 1.5.1
      */
     // @Deprecated(since = "1.8.6") // Paper
     boolean hasPlayer(@NotNull OfflinePlayer player);

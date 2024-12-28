@@ -19,6 +19,9 @@ public class FormattedCommandAlias extends Command {
         this.formatStrings = formatStrings;
     }
 
+    /**
+     * @since 1.7.10
+     */
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String[] args) {
         boolean result = false;

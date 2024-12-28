@@ -69,6 +69,7 @@ public class BlockPhysicsEvent extends BlockEvent implements Cancellable {
      * This is the type of {@link #getBlock()} at the time of the event.
      *
      * @return Changed block's type
+     * @since 1.0.0
      */
     @NotNull
     public Material getChangedType() {
@@ -89,11 +90,17 @@ public class BlockPhysicsEvent extends BlockEvent implements Cancellable {
     }
     // Paper end
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;

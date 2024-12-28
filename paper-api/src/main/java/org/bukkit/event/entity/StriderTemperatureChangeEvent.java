@@ -22,6 +22,9 @@ public class StriderTemperatureChangeEvent extends EntityEvent implements Cancel
         this.shivering = shivering;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     @Override
     public Strider getEntity() {
@@ -32,6 +35,7 @@ public class StriderTemperatureChangeEvent extends EntityEvent implements Cancel
      * Get the Strider's new shivering state.
      *
      * @return the new shivering state
+     * @since 1.16.1
      */
     public boolean isShivering() {
         return shivering;
@@ -53,12 +57,18 @@ public class StriderTemperatureChangeEvent extends EntityEvent implements Cancel
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @Override
     @NotNull
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

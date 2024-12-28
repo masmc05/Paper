@@ -25,6 +25,9 @@ import com.google.common.base.Preconditions;
  * @since 1.0.0
  */
 public interface EventExecutor {
+    /**
+     * @since 1.0.0
+     */
     public void execute(@NotNull Listener listener, @NotNull Event event) throws EventException;
 
     // Paper start

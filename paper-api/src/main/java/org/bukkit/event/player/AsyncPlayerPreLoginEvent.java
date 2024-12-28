@@ -86,6 +86,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * @see #getLoginResult()
      * @deprecated This method uses a deprecated enum from {@link
      *     PlayerPreLoginEvent}
+     * @since 1.3.1
      */
     @Deprecated(since = "1.3.2")
     @NotNull
@@ -170,6 +171,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      *
      * @return Current kick message
      * @deprecated in favour of {@link #kickMessage()}
+     * @since 1.3.1
      */
     @NotNull
     @Deprecated // Paper
@@ -182,6 +184,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      *
      * @param message New kick message
      * @deprecated in favour of {@link #kickMessage(net.kyori.adventure.text.Component)}
+     * @since 1.3.1
      */
     @Deprecated // Paper
     public void setKickMessage(@NotNull final String message) {
@@ -190,6 +193,8 @@ public class AsyncPlayerPreLoginEvent extends Event {
 
     /**
      * Allows the player to log in
+     *
+     * @since 1.3.1
      */
     public void allow() {
         result = Result.ALLOWED;
@@ -228,6 +233,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * Gets the player's name.
      *
      * @return the player's name
+     * @since 1.3.1
      */
     @NotNull
     public String getName() {
@@ -238,6 +244,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * Gets the player IP address.
      *
      * @return The IP address
+     * @since 1.3.1
      */
     @NotNull
     public InetAddress getAddress() {
@@ -308,12 +315,18 @@ public class AsyncPlayerPreLoginEvent extends Event {
         return transferred;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -20,6 +20,7 @@ public interface MessageComponentSerializer extends ComponentSerializer<Componen
      * A component serializer for converting between {@link Message} and {@link Component}.
      *
      * @return serializer instance
+     * @since 1.20.6
      */
     static MessageComponentSerializer message() {
         return MessageComponentSerializerHolder.PROVIDER.orElseThrow();

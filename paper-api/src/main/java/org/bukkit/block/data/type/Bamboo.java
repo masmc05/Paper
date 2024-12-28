@@ -14,6 +14,7 @@ public interface Bamboo extends Ageable, Sapling {
      * Gets the value of the 'leaves' property.
      *
      * @return the 'leaves' value
+     * @since 1.14
      */
     @NotNull
     Leaves getLeaves();
@@ -27,6 +28,8 @@ public interface Bamboo extends Ageable, Sapling {
 
     /**
      * Bamboo leaf size.
+     *
+     * @since 1.14
      */
     public enum Leaves {
 

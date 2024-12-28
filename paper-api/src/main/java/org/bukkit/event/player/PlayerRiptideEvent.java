@@ -36,6 +36,7 @@ public class PlayerRiptideEvent extends PlayerEvent {
      * Gets the item containing the used enchantment.
      *
      * @return held enchanted item
+     * @since 1.13
      */
     @NotNull
     public ItemStack getItem() {
@@ -53,12 +54,18 @@ public class PlayerRiptideEvent extends PlayerEvent {
         return velocity.clone();
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

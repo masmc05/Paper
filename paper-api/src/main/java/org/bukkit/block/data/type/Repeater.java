@@ -24,6 +24,7 @@ public interface Repeater extends Directional, Powerable {
      * Gets the value of the 'delay' property.
      *
      * @return the 'delay' value
+     * @since 1.13
      */
     int getDelay();
 
@@ -31,6 +32,7 @@ public interface Repeater extends Directional, Powerable {
      * Sets the value of the 'delay' property.
      *
      * @param delay the new 'delay' value
+     * @since 1.13
      */
     void setDelay(int delay);
 
@@ -38,6 +40,7 @@ public interface Repeater extends Directional, Powerable {
      * Gets the minimum allowed value of the 'delay' property.
      *
      * @return the minimum 'delay' value
+     * @since 1.13
      */
     int getMinimumDelay();
 
@@ -45,6 +48,7 @@ public interface Repeater extends Directional, Powerable {
      * Gets the maximum allowed value of the 'delay' property.
      *
      * @return the maximum 'delay' value
+     * @since 1.13
      */
     int getMaximumDelay();
 
@@ -52,6 +56,7 @@ public interface Repeater extends Directional, Powerable {
      * Gets the value of the 'locked' property.
      *
      * @return the 'locked' value
+     * @since 1.13
      */
     boolean isLocked();
 
@@ -59,6 +64,7 @@ public interface Repeater extends Directional, Powerable {
      * Sets the value of the 'locked' property.
      *
      * @param locked the new 'locked' value
+     * @since 1.13
      */
     void setLocked(boolean locked);
 }

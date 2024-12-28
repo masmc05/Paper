@@ -7,6 +7,7 @@ import org.bukkit.Material;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class PoweredRail extends ExtendedRails implements Redstone {
@@ -28,6 +29,9 @@ public class PoweredRail extends ExtendedRails implements Redstone {
         super(type, data);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isPowered() {
         return (getData() & 0x8) == 0x8;
@@ -37,6 +41,7 @@ public class PoweredRail extends ExtendedRails implements Redstone {
      * Set whether this PoweredRail should be powered or not.
      *
      * @param isPowered whether or not the rail is powered
+     * @since 1.0.0
      */
     public void setPowered(boolean isPowered) {
         setData((byte) (isPowered ? (getData() | 0x8) : (getData() & ~0x8)));

@@ -75,6 +75,7 @@ public class BroadcastMessageEvent extends ServerEvent implements Cancellable {
      *
      * @return Message to broadcast
      * @deprecated in favour of {@link #message()}
+     * @since 1.12
      */
     @NotNull
     @Deprecated // Paper
@@ -87,6 +88,7 @@ public class BroadcastMessageEvent extends ServerEvent implements Cancellable {
      *
      * @param message New message to broadcast
      * @deprecated in favour of {@link #message(net.kyori.adventure.text.Component)}
+     * @since 1.12
      */
     @Deprecated // Paper
     public void setMessage(@NotNull String message) {
@@ -105,28 +107,41 @@ public class BroadcastMessageEvent extends ServerEvent implements Cancellable {
      * unmodifiable set.
      *
      * @return All CommandSenders who will see this chat message
+     * @since 1.12
      */
     @NotNull
     public Set<CommandSender> getRecipients() {
         return recipients;
     }
 
+    /**
+     * @since 1.12
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.12
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.12
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.12
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -13,6 +13,7 @@ public interface EnchantingInventory extends Inventory {
      * Set the item being enchanted.
      *
      * @param item The new item
+     * @since 1.1.0
      */
     void setItem(@Nullable ItemStack item);
 
@@ -20,6 +21,7 @@ public interface EnchantingInventory extends Inventory {
      * Get the item being enchanted.
      *
      * @return The current item.
+     * @since 1.1.0
      */
     @Nullable
     ItemStack getItem();

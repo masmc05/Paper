@@ -13,6 +13,7 @@ public interface MetadataValue {
      * Fetches the value of this metadata item.
      *
      * @return the metadata value.
+     * @since 1.1.0
      */
     @Nullable
     public Object value();
@@ -21,6 +22,7 @@ public interface MetadataValue {
      * Attempts to convert the value of this metadata item into an int.
      *
      * @return the value as an int.
+     * @since 1.1.0
      */
     public int asInt();
 
@@ -28,6 +30,7 @@ public interface MetadataValue {
      * Attempts to convert the value of this metadata item into a float.
      *
      * @return the value as a float.
+     * @since 1.1.0
      */
     public float asFloat();
 
@@ -35,6 +38,7 @@ public interface MetadataValue {
      * Attempts to convert the value of this metadata item into a double.
      *
      * @return the value as a double.
+     * @since 1.1.0
      */
     public double asDouble();
 
@@ -42,6 +46,7 @@ public interface MetadataValue {
      * Attempts to convert the value of this metadata item into a long.
      *
      * @return the value as a long.
+     * @since 1.1.0
      */
     public long asLong();
 
@@ -49,6 +54,7 @@ public interface MetadataValue {
      * Attempts to convert the value of this metadata item into a short.
      *
      * @return the value as a short.
+     * @since 1.1.0
      */
     public short asShort();
 
@@ -56,6 +62,7 @@ public interface MetadataValue {
      * Attempts to convert the value of this metadata item into a byte.
      *
      * @return the value as a byte.
+     * @since 1.1.0
      */
     public byte asByte();
 
@@ -63,6 +70,7 @@ public interface MetadataValue {
      * Attempts to convert the value of this metadata item into a boolean.
      *
      * @return the value as a boolean.
+     * @since 1.1.0
      */
     public boolean asBoolean();
 
@@ -70,6 +78,7 @@ public interface MetadataValue {
      * Attempts to convert the value of this metadata item into a string.
      *
      * @return the value as a string.
+     * @since 1.1.0
      */
     @NotNull
     public String asString();
@@ -78,6 +87,7 @@ public interface MetadataValue {
      * Returns the {@link Plugin} that created this metadata item.
      *
      * @return the plugin that owns this metadata value. Could be null if the plugin was already unloaded.
+     * @since 1.1.0
      */
     @Nullable
     public Plugin getOwningPlugin();
@@ -85,6 +95,8 @@ public interface MetadataValue {
     /**
      * Invalidates this metadata item, forcing it to recompute when next
      * accessed.
+     *
+     * @since 1.1.0
      */
     public void invalidate();
 }

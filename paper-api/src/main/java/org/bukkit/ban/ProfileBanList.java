@@ -26,6 +26,7 @@ public interface ProfileBanList extends BanList<com.destroystokyo.paper.profile.
      *     (updated) previous ban
      * @throws IllegalArgumentException if ProfilePlayer has an invalid UUID
      * @deprecated use {@link #addBan(com.destroystokyo.paper.profile.PlayerProfile, String, Date, String)}
+     * @since 1.20.1
      */
     @Nullable
     // Paper start
@@ -34,36 +35,42 @@ public interface ProfileBanList extends BanList<com.destroystokyo.paper.profile.
 
     /**
      * @throws IllegalArgumentException if ProfilePlayer has an invalid UUID
+     * @since 1.20.1
      */
     @Nullable BanEntry<com.destroystokyo.paper.profile.PlayerProfile> addBan(com.destroystokyo.paper.profile.@NotNull PlayerProfile target, @Nullable String reason, @Nullable Date expires, @Nullable String source);
 
     // the 5 methods below are added to maintain compat for the bukkit.PlayerProfile parameter type
     /**
      * @deprecated use {@link #getBanEntry(Object)}
+     * @since 1.20.1
      */
     @Deprecated
     @Nullable <E extends BanEntry<? super com.destroystokyo.paper.profile.PlayerProfile>> E getBanEntry(@NotNull PlayerProfile target);
 
     /**
      * @deprecated use {@link #isBanned(Object)}
+     * @since 1.20.1
      */
     @Deprecated
     boolean isBanned(@NotNull PlayerProfile target);
 
     /**
      * @deprecated use {@link #pardon(Object)}
+     * @since 1.20.1
      */
     @Deprecated
     void pardon(@NotNull PlayerProfile target);
 
     /**
      * @deprecated use {@link #addBan(Object, String, java.time.Instant, String)}
+     * @since 1.20.1
      */
     @Deprecated
     @Nullable <E extends BanEntry<? super com.destroystokyo.paper.profile.PlayerProfile>> E addBan(@NotNull PlayerProfile target, @Nullable String reason, @Nullable java.time.Instant expires, @Nullable String source);
 
     /**
      * @deprecated use {@link #addBan(Object, String, java.time.Duration, String)}
+     * @since 1.20.1
      */
     @Deprecated
     @Nullable <E extends BanEntry<? super com.destroystokyo.paper.profile.PlayerProfile>> E addBan(@NotNull PlayerProfile target, @Nullable String reason, @Nullable java.time.Duration duration, @Nullable String source);

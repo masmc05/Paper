@@ -28,6 +28,7 @@ public interface AdvancementDisplay {
      * the text when it's completed.
      *
      * @return the frame type
+     * @since 1.17.1
      */
     Frame frame();
 
@@ -35,6 +36,7 @@ public interface AdvancementDisplay {
      * Gets the advancement title.
      *
      * @return the title
+     * @since 1.17.1
      */
     Component title();
 
@@ -42,6 +44,7 @@ public interface AdvancementDisplay {
      * Gets the description.
      *
      * @return the description
+     * @since 1.17.1
      */
     Component description();
 
@@ -49,6 +52,7 @@ public interface AdvancementDisplay {
      * Gets the icon shown in the frame in the advancements screen.
      *
      * @return a copy of the icon
+     * @since 1.17.1
      */
     ItemStack icon();
 
@@ -59,6 +63,7 @@ public interface AdvancementDisplay {
      * of the screen.
      *
      * @return {@code true} if a toast should be shown
+     * @since 1.17.1
      */
     boolean doesShowToast();
 
@@ -68,6 +73,7 @@ public interface AdvancementDisplay {
      * @return {@code true} if a message should be sent
      * @see org.bukkit.event.player.PlayerAdvancementDoneEvent#message() to edit
      * the message
+     * @since 1.17.1
      */
     boolean doesAnnounceToChat();
 
@@ -78,6 +84,7 @@ public interface AdvancementDisplay {
      * unlocked.
      *
      * @return {@code true} if hidden
+     * @since 1.17.1
      */
     boolean isHidden();
 
@@ -89,6 +96,7 @@ public interface AdvancementDisplay {
      * texture.
      *
      * @return the background texture path
+     * @since 1.17.1
      */
     @Nullable NamespacedKey backgroundPath();
 
@@ -106,6 +114,8 @@ public interface AdvancementDisplay {
     /**
      * Defines how the {@link #icon()} appears in the advancements screen and
      * the color used with the {@link #title() advancement name}.
+     *
+     * @since 1.17.1
      */
     enum Frame implements Translatable {
 
@@ -143,6 +153,7 @@ public interface AdvancementDisplay {
          * Gets the {@link TextColor} used for the advancement name.
          *
          * @return the text color
+         * @since 1.17.1
          */
         public TextColor color() {
             return this.color;
@@ -154,6 +165,7 @@ public interface AdvancementDisplay {
          * This is the first line of the toast displayed by the client.
          *
          * @return the toast message key
+         * @since 1.17.1
          */
         @Override
         public String translationKey() {

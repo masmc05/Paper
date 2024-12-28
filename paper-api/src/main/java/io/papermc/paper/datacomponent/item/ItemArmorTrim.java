@@ -16,11 +16,17 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface ItemArmorTrim extends ShownInTooltip<ItemArmorTrim> {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_, _ -> new", pure = true)
     static ItemArmorTrim itemArmorTrim(final ArmorTrim armorTrim, final boolean showInTooltip) {
         return itemArmorTrim(armorTrim).showInTooltip(showInTooltip).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static ItemArmorTrim.Builder itemArmorTrim(final ArmorTrim armorTrim) {
         return ItemComponentTypesBridge.bridge().itemArmorTrim(armorTrim);
@@ -30,12 +36,15 @@ public interface ItemArmorTrim extends ShownInTooltip<ItemArmorTrim> {
      * Armor trim present on this item.
      *
      * @return trim
+     * @since 1.21.3
      */
     @Contract(pure = true)
     ArmorTrim armorTrim();
 
     /**
      * Builder for {@link ItemArmorTrim}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -47,6 +56,7 @@ public interface ItemArmorTrim extends ShownInTooltip<ItemArmorTrim> {
          * @param armorTrim trim
          * @return the builder for chaining
          * @see #armorTrim()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder armorTrim(ArmorTrim armorTrim);

@@ -24,17 +24,24 @@ public class HangingBreakEvent extends HangingEvent implements Cancellable {
      * Gets the cause for the hanging entity's removal
      *
      * @return the RemoveCause for the hanging entity's removal
+     * @since 1.4.5
      */
     @NotNull
     public HangingBreakEvent.RemoveCause getCause() {
         return cause;
     }
 
+    /**
+     * @since 1.4.5
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.4.5
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
@@ -42,6 +49,8 @@ public class HangingBreakEvent extends HangingEvent implements Cancellable {
 
     /**
      * An enum to specify the cause of the removal
+     *
+     * @since 1.4.5
      */
     public enum RemoveCause {
         /**
@@ -66,12 +75,18 @@ public class HangingBreakEvent extends HangingEvent implements Cancellable {
         DEFAULT,
     }
 
+    /**
+     * @since 1.4.5
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.4.5
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

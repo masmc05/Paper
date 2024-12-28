@@ -35,6 +35,7 @@ public interface RegistryEventProvider<T, B extends RegistryBuilder<T>> {
      * to register a handler for {@link RegistryEntryAddEvent}.
      *
      * @return the registry entry add event type
+     * @since 1.21
      */
     RegistryEntryAddEventType<T, B> entryAdd();
 
@@ -46,6 +47,7 @@ public interface RegistryEventProvider<T, B extends RegistryBuilder<T>> {
      * to register a handler for {@link RegistryFreezeEvent}.
      *
      * @return the registry freeze event type
+     * @since 1.21
      */
     LifecycleEventType.Prioritizable<BootstrapContext, RegistryFreezeEvent<T, B>> freeze();
 
@@ -53,6 +55,7 @@ public interface RegistryEventProvider<T, B extends RegistryBuilder<T>> {
      * Gets the registry key associated with this event type provider.
      *
      * @return the registry key
+     * @since 1.21
      */
     RegistryKey<T> registryKey();
 }

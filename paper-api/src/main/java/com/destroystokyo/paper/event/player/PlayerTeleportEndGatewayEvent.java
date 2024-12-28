@@ -27,6 +27,7 @@ public class PlayerTeleportEndGatewayEvent extends PlayerTeleportEvent {
      * The gateway triggering the teleport
      *
      * @return EndGateway used
+     * @since 1.11.2
      */
     public EndGateway getGateway() {
         return this.gateway;

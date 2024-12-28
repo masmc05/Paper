@@ -12,6 +12,8 @@ public class ServerLoadEvent extends ServerEvent {
 
     /**
      * Represents the context in which the enclosing event has been completed.
+     *
+     * @since 1.13.1
      */
     public enum LoadType {
         STARTUP, RELOAD;
@@ -33,18 +35,25 @@ public class ServerLoadEvent extends ServerEvent {
      * Gets the context in which the server was loaded.
      *
      * @return the context in which the server was loaded
+     * @since 1.13.1
      */
     @NotNull
     public LoadType getType() {
         return type;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

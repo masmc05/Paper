@@ -11,6 +11,7 @@ public interface Hangable extends BlockData {
      * Gets the value of the 'hanging' property.
      *
      * @return the 'hanging' value
+     * @since 1.19
      */
     boolean isHanging();
 
@@ -18,6 +19,7 @@ public interface Hangable extends BlockData {
      * Sets the value of the 'hanging' property.
      *
      * @param hanging the new 'hanging' value
+     * @since 1.19
      */
     void setHanging(boolean hanging);
 }

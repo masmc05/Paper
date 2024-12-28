@@ -23,6 +23,7 @@ public interface PermissionManager {
      *
      * @param name Name of the permission
      * @return Permission, or null if none
+     * @since 1.19.3
      */
     @Nullable Permission getPermission(String name);
 
@@ -35,6 +36,7 @@ public interface PermissionManager {
      * @param perm Permission to add
      * @throws IllegalArgumentException Thrown when a permission with the same
      *                                  name already exists
+     * @since 1.19.3
      */
     void addPermission(Permission perm);
 
@@ -48,6 +50,7 @@ public interface PermissionManager {
      * permission from any {@link Permissible}s that have it.
      *
      * @param perm Permission to remove
+     * @since 1.19.3
      */
     void removePermission(Permission perm);
 
@@ -61,6 +64,7 @@ public interface PermissionManager {
      * permission from any {@link Permissible}s that have it.
      *
      * @param name Permission to remove
+     * @since 1.19.3
      */
     void removePermission(String name);
 
@@ -69,6 +73,7 @@ public interface PermissionManager {
      *
      * @param op Which set of default permissions to get
      * @return The default permissions
+     * @since 1.19.3
      */
     Set<Permission> getDefaultPermissions(boolean op);
 
@@ -79,6 +84,7 @@ public interface PermissionManager {
      * here.
      *
      * @param perm Permission to recalculate
+     * @since 1.19.3
      */
     void recalculatePermissionDefaults(Permission perm);
 
@@ -91,6 +97,7 @@ public interface PermissionManager {
      *
      * @param permission  Permission to subscribe to
      * @param permissible Permissible subscribing
+     * @since 1.19.3
      */
     void subscribeToPermission(String permission, Permissible permissible);
 
@@ -100,6 +107,7 @@ public interface PermissionManager {
      *
      * @param permission  Permission to unsubscribe from
      * @param permissible Permissible subscribing
+     * @since 1.19.3
      */
     void unsubscribeFromPermission(String permission, Permissible permissible);
 
@@ -109,6 +117,7 @@ public interface PermissionManager {
      *
      * @param permission Permission to query for
      * @return Set containing all subscribed permissions
+     * @since 1.19.3
      */
     Set<Permissible> getPermissionSubscriptions(String permission);
 
@@ -120,6 +129,7 @@ public interface PermissionManager {
      *
      * @param op          Default list to subscribe to
      * @param permissible Permissible subscribing
+     * @since 1.19.3
      */
     void subscribeToDefaultPerms(boolean op, Permissible permissible);
 
@@ -128,6 +138,7 @@ public interface PermissionManager {
      *
      * @param op          Default list to unsubscribe from
      * @param permissible Permissible subscribing
+     * @since 1.19.3
      */
     void unsubscribeFromDefaultPerms(boolean op, Permissible permissible);
 
@@ -137,6 +148,7 @@ public interface PermissionManager {
      *
      * @param op Default list to query for
      * @return Set containing all subscribed permissions
+     * @since 1.19.3
      */
     Set<Permissible> getDefaultPermSubscriptions(boolean op);
 
@@ -146,6 +158,7 @@ public interface PermissionManager {
      * This set is a copy and will not be modified live.
      *
      * @return Set containing all current registered permissions
+     * @since 1.19.3
      */
     Set<Permission> getPermissions();
 
@@ -155,6 +168,7 @@ public interface PermissionManager {
      * This is meant as an optimization for adding multiple permissions without recalculating each permission.
      *
      * @param perm permission
+     * @since 1.19.3
      */
     void addPermissions(List<Permission> perm);
 
@@ -162,6 +176,8 @@ public interface PermissionManager {
      * Clears the current registered permissinos.
      * <p>
      * This is used for reloading.
+     *
+     * @since 1.19.3
      */
     void clearPermissions();
 

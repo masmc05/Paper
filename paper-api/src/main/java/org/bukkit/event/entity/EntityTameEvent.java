@@ -30,11 +30,17 @@ public class EntityTameEvent extends EntityEvent implements Cancellable {
         return (LivingEntity) entity;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
@@ -44,6 +50,7 @@ public class EntityTameEvent extends EntityEvent implements Cancellable {
      * Gets the owning AnimalTamer
      *
      * @return the owning AnimalTamer
+     * @since 1.0.0
      */
     @NotNull
     public AnimalTamer getOwner() {

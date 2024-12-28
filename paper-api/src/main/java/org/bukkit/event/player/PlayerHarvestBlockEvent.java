@@ -45,6 +45,7 @@ public class PlayerHarvestBlockEvent extends PlayerEvent implements Cancellable 
      * Gets the block that is being harvested.
      *
      * @return The block that is being harvested
+     * @since 1.16.1
      */
     @NotNull
     public Block getHarvestedBlock() {
@@ -66,28 +67,41 @@ public class PlayerHarvestBlockEvent extends PlayerEvent implements Cancellable 
      * Gets a list of items that are being harvested from this block.
      *
      * @return A list of items that are being harvested from this block
+     * @since 1.16.1
      */
     @NotNull
     public List<ItemStack> getItemsHarvested() {
         return itemsHarvested;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

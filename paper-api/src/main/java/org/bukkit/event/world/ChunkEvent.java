@@ -20,6 +20,7 @@ public abstract class ChunkEvent extends WorldEvent {
      * Gets the chunk being loaded/unloaded
      *
      * @return Chunk that triggered this event
+     * @since 1.0.0
      */
     @NotNull
     public Chunk getChunk() {

@@ -27,6 +27,9 @@ public class CartographyItemEvent extends InventoryClickEvent {
         super(view, type, slot, click, action, key);
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public CartographyInventory getInventory() {
         return (CartographyInventory) super.getInventory();

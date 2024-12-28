@@ -32,28 +32,41 @@ public class EntityEnterBlockEvent extends EntityEvent implements Cancellable {
      * Get the block the entity will enter.
      *
      * @return the block
+     * @since 1.15.2
      */
     @NotNull
     public Block getBlock() {
         return block;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

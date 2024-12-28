@@ -31,6 +31,7 @@ public @interface SerializableAs {
      * "MyPluginThing" instead of "Thing".
      *
      * @return Name to serialize the class as.
+     * @since 1.0.0
      */
     @NotNull
     public String value();

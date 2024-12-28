@@ -17,6 +17,7 @@ public interface EndGateway extends TileState {
      * If this block state is not placed the location's world will be null.
      *
      * @return the gateway exit location
+     * @since 1.9.4
      */
     @Nullable
     Location getExitLocation();
@@ -29,6 +30,7 @@ public interface EndGateway extends TileState {
      *
      * @param location the new exit location
      * @throws IllegalArgumentException for differing worlds
+     * @since 1.9.4
      */
     void setExitLocation(@Nullable Location location);
 
@@ -37,6 +39,7 @@ public interface EndGateway extends TileState {
      * the exit location instead of finding a nearby location.
      *
      * @return true if the gateway is teleporting to the exact location
+     * @since 1.9.4
      */
     boolean isExactTeleport();
 
@@ -45,6 +48,7 @@ public interface EndGateway extends TileState {
      * the exit location instead of finding a nearby location.
      *
      * @param exact whether to teleport to the exact location
+     * @since 1.9.4
      */
     void setExactTeleport(boolean exact);
 

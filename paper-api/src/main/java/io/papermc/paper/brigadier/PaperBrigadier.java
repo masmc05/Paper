@@ -12,6 +12,7 @@ import org.checkerframework.checker.nullness.qual.NonNull;
  * @deprecated for removal. See {@link MessageComponentSerializer} for a direct replacement of functionality found in
  * this class.
  * As a general entrypoint to brigadier on paper, see {@link io.papermc.paper.command.brigadier.Commands}.
+ * @since 1.20.6
  */
 @Deprecated(forRemoval = true, since = "1.20.6")
 public final class PaperBrigadier {
@@ -26,6 +27,7 @@ public final class PaperBrigadier {
      *
      * @param componentLike The {@link ComponentLike} to use for the {@link Message} contents
      * @return A new Brigadier {@link Message}
+     * @since 1.20.6
      */
     public static @NonNull Message message(final @NonNull ComponentLike componentLike) {
         return MessageComponentSerializer.message().serialize(componentLike.asComponent());
@@ -40,6 +42,7 @@ public final class PaperBrigadier {
      *
      * @param message The {@link Message} to create a {@link Component} from
      * @return The created {@link Component}
+     * @since 1.20.6
      */
     public static @NonNull Component componentFromMessage(final @NonNull Message message) {
         return MessageComponentSerializer.message().deserialize(message);

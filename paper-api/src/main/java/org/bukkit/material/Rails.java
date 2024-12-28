@@ -8,6 +8,7 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Rails extends MaterialData {
@@ -32,6 +33,7 @@ public class Rails extends MaterialData {
 
     /**
      * @return the whether this track is set on a slope
+     * @since 1.0.0
      */
     public boolean isOnSlope() {
         byte d = getConvertedData();
@@ -41,6 +43,7 @@ public class Rails extends MaterialData {
 
     /**
      * @return the whether this track is set as a curve
+     * @since 1.0.0
      */
     public boolean isCurve() {
         byte d = getConvertedData();
@@ -54,6 +57,7 @@ public class Rails extends MaterialData {
      *     Note that tracks are bidirectional and that the direction returned
      *     is the ascending direction if the track is set on a slope. If it is
      *     set as a curve, the corner of the track is returned.
+     * @since 1.0.0
      */
     public BlockFace getDirection() {
         byte d = getConvertedData();
@@ -119,6 +123,7 @@ public class Rails extends MaterialData {
      *
      * @param face the direction the track should be facing
      * @param isOnSlope whether or not the track should be on a slope
+     * @since 1.0.0
      */
     public void setDirection(BlockFace face, boolean isOnSlope) {
         switch (face) {

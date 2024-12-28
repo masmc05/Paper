@@ -18,6 +18,7 @@ public interface Objective {
      *
      * @return this objective's name
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.5.1
      */
     @NotNull
     String getName();
@@ -50,6 +51,7 @@ public interface Objective {
      * @return this objective's display name
      * @throws IllegalStateException if this objective has been unregistered
      * @deprecated in favour of {@link #displayName()}
+     * @since 1.5.1
      */
     @NotNull
     @Deprecated // Paper
@@ -61,6 +63,7 @@ public interface Objective {
      * @param displayName Display name to set
      * @throws IllegalStateException if this objective has been unregistered
      * @deprecated in favour of {@link #displayName(net.kyori.adventure.text.Component)}
+     * @since 1.5.1
      */
     @Deprecated // Paper
     void setDisplayName(@NotNull String displayName);
@@ -71,6 +74,7 @@ public interface Objective {
      * @return this objective's criteria
      * @throws IllegalStateException if this objective has been unregistered
      * @deprecated use {@link #getTrackedCriteria()}
+     * @since 1.5.1
      */
     @Deprecated(since = "1.19.2")
     @NotNull
@@ -92,6 +96,7 @@ public interface Objective {
      * @return true if scores are modifiable
      * @throws IllegalStateException if this objective has been unregistered
      * @see Criteria#HEALTH
+     * @since 1.5.1
      */
     boolean isModifiable();
 
@@ -100,6 +105,7 @@ public interface Objective {
      *
      * @return Owning scoreboard, or null if it has been {@link #unregister()
      *     unregistered}
+     * @since 1.5.1
      */
     @Nullable
     Scoreboard getScoreboard();
@@ -108,6 +114,7 @@ public interface Objective {
      * Unregisters this objective from the {@link Scoreboard scoreboard.}
      *
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.5.1
      */
     void unregister();
 
@@ -117,6 +124,7 @@ public interface Objective {
      *
      * @param slot display slot to change, or null to not display
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.5.1
      */
     void setDisplaySlot(@Nullable DisplaySlot slot);
 
@@ -125,6 +133,7 @@ public interface Objective {
      *
      * @return the display slot for this objective, or null if not displayed
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.5.1
      */
     @Nullable
     DisplaySlot getDisplaySlot();
@@ -155,6 +164,7 @@ public interface Objective {
      * @return Score tracking the Objective and player specified
      * @throws IllegalStateException if this objective has been unregistered
      * @see #getScore(String)
+     * @since 1.5.1
      */
     // @Deprecated(since = "1.7.8") // Paper
     @NotNull

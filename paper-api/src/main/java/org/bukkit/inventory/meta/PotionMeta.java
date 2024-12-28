@@ -66,6 +66,7 @@ public interface PotionMeta extends ItemMeta {
      * Checks for the presence of custom potion effects.
      *
      * @return true if custom potion effects are applied
+     * @since 1.4.5
      */
     boolean hasCustomEffects();
 
@@ -77,6 +78,7 @@ public interface PotionMeta extends ItemMeta {
      * this method.
      *
      * @return the immutable list of custom potion effects
+     * @since 1.4.5
      */
     @NotNull
     List<PotionEffect> getCustomEffects();
@@ -88,6 +90,7 @@ public interface PotionMeta extends ItemMeta {
      * @param overwrite true if any existing effect of the same type should be
      * overwritten
      * @return true if the potion meta changed as a result of this call
+     * @since 1.4.5
      */
     boolean addCustomEffect(@NotNull PotionEffect effect, boolean overwrite);
 
@@ -96,6 +99,7 @@ public interface PotionMeta extends ItemMeta {
      *
      * @param type the potion effect type to remove
      * @return true if the potion meta changed as a result of this call
+     * @since 1.4.5
      */
     boolean removeCustomEffect(@NotNull PotionEffectType type);
 
@@ -104,6 +108,7 @@ public interface PotionMeta extends ItemMeta {
      *
      * @param type the potion effect type to check for
      * @return true if the potion has this effect
+     * @since 1.4.5
      */
     boolean hasCustomEffect(@NotNull PotionEffectType type);
 
@@ -115,6 +120,7 @@ public interface PotionMeta extends ItemMeta {
      * @param type the potion effect type to move
      * @return true if the potion meta changed as a result of this call
      * @deprecated use {@link #setBasePotionType(org.bukkit.potion.PotionType)}
+     * @since 1.4.5
      */
     @Deprecated(since = "1.9")
     boolean setMainEffect(@NotNull PotionEffectType type);
@@ -123,6 +129,7 @@ public interface PotionMeta extends ItemMeta {
      * Removes all custom potion effects from this potion.
      *
      * @return true if the potion meta changed as a result of this call
+     * @since 1.4.5
      */
     boolean clearCustomEffects();
 
@@ -161,6 +168,7 @@ public interface PotionMeta extends ItemMeta {
      *
      * @deprecated conflicting name, use {@link #hasCustomPotionName()}
      * @return true if this has a custom potion name
+     * @since 1.21.3
      */
     @Deprecated(forRemoval = true, since = "1.21.4")
     default boolean hasCustomName() {
@@ -175,6 +183,7 @@ public interface PotionMeta extends ItemMeta {
      *
      * @deprecated conflicting name, use {@link #getCustomPotionName()}
      * @return the potion name that is set
+     * @since 1.21.3
      */
     @Deprecated(forRemoval = true, since = "1.21.4")
     @Nullable
@@ -187,6 +196,7 @@ public interface PotionMeta extends ItemMeta {
      *
      * @deprecated conflicting name, use {@link #setCustomPotionName(String)}
      * @param name the name to set
+     * @since 1.21.3
      */
     @Deprecated(forRemoval = true, since = "1.21.4")
     default void setCustomName(@Nullable String name) {

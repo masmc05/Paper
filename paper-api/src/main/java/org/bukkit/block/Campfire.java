@@ -14,6 +14,7 @@ public interface Campfire extends TileState {
     /**
      * @return The size of the inventory
      * @see Inventory#getSize()
+     * @since 1.14
      */
     int getSize();
 
@@ -21,6 +22,7 @@ public interface Campfire extends TileState {
      * @param index The index of the Slot's ItemStack to return
      * @return The ItemStack in the slot
      * @see Inventory#getItem(int)
+     * @since 1.14
      */
     @Nullable
     ItemStack getItem(int index);
@@ -29,6 +31,7 @@ public interface Campfire extends TileState {
      * @param index The index where to put the ItemStack
      * @param item The ItemStack to set
      * @see Inventory#setItem(int, org.bukkit.inventory.ItemStack)
+     * @since 1.14
      */
     void setItem(int index, @Nullable ItemStack item);
 
@@ -39,6 +42,7 @@ public interface Campfire extends TileState {
      *
      * @param index item slot index
      * @return Cook time
+     * @since 1.14
      */
     int getCookTime(int index);
 
@@ -49,6 +53,7 @@ public interface Campfire extends TileState {
      *
      * @param index item slot index
      * @param cookTime Cook time
+     * @since 1.14
      */
     void setCookTime(int index, int cookTime);
 
@@ -59,6 +64,7 @@ public interface Campfire extends TileState {
      *
      * @param index item slot index
      * @return Cook time total
+     * @since 1.14
      */
     int getCookTimeTotal(int index);
 
@@ -69,6 +75,7 @@ public interface Campfire extends TileState {
      *
      * @param index item slot index
      * @param cookTimeTotal Cook time total
+     * @since 1.14
      */
     void setCookTimeTotal(int index, int cookTimeTotal);
 

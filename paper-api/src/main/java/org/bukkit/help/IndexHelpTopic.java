@@ -46,6 +46,9 @@ public class IndexHelpTopic extends HelpTopic {
         this.allTopics = topics;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean canSee(@NotNull CommandSender sender) {
         if (sender instanceof ConsoleCommandSender) {
@@ -62,11 +65,17 @@ public class IndexHelpTopic extends HelpTopic {
         // Paper end - Fix HelpCommand searching - do not show index if no topic is visible to the sender
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public void amendCanSee(@Nullable String amendedPermission) {
         permission = amendedPermission;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     @NotNull
     public String getFullText(@NotNull CommandSender sender) {

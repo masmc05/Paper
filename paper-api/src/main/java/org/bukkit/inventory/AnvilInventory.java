@@ -16,6 +16,7 @@ public interface AnvilInventory extends Inventory {
      *
      * @return the rename text
      * @deprecated use {@link AnvilView#getRenameText()}.
+     * @since 1.11
      */
     @Deprecated(forRemoval = true, since = "1.21")
     @Nullable
@@ -26,6 +27,7 @@ public interface AnvilInventory extends Inventory {
      *
      * @return the amount
      * @deprecated use {@link AnvilView#getRepairItemCountCost()}.
+     * @since 1.18.1
      */
     @Deprecated(forRemoval = true, since = "1.21")
     int getRepairCostAmount();
@@ -35,6 +37,7 @@ public interface AnvilInventory extends Inventory {
      *
      * @param amount the amount
      * @deprecated use {@link AnvilView#setRepairItemCountCost(int)}.
+     * @since 1.18.1
      */
     @Deprecated(forRemoval = true, since = "1.21")
     void setRepairCostAmount(int amount);
@@ -44,6 +47,7 @@ public interface AnvilInventory extends Inventory {
      *
      * @return the experience cost
      * @deprecated use {@link AnvilView#getRepairCost()}.
+     * @since 1.11
      */
     @Deprecated(forRemoval = true, since = "1.21")
     int getRepairCost();
@@ -53,6 +57,7 @@ public interface AnvilInventory extends Inventory {
      *
      * @param levels the experience cost
      * @deprecated use {@link AnvilView#setRepairCost(int)}.
+     * @since 1.11
      */
     @Deprecated(forRemoval = true, since = "1.21")
     void setRepairCost(int levels);
@@ -67,6 +72,7 @@ public interface AnvilInventory extends Inventory {
      *
      * @return the maximum experience cost
      * @deprecated use {@link AnvilView#getMaximumRepairCost()}.
+     * @since 1.13.1
      */
     @Deprecated(forRemoval = true, since = "1.21")
     int getMaximumRepairCost();
@@ -77,6 +83,7 @@ public interface AnvilInventory extends Inventory {
      *
      * @param levels the maximum experience cost
      * @deprecated use {@link AnvilView#setMaximumRepairCost(int)}.
+     * @since 1.13.1
      */
     @Deprecated(forRemoval = true, since = "1.21")
     void setMaximumRepairCost(int levels);

@@ -39,6 +39,9 @@ import org.jetbrains.annotations.Nullable;
 @ApiStatus.Experimental
 public class AsyncStructureGenerateEvent extends WorldEvent {
 
+    /**
+     * @since 1.20.2
+     */
     public static enum Cause {
         COMMAND,
         WORLD_GENERATION,
@@ -70,6 +73,7 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      * Gets the event cause.
      *
      * @return the event cause
+     * @since 1.20.2
      */
     @NotNull
     public Cause getCause() {
@@ -82,6 +86,7 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      * @param key the key of the block transformer
      *
      * @return the block transformer or null
+     * @since 1.20.2
      */
     @Nullable
     public BlockTransformer getBlockTransformer(@NotNull NamespacedKey key) {
@@ -94,6 +99,7 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      *
      * @param key the key
      * @param transformer the block transformer
+     * @since 1.20.2
      */
     public void setBlockTransformer(@NotNull NamespacedKey key, @NotNull BlockTransformer transformer) {
         Preconditions.checkNotNull(key, "NamespacedKey cannot be null");
@@ -105,6 +111,7 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      * Removes a block transformer.
      *
      * @param key the key of the block transformer
+     * @since 1.20.2
      */
     public void removeBlockTransformer(@NotNull NamespacedKey key) {
         Preconditions.checkNotNull(key, "NamespacedKey cannot be null");
@@ -113,6 +120,8 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
 
     /**
      * Removes all block transformers.
+     *
+     * @since 1.20.2
      */
     public void clearBlockTransformers() {
         blockTransformers.clear();
@@ -122,6 +131,7 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      * Gets all block transformers in a unmodifiable map.
      *
      * @return the block transformers in a map
+     * @since 1.20.2
      */
     @NotNull
     public Map<NamespacedKey, BlockTransformer> getBlockTransformers() {
@@ -134,6 +144,7 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      * @param key the key of the entity transformer
      *
      * @return the entity transformer or null
+     * @since 1.20.2
      */
     @Nullable
     public EntityTransformer getEntityTransformer(@NotNull NamespacedKey key) {
@@ -146,6 +157,7 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      *
      * @param key the key
      * @param transformer the entity transformer
+     * @since 1.20.2
      */
     public void setEntityTransformer(@NotNull NamespacedKey key, @NotNull EntityTransformer transformer) {
         Preconditions.checkNotNull(key, "NamespacedKey cannot be null");
@@ -157,6 +169,7 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      * Removes a entity transformer.
      *
      * @param key the key of the entity transformer
+     * @since 1.20.2
      */
     public void removeEntityTransformer(@NotNull NamespacedKey key) {
         Preconditions.checkNotNull(key, "NamespacedKey cannot be null");
@@ -165,6 +178,8 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
 
     /**
      * Removes all entity transformers.
+     *
+     * @since 1.20.2
      */
     public void clearEntityTransformers() {
         entityTransformers.clear();
@@ -174,6 +189,7 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      * Gets all entity transformers in a unmodifiable map.
      *
      * @return the entity transformers in a map
+     * @since 1.20.2
      */
     @NotNull
     public Map<NamespacedKey, EntityTransformer> getEntityTransformers() {
@@ -184,6 +200,7 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      * Get the structure reference that is generated.
      *
      * @return the structure
+     * @since 1.20.2
      */
     @NotNull
     public Structure getStructure() {
@@ -194,6 +211,7 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      * Get the bounding box of the structure.
      *
      * @return the bounding box
+     * @since 1.20.2
      */
     @NotNull
     public BoundingBox getBoundingBox() {
@@ -204,6 +222,7 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      * Get the x coordinate of the origin chunk of the structure.
      *
      * @return the chunk x coordinate
+     * @since 1.20.2
      */
     public int getChunkX() {
         return chunkX;
@@ -213,17 +232,24 @@ public class AsyncStructureGenerateEvent extends WorldEvent {
      * Get the z coordinate of the origin chunk of the structure.
      *
      * @return the chunk z coordinate
+     * @since 1.20.2
      */
     public int getChunkZ() {
         return chunkZ;
     }
 
+    /**
+     * @since 1.20.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.20.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

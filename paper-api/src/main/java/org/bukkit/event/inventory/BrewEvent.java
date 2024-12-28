@@ -36,6 +36,7 @@ public class BrewEvent extends BlockEvent implements Cancellable {
      * the finalization of the brewing process, e.g. the plain water bottles.
      *
      * @return the contents
+     * @since 1.1.0
      */
     @NotNull
     public BrewerInventory getContents() {
@@ -68,22 +69,34 @@ public class BrewEvent extends BlockEvent implements Cancellable {
         return results;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

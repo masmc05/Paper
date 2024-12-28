@@ -13,6 +13,7 @@ public interface TNT extends BlockData {
      * Gets the value of the 'unstable' property.
      *
      * @return the 'unstable' value
+     * @since 1.13.1
      */
     boolean isUnstable();
 
@@ -20,6 +21,7 @@ public interface TNT extends BlockData {
      * Sets the value of the 'unstable' property.
      *
      * @param unstable the new 'unstable' value
+     * @since 1.13.1
      */
     void setUnstable(boolean unstable);
 }

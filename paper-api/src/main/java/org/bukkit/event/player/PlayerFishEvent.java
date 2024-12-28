@@ -43,6 +43,7 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
      *
      * @return Entity caught by the player, Entity if fishing, and null if
      *     bobber has gotten stuck in the ground or nothing has been caught
+     * @since 1.0.0
      */
     @Nullable
     public Entity getCaught() {
@@ -60,11 +61,17 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
         return hookEntity;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -115,6 +122,7 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
      * Gets the state of the fishing
      *
      * @return A State detailing the state of the fishing
+     * @since 1.0.0
      */
     @NotNull
     public State getState() {
@@ -140,6 +148,8 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
 
     /**
      * An enum to specify the state of the fishing
+     *
+     * @since 1.0.0
      */
     public enum State {
 

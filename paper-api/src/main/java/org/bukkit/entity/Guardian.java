@@ -70,6 +70,7 @@ public interface Guardian extends Monster {
      *
      * @return true if the Guardian is an Elder Guardian, false if not
      * @deprecated should check if instance of {@link ElderGuardian}.
+     * @since 1.8
      */
     @Deprecated(since = "1.10.2")
     public boolean isElder();
@@ -77,6 +78,7 @@ public interface Guardian extends Monster {
     /**
      * @param shouldBeElder shouldBeElder
      * @deprecated Must spawn a new {@link ElderGuardian}.
+     * @since 1.8
      */
     @Deprecated(since = "1.10.2")
     public void setElder(boolean shouldBeElder);

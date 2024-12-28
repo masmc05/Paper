@@ -85,6 +85,7 @@ public class InventoryDragEvent extends InventoryInteractEvent {
      * Gets all items to be added to the inventory in this drag.
      *
      * @return map from raw slot id to new ItemStack
+     * @since 1.6.1
      */
     @NotNull
     public Map<Integer, ItemStack> getNewItems() {
@@ -95,6 +96,7 @@ public class InventoryDragEvent extends InventoryInteractEvent {
      * Gets the raw slot ids to be changed in this drag.
      *
      * @return list of raw slot ids, suitable for getView().getItem(int)
+     * @since 1.6.1
      */
     @NotNull
     public Set<Integer> getRawSlots() {
@@ -106,6 +108,7 @@ public class InventoryDragEvent extends InventoryInteractEvent {
      *
      * @return list of converted slot ids, suitable for {@link
      *     org.bukkit.inventory.Inventory#getItem(int)}.
+     * @since 1.6.1
      */
     @NotNull
     public Set<Integer> getInventorySlots() {
@@ -117,6 +120,7 @@ public class InventoryDragEvent extends InventoryInteractEvent {
      * mutable.
      *
      * @return the result cursor
+     * @since 1.6.1
      */
     @Nullable
     public ItemStack getCursor() {
@@ -131,6 +135,7 @@ public class InventoryDragEvent extends InventoryInteractEvent {
      * changing this ItemStack affect the "dragged" slots.
      *
      * @param newCursor the new cursor ItemStack
+     * @since 1.6.1
      */
     public void setCursor(@Nullable ItemStack newCursor) {
         this.newCursor = newCursor;
@@ -141,6 +146,7 @@ public class InventoryDragEvent extends InventoryInteractEvent {
      * as a result of this drag.
      *
      * @return the original cursor
+     * @since 1.6.1
      */
     @NotNull
     public ItemStack getOldCursor() {
@@ -155,18 +161,25 @@ public class InventoryDragEvent extends InventoryInteractEvent {
      * found using {@link #getNewItems()}.
      *
      * @return the DragType of this InventoryDragEvent
+     * @since 1.6.1
      */
     @NotNull
     public DragType getType() {
         return type;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

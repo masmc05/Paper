@@ -15,6 +15,7 @@ public interface WorldInfo extends io.papermc.paper.world.flag.FeatureFlagSetHol
      * Gets the unique name of this world
      *
      * @return Name of this world
+     * @since 1.17.1
      */
     @NotNull
     String getName();
@@ -23,6 +24,7 @@ public interface WorldInfo extends io.papermc.paper.world.flag.FeatureFlagSetHol
      * Gets the Unique ID of this world
      *
      * @return Unique ID of this world.
+     * @since 1.17.1
      */
     @NotNull
     UUID getUID();
@@ -31,6 +33,7 @@ public interface WorldInfo extends io.papermc.paper.world.flag.FeatureFlagSetHol
      * Gets the {@link World.Environment} type of this world
      *
      * @return This worlds Environment type
+     * @since 1.17.1
      */
     @NotNull
     World.Environment getEnvironment();
@@ -39,6 +42,7 @@ public interface WorldInfo extends io.papermc.paper.world.flag.FeatureFlagSetHol
      * Gets the Seed for this world.
      *
      * @return This worlds Seed
+     * @since 1.17.1
      */
     long getSeed();
 
@@ -48,6 +52,7 @@ public interface WorldInfo extends io.papermc.paper.world.flag.FeatureFlagSetHol
      * If the min height is 0, there are only blocks from y=0.
      *
      * @return Minimum height of the world
+     * @since 1.17.1
      */
     int getMinHeight();
 
@@ -57,6 +62,7 @@ public interface WorldInfo extends io.papermc.paper.world.flag.FeatureFlagSetHol
      * If the max height is 100, there are only blocks from y=0 to y=99.
      *
      * @return Maximum height of the world
+     * @since 1.17.1
      */
     int getMaxHeight();
 

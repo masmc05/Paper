@@ -1685,6 +1685,7 @@ public interface Sound extends OldEnum<Sound>, Keyed, net.kyori.adventure.sound.
      * @param name of the sound.
      * @return the sound with the given name.
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * @since 1.3.2
      */
     @NotNull
     @Deprecated(since = "1.21.3")
@@ -1710,6 +1711,7 @@ public interface Sound extends OldEnum<Sound>, Keyed, net.kyori.adventure.sound.
     /**
      * @deprecated use {@link Registry#getKey(Keyed)} and {@link Registry#SOUNDS}. Sounds
      * can exist without a key.
+     * @since 1.16.4
      */
     @Deprecated(since = "1.20.5", forRemoval = true)
     @Override
@@ -1719,6 +1721,7 @@ public interface Sound extends OldEnum<Sound>, Keyed, net.kyori.adventure.sound.
     /**
      * @return an array of all known sounds.
      * @deprecated use {@link Registry#iterator()}.
+     * @since 1.3.2
      */
     @NotNull
     @Deprecated(since = "1.21.3")
@@ -1730,6 +1733,7 @@ public interface Sound extends OldEnum<Sound>, Keyed, net.kyori.adventure.sound.
     /**
      * @deprecated use {@link Registry#getKey(Keyed)} and {@link Registry#SOUNDS}. Sounds
      * can exist without a key.
+     * @since 1.16.5
      */
     @Deprecated(since = "1.20.5", forRemoval = true)
     @Override

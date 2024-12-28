@@ -18,6 +18,7 @@ public interface Display extends Entity {
      * Gets the transformation applied to this display.
      *
      * @return the transformation
+     * @since 1.19.4
      */
     @NotNull
     public Transformation getTransformation();
@@ -26,6 +27,7 @@ public interface Display extends Entity {
      * Sets the transformation applied to this display
      *
      * @param transformation the new transformation
+     * @since 1.19.4
      */
     public void setTransformation(@NotNull Transformation transformation);
 
@@ -33,6 +35,7 @@ public interface Display extends Entity {
      * Sets the raw transformation matrix applied to this display
      *
      * @param transformationMatrix the transformation matrix
+     * @since 1.19.4
      */
     public void setTransformationMatrix(@NotNull Matrix4f transformationMatrix);
 
@@ -40,6 +43,7 @@ public interface Display extends Entity {
      * Gets the interpolation duration of this display.
      *
      * @return interpolation duration
+     * @since 1.19.4
      */
     public int getInterpolationDuration();
 
@@ -47,6 +51,7 @@ public interface Display extends Entity {
      * Sets the interpolation duration of this display.
      *
      * @param duration new duration
+     * @since 1.19.4
      */
     public void setInterpolationDuration(int duration);
 
@@ -77,6 +82,7 @@ public interface Display extends Entity {
      * Gets the view distance/range of this display.
      *
      * @return view range
+     * @since 1.19.4
      */
     public float getViewRange();
 
@@ -84,6 +90,7 @@ public interface Display extends Entity {
      * Sets the view distance/range of this display.
      *
      * @param range new range
+     * @since 1.19.4
      */
     public void setViewRange(float range);
 
@@ -91,6 +98,7 @@ public interface Display extends Entity {
      * Gets the shadow radius of this display.
      *
      * @return radius
+     * @since 1.19.4
      */
     public float getShadowRadius();
 
@@ -98,6 +106,7 @@ public interface Display extends Entity {
      * Sets the shadow radius of this display.
      *
      * @param radius new radius
+     * @since 1.19.4
      */
     public void setShadowRadius(float radius);
 
@@ -105,6 +114,7 @@ public interface Display extends Entity {
      * Gets the shadow strength of this display.
      *
      * @return shadow strength
+     * @since 1.19.4
      */
     public float getShadowStrength();
 
@@ -112,6 +122,7 @@ public interface Display extends Entity {
      * Sets the shadow strength of this display.
      *
      * @param strength new strength
+     * @since 1.19.4
      */
     public void setShadowStrength(float strength);
 
@@ -119,6 +130,7 @@ public interface Display extends Entity {
      * Gets the width of this display.
      *
      * @return width
+     * @since 1.19.4
      */
     public float getDisplayWidth();
 
@@ -126,6 +138,7 @@ public interface Display extends Entity {
      * Sets the width of this display.
      *
      * @param width new width
+     * @since 1.19.4
      */
     public void setDisplayWidth(float width);
 
@@ -133,6 +146,7 @@ public interface Display extends Entity {
      * Gets the height of this display.
      *
      * @return height
+     * @since 1.19.4
      */
     public float getDisplayHeight();
 
@@ -140,6 +154,7 @@ public interface Display extends Entity {
      * Sets the height if this display.
      *
      * @param height new height
+     * @since 1.19.4
      */
     public void setDisplayHeight(float height);
 
@@ -147,6 +162,7 @@ public interface Display extends Entity {
      * Gets the amount of ticks before client-side interpolation will commence.
      *
      * @return interpolation delay ticks
+     * @since 1.19.4
      */
     public int getInterpolationDelay();
 
@@ -154,6 +170,7 @@ public interface Display extends Entity {
      * Sets the amount of ticks before client-side interpolation will commence.
      *
      * @param ticks interpolation delay ticks
+     * @since 1.19.4
      */
     public void setInterpolationDelay(int ticks);
 
@@ -164,6 +181,7 @@ public interface Display extends Entity {
      * face the player.
      *
      * @return billboard setting
+     * @since 1.19.4
      */
     @NotNull
     public Billboard getBillboard();
@@ -182,6 +200,7 @@ public interface Display extends Entity {
      * Gets the scoreboard team overridden glow color of this display.
      *
      * @return glow color
+     * @since 1.19.4
      */
     @Nullable
     public Color getGlowColorOverride();
@@ -190,6 +209,7 @@ public interface Display extends Entity {
      * Sets the scoreboard team overridden glow color of this display.
      *
      * @param color new color
+     * @since 1.19.4
      */
     public void setGlowColorOverride(@Nullable Color color);
 
@@ -197,6 +217,7 @@ public interface Display extends Entity {
      * Gets the brightness override of the entity.
      *
      * @return brightness override, if set
+     * @since 1.19.4
      */
     @Nullable
     public Brightness getBrightness();
@@ -210,6 +231,8 @@ public interface Display extends Entity {
 
     /**
      * Describes the axes/points around which the entity can pivot.
+     *
+     * @since 1.19.4
      */
     public enum Billboard {
 
@@ -233,6 +256,8 @@ public interface Display extends Entity {
 
     /**
      * Represents the brightness rendering parameters of the entity.
+     *
+     * @since 1.19.4
      */
     public static class Brightness {
 
@@ -251,6 +276,7 @@ public interface Display extends Entity {
          * Gets the block lighting component of this brightness.
          *
          * @return block light, between 0-15
+         * @since 1.19.4
          */
         public int getBlockLight() {
             return this.blockLight;
@@ -260,6 +286,7 @@ public interface Display extends Entity {
          * Gets the sky lighting component of this brightness.
          *
          * @return sky light, between 0-15
+         * @since 1.19.4
          */
         public int getSkyLight() {
             return this.skyLight;

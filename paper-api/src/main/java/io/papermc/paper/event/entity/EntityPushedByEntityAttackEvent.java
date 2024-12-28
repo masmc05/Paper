@@ -30,6 +30,7 @@ public class EntityPushedByEntityAttackEvent extends EntityKnockbackEvent implem
      * Gets the entity which pushed the affected entity.
      *
      * @return the pushing entity
+     * @since 1.19.3
      */
     public Entity getPushedBy() {
         return this.pushedBy;
@@ -40,6 +41,7 @@ public class EntityPushedByEntityAttackEvent extends EntityKnockbackEvent implem
      *
      * @return the acceleration vector
      * @deprecated use {@link #getKnockback()}
+     * @since 1.19.3
      */
     @Deprecated(since = "1.20.6", forRemoval = true)
     public Vector getAcceleration() {
@@ -51,17 +53,24 @@ public class EntityPushedByEntityAttackEvent extends EntityKnockbackEvent implem
      *
      * @param acceleration the new acceleration vector
      * @deprecated use {@link #setKnockback(Vector)}
+     * @since 1.20.4
      */
     @Deprecated(since = "1.20.6", forRemoval = true)
     public void setAcceleration(final Vector acceleration) {
         super.setKnockback(acceleration);
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public boolean isCancelled() {
         return super.isCancelled();
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         super.setCancelled(cancel);

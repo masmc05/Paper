@@ -37,11 +37,17 @@ public class BlockExplodeEvent extends BlockEvent implements Cancellable {
         this.result = result;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -74,6 +80,7 @@ public class BlockExplodeEvent extends BlockEvent implements Cancellable {
      * from the explosion event.
      *
      * @return All blown-up blocks
+     * @since 1.8.8
      */
     @NotNull
     public List<Block> blockList() {
@@ -84,6 +91,7 @@ public class BlockExplodeEvent extends BlockEvent implements Cancellable {
      * Returns the percentage of blocks to drop from this explosion
      *
      * @return The yield.
+     * @since 1.8.8
      */
     public float getYield() {
         return yield;
@@ -93,17 +101,24 @@ public class BlockExplodeEvent extends BlockEvent implements Cancellable {
      * Sets the percentage of blocks to drop from this explosion
      *
      * @param yield The new yield percentage
+     * @since 1.8.8
      */
     public void setYield(float yield) {
         this.yield = yield;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -65,6 +65,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Returns the action type
      *
      * @return Action returns the type of interaction
+     * @since 1.0.0
      */
     @NotNull
     public Action getAction() {
@@ -81,6 +82,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * possible a call might have the former false, but the latter true, eg in
      * the case of using a firework whilst gliding. Callers should check the
      * relevant methods individually.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.14")
     @Override
@@ -97,6 +99,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * lose the ammo)
      *
      * @param cancel true if you wish to cancel this event
+     * @since 1.0.0
      */
     @Override
     public void setCancelled(boolean cancel) {
@@ -108,6 +111,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Returns the item in hand represented by this event
      *
      * @return ItemStack the item used
+     * @since 1.0.0
      */
     @Nullable
     public ItemStack getItem() {
@@ -119,6 +123,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * this event
      *
      * @return Material the material of the item used
+     * @since 1.0.0
      */
     @NotNull
     public Material getMaterial() {
@@ -133,6 +138,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Check if this event involved a block
      *
      * @return boolean true if it did
+     * @since 1.0.0
      */
     public boolean hasBlock() {
         return this.blockClicked != null;
@@ -142,6 +148,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Check if this event involved an item
      *
      * @return boolean true if it did
+     * @since 1.0.0
      */
     public boolean hasItem() {
         return this.item != null;
@@ -152,6 +159,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * placement event.
      *
      * @return boolean true if the item in hand was a block
+     * @since 1.0.0
      */
     public boolean isBlockInHand() {
         if (!hasItem()) {
@@ -165,6 +173,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Returns the clicked block
      *
      * @return Block returns the block clicked with this item.
+     * @since 1.0.0
      */
     @Nullable
     public Block getClickedBlock() {
@@ -175,6 +184,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Returns the face of the block that was clicked
      *
      * @return BlockFace returns the face of the block that was clicked
+     * @since 1.0.0
      */
     @NotNull
     public BlockFace getBlockFace() {
@@ -187,6 +197,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * have a default action
      *
      * @return the action to take with the interacted block
+     * @since 1.0.0
      */
     @NotNull
     public Result useInteractedBlock() {
@@ -207,6 +218,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * is taken on the interacted block.
      *
      * @return the action to take with the item in hand
+     * @since 1.0.0
      */
     @NotNull
     public Result useItemInHand() {

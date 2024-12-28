@@ -22,6 +22,9 @@ public class TimedRegisteredListener extends RegisteredListener {
         super(pluginListener, eventExecutor, eventPriority, registeredPlugin, listenCancelled);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void callEvent(@NotNull Event event) throws EventException {
         if (event.isAsynchronous()) {
@@ -51,6 +54,8 @@ public class TimedRegisteredListener extends RegisteredListener {
 
     /**
      * Resets the call count and total time for this listener
+     *
+     * @since 1.1.0
      */
     public void reset() {
         count = 0;
@@ -61,6 +66,7 @@ public class TimedRegisteredListener extends RegisteredListener {
      * Gets the total times this listener has been called
      *
      * @return Times this listener has been called
+     * @since 1.1.0
      */
     public int getCount() {
         return count;
@@ -70,6 +76,7 @@ public class TimedRegisteredListener extends RegisteredListener {
      * Gets the total time calls to this listener have taken
      *
      * @return Total time for all calls of this listener
+     * @since 1.1.0
      */
     public long getTotalTime() {
         return totalTime;
@@ -97,6 +104,7 @@ public class TimedRegisteredListener extends RegisteredListener {
      * some two events, <code>eventA.getClass() != eventB.getClass()</code>.
      *
      * @return true if this listener has handled multiple events
+     * @since 1.1.0
      */
     public boolean hasMultiple() {
         return multiple;

@@ -34,6 +34,7 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
      * Gets the fuel ItemStack for this event
      *
      * @return the fuel ItemStack
+     * @since 1.0.0
      */
     @NotNull
     public ItemStack getFuel() {
@@ -44,6 +45,7 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
      * Gets the burn time for this fuel
      *
      * @return the burn time for this fuel
+     * @since 1.0.0
      */
     public int getBurnTime() {
         return burnTime;
@@ -53,6 +55,7 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
      * Sets the burn time for this fuel
      *
      * @param burnTime the burn time for this fuel
+     * @since 1.0.0
      */
     public void setBurnTime(@org.jetbrains.annotations.Range(from = Short.MIN_VALUE, to = Short.MAX_VALUE) int burnTime) { // Paper
         this.burnTime = Math.max(Short.MIN_VALUE, Math.min(Short.MAX_VALUE, burnTime)); // Paper
@@ -62,6 +65,7 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
      * Gets whether the furnace's fuel is burning or not.
      *
      * @return whether the furnace's fuel is burning or not.
+     * @since 1.0.0
      */
     public boolean isBurning() {
         return this.burning;
@@ -71,6 +75,7 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
      * Sets whether the furnace's fuel is burning or not.
      *
      * @param burning true if the furnace's fuel is burning
+     * @since 1.0.0
      */
     public void setBurning(boolean burning) {
         this.burning = burning;
@@ -97,11 +102,17 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
     }
     // Paper end
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

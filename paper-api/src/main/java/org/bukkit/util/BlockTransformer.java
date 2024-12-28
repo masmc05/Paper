@@ -19,6 +19,8 @@ public interface BlockTransformer {
      * The TransformationState allows access to the original block state and the
      * block state of the block that was at the location of the transformation
      * in the world before the transformation started.
+     *
+     * @since 1.20.2
      */
     public static interface TransformationState {
 
@@ -27,6 +29,7 @@ public interface BlockTransformer {
          * to place and caches it for the current transformer.
          *
          * @return a clone of the original block state.
+         * @since 1.20.2
          */
         @NotNull
         BlockState getOriginal();
@@ -37,6 +40,7 @@ public interface BlockTransformer {
          * and caches it for the current transformer.
          *
          * @return a clone of the world block state.
+         * @since 1.20.2
          */
         @NotNull
         BlockState getWorld();

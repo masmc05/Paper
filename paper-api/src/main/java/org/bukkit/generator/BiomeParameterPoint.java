@@ -13,6 +13,7 @@ public interface BiomeParameterPoint {
      * NoiseGenerator.
      *
      * @return The temperature of the biome at this point
+     * @since 1.19.3
      */
     double getTemperature();
 
@@ -20,6 +21,7 @@ public interface BiomeParameterPoint {
      * Gets the maximum temperature that is possible.
      *
      * @return The maximum temperature
+     * @since 1.19.3
      */
     double getMaxTemperature();
 
@@ -27,6 +29,7 @@ public interface BiomeParameterPoint {
      * Gets the minimum temperature that is possible.
      *
      * @return The minimum temperature
+     * @since 1.19.3
      */
     double getMinTemperature();
 
@@ -35,6 +38,7 @@ public interface BiomeParameterPoint {
      * NoiseGenerator.
      *
      * @return The humidity of the biome at this point
+     * @since 1.19.3
      */
     double getHumidity();
 
@@ -42,6 +46,7 @@ public interface BiomeParameterPoint {
      * Gets the maximum humidity that is possible.
      *
      * @return The maximum humidity
+     * @since 1.19.3
      */
     double getMaxHumidity();
 
@@ -49,6 +54,7 @@ public interface BiomeParameterPoint {
      * Gets the minimum humidity that is possible.
      *
      * @return The minimum humidity
+     * @since 1.19.3
      */
     double getMinHumidity();
 
@@ -57,6 +63,7 @@ public interface BiomeParameterPoint {
      * the NoiseGenerator.
      *
      * @return The continentalness of the biome at this point
+     * @since 1.19.3
      */
     double getContinentalness();
 
@@ -64,6 +71,7 @@ public interface BiomeParameterPoint {
      * Gets the maximum continentalness that is possible.
      *
      * @return The maximum continentalness
+     * @since 1.19.3
      */
     double getMaxContinentalness();
 
@@ -71,6 +79,7 @@ public interface BiomeParameterPoint {
      * Gets the minimum continentalness that is possible.
      *
      * @return The minimum continentalness
+     * @since 1.19.3
      */
     double getMinContinentalness();
 
@@ -79,6 +88,7 @@ public interface BiomeParameterPoint {
      * NoiseGenerator.
      *
      * @return The erosion of the biome at this point
+     * @since 1.19.3
      */
     double getErosion();
 
@@ -86,6 +96,7 @@ public interface BiomeParameterPoint {
      * Gets the maximum erosion that is possible.
      *
      * @return The maximum erosion
+     * @since 1.19.3
      */
     double getMaxErosion();
 
@@ -93,6 +104,7 @@ public interface BiomeParameterPoint {
      * Gets the minimum erosion that is possible.
      *
      * @return The minimum erosion
+     * @since 1.19.3
      */
     double getMinErosion();
 
@@ -101,6 +113,7 @@ public interface BiomeParameterPoint {
      * NoiseGenerator.
      *
      * @return The depth of the biome at this point
+     * @since 1.19.3
      */
     double getDepth();
 
@@ -108,6 +121,7 @@ public interface BiomeParameterPoint {
      * Gets the maximum depth that is possible.
      *
      * @return The maximum depth
+     * @since 1.19.3
      */
     double getMaxDepth();
 
@@ -115,6 +129,7 @@ public interface BiomeParameterPoint {
      * Gets the minimum depth that is possible.
      *
      * @return The minimum depth
+     * @since 1.19.3
      */
     double getMinDepth();
 
@@ -123,6 +138,7 @@ public interface BiomeParameterPoint {
      * NoiseGenerator.
      *
      * @return The weirdness of the biome at this point
+     * @since 1.19.3
      */
     double getWeirdness();
 
@@ -130,6 +146,7 @@ public interface BiomeParameterPoint {
      * Gets the maximum weirdness that is possible.
      *
      * @return The maximum weirdness
+     * @since 1.19.3
      */
     double getMaxWeirdness();
 
@@ -137,6 +154,7 @@ public interface BiomeParameterPoint {
      * Gets the minimum weirdness that is possible.
      *
      * @return The minimum weirdness
+     * @since 1.19.3
      */
     double getMinWeirdness();
 }

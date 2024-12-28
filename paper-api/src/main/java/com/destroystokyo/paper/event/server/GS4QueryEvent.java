@@ -43,6 +43,7 @@ public final class GS4QueryEvent extends Event {
      * Get query type
      *
      * @return query type
+     * @since 1.13.2
      */
     public QueryType getQueryType() {
         return this.queryType;
@@ -52,6 +53,7 @@ public final class GS4QueryEvent extends Event {
      * Get querier address
      *
      * @return querier address
+     * @since 1.13.2
      */
     public InetAddress getQuerierAddress() {
         return this.querierAddress;
@@ -61,6 +63,7 @@ public final class GS4QueryEvent extends Event {
      * Get query response
      *
      * @return query response
+     * @since 1.13.2
      */
     public QueryResponse getResponse() {
         return this.response;
@@ -75,17 +78,25 @@ public final class GS4QueryEvent extends Event {
         this.response = Preconditions.checkNotNull(response, "response");
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
     /**
      * The type of query
+     *
+     * @since 1.13.2
      */
     public enum QueryType {
         /**
@@ -100,6 +111,9 @@ public final class GS4QueryEvent extends Event {
         FULL
     }
 
+    /**
+     * @since 1.13.2
+     */
     public static final class QueryResponse {
 
         private final String motd;
@@ -130,6 +144,7 @@ public final class GS4QueryEvent extends Event {
          * Get motd which will be used to reply to the query. By default, it is {@link Server#getMotd()}.
          *
          * @return motd
+         * @since 1.13.2
          */
         public String getMotd() {
             return this.motd;
@@ -139,6 +154,7 @@ public final class GS4QueryEvent extends Event {
          * Get game version which will be used to reply to the query. By default, supported Minecraft versions range is sent.
          *
          * @return game version
+         * @since 1.13.2
          */
         public String getGameVersion() {
             return this.gameVersion;
@@ -148,6 +164,7 @@ public final class GS4QueryEvent extends Event {
          * Get map name which will be used to reply to the query. By default {@code world} is sent.
          *
          * @return map name
+         * @since 1.13.2
          */
         public String getMap() {
             return this.map;
@@ -157,6 +174,7 @@ public final class GS4QueryEvent extends Event {
          * Get current online player count which will be used to reply to the query.
          *
          * @return online player count
+         * @since 1.13.2
          */
         public int getCurrentPlayers() {
             return this.currentPlayers;
@@ -166,6 +184,7 @@ public final class GS4QueryEvent extends Event {
          * Get max player count which will be used to reply to the query.
          *
          * @return max player count
+         * @since 1.13.2
          */
         public int getMaxPlayers() {
             return this.maxPlayers;
@@ -175,6 +194,7 @@ public final class GS4QueryEvent extends Event {
          * Get server (public facing) hostname.
          *
          * @return server hostname
+         * @since 1.13.2
          */
         public String getHostname() {
             return this.hostname;
@@ -184,6 +204,7 @@ public final class GS4QueryEvent extends Event {
          * Get server (public facing) port.
          *
          * @return server port
+         * @since 1.13.2
          */
         public int getPort() {
             return this.port;
@@ -193,6 +214,7 @@ public final class GS4QueryEvent extends Event {
          * Get collection of players which will be used to reply to the query.
          *
          * @return collection of players
+         * @since 1.13.2
          */
         public Collection<String> getPlayers() {
             return this.players;
@@ -202,6 +224,7 @@ public final class GS4QueryEvent extends Event {
          * Get server software (name and version) which will be used to reply to the query.
          *
          * @return server software
+         * @since 1.13.2
          */
         public String getServerVersion() {
             return this.serverVersion;
@@ -211,6 +234,7 @@ public final class GS4QueryEvent extends Event {
          * Get list of plugins which will be used to reply to the query.
          *
          * @return collection of plugins
+         * @since 1.13.2
          */
         public Collection<PluginInformation> getPlugins() {
             return this.plugins;
@@ -220,6 +244,7 @@ public final class GS4QueryEvent extends Event {
          * Creates a new {@link Builder} instance from data represented by this response.
          *
          * @return {@link QueryResponse} builder
+         * @since 1.13.2
          */
         public Builder toBuilder() {
             return QueryResponse.builder()
@@ -239,6 +264,7 @@ public final class GS4QueryEvent extends Event {
          * Creates a new {@link Builder} instance.
          *
          * @return {@link QueryResponse} builder
+         * @since 1.13.2
          */
         public static Builder builder() {
             return new Builder();
@@ -246,6 +272,8 @@ public final class GS4QueryEvent extends Event {
 
         /**
          * A builder for {@link QueryResponse} objects.
+         *
+         * @since 1.13.2
          */
         public static final class Builder {
 
@@ -265,64 +293,100 @@ public final class GS4QueryEvent extends Event {
             private Builder() {
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder motd(final String motd) {
                 this.motd = Preconditions.checkNotNull(motd, "motd");
                 return this;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder gameVersion(final String gameVersion) {
                 this.gameVersion = Preconditions.checkNotNull(gameVersion, "gameVersion");
                 return this;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder map(final String map) {
                 this.map = Preconditions.checkNotNull(map, "map");
                 return this;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder currentPlayers(final int currentPlayers) {
                 Preconditions.checkArgument(currentPlayers >= 0, "currentPlayers cannot be negative");
                 this.currentPlayers = currentPlayers;
                 return this;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder maxPlayers(final int maxPlayers) {
                 Preconditions.checkArgument(maxPlayers >= 0, "maxPlayers cannot be negative");
                 this.maxPlayers = maxPlayers;
                 return this;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder hostname(final String hostname) {
                 this.hostname = Preconditions.checkNotNull(hostname, "hostname");
                 return this;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder port(final int port) {
                 Preconditions.checkArgument(port >= 1 && port <= 65535, "port must be between 1-65535");
                 this.port = port;
                 return this;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder players(final Collection<String> players) {
                 this.players.addAll(Preconditions.checkNotNull(players, "players"));
                 return this;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder players(final String... players) {
                 this.players.addAll(Arrays.asList(Preconditions.checkNotNull(players, "players")));
                 return this;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder clearPlayers() {
                 this.players.clear();
                 return this;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder serverVersion(final String serverVersion) {
                 this.serverVersion = Preconditions.checkNotNull(serverVersion, "serverVersion");
                 return this;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder plugins(final Collection<PluginInformation> plugins) {
                 this.plugins.addAll(Preconditions.checkNotNull(plugins, "plugins"));
                 return this;
@@ -333,6 +397,9 @@ public final class GS4QueryEvent extends Event {
                 return this;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public Builder clearPlugins() {
                 this.plugins.clear();
                 return this;
@@ -342,6 +409,7 @@ public final class GS4QueryEvent extends Event {
              * Builds new {@link QueryResponse} with supplied data.
              *
              * @return response
+             * @since 1.13.2
              */
             public QueryResponse build() {
                 return new QueryResponse(
@@ -361,6 +429,8 @@ public final class GS4QueryEvent extends Event {
 
         /**
          * Plugin information
+         *
+         * @since 1.13.2
          */
         public static class PluginInformation {
 
@@ -372,22 +442,37 @@ public final class GS4QueryEvent extends Event {
                 this.version = Preconditions.checkNotNull(version, "version");
             }
 
+            /**
+             * @since 1.13.2
+             */
             public String getName() {
                 return this.name;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public void setName(final String name) {
                 this.name = name;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public void setVersion(final String version) {
                 this.version = version;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public String getVersion() {
                 return this.version;
             }
 
+            /**
+             * @since 1.13.2
+             */
             public static PluginInformation of(final String name, final String version) {
                 return new PluginInformation(name, version);
             }

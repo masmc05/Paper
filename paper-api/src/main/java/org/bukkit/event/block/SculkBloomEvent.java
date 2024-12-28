@@ -43,6 +43,7 @@ public class SculkBloomEvent extends BlockEvent implements Cancellable {
      * Returns the charge of the cursor, &lt; 1000 by default.
      *
      * @return the charge of the cursor
+     * @since 1.20.1
      */
     public int getCharge() {
         return charge;
@@ -61,28 +62,41 @@ public class SculkBloomEvent extends BlockEvent implements Cancellable {
      * sculk block will be placed.
      *
      * @param charge the charge of the cursor.
+     * @since 1.20.1
      */
     public void setCharge(int charge) {
         Preconditions.checkArgument(charge >= 0 && charge <= 1000, charge + " is not in range [0, 1000]");
         this.charge = charge;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

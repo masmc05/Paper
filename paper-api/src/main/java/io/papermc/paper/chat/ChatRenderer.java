@@ -23,6 +23,7 @@ public interface ChatRenderer {
      * @param message the chat message
      * @param viewer the receiving {@link Audience}
      * @return a rendered chat message
+     * @since 1.16.5
      */
     @ApiStatus.OverrideOnly
     Component render(Player source, Component sourceDisplayName, Component message, Audience viewer);
@@ -31,6 +32,7 @@ public interface ChatRenderer {
      * Create a new instance of the default {@link ChatRenderer}.
      *
      * @return a new {@link ChatRenderer}
+     * @since 1.16.5
      */
     static ChatRenderer defaultRenderer() {
         return new ViewerUnawareImpl.Default((source, sourceDisplayName, message) -> Component.translatable("chat.type.text", sourceDisplayName, message));
@@ -55,6 +57,7 @@ public interface ChatRenderer {
      * Similar to {@link ChatRenderer}, but without knowledge of the message viewer.
      *
      * @see ChatRenderer#viewerUnaware(ViewerUnaware)
+     * @since 1.16.5
      */
     interface ViewerUnaware {
 
@@ -65,6 +68,7 @@ public interface ChatRenderer {
          * @param sourceDisplayName the display name of the source player
          * @param message the chat message
          * @return a rendered chat message
+         * @since 1.16.5
          */
         @ApiStatus.OverrideOnly
         Component render(Player source, Component sourceDisplayName, Component message);

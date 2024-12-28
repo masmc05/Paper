@@ -13,6 +13,9 @@ public final class BroadcastPermissions {
 
     private BroadcastPermissions() {}
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static Permission registerPermissions(@NotNull Permission parent) {
         Permission broadcasts = DefaultPermissions.registerPermission(ROOT, "Allows the user to receive all broadcast messages", parent);

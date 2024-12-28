@@ -35,6 +35,7 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
      * Gets the cause of the knockback.
      *
      * @return the cause of the knockback
+     * @since 1.20.6
      */
     public EntityKnockbackEvent.Cause getCause() {
         return this.cause;
@@ -47,6 +48,7 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
      * to make changes.
      *
      * @return the knockback
+     * @since 1.20.6
      */
     public Vector getKnockback() {
         return this.knockback.clone();
@@ -56,33 +58,48 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
      * Sets the knockback force that will be applied to the entity.
      *
      * @param knockback the knockback
+     * @since 1.20.6
      */
     public void setKnockback(final Vector knockback) {
         Preconditions.checkArgument(knockback != null, "knockback");
         this.knockback = knockback.clone();
     }
 
+    /**
+     * @since 1.20.6
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.20.6
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.6
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.6
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
     /**
      * An enum to specify the cause of the knockback.
+     *
+     * @since 1.20.6
      */
     public enum Cause {
 

@@ -43,6 +43,7 @@ public class HangingPlaceEvent extends HangingEvent implements Cancellable {
      * Returns the player placing the hanging entity
      *
      * @return the player placing the hanging entity
+     * @since 1.4.5
      */
     @Nullable
     public Player getPlayer() {
@@ -53,6 +54,7 @@ public class HangingPlaceEvent extends HangingEvent implements Cancellable {
      * Returns the block that the hanging entity was placed on
      *
      * @return the block that the hanging entity was placed on
+     * @since 1.4.5
      */
     @NotNull
     public Block getBlock() {
@@ -63,6 +65,7 @@ public class HangingPlaceEvent extends HangingEvent implements Cancellable {
      * Returns the face of the block that the hanging entity was placed on
      *
      * @return the face of the block that the hanging entity was placed on
+     * @since 1.4.5
      */
     @NotNull
     public BlockFace getBlockFace() {
@@ -92,22 +95,34 @@ public class HangingPlaceEvent extends HangingEvent implements Cancellable {
         return itemStack;
     }
 
+    /**
+     * @since 1.4.5
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.4.5
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.4.5
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.4.5
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

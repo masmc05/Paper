@@ -8,6 +8,7 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.1.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Gate extends MaterialData implements Directional, Openable {
@@ -36,6 +37,9 @@ public class Gate extends MaterialData implements Directional, Openable {
         super(Material.LEGACY_FENCE_GATE, data);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setFacingDirection(BlockFace face) {
         byte data = (byte) (getData() & ~DIR_BIT);
@@ -59,6 +63,9 @@ public class Gate extends MaterialData implements Directional, Openable {
         setData(data);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public BlockFace getFacing() {
         switch (getData() & DIR_BIT) {
@@ -75,11 +82,17 @@ public class Gate extends MaterialData implements Directional, Openable {
         return BlockFace.EAST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isOpen() {
         return (getData() & OPEN_BIT) > 0;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setOpen(boolean isOpen) {
         byte data = getData();

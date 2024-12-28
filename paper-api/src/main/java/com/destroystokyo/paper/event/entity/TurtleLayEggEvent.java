@@ -34,6 +34,7 @@ public class TurtleLayEggEvent extends EntityEvent implements Cancellable {
      * The turtle laying the eggs
      *
      * @return The turtle
+     * @since 1.13.1
      */
     @Override
     public Turtle getEntity() {
@@ -44,6 +45,7 @@ public class TurtleLayEggEvent extends EntityEvent implements Cancellable {
      * Get the location where the eggs are being laid
      *
      * @return Location of eggs
+     * @since 1.13.1
      */
     public Location getLocation() {
         return this.location.clone();
@@ -53,6 +55,7 @@ public class TurtleLayEggEvent extends EntityEvent implements Cancellable {
      * Get the number of eggs being laid
      *
      * @return Number of eggs
+     * @since 1.13.1
      */
     public int getEggCount() {
         return this.eggCount;
@@ -62,6 +65,7 @@ public class TurtleLayEggEvent extends EntityEvent implements Cancellable {
      * Set the number of eggs being laid
      *
      * @param eggCount Number of eggs
+     * @since 1.13.1
      */
     public void setEggCount(final int eggCount) {
         if (eggCount < 1) {
@@ -71,21 +75,33 @@ public class TurtleLayEggEvent extends EntityEvent implements Cancellable {
         this.eggCount = Math.min(eggCount, 4);
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

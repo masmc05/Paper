@@ -21,6 +21,7 @@ public interface RegistryEntryAddConfiguration<T> extends PrioritizedLifecycleEv
      *
      * @param key the key to match
      * @return this configuration
+     * @since 1.21
      */
     @Contract(value = "_ -> this", mutates = "this")
     default RegistryEntryAddConfiguration<T> filter(final TypedKey<T> key) {
@@ -32,13 +33,20 @@ public interface RegistryEntryAddConfiguration<T> extends PrioritizedLifecycleEv
      *
      * @param filter the predicate to match the key against
      * @return this configuration
+     * @since 1.21
      */
     @Contract(value = "_ -> this", mutates = "this")
     RegistryEntryAddConfiguration<T> filter(Predicate<TypedKey<T>> filter);
 
+    /**
+     * @since 1.21
+     */
     @Override
     RegistryEntryAddConfiguration<T> priority(int priority);
 
+    /**
+     * @since 1.21
+     */
     @Override
     RegistryEntryAddConfiguration<T> monitor();
 }

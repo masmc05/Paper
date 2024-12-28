@@ -28,20 +28,30 @@ public class ServerResourcesReloadedEvent extends ServerEvent {
      * Gets the cause of the resource reload.
      *
      * @return the reload cause
+     * @since 1.16.4
      */
     public Cause getCause() {
         return this.cause;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public enum Cause {
         COMMAND,
         PLUGIN,

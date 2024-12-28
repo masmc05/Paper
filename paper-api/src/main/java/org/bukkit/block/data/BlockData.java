@@ -26,6 +26,7 @@ public interface BlockData extends Cloneable {
      * Get the Material represented by this block data.
      *
      * @return the material
+     * @since 1.13
      */
     @NotNull
     Material getMaterial();
@@ -36,6 +37,7 @@ public interface BlockData extends Cloneable {
      * recreate this instance.
      *
      * @return serialized data string for this block
+     * @since 1.13
      */
     @NotNull
     String getAsString();
@@ -81,6 +83,7 @@ public interface BlockData extends Cloneable {
      *
      * @param data the data to merge from
      * @return a new instance of this blockdata with the merged data
+     * @since 1.13
      */
     @NotNull
     BlockData merge(@NotNull BlockData data);
@@ -99,6 +102,7 @@ public interface BlockData extends Cloneable {
      *
      * @param data the data to match against (normally a parsed constant)
      * @return if there is a match
+     * @since 1.13
      */
     boolean matches(@Nullable BlockData data);
 

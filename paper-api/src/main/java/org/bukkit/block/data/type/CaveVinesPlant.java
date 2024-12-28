@@ -13,6 +13,7 @@ public interface CaveVinesPlant extends BlockData {
      * Gets the value of the 'berries' property.
      *
      * @return the 'berries' value
+     * @since 1.17
      */
     boolean isBerries();
 
@@ -20,6 +21,7 @@ public interface CaveVinesPlant extends BlockData {
      * Sets the value of the 'berries' property.
      *
      * @param berries the new 'berries' value
+     * @since 1.17
      */
     void setBerries(boolean berries);
 }

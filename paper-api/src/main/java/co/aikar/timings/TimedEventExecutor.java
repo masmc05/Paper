@@ -36,6 +36,7 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * @deprecated Timings will be removed in the future
+ * @since 1.9.4
  */
 @Deprecated(forRemoval = true)
 public class TimedEventExecutor implements EventExecutor {
@@ -74,6 +75,9 @@ public class TimedEventExecutor implements EventExecutor {
             "Event: " + id + " (" + eventName + ")");
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void execute(@NotNull Listener listener, @NotNull Event event) throws EventException {
         if (event.isAsynchronous() || !Timings.timingsEnabled || !Bukkit.isPrimaryThread()) {

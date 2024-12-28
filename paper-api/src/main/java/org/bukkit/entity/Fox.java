@@ -14,6 +14,7 @@ public interface Fox extends Animals, Sittable {
      * Gets the current type of this fox.
      *
      * @return Type of the fox.
+     * @since 1.14
      */
     @NotNull
     public Type getFoxType();
@@ -29,6 +30,7 @@ public interface Fox extends Animals, Sittable {
      * Checks if this animal is crouching
      *
      * @return true if crouching
+     * @since 1.14
      */
     boolean isCrouching();
 
@@ -36,6 +38,7 @@ public interface Fox extends Animals, Sittable {
      * Sets if this animal is crouching.
      *
      * @param crouching true if crouching
+     * @since 1.14
      */
     void setCrouching(boolean crouching);
 
@@ -43,6 +46,7 @@ public interface Fox extends Animals, Sittable {
      * Sets if this animal is sleeping.
      *
      * @param sleeping true if sleeping
+     * @since 1.14
      */
     void setSleeping(boolean sleeping);
 
@@ -94,6 +98,8 @@ public interface Fox extends Animals, Sittable {
 
     /**
      * Represents the various different fox types there are.
+     *
+     * @since 1.14
      */
     public enum Type {
         RED,

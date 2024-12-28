@@ -22,6 +22,7 @@ public interface LifecycleEventOwner {
      * Get the plugin meta for this plugin.
      *
      * @return the plugin meta
+     * @since 1.20.4
      */
     PluginMeta getPluginMeta();
 }

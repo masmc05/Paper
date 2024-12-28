@@ -30,6 +30,7 @@ public class PlayerEggThrowEvent extends PlayerEvent {
      * Gets the egg involved in this event.
      *
      * @return the egg involved in this event
+     * @since 1.0.0
      */
     @NotNull
     public Egg getEgg() {
@@ -41,6 +42,7 @@ public class PlayerEggThrowEvent extends PlayerEvent {
      * would've done without interaction.
      *
      * @return boolean Whether the egg is going to hatch or not
+     * @since 1.0.0
      */
     public boolean isHatching() {
         return hatching;
@@ -51,6 +53,7 @@ public class PlayerEggThrowEvent extends PlayerEvent {
      *
      * @param hatching true if you want the egg to hatch, false if you want it
      *     not to
+     * @since 1.0.0
      */
     public void setHatching(boolean hatching) {
         this.hatching = hatching;
@@ -88,6 +91,7 @@ public class PlayerEggThrowEvent extends PlayerEvent {
      * </ul>
      *
      * @return The number of mobs going to be hatched by the egg
+     * @since 1.0.0
      */
     public byte getNumHatches() {
         return numHatches;
@@ -100,6 +104,7 @@ public class PlayerEggThrowEvent extends PlayerEvent {
      * false, this number will not matter
      *
      * @param numHatches The number of mobs coming out of the egg
+     * @since 1.0.0
      */
     public void setNumHatches(byte numHatches) {
         this.numHatches = numHatches;

@@ -46,6 +46,8 @@ public class HandlerList {
      * Bake all handler lists. Best used just after all normal event
      * registration is complete, ie just after all plugins are loaded if
      * you're using fevents in a plugin system.
+     *
+     * @since 1.1.0
      */
     public static void bakeAll() {
         synchronized (allLists) {
@@ -57,6 +59,8 @@ public class HandlerList {
 
     /**
      * Unregister all listeners from all handler lists.
+     *
+     * @since 1.1.0
      */
     public static void unregisterAll() {
         synchronized (allLists) {
@@ -75,6 +79,7 @@ public class HandlerList {
      * Unregister a specific plugin's listeners from all handler lists.
      *
      * @param plugin plugin to unregister
+     * @since 1.1.0
      */
     public static void unregisterAll(@NotNull Plugin plugin) {
         synchronized (allLists) {
@@ -88,6 +93,7 @@ public class HandlerList {
      * Unregister a specific listener from all handler lists.
      *
      * @param listener listener to unregister
+     * @since 1.1.0
      */
     public static void unregisterAll(@NotNull Listener listener) {
         synchronized (allLists) {
@@ -122,6 +128,7 @@ public class HandlerList {
      * Register a new listener in this handler list
      *
      * @param listener listener to register
+     * @since 1.1.0
      */
     public synchronized void register(@NotNull RegisteredListener listener) {
         if (handlerslots.get(listener.getPriority()).contains(listener))
@@ -134,6 +141,7 @@ public class HandlerList {
      * Register a collection of new listeners in this handler list
      *
      * @param listeners listeners to register
+     * @since 1.1.0
      */
     public void registerAll(@NotNull Collection<RegisteredListener> listeners) {
         for (RegisteredListener listener : listeners) {
@@ -145,6 +153,7 @@ public class HandlerList {
      * Remove a listener from a specific order slot
      *
      * @param listener listener to remove
+     * @since 1.1.0
      */
     public synchronized void unregister(@NotNull RegisteredListener listener) {
         if (handlerslots.get(listener.getPriority()).remove(listener)) {
@@ -156,6 +165,7 @@ public class HandlerList {
      * Remove a specific plugin's listeners from this handler
      *
      * @param plugin plugin to remove
+     * @since 1.1.0
      */
     public synchronized void unregister(@NotNull Plugin plugin) {
         boolean changed = false;
@@ -174,6 +184,7 @@ public class HandlerList {
      * Remove a specific listener from this handler
      *
      * @param listener listener to remove
+     * @since 1.1.0
      */
     public synchronized void unregister(@NotNull Listener listener) {
         boolean changed = false;
@@ -190,6 +201,8 @@ public class HandlerList {
 
     /**
      * Bake HashMap and ArrayLists to 2d array - does nothing if not necessary
+     *
+     * @since 1.1.0
      */
     public synchronized void bake() {
         if (handlers != null) return; // don't re-bake when still valid
@@ -204,6 +217,7 @@ public class HandlerList {
      * Get the baked registered listeners associated with this handler list
      *
      * @return the array of registered listeners
+     * @since 1.1.0
      */
     @NotNull
     public RegisteredListener[] getRegisteredListeners() {
@@ -218,6 +232,7 @@ public class HandlerList {
      *
      * @param plugin the plugin to get the listeners of
      * @return the list of registered listeners
+     * @since 1.1.0
      */
     @NotNull
     public static ArrayList<RegisteredListener> getRegisteredListeners(@NotNull Plugin plugin) {
@@ -242,6 +257,7 @@ public class HandlerList {
      * Get a list of all handler lists for every event type
      *
      * @return the list of all handler lists
+     * @since 1.1.0
      */
     @SuppressWarnings("unchecked")
     @NotNull

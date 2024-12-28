@@ -83,6 +83,7 @@ public class EntityDamageByEntityEvent extends EntityDamageEvent {
      * Returns the entity that damaged the defender.
      *
      * @return Entity that damaged the defender.
+     * @since 1.0.0
      */
     @NotNull
     public Entity getDamager() {

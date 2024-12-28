@@ -28,6 +28,7 @@ public class PlayerBedLeaveEvent extends PlayerEvent implements Cancellable {
      * Returns the bed block involved in this event.
      *
      * @return the bed block involved in this event
+     * @since 1.0.0
      */
     @NotNull
     public Block getBed() {
@@ -47,6 +48,7 @@ public class PlayerBedLeaveEvent extends PlayerEvent implements Cancellable {
      * @return true if the spawn location will be changed
      * @deprecated the respawn point is now set when the player enter the bed and
      * this option doesn't work since MC 1.15.
+     * @since 1.13.1
      */
     @Deprecated(forRemoval = true) // Paper - Unused
     public boolean shouldSetSpawnLocation() {
@@ -66,6 +68,7 @@ public class PlayerBedLeaveEvent extends PlayerEvent implements Cancellable {
      * @param setBedSpawn true to change the new spawn location
      * @deprecated the respawn point is now set when the player enter the bed and
      * this option doesn't work since MC 1.15.
+     * @since 1.13.1
      */
     @Deprecated(forRemoval = true) // Paper - Unused
     public void setSpawnLocation(boolean setBedSpawn) {

@@ -17,6 +17,7 @@ public interface JukeboxInventory extends Inventory {
      * item provided is null.
      *
      * @param item the new record
+     * @since 1.19.4
      */
     void setRecord(@Nullable ItemStack item);
 
@@ -24,10 +25,14 @@ public interface JukeboxInventory extends Inventory {
      * Get the record in the jukebox.
      *
      * @return the current record
+     * @since 1.19.4
      */
     @Nullable
     ItemStack getRecord();
 
+    /**
+     * @since 1.19.4
+     */
     @Nullable
     @Override
     public Jukebox getHolder();

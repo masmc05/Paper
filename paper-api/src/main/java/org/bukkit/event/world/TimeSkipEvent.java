@@ -30,6 +30,7 @@ public class TimeSkipEvent extends WorldEvent implements Cancellable {
      * Gets the reason why the time has skipped.
      *
      * @return a SkipReason value detailing why the time has skipped
+     * @since 1.15.1
      */
     @NotNull
     public SkipReason getSkipReason() {
@@ -40,6 +41,7 @@ public class TimeSkipEvent extends WorldEvent implements Cancellable {
      * Gets the amount of time that was skipped.
      *
      * @return Amount of time skipped
+     * @since 1.15.1
      */
     public long getSkipAmount() {
         return skipAmount;
@@ -49,27 +51,40 @@ public class TimeSkipEvent extends WorldEvent implements Cancellable {
      * Sets the amount of time to skip.
      *
      * @param skipAmount Amount of time to skip
+     * @since 1.15.1
      */
     public void setSkipAmount(long skipAmount) {
         this.skipAmount = skipAmount;
     }
 
+    /**
+     * @since 1.15.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.15.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.15.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.15.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
@@ -77,6 +92,8 @@ public class TimeSkipEvent extends WorldEvent implements Cancellable {
 
     /**
      * An enum specifying the reason the time skipped.
+     *
+     * @since 1.15.1
      */
     public enum SkipReason {
 

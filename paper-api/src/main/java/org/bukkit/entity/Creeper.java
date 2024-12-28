@@ -14,6 +14,7 @@ public interface Creeper extends Monster {
      * Checks if this Creeper is powered (Electrocuted)
      *
      * @return true if this creeper is powered
+     * @since 1.0.0
      */
     public boolean isPowered();
 
@@ -21,6 +22,7 @@ public interface Creeper extends Monster {
      * Sets the Powered status of this Creeper
      *
      * @param value New Powered status
+     * @since 1.0.0
      */
     public void setPowered(boolean value);
 

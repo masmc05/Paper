@@ -19,6 +19,9 @@ public class SmithItemEvent extends InventoryClickEvent {
         super(view, type, slot, click, action, key);
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     @Override
     public SmithingInventory getInventory() {

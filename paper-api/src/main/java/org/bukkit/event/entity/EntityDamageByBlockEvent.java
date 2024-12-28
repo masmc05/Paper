@@ -49,6 +49,7 @@ public class EntityDamageByBlockEvent extends EntityDamageEvent {
      * Returns the block that damaged the player.
      *
      * @return Block that damaged the player
+     * @since 1.0.0
      */
     @Nullable
     public Block getDamager() {

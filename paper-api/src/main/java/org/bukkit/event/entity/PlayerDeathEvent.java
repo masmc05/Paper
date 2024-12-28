@@ -179,6 +179,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      *
      * @param deathMessage Message to appear to other players on the server.
      * @deprecated in favour of {@link #deathMessage(net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void setDeathMessage(@Nullable String deathMessage) {
@@ -190,6 +191,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      *
      * @return Message to appear to other players on the server.
      * @deprecated in favour of {@link #deathMessage()}
+     * @since 1.0.0
      */
     @Nullable
     @Deprecated // Paper
@@ -204,6 +206,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * {@link #getDroppedExp()} for that.
      *
      * @return New EXP of the respawned player
+     * @since 1.0.0
      */
     public int getNewExp() {
         return newExp;
@@ -216,6 +219,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * {@link #setDroppedExp(int)} for that.
      *
      * @param exp New EXP of the respawned player
+     * @since 1.0.0
      */
     public void setNewExp(int exp) {
         newExp = exp;

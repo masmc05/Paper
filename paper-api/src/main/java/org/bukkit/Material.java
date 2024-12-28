@@ -4859,6 +4859,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return the item rarity
      * @deprecated use {@link org.bukkit.inventory.meta.ItemMeta#hasRarity()} and {@link org.bukkit.inventory.meta.ItemMeta#getRarity()}
+     * @since 1.16.5
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20.5")
@@ -4876,6 +4877,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @throws IllegalArgumentException if {@link #isItem()} is false
      * @return an immutable multimap of attributes
      * @deprecated use {@link #getDefaultAttributeModifiers(EquipmentSlot)}
+     * @since 1.16.5
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20.5")
@@ -4942,6 +4944,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * is available, {@link ItemStack#getMaxStackSize()} may be preferred.
      *
      * @return Maximum stack size for this material
+     * @since 1.0.0
      */
     public int getMaxStackSize() {
         return maxStack;
@@ -4951,6 +4954,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Gets the maximum durability of this material
      *
      * @return Maximum durability for this material
+     * @since 1.0.0
      */
     public short getMaxDurability() {
         return durability;
@@ -5001,6 +5005,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return MaterialData associated with this Material
      * @deprecated use {@link #createBlockData()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -5016,6 +5021,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @param raw Initial data to construct the MaterialData with
      * @return New MaterialData with the given data
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -5041,6 +5047,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Checks if this Material is a placable block
      *
      * @return true if this material is a block
+     * @since 1.0.0
      */
     public boolean isBlock() {
         return asBlockType() != null;
@@ -5065,6 +5072,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @param name Name of the material to get
      * @return Material if found, or null
+     * @since 1.0.0
      */
     @Nullable
     public static Material getMaterial(@NotNull final String name) {
@@ -5110,6 +5118,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @param name Name of the material to get
      * @return Material if found, or null
+     * @since 1.0.0
      */
     @Nullable
     public static Material matchMaterial(@NotNull final String name) {
@@ -5700,6 +5709,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @see #getBlockTranslationKey()
      * @see #getItemTranslationKey()
      * @deprecated use {@link #translationKey()}
+     * @since 1.16.2
      */
     @Override
     @NotNull
@@ -5745,6 +5755,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @param world the world to check
      * @return true if this material can be used in this World.
+     * @since 1.19.4
      */
     @Deprecated(forRemoval = true, since = "1.20") // Paper
     public boolean isEnabledByFeature(@NotNull World world) {

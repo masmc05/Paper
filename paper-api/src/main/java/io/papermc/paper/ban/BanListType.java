@@ -27,6 +27,7 @@ public interface BanListType<T> {
      * Returns the type class of the ban list used generically
      *
      * @return the type class
+     * @since 1.20.4
      */
     Class<T> typeClass();
 }

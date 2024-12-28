@@ -32,6 +32,7 @@ public interface LimitedRegion extends RegionAccessor {
      * For example: If the method returns 16 you have a working area of 48x48.
      *
      * @return The buffer in X and Z direction
+     * @since 1.17.1
      */
     int getBuffer();
 
@@ -40,6 +41,7 @@ public interface LimitedRegion extends RegionAccessor {
      *
      * @param location the location to check
      * @return true if the location is in the region, otherwise false.
+     * @since 1.17.1
      */
     boolean isInRegion(@NotNull Location location);
 
@@ -50,6 +52,7 @@ public interface LimitedRegion extends RegionAccessor {
      * @param y Y-coordinate to check
      * @param z Z-coordinate to check
      * @return true if the coordinates are in the region, otherwise false.
+     * @since 1.17.1
      */
     boolean isInRegion(int x, int y, int z);
 
@@ -58,6 +61,7 @@ public interface LimitedRegion extends RegionAccessor {
      * buffer zone.
      *
      * @return a list of tile entities.
+     * @since 1.17.1
      */
     @NotNull
     List<BlockState> getTileEntities();
@@ -69,6 +73,7 @@ public interface LimitedRegion extends RegionAccessor {
      *
      * @param vector {@link Vector} representing the position of the block to set.
      * @param data   {@link BlockData} to set the block at the provided coordinates to.
+     * @since 1.17.1
      */
     default void setBlockData(@NotNull Vector vector, @NotNull BlockData data) {
         setBlockData(vector.getBlockX(), vector.getBlockY(), vector.getBlockZ(), data);
@@ -81,6 +86,7 @@ public interface LimitedRegion extends RegionAccessor {
      * @param y Y coordinate.
      * @param z Z coordinate.
      * @param state The block state.
+     * @since 1.17.1
      */
     void setBlockState(int x, int y, int z, @NotNull BlockState state);
 
@@ -89,6 +95,7 @@ public interface LimitedRegion extends RegionAccessor {
      *
      * @param location Location to set block state.
      * @param state The block state.
+     * @since 1.17.1
      */
     default void setBlockState(@NotNull Vector location, @NotNull BlockState state) {
         setBlockState(location.getBlockX(), location.getBlockY(), location.getBlockZ(), state);
@@ -99,6 +106,7 @@ public interface LimitedRegion extends RegionAccessor {
      *
      * @param location Location to get block state from.
      * @return The block state.
+     * @since 1.17.1
      */
     @NotNull
     default BlockState getBlockState(@NotNull Vector location) {
@@ -111,6 +119,7 @@ public interface LimitedRegion extends RegionAccessor {
      * @param x X coordinate
      * @param y Y coordinate
      * @param z Z coordinate
+     * @since 1.17.1
      */
     void scheduleBlockUpdate(int x, int y, int z);
 
@@ -118,6 +127,7 @@ public interface LimitedRegion extends RegionAccessor {
      * Schedules a block update at a vector location.
      *
      * @param location {@link Vector} representing the position of the block to update.
+     * @since 1.17.1
      */
     default void scheduleBlockUpdate(@NotNull Vector location) {
         scheduleBlockUpdate(location.getBlockX(), location.getBlockY(), location.getBlockZ());
@@ -129,6 +139,7 @@ public interface LimitedRegion extends RegionAccessor {
      * @param x X coordinate
      * @param y Y coordinate
      * @param z Z coordinate
+     * @since 1.17.1
      */
     void scheduleFluidUpdate(int x, int y, int z);
 
@@ -136,6 +147,7 @@ public interface LimitedRegion extends RegionAccessor {
      * Schedules a fluid update at a vector location.
      *
      * @param location {@link Vector} representing the position of the block to update.
+     * @since 1.17.1
      */
     default void scheduleFluidUpdate(@NotNull Vector location) {
         scheduleFluidUpdate(location.getBlockX(), location.getBlockY(), location.getBlockZ());
@@ -147,6 +159,7 @@ public interface LimitedRegion extends RegionAccessor {
      * Do <b>not</b> attempt to read from/write to this world! Doing so during generation <b>will cause a deadlock!</b>
      *
      * @return The {@link World} object that this region represents.
+     * @since 1.17.1
      */
     @NotNull
     World getWorld();
@@ -156,6 +169,7 @@ public interface LimitedRegion extends RegionAccessor {
      *
      * @param vector {@link Vector} representing the position of the block to get.
      * @return {@link BlockData} at the coordinates
+     * @since 1.17.1
      */
     @NotNull
     default BlockData getBlockData(@NotNull Vector vector) {
@@ -166,6 +180,7 @@ public interface LimitedRegion extends RegionAccessor {
      * Gets the X-coordinate of the chunk in the center of the region.
      *
      * @return The center chunk's X coordinate.
+     * @since 1.17.1
      */
     int getCenterChunkX();
 
@@ -173,6 +188,7 @@ public interface LimitedRegion extends RegionAccessor {
      * Gets the X-coordinate of the block in the center of the region.
      *
      * @return The center chunk's X coordinate.
+     * @since 1.17.1
      */
     default int getCenterBlockX() {
         return getCenterChunkX() << 4;
@@ -182,6 +198,7 @@ public interface LimitedRegion extends RegionAccessor {
      * Gets the Z-coordinate of the chunk in the center of the region.
      *
      * @return The center chunk's Z coordinate.
+     * @since 1.17.1
      */
     int getCenterChunkZ();
 
@@ -189,6 +206,7 @@ public interface LimitedRegion extends RegionAccessor {
      * Gets the Z-coordinate of the block in the center of the region.
      *
      * @return The center chunk's Z coordinate.
+     * @since 1.17.1
      */
     default int getCenterBlockZ() {
         return getCenterChunkZ() << 4;

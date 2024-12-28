@@ -134,6 +134,7 @@ public interface MenuType extends Keyed, io.papermc.paper.world.flag.FeatureDepe
      *
      * @param <V> the generic type of {@link InventoryView} that represents the
      * view type.
+     * @since 1.21.1
      */
     interface Typed<V extends InventoryView> extends MenuType {
 
@@ -148,6 +149,7 @@ public interface MenuType extends Keyed, io.papermc.paper.world.flag.FeatureDepe
          * @param title the title of the view
          * @return the created {@link InventoryView}
          * @deprecated Use {@link #create(HumanEntity, net.kyori.adventure.text.Component)} instead.
+         * @since 1.21.1
          */
         @NotNull
         @Deprecated(since = "1.21") // Paper - adventure
@@ -164,6 +166,7 @@ public interface MenuType extends Keyed, io.papermc.paper.world.flag.FeatureDepe
          * @param player the player the view belongs to
          * @param title the title of the view
          * @return the created {@link InventoryView}
+         * @since 1.21.1
          */
         @NotNull
         V create(@NotNull HumanEntity player, @NotNull net.kyori.adventure.text.Component title);
@@ -181,6 +184,7 @@ public interface MenuType extends Keyed, io.papermc.paper.world.flag.FeatureDepe
      * @param player the player the view belongs to
      * @param title the title of the view
      * @return the created {@link InventoryView}
+     * @since 1.21.1
      */
     @NotNull
     InventoryView create(@NotNull HumanEntity player, @NotNull net.kyori.adventure.text.Component title);
@@ -191,6 +195,7 @@ public interface MenuType extends Keyed, io.papermc.paper.world.flag.FeatureDepe
      * {@link InventoryView} representing it.
      *
      * @return the typed MenuType.
+     * @since 1.21.1
      */
     @NotNull
     MenuType.Typed<InventoryView> typed();
@@ -206,6 +211,7 @@ public interface MenuType extends Keyed, io.papermc.paper.world.flag.FeatureDepe
      * @return the typed MenuType
      * @throws IllegalArgumentException if the provided viewClass cannot be
      * typed to this MenuType
+     * @since 1.21.1
      */
     @NotNull
     <V extends InventoryView> MenuType.Typed<V> typed(@NotNull final Class<V> viewClass) throws IllegalArgumentException;
@@ -214,6 +220,7 @@ public interface MenuType extends Keyed, io.papermc.paper.world.flag.FeatureDepe
      * Gets the {@link InventoryView} class of this MenuType.
      *
      * @return the {@link InventoryView} class of this MenuType
+     * @since 1.21.1
      */
     @NotNull
     Class<? extends InventoryView> getInventoryViewClass();

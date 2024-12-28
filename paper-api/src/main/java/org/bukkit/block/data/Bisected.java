@@ -15,6 +15,7 @@ public interface Bisected extends BlockData {
      * Gets the value of the 'half' property.
      *
      * @return the 'half' value
+     * @since 1.13
      */
     @NotNull
     Half getHalf();
@@ -28,6 +29,8 @@ public interface Bisected extends BlockData {
 
     /**
      * The half of a vertically bisected block.
+     *
+     * @since 1.13
      */
     public enum Half {
         /**

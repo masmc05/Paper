@@ -35,6 +35,7 @@ public class PlayerInventorySlotChangeEvent extends PlayerEvent {
      * The raw slot number that was changed.
      *
      * @return The raw slot number.
+     * @since 1.19.2
      */
     public int getRawSlot() {
         return this.rawSlot;
@@ -48,6 +49,7 @@ public class PlayerInventorySlotChangeEvent extends PlayerEvent {
      * If no inventory is opened, internal crafting view is used for conversion.
      *
      * @return The slot number.
+     * @since 1.19.2
      */
     public int getSlot() {
         return this.slot;
@@ -57,6 +59,7 @@ public class PlayerInventorySlotChangeEvent extends PlayerEvent {
      * Clone of ItemStack that was in the slot before the change.
      *
      * @return The old ItemStack in the slot.
+     * @since 1.19.2
      */
     public ItemStack getOldItemStack() {
         return this.oldItemStack;
@@ -66,6 +69,7 @@ public class PlayerInventorySlotChangeEvent extends PlayerEvent {
      * Clone of ItemStack that is in the slot after the change.
      *
      * @return The new ItemStack in the slot.
+     * @since 1.19.2
      */
     public ItemStack getNewItemStack() {
         return this.newItemStack;
@@ -75,6 +79,7 @@ public class PlayerInventorySlotChangeEvent extends PlayerEvent {
      * Gets whether the slot change advancements will be triggered.
      *
      * @return Whether the slot change advancements will be triggered.
+     * @since 1.19.2
      */
     public boolean shouldTriggerAdvancements() {
         return this.triggerAdvancements;
@@ -84,16 +89,23 @@ public class PlayerInventorySlotChangeEvent extends PlayerEvent {
      * Sets whether the slot change advancements will be triggered.
      *
      * @param triggerAdvancements Whether the slot change advancements will be triggered.
+     * @since 1.19.2
      */
     public void setShouldTriggerAdvancements(final boolean triggerAdvancements) {
         this.triggerAdvancements = triggerAdvancements;
     }
 
+    /**
+     * @since 1.19.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

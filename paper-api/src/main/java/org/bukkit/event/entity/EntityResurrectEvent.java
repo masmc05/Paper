@@ -32,6 +32,9 @@ public class EntityResurrectEvent extends EntityEvent implements Cancellable {
         this(what, null);
     }
 
+    /**
+     * @since 1.11
+     */
     @NotNull
     @Override
     public LivingEntity getEntity() {
@@ -50,22 +53,34 @@ public class EntityResurrectEvent extends EntityEvent implements Cancellable {
         return hand;
     }
 
+    /**
+     * @since 1.11
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.11
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.11
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.11
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

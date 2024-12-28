@@ -33,6 +33,7 @@ public class BlockReceiveGameEvent extends BlockEvent implements Cancellable {
      * Get the underlying event.
      *
      * @return the event
+     * @since 1.17
      */
     @NotNull
     public GameEvent getEvent() {
@@ -43,28 +44,41 @@ public class BlockReceiveGameEvent extends BlockEvent implements Cancellable {
      * Get the entity which triggered this event, if present.
      *
      * @return triggering entity or null
+     * @since 1.17
      */
     @Nullable
     public Entity getEntity() {
         return entity;
     }
 
+    /**
+     * @since 1.17
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.17
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.17
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.17
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -42,6 +42,10 @@ public final class EquipmentSlotGroup implements Predicate<EquipmentSlot> {
         BY_NAME.put(key, this);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.20.6
+     */
     @Override
     public boolean test(@NotNull EquipmentSlot test) {
         return this.predicate.test(test);

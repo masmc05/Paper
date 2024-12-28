@@ -48,6 +48,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      *
      * @param input The input material.
      * @return The changed recipe, so you can chain calls.
+     * @since 1.14
      */
     @NotNull
     public StonecuttingRecipe setInput(@NotNull Material input) {
@@ -60,6 +61,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      *
      * @return The input material.
      * @deprecated Use {@link #getInputChoice()} instead for more complete data.
+     * @since 1.14
      */
     @Deprecated // Paper
     @NotNull
@@ -72,6 +74,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      *
      * @param input The input choice.
      * @return The changed recipe, so you can chain calls.
+     * @since 1.14
      */
     @NotNull
     public StonecuttingRecipe setInputChoice(@NotNull RecipeChoice input) {
@@ -83,6 +86,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      * Get the input choice.
      *
      * @return The input choice.
+     * @since 1.14
      */
     @NotNull
     public RecipeChoice getInputChoice() {
@@ -93,6 +97,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      * Get the result of this recipe.
      *
      * @return The resulting stack.
+     * @since 1.14
      */
     @NotNull
     @Override
@@ -100,6 +105,9 @@ public class StonecuttingRecipe implements Recipe, Keyed {
         return output.clone();
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -111,6 +119,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      * together when displayed in the client.
      *
      * @return recipe group. An empty string denotes no group. May not be null.
+     * @since 1.14
      */
     @NotNull
     public String getGroup() {
@@ -123,6 +132,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      *
      * @param group recipe group. An empty string denotes no group. May not be
      * null.
+     * @since 1.14
      */
     public void setGroup(@NotNull String group) {
         Preconditions.checkArgument(group != null, "group cannot be null");

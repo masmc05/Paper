@@ -25,6 +25,7 @@ public abstract class OctaveGenerator {
      * value.
      *
      * @param scale New value to scale each coordinate by
+     * @since 1.0.0
      */
     public void setScale(double scale) {
         setXScale(scale);
@@ -36,6 +37,7 @@ public abstract class OctaveGenerator {
      * Gets the scale used for each X-coordinates passed
      *
      * @return X scale
+     * @since 1.0.0
      */
     public double getXScale() {
         return xScale;
@@ -45,6 +47,7 @@ public abstract class OctaveGenerator {
      * Sets the scale used for each X-coordinates passed
      *
      * @param scale New X scale
+     * @since 1.0.0
      */
     public void setXScale(double scale) {
         xScale = scale;
@@ -54,6 +57,7 @@ public abstract class OctaveGenerator {
      * Gets the scale used for each Y-coordinates passed
      *
      * @return Y scale
+     * @since 1.0.0
      */
     public double getYScale() {
         return yScale;
@@ -63,6 +67,7 @@ public abstract class OctaveGenerator {
      * Sets the scale used for each Y-coordinates passed
      *
      * @param scale New Y scale
+     * @since 1.0.0
      */
     public void setYScale(double scale) {
         yScale = scale;
@@ -72,6 +77,7 @@ public abstract class OctaveGenerator {
      * Gets the scale used for each Z-coordinates passed
      *
      * @return Z scale
+     * @since 1.0.0
      */
     public double getZScale() {
         return zScale;
@@ -81,6 +87,7 @@ public abstract class OctaveGenerator {
      * Sets the scale used for each Z-coordinates passed
      *
      * @param scale New Z scale
+     * @since 1.0.0
      */
     public void setZScale(double scale) {
         zScale = scale;
@@ -90,6 +97,7 @@ public abstract class OctaveGenerator {
      * Gets a clone of the individual octaves used within this generator
      *
      * @return Clone of the individual octaves
+     * @since 1.0.0
      */
     @NotNull
     public NoiseGenerator[] getOctaves() {
@@ -104,6 +112,7 @@ public abstract class OctaveGenerator {
      * @param frequency How much to alter the frequency by each octave
      * @param amplitude How much to alter the amplitude by each octave
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, double frequency, double amplitude) {
         return noise(x, 0, 0, frequency, amplitude);
@@ -118,6 +127,7 @@ public abstract class OctaveGenerator {
      * @param amplitude How much to alter the amplitude by each octave
      * @param normalized If true, normalize the value to [-1, 1]
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, double frequency, double amplitude, boolean normalized) {
         return noise(x, 0, 0, frequency, amplitude, normalized);
@@ -132,6 +142,7 @@ public abstract class OctaveGenerator {
      * @param frequency How much to alter the frequency by each octave
      * @param amplitude How much to alter the amplitude by each octave
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, double y, double frequency, double amplitude) {
         return noise(x, y, 0, frequency, amplitude);
@@ -147,6 +158,7 @@ public abstract class OctaveGenerator {
      * @param amplitude How much to alter the amplitude by each octave
      * @param normalized If true, normalize the value to [-1, 1]
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, double y, double frequency, double amplitude, boolean normalized) {
         return noise(x, y, 0, frequency, amplitude, normalized);
@@ -162,6 +174,7 @@ public abstract class OctaveGenerator {
      * @param frequency How much to alter the frequency by each octave
      * @param amplitude How much to alter the amplitude by each octave
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, double y, double z, double frequency, double amplitude) {
         return noise(x, y, z, frequency, amplitude, false);
@@ -178,6 +191,7 @@ public abstract class OctaveGenerator {
      * @param amplitude How much to alter the amplitude by each octave
      * @param normalized If true, normalize the value to [-1, 1]
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, double y, double z, double frequency, double amplitude, boolean normalized) {
         double result = 0;

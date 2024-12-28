@@ -20,6 +20,9 @@ public abstract class WorldBorderEvent extends WorldEvent {
         this.worldBorder = worldBorder;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public WorldBorder getWorldBorder() {
         return this.worldBorder;
     }

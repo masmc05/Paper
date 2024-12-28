@@ -14,6 +14,7 @@ public interface BrewingStand extends Container {
      * How much time is left in the brewing cycle.
      *
      * @return Brew Time
+     * @since 1.1.0
      */
     int getBrewingTime();
 
@@ -21,6 +22,7 @@ public interface BrewingStand extends Container {
      * Set the time left before brewing completes.
      *
      * @param brewTime Brewing time
+     * @since 1.1.0
      */
     void setBrewingTime(int brewTime);
 
@@ -65,6 +67,9 @@ public interface BrewingStand extends Container {
      */
     void setFuelLevel(int level);
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     BrewerInventory getInventory();

@@ -15,6 +15,7 @@ public interface Axolotl extends Animals, io.papermc.paper.entity.Bucketable { /
      * An axolotl may play dead when it is damaged underwater.
      *
      * @return playing dead status
+     * @since 1.17
      */
     boolean isPlayingDead();
 
@@ -24,6 +25,7 @@ public interface Axolotl extends Animals, io.papermc.paper.entity.Bucketable { /
      * An axolotl may play dead when it is damaged underwater.
      *
      * @param playingDead playing dead status
+     * @since 1.17
      */
     void setPlayingDead(boolean playingDead);
 
@@ -31,6 +33,7 @@ public interface Axolotl extends Animals, io.papermc.paper.entity.Bucketable { /
      * Get the variant of this axolotl.
      *
      * @return axolotl variant
+     * @since 1.17
      */
     @NotNull
     Variant getVariant();
@@ -44,6 +47,8 @@ public interface Axolotl extends Animals, io.papermc.paper.entity.Bucketable { /
 
     /**
      * Represents the variant of a axolotl - ie its color.
+     *
+     * @since 1.17
      */
     public enum Variant {
 

@@ -29,6 +29,7 @@ public final class Reputation {
      *
      * @param type The {@link ReputationType type} of reputation to get.
      * @return The value of the {@link ReputationType type}.
+     * @since 1.15.2
      */
     public int getReputation(final ReputationType type) {
         Preconditions.checkNotNull(type, "the reputation type cannot be null");
@@ -40,6 +41,7 @@ public final class Reputation {
      *
      * @param type The {@link ReputationType type} of reputation to set.
      * @param value The value of the {@link ReputationType type}.
+     * @since 1.15.2
      */
     public void setReputation(final ReputationType type, final int value) {
         Preconditions.checkNotNull(type, "the reputation type cannot be null");

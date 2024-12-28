@@ -19,6 +19,7 @@ public interface FluidData extends Cloneable {
      * Gets the fluid type of this fluid data.
      *
      * @return the fluid type
+     * @since 1.20.4
      */
     Fluid getFluidType();
 
@@ -38,6 +39,7 @@ public interface FluidData extends Cloneable {
      *
      * @param location - the location to check the liquid flow
      * @return the flow direction vector at the given location
+     * @since 1.20.4
      */
     Vector computeFlowDirection(Location location);
 
@@ -45,6 +47,7 @@ public interface FluidData extends Cloneable {
      * Returns the level of liquid this fluid data holds.
      *
      * @return the amount as an integer, between 0 and 8
+     * @since 1.20.4
      */
     @Range(from = 0, to = 8)
     int getLevel();
@@ -58,6 +61,7 @@ public interface FluidData extends Cloneable {
      *
      * @param location the location at which to check the high of this fluid data.
      * @return the height as a float value
+     * @since 1.20.4
      */
     @Range(from = 0, to = 1)
     float computeHeight(Location location);
@@ -66,6 +70,7 @@ public interface FluidData extends Cloneable {
      * Returns whether this fluid is a source block
      *
      * @return true if the fluid is a source block, false otherwise
+     * @since 1.20.4
      */
     boolean isSource();
 }

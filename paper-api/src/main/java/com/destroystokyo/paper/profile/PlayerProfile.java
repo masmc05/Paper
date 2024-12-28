@@ -18,6 +18,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
 
     /**
      * @return The players name, if set
+     * @since 1.12.2
      */
     @Override
     @Nullable
@@ -28,12 +29,14 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      *
      * @param name The new Name
      * @return The previous Name
+     * @since 1.12.2
      */
     @Deprecated(forRemoval = true, since = "1.18.1")
     String setName(@Nullable String name);
 
     /**
      * @return The players unique identifier, if set
+     * @since 1.12.2
      */
     @Nullable
     UUID getId();
@@ -43,6 +46,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      *
      * @param uuid The new UUID
      * @return The previous UUID
+     * @since 1.12.2
      */
     @Deprecated(forRemoval = true, since = "1.18.1")
     @Nullable
@@ -72,6 +76,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
     /**
      * @return A Mutable set of this players properties, such as textures.
      * Values specified here are subject to implementation details.
+     * @since 1.12.2
      */
     Set<ProfileProperty> getProperties();
 
@@ -80,6 +85,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      *
      * @param property Property name to check
      * @return If the property is set
+     * @since 1.12.2
      */
     boolean hasProperty(@Nullable String property);
 
@@ -88,6 +94,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      *
      * @param property Property to set.
      * @throws IllegalArgumentException if setting the property results in more than 16 properties
+     * @since 1.12.2
      */
     void setProperty(ProfileProperty property);
 
@@ -96,6 +103,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      *
      * @param properties The properties to set
      * @throws IllegalArgumentException if the number of properties exceeds 16
+     * @since 1.12.2
      */
     void setProperties(Collection<ProfileProperty> properties);
 
@@ -104,6 +112,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      *
      * @param property The property to remove
      * @return If a property was removed
+     * @since 1.12.2
      */
     boolean removeProperty(@Nullable String property);
 
@@ -112,6 +121,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      *
      * @param property The property to remove
      * @return If a property was removed
+     * @since 1.12.2
      */
     default boolean removeProperty(final ProfileProperty property) {
         return this.removeProperty(property.getName());
@@ -122,6 +132,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      *
      * @param properties The properties to remove
      * @return If any property was removed
+     * @since 1.12.2
      */
     default boolean removeProperties(final Collection<ProfileProperty> properties) {
         boolean removed = false;
@@ -135,11 +146,14 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
 
     /**
      * Clears all properties on this profile
+     *
+     * @since 1.12.2
      */
     void clearProperties();
 
     /**
      * @return If the profile is now complete (has UUID and Name)
+     * @since 1.12.2
      */
     @Override
     boolean isComplete();
@@ -149,6 +163,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      * Does not account for textures.
      *
      * @return If the profile is now complete (has UUID and Name)
+     * @since 1.12.2
      */
     boolean completeFromCache();
 
@@ -180,6 +195,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      * This will also complete textures. If you do not want to load textures, use {{@link #complete(boolean)}}
      *
      * @return If the profile is now complete (has UUID and Name) (if you get rate limited, this operation may fail)
+     * @since 1.12.2
      */
     default boolean complete() {
         return this.complete(true);
@@ -195,6 +211,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      *
      * @param textures controls if we should fill the profile with texture properties
      * @return If the profile is now complete (has UUID and Name) (if you get rate limited, this operation may fail)
+     * @since 1.12.2
      */
     boolean complete(boolean textures);
 
@@ -248,6 +265,7 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      * Whether this Profile has textures associated to it
      *
      * @return If it has a textures property
+     * @since 1.12.2
      */
     default boolean hasTextures() {
         return this.hasProperty("textures");

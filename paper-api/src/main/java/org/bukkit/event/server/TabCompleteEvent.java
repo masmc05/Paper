@@ -52,6 +52,7 @@ public class TabCompleteEvent extends Event implements Cancellable {
      * Get the sender completing this command.
      *
      * @return the {@link CommandSender} instance
+     * @since 1.9.4
      */
     @NotNull
     public CommandSender getSender() {
@@ -62,6 +63,7 @@ public class TabCompleteEvent extends Event implements Cancellable {
      * Return the entire buffer which formed the basis of this completion.
      *
      * @return command buffer, as entered
+     * @since 1.9.4
      */
     @NotNull
     public String getBuffer() {
@@ -73,6 +75,7 @@ public class TabCompleteEvent extends Event implements Cancellable {
      * This list is mutable and reflects what will be offered.
      *
      * @return a list of offered completions
+     * @since 1.9.4
      */
     @NotNull
     public List<String> getCompletions() {
@@ -106,28 +109,41 @@ public class TabCompleteEvent extends Event implements Cancellable {
      * The passed collection will be cloned to a new List. You must call {{@link #getCompletions()}} to mutate from here
      *
      * @param completions the new completions
+     * @since 1.9.4
      */
     public void setCompletions(@NotNull List<String> completions) {
         Preconditions.checkArgument(completions != null);
         this.completions = new java.util.ArrayList<>(completions); // Paper - completions must be mutable
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

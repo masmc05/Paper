@@ -30,6 +30,7 @@ public interface ItemFactory {
      * @param material The material to consider as base for the meta
      * @return a new ItemMeta that could be applied to an item stack of the
      *     specified material
+     * @since 1.4.5
      */
     @org.bukkit.UndefinedNullability // Paper
     ItemMeta getItemMeta(@NotNull final Material material);
@@ -47,6 +48,7 @@ public interface ItemFactory {
      *     otherwise
      * @throws IllegalArgumentException if the meta was not created by this
      *     factory
+     * @since 1.4.5
      */
     boolean isApplicable(@Nullable final ItemMeta meta, @Nullable final ItemStack stack) throws IllegalArgumentException;
 
@@ -63,6 +65,7 @@ public interface ItemFactory {
      *     otherwise
      * @throws IllegalArgumentException if the meta was not created by this
      *     factory
+     * @since 1.4.5
      */
     boolean isApplicable(@Nullable final ItemMeta meta, @Nullable final Material material) throws IllegalArgumentException;
 
@@ -99,6 +102,7 @@ public interface ItemFactory {
      *     for a stack of air.
      * @throws IllegalArgumentException if the specified meta was not created
      *     by this factory
+     * @since 1.4.5
      */
     @Nullable
     ItemMeta asMetaFor(@NotNull final ItemMeta meta, @NotNull final ItemStack stack) throws IllegalArgumentException;
@@ -122,6 +126,7 @@ public interface ItemFactory {
      *     guarantees are made as to if a copy is returned. This will be null for air.
      * @throws IllegalArgumentException if the specified meta was not created
      *     by this factory
+     * @since 1.4.5
      */
     @Nullable
     ItemMeta asMetaFor(@NotNull final ItemMeta meta, @NotNull final Material material) throws IllegalArgumentException;
@@ -250,6 +255,7 @@ public interface ItemFactory {
      * @return Display name of Item
      * @deprecated {@link ItemStack} implements {@link net.kyori.adventure.translation.Translatable}; use that and
      * {@link net.kyori.adventure.text.Component#translatable(net.kyori.adventure.translation.Translatable)} instead.
+     * @since 1.12
      */
     @Nullable
     @Deprecated(since = "1.18.1", forRemoval = true)

@@ -19,11 +19,17 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface ItemAdventurePredicate extends ShownInTooltip<ItemAdventurePredicate> {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static ItemAdventurePredicate itemAdventurePredicate(final List<BlockPredicate> predicates) {
         return itemAdventurePredicate().addPredicates(predicates).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static ItemAdventurePredicate.Builder itemAdventurePredicate() {
         return ItemComponentTypesBridge.bridge().itemAdventurePredicate();
@@ -33,12 +39,15 @@ public interface ItemAdventurePredicate extends ShownInTooltip<ItemAdventurePred
      * List of block predicates that control if the action is allowed.
      *
      * @return predicates
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<BlockPredicate> predicates();
 
     /**
      * Builder for {@link ItemAdventurePredicate}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -49,6 +58,7 @@ public interface ItemAdventurePredicate extends ShownInTooltip<ItemAdventurePred
          * @param predicate predicate
          * @return the builder for chaining
          * @see #predicates()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addPredicate(BlockPredicate predicate);
@@ -59,6 +69,7 @@ public interface ItemAdventurePredicate extends ShownInTooltip<ItemAdventurePred
          * @param predicates predicates
          * @return the builder for chaining
          * @see #predicates()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addPredicates(List<BlockPredicate> predicates);

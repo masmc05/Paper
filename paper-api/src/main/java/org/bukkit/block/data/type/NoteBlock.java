@@ -18,6 +18,7 @@ public interface NoteBlock extends Powerable {
      * Gets the value of the 'instrument' property.
      *
      * @return the 'instrument' value
+     * @since 1.13
      */
     @NotNull
     Instrument getInstrument();
@@ -26,6 +27,7 @@ public interface NoteBlock extends Powerable {
      * Sets the value of the 'instrument' property.
      *
      * @param instrument the new 'instrument' value
+     * @since 1.13
      */
     void setInstrument(@NotNull Instrument instrument);
 
@@ -33,6 +35,7 @@ public interface NoteBlock extends Powerable {
      * Gets the value of the 'note' property.
      *
      * @return the 'note' value
+     * @since 1.13
      */
     @NotNull
     Note getNote();
@@ -41,6 +44,7 @@ public interface NoteBlock extends Powerable {
      * Sets the value of the 'note' property.
      *
      * @param note the new 'note' value
+     * @since 1.13
      */
     void setNote(@NotNull Note note);
 }

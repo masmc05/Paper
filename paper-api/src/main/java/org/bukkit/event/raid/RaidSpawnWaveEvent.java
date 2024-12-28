@@ -31,6 +31,7 @@ public class RaidSpawnWaveEvent extends RaidEvent {
      * Returns the patrol leader.
      *
      * @return {@link Raider}
+     * @since 1.14.4
      */
     @NotNull // Paper
     public Raider getPatrolLeader() {
@@ -41,18 +42,25 @@ public class RaidSpawnWaveEvent extends RaidEvent {
      * Returns all {@link Raider} that spawned in this wave.
      *
      * @return an immutable list of raiders
+     * @since 1.14.4
      */
     @NotNull
     public List<Raider> getRaiders() {
         return Collections.unmodifiableList(raiders);
     }
 
+    /**
+     * @since 1.14.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.14.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

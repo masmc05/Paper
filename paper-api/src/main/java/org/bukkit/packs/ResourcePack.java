@@ -16,6 +16,7 @@ public interface ResourcePack {
      * Gets the id of the resource pack.
      *
      * @return the id
+     * @since 1.20.4
      */
     @NotNull
     public UUID getId();
@@ -24,6 +25,7 @@ public interface ResourcePack {
      * Gets the url of the resource pack.
      *
      * @return the url
+     * @since 1.20.4
      */
     @NotNull
     public String getUrl();
@@ -32,6 +34,7 @@ public interface ResourcePack {
      * Gets the hash of the resource pack.
      *
      * @return the hash
+     * @since 1.20.4
      */
     @Nullable
     public String getHash();
@@ -40,6 +43,7 @@ public interface ResourcePack {
      * Gets the prompt to show of the resource pack.
      *
      * @return the prompt
+     * @since 1.20.4
      */
     @Nullable
     public String getPrompt();
@@ -48,6 +52,7 @@ public interface ResourcePack {
      * Gets if the resource pack is required by the server.
      *
      * @return True if is required
+     * @since 1.20.4
      */
     public boolean isRequired();
 }

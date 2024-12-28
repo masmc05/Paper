@@ -26,28 +26,41 @@ public class EntityDropItemEvent extends EntityEvent implements Cancellable {
      * Gets the Item created by the entity
      *
      * @return Item created by the entity
+     * @since 1.13
      */
     @NotNull
     public Item getItemDrop() {
         return drop;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -25,6 +25,7 @@ public class PlayerExpCooldownChangeEvent extends PlayerEvent {
      * Gets the reason for the change.
      *
      * @return The reason for the change
+     * @since 1.19.4
      */
     @NotNull
     public ChangeReason getReason() {
@@ -36,6 +37,7 @@ public class PlayerExpCooldownChangeEvent extends PlayerEvent {
      *
      * @return The new cooldown
      * @see Player#getExpCooldown()
+     * @since 1.19.4
      */
     public int getNewCooldown() {
         return newCooldown;
@@ -46,22 +48,32 @@ public class PlayerExpCooldownChangeEvent extends PlayerEvent {
      *
      * @param newCooldown The new cooldown to set
      * @see Player#setExpCooldown(int)
+     * @since 1.19.4
      */
     public void setNewCooldown(int newCooldown) {
         this.newCooldown = newCooldown;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
     }
 
+    /**
+     * @since 1.19.4
+     */
     public enum ChangeReason {
 
         /**

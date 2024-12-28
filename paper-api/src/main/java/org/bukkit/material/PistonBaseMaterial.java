@@ -8,6 +8,7 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class PistonBaseMaterial extends MaterialData implements Directional, Redstone {
@@ -28,6 +29,9 @@ public class PistonBaseMaterial extends MaterialData implements Directional, Red
         super(type, data);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setFacingDirection(BlockFace face) {
         byte data = (byte) (getData() & 0x8);
@@ -52,6 +56,9 @@ public class PistonBaseMaterial extends MaterialData implements Directional, Red
         setData(data);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public BlockFace getFacing() {
         byte dir = (byte) (getData() & 7);
@@ -74,6 +81,9 @@ public class PistonBaseMaterial extends MaterialData implements Directional, Red
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isPowered() {
         return (getData() & 0x8) == 0x8;
@@ -83,6 +93,7 @@ public class PistonBaseMaterial extends MaterialData implements Directional, Red
      * Sets the current state of this piston
      *
      * @param powered true if the piston is extended {@literal &} powered, or false
+     * @since 1.0.0
      */
     public void setPowered(boolean powered) {
         setData((byte) (powered ? (getData() | 0x8) : (getData() & ~0x8)));
@@ -92,6 +103,7 @@ public class PistonBaseMaterial extends MaterialData implements Directional, Red
      * Checks if this piston base is sticky, and returns true if so
      *
      * @return true if this piston is "sticky", or false
+     * @since 1.0.0
      */
     public boolean isSticky() {
         return this.getItemType() == Material.LEGACY_PISTON_STICKY_BASE;

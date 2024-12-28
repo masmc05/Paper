@@ -207,6 +207,7 @@ public interface Villager extends AbstractVillager {
          * @param name of the villager type.
          * @return the villager type with the given name.
          * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+         * @since 1.14
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -219,6 +220,7 @@ public interface Villager extends AbstractVillager {
         /**
          * @return an array of all known villager types.
          * @deprecated use {@link Registry#iterator()}.
+         * @since 1.14
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -316,6 +318,7 @@ public interface Villager extends AbstractVillager {
          * @param name of the villager profession.
          * @return the villager profession with the given name.
          * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+         * @since 1.3.1
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -328,6 +331,7 @@ public interface Villager extends AbstractVillager {
         /**
          * @return an array of all known villager professions.
          * @deprecated use {@link Registry#iterator()}.
+         * @since 1.3.1
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

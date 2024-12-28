@@ -16,16 +16,24 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface JukeboxPlayable extends ShownInTooltip<JukeboxPlayable> {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static JukeboxPlayable.Builder jukeboxPlayable(final JukeboxSong song) {
         return ItemComponentTypesBridge.bridge().jukeboxPlayable(song);
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(pure = true)
     JukeboxSong jukeboxSong();
 
     /**
      * Builder for {@link JukeboxPlayable}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -37,6 +45,7 @@ public interface JukeboxPlayable extends ShownInTooltip<JukeboxPlayable> {
          * @param song the song
          * @return the builder for chaining
          * @see #jukeboxSong()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder jukeboxSong(JukeboxSong song);

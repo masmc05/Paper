@@ -23,6 +23,7 @@ public abstract class RaidEvent extends WorldEvent {
      * Returns the raid involved with this event.
      *
      * @return Raid
+     * @since 1.14.4
      */
     @NotNull
     public Raid getRaid() {

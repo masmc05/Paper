@@ -37,6 +37,7 @@ public class EulerAngle {
      * Returns the angle on the x axis in radians
      *
      * @return the angle in radians
+     * @since 1.8
      */
     public double getX() {
         return x;
@@ -46,6 +47,7 @@ public class EulerAngle {
      * Returns the angle on the y axis in radians
      *
      * @return the angle in radians
+     * @since 1.8
      */
     public double getY() {
         return y;
@@ -55,6 +57,7 @@ public class EulerAngle {
      * Returns the angle on the z axis in radians
      *
      * @return the angle in radians
+     * @since 1.8
      */
     public double getZ() {
         return z;
@@ -66,6 +69,7 @@ public class EulerAngle {
      *
      * @param x the angle in radians
      * @return the resultant EulerAngle
+     * @since 1.8
      */
     @NotNull
     public EulerAngle setX(double x) {
@@ -78,6 +82,7 @@ public class EulerAngle {
      *
      * @param y the angle in radians
      * @return the resultant EulerAngle
+     * @since 1.8
      */
     @NotNull
     public EulerAngle setY(double y) {
@@ -90,6 +95,7 @@ public class EulerAngle {
      *
      * @param z the angle in radians
      * @return the resultant EulerAngle
+     * @since 1.8
      */
     @NotNull
     public EulerAngle setZ(double z) {
@@ -104,6 +110,7 @@ public class EulerAngle {
      * @param y the angle to add to the y axis in radians
      * @param z the angle to add to the z axis in radians
      * @return the resultant EulerAngle
+     * @since 1.8
      */
     @NotNull
     public EulerAngle add(double x, double y, double z) {
@@ -122,6 +129,7 @@ public class EulerAngle {
      * @param y the angle to subtract to the y axis in radians
      * @param z the angle to subtract to the z axis in radians
      * @return the resultant EulerAngle
+     * @since 1.8
      */
     @NotNull
     public EulerAngle subtract(double x, double y, double z) {

@@ -20,11 +20,17 @@ public class LeavesDecayEvent extends BlockEvent implements Cancellable {
         super(block);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;

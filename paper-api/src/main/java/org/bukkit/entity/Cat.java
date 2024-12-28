@@ -21,6 +21,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * Gets the current type of this cat.
      *
      * @return Type of the cat.
+     * @since 1.14
      */
     @NotNull
     public Type getCatType();
@@ -36,6 +37,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * Get the collar color of this cat
      *
      * @return the color of the collar
+     * @since 1.14
      */
     @NotNull
     @Override // Paper
@@ -45,6 +47,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * Set the collar color of this cat
      *
      * @param color the color to apply
+     * @since 1.14
      */
     @Override // Paper
     public void setCollarColor(@NotNull DyeColor color);
@@ -77,6 +80,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
          * @param name of the cat type.
          * @return the cat type with the given name.
          * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+         * @since 1.14
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -89,6 +93,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
         /**
          * @return an array of all known cat types.
          * @deprecated use {@link Registry#iterator()}.
+         * @since 1.14
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

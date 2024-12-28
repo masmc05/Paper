@@ -7,6 +7,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents the three different types of Sandstone
  * @deprecated use {@link org.bukkit.block.data.BlockData}
+ * @since 1.3.1
  */
 @Deprecated(forRemoval = true, since = "1.13")
 public enum SandstoneType {
@@ -26,6 +27,7 @@ public enum SandstoneType {
      *
      * @return A byte containing the data value of this sandstone type
      * @deprecated Magic value
+     * @since 1.3.1
      */
     @Deprecated(since = "1.6.2")
     public byte getData() {
@@ -39,6 +41,7 @@ public enum SandstoneType {
      * @return The {@link SandstoneType} representing the given value, or null
      *     if it doesn't exist
      * @deprecated Magic value
+     * @since 1.3.1
      */
     @Deprecated(since = "1.6.2")
     @Nullable

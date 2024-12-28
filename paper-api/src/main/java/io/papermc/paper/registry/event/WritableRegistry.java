@@ -24,6 +24,7 @@ public interface WritableRegistry<T, B extends RegistryBuilder<T>> {
      *
      * @param key the entry's key (must be unique from others)
      * @param value a consumer for the entry's builder
+     * @since 1.21
      */
     void register(TypedKey<T> key, Consumer<? super B> value);
 }

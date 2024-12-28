@@ -19,6 +19,7 @@ public interface Score {
      * @return this Score's tracked player
      * @see #getEntry()
      * @deprecated Scoreboards can contain entries that aren't players
+     * @since 1.5.1
      */
     @Deprecated(since = "1.7.8")
     @NotNull
@@ -37,6 +38,7 @@ public interface Score {
      * Gets the Objective being tracked by this Score
      *
      * @return this Score's tracked objective
+     * @since 1.5.1
      */
     @NotNull
     Objective getObjective();
@@ -47,6 +49,7 @@ public interface Score {
      * @return the current score
      * @throws IllegalStateException if the associated objective has been
      *     unregistered
+     * @since 1.5.1
      */
     int getScore();
 
@@ -56,6 +59,7 @@ public interface Score {
      * @param score New score
      * @throws IllegalStateException if the associated objective has been
      *     unregistered
+     * @since 1.5.1
      */
     void setScore(int score);
 
@@ -74,6 +78,7 @@ public interface Score {
      *
      * @return the owning objective's scoreboard, or null if it has been
      *     {@link Objective#unregister() unregistered}
+     * @since 1.5.1
      */
     @Nullable
     Scoreboard getScoreboard();

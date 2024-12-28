@@ -20,6 +20,7 @@ public interface Crafter extends BlockData {
      * Gets the value of the 'crafting' property.
      *
      * @return the 'crafting' value
+     * @since 1.20.4
      */
     boolean isCrafting();
 
@@ -27,6 +28,7 @@ public interface Crafter extends BlockData {
      * Sets the value of the 'crafting' property.
      *
      * @param crafting the new 'crafting' value
+     * @since 1.20.4
      */
     void setCrafting(boolean crafting);
 
@@ -34,6 +36,7 @@ public interface Crafter extends BlockData {
      * Gets the value of the 'triggered' property.
      *
      * @return the 'triggered' value
+     * @since 1.20.4
      */
     boolean isTriggered();
 
@@ -41,6 +44,7 @@ public interface Crafter extends BlockData {
      * Sets the value of the 'triggered' property.
      *
      * @param triggered the new 'triggered' value
+     * @since 1.20.4
      */
     void setTriggered(boolean triggered);
 
@@ -48,6 +52,7 @@ public interface Crafter extends BlockData {
      * Gets the value of the 'orientation' property.
      *
      * @return the 'orientation' value
+     * @since 1.20.4
      */
     @NotNull
     Orientation getOrientation();
@@ -61,6 +66,8 @@ public interface Crafter extends BlockData {
 
     /**
      * The directions the Crafter can be oriented.
+     *
+     * @since 1.20.4
      */
     public enum Orientation {
 

@@ -17,6 +17,9 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 public sealed interface RegistryValueSet<T> extends Iterable<T>, RegistrySet<T> permits RegistryValueSetImpl {
 
+    /**
+     * @since 1.21
+     */
     @Override
     default int size() {
         return this.values().size();
@@ -26,9 +29,14 @@ public sealed interface RegistryValueSet<T> extends Iterable<T>, RegistrySet<T> 
      * Get the collection of values in this direct set.
      *
      * @return the values
+     * @since 1.21
      */
     @Unmodifiable Collection<T> values();
 
+    /**
+     * {@inheritDoc}
+     * @since 1.21
+     */
     @Override
     default Iterator<T> iterator() {
         return this.values().iterator();

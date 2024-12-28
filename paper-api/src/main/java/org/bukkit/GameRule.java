@@ -314,6 +314,7 @@ public final class GameRule<T> implements net.kyori.adventure.translation.Transl
      * Get the name of this GameRule.
      *
      * @return the name of this GameRule
+     * @since 1.13
      */
     @NotNull
     public String getName() {
@@ -324,6 +325,7 @@ public final class GameRule<T> implements net.kyori.adventure.translation.Transl
      * Get the type of this rule.
      *
      * @return the rule type; Integer or Boolean
+     * @since 1.13
      */
     @NotNull
     public Class<T> getType() {
@@ -353,6 +355,7 @@ public final class GameRule<T> implements net.kyori.adventure.translation.Transl
      * @param rule the name of the GameRule
      * @return the {@link GameRule} or null if no GameRule matches the given
      * name
+     * @since 1.13
      */
     @Nullable
     public static GameRule<?> getByName(@NotNull String rule) {
@@ -364,6 +367,7 @@ public final class GameRule<T> implements net.kyori.adventure.translation.Transl
      * Get an immutable collection of {@link GameRule}s.
      *
      * @return an immutable collection containing all registered GameRules.
+     * @since 1.13
      */
     @NotNull
     public static GameRule<?>[] values() {

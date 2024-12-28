@@ -30,6 +30,7 @@ public class BellRingEvent extends BlockEvent implements Cancellable {
      * Get the direction in which the bell was rung.
      *
      * @return the direction
+     * @since 1.19.4
      */
     @NotNull
     public BlockFace getDirection() {
@@ -40,28 +41,41 @@ public class BellRingEvent extends BlockEvent implements Cancellable {
      * Get the {@link Entity} that rang the bell (if there was one).
      *
      * @return the entity
+     * @since 1.19.4
      */
     @Nullable
     public Entity getEntity() {
         return entity;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

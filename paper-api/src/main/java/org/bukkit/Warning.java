@@ -24,6 +24,8 @@ public @interface Warning {
 
     /**
      * This represents the states that server verbose for warnings may be.
+     *
+     * @since 1.3.1
      */
     public enum WarningState {
 
@@ -68,6 +70,7 @@ public @interface Warning {
          *     <li>DEFAULT is false if and only if annotation is not null and
          *     specifies false for {@link Warning#value()}, true otherwise.
          *     </ul>
+         * @since 1.3.1
          */
         public boolean printFor(@Nullable Warning warning) {
             if (Boolean.getBoolean("paper.alwaysPrintWarningState")) return true; // Paper
@@ -84,6 +87,7 @@ public @interface Warning {
          * @param value The string value to check
          * @return {@link #DEFAULT} if not found, or the respective
          *     WarningState
+         * @since 1.3.1
          */
         @NotNull
         public static WarningState value(@Nullable final String value) {
@@ -103,6 +107,7 @@ public @interface Warning {
      * printed when the setting is in the default state.
      *
      * @return false normally, or true to encourage warning printout
+     * @since 1.3.1
      */
     boolean value() default false;
 
@@ -110,6 +115,7 @@ public @interface Warning {
      * This can provide detailed information on why the event is deprecated.
      *
      * @return The reason an event is deprecated
+     * @since 1.3.1
      */
     String reason() default "";
 }

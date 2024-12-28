@@ -36,6 +36,7 @@ public class AsyncPlayerSendSuggestionsEvent extends PlayerEvent implements Canc
      * Gets the input buffer sent to request these suggestions.
      *
      * @return the input buffer
+     * @since 1.20.6
      */
     public String getBuffer() {
         return this.buffer;
@@ -45,6 +46,7 @@ public class AsyncPlayerSendSuggestionsEvent extends PlayerEvent implements Canc
      * Gets the suggestions to be sent to client.
      *
      * @return the suggestions
+     * @since 1.20.6
      */
     public Suggestions getSuggestions() {
         return this.suggestions;
@@ -54,6 +56,7 @@ public class AsyncPlayerSendSuggestionsEvent extends PlayerEvent implements Canc
      * Sets the suggestions to be sent to client.
      *
      * @param suggestions suggestions
+     * @since 1.20.6
      */
     public void setSuggestions(final Suggestions suggestions) {
         this.suggestions = suggestions;
@@ -61,6 +64,8 @@ public class AsyncPlayerSendSuggestionsEvent extends PlayerEvent implements Canc
 
     /**
      * {@inheritDoc}
+     *
+     * @since 1.20.6
      */
     @Override
     public boolean isCancelled() {
@@ -70,17 +75,25 @@ public class AsyncPlayerSendSuggestionsEvent extends PlayerEvent implements Canc
     /**
      * Cancels sending suggestions to the client.
      * {@inheritDoc}
+     *
+     * @since 1.20.6
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.6
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.6
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

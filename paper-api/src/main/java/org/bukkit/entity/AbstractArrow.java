@@ -21,6 +21,7 @@ public interface AbstractArrow extends Projectile {
      * @return the knockback strength value
      * @see #getWeapon()
      * @deprecated a function of the firing weapon
+     * @since 1.14
      */
     @Deprecated(since = "1.21")
     public int getKnockbackStrength();
@@ -31,6 +32,7 @@ public interface AbstractArrow extends Projectile {
      * @param knockbackStrength the knockback strength value
      * @see #setWeapon(org.bukkit.inventory.ItemStack)
      * @deprecated a function of the firing weapon
+     * @since 1.14
      */
     @Deprecated(since = "1.21")
     public void setKnockbackStrength(int knockbackStrength);
@@ -43,6 +45,7 @@ public interface AbstractArrow extends Projectile {
      * enchanted bows.
      *
      * @return base damage amount
+     * @since 1.14
      */
     public double getDamage();
 
@@ -50,6 +53,7 @@ public interface AbstractArrow extends Projectile {
      * Sets the base amount of damage this arrow will do.
      *
      * @param damage new damage amount
+     * @since 1.14
      */
     public void setDamage(double damage);
 
@@ -80,6 +84,7 @@ public interface AbstractArrow extends Projectile {
      * firing.
      *
      * @return true if it is critical
+     * @since 1.14
      */
     public boolean isCritical();
 
@@ -87,6 +92,7 @@ public interface AbstractArrow extends Projectile {
      * Sets whether or not this arrow should be critical.
      *
      * @param critical whether or not it should be critical
+     * @since 1.14
      */
     public void setCritical(boolean critical);
 
@@ -96,6 +102,7 @@ public interface AbstractArrow extends Projectile {
      * Arrows in a block are motionless and may be picked up by players.
      *
      * @return true if in a block
+     * @since 1.14
      */
     public boolean isInBlock();
 
@@ -103,6 +110,7 @@ public interface AbstractArrow extends Projectile {
      * Gets the block to which this arrow is attached.
      *
      * @return the attached block or null if not attached
+     * @since 1.14
      */
     @Nullable
     public Block getAttachedBlock();
@@ -111,6 +119,7 @@ public interface AbstractArrow extends Projectile {
      * Gets the current pickup status of this arrow.
      *
      * @return the pickup status of this arrow.
+     * @since 1.14
      */
     @NotNull
     public PickupStatus getPickupStatus();
@@ -146,6 +155,7 @@ public interface AbstractArrow extends Projectile {
      *
      * @return The picked up ItemStack
      * @deprecated use {@link #getItemStack()}
+     * @since 1.20.4
      */
     @NotNull
     @ApiStatus.Experimental
@@ -157,6 +167,7 @@ public interface AbstractArrow extends Projectile {
      *
      * @param item ItemStack set to be picked up
      * @deprecated use {@link #getItemStack()}
+     * @since 1.20.4
      */
     @ApiStatus.Experimental
     @Deprecated(forRemoval = true, since = "1.20.4") // Paper
@@ -183,6 +194,8 @@ public interface AbstractArrow extends Projectile {
 
     /**
      * Represents the pickup status of this arrow.
+     *
+     * @since 1.14
      */
     public enum PickupStatus {
         /**
@@ -208,6 +221,7 @@ public interface AbstractArrow extends Projectile {
      *
      * @return The pickup rule
      * @deprecated Use {@link Arrow#getPickupStatus()} as an upstream compatible replacement for this function
+     * @since 1.14
      */
     @Deprecated
     default PickupRule getPickupRule() {
@@ -225,6 +239,9 @@ public interface AbstractArrow extends Projectile {
         this.setPickupStatus(PickupStatus.valueOf(rule.name()));
     }
 
+    /**
+     * @since 1.14
+     */
     @Deprecated
     enum PickupRule {
         DISALLOWED,

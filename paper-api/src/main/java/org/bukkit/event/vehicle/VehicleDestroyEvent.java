@@ -28,17 +28,24 @@ public class VehicleDestroyEvent extends VehicleEvent implements Cancellable {
      * Gets the Entity that has destroyed the vehicle, potentially null
      *
      * @return the Entity that has destroyed the vehicle, potentially null
+     * @since 1.0.0
      */
     @Nullable
     public Entity getAttacker() {
         return attacker;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

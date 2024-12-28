@@ -29,11 +29,17 @@ public class TNTPrimeEvent extends BlockEvent implements Cancellable {
         this.primingBlock = primingBlock;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
@@ -43,6 +49,7 @@ public class TNTPrimeEvent extends BlockEvent implements Cancellable {
      * Get the cause of the TNT becoming primed.
      *
      * @return the cause
+     * @since 1.19.4
      */
     @NotNull
     public PrimeCause getCause() {
@@ -54,6 +61,7 @@ public class TNTPrimeEvent extends BlockEvent implements Cancellable {
      *
      * @return the entity that caused the TNT to be primed, or null if it was
      * not caused by an entity.
+     * @since 1.19.4
      */
     @Nullable
     public Entity getPrimingEntity() {
@@ -65,18 +73,25 @@ public class TNTPrimeEvent extends BlockEvent implements Cancellable {
      *
      * @return the block that caused the TNT to be primed, or null if it was not
      * caused by a block.
+     * @since 1.19.4
      */
     @Nullable
     public Block getPrimingBlock() {
         return primingBlock;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
@@ -84,6 +99,8 @@ public class TNTPrimeEvent extends BlockEvent implements Cancellable {
 
     /**
      * An enum to represent the cause of a TNT block becoming primed.
+     *
+     * @since 1.19.4
      */
     public enum PrimeCause {
 

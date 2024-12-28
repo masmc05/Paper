@@ -156,6 +156,7 @@ public interface Attribute extends OldEnum<Attribute>, Keyed, Translatable, net.
      * @param name of the attribute.
      * @return the attribute with the given name.
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * @since 1.9.4
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -168,6 +169,7 @@ public interface Attribute extends OldEnum<Attribute>, Keyed, Translatable, net.
     /**
      * @return an array of all known attributes.
      * @deprecated use {@link Registry#iterator()}.
+     * @since 1.9.4
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

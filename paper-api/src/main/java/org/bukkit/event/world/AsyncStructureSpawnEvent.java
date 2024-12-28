@@ -34,6 +34,7 @@ public class AsyncStructureSpawnEvent extends WorldEvent implements Cancellable 
      * Get the structure reference that is generated.
      *
      * @return the structure
+     * @since 1.19.4
      */
     @NotNull
     public Structure getStructure() {
@@ -44,6 +45,7 @@ public class AsyncStructureSpawnEvent extends WorldEvent implements Cancellable 
      * Get the bounding box of the structure.
      *
      * @return the bounding box
+     * @since 1.19.4
      */
     @NotNull
     public BoundingBox getBoundingBox() {
@@ -57,6 +59,7 @@ public class AsyncStructureSpawnEvent extends WorldEvent implements Cancellable 
      * chunk. This event is informative only!</b>
      *
      * @return the chunk x coordinate
+     * @since 1.19.4
      */
     public int getChunkX() {
         return chunkX;
@@ -69,27 +72,40 @@ public class AsyncStructureSpawnEvent extends WorldEvent implements Cancellable 
      * chunk. This event is informative only!</b>
      *
      * @return the chunk z coordinate
+     * @since 1.19.4
      */
     public int getChunkZ() {
         return chunkZ;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

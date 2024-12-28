@@ -120,6 +120,7 @@ public abstract class GameEvent implements Keyed {
      * @param namespacedKey the key
      * @return the event or null
      * @deprecated Use {@link Registry#get(NamespacedKey)} instead.
+     * @since 1.17
      */
     @Nullable
     @Deprecated(since = "1.20.1")
@@ -132,6 +133,7 @@ public abstract class GameEvent implements Keyed {
      *
      * @return the memoryKeys
      * @deprecated use {@link Registry#iterator()}.
+     * @since 1.17
      */
     @NotNull
     @Deprecated(since = "1.20.1")

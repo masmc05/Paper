@@ -16,6 +16,7 @@ public interface Attributable {
      *
      * @param attribute the attribute to get
      * @return the attribute instance or null if not applicable to this object
+     * @since 1.9.4
      */
     @Nullable
     AttributeInstance getAttribute(@NotNull Attribute attribute);

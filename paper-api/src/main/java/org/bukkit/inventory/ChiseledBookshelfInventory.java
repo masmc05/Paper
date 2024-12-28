@@ -10,6 +10,9 @@ import org.jetbrains.annotations.Nullable;
  */
 public interface ChiseledBookshelfInventory extends Inventory {
 
+    /**
+     * @since 1.19.3
+     */
     @Nullable
     @Override
     public ChiseledBookshelf getHolder();

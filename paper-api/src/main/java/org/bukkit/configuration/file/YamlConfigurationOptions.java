@@ -20,12 +20,18 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
         super(configuration);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public YamlConfiguration configuration() {
         return (YamlConfiguration) super.configuration();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public YamlConfigurationOptions copyDefaults(boolean value) {
@@ -33,6 +39,9 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
         return this;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public YamlConfigurationOptions pathSeparator(char value) {
@@ -50,6 +59,9 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
         return this;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     @Deprecated(since = "1.18.1")
@@ -78,6 +90,9 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
         return this;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     @Deprecated(since = "1.18.1")
@@ -92,6 +107,7 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
      * The minimum value this may be is 2, and the maximum is 9.
      *
      * @return How much to indent by
+     * @since 1.0.0
      */
     public int indent() {
         return indent;
@@ -104,6 +120,7 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
      *
      * @param value New indent
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public YamlConfigurationOptions indent(int value) {

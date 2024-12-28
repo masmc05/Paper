@@ -16,6 +16,7 @@ public interface Sniffer extends Animals {
      * Gets the locations explored by the sniffer.
      *
      * @return a collection of locations
+     * @since 1.19.4
      */
     @NotNull
     public Collection<Location> getExploredLocations();
@@ -25,6 +26,7 @@ public interface Sniffer extends Animals {
      *
      * @param location the location to remove
      * @see #getExploredLocations()
+     * @since 1.19.4
      */
     public void removeExploredLocation(@NotNull Location location);
 
@@ -36,6 +38,7 @@ public interface Sniffer extends Animals {
      *
      * @param location the location to add
      * @see #getExploredLocations()
+     * @since 1.19.4
      */
     public void addExploredLocation(@NotNull Location location);
 
@@ -43,6 +46,7 @@ public interface Sniffer extends Animals {
      * Get the current state of the sniffer.
      *
      * @return the state of the sniffer
+     * @since 1.19.4
      */
     @NotNull
     public Sniffer.State getState();
@@ -60,6 +64,7 @@ public interface Sniffer extends Animals {
      * Try to get a possible location where the sniffer can dig.
      *
      * @return a {@link Location} if found or null
+     * @since 1.19.4
      */
     @Nullable
     public Location findPossibleDigLocation();
@@ -69,11 +74,14 @@ public interface Sniffer extends Animals {
      * its head.
      *
      * @return {@code true} if can dig or {@code false} otherwise
+     * @since 1.19.4
      */
     public boolean canDig();
 
     /**
      * Represents the current state of the Sniffer.
+     *
+     * @since 1.19.4
      */
     public enum State {
         IDLING,

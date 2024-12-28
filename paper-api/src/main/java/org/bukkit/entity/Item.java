@@ -16,6 +16,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Gets the item stack associated with this item drop.
      *
      * @return An item stack.
+     * @since 1.0.0
      */
     @NotNull
     public ItemStack getItemStack();
@@ -24,6 +25,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Sets the item stack associated with this item drop.
      *
      * @param stack An item stack.
+     * @since 1.0.0
      */
     public void setItemStack(@NotNull ItemStack stack);
 
@@ -31,6 +33,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Gets the delay before this Item is available to be picked up by players
      *
      * @return Remaining delay
+     * @since 1.0.0
      */
     public int getPickupDelay();
 
@@ -38,6 +41,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Sets the delay before this Item is available to be picked up by players
      *
      * @param delay New delay
+     * @since 1.0.0
      */
     public void setPickupDelay(int delay);
 

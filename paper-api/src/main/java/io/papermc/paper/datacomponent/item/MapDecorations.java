@@ -19,11 +19,17 @@ import org.jspecify.annotations.Nullable;
 @ApiStatus.NonExtendable
 public interface MapDecorations {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static MapDecorations mapDecorations(final Map<String, DecorationEntry> entries) {
         return mapDecorations().putAll(entries).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static MapDecorations.Builder mapDecorations() {
         return ItemComponentTypesBridge.bridge().mapDecorations();
@@ -39,6 +45,7 @@ public interface MapDecorations {
      *
      * @param id id
      * @return decoration entry, or {@code null} if not present
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable DecorationEntry decoration(String id);
@@ -47,12 +54,15 @@ public interface MapDecorations {
      * Gets the decoration entries.
      *
      * @return the decoration entries
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable Map<String, DecorationEntry> decorations();
 
     /**
      * Decoration present on the map.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -62,6 +72,7 @@ public interface MapDecorations {
          * Type of decoration.
          *
          * @return type
+         * @since 1.21.3
          */
         @Contract(pure = true)
         MapCursor.Type type();
@@ -70,6 +81,7 @@ public interface MapDecorations {
          * X world coordinate of the decoration.
          *
          * @return x coordinate
+         * @since 1.21.3
          */
         @Contract(pure = true)
         double x();
@@ -78,6 +90,7 @@ public interface MapDecorations {
          * Z world coordinate of the decoration.
          *
          * @return z coordinate
+         * @since 1.21.3
          */
         @Contract(pure = true)
         double z();
@@ -86,6 +99,7 @@ public interface MapDecorations {
          * Clockwise rotation from north in degrees.
          *
          * @return rotation
+         * @since 1.21.3
          */
         @Contract(pure = true)
         float rotation();
@@ -93,6 +107,8 @@ public interface MapDecorations {
 
     /**
      * Builder for {@link MapDecorations}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     @ApiStatus.Experimental
@@ -115,6 +131,7 @@ public interface MapDecorations {
          * @param entries decorations
          * @return the builder for chaining
          * @see #decorations()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         MapDecorations.Builder putAll(Map<String, DecorationEntry> entries);

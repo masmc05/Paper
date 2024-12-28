@@ -39,16 +39,23 @@ public class DragonEggFormEvent extends BlockFormEvent {
      * when this event is called.
      *
      * @return the dragon battle
+     * @since 1.16.5
      */
     public DragonBattle getDragonBattle() {
         return this.dragonBattle;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

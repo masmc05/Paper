@@ -17,6 +17,7 @@ public interface SculkShrieker extends TileState {
      * Warden.
      *
      * @return current warning level
+     * @since 1.19
      */
     int getWarningLevel();
 
@@ -27,6 +28,7 @@ public interface SculkShrieker extends TileState {
      * Warden.
      *
      * @param level new warning level
+     * @since 1.19
      */
     void setWarningLevel(int level);
 

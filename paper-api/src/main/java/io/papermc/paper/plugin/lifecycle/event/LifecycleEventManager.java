@@ -36,6 +36,7 @@ public interface LifecycleEventManager<O extends LifecycleEventOwner> {
      * @param eventType the event type to listen to
      * @param eventHandler the handler for that event
      * @param <E> the type of the event object
+     * @since 1.20.4
      */
     default <E extends LifecycleEvent> void registerEventHandler(final LifecycleEventType<? super O, ? extends E, ?> eventType, final LifecycleEventHandler<? super E> eventHandler) {
         this.registerEventHandler(eventType.newHandler(eventHandler));
@@ -49,6 +50,7 @@ public interface LifecycleEventManager<O extends LifecycleEventOwner> {
      * returned by {@link LifecycleEventType#newHandler(LifecycleEventHandler)}.
      *
      * @param handlerConfiguration the handler configuration to register
+     * @since 1.20.4
      */
     void registerEventHandler(LifecycleEventHandlerConfiguration<? super O> handlerConfiguration);
 }

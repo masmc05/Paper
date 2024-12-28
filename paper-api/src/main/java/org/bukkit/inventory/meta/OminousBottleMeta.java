@@ -13,6 +13,7 @@ public interface OminousBottleMeta extends ItemMeta {
      * Checks for the presence of an amplifier.
      *
      * @return true if a customer amplifier is applied
+     * @since 1.20.6
      */
     boolean hasAmplifier();
 
@@ -23,6 +24,7 @@ public interface OminousBottleMeta extends ItemMeta {
      * method.
      *
      * @return amplifier
+     * @since 1.20.6
      */
     int getAmplifier();
 
@@ -30,6 +32,7 @@ public interface OminousBottleMeta extends ItemMeta {
      * Sets the amplifier amount for an Ominous Bottle's bad omen effect.
      *
      * @param amplifier between 0 and 4
+     * @since 1.20.6
      */
     void setAmplifier(int amplifier);
 

@@ -14,6 +14,7 @@ public interface ConversationCanceller extends Cloneable {
      * Sets the conversation this ConversationCanceller can optionally cancel.
      *
      * @param conversation A conversation.
+     * @since 1.1.0
      */
     public void setConversation(@NotNull Conversation conversation);
 
@@ -23,6 +24,7 @@ public interface ConversationCanceller extends Cloneable {
      * @param context Context information about the conversation.
      * @param input The input text from the user.
      * @return True to cancel the conversation, False otherwise.
+     * @since 1.1.0
      */
     public boolean cancelBasedOnInput(@NotNull ConversationContext context, @NotNull String input);
 

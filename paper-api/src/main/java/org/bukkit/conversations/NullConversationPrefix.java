@@ -15,6 +15,7 @@ public class NullConversationPrefix implements ConversationPrefix {
      *
      * @param context Context information about the conversation.
      * @return An empty string.
+     * @since 1.1.0
      */
     @Override
     @NotNull

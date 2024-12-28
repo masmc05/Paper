@@ -30,15 +30,24 @@ public class PlayerChunkLoadEvent extends ChunkEvent {
         this.player = player;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public Player getPlayer() {
         return this.player;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -25,17 +25,24 @@ public class VehicleEnterEvent extends VehicleEvent implements Cancellable {
      * Gets the Entity that entered the vehicle.
      *
      * @return the Entity that entered the vehicle
+     * @since 1.0.0
      */
     @NotNull
     public Entity getEntered() {
         return entered;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

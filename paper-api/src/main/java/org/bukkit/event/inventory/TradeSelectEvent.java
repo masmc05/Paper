@@ -30,11 +30,15 @@ public class TradeSelectEvent extends InventoryInteractEvent {
      * Used to get the index of the trade the player clicked on.
      *
      * @return The index of the trade clicked by the player
+     * @since 1.14
      */
     public int getIndex() {
         return index;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public MerchantInventory getInventory() {
@@ -45,6 +49,7 @@ public class TradeSelectEvent extends InventoryInteractEvent {
      * Get the Merchant involved.
      *
      * @return the Merchant
+     * @since 1.14
      */
     @NotNull
     public Merchant getMerchant() {
@@ -60,12 +65,18 @@ public class TradeSelectEvent extends InventoryInteractEvent {
         return (MerchantView) super.getView();
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

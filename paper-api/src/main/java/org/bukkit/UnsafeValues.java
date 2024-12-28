@@ -38,10 +38,25 @@ public interface UnsafeValues {
      */
     // Paper start
     net.kyori.adventure.text.flattener.ComponentFlattener componentFlattener();
+    /**
+     * @since 1.16.5
+     */
     @Deprecated(forRemoval = true) net.kyori.adventure.text.serializer.plain.PlainComponentSerializer plainComponentSerializer();
+    /**
+     * @since 1.18.1
+     */
     @Deprecated(forRemoval = true) net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer plainTextSerializer();
+    /**
+     * @since 1.16.5
+     */
     @Deprecated(forRemoval = true) net.kyori.adventure.text.serializer.gson.GsonComponentSerializer gsonComponentSerializer();
+    /**
+     * @since 1.16.5
+     */
     @Deprecated(forRemoval = true) net.kyori.adventure.text.serializer.gson.GsonComponentSerializer colorDownsamplingGsonComponentSerializer();
+    /**
+     * @since 1.16.5
+     */
     @Deprecated(forRemoval = true) net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer legacyComponentSerializer();
     /**
      * @since 1.19.2
@@ -84,6 +99,9 @@ public interface UnsafeValues {
      */
     int getDataVersion();
 
+    /**
+     * @since 1.7.2
+     */
     ItemStack modifyItemStack(ItemStack stack, String arguments);
 
     /**
@@ -129,15 +147,27 @@ public interface UnsafeValues {
      */
     boolean removeAdvancement(NamespacedKey key);
 
+    /**
+     * @since 1.18.1
+     */
     @Deprecated(since = "1.21", forRemoval = true)
     Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(Material material, EquipmentSlot slot);
 
+    /**
+     * @since 1.18.2
+     */
     @Deprecated(since = "1.21", forRemoval = true)
     CreativeCategory getCreativeCategory(Material material);
 
+    /**
+     * @since 1.19.3
+     */
     @Deprecated(since = "1.21", forRemoval = true)
     String getBlockTranslationKey(Material material);
 
+    /**
+     * @since 1.19.3
+     */
     @Deprecated(since = "1.21", forRemoval = true)
     String getItemTranslationKey(Material material);
 
@@ -151,6 +181,9 @@ public interface UnsafeValues {
      */
     String getTranslationKey(ItemStack itemStack);
 
+    /**
+     * @since 1.20.4
+     */
     @Deprecated(since = "1.21.3", forRemoval = true)
     String getTranslationKey(Attribute attribute);
 
@@ -189,10 +222,16 @@ public interface UnsafeValues {
     @ApiStatus.Internal
     Biome getCustomBiome();
 
+    /**
+     * @since 1.15
+     */
     // Paper start
     @Deprecated(forRemoval = true)
     boolean isSupportedApiVersion(String apiVersion);
 
+    /**
+     * @since 1.13
+     */
     @Deprecated(forRemoval = true)
     static boolean isLegacyPlugin(org.bukkit.plugin.Plugin plugin) {
         return !Bukkit.getUnsafe().isSupportedApiVersion(plugin.getDescription().getAPIVersion());
@@ -333,6 +372,7 @@ public interface UnsafeValues {
      * @param z Z-coordinate of the block
      * @deprecated custom biomes are properly supported in API now
      * @return the biome's {@link NamespacedKey}
+     * @since 1.19.2
      */
     @org.jetbrains.annotations.NotNull
     @Deprecated(since = "1.21.3", forRemoval = true)
@@ -351,6 +391,7 @@ public interface UnsafeValues {
      * @param biomeKey Biome key
      * @deprecated custom biomes are properly supported in API now
      * @throws IllegalStateException if no biome by the given key is registered.
+     * @since 1.19.2
      */
     @Deprecated(since = "1.21.3", forRemoval = true)
     void setBiomeKey(RegionAccessor accessor, int x, int y, int z, NamespacedKey biomeKey);

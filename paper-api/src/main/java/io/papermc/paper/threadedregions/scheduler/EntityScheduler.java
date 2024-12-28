@@ -44,6 +44,7 @@ public interface EntityScheduler {
      * @return {@code true} if the task was scheduled, which means that either the run function or the retired function
      *         will be invoked (but never both), or {@code false} indicating neither the run nor retired function will be invoked
      *         since the scheduler has been retired.
+     * @since 1.20.1
      */
     boolean execute(@NotNull Plugin plugin, @NotNull Runnable run, @Nullable Runnable retired, long delay);
 
@@ -61,6 +62,7 @@ public interface EntityScheduler {
      * @param task The task to execute
      * @param retired Retire callback to run if the entity is retired before the run callback can be invoked, may be null.
      * @return The {@link ScheduledTask} that represents the scheduled task, or {@code null} if the entity has been removed.
+     * @since 1.20.1
      */
     @Nullable ScheduledTask run(@NotNull Plugin plugin, @NotNull Consumer<ScheduledTask> task,
                                 @Nullable Runnable retired);
@@ -80,6 +82,7 @@ public interface EntityScheduler {
      * @param retired Retire callback to run if the entity is retired before the run callback can be invoked, may be null.
      * @param delayTicks The delay, in ticks.
      * @return The {@link ScheduledTask} that represents the scheduled task, or {@code null} if the entity has been removed.
+     * @since 1.20.1
      */
     @Nullable ScheduledTask runDelayed(@NotNull Plugin plugin, @NotNull Consumer<ScheduledTask> task,
                                        @Nullable Runnable retired, long delayTicks);
@@ -100,6 +103,7 @@ public interface EntityScheduler {
      * @param initialDelayTicks The initial delay, in ticks.
      * @param periodTicks The period, in ticks.
      * @return The {@link ScheduledTask} that represents the scheduled task, or {@code null} if the entity has been removed.
+     * @since 1.20.1
      */
     @Nullable ScheduledTask runAtFixedRate(@NotNull Plugin plugin, @NotNull Consumer<ScheduledTask> task,
                                            @Nullable Runnable retired, long initialDelayTicks, long periodTicks);

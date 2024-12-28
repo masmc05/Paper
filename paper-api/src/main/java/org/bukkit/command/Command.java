@@ -42,6 +42,7 @@ public abstract class Command {
     public co.aikar.timings.Timing timings; // Paper
     /**
      * @deprecated Timings will be removed in the future
+     * @since 1.9.4
      */
     @Deprecated(forRemoval = true)
     @NotNull public String getTimingName() {return getName();} // Paper
@@ -67,6 +68,7 @@ public abstract class Command {
      * @param commandLabel The alias of the command used
      * @param args All arguments passed to the command, split via ' '
      * @return true if the command was successful, otherwise false
+     * @since 1.0.0
      */
     public abstract boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String[] args);
 
@@ -135,6 +137,7 @@ public abstract class Command {
      * Returns the name of this command
      *
      * @return Name of this command
+     * @since 1.0.0
      */
     @NotNull
     public String getName() {
@@ -166,6 +169,7 @@ public abstract class Command {
      * command
      *
      * @return Permission name, or null if none
+     * @since 1.0.0
      */
     @Nullable
     public String getPermission() {
@@ -177,6 +181,7 @@ public abstract class Command {
      * command
      *
      * @param permission Permission name or null
+     * @since 1.0.0
      */
     public void setPermission(@Nullable String permission) {
         this.permission = permission;
@@ -191,6 +196,7 @@ public abstract class Command {
      *
      * @param target User to test
      * @return true if they can use it, otherwise false
+     * @since 1.0.0
      */
     public boolean testPermission(@NotNull CommandSender target) {
         if (testPermissionSilent(target)) {
@@ -235,6 +241,7 @@ public abstract class Command {
      * Returns the label for this command
      *
      * @return Label of this command
+     * @since 1.0.0
      */
     @NotNull
     public String getLabel() {
@@ -251,6 +258,7 @@ public abstract class Command {
      * @param name The command's name
      * @return returns true if the name change happened instantly or false if
      *     the command was already registered
+     * @since 1.0.0
      */
     public boolean setLabel(@NotNull String name) {
         if (name == null) {
@@ -271,6 +279,7 @@ public abstract class Command {
      * @param commandMap the CommandMap to register this command to
      * @return true if the registration was successful (the current registered
      *     CommandMap was the passed CommandMap or null) false otherwise
+     * @since 1.0.0
      */
     public boolean register(@NotNull CommandMap commandMap) {
         if (allowChangesFrom(commandMap)) {
@@ -289,6 +298,7 @@ public abstract class Command {
      * @return true if the unregistration was successful (the current
      *     registered CommandMap was the passed CommandMap or null) false
      *     otherwise
+     * @since 1.0.0
      */
     public boolean unregister(@NotNull CommandMap commandMap) {
         if (allowChangesFrom(commandMap)) {
@@ -309,6 +319,7 @@ public abstract class Command {
      * Returns the current registered state of this command
      *
      * @return true if this command is currently registered false otherwise
+     * @since 1.0.0
      */
     public boolean isRegistered() {
         return (null != this.commandMap);
@@ -318,6 +329,7 @@ public abstract class Command {
      * Returns a list of active aliases of this command
      *
      * @return List of aliases
+     * @since 1.0.0
      */
     @NotNull
     public List<String> getAliases() {
@@ -347,6 +359,7 @@ public abstract class Command {
      * Gets a brief description of this command
      *
      * @return Description of this command
+     * @since 1.0.0
      */
     @NotNull
     public String getDescription() {
@@ -357,6 +370,7 @@ public abstract class Command {
      * Gets an example usage of this command
      *
      * @return One or more example usages
+     * @since 1.0.0
      */
     @NotNull
     public String getUsage() {
@@ -371,6 +385,7 @@ public abstract class Command {
      *
      * @param aliases aliases to register to this command
      * @return this command object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public Command setAliases(@NotNull List<String> aliases) {
@@ -388,6 +403,7 @@ public abstract class Command {
      *
      * @param description new command description
      * @return this command object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public Command setDescription(@NotNull String description) {
@@ -421,6 +437,7 @@ public abstract class Command {
      *
      * @param usage new example usage
      * @return this command object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public Command setUsage(@NotNull String usage) {
@@ -463,6 +480,9 @@ public abstract class Command {
     }
     // Paper end
 
+    /**
+     * @since 1.0.0
+     */
     public static void broadcastCommandMessage(@NotNull CommandSender source, @NotNull String message) {
         broadcastCommandMessage(source, message, true);
     }

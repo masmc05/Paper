@@ -11,6 +11,7 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.9.4
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Comparator extends MaterialData implements Directional, Redstone {
@@ -81,6 +82,7 @@ public class Comparator extends MaterialData implements Directional, Redstone {
      * Sets whether the comparator is in subtraction mode.
      *
      * @param isSubtraction True if the comparator is in subtraction mode, false for normal comparator operation
+     * @since 1.9.4
      */
     public void setSubtractionMode(boolean isSubtraction) {
         setData((byte) (getData() & 0xB | (isSubtraction ? 0x4 : 0x0)));
@@ -90,6 +92,7 @@ public class Comparator extends MaterialData implements Directional, Redstone {
      * Checks whether the comparator is in subtraction mode
      *
      * @return True if the comparator is in subtraction mode, false if normal comparator operation
+     * @since 1.9.4
      */
     public boolean isSubtractionMode() {
         return (getData() & 0x4) != 0;
@@ -101,6 +104,7 @@ public class Comparator extends MaterialData implements Directional, Redstone {
      * @param face The direction to set this comparator to
      *
      * @see BlockFace
+     * @since 1.9.4
      */
     @Override
     public void setFacingDirection(BlockFace face) {
@@ -133,6 +137,7 @@ public class Comparator extends MaterialData implements Directional, Redstone {
      * @return The direction this comparator is facing
      *
      * @see BlockFace
+     * @since 1.9.4
      */
     @Override
     public BlockFace getFacing() {
@@ -168,6 +173,7 @@ public class Comparator extends MaterialData implements Directional, Redstone {
      * Checks if the comparator is powered
      *
      * @return true if the comparator is powered
+     * @since 1.9.4
      */
     @Override
     public boolean isPowered() {
@@ -178,6 +184,7 @@ public class Comparator extends MaterialData implements Directional, Redstone {
      * Checks if the comparator is being powered
      *
      * @return true if the comparator is being powered
+     * @since 1.9.4
      */
     public boolean isBeingPowered() {
         return (getData() & 0x8) != 0;

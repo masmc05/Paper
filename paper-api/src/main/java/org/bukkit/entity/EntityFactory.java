@@ -16,6 +16,7 @@ public interface EntityFactory {
      * @param input the input string
      * @return the created EntitySnapshot
      * @throws IllegalArgumentException if the input string was provided in an invalid or unsupported format
+     * @since 1.20.6
      */
     @NotNull
     EntitySnapshot createEntitySnapshot(@NotNull String input) throws IllegalArgumentException;

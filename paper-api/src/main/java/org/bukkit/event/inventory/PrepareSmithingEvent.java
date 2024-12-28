@@ -20,6 +20,9 @@ public class PrepareSmithingEvent extends com.destroystokyo.paper.event.inventor
         super(inventory, result);
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     @Override
     public SmithingInventory getInventory() {

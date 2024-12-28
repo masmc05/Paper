@@ -16,6 +16,7 @@ public interface Chest extends Directional, Waterlogged {
      * Gets the value of the 'type' property.
      *
      * @return the 'type' value
+     * @since 1.13
      */
     @NotNull
     Type getType();
@@ -32,6 +33,8 @@ public interface Chest extends Directional, Waterlogged {
      * <br>
      * NB: Left and right are relative to the chest itself, i.e opposite to what
      * a player placing the appropriate block would see.
+     *
+     * @since 1.13
      */
     public enum Type {
         /**

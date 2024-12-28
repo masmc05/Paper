@@ -32,6 +32,7 @@ public class PermissionAttachmentInfo {
      * Gets the permissible this is attached to
      *
      * @return Permissible this permission is for
+     * @since 1.0.0
      */
     @NotNull
     public Permissible getPermissible() {
@@ -42,6 +43,7 @@ public class PermissionAttachmentInfo {
      * Gets the permission being set
      *
      * @return Name of the permission
+     * @since 1.0.0
      */
     @NotNull
     public String getPermission() {
@@ -53,6 +55,7 @@ public class PermissionAttachmentInfo {
      * default permissions (usually parent permissions).
      *
      * @return Attachment
+     * @since 1.0.0
      */
     @Nullable
     public PermissionAttachment getAttachment() {
@@ -63,6 +66,7 @@ public class PermissionAttachmentInfo {
      * Gets the value of this permission
      *
      * @return Value of the permission
+     * @since 1.0.0
      */
     public boolean getValue() {
         return value;

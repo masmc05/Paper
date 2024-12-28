@@ -26,6 +26,7 @@ public class CraftItemEvent extends InventoryClickEvent {
 
     /**
      * @return A copy of the current recipe on the crafting matrix.
+     * @since 1.1.0
      */
     @NotNull
     public Recipe getRecipe() {

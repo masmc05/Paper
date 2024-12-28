@@ -26,6 +26,7 @@ public interface Vault extends Directional {
      *
      * @return the 'vault_state' value
      * @deprecated see {@link #getVaultState()}
+     * @since 1.20.6
      */
     @Deprecated(since = "1.21.3", forRemoval = true)
     @NotNull
@@ -51,6 +52,7 @@ public interface Vault extends Directional {
      * Gets the value of the 'ominous' property.
      *
      * @return the 'ominous' value
+     * @since 1.20.6
      */
     boolean isOminous();
 
@@ -58,9 +60,13 @@ public interface Vault extends Directional {
      * Sets the value of the 'ominous' property.
      *
      * @param ominous the new 'ominous' value
+     * @since 1.20.6
      */
     void setOminous(boolean ominous);
 
+    /**
+     * @since 1.20.6
+     */
     public enum State {
 
         INACTIVE,

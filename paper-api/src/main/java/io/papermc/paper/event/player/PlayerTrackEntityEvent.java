@@ -36,6 +36,7 @@ public class PlayerTrackEntityEvent extends PlayerEvent implements Cancellable {
      * Gets the entity that will be tracked
      *
      * @return the entity tracked
+     * @since 1.19.2
      */
     public Entity getEntity() {
         return this.entity;
@@ -57,10 +58,16 @@ public class PlayerTrackEntityEvent extends PlayerEvent implements Cancellable {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.19.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;

@@ -84,6 +84,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * Returns the {@link StatusClient} pinging the server.
      *
      * @return The client
+     * @since 1.12.2
      */
     @NotNull
     public StatusClient getClient() {
@@ -95,6 +96,8 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      *
      * <p>Returns {@code -1} if players are hidden using
      * {@link #shouldHidePlayers()}.</p>
+     *
+     * @since 1.12.2
      */
     @Override
     public int getNumPlayers() {
@@ -112,6 +115,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * is enabled.
      *
      * @param numPlayers The number of online players
+     * @since 1.12.2
      */
     public void setNumPlayers(int numPlayers) {
         if (this.numPlayers != numPlayers) {
@@ -125,6 +129,8 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * <p>
      * Returns {@code -1} if players are hidden using
      * {@link #shouldHidePlayers()}.
+     *
+     * @since 1.12.2
      */
     @Override
     public int getMaxPlayers() {
@@ -144,6 +150,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * when this option is enabled.
      *
      * @return {@code true} if the player count is hidden
+     * @since 1.12.2
      */
     public boolean shouldHidePlayers() {
         return this.hidePlayers;
@@ -158,6 +165,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * when this option is enabled.
      *
      * @param hidePlayers {@code true} if the player count should be hidden
+     * @since 1.12.2
      */
     public void setHidePlayers(boolean hidePlayers) {
         this.hidePlayers = hidePlayers;
@@ -187,6 +195,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      *
      * @return The mutable player sample list
      * @deprecated Use {@link #getListedPlayers()}, as this does not contain real player profiles
+     * @since 1.12.2
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20.6")
@@ -198,6 +207,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * Returns the version that will be sent as server version on the client.
      *
      * @return The server version
+     * @since 1.12.2
      */
     @NotNull
     public String getVersion() {
@@ -208,6 +218,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * Sets the version that will be sent as server version to the client.
      *
      * @param version The server version
+     * @since 1.12.2
      */
     public void setVersion(@NotNull String version) {
         this.version = requireNonNull(version, "version");
@@ -219,6 +230,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      *
      * @return The protocol version of the server, or {@code -1} if the server
      * has not finished initialization yet
+     * @since 1.12.2
      */
     public int getProtocolVersion() {
         return this.protocolVersion;
@@ -229,6 +241,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * of the server to the client.
      *
      * @param protocolVersion The protocol version of the server
+     * @since 1.12.2
      */
     public void setProtocolVersion(int protocolVersion) {
         this.protocolVersion = protocolVersion;
@@ -238,6 +251,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * Gets the server icon sent to the client.
      *
      * @return The icon to send to the client, or {@code null} for none
+     * @since 1.12.2
      */
     @Nullable
     public CachedServerIcon getServerIcon() {
@@ -248,6 +262,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * Sets the server icon sent to the client.
      *
      * @param icon The icon to send to the client, or {@code null} for none
+     * @since 1.12.2
      */
     @Override
     public void setServerIcon(@Nullable CachedServerIcon icon) {
@@ -264,6 +279,8 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * <p>
      * Cancelling this event will cause the connection to be closed immediately,
      * without sending a response to the client.
+     *
+     * @since 1.12.2
      */
     @Override
     public boolean isCancelled() {
@@ -275,6 +292,8 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      * <p>
      * Cancelling this event will cause the connection to be closed immediately,
      * without sending a response to the client.
+     *
+     * @since 1.12.2
      */
     @Override
     public void setCancelled(boolean cancel) {
@@ -295,6 +314,7 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      *     the removed player (based on their {@link UUID}).</li>
      * </ul>
      * @deprecated the Iterable interface will be removed at some point
+     * @since 1.12.2
      */
     @NotNull
     @Override

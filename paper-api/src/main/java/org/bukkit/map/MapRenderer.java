@@ -35,6 +35,7 @@ public abstract class MapRenderer {
      * different players.
      *
      * @return True if contextual, false otherwise.
+     * @since 1.0.0
      */
     public final boolean isContextual() {
         return contextual;
@@ -44,6 +45,7 @@ public abstract class MapRenderer {
      * Initialize this MapRenderer for the given map.
      *
      * @param map The MapView being initialized.
+     * @since 1.0.0
      */
     public void initialize(@NotNull MapView map) {}
 
@@ -53,6 +55,7 @@ public abstract class MapRenderer {
      * @param map The MapView being rendered to.
      * @param canvas The canvas to use for rendering.
      * @param player The player who triggered the rendering.
+     * @since 1.0.0
      */
     public abstract void render(@NotNull MapView map, @NotNull MapCanvas canvas, @NotNull Player player);
 

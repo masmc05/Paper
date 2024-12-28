@@ -15,11 +15,17 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface Unbreakable extends ShownInTooltip<Unbreakable> {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static Unbreakable unbreakable(final boolean showInTooltip) {
         return unbreakable().showInTooltip(showInTooltip).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static Unbreakable.Builder unbreakable() {
         return ItemComponentTypesBridge.bridge().unbreakable();
@@ -27,6 +33,8 @@ public interface Unbreakable extends ShownInTooltip<Unbreakable> {
 
     /**
      * Builder for {@link Unbreakable}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable

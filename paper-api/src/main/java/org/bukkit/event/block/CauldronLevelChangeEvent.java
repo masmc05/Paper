@@ -35,12 +35,16 @@ public class CauldronLevelChangeEvent extends BlockEvent implements Cancellable 
      * Get entity which did this. May be null.
      *
      * @return acting entity
+     * @since 1.9.4
      */
     @Nullable
     public Entity getEntity() {
         return entity;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public ChangeReason getReason() {
         return reason;
@@ -63,6 +67,7 @@ public class CauldronLevelChangeEvent extends BlockEvent implements Cancellable 
      * @return old level
      * @see #getBlock()
      * @deprecated not all cauldron contents are Levelled
+     * @since 1.9.4
      */
     @Deprecated(since = "1.17")
     public int getOldLevel() {
@@ -76,6 +81,7 @@ public class CauldronLevelChangeEvent extends BlockEvent implements Cancellable 
      * @return new level
      * @see #getNewState()
      * @deprecated not all cauldron contents are Levelled
+     * @since 1.9.4
      */
     @Deprecated(since = "1.17")
     public int getNewLevel() {
@@ -89,6 +95,7 @@ public class CauldronLevelChangeEvent extends BlockEvent implements Cancellable 
      * @param newLevel new level
      * @see #getNewState()
      * @deprecated not all cauldron contents are Levelled
+     * @since 1.9.4
      */
     @Deprecated(since = "1.17")
     public void setNewLevel(int newLevel) {
@@ -102,27 +109,42 @@ public class CauldronLevelChangeEvent extends BlockEvent implements Cancellable 
         }
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
     }
 
+    /**
+     * @since 1.9.4
+     */
     public enum ChangeReason {
         /**
          * Player emptying the cauldron by filling their bucket.

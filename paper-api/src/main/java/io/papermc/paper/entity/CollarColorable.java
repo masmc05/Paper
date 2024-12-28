@@ -16,6 +16,7 @@ public interface CollarColorable extends LivingEntity {
      * Get the collar color of this entity
      *
      * @return the color of the collar
+     * @since 1.18.2
      */
     DyeColor getCollarColor();
 
@@ -23,6 +24,7 @@ public interface CollarColorable extends LivingEntity {
      * Set the collar color of this entity
      *
      * @param color the color to apply
+     * @since 1.18.2
      */
     void setCollarColor(DyeColor color);
 }

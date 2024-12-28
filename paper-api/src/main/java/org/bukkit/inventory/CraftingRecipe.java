@@ -25,6 +25,9 @@ public abstract class CraftingRecipe implements Recipe, Keyed {
         this.output = new ItemStack(result);
     }
 
+    /**
+     * @since 1.20.1
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -35,6 +38,7 @@ public abstract class CraftingRecipe implements Recipe, Keyed {
      * Get the result of this recipe.
      *
      * @return The result stack.
+     * @since 1.20.1
      */
     @Override
     @NotNull
@@ -47,6 +51,7 @@ public abstract class CraftingRecipe implements Recipe, Keyed {
      * together when displayed in the client.
      *
      * @return recipe group. An empty string denotes no group. May not be null.
+     * @since 1.20.1
      */
     @NotNull
     public String getGroup() {
@@ -59,6 +64,7 @@ public abstract class CraftingRecipe implements Recipe, Keyed {
      *
      * @param group recipe group. An empty string denotes no group. May not be
      * null.
+     * @since 1.20.1
      */
     public void setGroup(@NotNull String group) {
         Preconditions.checkArgument(group != null, "group cannot be null");
@@ -71,6 +77,7 @@ public abstract class CraftingRecipe implements Recipe, Keyed {
      * Defaults to {@link CraftingBookCategory#MISC} if not set.
      *
      * @return recipe book category
+     * @since 1.20.1
      */
     @NotNull
     public CraftingBookCategory getCategory() {
@@ -83,6 +90,7 @@ public abstract class CraftingRecipe implements Recipe, Keyed {
      * Defaults to {@link CraftingBookCategory#MISC} if not set.
      *
      * @param category recipe book category
+     * @since 1.20.1
      */
     public void setCategory(@NotNull CraftingBookCategory category) {
         Preconditions.checkArgument(category != null, "category cannot be null");

@@ -27,6 +27,7 @@ public class PrepareItemCraftEvent extends InventoryEvent {
      * repair.
      *
      * @return The recipe being crafted.
+     * @since 1.1.0
      */
     @Nullable
     public Recipe getRecipe() {
@@ -35,6 +36,7 @@ public class PrepareItemCraftEvent extends InventoryEvent {
 
     /**
      * @return The crafting inventory on which the recipe was formed.
+     * @since 1.1.0
      */
     @NotNull
     @Override
@@ -47,17 +49,24 @@ public class PrepareItemCraftEvent extends InventoryEvent {
      * than a crafting recipe.
      *
      * @return True if this is a repair.
+     * @since 1.1.0
      */
     public boolean isRepair() {
         return repair;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

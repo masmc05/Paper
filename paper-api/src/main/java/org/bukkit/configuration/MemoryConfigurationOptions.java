@@ -13,12 +13,18 @@ public class MemoryConfigurationOptions extends ConfigurationOptions {
         super(configuration);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public MemoryConfiguration configuration() {
         return (MemoryConfiguration) super.configuration();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public MemoryConfigurationOptions copyDefaults(boolean value) {
@@ -26,6 +32,9 @@ public class MemoryConfigurationOptions extends ConfigurationOptions {
         return this;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public MemoryConfigurationOptions pathSeparator(char value) {

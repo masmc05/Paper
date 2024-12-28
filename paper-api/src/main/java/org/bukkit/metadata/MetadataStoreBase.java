@@ -124,6 +124,7 @@ public abstract class MetadataStoreBase<T> {
      * @param owningPlugin the plugin requesting the invalidation.
      * @throws IllegalArgumentException If plugin is null
      * @see MetadataStore#invalidateAll(org.bukkit.plugin.Plugin)
+     * @since 1.1.0
      */
     public void invalidateAll(@NotNull Plugin owningPlugin) { // Paper
         Preconditions.checkArgument(owningPlugin != null, "Plugin cannot be null");

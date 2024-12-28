@@ -41,6 +41,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      *
      * @return block specific metadata
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     byte getData();
@@ -61,6 +62,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * @param modY Y-coordinate offset
      * @param modZ Z-coordinate offset
      * @return Block at the given offsets
+     * @since 1.0.0
      */
     @NotNull
     Block getRelative(int modX, int modY, int modZ);
@@ -73,6 +75,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * @param face Face of this block to return
      * @return Block at the given face
      * @see #getRelative(BlockFace, int)
+     * @since 1.0.0
      */
     @NotNull
     Block getRelative(@NotNull BlockFace face);
@@ -92,6 +95,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * @param face Face of this block to return
      * @param distance Distance to get the block at
      * @return Block at the given face
+     * @since 1.0.0
      */
     @NotNull
     Block getRelative(@NotNull BlockFace face, int distance);
@@ -100,6 +104,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Gets the type of this block
      *
      * @return block type
+     * @since 1.0.0
      */
     @NotNull
     Material getType();
@@ -108,6 +113,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Gets the light level between 0-15
      *
      * @return light level
+     * @since 1.0.0
      */
     byte getLightLevel();
 
@@ -136,6 +142,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Gets the world which contains this Block
      *
      * @return World containing this block
+     * @since 1.0.0
      */
     @NotNull
     World getWorld();
@@ -144,6 +151,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Gets the x-coordinate of this block
      *
      * @return x-coordinate
+     * @since 1.0.0
      */
     int getX();
 
@@ -151,6 +159,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Gets the y-coordinate of this block
      *
      * @return y-coordinate
+     * @since 1.0.0
      */
     int getY();
 
@@ -158,6 +167,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Gets the z-coordinate of this block
      *
      * @return z-coordinate
+     * @since 1.0.0
      */
     int getZ();
 
@@ -250,6 +260,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * @param itemStack The (tool) itemstack
      * @return whether the block will drop items
      * @deprecated partially replaced by {@link Block#isPreferredTool(ItemStack)}
+     * @since 1.16.5
      */
     @Deprecated(since = "1.21", forRemoval = true) // Paper
     boolean isValidTool(@NotNull ItemStack itemStack);
@@ -259,6 +270,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Gets the Location of the block
      *
      * @return Location of block
+     * @since 1.0.0
      */
     @NotNull
     Location getLocation();
@@ -281,6 +293,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Gets the chunk which contains this block
      *
      * @return Containing Chunk
+     * @since 1.0.0
      */
     @NotNull
     Chunk getChunk();
@@ -319,6 +332,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Sets the type of this block
      *
      * @param type Material to change this block to
+     * @since 1.0.0
      */
     void setType(@NotNull Material type);
 
@@ -359,6 +373,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      *
      * @param block Block to compare against this block
      * @return BlockFace of this block which has the requested block, or null
+     * @since 1.0.0
      */
     @Nullable
     BlockFace getFace(@NotNull Block block);
@@ -371,6 +386,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * that (for example) a sign is still a sign after you capture its state.
      *
      * @return BlockState with the current state of this block.
+     * @since 1.0.0
      */
     @NotNull
     BlockState getState();
@@ -391,6 +407,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      *
      * @return Biome type containing this block
      * @see #getComputedBiome()
+     * @since 1.0.0
      */
     @NotNull
     Biome getBiome();
@@ -419,6 +436,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Returns true if the block is being powered by Redstone.
      *
      * @return True if the block is powered.
+     * @since 1.0.0
      */
     boolean isBlockPowered();
 
@@ -426,6 +444,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Returns true if the block is being indirectly powered by Redstone.
      *
      * @return True if the block is indirectly powered.
+     * @since 1.0.0
      */
     boolean isBlockIndirectlyPowered();
 
@@ -434,6 +453,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      *
      * @param face The block face
      * @return True if the block face is powered.
+     * @since 1.0.0
      */
     boolean isBlockFacePowered(@NotNull BlockFace face);
 
@@ -442,6 +462,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      *
      * @param face The block face
      * @return True if the block face is indirectly powered.
+     * @since 1.0.0
      */
     boolean isBlockFaceIndirectlyPowered(@NotNull BlockFace face);
 
@@ -451,6 +472,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * @param face the face of the block to query or BlockFace.SELF for the
      *     block itself
      * @return The power level.
+     * @since 1.0.0
      */
     int getBlockPower(@NotNull BlockFace face);
 
@@ -458,6 +480,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Returns the redstone power being provided to this block
      *
      * @return The power level.
+     * @since 1.0.0
      */
     int getBlockPower();
 
@@ -468,6 +491,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Material#AIR}.
      *
      * @return true if this block is empty
+     * @since 1.0.0
      */
     boolean isEmpty();
 
@@ -478,6 +502,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Material#WATER} or {@link Material#LAVA}.
      *
      * @return true if this block is liquid
+     * @since 1.0.0
      */
     boolean isLiquid();
 
@@ -536,6 +561,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * required then please use {@link World#getTemperature(int, int, int)}.
      *
      * @return Temperature of this block
+     * @since 1.0.0
      */
     double getTemperature();
 
@@ -543,6 +569,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Gets the humidity of the biome of this block
      *
      * @return Humidity of this block
+     * @since 1.0.0
      */
     double getHumidity();
 
@@ -550,6 +577,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      * Returns the reaction of the block when moved by a piston
      *
      * @return reaction
+     * @since 1.0.0
      */
     @NotNull
     PistonMoveReaction getPistonMoveReaction();
@@ -816,6 +844,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
      *
      * @return the sound group for this block
      * @deprecated use {@link #getBlockSoundGroup()}
+     * @since 1.14.2
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.18.2")
@@ -831,6 +860,7 @@ public interface Block extends Metadatable, Translatable, net.kyori.adventure.tr
 
     /**
      * @deprecated use {@link #translationKey()}
+     * @since 1.16.2
      */
     @NotNull
     @Deprecated(forRemoval = true)

@@ -14,6 +14,7 @@ public interface CompassMeta extends ItemMeta {
      * Checks if this compass has been paired to a lodestone.
      *
      * @return paired status
+     * @since 1.16.1
      */
     boolean hasLodestone();
 
@@ -23,6 +24,7 @@ public interface CompassMeta extends ItemMeta {
      * Check {@link #hasLodestone()} first!
      *
      * @return lodestone location
+     * @since 1.16.1
      */
     @Nullable
     Location getLodestone();
@@ -32,6 +34,7 @@ public interface CompassMeta extends ItemMeta {
      *
      * @param lodestone new location or null to clear the targeted location
      * @see #clearLodestone() to reset the compass to a normal compass
+     * @since 1.16.1
      */
     void setLodestone(@Nullable Location lodestone);
 
@@ -42,6 +45,7 @@ public interface CompassMeta extends ItemMeta {
      * location.
      *
      * @return lodestone tracked
+     * @since 1.16.1
      */
     boolean isLodestoneTracked();
 
@@ -53,6 +57,7 @@ public interface CompassMeta extends ItemMeta {
      *
      * @param tracked new tracked status
      * @see #clearLodestone() to reset the compass to a normal compass
+     * @since 1.16.1
      */
     void setLodestoneTracked(boolean tracked);
 

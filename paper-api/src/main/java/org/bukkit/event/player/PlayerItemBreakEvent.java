@@ -26,18 +26,25 @@ public class PlayerItemBreakEvent extends PlayerEvent {
      * Gets the item that broke
      *
      * @return The broken item
+     * @since 1.3.1
      */
     @NotNull
     public ItemStack getBrokenItem() {
         return brokenItem;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

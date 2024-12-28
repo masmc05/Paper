@@ -21,9 +21,15 @@ public class ExactMatchConversationCanceller implements ConversationCanceller {
         this.escapeSequence = escapeSequence;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setConversation(@NotNull Conversation conversation) {}
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean cancelBasedOnInput(@NotNull ConversationContext context, @NotNull String input) {
         return input.equals(escapeSequence);

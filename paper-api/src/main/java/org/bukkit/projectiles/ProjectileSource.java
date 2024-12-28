@@ -22,6 +22,7 @@ public interface ProjectileSource {
      * @param <T> a projectile subclass
      * @param projectile class of the projectile to launch
      * @return the launched projectile
+     * @since 1.7.10
      */
     @NotNull
     public <T extends Projectile> T launchProjectile(@NotNull Class<? extends T> projectile);
@@ -38,6 +39,7 @@ public interface ProjectileSource {
      * @param projectile class of the projectile to launch
      * @param velocity the velocity with which to launch
      * @return the launched projectile
+     * @since 1.7.10
      */
     @NotNull
     public <T extends Projectile> T launchProjectile(@NotNull Class<? extends T> projectile, @Nullable Vector velocity);

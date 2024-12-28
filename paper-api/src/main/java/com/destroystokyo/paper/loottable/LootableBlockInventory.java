@@ -14,6 +14,7 @@ public interface LootableBlockInventory extends LootableInventory {
     /**
      * Gets the block that is lootable
      * @return The Block
+     * @since 1.9.4
      */
     Block getBlock();
 }

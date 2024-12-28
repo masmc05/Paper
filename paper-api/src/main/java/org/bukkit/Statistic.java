@@ -129,6 +129,7 @@ public enum Statistic implements Keyed {
      * <code>getType() != Type.UNTYPED</code>
      *
      * @return true if this is a substatistic
+     * @since 1.0.0
      */
     public boolean isSubstatistic() {
         return type != Type.UNTYPED;
@@ -141,6 +142,7 @@ public enum Statistic implements Keyed {
      * <code>getType() == Type.BLOCK</code>
      *
      * @return true if this deals with blocks
+     * @since 1.0.0
      */
     public boolean isBlock() {
         return type == Type.BLOCK;

@@ -18,11 +18,17 @@ public class WorldUnloadEvent extends WorldEvent implements Cancellable {
         super(world);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.isCancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.isCancelled = cancel;

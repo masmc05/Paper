@@ -29,6 +29,7 @@ public class EntityCombustByBlockEvent extends EntityCombustEvent {
      * WARNING: block may be null.
      *
      * @return the Block that set the combustee alight.
+     * @since 1.1.0
      */
     @Nullable
     public Block getCombuster() {

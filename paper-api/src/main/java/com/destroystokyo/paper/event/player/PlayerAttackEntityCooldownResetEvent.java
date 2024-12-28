@@ -34,6 +34,7 @@ public class PlayerAttackEntityCooldownResetEvent extends PlayerEvent implements
      * Get the value of the players cooldown attack strength when they initiated the attack
      *
      * @return returns the original player cooldown value
+     * @since 1.15.2
      */
     public float getCooledAttackStrength() {
         return this.cooledAttackStrength;
@@ -43,6 +44,7 @@ public class PlayerAttackEntityCooldownResetEvent extends PlayerEvent implements
      * Returns the entity attacked by the player
      *
      * @return the entity attacked by the player
+     * @since 1.15.2
      */
     public Entity getAttackedEntity() {
         return this.attackedEntity;
@@ -52,6 +54,8 @@ public class PlayerAttackEntityCooldownResetEvent extends PlayerEvent implements
      * {@inheritDoc}
      * <p>
      * If an attack cooldown event is cancelled, the players attack strength will remain at the same value instead of being reset.
+     *
+     * @since 1.15.2
      */
     @Override
     public boolean isCancelled() {
@@ -62,17 +66,25 @@ public class PlayerAttackEntityCooldownResetEvent extends PlayerEvent implements
      * {@inheritDoc}
      * <p>
      * Cancelling this event will prevent the target player from having their cooldown reset from attacking this entity
+     *
+     * @since 1.15.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

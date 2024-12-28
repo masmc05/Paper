@@ -17,6 +17,7 @@ public interface ListPersistentDataType<P, C> extends PersistentDataType<List<P>
      * Provides the persistent data type of the elements found in the list.
      *
      * @return the persistent data type.
+     * @since 1.20.4
      */
     @NotNull
     PersistentDataType<P, C> elementType();

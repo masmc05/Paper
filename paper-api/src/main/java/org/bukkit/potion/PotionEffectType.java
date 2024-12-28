@@ -240,6 +240,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      * @param amplifier the effect's amplifier
      * @return a resulting potion effect
      * @see PotionBrewer#createEffect(PotionEffectType, int, int)
+     * @since 1.1.0
      */
     @NotNull
     public abstract PotionEffect createEffect(int duration, int amplifier);
@@ -248,6 +249,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      * Returns whether the effect of this type happens once, immediately.
      *
      * @return whether this type is normally instant
+     * @since 1.1.0
      */
     public abstract boolean isInstant();
 
@@ -274,6 +276,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      *
      * @return duration modifier
      * @deprecated unused, always 1.0
+     * @since 1.1.0
      */
     @Deprecated(since = "1.14")
     public abstract double getDurationModifier();
@@ -283,6 +286,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      *
      * @return Unique ID
      * @deprecated use {@link #key()}
+     * @since 1.1.0
      */
     @Deprecated(since = "1.6.2", forRemoval = true) // Paper
     public abstract int getId();
@@ -292,6 +296,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      *
      * @return The name of this effect type
      * @deprecated only for backwards compatibility, use {@link #getKey()} instead.
+     * @since 1.1.0
      */
     @NotNull
     @Deprecated(since = "1.20.3")
@@ -348,6 +353,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      * @param name Name of PotionEffectType to fetch
      * @return Resulting PotionEffectType, or null if not found.
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * @since 1.1.0
      */
     @Nullable
     @Deprecated(since = "1.20.3")
@@ -359,6 +365,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
     /**
      * @return an array of all known PotionEffectTypes.
      * @deprecated use {@link Registry#iterator()}.
+     * @since 1.1.0
      */
     @NotNull
     @Deprecated(since = "1.20.3")
@@ -416,6 +423,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
          * of this category.
          *
          * @return the text color
+         * @since 1.18.1
          */
         @NotNull
         public net.kyori.adventure.text.format.TextColor getColor() {

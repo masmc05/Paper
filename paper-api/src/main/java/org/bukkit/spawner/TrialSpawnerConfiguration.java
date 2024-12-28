@@ -18,6 +18,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * cooldown.
      *
      * @return the number of entities
+     * @since 1.21
      */
     public float getBaseSpawnsBeforeCooldown();
 
@@ -26,6 +27,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * cooldown.
      *
      * @param amount the number of entities
+     * @since 1.21
      */
     public void setBaseSpawnsBeforeCooldown(float amount);
 
@@ -35,6 +37,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * entities until the existing entities are killed or move too far away.
      *
      * @return the number of entities
+     * @since 1.21
      */
     public float getBaseSimultaneousEntities();
 
@@ -44,6 +47,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * entities until the existing entities are killed or move too far away.
      *
      * @param amount the number of entities
+     * @since 1.21
      */
     public void setBaseSimultaneousEntities(float amount);
 
@@ -52,6 +56,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * before going into cooldown.
      *
      * @return the number of entities
+     * @since 1.21
      */
     public float getAdditionalSpawnsBeforeCooldown();
 
@@ -60,6 +65,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * before going into cooldown.
      *
      * @param amount the number of entities
+     * @since 1.21
      */
     public void setAdditionalSpawnsBeforeCooldown(float amount);
 
@@ -70,6 +76,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * entities until the existing entities are killed or move too far away.
      *
      * @return the number of entities
+     * @since 1.21
      */
     public float getAdditionalSimultaneousEntities();
 
@@ -80,6 +87,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * entities until the existing entities are killed or move too far away.
      *
      * @param amount the number of entities
+     * @since 1.21
      */
     public void setAdditionalSimultaneousEntities(float amount);
 
@@ -89,6 +97,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      *
      * @return a map of loot tables and their associated weight, or an empty
      *         map if there are none
+     * @since 1.21
      */
     @NotNull
     public Map<LootTable, Integer> getPossibleRewards();
@@ -99,6 +108,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      *
      * @param table  the loot table
      * @param weight the weight, must be at least 1
+     * @since 1.21
      */
     public void addPossibleReward(@NotNull LootTable table, int weight);
 
@@ -107,6 +117,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * can pick a reward from.
      *
      * @param table the loot table
+     * @since 1.21
      */
     public void removePossibleReward(@NotNull LootTable table);
 
@@ -118,6 +129,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      *
      * @param rewards a map of loot tables and their weights, or null to clear all
      *                possible tables
+     * @since 1.21
      */
     public void setPossibleRewards(@NotNull Map<LootTable, Integer> rewards);
 }

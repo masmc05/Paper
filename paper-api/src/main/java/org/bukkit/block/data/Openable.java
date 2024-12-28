@@ -11,6 +11,7 @@ public interface Openable extends BlockData {
      * Gets the value of the 'open' property.
      *
      * @return the 'open' value
+     * @since 1.13
      */
     boolean isOpen();
 
@@ -18,6 +19,7 @@ public interface Openable extends BlockData {
      * Sets the value of the 'open' property.
      *
      * @param open the new 'open' value
+     * @since 1.13
      */
     void setOpen(boolean open);
 }

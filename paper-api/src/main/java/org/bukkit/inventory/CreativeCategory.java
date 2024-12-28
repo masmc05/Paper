@@ -59,6 +59,10 @@ public enum CreativeCategory implements net.kyori.adventure.translation.Translat
         this.translationKey = "itemGroup." + translationKey;
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.18.2
+     */
     @Override
     public @org.jetbrains.annotations.NotNull String translationKey() {
         return this.translationKey;

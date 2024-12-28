@@ -25,28 +25,41 @@ public class EntityMountEvent extends EntityEvent implements Cancellable {
      * Gets the entity which will be ridden.
      *
      * @return mounted entity
+     * @since 1.20.4
      */
     @NotNull
     public Entity getMount() {
         return mount;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

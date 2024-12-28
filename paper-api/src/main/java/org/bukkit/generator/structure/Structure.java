@@ -60,6 +60,7 @@ public abstract class Structure implements Keyed {
      * Returns the type of the structure.
      *
      * @return the type of structure
+     * @since 1.19
      */
     @NotNull
     public abstract StructureType getStructureType();
@@ -67,6 +68,7 @@ public abstract class Structure implements Keyed {
     /**
      * @deprecated use {@link Registry#getKey(Keyed)}, {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)},
      * and {@link io.papermc.paper.registry.RegistryKey#STRUCTURE}. Structures can exist without a key.
+     * @since 1.20.4
      */
     @Override
     @Deprecated(since = "1.20.4", forRemoval = true)
@@ -75,6 +77,7 @@ public abstract class Structure implements Keyed {
     /**
      * @deprecated use {@link Registry#getKey(Keyed)}, {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)},
      * and {@link io.papermc.paper.registry.RegistryKey#STRUCTURE}. Structures can exist without a key.
+     * @since 1.21.3
      */
     @Override
     @Deprecated(since = "1.20.4", forRemoval = true)

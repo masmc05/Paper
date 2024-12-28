@@ -30,11 +30,17 @@ public final class ChatEvent extends AbstractChatEvent {
         super(false, player, viewers, renderer, message, originalMessage, signedMessage);
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

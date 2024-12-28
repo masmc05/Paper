@@ -40,6 +40,7 @@ public class PlayerAttemptPickupItemEvent extends PlayerEvent implements Cancell
      * Gets the Item attempted by the player.
      *
      * @return Item
+     * @since 1.12
      */
     public Item getItem() {
         return this.item;
@@ -94,11 +95,17 @@ public class PlayerAttemptPickupItemEvent extends PlayerEvent implements Cancell
         this.flyAtPlayer = !cancel;
     }
 
+    /**
+     * @since 1.12
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

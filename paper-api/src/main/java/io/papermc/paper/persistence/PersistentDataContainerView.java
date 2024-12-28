@@ -47,6 +47,7 @@ public interface PersistentDataContainerView {
      * @throws IllegalArgumentException if the key to look up is null
      * @throws IllegalArgumentException if the type to cast the found object to is
      * null
+     * @since 1.21
      */
     <P, C> boolean has(NamespacedKey key, PersistentDataType<P, C> type);
 
@@ -64,6 +65,7 @@ public interface PersistentDataContainerView {
      * @param key the key the value is stored under
      * @return if a value with the provided key exists
      * @throws IllegalArgumentException if the key to look up is null
+     * @since 1.21
      */
     boolean has(NamespacedKey key);
 
@@ -85,6 +87,7 @@ public interface PersistentDataContainerView {
      * @throws IllegalArgumentException if no suitable adapter was found for
      * the {@link
      * PersistentDataType#getPrimitiveType()}
+     * @since 1.21
      */
     <P, C> @Nullable C get(NamespacedKey key, PersistentDataType<P, C> type);
 
@@ -119,6 +122,7 @@ public interface PersistentDataContainerView {
      * instance.
      *
      * @return the key set
+     * @since 1.21
      */
     Set<NamespacedKey> getKeys();
 
@@ -127,6 +131,7 @@ public interface PersistentDataContainerView {
      * inside it.
      *
      * @return the boolean
+     * @since 1.21
      */
     boolean isEmpty();
 
@@ -140,6 +145,7 @@ public interface PersistentDataContainerView {
      * @param other the container to copy to
      * @param replace whether to replace any matching values in the target container
      * @throws IllegalArgumentException if the other container is null
+     * @since 1.21
      */
     void copyTo(PersistentDataContainer other, boolean replace);
 
@@ -147,6 +153,7 @@ public interface PersistentDataContainerView {
      * Returns the adapter context this tag container uses.
      *
      * @return the tag context
+     * @since 1.21
      */
     PersistentDataAdapterContext getAdapterContext();
 
@@ -156,6 +163,7 @@ public interface PersistentDataContainerView {
      *
      * @return a binary representation of this container
      * @throws java.io.IOException if we fail to write this container to a byte array
+     * @since 1.21
      */
     byte[] serializeToBytes() throws java.io.IOException;
 }

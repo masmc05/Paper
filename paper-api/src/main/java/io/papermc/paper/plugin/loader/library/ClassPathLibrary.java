@@ -18,6 +18,7 @@ public interface ClassPathLibrary {
      *
      * @param store the library store instance to register this library into
      * @throws LibraryLoadingException if library loading failed for this classpath library
+     * @since 1.19.3
      */
     void register(LibraryStore store) throws LibraryLoadingException;
 }

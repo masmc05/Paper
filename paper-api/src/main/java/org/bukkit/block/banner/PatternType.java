@@ -63,6 +63,7 @@ public interface PatternType extends OldEnum<PatternType>, Keyed {
     /**
      * @deprecated use {@link Registry#getKey(Keyed)}, {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)},
      * and {@link io.papermc.paper.registry.RegistryKey#BANNER_PATTERN}. PatternTypes can exist without a key.
+     * @since 1.21.3
      */
     @Deprecated(since = "1.20.5", forRemoval = true)
     @Override
@@ -73,6 +74,7 @@ public interface PatternType extends OldEnum<PatternType>, Keyed {
     /**
      * @deprecated use {@link Registry#getKey(Keyed)}, {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)},
      * and {@link io.papermc.paper.registry.RegistryKey#BANNER_PATTERN}. PatternTypes can exist without a key.
+     * @since 1.20.4
      */
     @Deprecated(since = "1.20.5", forRemoval = true)
     // Paper end - deprecate getKey
@@ -87,6 +89,7 @@ public interface PatternType extends OldEnum<PatternType>, Keyed {
      * @return the pattern's identifier
      * @see #getKey
      * @deprecated magic value
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.20.4", forRemoval = true)
@@ -100,6 +103,7 @@ public interface PatternType extends OldEnum<PatternType>, Keyed {
      * @return the matched pattern type or null
      * @see Registry#BANNER_PATTERN
      * @deprecated magic value, use {@link Registry#get(NamespacedKey)} instead
+     * @since 1.8
      */
     @Contract("null -> null")
     @Nullable
@@ -127,6 +131,7 @@ public interface PatternType extends OldEnum<PatternType>, Keyed {
      * @param name of the pattern type.
      * @return the pattern type with the given name.
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -139,6 +144,7 @@ public interface PatternType extends OldEnum<PatternType>, Keyed {
     /**
      * @return an array of all known pattern types.
      * @deprecated use {@link Registry#iterator()}.
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

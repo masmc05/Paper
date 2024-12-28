@@ -29,6 +29,7 @@ public class EntityExhaustionEvent extends EntityEvent implements Cancellable {
      * Gets the {@link ExhaustionReason} for this event
      *
      * @return the exhaustion reason
+     * @since 1.16.5
      */
     @NotNull
     public ExhaustionReason getExhaustionReason() {
@@ -39,6 +40,7 @@ public class EntityExhaustionEvent extends EntityEvent implements Cancellable {
      * Get the amount of exhaustion to add to the player's current exhaustion.
      *
      * @return amount of exhaustion
+     * @since 1.16.5
      */
     public float getExhaustion() {
         return exhaustion;
@@ -52,22 +54,32 @@ public class EntityExhaustionEvent extends EntityEvent implements Cancellable {
      * unknown behavior for when exhaustion is below 0.
      *
      * @param exhaustion new exhaustion to add
+     * @since 1.16.5
      */
     public void setExhaustion(float exhaustion) {
         this.exhaustion = exhaustion;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     @Override
     public HumanEntity getEntity() {
         return (HumanEntity) super.getEntity();
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
@@ -75,6 +87,8 @@ public class EntityExhaustionEvent extends EntityEvent implements Cancellable {
 
     /**
      * The reason for why a PlayerExhaustionEvent takes place
+     *
+     * @since 1.16.5
      */
     public enum ExhaustionReason {
 
@@ -138,12 +152,18 @@ public class EntityExhaustionEvent extends EntityEvent implements Cancellable {
         UNKNOWN
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

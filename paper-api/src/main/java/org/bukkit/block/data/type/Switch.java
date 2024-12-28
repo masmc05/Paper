@@ -15,6 +15,7 @@ public interface Switch extends Directional, FaceAttachable, Powerable {
      *
      * @return the 'face' value
      * @deprecated use {@link #getAttachedFace()}
+     * @since 1.13
      */
     @NotNull
     @Deprecated(since = "1.15.2")
@@ -33,6 +34,7 @@ public interface Switch extends Directional, FaceAttachable, Powerable {
      * The face to which a switch type block is stuck.
      *
      * @deprecated use {@link AttachedFace}
+     * @since 1.13
      */
     @Deprecated(since = "1.15.2")
     public enum Face {

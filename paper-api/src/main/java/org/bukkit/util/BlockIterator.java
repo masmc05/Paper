@@ -299,6 +299,8 @@ public class BlockIterator implements Iterator<Block> {
 
     /**
      * Returns true if the iteration has more elements
+     *
+     * @since 1.0.0
      */
 
     @Override
@@ -311,6 +313,7 @@ public class BlockIterator implements Iterator<Block> {
      * Returns the next Block in the trace
      *
      * @return the next Block in the trace
+     * @since 1.0.0
      */
     @Override
     @NotNull
@@ -323,6 +326,10 @@ public class BlockIterator implements Iterator<Block> {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.0.0
+     */
     @Override
     public void remove() {
         throw new UnsupportedOperationException("[BlockIterator] doesn't support block removal");

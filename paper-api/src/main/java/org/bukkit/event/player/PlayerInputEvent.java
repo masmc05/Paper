@@ -27,18 +27,25 @@ public class PlayerInputEvent extends PlayerEvent {
      * Gets the new input received from this player.
      *
      * @return the new input
+     * @since 1.21.3
      */
     @NotNull
     public Input getInput() {
         return input;
     }
 
+    /**
+     * @since 1.21.3
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.21.3
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

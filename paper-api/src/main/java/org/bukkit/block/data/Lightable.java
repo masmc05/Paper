@@ -12,6 +12,7 @@ public interface Lightable extends BlockData {
      * Gets the value of the 'lit' property.
      *
      * @return the 'lit' value
+     * @since 1.13
      */
     boolean isLit();
 
@@ -19,6 +20,7 @@ public interface Lightable extends BlockData {
      * Sets the value of the 'lit' property.
      *
      * @param lit the new 'lit' value
+     * @since 1.13
      */
     void setLit(boolean lit);
 }

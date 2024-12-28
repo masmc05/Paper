@@ -188,6 +188,7 @@ public enum Particle implements Keyed {
     /**
      * Returns the required data type for the particle
      * @return the required data type
+     * @since 1.9.4
      */
     @NotNull
     public Class<?> getDataType() {
@@ -241,6 +242,7 @@ public enum Particle implements Keyed {
          * The color of the particles to be displayed.
          *
          * @return particle color
+         * @since 1.13
          */
         @NotNull
         public Color getColor() {
@@ -251,6 +253,7 @@ public enum Particle implements Keyed {
          * Relative size of the particle.
          *
          * @return relative particle size
+         * @since 1.13
          */
         public float getSize() {
             return size;
@@ -277,6 +280,7 @@ public enum Particle implements Keyed {
          * The final of the particles to be displayed.
          *
          * @return final particle color
+         * @since 1.17
          */
         @NotNull
         public Color getToColor() {
@@ -306,6 +310,7 @@ public enum Particle implements Keyed {
          * The target of the particles to be displayed.
          *
          * @return particle target
+         * @since 1.21.4
          */
         @NotNull
         public Location getTarget() {
@@ -316,6 +321,7 @@ public enum Particle implements Keyed {
          * The color of the particles to be displayed.
          *
          * @return particle color
+         * @since 1.21.4
          */
         @NotNull
         public Color getColor() {
@@ -326,6 +332,7 @@ public enum Particle implements Keyed {
          * The duration of the trail to be displayed.
          *
          * @return trail duration
+         * @since 1.21.4
          */
         public int getDuration() {
             return duration;

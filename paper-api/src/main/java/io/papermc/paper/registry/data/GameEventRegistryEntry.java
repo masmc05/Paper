@@ -20,6 +20,7 @@ public interface GameEventRegistryEntry {
      *
      * @return the range of blocks, represented as an int.
      * @see GameEvent#getRange()
+     * @since 1.21
      */
     @Range(from = 0, to = Integer.MAX_VALUE) int range();
 
@@ -30,6 +31,8 @@ public interface GameEventRegistryEntry {
      * <ul>
      *     <li>{@link #range(int)}</li>
      * </ul>
+     *
+     * @since 1.21
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -42,6 +45,7 @@ public interface GameEventRegistryEntry {
          * @return this builder instance.
          * @see GameEventRegistryEntry#range()
          * @see GameEvent#getRange()
+         * @since 1.21
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder range(@Range(from = 0, to = Integer.MAX_VALUE) int range);

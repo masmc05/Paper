@@ -36,6 +36,7 @@ public class PlayerItemGroupCooldownEvent extends PlayerEvent implements Cancell
      * Get the cooldown group as defined by an item's {@link org.bukkit.inventory.meta.components.UseCooldownComponent}.
      *
      * @return cooldown group
+     * @since 1.21.3
      */
     public NamespacedKey getCooldownGroup() {
         return this.cooldownGroup;
@@ -45,6 +46,7 @@ public class PlayerItemGroupCooldownEvent extends PlayerEvent implements Cancell
      * Gets the cooldown in ticks.
      *
      * @return cooldown in ticks
+     * @since 1.21.3
      */
     public int getCooldown() {
         return this.cooldown;
@@ -55,27 +57,40 @@ public class PlayerItemGroupCooldownEvent extends PlayerEvent implements Cancell
      * Setting the cooldown to 0 results in removing an already existing cooldown for the material.
      *
      * @param cooldown cooldown in ticks, has to be a positive number
+     * @since 1.21.3
      */
     public void setCooldown(final int cooldown) {
         Preconditions.checkArgument(cooldown >= 0, "The cooldown has to be equal to or greater than 0!");
         this.cooldown = cooldown;
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.3
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

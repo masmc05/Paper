@@ -19,6 +19,7 @@ public interface DataComponentBuilder<C> {
      * Builds the immutable component value.
      *
      * @return a new component value
+     * @since 1.21.3
      */
     @Contract(value = "-> new", pure = true)
     C build();

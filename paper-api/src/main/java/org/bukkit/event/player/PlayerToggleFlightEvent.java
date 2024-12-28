@@ -24,27 +24,40 @@ public class PlayerToggleFlightEvent extends PlayerEvent implements Cancellable 
      * Returns whether the player is trying to start or stop flying.
      *
      * @return flying state
+     * @since 1.3.1
      */
     public boolean isFlying() {
         return isFlying;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

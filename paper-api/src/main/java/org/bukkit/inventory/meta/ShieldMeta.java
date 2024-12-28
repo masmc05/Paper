@@ -12,6 +12,7 @@ public interface ShieldMeta extends BannerMeta {
      * Gets the base color for this shield.
      *
      * @return the base color or null
+     * @since 1.21
      */
     @Nullable
     DyeColor getBaseColor();
@@ -24,6 +25,7 @@ public interface ShieldMeta extends BannerMeta {
      * retain the pattern but default the base color to {@link DyeColor#WHITE}.
      *
      * @param color the base color or null
+     * @since 1.21
      */
     void setBaseColor(@Nullable DyeColor color);
 

@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
  * of modifying the entity during or after this event is unspecified.
  * This event is not called for a {@link org.bukkit.entity.Player}.
  * @deprecated use {@link EntityRemoveFromWorldEvent} instead
+ * @since 1.20.4
  */
 @Deprecated(forRemoval = true)
 public class EntityRemoveEvent extends EntityEvent {
@@ -29,18 +30,25 @@ public class EntityRemoveEvent extends EntityEvent {
      * Gets the cause why the entity got removed.
      *
      * @return the cause why the entity got removed
+     * @since 1.20.4
      */
     @NotNull
     public Cause getCause() {
         return cause;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
@@ -48,6 +56,8 @@ public class EntityRemoveEvent extends EntityEvent {
 
     /**
      * Represents various ways an entity gets removed.
+     *
+     * @since 1.20.4
      */
     public enum Cause {
         /**

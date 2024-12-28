@@ -137,6 +137,7 @@ public final class Color implements ConfigurationSerializable {
      * @param blue integer from 0-255
      * @return a new Color object for the red, green, blue
      * @throws IllegalArgumentException if any value is strictly {@literal >255 or <0}
+     * @since 1.4.5
      */
     @NotNull
     public static Color fromRGB(int red, int green, int blue) throws IllegalArgumentException {
@@ -151,6 +152,7 @@ public final class Color implements ConfigurationSerializable {
      * @param red integer from 0-255
      * @return a new Color object for the red, green, blue
      * @throws IllegalArgumentException if any value is strictly {@literal >255 or <0}
+     * @since 1.4.5
      */
     @NotNull
     public static Color fromBGR(int blue, int green, int red) throws IllegalArgumentException {
@@ -165,6 +167,7 @@ public final class Color implements ConfigurationSerializable {
      * @return a new color object for specified values
      * @throws IllegalArgumentException if any data is in the highest order 8
      *     bits
+     * @since 1.4.5
      */
     @NotNull
     public static Color fromRGB(int rgb) throws IllegalArgumentException {
@@ -193,6 +196,7 @@ public final class Color implements ConfigurationSerializable {
      * @return a new color object for specified values
      * @throws IllegalArgumentException if any data is in the highest order 8
      *     bits
+     * @since 1.4.5
      */
     @NotNull
     public static Color fromBGR(int bgr) throws IllegalArgumentException {
@@ -242,6 +246,7 @@ public final class Color implements ConfigurationSerializable {
      * Gets the red component
      *
      * @return red component, from 0 to 255
+     * @since 1.4.5
      */
     public int getRed() {
         return BIT_MASK & red;
@@ -252,6 +257,7 @@ public final class Color implements ConfigurationSerializable {
      *
      * @param red the red component, from 0 to 255
      * @return a new color object with the red component
+     * @since 1.4.5
      */
     @NotNull
     public Color setRed(int red) {
@@ -262,6 +268,7 @@ public final class Color implements ConfigurationSerializable {
      * Gets the green component
      *
      * @return green component, from 0 to 255
+     * @since 1.4.5
      */
     public int getGreen() {
         return BIT_MASK & green;
@@ -272,6 +279,7 @@ public final class Color implements ConfigurationSerializable {
      *
      * @param green the red component, from 0 to 255
      * @return a new color object with the red component
+     * @since 1.4.5
      */
     @NotNull
     public Color setGreen(int green) {
@@ -282,6 +290,7 @@ public final class Color implements ConfigurationSerializable {
      * Gets the blue component
      *
      * @return blue component, from 0 to 255
+     * @since 1.4.5
      */
     public int getBlue() {
         return BIT_MASK & blue;
@@ -292,6 +301,7 @@ public final class Color implements ConfigurationSerializable {
      *
      * @param blue the red component, from 0 to 255
      * @return a new color object with the red component
+     * @since 1.4.5
      */
     @NotNull
     public Color setBlue(int blue) {
@@ -302,6 +312,7 @@ public final class Color implements ConfigurationSerializable {
      * Gets the color as an RGB integer.
      *
      * @return An integer representation of this color, as 0xRRGGBB
+     * @since 1.4.5
      */
     public int asRGB() {
         return getRed() << 16 | getGreen() << 8 | getBlue();
@@ -321,6 +332,7 @@ public final class Color implements ConfigurationSerializable {
      * Gets the color as an BGR integer.
      *
      * @return An integer representation of this color, as 0xBBGGRR
+     * @since 1.4.5
      */
     public int asBGR() {
         return getBlue() << 16 | getGreen() << 8 | getRed();
@@ -332,6 +344,7 @@ public final class Color implements ConfigurationSerializable {
      *
      * @param colors The DyeColors to dye with
      * @return A new color with the changed rgb components
+     * @since 1.4.5
      */
     // TODO: Javadoc what this method does, not what it mimics. API != Implementation
     @NotNull
@@ -355,6 +368,7 @@ public final class Color implements ConfigurationSerializable {
      *
      * @param colors The colors to dye with
      * @return A new color with the changed rgb components
+     * @since 1.4.5
      */
     // TODO: Javadoc what this method does, not what it mimics. API != Implementation
     @NotNull
@@ -397,6 +411,9 @@ public final class Color implements ConfigurationSerializable {
         return asARGB() ^ Color.class.hashCode();
     }
 
+    /**
+     * @since 1.4.5
+     */
     @Override
     @NotNull
     public Map<String, Object> serialize() {
@@ -408,6 +425,9 @@ public final class Color implements ConfigurationSerializable {
         );
     }
 
+    /**
+     * @since 1.4.5
+     */
     @SuppressWarnings("javadoc")
     @NotNull
     public static Color deserialize(@NotNull Map<String, Object> map) {

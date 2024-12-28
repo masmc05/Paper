@@ -21,6 +21,9 @@ public class EntityToggleSwimEvent extends EntityEvent implements Cancellable {
         this.isSwimming = isSwimming;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
@@ -32,6 +35,7 @@ public class EntityToggleSwimEvent extends EntityEvent implements Cancellable {
      * exists. If you want to cancel the switch from the ground state to the
      * swimming state you need to disable the sprinting flag for the player after
      * the cancel action.
+     * @since 1.13
      */
     @Deprecated // Paper
     @Override
@@ -44,17 +48,24 @@ public class EntityToggleSwimEvent extends EntityEvent implements Cancellable {
      * false if the entity stops swimming.
      *
      * @return new swimming state
+     * @since 1.13
      */
     public boolean isSwimming() {
         return isSwimming;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -20,6 +20,9 @@ public class HopperInventorySearchEvent extends BlockEvent {
     private final ContainerType containerType;
     private final Block searchBlock;
 
+    /**
+     * @since 1.19.4
+     */
     public enum ContainerType {
 
         /**
@@ -48,6 +51,7 @@ public class HopperInventorySearchEvent extends BlockEvent {
      * source/attached Container.
      *
      * @param inventory the inventory to use
+     * @since 1.19.4
      */
     public void setInventory(@Nullable Inventory inventory) {
         this.inventory = inventory;
@@ -58,6 +62,7 @@ public class HopperInventorySearchEvent extends BlockEvent {
      * source/attached Container.
      *
      * @return the inventory which will be used
+     * @since 1.19.4
      */
     @Nullable
     public Inventory getInventory() {
@@ -68,6 +73,7 @@ public class HopperInventorySearchEvent extends BlockEvent {
      * Gets the Container type the Hopper is searching for.
      *
      * @return the container type being searched for
+     * @since 1.19.4
      */
     @NotNull
     public ContainerType getContainerType() {
@@ -78,18 +84,25 @@ public class HopperInventorySearchEvent extends BlockEvent {
      * Gets the Block that is being searched for an inventory.
      *
      * @return block being searched for an inventory
+     * @since 1.19.4
      */
     @NotNull
     public Block getSearchBlock() {
         return searchBlock;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

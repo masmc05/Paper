@@ -24,6 +24,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * folder may not yet exist.
      *
      * @return The folder
+     * @since 1.0.0
      */
     @NotNull
     public File getDataFolder();
@@ -48,6 +49,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * @return Contents of the plugin.yml file
      * @deprecated May be inaccurate due to different plugin implementations.
      * @see Plugin#getPluginMeta()
+     * @since 1.0.0
      */
     @Deprecated // Paper
     @NotNull
@@ -70,6 +72,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * provided as a default for this Configuration.
      *
      * @return Plugin configuration
+     * @since 1.0.0
      */
     @NotNull
     public FileConfiguration getConfig();
@@ -79,12 +82,15 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      *
      * @param filename Filename of the resource
      * @return File if found, otherwise null
+     * @since 1.0.0
      */
     @Nullable
     public InputStream getResource(@NotNull String filename);
 
     /**
      * Saves the {@link FileConfiguration} retrievable by {@link #getConfig()}.
+     *
+     * @since 1.0.0
      */
     public void saveConfig();
 
@@ -117,6 +123,8 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
 
     /**
      * Discards any data in {@link #getConfig()} and reloads from disk.
+     *
+     * @since 1.0.0
      */
     public void reloadConfig();
 
@@ -124,6 +132,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * Gets the associated PluginLoader responsible for this plugin
      *
      * @return PluginLoader that controls this plugin
+     * @since 1.0.0
      */
     @Deprecated(forRemoval = true) // Paper - The PluginLoader system will not function in the near future
     @NotNull
@@ -133,6 +142,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * Returns the Server instance currently running this plugin
      *
      * @return Server running this plugin
+     * @since 1.0.0
      */
     @NotNull
     public Server getServer();
@@ -142,11 +152,14 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * enabled
      *
      * @return true if this plugin is enabled, otherwise false
+     * @since 1.0.0
      */
     public boolean isEnabled();
 
     /**
      * Called when this plugin is disabled
+     *
+     * @since 1.0.0
      */
     public void onDisable();
 
@@ -155,11 +168,15 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * <p>
      * When multiple plugins are loaded, the onLoad() for all plugins is
      * called before any onEnable() is called.
+     *
+     * @since 1.0.0
      */
     public void onLoad();
 
     /**
      * Called when this plugin is enabled
+     *
+     * @since 1.0.0
      */
     public void onEnable();
 
@@ -167,6 +184,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * Simple boolean if we can still nag to the logs about things
      *
      * @return boolean whether we can nag
+     * @since 1.0.0
      */
     public boolean isNaggable();
 
@@ -174,6 +192,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * Set naggable state
      *
      * @param canNag is this plugin still naggable?
+     * @since 1.0.0
      */
     public void setNaggable(boolean canNag);
 
@@ -185,6 +204,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * @param id Unique ID, if any, that was specified to indicate which
      *     generator was requested
      * @return ChunkGenerator for use in the default world generation
+     * @since 1.0.0
      */
     @Nullable
     public ChunkGenerator getDefaultWorldGenerator(@NotNull String worldName, @Nullable String id);

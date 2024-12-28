@@ -111,6 +111,9 @@ public class BlockVector extends Vector {
         return (BlockVector) super.clone();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static BlockVector deserialize(@NotNull Map<String, Object> args) {
         double x = 0;

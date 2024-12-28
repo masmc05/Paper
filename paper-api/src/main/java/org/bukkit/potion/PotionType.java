@@ -76,6 +76,7 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
     /**
      * @return the potion effect type of this potion type
      * @deprecated Potions can have multiple effects use {@link #getPotionEffects()}
+     * @since 1.1.0
      */
     @Nullable
     @Deprecated(since = "1.20.2")
@@ -96,6 +97,7 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
      * @return if this potion type is instant
      * @deprecated PotionType can have multiple effects, some of which can be instant and others not.
      * Use {@link PotionEffectType#isInstant()} in combination with {@link #getPotionEffects()} and {@link PotionEffect#getType()}
+     * @since 1.1.0
      */
     @Deprecated(since = "1.20.2")
     public boolean isInstant() {
@@ -125,6 +127,9 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
         return internalPotionDataSupplier.get().isExtendable();
     }
 
+    /**
+     * @since 1.1.0
+     */
     public int getMaxLevel() {
         return internalPotionDataSupplier.get().getMaxLevel();
     }
@@ -133,6 +138,7 @@ public enum PotionType implements Keyed, io.papermc.paper.world.flag.FeatureDepe
      * @param effectType the effect to get by
      * @return the matching potion type
      * @deprecated Misleading
+     * @since 1.1.0
      */
     @Deprecated(since = "1.9")
     @Nullable

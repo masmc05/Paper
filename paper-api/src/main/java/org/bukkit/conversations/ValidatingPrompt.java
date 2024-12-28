@@ -24,6 +24,7 @@ public abstract class ValidatingPrompt implements Prompt {
      * @param context Context information about the conversation.
      * @param input The input text from the user.
      * @return This prompt or the next Prompt in the prompt graph.
+     * @since 1.1.0
      */
     @Override
     @Nullable
@@ -45,6 +46,7 @@ public abstract class ValidatingPrompt implements Prompt {
      *
      * @param context Context information about the conversation.
      * @return True.
+     * @since 1.1.0
      */
     @Override
     public boolean blocksForInput(@NotNull ConversationContext context) {

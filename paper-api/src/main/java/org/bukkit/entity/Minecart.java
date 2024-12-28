@@ -27,6 +27,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * Gets a minecart's damage.
      *
      * @return The damage
+     * @since 1.0.0
      */
     public double getDamage();
 
@@ -35,6 +36,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * velocity.
      *
      * @return The max speed
+     * @since 1.0.0
      */
     public double getMaxSpeed();
 
@@ -43,6 +45,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * 0.4D or {@link GameRule#MINECART_MAX_SPEED}.
      *
      * @param speed The max speed
+     * @since 1.0.0
      */
     public void setMaxSpeed(double speed);
 
@@ -51,6 +54,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * occupying it
      *
      * @return Whether it decelerates faster
+     * @since 1.0.0
      */
     public boolean isSlowWhenEmpty();
 
@@ -59,6 +63,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * occupying it
      *
      * @param slow Whether it will decelerate faster
+     * @since 1.0.0
      */
     public void setSlowWhenEmpty(boolean slow);
 
@@ -68,6 +73,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * tick.
      *
      * @return The vector factor
+     * @since 1.0.0
      */
     @NotNull
     public Vector getFlyingVelocityMod();
@@ -78,6 +84,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * tick.
      *
      * @param flying velocity modifier vector
+     * @since 1.0.0
      */
     public void setFlyingVelocityMod(@NotNull Vector flying);
 
@@ -88,6 +95,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * A derailed minecart's velocity is multiplied by this factor each tick.
      *
      * @return derailed visible speed
+     * @since 1.0.0
      */
     @NotNull
     public Vector getDerailedVelocityMod();
@@ -98,6 +106,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * by this factor each tick.
      *
      * @param derailed visible speed
+     * @since 1.0.0
      */
     public void setDerailedVelocityMod(@NotNull Vector derailed);
 
@@ -107,6 +116,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      *
      * @param material the material to set as display block.
      * @deprecated use {@link #setDisplayBlockData(BlockData)}
+     * @since 1.8
      */
     @Deprecated(forRemoval = true, since = "1.13")
     public void setDisplayBlock(@Nullable MaterialData material);
@@ -117,6 +127,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      *
      * @return the block displayed by this minecart.
      * @deprecated use {@link #getDisplayBlockData()}
+     * @since 1.8
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.13")

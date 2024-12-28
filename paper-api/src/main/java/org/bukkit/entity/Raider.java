@@ -48,6 +48,7 @@ public interface Raider extends Monster {
      * Gets the block the raider is targeting to patrol.
      *
      * @return target block or null
+     * @since 1.14
      */
     @Nullable
     Block getPatrolTarget();
@@ -56,6 +57,7 @@ public interface Raider extends Monster {
      * Sets the block the raider is targeting to patrol.
      *
      * @param block target block or null. Must be in same world as the entity
+     * @since 1.14
      */
     void setPatrolTarget(@Nullable Block block);
 
@@ -63,6 +65,7 @@ public interface Raider extends Monster {
      * Gets whether this entity is a patrol leader.
      *
      * @return patrol leader status
+     * @since 1.14
      */
     boolean isPatrolLeader();
 
@@ -70,6 +73,7 @@ public interface Raider extends Monster {
      * Sets whether this entity is a patrol leader.
      *
      * @param leader patrol leader status
+     * @since 1.14
      */
     void setPatrolLeader(boolean leader);
 

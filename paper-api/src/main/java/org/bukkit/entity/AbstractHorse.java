@@ -21,6 +21,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      *
      * @return a {@link Horse.Variant} representing the horse's variant
      * @deprecated different variants are different classes
+     * @since 1.11
      */
     @Deprecated(since = "1.11")
     @NotNull
@@ -42,6 +43,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * domestication level, the chance of the horse becoming tame increases.
      *
      * @return domestication level
+     * @since 1.11
      */
     public int getDomestication();
 
@@ -56,6 +58,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * {@link #getMaxDomestication()}
      *
      * @param level domestication level
+     * @since 1.11
      */
     public void setDomestication(int level);
 
@@ -66,6 +69,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * for the horse to be tamed.
      *
      * @return the max domestication level
+     * @since 1.11
      */
     public int getMaxDomestication();
 
@@ -79,6 +83,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * Maximum domestication must be greater than zero.
      *
      * @param level the max domestication level
+     * @since 1.11
      */
     public void setMaxDomestication(int level);
 
@@ -89,6 +94,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * increases how high a jump will go.
      *
      * @return the horse's jump strength
+     * @since 1.11
      */
     public double getJumpStrength();
 
@@ -101,6 +107,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * above 2.
      *
      * @param strength jump strength for this horse
+     * @since 1.11
      */
     public void setJumpStrength(double strength);
 

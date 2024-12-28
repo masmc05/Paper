@@ -28,6 +28,7 @@ public interface Chunk extends PersistentDataHolder {
      * Gets the X-coordinate of this chunk
      *
      * @return X-coordinate
+     * @since 1.0.0
      */
     int getX();
 
@@ -35,6 +36,7 @@ public interface Chunk extends PersistentDataHolder {
      * Gets the Z-coordinate of this chunk
      *
      * @return Z-coordinate
+     * @since 1.0.0
      */
     int getZ();
 
@@ -71,6 +73,7 @@ public interface Chunk extends PersistentDataHolder {
      * Gets the world containing this chunk
      *
      * @return Parent World
+     * @since 1.0.0
      */
     @NotNull
     World getWorld();
@@ -82,6 +85,7 @@ public interface Chunk extends PersistentDataHolder {
      * @param y world minHeight (inclusive) - world maxHeight (exclusive)
      * @param z 0-15
      * @return the Block
+     * @since 1.0.0
      */
     @NotNull
     Block getBlock(int x, int y, int z);
@@ -90,6 +94,7 @@ public interface Chunk extends PersistentDataHolder {
      * Capture thread-safe read-only snapshot of chunk data
      *
      * @return ChunkSnapshot
+     * @since 1.0.0
      */
     @NotNull
     ChunkSnapshot getChunkSnapshot();
@@ -104,6 +109,7 @@ public interface Chunk extends PersistentDataHolder {
      * @param includeBiomeTempRain - if true, snapshot includes per-coordinate
      *     raw biome temperature and rainfall
      * @return ChunkSnapshot
+     * @since 1.0.0
      */
     @NotNull
     ChunkSnapshot getChunkSnapshot(boolean includeMaxblocky, boolean includeBiome, boolean includeBiomeTempRain);
@@ -139,6 +145,7 @@ public interface Chunk extends PersistentDataHolder {
      * This will force load any entities, which are not loaded.
      *
      * @return The entities.
+     * @since 1.0.0
      */
     @NotNull
     Entity[] getEntities();
@@ -147,6 +154,7 @@ public interface Chunk extends PersistentDataHolder {
      * Get a list of all tile entities in the chunk.
      *
      * @return The tile entities.
+     * @since 1.0.0
      */
     @NotNull
     // Paper start
@@ -188,6 +196,7 @@ public interface Chunk extends PersistentDataHolder {
      * Checks if the chunk is loaded.
      *
      * @return True if it is loaded.
+     * @since 1.0.0
      */
     boolean isLoaded();
 
@@ -197,6 +206,7 @@ public interface Chunk extends PersistentDataHolder {
      * @param generate Whether or not to generate a chunk if it doesn't
      *     already exist
      * @return true if the chunk has loaded successfully, otherwise false
+     * @since 1.0.0
      */
     boolean load(boolean generate);
 
@@ -204,6 +214,7 @@ public interface Chunk extends PersistentDataHolder {
      * Loads the chunk.
      *
      * @return true if the chunk has loaded successfully, otherwise false
+     * @since 1.0.0
      */
     boolean load();
 
@@ -212,6 +223,7 @@ public interface Chunk extends PersistentDataHolder {
      *
      * @param save Controls whether the chunk is saved
      * @return true if the chunk has unloaded successfully, otherwise false
+     * @since 1.0.0
      */
     boolean unload(boolean save);
 
@@ -219,6 +231,7 @@ public interface Chunk extends PersistentDataHolder {
      * Unloads and optionally saves the Chunk
      *
      * @return true if the chunk has unloaded successfully, otherwise false
+     * @since 1.0.0
      */
     boolean unload();
 

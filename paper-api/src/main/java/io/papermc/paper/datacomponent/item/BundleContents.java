@@ -18,11 +18,17 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface BundleContents {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static BundleContents bundleContents(final List<ItemStack> contents) {
         return ItemComponentTypesBridge.bridge().bundleContents().addAll(contents).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static BundleContents.Builder bundleContents() {
         return ItemComponentTypesBridge.bridge().bundleContents();
@@ -32,12 +38,15 @@ public interface BundleContents {
      * Lists the items that are currently stored inside of this component.
      *
      * @return items
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<ItemStack> contents();
 
     /**
      * Builder for {@link BundleContents}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -49,6 +58,7 @@ public interface BundleContents {
          * @param stack item
          * @return the builder for chaining
          * @see #contents()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder add(ItemStack stack);
@@ -59,6 +69,7 @@ public interface BundleContents {
          * @param stacks items
          * @return the builder for chaining
          * @see #contents()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addAll(List<ItemStack> stacks);

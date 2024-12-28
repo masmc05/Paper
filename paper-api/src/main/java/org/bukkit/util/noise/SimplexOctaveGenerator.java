@@ -42,6 +42,9 @@ public class SimplexOctaveGenerator extends OctaveGenerator {
         super(createOctaves(rand, octaves));
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setScale(double scale) {
         super.setScale(scale);
@@ -52,6 +55,7 @@ public class SimplexOctaveGenerator extends OctaveGenerator {
      * Gets the scale used for each W-coordinates passed
      *
      * @return W scale
+     * @since 1.0.0
      */
     public double getWScale() {
         return wScale;
@@ -61,6 +65,7 @@ public class SimplexOctaveGenerator extends OctaveGenerator {
      * Sets the scale used for each W-coordinates passed
      *
      * @param scale New W scale
+     * @since 1.0.0
      */
     public void setWScale(double scale) {
         wScale = scale;
@@ -77,6 +82,7 @@ public class SimplexOctaveGenerator extends OctaveGenerator {
      * @param frequency How much to alter the frequency by each octave
      * @param amplitude How much to alter the amplitude by each octave
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, double y, double z, double w, double frequency, double amplitude) {
         return noise(x, y, z, w, frequency, amplitude, false);
@@ -94,6 +100,7 @@ public class SimplexOctaveGenerator extends OctaveGenerator {
      * @param amplitude How much to alter the amplitude by each octave
      * @param normalized If true, normalize the value to [-1, 1]
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, double y, double z, double w, double frequency, double amplitude, boolean normalized) {
         double result = 0;

@@ -29,6 +29,7 @@ public abstract class BiomeProvider {
      * @param y The Y-coordinate from world origin
      * @param z The Z-coordinate from world origin
      * @return Biome for the given location
+     * @since 1.17.1
      */
     @NotNull
     public abstract Biome getBiome(@NotNull WorldInfo worldInfo, int x, int y, int z);
@@ -79,6 +80,7 @@ public abstract class BiomeProvider {
      *
      * @param worldInfo The world info of the world the list will be used for
      * @return A list with every biome the {@link BiomeProvider} uses
+     * @since 1.17.1
      */
     @NotNull
     public abstract List<Biome> getBiomes(@NotNull WorldInfo worldInfo);

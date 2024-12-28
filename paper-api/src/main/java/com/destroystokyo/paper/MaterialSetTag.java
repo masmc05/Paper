@@ -81,22 +81,37 @@ public class MaterialSetTag extends BaseTag<Material, MaterialSetTag> {
         return value.name();
     }
 
+    /**
+     * @since 1.13.1
+     */
     public boolean isTagged(@NotNull BlockData block) {
         return isTagged(block.getMaterial());
     }
 
+    /**
+     * @since 1.13.1
+     */
     public boolean isTagged(@NotNull BlockState block) {
         return isTagged(block.getType());
     }
 
+    /**
+     * @since 1.13.1
+     */
     public boolean isTagged(@NotNull Block block) {
         return isTagged(block.getType());
     }
 
+    /**
+     * @since 1.13.1
+     */
     public boolean isTagged(@NotNull ItemStack item) {
         return isTagged(item.getType());
     }
 
+    /**
+     * @since 1.13.1
+     */
     public boolean isTagged(@NotNull Material material) {
         return this.tagged.contains(material);
     }

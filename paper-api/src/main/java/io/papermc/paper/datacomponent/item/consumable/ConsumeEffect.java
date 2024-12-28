@@ -24,6 +24,7 @@ public interface ConsumeEffect {
      *
      * @param diameter diameter of random teleportation
      * @return the effect
+     * @since 1.21.3
      */
     @Contract(value = "_ -> new", pure = true)
     static TeleportRandomly teleportRandomlyEffect(final float diameter) {
@@ -35,6 +36,7 @@ public interface ConsumeEffect {
      *
      * @param key the sound effect to play
      * @return the effect
+     * @since 1.21.3
      */
     @Contract(value = "_ -> new", pure = true)
     static RemoveStatusEffects removeEffects(final RegistryKeySet<PotionEffectType> key) {
@@ -46,6 +48,7 @@ public interface ConsumeEffect {
      *
      * @param key the sound effect to play
      * @return the effect
+     * @since 1.21.3
      */
     @Contract(value = "_ -> new", pure = true)
     static PlaySound playSoundConsumeEffect(final Key key) {
@@ -56,6 +59,7 @@ public interface ConsumeEffect {
      * Creates a consume effect that clears all status effects.
      *
      * @return effect instance
+     * @since 1.21.3
      */
     @Contract(value = "-> new", pure = true)
     static ClearAllStatusEffects clearAllStatusEffects() {
@@ -68,12 +72,16 @@ public interface ConsumeEffect {
      * @param effects     the potion effects to apply
      * @param probability the probability of these effects being applied, between 0 and 1 inclusive.
      * @return the effect
+     * @since 1.21.3
      */
     @Contract(value = "_, _ -> new", pure = true)
     static ApplyStatusEffects applyStatusEffects(final List<PotionEffect> effects, final float probability) {
         return ConsumableTypesBridge.bridge().applyStatusEffects(effects, probability);
     }
 
+    /**
+     * @since 1.21.3
+     */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
     interface TeleportRandomly extends ConsumeEffect {
@@ -82,12 +90,15 @@ public interface ConsumeEffect {
          * The max range that the entity can be teleported to.
          *
          * @return teleportation diameter
+         * @since 1.21.3
          */
         float diameter();
     }
 
     /**
      * Represents a consumable effect that removes status effects on consumption
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -97,12 +108,15 @@ public interface ConsumeEffect {
          * Potion effects to remove
          *
          * @return effects
+         * @since 1.21.3
          */
         RegistryKeySet<PotionEffectType> removeEffects();
     }
 
     /**
      * Represents a consumable effect that plays a sound on consumption.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -112,12 +126,15 @@ public interface ConsumeEffect {
          * Sound effect to play in the world
          *
          * @return sound effect
+         * @since 1.21.3
          */
         Key sound();
     }
 
     /**
      * Represents a consumable effect that clears all effects on consumption.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -127,6 +144,8 @@ public interface ConsumeEffect {
 
     /**
      * Represents a consumable effect that applies effects based on a probability on consumption.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable
@@ -136,6 +155,7 @@ public interface ConsumeEffect {
          * Effect instances to grant
          *
          * @return effect
+         * @since 1.21.3
          */
         List<PotionEffect> effects();
 
@@ -143,6 +163,7 @@ public interface ConsumeEffect {
          * Float between 0 and 1, chance for the effect to be applied.
          *
          * @return chance
+         * @since 1.21.3
          */
         float probability();
     }

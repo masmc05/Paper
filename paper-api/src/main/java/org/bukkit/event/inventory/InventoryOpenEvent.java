@@ -25,6 +25,7 @@ public class InventoryOpenEvent extends InventoryEvent implements Cancellable {
      * Returns the player involved in this event
      *
      * @return Player who is involved in this event
+     * @since 1.1.0
      */
     @NotNull
     public final HumanEntity getPlayer() {
@@ -39,6 +40,7 @@ public class InventoryOpenEvent extends InventoryEvent implements Cancellable {
      * show.
      *
      * @return true if this event is cancelled
+     * @since 1.1.0
      */
     @Override
     public boolean isCancelled() {
@@ -53,6 +55,7 @@ public class InventoryOpenEvent extends InventoryEvent implements Cancellable {
      * show.
      *
      * @param cancel true if you wish to cancel this event
+     * @since 1.1.0
      */
     @Override
     public void setCancelled(boolean cancel) {
@@ -88,12 +91,18 @@ public class InventoryOpenEvent extends InventoryEvent implements Cancellable {
     }
     // Paper end
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

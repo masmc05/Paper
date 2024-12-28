@@ -26,6 +26,7 @@ public class PlayerResourcePackStatusEvent extends PlayerEvent {
     // Paper start - add hash (not used anymore)
     /**
      * @deprecated Hash does not seem to ever be set
+     * @since 1.9.4
      */
     @Deprecated(forRemoval = true)
     public String getHash() {
@@ -48,18 +49,25 @@ public class PlayerResourcePackStatusEvent extends PlayerEvent {
      * Gets the status of this pack.
      *
      * @return the current status
+     * @since 1.8.8
      */
     @NotNull
     public Status getStatus() {
         return status;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
@@ -67,6 +75,8 @@ public class PlayerResourcePackStatusEvent extends PlayerEvent {
 
     /**
      * Status of the resource pack.
+     *
+     * @since 1.8.8
      */
     public enum Status {
 

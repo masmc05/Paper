@@ -21,11 +21,17 @@ public class EntityInteractEvent extends EntityEvent implements Cancellable {
         this.block = block;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
@@ -35,6 +41,7 @@ public class EntityInteractEvent extends EntityEvent implements Cancellable {
      * Returns the involved block
      *
      * @return the block clicked with this item.
+     * @since 1.0.0
      */
     @NotNull
     public Block getBlock() {

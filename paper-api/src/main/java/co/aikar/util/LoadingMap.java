@@ -49,6 +49,7 @@ import org.jetbrains.annotations.Nullable;
  *
  * @param <K> Key
  * @param <V> Value
+ * @since 1.9.4
  */
 @Deprecated(forRemoval = true)
 public class LoadingMap <K, V> extends AbstractMap<K, V> {
@@ -73,6 +74,7 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return Map
+     * @since 1.9.4
      */
     @NotNull
     public static <K, V> Map<K, V> of(@NotNull Map<K, V> backingMap, @NotNull Function<K, V> loader) {
@@ -93,6 +95,7 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return Map that auto instantiates on .get()
+     * @since 1.9.4
      */
     @NotNull
     public static <K, V> Map<K, V> newAutoMap(@NotNull Map<K, V> backingMap, @Nullable final Class<? extends K> keyClass,
@@ -112,6 +115,7 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return Map that auto instantiates on .get()
+     * @since 1.9.4
      */
     @NotNull
     public static <K, V> Map<K, V> newAutoMap(@NotNull Map<K, V> backingMap,
@@ -129,6 +133,7 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return Map that auto instantiates on .get()
+     * @since 1.9.4
      */
     @NotNull
     public static <K, V> Map<K, V> newHashAutoMap(@Nullable final Class<? extends K> keyClass, @NotNull final Class<? extends V> valueClass) {
@@ -144,6 +149,7 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return Map that auto instantiates on .get()
+     * @since 1.9.4
      */
     @NotNull
     public static <K, V> Map<K, V> newHashAutoMap(@NotNull final Class<? extends V> valueClass) {
@@ -162,6 +168,7 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return Map that auto instantiates on .get()
+     * @since 1.9.4
      */
     @NotNull
     public static <K, V> Map<K, V> newHashAutoMap(@Nullable final Class<? extends K> keyClass, @NotNull final Class<? extends V> valueClass, int initialCapacity, float loadFactor) {
@@ -179,6 +186,7 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return  Map that auto instantiates on .get()
+     * @since 1.9.4
      */
     @NotNull
     public static <K, V> Map<K, V> newHashAutoMap(@NotNull final Class<? extends V> valueClass, int initialCapacity, float loadFactor) {
@@ -192,6 +200,7 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return Map
+     * @since 1.9.4
      */
     @NotNull
     public static <K, V> Map<K, V> newHashMap(@NotNull Function<K, V> loader) {
@@ -206,6 +215,7 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return Map
+     * @since 1.12.2
      */
     @NotNull
     public static <K, V> Map<K, V> newHashMap(@NotNull Function<K, V> loader, int initialCapacity) {
@@ -220,6 +230,7 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return Map
+     * @since 1.9.4
      */
     @NotNull
     public static <K, V> Map<K, V> newHashMap(@NotNull Function<K, V> loader, int initialCapacity, float loadFactor) {
@@ -233,6 +244,7 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return Map
+     * @since 1.9.4
      */
     @NotNull
     public static <K, V> Map<K, V> newIdentityHashMap(@NotNull Function<K, V> loader) {
@@ -247,24 +259,45 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * @param <K> Key Type of the Map
      * @param <V> Value Type of the Map
      * @return Map
+     * @since 1.9.4
      */
     @NotNull
     public static <K, V> Map<K, V> newIdentityHashMap(@NotNull Function<K, V> loader, int initialCapacity) {
         return new LoadingMap<>(new IdentityHashMap<>(initialCapacity), loader);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @Override
     public int size() {return backingMap.size();}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @Override
     public boolean isEmpty() {return backingMap.isEmpty();}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @Override
     public boolean containsKey(@Nullable Object key) {return backingMap.containsKey(key);}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @Override
     public boolean containsValue(@Nullable Object value) {return backingMap.containsValue(value);}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @Nullable
     @Override
     public V get(@Nullable Object key) {
@@ -278,19 +311,39 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
     @Nullable
     public V put(@Nullable K key, @Nullable V value) {return backingMap.put(key, value);}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @Nullable
     @Override
     public V remove(@Nullable Object key) {return backingMap.remove(key);}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     public void putAll(@NotNull Map<? extends K, ? extends V> m) {backingMap.putAll(m);}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @Override
     public void clear() {backingMap.clear();}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public Set<K> keySet() {return backingMap.keySet();}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public Collection<V> values() {return backingMap.values();}
@@ -301,6 +354,10 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
     @Override
     public int hashCode() {return backingMap.hashCode();}
 
+    /**
+     * {@inheritDoc}
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public Set<Entry<K, V>> entrySet() {
@@ -355,14 +412,22 @@ public class LoadingMap <K, V> extends AbstractMap<K, V> {
      * Due to java stuff, you will need to cast it to (Function) for some cases
      *
      * @param <T> Type
+     * @since 1.9.4
      */
     public abstract static class Feeder <T> implements Function<T, T> {
+        /**
+         * {@inheritDoc}
+         * @since 1.9.4
+         */
         @Nullable
         @Override
         public T apply(@Nullable Object input) {
             return apply();
         }
 
+        /**
+         * @since 1.9.4
+         */
         @Nullable
         public abstract T apply();
     }

@@ -26,6 +26,7 @@ public class PrepareResultEvent extends PrepareInventoryResultEvent {
      * Get result item, may be {@code null}.
      *
      * @return result item
+     * @since 1.16.1
      */
     @Override
     public @Nullable ItemStack getResult() {
@@ -36,6 +37,7 @@ public class PrepareResultEvent extends PrepareInventoryResultEvent {
      * Set result item, may be {@code null}.
      *
      * @param result result item
+     * @since 1.16.1
      */
     @Override
     public void setResult(final @Nullable ItemStack result) {

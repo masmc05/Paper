@@ -34,6 +34,7 @@ public class CreatureSpawnEvent extends EntitySpawnEvent {
      *
      * @return A SpawnReason value detailing the reason for the creature being
      *     spawned
+     * @since 1.0.0
      */
     @NotNull
     public SpawnReason getSpawnReason() {
@@ -42,6 +43,8 @@ public class CreatureSpawnEvent extends EntitySpawnEvent {
 
     /**
      * An enum to specify the type of spawning
+     *
+     * @since 1.0.0
      */
     public enum SpawnReason {
 

@@ -254,6 +254,7 @@ public class PotionEffect implements ConfigurationSerializable {
      * @param entity The entity to add this effect to
      * @return Whether the effect could be added
      * @see LivingEntity#addPotionEffect(PotionEffect)
+     * @since 1.1.0
      */
     public boolean apply(@NotNull LivingEntity entity) {
         return entity.addPotionEffect(this);
@@ -277,6 +278,7 @@ public class PotionEffect implements ConfigurationSerializable {
      * has more effect on its target.
      *
      * @return The effect amplifier
+     * @since 1.1.0
      */
     public int getAmplifier() {
         return amplifier;
@@ -289,6 +291,7 @@ public class PotionEffect implements ConfigurationSerializable {
      * @return The duration of the effect, or {@value #INFINITE_DURATION} if
      * this effect is infinite
      * @see #isInfinite()
+     * @since 1.1.0
      */
     public int getDuration() {
         return duration;
@@ -326,6 +329,7 @@ public class PotionEffect implements ConfigurationSerializable {
      * Returns the {@link PotionEffectType} of this effect.
      *
      * @return The potion type of this effect
+     * @since 1.1.0
      */
     @NotNull
     public PotionEffectType getType() {

@@ -45,6 +45,7 @@ public class PlayerExpChangeEvent extends PlayerEvent {
      * Get the amount of experience the player will receive
      *
      * @return The amount of experience
+     * @since 1.1.0
      */
     public int getAmount() {
         return exp;
@@ -54,17 +55,24 @@ public class PlayerExpChangeEvent extends PlayerEvent {
      * Set the amount of experience the player will receive
      *
      * @param amount The amount of experience to set
+     * @since 1.1.0
      */
     public void setAmount(int amount) {
         exp = amount;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

@@ -59,6 +59,7 @@ public class ConversationFactory {
      *
      * @param modal The modality of all conversations to be created.
      * @return This object.
+     * @since 1.1.0
      */
     @NotNull
     public ConversationFactory withModality(boolean modal) {
@@ -89,6 +90,7 @@ public class ConversationFactory {
      *
      * @param prefix The ConversationPrefix to use.
      * @return This object.
+     * @since 1.1.0
      */
     @NotNull
     public ConversationFactory withPrefix(@NotNull ConversationPrefix prefix) {
@@ -104,6 +106,7 @@ public class ConversationFactory {
      *
      * @param timeoutSeconds The number of seconds to wait.
      * @return This object.
+     * @since 1.1.0
      */
     @NotNull
     public ConversationFactory withTimeout(int timeoutSeconds) {
@@ -117,6 +120,7 @@ public class ConversationFactory {
      *
      * @param firstPrompt The first prompt.
      * @return This object.
+     * @since 1.1.0
      */
     @NotNull
     public ConversationFactory withFirstPrompt(@Nullable Prompt firstPrompt) {
@@ -131,6 +135,7 @@ public class ConversationFactory {
      * @param initialSessionData The conversation context's initial
      *     sessionData.
      * @return This object.
+     * @since 1.1.0
      */
     @NotNull
     public ConversationFactory withInitialSessionData(@NotNull Map<Object, Object> initialSessionData) {
@@ -144,6 +149,7 @@ public class ConversationFactory {
      *
      * @param escapeSequence Input to terminate the conversation.
      * @return This object.
+     * @since 1.1.0
      */
     @NotNull
     public ConversationFactory withEscapeSequence(@NotNull String escapeSequence) {
@@ -155,6 +161,7 @@ public class ConversationFactory {
      *
      * @param canceller The {@link ConversationCanceller} to add.
      * @return This object.
+     * @since 1.1.0
      */
     @NotNull
     public ConversationFactory withConversationCanceller(@NotNull ConversationCanceller canceller) {
@@ -169,6 +176,7 @@ public class ConversationFactory {
      * @param playerOnlyMessage The message to return to a non-play in lieu of
      *     starting a conversation.
      * @return This object.
+     * @since 1.1.0
      */
     @NotNull
     public ConversationFactory thatExcludesNonPlayersWithMessage(@Nullable String playerOnlyMessage) {
@@ -196,6 +204,7 @@ public class ConversationFactory {
      *
      * @param forWhom The entity for whom the new conversation is mediating.
      * @return A new conversation.
+     * @since 1.1.0
      */
     @NotNull
     public Conversation buildConversation(@NotNull Conversable forWhom) {

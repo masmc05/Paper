@@ -29,6 +29,7 @@ public interface Enderman extends Monster {
      *
      * @return MaterialData containing the id and data of the block
      * @deprecated use {@link #getCarriedBlock()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.13")
@@ -39,6 +40,7 @@ public interface Enderman extends Monster {
      *
      * @param material data to set the carried block to
      * @deprecated use {@link #setCarriedBlock(BlockData)}
+     * @since 1.0.0
      */
     @Deprecated(forRemoval = true, since = "1.13")
     public void setCarriedMaterial(@NotNull MaterialData material);

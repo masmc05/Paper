@@ -80,6 +80,7 @@ public interface Art extends OldEnum<Art>, Keyed {
      * Gets the width of the painting, in blocks
      *
      * @return The width of the painting, in blocks
+     * @since 1.0.0
      */
     int getBlockWidth();
 
@@ -87,6 +88,7 @@ public interface Art extends OldEnum<Art>, Keyed {
      * Gets the height of the painting, in blocks
      *
      * @return The height of the painting, in blocks
+     * @since 1.0.0
      */
     int getBlockHeight();
 
@@ -95,6 +97,7 @@ public interface Art extends OldEnum<Art>, Keyed {
      *
      * @return The ID of this painting
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     int getId();
@@ -103,6 +106,7 @@ public interface Art extends OldEnum<Art>, Keyed {
     /**
      * @deprecated use {@link Registry#getKey(Keyed)}, {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)},
      * and {@link io.papermc.paper.registry.RegistryKey#PAINTING_VARIANT}. Painting variants can exist without a key.
+     * @since 1.14
      */
     @Deprecated(since = "1.21", forRemoval = true)
     @Override
@@ -111,6 +115,7 @@ public interface Art extends OldEnum<Art>, Keyed {
     /**
      * @deprecated use {@link Registry#getKey(Keyed)}, {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)},
      * and {@link io.papermc.paper.registry.RegistryKey#PAINTING_VARIANT}. Painting variants can exist without a key.
+     * @since 1.21.3
      */
     @Deprecated(since = "1.21", forRemoval = true)
     @Override
@@ -151,6 +156,7 @@ public interface Art extends OldEnum<Art>, Keyed {
      * @param id The ID
      * @return The painting
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     @Nullable
@@ -172,6 +178,7 @@ public interface Art extends OldEnum<Art>, Keyed {
      * @param name The name
      * @return The painting
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.21.3")
     @Nullable
@@ -185,6 +192,7 @@ public interface Art extends OldEnum<Art>, Keyed {
      * @param name of the art.
      * @return the art with the given name.
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -197,6 +205,7 @@ public interface Art extends OldEnum<Art>, Keyed {
     /**
      * @return an array of all known arts.
      * @deprecated use {@link Registry#iterator()}.
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

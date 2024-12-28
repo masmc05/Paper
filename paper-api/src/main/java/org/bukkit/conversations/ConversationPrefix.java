@@ -16,6 +16,7 @@ public interface ConversationPrefix {
      *
      * @param context Context information about the conversation.
      * @return The prefix text.
+     * @since 1.1.0
      */
     @NotNull
     String getPrefix(@NotNull ConversationContext context);

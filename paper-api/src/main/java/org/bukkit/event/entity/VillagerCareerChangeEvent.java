@@ -22,6 +22,9 @@ public class VillagerCareerChangeEvent extends EntityEvent implements Cancellabl
         this.reason = reason;
     }
 
+    /**
+     * @since 1.14.1
+     */
     @NotNull
     @Override
     public Villager getEntity() {
@@ -32,6 +35,7 @@ public class VillagerCareerChangeEvent extends EntityEvent implements Cancellabl
      * Gets the future profession of the villager.
      *
      * @return The profession the villager will change to
+     * @since 1.14.1
      */
     @NotNull
     public Profession getProfession() {
@@ -51,28 +55,41 @@ public class VillagerCareerChangeEvent extends EntityEvent implements Cancellabl
      * Gets the reason for why the villager's career is changing.
      *
      * @return Reason for villager's profession changing
+     * @since 1.14.1
      */
     @NotNull
     public ChangeReason getReason() {
         return reason;
     }
 
+    /**
+     * @since 1.14.1
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.14.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
     }
 
+    /**
+     * @since 1.14.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.14.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
@@ -80,6 +97,8 @@ public class VillagerCareerChangeEvent extends EntityEvent implements Cancellabl
 
     /**
      * Reasons for the villager's profession changing.
+     *
+     * @since 1.14.1
      */
     public enum ChangeReason {
 

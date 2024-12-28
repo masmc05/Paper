@@ -52,11 +52,15 @@ public class PlayerPickupExperienceEvent extends PlayerEvent implements Cancella
 
     /**
      * @return Returns the Orb that the player is picking up
+     * @since 1.12.2
      */
     public ExperienceOrb getExperienceOrb() {
         return this.experienceOrb;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -66,17 +70,25 @@ public class PlayerPickupExperienceEvent extends PlayerEvent implements Cancella
      * {@inheritDoc}
      * <br>
      * If {@code true}, cancels picking up the experience orb, leaving it in the world
+     *
+     * @since 1.12.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

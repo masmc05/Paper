@@ -80,6 +80,7 @@ public abstract class JavaPlugin extends PluginBase {
      * folder may not yet exist.
      *
      * @return The folder.
+     * @since 1.0.0
      */
     @NotNull
     @Override
@@ -93,6 +94,7 @@ public abstract class JavaPlugin extends PluginBase {
      * @return PluginLoader that controls this plugin
      * @deprecated Plugin loading now occurs at a point which makes it impossible to expose this
      * behavior. This instance will only throw unsupported operation exceptions.
+     * @since 1.0.0
      */
     @NotNull
     @Override
@@ -105,6 +107,7 @@ public abstract class JavaPlugin extends PluginBase {
      * Returns the Server instance currently running this plugin
      *
      * @return Server running this plugin
+     * @since 1.0.0
      */
     @NotNull
     @Override
@@ -117,6 +120,7 @@ public abstract class JavaPlugin extends PluginBase {
      * enabled
      *
      * @return true if this plugin is enabled, otherwise false
+     * @since 1.0.0
      */
     @Override
     public final boolean isEnabled() {
@@ -138,6 +142,7 @@ public abstract class JavaPlugin extends PluginBase {
      *
      * @return Contents of the plugin.yml file
      * @deprecated No longer applicable to all types of plugins
+     * @since 1.0.0
      */
     @NotNull
     @Override
@@ -154,6 +159,9 @@ public abstract class JavaPlugin extends PluginBase {
         return this.pluginMeta;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public FileConfiguration getConfig() {
@@ -180,6 +188,9 @@ public abstract class JavaPlugin extends PluginBase {
         return in == null ? null : new InputStreamReader(in, Charsets.UTF_8);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void reloadConfig() {
         newConfig = YamlConfiguration.loadConfiguration(configFile);
@@ -192,6 +203,9 @@ public abstract class JavaPlugin extends PluginBase {
         newConfig.setDefaults(YamlConfiguration.loadConfiguration(new InputStreamReader(defConfigStream, Charsets.UTF_8)));
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void saveConfig() {
         try {
@@ -252,6 +266,9 @@ public abstract class JavaPlugin extends PluginBase {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Nullable
     @Override
     public InputStream getResource(@NotNull String filename) {
@@ -334,6 +351,8 @@ public abstract class JavaPlugin extends PluginBase {
 
     /**
      * {@inheritDoc}
+     *
+     * @since 1.0.0
      */
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
@@ -358,6 +377,7 @@ public abstract class JavaPlugin extends PluginBase {
      *
      * @param name name or alias of the command
      * @return the plugin command if found, otherwise null
+     * @since 1.0.0
      */
     @Nullable
     public PluginCommand getCommand(@NotNull String name) {
@@ -375,6 +395,9 @@ public abstract class JavaPlugin extends PluginBase {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void onLoad() {}
 
@@ -390,6 +413,9 @@ public abstract class JavaPlugin extends PluginBase {
     @Override
     public void onEnable() {}
 
+    /**
+     * @since 1.0.0
+     */
     @Nullable
     @Override
     public ChunkGenerator getDefaultWorldGenerator(@NotNull String worldName, @Nullable String id) {
@@ -405,11 +431,17 @@ public abstract class JavaPlugin extends PluginBase {
         return null;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public final boolean isNaggable() {
         return naggable;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public final void setNaggable(boolean canNag) {
         this.naggable = canNag;

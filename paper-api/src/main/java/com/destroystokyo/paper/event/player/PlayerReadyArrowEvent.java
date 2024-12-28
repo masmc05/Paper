@@ -53,6 +53,7 @@ public class PlayerReadyArrowEvent extends PlayerEvent implements Cancellable {
 
     /**
      * @return the player is using to fire the arrow
+     * @since 1.12.2
      */
     public ItemStack getBow() {
         return this.bow;
@@ -60,6 +61,7 @@ public class PlayerReadyArrowEvent extends PlayerEvent implements Cancellable {
 
     /**
      * @return the arrow that is attempting to be used
+     * @since 1.12.2
      */
     public ItemStack getArrow() {
         return this.arrow;
@@ -69,6 +71,8 @@ public class PlayerReadyArrowEvent extends PlayerEvent implements Cancellable {
      * {@inheritDoc}
      * <br>
      * Whether use of this arrow is cancelled. On cancel, the server will try the next arrow available and fire another event.
+     *
+     * @since 1.12.2
      */
     @Override
     public boolean isCancelled() {
@@ -77,17 +81,25 @@ public class PlayerReadyArrowEvent extends PlayerEvent implements Cancellable {
 
     /**
      * Cancel use of this arrow. On cancel, the server will try the next arrow available and fire another event.
+     *
+     * @since 1.12.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -103,6 +103,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets the name of this server implementation.
      *
      * @return name of this server implementation
+     * @since 1.0.0
      */
     @NotNull
     public String getName();
@@ -111,6 +112,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets the version string of this server implementation.
      *
      * @return version of this server implementation
+     * @since 1.0.0
      */
     @NotNull
     public String getVersion();
@@ -119,6 +121,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets the Bukkit version that this server is running.
      *
      * @return version of Bukkit
+     * @since 1.0.0
      */
     @NotNull
     public String getBukkitVersion();
@@ -160,6 +163,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * snapshots, {@link ImmutableList#copyOf(Collection)} is recommended.
      *
      * @return a view of currently online players.
+     * @since 1.0.0
      */
     @NotNull
     public Collection<? extends Player> getOnlinePlayers();
@@ -168,6 +172,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Get the maximum amount of players which can login to this server.
      *
      * @return the amount of players this server allows
+     * @since 1.0.0
      */
     public int getMaxPlayers();
 
@@ -183,6 +188,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Get the game port that the server runs on.
      *
      * @return the port number of this server
+     * @since 1.0.0
      */
     public int getPort();
 
@@ -190,6 +196,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Get the view distance from this server.
      *
      * @return the view distance from this server.
+     * @since 1.0.0
      */
     public int getViewDistance();
 
@@ -207,6 +214,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      *
      * @return the IP string that this server is bound to, otherwise empty
      *     string
+     * @since 1.0.0
      */
     @NotNull
     public String getIp();
@@ -248,6 +256,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets whether this server allows the Nether or not.
      *
      * @return whether this server allows the Nether or not
+     * @since 1.0.0
      */
     public boolean getAllowNether();
 
@@ -282,6 +291,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      *
      * @deprecated use {@link #getDatapackManager()}
      * @return the manager
+     * @since 1.19.4
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20") // Paper
@@ -348,6 +358,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets whether this server has a whitelist or not.
      *
      * @return whether this server has a whitelist or not
+     * @since 1.0.0
      */
     public boolean hasWhitelist();
 
@@ -355,6 +366,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Sets if the server is whitelisted.
      *
      * @param value true for whitelist on, false for off
+     * @since 1.0.0
      */
     public void setWhitelist(boolean value);
 
@@ -384,12 +396,15 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets a list of whitelisted players.
      *
      * @return a set containing all whitelisted players
+     * @since 1.0.0
      */
     @NotNull
     public Set<OfflinePlayer> getWhitelistedPlayers();
 
     /**
      * Reloads the whitelist from disk.
+     *
+     * @since 1.0.0
      */
     public void reloadWhitelist();
 
@@ -402,6 +417,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * @param message the message
      * @return the number of players
      * @deprecated use {@link #broadcast(net.kyori.adventure.text.Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public int broadcastMessage(@NotNull String message);
@@ -439,6 +455,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * The update folder name is relative to the plugins folder.
      *
      * @return the name of the update folder
+     * @since 1.0.0
      */
     @NotNull
     public String getUpdateFolder();
@@ -448,6 +465,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * plugins at the right moment on a plugin load.
      *
      * @return the update folder
+     * @since 1.0.0
      */
     @NotNull
     public File getUpdateFolderFile();
@@ -631,6 +649,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      *
      * @param name the name to look up
      * @return a player if one was found, null otherwise
+     * @since 1.0.0
      */
     @Nullable
     public Player getPlayer(@NotNull String name);
@@ -640,6 +659,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      *
      * @param name Exact name of the player to retrieve
      * @return a player object if one was found, null otherwise
+     * @since 1.0.0
      */
     @Nullable
     public Player getPlayerExact(@NotNull String name);
@@ -653,6 +673,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      *
      * @param name the (partial) name to match
      * @return list of all possible players
+     * @since 1.0.0
      */
     @NotNull
     public List<Player> matchPlayer(@NotNull String name);
@@ -684,6 +705,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets the plugin manager for interfacing with plugins.
      *
      * @return a plugin manager for this Server instance
+     * @since 1.0.0
      */
     @NotNull
     public PluginManager getPluginManager();
@@ -692,6 +714,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets the scheduler for managing scheduled events.
      *
      * @return a scheduling service for this server
+     * @since 1.0.0
      */
     @NotNull
     public BukkitScheduler getScheduler();
@@ -700,6 +723,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets a services manager.
      *
      * @return s services manager
+     * @since 1.0.0
      */
     @NotNull
     public ServicesManager getServicesManager();
@@ -708,6 +732,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets a list of all worlds on this server.
      *
      * @return a list of worlds
+     * @since 1.0.0
      */
     @NotNull
     public List<World> getWorlds();
@@ -735,6 +760,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * @param creator the options to use when creating the world
      * @return newly created or loaded world
      * @throws IllegalStateException when {@link #isTickingWorlds() isTickingWorlds} is true
+     * @since 1.0.0
      */
     @Nullable
     public World createWorld(@NotNull WorldCreator creator);
@@ -749,6 +775,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * @param save whether to save the chunks before unloading
      * @return true if successful, false otherwise
      * @throws IllegalStateException when {@link #isTickingWorlds() isTickingWorlds} is true
+     * @since 1.0.0
      */
     public boolean unloadWorld(@NotNull String name, boolean save);
 
@@ -762,6 +789,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * @param save whether to save the chunks before unloading
      * @return true if successful, false otherwise
      * @throws IllegalStateException when {@link #isTickingWorlds() isTickingWorlds} is true
+     * @since 1.0.0
      */
     public boolean unloadWorld(@NotNull World world, boolean save);
 
@@ -770,6 +798,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      *
      * @param name the name of the world to retrieve
      * @return a world with the given name, or null if none exists
+     * @since 1.0.0
      */
     @Nullable
     public World getWorld(@NotNull String name);
@@ -779,6 +808,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      *
      * @param uid a unique-id of the world to retrieve
      * @return a world with the given Unique ID, or null if none exists
+     * @since 1.0.0
      */
     @Nullable
     public World getWorld(@NotNull UUID uid);
@@ -837,6 +867,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      *
      * @param world the world the map will belong to
      * @return a newly created map view
+     * @since 1.0.0
      */
     @NotNull
     public MapView createMap(@NotNull World world);
@@ -924,6 +955,8 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
 
     /**
      * Reloads the server, refreshing settings and plugin information.
+     *
+     * @since 1.0.0
      */
     public void reload();
 
@@ -972,12 +1005,15 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      *
      * @param name the name of the command to retrieve
      * @return a plugin command if found, null otherwise
+     * @since 1.0.0
      */
     @Nullable
     public PluginCommand getPluginCommand(@NotNull String name);
 
     /**
      * Writes loaded players to disk.
+     *
+     * @since 1.0.0
      */
     public void savePlayers();
 
@@ -990,6 +1026,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * @return returns false if no target is found
      * @throws CommandException thrown when the executor for the given command
      *     fails with an unhandled exception
+     * @since 1.0.0
      */
     public boolean dispatchCommand(@NotNull CommandSender sender, @NotNull String commandLine) throws CommandException;
 
@@ -1006,6 +1043,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * @return true if the recipe was added, false if it wasn't for some
      *     reason
      * @see #addRecipe(Recipe, boolean)
+     * @since 1.0.0
      */
     @Contract("null -> false")
     public boolean addRecipe(@Nullable Recipe recipe);
@@ -1225,6 +1263,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets a list of command aliases defined in the server properties.
      *
      * @return a map of aliases to command names
+     * @since 1.0.0
      */
     @NotNull
     public Map<String, String[]> getCommandAliases();
@@ -1233,6 +1272,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets the radius, in blocks, around each worlds spawn point to protect.
      *
      * @return spawn radius, or 0 if none
+     * @since 1.0.0
      */
     public int getSpawnRadius();
 
@@ -1240,6 +1280,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Sets the radius, in blocks, around each worlds spawn point to protect.
      *
      * @param value new spawn radius, or 0 if none
+     * @since 1.0.0
      */
     public void setSpawnRadius(int value);
 
@@ -1284,6 +1325,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets whether the Server is in online mode or not.
      *
      * @return true if the server authenticates clients, false otherwise
+     * @since 1.0.0
      */
     public boolean getOnlineMode();
 
@@ -1291,6 +1333,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets whether this server allows flying or not.
      *
      * @return true if the server allows flight, false otherwise
+     * @since 1.0.0
      */
     public boolean getAllowFlight();
 
@@ -1304,6 +1347,8 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
 
     /**
      * Shutdowns the server, stopping everything.
+     *
+     * @since 1.0.0
      */
     public void shutdown();
 
@@ -1316,6 +1361,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      *     permissibles} must have to receive the broadcast
      * @return number of message recipients
      * @deprecated in favour of {@link #broadcast(net.kyori.adventure.text.Component, String)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public int broadcast(@NotNull String message, @NotNull String permission);
@@ -1358,6 +1404,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * @param name the name the player to retrieve
      * @return an offline player
      * @see #getOfflinePlayer(java.util.UUID)
+     * @since 1.0.0
      */
     // @Deprecated(since = "1.7.5") // Paper
     @NotNull
@@ -1443,6 +1490,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets a set containing all current IPs that are banned.
      *
      * @return a set containing banned IP addresses
+     * @since 1.0.0
      */
     @NotNull
     public Set<String> getIPBans();
@@ -1453,6 +1501,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * @param address the IP address to ban
      *
      * @deprecated see {@link #banIP(InetAddress)}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20.1")
     public void banIP(@NotNull String address);
@@ -1463,6 +1512,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * @param address the IP address to unban
      *
      * @deprecated see {@link #unbanIP(InetAddress)}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20.1")
     public void unbanIP(@NotNull String address);
@@ -1487,6 +1537,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets a set containing all banned players.
      *
      * @return a set containing banned players
+     * @since 1.0.0
      */
     @NotNull
     public Set<OfflinePlayer> getBannedPlayers();
@@ -1522,6 +1573,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets a set containing all player operators.
      *
      * @return a set containing player operators
+     * @since 1.0.0
      */
     @NotNull
     public Set<OfflinePlayer> getOperators();
@@ -1530,6 +1582,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets the default {@link GameMode} for new players.
      *
      * @return the default game mode
+     * @since 1.0.0
      */
     @NotNull
     public GameMode getDefaultGameMode();
@@ -1538,6 +1591,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Sets the default {@link GameMode} for new players.
      *
      * @param mode the new game mode
+     * @since 1.0.0
      */
     public void setDefaultGameMode(@NotNull GameMode mode);
 
@@ -1546,6 +1600,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * for this server.
      *
      * @return a console command sender
+     * @since 1.0.0
      */
     @NotNull
     public ConsoleCommandSender getConsoleSender();
@@ -1567,6 +1622,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
      * Gets the folder that contains all of the various {@link World}s.
      *
      * @return folder that contains all worlds
+     * @since 1.0.0
      */
     @NotNull
     public File getWorldContainer();
@@ -2399,6 +2455,9 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
     // Spigot start
     public class Spigot {
 
+        /**
+         * @since 1.7.10
+         */
         @NotNull
         public org.bukkit.configuration.file.YamlConfiguration getConfig() {
             throw new UnsupportedOperationException("Not supported yet.");
@@ -2438,6 +2497,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
          *
          * @param component the components to send
          * @deprecated use {@link #broadcast(net.kyori.adventure.text.Component)}
+         * @since 1.7.10
          */
         @Deprecated // Paper
         public void broadcast(@NotNull net.md_5.bungee.api.chat.BaseComponent component) {
@@ -2449,6 +2509,7 @@ public interface Server extends PluginMessageRecipient, net.kyori.adventure.audi
          *
          * @param components the components to send
          * @deprecated use {@link #broadcast(net.kyori.adventure.text.Component)}
+         * @since 1.7.10
          */
         @Deprecated // Paper
         public void broadcast(@NotNull net.md_5.bungee.api.chat.BaseComponent... components) {

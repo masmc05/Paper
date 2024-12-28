@@ -18,6 +18,7 @@ public interface MapCanvas {
      * Get the map this canvas is attached to.
      *
      * @return The MapView this canvas is attached to.
+     * @since 1.0.0
      */
     @NotNull
     public MapView getMapView();
@@ -26,6 +27,7 @@ public interface MapCanvas {
      * Get the cursor collection associated with this canvas.
      *
      * @return The MapCursorCollection associated with this canvas.
+     * @since 1.0.0
      */
     @NotNull
     public MapCursorCollection getCursors();
@@ -36,6 +38,7 @@ public interface MapCanvas {
      * provided.
      *
      * @param cursors The MapCursorCollection to associate with this canvas.
+     * @since 1.0.0
      */
     public void setCursors(@NotNull MapCursorCollection cursors);
 
@@ -90,6 +93,7 @@ public interface MapCanvas {
      * @param y The y coordinate, from 0 to 127.
      * @param color The color. See {@link MapPalette}.
      * @deprecated Magic value, use {@link #setPixelColor(int, int, Color)}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20.5")
     public void setPixel(int x, int y, byte color);
@@ -101,6 +105,7 @@ public interface MapCanvas {
      * @param y The y coordinate, from 0 to 127.
      * @return The color. See {@link MapPalette}.
      * @deprecated use {@link #getPixelColor(int, int)}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.19", forRemoval = true) // Paper
     public byte getPixel(int x, int y);
@@ -112,6 +117,7 @@ public interface MapCanvas {
      * @param y The y coordinate, from 0 to 127.
      * @return The color. See {@link MapPalette}.
      * @deprecated use {@link #getBasePixelColor(int, int)}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.19", forRemoval = true) // Paper
     public byte getBasePixel(int x, int y);
@@ -122,6 +128,7 @@ public interface MapCanvas {
      * @param x The x coordinate of the image.
      * @param y The y coordinate of the image.
      * @param image The Image to draw.
+     * @since 1.0.0
      */
     public void drawImage(int x, int y, @NotNull Image image);
 
@@ -135,6 +142,7 @@ public interface MapCanvas {
      * @param y The row to start rendering on.
      * @param font The font to use.
      * @param text The formatted text to render.
+     * @since 1.0.0
      */
     public void drawText(int x, int y, @NotNull MapFont font, @NotNull String text);
 

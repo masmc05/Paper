@@ -29,6 +29,9 @@ public final class MemoryKey<T> implements Keyed {
         MEMORY_KEYS.put(namespacedKey, this);
     }
 
+    /**
+     * @since 1.14.1
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -39,6 +42,7 @@ public final class MemoryKey<T> implements Keyed {
      * Gets the class of values associated with this memory.
      *
      * @return the class of value objects
+     * @since 1.14.1
      */
     @NotNull
     public Class<T> getMemoryClass() {
@@ -85,6 +89,7 @@ public final class MemoryKey<T> implements Keyed {
      * {@link MemoryKey}
      * @return the {@link MemoryKey} or null when no {@link MemoryKey} is
      * available under that key
+     * @since 1.14.1
      */
     @Nullable
     public static MemoryKey getByKey(@NotNull NamespacedKey namespacedKey) {
@@ -95,6 +100,7 @@ public final class MemoryKey<T> implements Keyed {
      * Returns the set of all MemoryKeys.
      *
      * @return the memoryKeys
+     * @since 1.14.1
      */
     @NotNull
     public static Set<MemoryKey> values() {

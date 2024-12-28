@@ -17,6 +17,9 @@ import org.jspecify.annotations.NullMarked;
 @ApiStatus.NonExtendable
 public interface BlockItemDataProperties {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static BlockItemDataProperties.Builder blockItemStateProperties() {
         return ItemComponentTypesBridge.bridge().blockItemStateProperties();
@@ -27,6 +30,7 @@ public interface BlockItemDataProperties {
      *
      * @param blockType the block type
      * @return the block data
+     * @since 1.21.3
      */
     @Contract(pure = true)
     BlockData createBlockData(BlockType blockType);
@@ -37,12 +41,15 @@ public interface BlockItemDataProperties {
      *
      * @param blockData the block data to apply the properties to
      * @return the block data with the properties applied
+     * @since 1.21.3
      */
     @Contract(pure = true)
     BlockData applyTo(BlockData blockData);
 
     /**
      * Builder for {@link BlockItemDataProperties}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.Experimental
     @ApiStatus.NonExtendable

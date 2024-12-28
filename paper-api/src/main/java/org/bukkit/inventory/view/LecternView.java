@@ -23,6 +23,7 @@ public interface LecternView extends InventoryView {
      * Gets the page that the LecternView is on.
      *
      * @return The page the book is on
+     * @since 1.21
      */
     int getPage();
 
@@ -30,6 +31,7 @@ public interface LecternView extends InventoryView {
      * Sets the page of the lectern book.
      *
      * @param page the lectern book page
+     * @since 1.21
      */
     void setPage(final int page);
 }

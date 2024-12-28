@@ -18,6 +18,7 @@ public interface VersionFetcher {
      * Negative values will never cache.
      *
      * @return cache time
+     * @since 1.14.1
      */
     long getCacheTime();
 
@@ -28,6 +29,7 @@ public interface VersionFetcher {
      *
      * @param serverVersion the current version of the server (will match {@link Bukkit#getVersion()})
      * @return the message to show when requesting a version
+     * @since 1.14.1
      */
     Component getVersionMessage(String serverVersion);
 

@@ -21,6 +21,7 @@ public interface Bed extends TileState, Colorable {
      * <b>Unsupported</b>
      *
      * @throws UnsupportedOperationException not supported, set the block type
+     * @since 1.19.1
      */
     @Override
     @org.jetbrains.annotations.Contract("_ -> fail")

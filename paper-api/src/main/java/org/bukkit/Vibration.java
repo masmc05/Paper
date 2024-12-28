@@ -34,6 +34,7 @@ public class Vibration {
      *
      * @deprecated unused as of 1.19
      * @return origin
+     * @since 1.17
      */
     @NotNull
     @Deprecated(forRemoval = true) // Paper
@@ -45,6 +46,7 @@ public class Vibration {
      * Get the vibration destination.
      *
      * @return destination
+     * @since 1.17
      */
     @NotNull
     public Destination getDestination() {
@@ -55,13 +57,20 @@ public class Vibration {
      * Get the vibration arrival time in ticks.
      *
      * @return arrival time
+     * @since 1.17
      */
     public int getArrivalTime() {
         return arrivalTime;
     }
 
+    /**
+     * @since 1.17
+     */
     public interface Destination {
 
+        /**
+         * @since 1.17
+         */
         public static class EntityDestination implements Destination {
 
             private final Entity entity;
@@ -70,12 +79,18 @@ public class Vibration {
                 this.entity = entity;
             }
 
+            /**
+             * @since 1.17
+             */
             @NotNull
             public Entity getEntity() {
                 return entity;
             }
         }
 
+        /**
+         * @since 1.17
+         */
         public static class BlockDestination implements Destination {
 
             private final Location block;
@@ -88,11 +103,17 @@ public class Vibration {
                 this(block.getLocation());
             }
 
+            /**
+             * @since 1.17
+             */
             @NotNull
             public Location getLocation() {
                 return block.clone();
             }
 
+            /**
+             * @since 1.17
+             */
             @NotNull
             public Block getBlock() {
                 return block.getBlock();

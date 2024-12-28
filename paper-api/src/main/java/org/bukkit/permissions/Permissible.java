@@ -18,6 +18,7 @@ public interface Permissible extends ServerOperator {
      *
      * @param name Name of the permission
      * @return true if the permission is set, otherwise false
+     * @since 1.0.0
      */
     public boolean isPermissionSet(@NotNull String name);
 
@@ -27,6 +28,7 @@ public interface Permissible extends ServerOperator {
      *
      * @param perm Permission to check
      * @return true if the permission is set, otherwise false
+     * @since 1.0.0
      */
     public boolean isPermissionSet(@NotNull Permission perm);
 
@@ -38,6 +40,7 @@ public interface Permissible extends ServerOperator {
      *
      * @param name Name of the permission
      * @return Value of the permission
+     * @since 1.0.0
      */
     public boolean hasPermission(@NotNull String name);
 
@@ -49,6 +52,7 @@ public interface Permissible extends ServerOperator {
      *
      * @param perm Permission to get
      * @return Value of the permission
+     * @since 1.0.0
      */
     public boolean hasPermission(@NotNull Permission perm);
 
@@ -61,6 +65,7 @@ public interface Permissible extends ServerOperator {
      * @param name Name of the permission to attach
      * @param value Value of the permission
      * @return The PermissionAttachment that was just created
+     * @since 1.0.0
      */
     @NotNull
     public PermissionAttachment addAttachment(@NotNull Plugin plugin, @NotNull String name, boolean value);
@@ -71,6 +76,7 @@ public interface Permissible extends ServerOperator {
      * @param plugin Plugin responsible for this attachment, may not be null
      *     or disabled
      * @return The PermissionAttachment that was just created
+     * @since 1.0.0
      */
     @NotNull
     public PermissionAttachment addAttachment(@NotNull Plugin plugin);
@@ -86,6 +92,7 @@ public interface Permissible extends ServerOperator {
      * @param ticks Amount of ticks to automatically remove this attachment
      *     after
      * @return The PermissionAttachment that was just created
+     * @since 1.0.0
      */
     @Nullable
     public PermissionAttachment addAttachment(@NotNull Plugin plugin, @NotNull String name, boolean value, int ticks);
@@ -99,6 +106,7 @@ public interface Permissible extends ServerOperator {
      * @param ticks Amount of ticks to automatically remove this attachment
      *     after
      * @return The PermissionAttachment that was just created
+     * @since 1.0.0
      */
     @Nullable
     public PermissionAttachment addAttachment(@NotNull Plugin plugin, int ticks);
@@ -109,6 +117,7 @@ public interface Permissible extends ServerOperator {
      * @param attachment Attachment to remove
      * @throws IllegalArgumentException Thrown when the specified attachment
      *     isn't part of this object
+     * @since 1.0.0
      */
     public void removeAttachment(@NotNull PermissionAttachment attachment);
 
@@ -117,6 +126,8 @@ public interface Permissible extends ServerOperator {
      * changed values.
      * <p>
      * This should very rarely need to be called from a plugin.
+     *
+     * @since 1.0.0
      */
     public void recalculatePermissions();
 
@@ -125,6 +136,7 @@ public interface Permissible extends ServerOperator {
      * this object
      *
      * @return Set of currently effective permissions
+     * @since 1.0.0
      */
     @NotNull
     public Set<PermissionAttachmentInfo> getEffectivePermissions();

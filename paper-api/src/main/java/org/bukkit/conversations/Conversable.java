@@ -17,6 +17,7 @@ public interface Conversable {
      * conversation.
      *
      * @return True if a conversation is in progress
+     * @since 1.1.0
      */
     public boolean isConversing();
 
@@ -25,6 +26,7 @@ public interface Conversable {
      * progress, this method does nothing.
      *
      * @param input The input message into the conversation
+     * @since 1.1.0
      */
     public void acceptConversationInput(@NotNull String input);
 
@@ -34,6 +36,7 @@ public interface Conversable {
      * @param conversation The conversation to begin
      * @return True if the conversation should proceed, false if it has been
      *     enqueued
+     * @since 1.1.0
      */
     public boolean beginConversation(@NotNull Conversation conversation);
 
@@ -41,6 +44,7 @@ public interface Conversable {
      * Abandons an active conversation.
      *
      * @param conversation The conversation to abandon
+     * @since 1.1.0
      */
     public void abandonConversation(@NotNull Conversation conversation);
 
@@ -57,6 +61,7 @@ public interface Conversable {
      * Sends this sender a message raw
      *
      * @param message Message to be displayed
+     * @since 1.1.0
      */
     @org.jetbrains.annotations.ApiStatus.Obsolete // Paper
     public void sendRawMessage(@NotNull String message);

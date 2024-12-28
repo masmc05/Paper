@@ -9,6 +9,7 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class ExtendedRails extends Rails {
@@ -27,6 +28,9 @@ public class ExtendedRails extends Rails {
         super(type, data);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCurve() {
         return false;
@@ -43,6 +47,9 @@ public class ExtendedRails extends Rails {
         return (byte) (getData() & 0x7);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setDirection(BlockFace face, boolean isOnSlope) {
         boolean extraBitSet = (getData() & 0x8) == 0x8;

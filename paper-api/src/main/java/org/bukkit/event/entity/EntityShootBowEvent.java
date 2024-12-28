@@ -69,6 +69,9 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
         this.consumeItem = consumeItem;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public LivingEntity getEntity() {
@@ -79,6 +82,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      * Gets the bow ItemStack used to fire the arrow.
      *
      * @return the bow involved in this event
+     * @since 1.1.0
      */
     @Nullable
     public ItemStack getBow() {
@@ -103,6 +107,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      * Gets the projectile which will be launched by this event
      *
      * @return the launched projectile
+     * @since 1.1.0
      */
     @NotNull
     public Entity getProjectile() {
@@ -113,6 +118,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      * Replaces the projectile which will be launched
      *
      * @param projectile the new projectile
+     * @since 1.1.0
      */
     public void setProjectile(@NotNull Entity projectile) {
         this.projectile = projectile;
@@ -133,6 +139,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      * Gets the force the arrow was launched with
      *
      * @return bow shooting force, up to 1.0
+     * @since 1.1.0
      */
     public float getForce() {
         return force;
@@ -168,22 +175,34 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
         return consumeItem;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

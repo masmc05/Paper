@@ -72,6 +72,7 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
      * @return unique id
      * @see #getKey()
      * @deprecated attributes are now identified by keys
+     * @since 1.9.4
      */
     @NotNull
     @Deprecated(since = "1.21", forRemoval = true)
@@ -101,6 +102,7 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
      * Get the name of this modifier.
      *
      * @return name
+     * @since 1.9.4
      */
     @NotNull
     public String getName() {
@@ -111,6 +113,7 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
      * Get the amount by which this modifier will apply its {@link Operation}.
      *
      * @return modification amount
+     * @since 1.9.4
      */
     public double getAmount() {
         return amount;
@@ -120,6 +123,7 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
      * Get the operation this modifier will apply.
      *
      * @return operation
+     * @since 1.9.4
      */
     @NotNull
     public Operation getOperation() {
@@ -152,6 +156,9 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
         return slot;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public Map<String, Object> serialize() {
@@ -195,6 +202,9 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
                 + "}";
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static AttributeModifier deserialize(@NotNull Map<String, Object> args) {
         NamespacedKey key;
@@ -221,6 +231,8 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
 
     /**
      * Enumerable operation to be applied.
+     *
+     * @since 1.9.4
      */
     public enum Operation {
 

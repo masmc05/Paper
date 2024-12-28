@@ -32,6 +32,7 @@ public class PlayerPickupItemEvent extends PlayerEvent implements Cancellable {
      * Gets the Item picked up by the player.
      *
      * @return Item
+     * @since 1.0.0
      */
     @NotNull
     public Item getItem() {
@@ -42,6 +43,7 @@ public class PlayerPickupItemEvent extends PlayerEvent implements Cancellable {
      * Gets the amount remaining on the ground, if any
      *
      * @return amount remaining on the ground
+     * @since 1.0.0
      */
     public int getRemaining() {
         return remaining;
@@ -71,11 +73,17 @@ public class PlayerPickupItemEvent extends PlayerEvent implements Cancellable {
     }
     // Paper end
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancel = cancel;

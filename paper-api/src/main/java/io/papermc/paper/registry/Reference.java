@@ -11,6 +11,7 @@ import org.jetbrains.annotations.Nullable;
  * change.
  *
  * @param <T> type of the value
+ * @since 1.18.2
  */
 @Deprecated(forRemoval = true, since = "1.20.6")
 public interface Reference<T extends Keyed> extends Keyed {
@@ -20,6 +21,7 @@ public interface Reference<T extends Keyed> extends Keyed {
      *
      * @return the value
      * @throws java.util.NoSuchElementException if there is no value with this key
+     * @since 1.18.2
      */
     @Deprecated(forRemoval = true, since = "1.20.6")
     @NotNull T value();
@@ -28,6 +30,7 @@ public interface Reference<T extends Keyed> extends Keyed {
      * Gets the value from the registry with the key.
      *
      * @return the value or null if it doesn't exist
+     * @since 1.18.2
      */
     @Deprecated(forRemoval = true, since = "1.20.6")
     @Nullable T valueOrNull();
@@ -39,6 +42,7 @@ public interface Reference<T extends Keyed> extends Keyed {
      * @param key the key to the value
      * @param <T> the type of the value
      * @return a reference
+     * @since 1.18.2
      */
     @Deprecated(forRemoval = true, since = "1.20.6")
     static <T extends Keyed> @NotNull Reference<T> create(@NotNull Registry<T> registry, @NotNull NamespacedKey key) {

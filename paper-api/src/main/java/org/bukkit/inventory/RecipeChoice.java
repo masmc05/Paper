@@ -43,6 +43,7 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
      *
      * @return a single representative item
      * @deprecated for compatibility only
+     * @since 1.13.1
      */
     @Deprecated(since = "1.13.1")
     @NotNull
@@ -111,6 +112,10 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
             }
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.13.1
+         */
         @Override
         public boolean test(@NotNull ItemStack t) {
             for (Material match : choices) {
@@ -122,6 +127,10 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
             return false;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.13.1
+         */
         @NotNull
         @Override
         public ItemStack getItemStack() {
@@ -135,6 +144,9 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
             return stack;
         }
 
+        /**
+         * @since 1.13.1
+         */
         @NotNull
         public List<Material> getChoices() {
             return Collections.unmodifiableList(choices);
@@ -226,12 +238,19 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
             this.choices = new ArrayList<>(choices);
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.13.2
+         */
         @NotNull
         @Override
         public ItemStack getItemStack() {
             return choices.get(0).clone();
         }
 
+        /**
+         * @since 1.13.2
+         */
         @NotNull
         public List<ItemStack> getChoices() {
             return Collections.unmodifiableList(choices);
@@ -254,6 +273,10 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
             }
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.13.2
+         */
         @Override
         public boolean test(@NotNull ItemStack t) {
             for (ItemStack match : choices) {

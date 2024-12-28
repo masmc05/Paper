@@ -18,6 +18,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      * calling this method.
      *
      * @return pattern color
+     * @since 1.13
      */
     @NotNull
     DyeColor getPatternColor();
@@ -29,6 +30,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      * all other values to unspecified defaults.
      *
      * @param color pattern color
+     * @since 1.13
      */
     void setPatternColor(@NotNull DyeColor color);
 
@@ -39,6 +41,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      * calling this method.
      *
      * @return pattern color
+     * @since 1.13
      */
     @NotNull
     DyeColor getBodyColor();
@@ -50,6 +53,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      * all other values to unspecified defaults.
      *
      * @param color body color
+     * @since 1.13
      */
     void setBodyColor(@NotNull DyeColor color);
 
@@ -60,6 +64,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      * calling this method.
      *
      * @return pattern
+     * @since 1.13
      */
     @NotNull
     TropicalFish.Pattern getPattern();
@@ -79,6 +84,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      * spawned.
      *
      * @return if there is a variant
+     * @since 1.13
      */
     boolean hasVariant();
 

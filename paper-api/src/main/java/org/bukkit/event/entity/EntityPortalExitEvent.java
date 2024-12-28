@@ -33,6 +33,7 @@ public class EntityPortalExitEvent extends EntityTeleportEvent {
      * portal.
      *
      * @return velocity of entity before entering the portal
+     * @since 1.4.7
      */
     @NotNull
     public Vector getBefore() {
@@ -44,6 +45,7 @@ public class EntityPortalExitEvent extends EntityTeleportEvent {
      * portal.
      *
      * @return velocity of entity after exiting the portal
+     * @since 1.4.7
      */
     @NotNull
     public Vector getAfter() {
@@ -54,17 +56,24 @@ public class EntityPortalExitEvent extends EntityTeleportEvent {
      * Sets the velocity that the entity will have after exiting the portal.
      *
      * @param after the velocity after exiting the portal
+     * @since 1.4.7
      */
     public void setAfter(@NotNull Vector after) {
         this.after = after.clone();
     }
 
+    /**
+     * @since 1.4.7
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.4.7
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

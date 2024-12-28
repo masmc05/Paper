@@ -31,6 +31,7 @@ public class PlayerPostRespawnEvent extends PlayerEvent {
      * Returns the location of the respawned player
      *
      * @return location of the respawned player
+     * @since 1.13.2
      */
     public Location getRespawnedLocation() {
         return this.respawnedLocation.clone();
@@ -40,16 +41,23 @@ public class PlayerPostRespawnEvent extends PlayerEvent {
      * Checks if the player respawned to their bed
      *
      * @return whether the player respawned to their bed
+     * @since 1.13.2
      */
     public boolean isBedSpawn() {
         return this.isBedSpawn;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

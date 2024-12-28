@@ -27,6 +27,7 @@ public class PlayerRecipeBookSettingsChangeEvent extends PlayerEvent {
      * Gets the type of recipe book the player is changing the settings for.
      *
      * @return the type of recipe book
+     * @since 1.20.2
      */
     @NotNull
     public RecipeBookType getRecipeBookType() {
@@ -37,6 +38,7 @@ public class PlayerRecipeBookSettingsChangeEvent extends PlayerEvent {
      * Checks if the recipe book is being opened or closed.
      *
      * @return true if opening
+     * @since 1.20.2
      */
     public boolean isOpen() {
         return open;
@@ -46,17 +48,24 @@ public class PlayerRecipeBookSettingsChangeEvent extends PlayerEvent {
      * Checks if the recipe book filter is being enabled or disabled.
      *
      * @return true if enabling
+     * @since 1.20.2
      */
     public boolean isFiltering() {
         return filtering;
     }
 
+    /**
+     * @since 1.20.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.20.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
@@ -66,6 +75,8 @@ public class PlayerRecipeBookSettingsChangeEvent extends PlayerEvent {
      * Enum representing the various types of recipe book.
      * <br>
      * Different types of recipe book are shown in different GUIs.
+     *
+     * @since 1.20.2
      */
     public enum RecipeBookType {
 

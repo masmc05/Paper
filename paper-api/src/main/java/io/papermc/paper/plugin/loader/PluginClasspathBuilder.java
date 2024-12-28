@@ -31,9 +31,13 @@ public interface PluginClasspathBuilder {
      * @return self
      * @see io.papermc.paper.plugin.loader.library.impl.JarLibrary
      * @see io.papermc.paper.plugin.loader.library.impl.MavenLibraryResolver
+     * @since 1.19.3
      */
     @Contract("_ -> this")
     PluginClasspathBuilder addLibrary(ClassPathLibrary classPathLibrary);
 
+    /**
+     * @since 1.19.3
+     */
     PluginProviderContext getContext();
 }

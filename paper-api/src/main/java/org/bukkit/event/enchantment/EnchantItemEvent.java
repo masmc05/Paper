@@ -48,6 +48,7 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
      * Gets the player enchanting the item
      *
      * @return enchanting player
+     * @since 1.1.0
      */
     @NotNull
     public Player getEnchanter() {
@@ -58,6 +59,7 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
      * Gets the block being used to enchant the item
      *
      * @return the block used for enchanting
+     * @since 1.1.0
      */
     @NotNull
     public Block getEnchantBlock() {
@@ -68,6 +70,7 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
      * Gets the item to be enchanted (can be modified)
      *
      * @return ItemStack of item
+     * @since 1.1.0
      */
     @NotNull
     public ItemStack getItem() {
@@ -91,6 +94,7 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
      * hand side of the enchantment offer.
      *
      * @return experience level cost
+     * @since 1.1.0
      */
     public int getExpLevelCost() {
         return level;
@@ -101,6 +105,7 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
      * hand side of the enchantment offer.
      *
      * @param level - cost in levels
+     * @since 1.1.0
      */
     public void setExpLevelCost(int level) {
         Preconditions.checkArgument(level > 0, "The cost must be greater than 0!");
@@ -114,6 +119,7 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
      * allowed for the item will be ignored
      *
      * @return map of enchantment levels, keyed by enchantment
+     * @since 1.1.0
      */
     @NotNull
     public Map<Enchantment, Integer> getEnchantsToAdd() {
@@ -147,27 +153,40 @@ public class EnchantItemEvent extends InventoryEvent implements Cancellable {
      * Which button was pressed to initiate the enchanting.
      *
      * @return The button index (0, 1, or 2).
+     * @since 1.1.0
      */
     public int whichButton() {
         return button;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

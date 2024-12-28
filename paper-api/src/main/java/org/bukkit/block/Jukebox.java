@@ -18,6 +18,7 @@ public interface Jukebox extends io.papermc.paper.block.TileStateInventoryHolder
      * Gets the record inserted into the jukebox.
      *
      * @return The record Material, or AIR if none is inserted
+     * @since 1.0.0
      */
     @NotNull
     public Material getPlaying();
@@ -26,6 +27,7 @@ public interface Jukebox extends io.papermc.paper.block.TileStateInventoryHolder
      * Sets the record being played.
      *
      * @param record The record Material, or null/AIR to stop playing
+     * @since 1.0.0
      */
     public void setPlaying(@Nullable Material record);
 
@@ -63,6 +65,7 @@ public interface Jukebox extends io.papermc.paper.block.TileStateInventoryHolder
      * Checks if the jukebox is playing a record.
      *
      * @return True if there is a record playing
+     * @since 1.0.0
      */
     public boolean isPlaying();
 
@@ -90,6 +93,7 @@ public interface Jukebox extends io.papermc.paper.block.TileStateInventoryHolder
      *
      * @return True if a record was ejected; false if there was none playing
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.0.0
      */
     public boolean eject();
 

@@ -44,6 +44,7 @@ public class PlayerSetSpawnEvent extends PlayerEvent implements Cancellable {
      * Gets the cause of this event.
      *
      * @return the cause
+     * @since 1.17.1
      */
     public Cause getCause() {
         return this.cause;
@@ -56,6 +57,7 @@ public class PlayerSetSpawnEvent extends PlayerEvent implements Cancellable {
      * {@link Location#clone()} to get a copy of this location.
      *
      * @return the spawn location, or {@code null} if removing the location
+     * @since 1.17.1
      */
     public @Nullable Location getLocation() {
         return this.location;
@@ -66,6 +68,7 @@ public class PlayerSetSpawnEvent extends PlayerEvent implements Cancellable {
      * of this location is the spawn angle.
      *
      * @param location the spawn location, or {@code null} to remove the spawn location
+     * @since 1.17.1
      */
     public void setLocation(final @Nullable Location location) {
         this.location = location != null ? location.clone() : null;
@@ -75,6 +78,7 @@ public class PlayerSetSpawnEvent extends PlayerEvent implements Cancellable {
      * Gets if this is a force spawn location
      *
      * @return {@code true} if forced
+     * @since 1.17.1
      */
     public boolean isForced() {
         return this.forced;
@@ -84,6 +88,7 @@ public class PlayerSetSpawnEvent extends PlayerEvent implements Cancellable {
      * Sets if this is a forced spawn location
      *
      * @param forced {@code true} to force
+     * @since 1.17.1
      */
     public void setForced(final boolean forced) {
         this.forced = forced;
@@ -94,6 +99,7 @@ public class PlayerSetSpawnEvent extends PlayerEvent implements Cancellable {
      * has been set.
      *
      * @return {@code true} to notify
+     * @since 1.17.1
      */
     public boolean willNotifyPlayer() {
         return this.notifyPlayer;
@@ -104,6 +110,7 @@ public class PlayerSetSpawnEvent extends PlayerEvent implements Cancellable {
      * has been set.
      *
      * @param notifyPlayer {@code true} to notify
+     * @since 1.17.1
      */
     public void setNotifyPlayer(final boolean notifyPlayer) {
         this.notifyPlayer = notifyPlayer;
@@ -114,6 +121,7 @@ public class PlayerSetSpawnEvent extends PlayerEvent implements Cancellable {
      * if {@link #willNotifyPlayer()} returns true.
      *
      * @return {@code null} if no notification
+     * @since 1.17.1
      */
     public @Nullable Component getNotification() {
         return this.notification;
@@ -123,30 +131,46 @@ public class PlayerSetSpawnEvent extends PlayerEvent implements Cancellable {
      * Sets the notification message that will be sent to the player.
      *
      * @param notification {@code null} to send no message
+     * @since 1.17.1
      */
     public void setNotification(final @Nullable Component notification) {
         this.notification = notification;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.17.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.17.1
+     */
     public enum Cause {
         /**
          * When a player interacts successfully with a bed.

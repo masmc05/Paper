@@ -27,6 +27,7 @@ public final class Tick implements TemporalUnit {
      * Gets the instance of the tick temporal unit.
      *
      * @return the tick instance
+     * @since 1.19.2
      */
     public static Tick tick() {
         return INSTANCE;
@@ -49,6 +50,7 @@ public final class Tick implements TemporalUnit {
      *
      * @param ticks the amount of ticks
      * @return the duration
+     * @since 1.19.2
      */
     public static Duration of(final long ticks) {
         return Duration.of(ticks, INSTANCE);
@@ -61,17 +63,26 @@ public final class Tick implements TemporalUnit {
      * @param duration the duration
      * @return the number of whole ticks in this duration
      * @throws ArithmeticException if the duration is zero or an overflow occurs
+     * @since 1.19.2
      */
     public int fromDuration(final Duration duration) {
         Objects.requireNonNull(duration, "duration cannot be null");
         return Math.toIntExact(Math.floorDiv(duration.toMillis(), this.milliseconds));
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.19.2
+     */
     @Override
     public Duration getDuration() {
         return Duration.ofMillis(this.milliseconds);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.19.2
+     */
     // Note: This is a workaround in order to allow calculations with this duration.
     // See: Duration#add
     @Override
@@ -79,11 +90,19 @@ public final class Tick implements TemporalUnit {
         return false;
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.19.2
+     */
     @Override
     public boolean isDateBased() {
         return false;
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.19.2
+     */
     @Override
     public boolean isTimeBased() {
         return true;
@@ -95,6 +114,10 @@ public final class Tick implements TemporalUnit {
         return (R) temporal.plus(this.getDuration().multipliedBy(amount));
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.19.2
+     */
     @Override
     public long between(final Temporal start, final Temporal end) {
         return start.until(end, ChronoUnit.MILLIS) / this.milliseconds;

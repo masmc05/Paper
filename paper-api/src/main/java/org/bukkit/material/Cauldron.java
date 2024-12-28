@@ -7,6 +7,7 @@ import org.bukkit.Material;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.1.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Cauldron extends MaterialData {
@@ -40,6 +41,7 @@ public class Cauldron extends MaterialData {
      * Check if the cauldron is full.
      *
      * @return True if it is full.
+     * @since 1.1.0
      */
     public boolean isFull() {
         return getData() >= CAULDRON_FULL;
@@ -49,6 +51,7 @@ public class Cauldron extends MaterialData {
      * Check if the cauldron is empty.
      *
      * @return True if it is empty.
+     * @since 1.1.0
      */
     public boolean isEmpty() {
         return getData() <= CAULDRON_EMPTY;

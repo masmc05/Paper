@@ -60,6 +60,7 @@ public class SmithingRecipe implements Recipe, Keyed {
      * Get the base recipe item.
      *
      * @return base choice
+     * @since 1.16.1
      */
     @NotNull // Paper - fix issues with recipe api
     public RecipeChoice getBase() {
@@ -70,18 +71,25 @@ public class SmithingRecipe implements Recipe, Keyed {
      * Get the addition recipe item.
      *
      * @return addition choice
+     * @since 1.16.1
      */
     @NotNull // Paper - fix issues with recipe api
     public RecipeChoice getAddition() {
         return (addition != null) ? addition.clone() : null;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     @Override
     public ItemStack getResult() {
         return result.clone();
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {

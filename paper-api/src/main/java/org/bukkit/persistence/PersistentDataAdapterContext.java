@@ -14,6 +14,7 @@ public interface PersistentDataAdapterContext {
      * Creates a new and empty meta container instance.
      *
      * @return the fresh container instance
+     * @since 1.14
      */
     @NotNull
     PersistentDataContainer newPersistentDataContainer();

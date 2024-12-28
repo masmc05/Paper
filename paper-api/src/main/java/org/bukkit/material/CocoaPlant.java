@@ -8,10 +8,14 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
+ * @since 1.3.1
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class CocoaPlant extends MaterialData implements Directional, Attachable {
 
+    /**
+     * @since 1.3.1
+     */
     public enum CocoaPlantSize {
         SMALL,
         MEDIUM,
@@ -47,6 +51,7 @@ public class CocoaPlant extends MaterialData implements Directional, Attachable 
      * Get size of plant
      *
      * @return size
+     * @since 1.3.1
      */
     public CocoaPlantSize getSize() {
         switch (getData() & 0xC) {
@@ -79,11 +84,17 @@ public class CocoaPlant extends MaterialData implements Directional, Attachable 
         setData((byte) dat);
     }
 
+    /**
+     * @since 1.4.5
+     */
     @Override
     public BlockFace getAttachedFace() {
         return getFacing().getOppositeFace();
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public void setFacingDirection(BlockFace face) {
         int dat = getData() & 0xC;
@@ -104,6 +115,9 @@ public class CocoaPlant extends MaterialData implements Directional, Attachable 
         setData((byte) dat);
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public BlockFace getFacing() {
         switch (getData() & 0x3) {

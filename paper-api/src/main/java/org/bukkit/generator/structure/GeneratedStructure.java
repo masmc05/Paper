@@ -17,6 +17,7 @@ public interface GeneratedStructure extends PersistentDataHolder {
      * Gets the bounding box of this placed structure.
      *
      * @return bounding box of this placed structure
+     * @since 1.20.4
      */
     @NotNull
     public BoundingBox getBoundingBox();
@@ -25,6 +26,7 @@ public interface GeneratedStructure extends PersistentDataHolder {
      * Gets the structure that this PlacedStructure represents.
      *
      * @return the structure that this PlacedStructure represents
+     * @since 1.20.4
      */
     @NotNull
     public Structure getStructure();
@@ -33,6 +35,7 @@ public interface GeneratedStructure extends PersistentDataHolder {
      * Gets all the {@link StructurePiece} that make up this PlacedStructure.
      *
      * @return a collection of all the StructurePieces
+     * @since 1.20.4
      */
     @NotNull
     public Collection<StructurePiece> getPieces();

@@ -23,6 +23,7 @@ public class BlockExpEvent extends BlockEvent {
      * Get the experience dropped by the block after the event has processed
      *
      * @return The experience to drop
+     * @since 1.4.5
      */
     public int getExpToDrop() {
         return exp;
@@ -33,17 +34,24 @@ public class BlockExpEvent extends BlockEvent {
      * processed
      *
      * @param exp 1 or higher to drop experience, else nothing will drop
+     * @since 1.4.5
      */
     public void setExpToDrop(int exp) {
         this.exp = exp;
     }
 
+    /**
+     * @since 1.4.5
+     */
     @Override
     @NotNull
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.4.5
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

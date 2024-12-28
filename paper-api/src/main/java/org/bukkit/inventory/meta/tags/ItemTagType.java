@@ -81,6 +81,7 @@ public interface ItemTagType<T, Z> {
      * Returns the primitive data type of this tag.
      *
      * @return the class
+     * @since 1.13.2
      */
     @NotNull
     Class<T> getPrimitiveType();
@@ -89,6 +90,7 @@ public interface ItemTagType<T, Z> {
      * Returns the complex object type the primitive value resembles.
      *
      * @return the class type
+     * @since 1.13.2
      */
     @NotNull
     Class<Z> getComplexType();
@@ -122,6 +124,7 @@ public interface ItemTagType<T, Z> {
      * provide default implementations for the primitive types.
      *
      * @param <T> the generic type of the primitive objects
+     * @since 1.13.2
      */
     class PrimitiveTagType<T> implements ItemTagType<T, T> {
 
@@ -131,12 +134,20 @@ public interface ItemTagType<T, Z> {
             this.primitiveType = primitiveType;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.13.2
+         */
         @NotNull
         @Override
         public Class<T> getPrimitiveType() {
             return primitiveType;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.13.2
+         */
         @NotNull
         @Override
         public Class<T> getComplexType() {

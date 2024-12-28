@@ -27,28 +27,41 @@ public class MoistureChangeEvent extends BlockEvent implements Cancellable {
      * Gets the new state of the affected block.
      *
      * @return new block state
+     * @since 1.13.1
      */
     @NotNull
     public BlockState getNewState() {
         return newState;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

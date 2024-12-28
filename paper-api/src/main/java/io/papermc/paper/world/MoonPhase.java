@@ -32,6 +32,9 @@ public enum MoonPhase {
         }
     }
 
+    /**
+     * @since 1.16.2
+     */
     public static MoonPhase getPhase(final long day) {
         return BY_DAY.get(day % 8L);
     }

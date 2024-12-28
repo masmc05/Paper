@@ -28,6 +28,7 @@ public class InventoryPickupItemEvent extends Event implements Cancellable {
      * Gets the Inventory that picked up the item
      *
      * @return Inventory
+     * @since 1.5.1
      */
     @NotNull
     public Inventory getInventory() {
@@ -38,28 +39,41 @@ public class InventoryPickupItemEvent extends Event implements Cancellable {
      * Gets the Item entity that was picked up
      *
      * @return Item
+     * @since 1.5.1
      */
     @NotNull
     public Item getItem() {
         return item;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;

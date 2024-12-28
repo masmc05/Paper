@@ -22,6 +22,7 @@ public interface FeatureDependant {
      * to be enabled.
      *
      * @return the immutable set of feature flags
+     * @since 1.21.1
      */
     default @Unmodifiable Set<FeatureFlag> requiredFeatures() {
         return FeatureFlagProvider.provider().requiredFeatures(this);

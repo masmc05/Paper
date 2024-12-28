@@ -16,6 +16,7 @@ public interface FallingBlock extends Entity {
      *
      * @return Material of the block
      * @deprecated use {@link #getBlockData()}
+     * @since 1.3.2
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -25,6 +26,7 @@ public interface FallingBlock extends Entity {
      * Get the data for the falling block
      *
      * @return data of the block
+     * @since 1.3.2
      */
     @NotNull
     BlockData getBlockData();
@@ -67,6 +69,7 @@ public interface FallingBlock extends Entity {
      * {@code true}.
      *
      * @return true if the block will break into an item when obstructed
+     * @since 1.3.2
      */
     boolean getDropItem();
 
@@ -78,6 +81,7 @@ public interface FallingBlock extends Entity {
      * {@code true}.
      *
      * @param drop true to break into an item when obstructed
+     * @since 1.3.2
      */
     void setDropItem(boolean drop);
 

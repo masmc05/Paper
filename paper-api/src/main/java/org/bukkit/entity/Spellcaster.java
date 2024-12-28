@@ -11,6 +11,8 @@ public interface Spellcaster extends Illager {
 
     /**
      * Represents the current spell the entity is using.
+     *
+     * @since 1.12
      */
     public enum Spell {
 
@@ -44,6 +46,7 @@ public interface Spellcaster extends Illager {
      * Gets the {@link Spell} the entity is currently using.
      *
      * @return the current spell
+     * @since 1.12
      */
     @NotNull
     Spell getSpell();

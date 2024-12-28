@@ -24,6 +24,7 @@ public interface EnchantmentView extends InventoryView {
      * Gets the random enchantment seed used in this view
      *
      * @return The random seed used
+     * @since 1.21
      */
     int getEnchantmentSeed();
 
@@ -41,6 +42,7 @@ public interface EnchantmentView extends InventoryView {
      * Gets the offers of this EnchantmentView
      *
      * @return The enchantment offers that are provided
+     * @since 1.21
      */
     @NotNull
     EnchantmentOffer[] getOffers();
@@ -50,6 +52,7 @@ public interface EnchantmentView extends InventoryView {
      *
      * @param offers The offers to provide
      * @throws IllegalArgumentException if the array length isn't 3
+     * @since 1.21
      */
     void setOffers(@NotNull EnchantmentOffer[] offers) throws IllegalArgumentException;
 }

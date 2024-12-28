@@ -38,6 +38,7 @@ public class BlockPistonExtendEvent extends BlockPistonEvent {
      * @return the amount of moving blocks
      * @deprecated slime blocks make the value of this method
      *          inaccurate due to blocks being pushed at the side
+     * @since 1.0.0
      */
     @Deprecated(since = "1.8")
     public int getLength() {
@@ -49,6 +50,7 @@ public class BlockPistonExtendEvent extends BlockPistonEvent {
      * extending.
      *
      * @return Immutable list of the moved blocks.
+     * @since 1.0.0
      */
     @NotNull
     public List<Block> getBlocks() {
