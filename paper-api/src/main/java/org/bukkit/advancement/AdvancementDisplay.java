@@ -7,7 +7,6 @@ import org.jetbrains.annotations.NotNull;
  * Holds information about how the advancement is displayed by the game.
  *
  * @deprecated use {@link io.papermc.paper.advancement.AdvancementDisplay}
- * @since 1.18.2
  */
 @Deprecated(forRemoval = true) // Paper
 public interface AdvancementDisplay {
@@ -16,7 +15,6 @@ public interface AdvancementDisplay {
      * Gets the title of the advancement.
      *
      * @return The advancement title without colour codes.
-     * @since 1.18.2
      */
     @NotNull
     String getTitle();
@@ -25,7 +23,6 @@ public interface AdvancementDisplay {
      * Gets the visible description of the advancement.
      *
      * @return The advancement description without colour codes.
-     * @since 1.18.2
      */
     @NotNull
     String getDescription();
@@ -34,7 +31,6 @@ public interface AdvancementDisplay {
      * The icon that is used for this advancement.
      *
      * @return an ItemStack that represents the advancement.
-     * @since 1.18.2
      */
     @NotNull
     ItemStack getIcon();
@@ -44,7 +40,6 @@ public interface AdvancementDisplay {
      * completed.
      *
      * @return true if a toast is shown.
-     * @since 1.18.2
      */
     boolean shouldShowToast();
 
@@ -52,7 +47,6 @@ public interface AdvancementDisplay {
      * Whether to announce in the chat when this advancement has been completed.
      *
      * @return true if announced in chat.
-     * @since 1.18.2
      */
     boolean shouldAnnounceChat();
 
@@ -64,7 +58,6 @@ public interface AdvancementDisplay {
      * their children.
      *
      * @return true if hidden.
-     * @since 1.18.2
      */
     boolean isHidden();
 
@@ -72,7 +65,6 @@ public interface AdvancementDisplay {
      * The X position of the advancement in the advancement screen.
      *
      * @return the X coordinate as float
-     * @since 1.18.2
      */
     float getX();
 
@@ -80,7 +72,6 @@ public interface AdvancementDisplay {
      * The Y position of the advancement in the advancement screen.
      *
      * @return the Y coordinate as float
-     * @since 1.18.2
      */
     float getY();
 
@@ -88,7 +79,6 @@ public interface AdvancementDisplay {
      * The display type of this advancement.
      *
      * @return an enum representing the type.
-     * @since 1.18.2
      */
     @NotNull
     AdvancementDisplayType getType();

@@ -8,7 +8,6 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.0.0
  */
 @Deprecated(forRemoval = true, since = "1.13")
 public class Bed extends MaterialData implements Directional {
@@ -48,7 +47,6 @@ public class Bed extends MaterialData implements Directional {
      * Determine if this block represents the head of the bed
      *
      * @return true if this is the head of the bed, false if it is the foot
-     * @since 1.0.0
      */
     public boolean isHeadOfBed() {
         return (getData() & 0x8) == 0x8;
@@ -58,7 +56,6 @@ public class Bed extends MaterialData implements Directional {
      * Configure this to be either the head or the foot of the bed
      *
      * @param isHeadOfBed True to make it the head.
-     * @since 1.0.0
      */
     public void setHeadOfBed(boolean isHeadOfBed) {
         setData((byte) (isHeadOfBed ? (getData() | 0x8) : (getData() & ~0x8)));
@@ -67,8 +64,6 @@ public class Bed extends MaterialData implements Directional {
     /**
      * Set which direction the head of the bed is facing. Note that this will
      * only affect one of the two blocks the bed is made of.
-     *
-     * @since 1.0.0
      */
     @Override
     public void setFacingDirection(BlockFace face) {
@@ -103,7 +98,6 @@ public class Bed extends MaterialData implements Directional {
      * Get the direction that this bed's head is facing toward
      *
      * @return the direction the head of the bed is facing
-     * @since 1.0.0
      */
     @Override
     public BlockFace getFacing() {

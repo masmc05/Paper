@@ -206,7 +206,6 @@ public final class MapPalette {
      * @param image The image to convert.
      * @return A byte[] containing the pixels of the image.
      * @deprecated use color-related methods
-     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2", forRemoval = true) // Paper
     @NotNull
@@ -235,7 +234,6 @@ public final class MapPalette {
      * @param g The green component of the color.
      * @return The index in the palette.
      * @deprecated use color-related methods
-     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2", forRemoval = true) // Paper
     public static byte matchColor(int r, int g, int b) {
@@ -249,7 +247,6 @@ public final class MapPalette {
      * @param color The Color to match.
      * @return The index in the palette.
      * @deprecated use color-related methods
-     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2", forRemoval = true) // Paper
     public static byte matchColor(@NotNull Color color) {
@@ -280,7 +277,6 @@ public final class MapPalette {
      * @param index The index in the palette.
      * @return The Color of the palette entry.
      * @deprecated use color directly
-     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2", forRemoval = true) // Paper
     @NotNull

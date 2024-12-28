@@ -16,7 +16,6 @@ public interface InventoryView {
     /**
      * Represents various extra properties of certain inventory windows.
      * @deprecated use {@link InventoryView} and its children
-     * @since 1.1.0
      */
     @Deprecated(forRemoval = true, since = "1.21")
     public enum Property {
@@ -117,9 +116,6 @@ public interface InventoryView {
             style = appliesTo;
         }
 
-        /**
-         * @since 1.1.0
-         */
         @NotNull
         public InventoryType getType() {
             return style;

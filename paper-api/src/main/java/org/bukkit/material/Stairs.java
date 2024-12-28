@@ -8,7 +8,6 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Stairs extends MaterialData implements Directional {
@@ -29,7 +28,6 @@ public class Stairs extends MaterialData implements Directional {
 
     /**
      * @return the direction the stairs ascend towards
-     * @since 1.0.0
      */
     public BlockFace getAscendingDirection() {
         byte data = getData();
@@ -52,7 +50,6 @@ public class Stairs extends MaterialData implements Directional {
 
     /**
      * @return the direction the stairs descend towards
-     * @since 1.0.0
      */
     public BlockFace getDescendingDirection() {
         return getAscendingDirection().getOppositeFace();
@@ -60,8 +57,6 @@ public class Stairs extends MaterialData implements Directional {
 
     /**
      * Set the direction the stair part of the block is facing
-     *
-     * @since 1.0.0
      */
     @Override
     public void setFacingDirection(BlockFace face) {
@@ -91,7 +86,6 @@ public class Stairs extends MaterialData implements Directional {
 
     /**
      * @return the direction the stair part of the block is facing
-     * @since 1.0.0
      */
     @Override
     public BlockFace getFacing() {
@@ -102,7 +96,6 @@ public class Stairs extends MaterialData implements Directional {
      * Test if step is inverted
      *
      * @return true if inverted (top half), false if normal (bottom half)
-     * @since 1.3.1
      */
     public boolean isInverted() {
         return ((getData() & 0x4) != 0);
@@ -113,7 +106,6 @@ public class Stairs extends MaterialData implements Directional {
      *
      * @param inv - true if step is inverted (top half), false if step is
      *     normal (bottom half)
-     * @since 1.3.1
      */
     public void setInverted(boolean inv) {
         int dat = getData() & 0x3;

@@ -18,7 +18,6 @@ public interface SpawnEggMeta extends ItemMeta {
      *
      * @return The entity type. May be null for implementation specific default.
      * @deprecated different types are different items
-     * @since 1.11
      */
     @Deprecated(since = "1.13", forRemoval = true) // Paper
     @Contract("-> fail")
@@ -30,7 +29,6 @@ public interface SpawnEggMeta extends ItemMeta {
      * @param type The entity type. May be null for implementation specific
      * default.
      * @deprecated different types are different items
-     * @since 1.11
      */
     @Deprecated(since = "1.13", forRemoval = true) // Paper
     @Contract("_ -> fail")

@@ -3011,7 +3011,6 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      *
      * @return the most recent hash or null
      * @deprecated This is no longer sent from the client and will always be null
-     * @since 1.9.4
      */
     @Deprecated(forRemoval = true, since = "1.13.2")
     @org.jetbrains.annotations.Contract("-> null")

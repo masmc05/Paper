@@ -8,7 +8,6 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Pumpkin extends MaterialData implements Directional {
@@ -41,16 +40,10 @@ public class Pumpkin extends MaterialData implements Directional {
         super(type, data);
     }
 
-    /**
-     * @since 1.0.0
-     */
     public boolean isLit() {
         return getItemType() == Material.LEGACY_JACK_O_LANTERN;
     }
 
-    /**
-     * @since 1.0.0
-     */
     @Override
     public void setFacingDirection(BlockFace face) {
         byte data;
@@ -76,9 +69,6 @@ public class Pumpkin extends MaterialData implements Directional {
         setData(data);
     }
 
-    /**
-     * @since 1.0.0
-     */
     @Override
     public BlockFace getFacing() {
         byte data = getData();

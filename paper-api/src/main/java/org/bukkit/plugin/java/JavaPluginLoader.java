@@ -48,8 +48,6 @@ import org.yaml.snakeyaml.error.YAMLException;
 
 /**
  * Represents a Java plugin loader, allowing plugins in the form of .jar
- *
- * @since 1.0.0
  */
 @Deprecated(forRemoval = true) // Paper - The PluginLoader system will not function in the near future. This implementation will be moved.
 public final class JavaPluginLoader implements PluginLoader {
@@ -78,9 +76,6 @@ public final class JavaPluginLoader implements PluginLoader {
         this.libraryLoader = libraryLoader;
     }
 
-    /**
-     * @since 1.0.0
-     */
     @Override
     @NotNull
     public Plugin loadPlugin(@NotNull final File file) throws InvalidPluginException {
@@ -160,9 +155,6 @@ public final class JavaPluginLoader implements PluginLoader {
         return loader.plugin;
     }
 
-    /**
-     * @since 1.1.0
-     */
     @Override
     @NotNull
     public PluginDescriptionFile getPluginDescription(@NotNull File file) throws InvalidDescriptionException {
@@ -203,9 +195,6 @@ public final class JavaPluginLoader implements PluginLoader {
         }
     }
 
-    /**
-     * @since 1.0.0
-     */
     @Override
     @NotNull
     public Pattern[] getPluginFileFilters() {
@@ -223,9 +212,6 @@ public final class JavaPluginLoader implements PluginLoader {
         return null;
     }
 
-    /**
-     * @since 1.0.0
-     */
     void setClass(@NotNull final String name, @NotNull final Class<?> clazz) {
         if (ConfigurationSerializable.class.isAssignableFrom(clazz)) {
             Class<? extends ConfigurationSerializable> serializable = clazz.asSubclass(ConfigurationSerializable.class);
@@ -240,9 +226,6 @@ public final class JavaPluginLoader implements PluginLoader {
         }
     }
 
-    /**
-     * @since 1.1.0
-     */
     @Override
     @NotNull
     public Map<Class<? extends Event>, Set<RegisteredListener>> createRegisteredListeners(@NotNull Listener listener, @NotNull final Plugin plugin) {
@@ -334,9 +317,6 @@ public final class JavaPluginLoader implements PluginLoader {
         return ret;
     }
 
-    /**
-     * @since 1.0.0
-     */
     @Override
     public void enablePlugin(@NotNull final Plugin plugin) {
         Preconditions.checkArgument(plugin instanceof JavaPlugin, "Plugin is not associated with this PluginLoader");
@@ -365,9 +345,6 @@ public final class JavaPluginLoader implements PluginLoader {
         }
     }
 
-    /**
-     * @since 1.0.0
-     */
     @Override
     public void disablePlugin(@NotNull Plugin plugin) {
         Preconditions.checkArgument(plugin instanceof JavaPlugin, "Plugin is not associated with this PluginLoader");

@@ -5,7 +5,6 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * @deprecated Upgraded / extended potions are now their own {@link PotionType} use them instead.
- * @since 1.9.4
  */
 @Deprecated(since = "1.20.6", forRemoval = true)
 public final class PotionData {
@@ -45,7 +44,6 @@ public final class PotionData {
      * potion
      *
      * @return the potion type
-     * @since 1.9.4
      */
     @NotNull
     public PotionType getType() {
@@ -57,7 +55,6 @@ public final class PotionData {
      * not the potion is Tier 2, such as Potion of Fire Resistance II.
      *
      * @return true if the potion is upgraded;
-     * @since 1.9.4
      */
     public boolean isUpgraded() {
         return upgraded;
@@ -68,7 +65,6 @@ public final class PotionData {
      * duration potions
      *
      * @return true if the potion is extended
-     * @since 1.9.4
      */
     public boolean isExtended() {
         return extended;

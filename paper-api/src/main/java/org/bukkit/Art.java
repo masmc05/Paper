@@ -106,7 +106,6 @@ public interface Art extends OldEnum<Art>, Keyed {
     /**
      * @deprecated use {@link Registry#getKey(Keyed)}, {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)},
      * and {@link io.papermc.paper.registry.RegistryKey#PAINTING_VARIANT}. Painting variants can exist without a key.
-     * @since 1.14
      */
     @Deprecated(since = "1.21", forRemoval = true)
     @Override
@@ -115,7 +114,6 @@ public interface Art extends OldEnum<Art>, Keyed {
     /**
      * @deprecated use {@link Registry#getKey(Keyed)}, {@link io.papermc.paper.registry.RegistryAccess#getRegistry(io.papermc.paper.registry.RegistryKey)},
      * and {@link io.papermc.paper.registry.RegistryKey#PAINTING_VARIANT}. Painting variants can exist without a key.
-     * @since 1.21.3
      */
     @Deprecated(since = "1.21", forRemoval = true)
     @Override
@@ -192,7 +190,6 @@ public interface Art extends OldEnum<Art>, Keyed {
      * @param name of the art.
      * @return the art with the given name.
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
-     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -205,7 +202,6 @@ public interface Art extends OldEnum<Art>, Keyed {
     /**
      * @return an array of all known arts.
      * @deprecated use {@link Registry#iterator()}.
-     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

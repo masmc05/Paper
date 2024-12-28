@@ -6,7 +6,6 @@ package org.bukkit.entity;
  * mushroom cows which, once sheared, convert into normal cows. For such entities, methods like
  * {@link #setSheared(boolean)} or {@link #isSheared()} make no sense, making this API and interface dead API from
  * the get-go.
- * @since 1.21
  */
 @Deprecated(forRemoval = true, since = "1.21")
 public interface Shearable {
@@ -16,7 +15,6 @@ public interface Shearable {
      *
      * @return Whether the entity is sheared.
      * @deprecated Use {@link io.papermc.paper.entity.Shearable#readyToBeSheared()} instead.
-     * @since 1.21
      */
     @Deprecated(forRemoval = true, since = "1.21")
     boolean isSheared();
@@ -27,7 +25,6 @@ public interface Shearable {
      * @param flag Whether to shear the entity
      * @deprecated Use {@link io.papermc.paper.entity.Shearable#shear()} instead if applicable.
      * Some entities cannot be "unsheared".
-     * @since 1.21
      */
     @Deprecated(forRemoval = true, since = "1.21")
     void setSheared(boolean flag);

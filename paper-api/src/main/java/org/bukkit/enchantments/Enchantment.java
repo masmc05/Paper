@@ -266,7 +266,6 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      *
      * @return Target type of the Enchantment
      * @deprecated enchantment groupings are now managed by tags, not categories
-     * @since 1.1.0
      */
     @NotNull
     @Deprecated(since = "1.20.5", forRemoval = true) @org.jetbrains.annotations.Contract("-> fail") // Paper
@@ -391,7 +390,6 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      *
      * @return the rarity
      * @deprecated As of 1.20.5 enchantments do not have a rarity.
-     * @since 1.16.5
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20.5")
@@ -405,7 +403,6 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * @param entityCategory the category of entity
      * @return the damage increase
      * @deprecated Enchantments now have a complex effect systems that cannot be reduced to a simple damage increase.
-     * @since 1.16.5
      */
     @Contract("_, _ -> fail")
     @Deprecated(forRemoval = true, since = "1.20.5")
@@ -418,7 +415,6 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * @param entityType the type of entity.
      * @return the damage increase
      * @deprecated Enchantments now have a complex effect systems that cannot be reduced to a simple damage increase.
-     * @since 1.20.6
      */
     @Contract("_, _ -> fail")
     @Deprecated(forRemoval = true, since = "1.21")
@@ -429,7 +425,6 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      *
      * @return the equipment slots
      * @deprecated Use {@link #getActiveSlotGroups()} instead as enchantments are now applicable to a group of equipment slots.
-     * @since 1.16.5
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.21")
@@ -512,7 +507,6 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
     /**
      * @deprecated this method assumes that the enchantments description
      * always be a translatable component which is not guaranteed.
-     * @since 1.21
      */
     @Override
     @Deprecated(forRemoval = true)

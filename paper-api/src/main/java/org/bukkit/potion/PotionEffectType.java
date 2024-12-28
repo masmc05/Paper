@@ -286,7 +286,6 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      *
      * @return Unique ID
      * @deprecated use {@link #key()}
-     * @since 1.1.0
      */
     @Deprecated(since = "1.6.2", forRemoval = true) // Paper
     public abstract int getId();

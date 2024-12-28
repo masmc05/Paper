@@ -24,7 +24,6 @@ public interface PluginManager extends io.papermc.paper.plugin.PermissionManager
      * @param loader Class name of the PluginLoader to register
      * @throws IllegalArgumentException Thrown when the given Class is not a
      *     valid PluginLoader
-     * @since 1.0.0
      */
     @Deprecated(forRemoval = true) // Paper - The PluginLoader system will not function in the near future
     public void registerInterface(@NotNull Class<? extends PluginLoader> loader) throws IllegalArgumentException;

@@ -247,7 +247,6 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      *
      * @return MaterialData for this item
      * @deprecated cast to {@link org.bukkit.inventory.meta.BlockDataMeta} and use {@link org.bukkit.inventory.meta.BlockDataMeta#getBlockData(Material)}
-     * @since 1.0.0
      */
     @Nullable
     @Deprecated(forRemoval = true, since = "1.13")
@@ -265,7 +264,6 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      *
      * @param data New MaterialData for this item
      * @deprecated cast to {@link org.bukkit.inventory.meta.BlockDataMeta} and use {@link org.bukkit.inventory.meta.BlockDataMeta#setBlockData(org.bukkit.block.data.BlockData)}
-     * @since 1.0.0
      */
     @Deprecated(forRemoval = true, since = "1.13")
     public void setData(@Nullable MaterialData data) {
@@ -689,9 +687,6 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
 
     // Paper - delegate
 
-    /**
-     * @since 1.16.5
-     */
     @Override
     @NotNull
     @Deprecated(forRemoval = true) // Paper
@@ -905,7 +900,6 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
 
     /**
      * @deprecated use {@link #getMaxItemUseDuration(org.bukkit.entity.LivingEntity)}; crossbows, later possibly more items require an entity parameter
-     * @since 1.12.2
      */
     @Deprecated(forRemoval = true)
     public int getMaxItemUseDuration() {
@@ -1131,7 +1125,6 @@ public class ItemStack implements Cloneable, ConfigurationSerializable, Translat
      *
      * @return the itemstack rarity
      * @deprecated Use {@link ItemMeta#hasRarity()} and {@link ItemMeta#getRarity()}
-     * @since 1.16.5
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20.5")

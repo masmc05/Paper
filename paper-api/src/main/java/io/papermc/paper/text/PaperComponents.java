@@ -109,7 +109,6 @@ public final class PaperComponents {
      *
      * @return a serializer to plain text
      * @deprecated will be removed in adventure 5.0.0, use {@link PlainTextComponentSerializer#plainText()}
-     * @since 1.16.5
      */
     @Deprecated(forRemoval = true, since = "1.18.1")
     public static PlainComponentSerializer plainSerializer() {
@@ -125,7 +124,6 @@ public final class PaperComponents {
      *
      * @return a serializer to plain text
      * @deprecated use {@link PlainTextComponentSerializer#plainText()}
-     * @since 1.18.1
      */
     @Deprecated(forRemoval = true, since = "1.18.2")
     public static PlainTextComponentSerializer plainTextSerializer() {
@@ -142,7 +140,6 @@ public final class PaperComponents {
      *
      * @return a json component serializer
      * @deprecated use {@link GsonComponentSerializer#gson()}
-     * @since 1.16.5
      */
     @Deprecated(forRemoval = true, since = "1.18.2")
     public static GsonComponentSerializer gsonSerializer() {
@@ -160,7 +157,6 @@ public final class PaperComponents {
      *
      * @return a json component serializer
      * @deprecated use {@link GsonComponentSerializer#colorDownsamplingGson()}
-     * @since 1.16.5
      */
     @Deprecated(forRemoval = true, since = "1.18.2")
     public static GsonComponentSerializer colorDownsamplingGsonSerializer() {
@@ -181,7 +177,6 @@ public final class PaperComponents {
      *
      * @return a section serializer
      * @deprecated use {@link LegacyComponentSerializer#legacySection()}
-     * @since 1.16.5
      */
     @Deprecated(forRemoval = true, since = "1.18.2")
     public static LegacyComponentSerializer legacySectionSerializer() {

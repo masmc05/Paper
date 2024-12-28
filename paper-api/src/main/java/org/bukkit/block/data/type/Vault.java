@@ -26,7 +26,6 @@ public interface Vault extends Directional {
      *
      * @return the 'vault_state' value
      * @deprecated see {@link #getVaultState()}
-     * @since 1.20.6
      */
     @Deprecated(since = "1.21.3", forRemoval = true)
     @NotNull

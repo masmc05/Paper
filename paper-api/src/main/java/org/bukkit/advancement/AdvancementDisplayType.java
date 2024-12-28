@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
  * This enum contains information about these types and how they are
  * represented.
  * @deprecated use {@link io.papermc.paper.advancement.AdvancementDisplay.Frame}
- * @since 1.18.2
  */
 @Deprecated(forRemoval = true)
 public enum AdvancementDisplayType {
@@ -36,7 +35,6 @@ public enum AdvancementDisplayType {
      * The chat color used by Minecraft for this advancement.
      *
      * @return The chat color used by this advancement type.
-     * @since 1.18.2
      */
     @NotNull
     public ChatColor getColor() {

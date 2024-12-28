@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 /**
  * This event is fired when a sign is opened by the player.
  * @deprecated use {@link io.papermc.paper.event.player.PlayerOpenSignEvent}
- * @since 1.20.1
  */
 @Deprecated(forRemoval = true) // Paper
 @org.bukkit.Warning(false) // Paper
@@ -33,7 +32,6 @@ public class PlayerSignOpenEvent extends PlayerEvent implements Cancellable {
      * Gets the sign that was opened.
      *
      * @return opened sign
-     * @since 1.20.1
      */
     @NotNull
     public Sign getSign() {
@@ -44,7 +42,6 @@ public class PlayerSignOpenEvent extends PlayerEvent implements Cancellable {
      * Gets side of the sign opened.
      *
      * @return side of sign opened
-     * @since 1.20.1
      */
     @NotNull
     public Side getSide() {
@@ -55,49 +52,33 @@ public class PlayerSignOpenEvent extends PlayerEvent implements Cancellable {
      * Gets the cause of the sign open.
      *
      * @return sign open cause
-     * @since 1.20.1
      */
     @NotNull
     public Cause getCause() {
         return this.cause;
     }
 
-    /**
-     * @since 1.20.1
-     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
-    /**
-     * @since 1.20.1
-     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
-    /**
-     * @since 1.20.1
-     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
-    /**
-     * @since 1.20.1
-     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
     }
 
-    /**
-     * @since 1.20.1
-     */
     public enum Cause {
 
         /**

@@ -559,7 +559,6 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
      *
      * @param event a {@link EntityDamageEvent}
      * @deprecated method is for internal use only and will be removed
-     * @since 1.0.0
      */
     @Deprecated(since = "1.20.4", forRemoval = true)
     public void setLastDamageCause(@Nullable EntityDamageEvent event);

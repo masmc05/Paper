@@ -94,7 +94,6 @@ public abstract class JavaPlugin extends PluginBase {
      * @return PluginLoader that controls this plugin
      * @deprecated Plugin loading now occurs at a point which makes it impossible to expose this
      * behavior. This instance will only throw unsupported operation exceptions.
-     * @since 1.0.0
      */
     @NotNull
     @Override

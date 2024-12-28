@@ -7,7 +7,6 @@ import org.bukkit.Material;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.3.1
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Tripwire extends MaterialData {
@@ -30,7 +29,6 @@ public class Tripwire extends MaterialData {
      * Test if tripwire is currently activated
      *
      * @return true if activated, false if not
-     * @since 1.3.1
      */
     public boolean isActivated() {
         return (getData() & 0x4) != 0;
@@ -40,7 +38,6 @@ public class Tripwire extends MaterialData {
      * Set tripwire activated state
      *
      * @param act - true if activated, false if not
-     * @since 1.3.1
      */
     public void setActivated(boolean act) {
         int dat = getData() & (0x8 | 0x3);
@@ -54,7 +51,6 @@ public class Tripwire extends MaterialData {
      * Test if object triggering this tripwire directly
      *
      * @return true if object activating tripwire, false if not
-     * @since 1.3.1
      */
     public boolean isObjectTriggering() {
         return (getData() & 0x1) != 0;
@@ -64,7 +60,6 @@ public class Tripwire extends MaterialData {
      * Set object triggering state for this tripwire
      *
      * @param trig - true if object activating tripwire, false if not
-     * @since 1.3.1
      */
     public void setObjectTriggering(boolean trig) {
         int dat = getData() & 0xE;

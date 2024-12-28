@@ -41,7 +41,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * @deprecated Timings will be removed in the future
- * @since 1.9.4
  */
 @Deprecated(forRemoval = true)
 public final class TimingsManager {
@@ -149,7 +148,6 @@ public final class TimingsManager {
      * @param pluginName Plugin this command is associated with
      * @param command    Command to get timings for
      * @return TimingHandler
-     * @since 1.9.4
      */
     @NotNull
     public static Timing getCommandTiming(@Nullable String pluginName, @NotNull Command command) {
@@ -178,7 +176,6 @@ public final class TimingsManager {
      *
      * @param clazz Class to check
      * @return Plugin if created by a plugin
-     * @since 1.9.4
      */
     @Nullable
     public static Plugin getPluginByClassloader(@Nullable Class<?> clazz) {

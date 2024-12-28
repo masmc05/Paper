@@ -3629,7 +3629,6 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
      * @param world the world to check
      * @return true if this BlockType can be used in this World.
      * @deprecated Use {@link io.papermc.paper.world.flag.FeatureFlagSetHolder#isEnabled(io.papermc.paper.world.flag.FeatureDependant)}
-     * @since 1.20.6
      */
     @Deprecated(forRemoval = true, since = "1.21.1") // Paper
     boolean isEnabledByFeature(@NotNull World world);
@@ -3648,7 +3647,6 @@ public interface BlockType extends Keyed, Translatable, net.kyori.adventure.tran
     // Paper start - add Translatable
     /**
      * @deprecated use {@link #translationKey()} and {@link net.kyori.adventure.text.Component#translatable(net.kyori.adventure.translation.Translatable)}
-     * @since 1.20.6
      */
     @Deprecated(forRemoval = true)
     @Override

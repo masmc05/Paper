@@ -34,7 +34,6 @@ public class Vibration {
      *
      * @deprecated unused as of 1.19
      * @return origin
-     * @since 1.17
      */
     @NotNull
     @Deprecated(forRemoval = true) // Paper

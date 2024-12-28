@@ -43,7 +43,6 @@ public interface Fluid extends OldEnum<Fluid>, Keyed {
      * @param name of the fluid.
      * @return the fluid with the given name.
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
-     * @since 1.16.3
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -56,7 +55,6 @@ public interface Fluid extends OldEnum<Fluid>, Keyed {
     /**
      * @return an array of all known fluids.
      * @deprecated use {@link Registry#iterator()}.
-     * @since 1.16.3
      */
     @NotNull
     @Deprecated(since = "1.21.3", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

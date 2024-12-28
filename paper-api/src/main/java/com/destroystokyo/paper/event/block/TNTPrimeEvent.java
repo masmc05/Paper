@@ -21,7 +21,6 @@ import org.jetbrains.annotations.Nullable;
  *
  * @author Mark Vainomaa
  * @deprecated use {@link org.bukkit.event.block.TNTPrimeEvent}
- * @since 1.13
  */
 @Deprecated(forRemoval = true, since = "1.19.4")
 public class TNTPrimeEvent extends BlockEvent implements Cancellable {
@@ -44,7 +43,6 @@ public class TNTPrimeEvent extends BlockEvent implements Cancellable {
      * Gets the TNT prime reason
      *
      * @return Prime reason
-     * @since 1.13
      */
     @NotNull
     public PrimeReason getReason() {
@@ -59,7 +57,6 @@ public class TNTPrimeEvent extends BlockEvent implements Cancellable {
      * It might be {@code null} if {@link #getReason()} is {@link PrimeReason#EXPLOSION}
      *
      * @return The {@link Entity} who primed the TNT
-     * @since 1.13
      */
     @Nullable
     public Entity getPrimerEntity() {
@@ -70,7 +67,6 @@ public class TNTPrimeEvent extends BlockEvent implements Cancellable {
      * Gets whether spawning {@link TNTPrimed} should be cancelled or not
      *
      * @return Whether spawning {@link TNTPrimed} should be cancelled or not
-     * @since 1.13
      */
     @Override
     public boolean isCancelled() {
@@ -81,33 +77,23 @@ public class TNTPrimeEvent extends BlockEvent implements Cancellable {
      * Sets whether to cancel spawning {@link TNTPrimed} or not
      *
      * @param cancel whether spawning {@link TNTPrimed} should be cancelled or not
-     * @since 1.13
      */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
-    /**
-     * @since 1.13
-     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
-    /**
-     * @since 1.13
-     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
-    /**
-     * @since 1.13
-     */
     public enum PrimeReason {
         /**
          * When TNT prime was caused by other explosion (chain reaction)

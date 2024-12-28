@@ -6,7 +6,6 @@ import org.bukkit.block.BlockFace;
 /**
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.8
  */
 @Deprecated(forRemoval = true, since = "1.13")
 public class Banner extends MaterialData implements Attachable {
@@ -29,16 +28,10 @@ public class Banner extends MaterialData implements Attachable {
         super(type, data);
     }
 
-    /**
-     * @since 1.8
-     */
     public boolean isWallBanner() {
         return getItemType() == Material.LEGACY_WALL_BANNER;
     }
 
-    /**
-     * @since 1.8
-     */
     @Override
     public BlockFace getAttachedFace() {
         if (isWallBanner()) {
@@ -64,9 +57,6 @@ public class Banner extends MaterialData implements Attachable {
         }
     }
 
-    /**
-     * @since 1.8
-     */
     @Override
     public BlockFace getFacing() {
         byte data = getData();
@@ -128,9 +118,6 @@ public class Banner extends MaterialData implements Attachable {
         }
     }
 
-    /**
-     * @since 1.8
-     */
     @Override
     public void setFacingDirection(BlockFace face) {
         byte data;

@@ -8,7 +8,6 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Dispenser extends FurnaceAndDispenser {
@@ -36,9 +35,6 @@ public class Dispenser extends FurnaceAndDispenser {
         super(type, data);
     }
 
-    /**
-     * @since 1.5.1
-     */
     @Override
     public void setFacingDirection(BlockFace face) {
         byte data;
@@ -72,9 +68,6 @@ public class Dispenser extends FurnaceAndDispenser {
         setData(data);
     }
 
-    /**
-     * @since 1.5.1
-     */
     @Override
     public BlockFace getFacing() {
         int data = getData() & 0x7;

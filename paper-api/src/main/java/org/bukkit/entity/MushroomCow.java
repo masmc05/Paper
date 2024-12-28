@@ -44,7 +44,6 @@ public interface MushroomCow extends Cow, io.papermc.paper.entity.Shearable { //
      * overwritten
      * @return true if the effects to be applied to the suspicious stew changed
      * as a result of this call
-     * @since 1.20.4
      */
     @Deprecated(forRemoval = true, since = "1.20.2") // Paper - add overloads to use suspicious effect entry to mushroom cow and suspicious stew meta
     boolean addEffectToNextStew(@NotNull PotionEffect effect, boolean overwrite);
@@ -131,7 +130,6 @@ public interface MushroomCow extends Cow, io.papermc.paper.entity.Shearable { //
      *
      * @return duration of the effect (in ticks)
      * @deprecated Mushroom cows can now hold multiple effects, use {@link #getStewEffects()}
-     * @since 1.19.2
      */
     @Deprecated(forRemoval = true, since = "1.20.2")
     @org.jetbrains.annotations.Contract("-> fail")
@@ -145,7 +143,6 @@ public interface MushroomCow extends Cow, io.papermc.paper.entity.Shearable { //
      *
      * @param duration duration of the effect (in ticks)
      * @deprecated Mushroom cows can now hold multiple effects, use {@link #setStewEffects(java.util.List)}
-     * @since 1.19.2
      */
     @Deprecated(forRemoval = true, since = "1.20.2")
     @org.jetbrains.annotations.Contract("_ -> fail")
@@ -160,7 +157,6 @@ public interface MushroomCow extends Cow, io.papermc.paper.entity.Shearable { //
      * @return effect type, or null if an effect is currently not set
      * @deprecated Mushroom cows can now hold multiple effects, use {@link #getStewEffects()}
      * @throws UnsupportedOperationException
-     * @since 1.19.2
      */
     @Deprecated(forRemoval = true, since = "1.20.2")
     @org.jetbrains.annotations.Contract("-> fail")
@@ -176,7 +172,6 @@ public interface MushroomCow extends Cow, io.papermc.paper.entity.Shearable { //
      *             or null if this cow does not give effects
      * @deprecated Mushroom cows can now hold multiple effects, use {@link #setStewEffects(java.util.List)}
      * @throws UnsupportedOperationException
-     * @since 1.19.2
      */
     @Deprecated(forRemoval = true, since = "1.20.2")
     @org.jetbrains.annotations.Contract("_ -> fail")

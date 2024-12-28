@@ -11,8 +11,6 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents a plugin loader, which handles direct access to specific types
  * of plugins
- *
- * @since 1.0.0
  */
 @Deprecated(forRemoval = true) // Paper - The PluginLoader system will not function in the near future
 public interface PluginLoader {
@@ -27,7 +25,6 @@ public interface PluginLoader {
      *     plugin
      * @throws UnknownDependencyException If a required dependency could not
      *     be found
-     * @since 1.0.0
      */
     @NotNull
     public Plugin loadPlugin(@NotNull File file) throws InvalidPluginException, UnknownDependencyException;
@@ -40,7 +37,6 @@ public interface PluginLoader {
      *     specified file
      * @throws InvalidDescriptionException If the plugin description file
      *     could not be created
-     * @since 1.1.0
      */
     @NotNull
     public PluginDescriptionFile getPluginDescription(@NotNull File file) throws InvalidDescriptionException;
@@ -49,7 +45,6 @@ public interface PluginLoader {
      * Returns a list of all filename filters expected by this PluginLoader
      *
      * @return The filters
-     * @since 1.0.0
      */
     @NotNull
     public Pattern[] getPluginFileFilters();
@@ -61,7 +56,6 @@ public interface PluginLoader {
      * @param listener The object that will handle the eventual call back
      * @param plugin The plugin to use when creating registered listeners
      * @return The registered listeners.
-     * @since 1.1.0
      */
     @NotNull
     public Map<Class<? extends Event>, Set<RegisteredListener>> createRegisteredListeners(@NotNull Listener listener, @NotNull Plugin plugin);
@@ -73,7 +67,6 @@ public interface PluginLoader {
      * effect
      *
      * @param plugin Plugin to enable
-     * @since 1.0.0
      */
     public void enablePlugin(@NotNull Plugin plugin);
 
@@ -83,7 +76,6 @@ public interface PluginLoader {
      * Attempting to disable a plugin that is not enabled will have no effect
      *
      * @param plugin Plugin to disable
-     * @since 1.0.0
      */
     public void disablePlugin(@NotNull Plugin plugin);
 }

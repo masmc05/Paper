@@ -7,7 +7,6 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * @deprecated Timings will be removed in the future
- * @since 1.9.4
  */
 @Deprecated(forRemoval = true)
 public class FullServerTickHandler extends TimingHandler {
@@ -22,9 +21,6 @@ public class FullServerTickHandler extends TimingHandler {
         TIMING_MAP.put(IDENTITY, this);
     }
 
-    /**
-     * @since 1.9.4
-     */
     @NotNull
     @Override
     public Timing startTiming() {
@@ -36,9 +32,6 @@ public class FullServerTickHandler extends TimingHandler {
         return super.startTiming();
     }
 
-    /**
-     * @since 1.9.4
-     */
     @Override
     public void stopTiming() {
         super.stopTiming();

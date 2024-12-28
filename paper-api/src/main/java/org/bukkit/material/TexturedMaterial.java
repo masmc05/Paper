@@ -8,7 +8,6 @@ import org.bukkit.Material;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public abstract class TexturedMaterial extends MaterialData {
@@ -32,7 +31,6 @@ public abstract class TexturedMaterial extends MaterialData {
      * will be used as a default.
      *
      * @return a list of possible textures for this block
-     * @since 1.0.0
      */
     public abstract List<Material> getTextures();
 
@@ -40,7 +38,6 @@ public abstract class TexturedMaterial extends MaterialData {
      * Gets the current Material this block is made of
      *
      * @return Material of this block
-     * @since 1.0.0
      */
     public Material getMaterial() {
         int n = getTextureIndex();
@@ -56,7 +53,6 @@ public abstract class TexturedMaterial extends MaterialData {
      *
      * @param material
      *            New material of this block
-     * @since 1.0.0
      */
     public void setMaterial(Material material) {
         if (getTextures().contains(material)) {

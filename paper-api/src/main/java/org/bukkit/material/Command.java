@@ -7,7 +7,6 @@ import org.bukkit.Material;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.4.5
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Command extends MaterialData implements Redstone {
@@ -34,7 +33,6 @@ public class Command extends MaterialData implements Redstone {
      * unpowered
      *
      * @return true if powered, otherwise false
-     * @since 1.4.5
      */
     @Override
     public boolean isPowered() {
@@ -46,7 +44,6 @@ public class Command extends MaterialData implements Redstone {
      *
      * @param bool
      *            whether or not the command block is powered
-     * @since 1.4.5
      */
     public void setPowered(boolean bool) {
         setData((byte) (bool ? (getData() | 1) : (getData() & -2)));

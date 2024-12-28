@@ -132,7 +132,6 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * Gets the associated PluginLoader responsible for this plugin
      *
      * @return PluginLoader that controls this plugin
-     * @since 1.0.0
      */
     @Deprecated(forRemoval = true) // Paper - The PluginLoader system will not function in the near future
     @NotNull

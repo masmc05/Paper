@@ -34,7 +34,6 @@ public interface RegistryAccess {
      * @return the registry or null if none found
      * @param <T> the type
      * @deprecated use {@link #getRegistry(RegistryKey)} with keys from {@link RegistryKey}
-     * @since 1.20.6
      */
     @Deprecated(since = "1.20.6", forRemoval = true)
     <T extends Keyed> @Nullable Registry<T> getRegistry(Class<T> type);

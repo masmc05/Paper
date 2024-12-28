@@ -30,7 +30,6 @@ import org.jetbrains.annotations.Nullable;
  * Provides an ability to time sections of code within the Minecraft Server
  *
  * @deprecated Timings will be removed in the future
- * @since 1.9.4
  */
 @Deprecated(forRemoval = true)
 public interface Timing extends AutoCloseable {
@@ -38,7 +37,6 @@ public interface Timing extends AutoCloseable {
      * Starts timing the execution until {@link #stopTiming()} is called.
      *
      * @return Timing
-     * @since 1.9.4
      */
     @NotNull
     Timing startTiming();
@@ -47,8 +45,6 @@ public interface Timing extends AutoCloseable {
      * <p>Stops timing and records the data. Propagates the data up to group handlers.</p>
      *
      * Will automatically be called when this Timing is used with try-with-resources
-     *
-     * @since 1.9.4
      */
     void stopTiming();
 
@@ -58,7 +54,6 @@ public interface Timing extends AutoCloseable {
      * But only if we are on the primary thread.
      *
      * @return Timing
-     * @since 1.9.4
      */
     @NotNull
     Timing startTimingIfSync();
@@ -69,14 +64,11 @@ public interface Timing extends AutoCloseable {
      * <p>Will automatically be called when this Timing is used with try-with-resources</p>
      *
      * But only if we are on the primary thread.
-     *
-     * @since 1.9.4
      */
     void stopTimingIfSync();
 
     /**
      * @deprecated Doesn't do anything - Removed
-     * @since 1.9.4
      */
     @Deprecated
     void abort();
@@ -85,15 +77,10 @@ public interface Timing extends AutoCloseable {
      * Used internally to get the actual backing Handler in the case of delegated Handlers
      *
      * @return TimingHandler
-     * @since 1.9.4
      */
     @Nullable
     TimingHandler getTimingHandler();
 
-    /**
-     * {@inheritDoc}
-     * @since 1.9.4
-     */
     @Override
     void close();
 }

@@ -14,8 +14,6 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * You should not be implementing this interface yourself, use {@link org.bukkit.NamespacedKey}
  * or {@link com.destroystokyo.paper.NamespacedTag} as needed instead.
- *
- * @since 1.13.2
  */
 @Deprecated(forRemoval = true, since = "1.20.6")
 public interface Namespaced {
@@ -26,7 +24,6 @@ public interface Namespaced {
      * periods, underscores, and hyphens.
      *
      * @return resource namespace
-     * @since 1.13.2
      */
     @NotNull
     String getNamespace();
@@ -38,7 +35,6 @@ public interface Namespaced {
      * periods, underscores, hyphens, and forward slashes.
      *
      * @return resource key
-     * @since 1.13.2
      */
     @NotNull
     String getKey();

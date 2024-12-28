@@ -38,7 +38,6 @@ import static net.kyori.adventure.text.Component.text;
 
 /**
  * @deprecated Timings will be removed in the future
- * @since 1.9.4
  */
 @Deprecated(forRemoval = true)
 public class TimingsCommand extends BukkitCommand {
@@ -52,9 +51,6 @@ public class TimingsCommand extends BukkitCommand {
         this.setPermission("bukkit.command.timings");
     }
 
-    /**
-     * @since 1.9.4
-     */
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String currentAlias, @NotNull String[] args) {
         if (!testPermission(sender)) {
@@ -115,9 +111,6 @@ public class TimingsCommand extends BukkitCommand {
         return true;
     }
 
-    /**
-     * @since 1.9.4
-     */
     @NotNull
     @Override
     public List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String[] args) {

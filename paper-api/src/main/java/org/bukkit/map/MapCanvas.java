@@ -105,7 +105,6 @@ public interface MapCanvas {
      * @param y The y coordinate, from 0 to 127.
      * @return The color. See {@link MapPalette}.
      * @deprecated use {@link #getPixelColor(int, int)}
-     * @since 1.0.0
      */
     @Deprecated(since = "1.19", forRemoval = true) // Paper
     public byte getPixel(int x, int y);
@@ -117,7 +116,6 @@ public interface MapCanvas {
      * @param y The y coordinate, from 0 to 127.
      * @return The color. See {@link MapPalette}.
      * @deprecated use {@link #getBasePixelColor(int, int)}
-     * @since 1.0.0
      */
     @Deprecated(since = "1.19", forRemoval = true) // Paper
     public byte getBasePixel(int x, int y);

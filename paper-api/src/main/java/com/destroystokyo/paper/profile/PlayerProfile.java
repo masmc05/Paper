@@ -29,7 +29,6 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      *
      * @param name The new Name
      * @return The previous Name
-     * @since 1.12.2
      */
     @Deprecated(forRemoval = true, since = "1.18.1")
     String setName(@Nullable String name);
@@ -46,7 +45,6 @@ public interface PlayerProfile extends org.bukkit.profile.PlayerProfile {
      *
      * @param uuid The new UUID
      * @return The previous UUID
-     * @since 1.12.2
      */
     @Deprecated(forRemoval = true, since = "1.18.1")
     @Nullable

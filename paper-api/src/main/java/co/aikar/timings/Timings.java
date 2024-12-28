@@ -42,7 +42,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * @deprecated Timings will be removed in the future
- * @since 1.9.4
  */
 @Deprecated(forRemoval = true)
 @SuppressWarnings({"UnusedDeclaration", "WeakerAccess", "SameParameterValue"})
@@ -65,7 +64,6 @@ public final class Timings {
      * @param plugin Plugin to own the Timing
      * @param name   Name of Timing
      * @return Handler
-     * @since 1.9.4
      */
     @NotNull
     public static Timing of(@NotNull Plugin plugin, @NotNull String name) {
@@ -87,7 +85,6 @@ public final class Timings {
      * @param name         Name of Timing
      * @param groupHandler Parent handler to mirror .start/stop calls to
      * @return Timing Handler
-     * @since 1.9.4
      */
     @NotNull
     public static Timing of(@NotNull Plugin plugin, @NotNull String name, @Nullable Timing groupHandler) {
@@ -106,7 +103,6 @@ public final class Timings {
      * @param plugin Plugin to own the Timing
      * @param name   Name of Timing
      * @return Timing Handler
-     * @since 1.9.4
      */
     @NotNull
     public static Timing ofStart(@NotNull Plugin plugin, @NotNull String name) {
@@ -124,7 +120,6 @@ public final class Timings {
      * @param name         Name of Timing
      * @param groupHandler Parent handler to mirror .start/stop calls to
      * @return Timing Handler
-     * @since 1.9.4
      */
     @NotNull
     public static Timing ofStart(@NotNull Plugin plugin, @NotNull String name, @Nullable Timing groupHandler) {
@@ -137,7 +132,6 @@ public final class Timings {
      * Gets whether or not the Spigot Timings system is enabled
      *
      * @return Enabled or not
-     * @since 1.9.4
      */
     public static boolean isTimingsEnabled() {
         return timingsEnabled;
@@ -149,7 +143,6 @@ public final class Timings {
      * Calling this will reset timing data.
      *
      * @param enabled Should timings be reported
-     * @since 1.9.4
      */
     public static void setTimingsEnabled(boolean enabled) {
         if (enabled && !warnedAboutDeprecationOnEnable) {
@@ -158,9 +151,6 @@ public final class Timings {
         }
     }
 
-    /**
-     * @since 1.19.4
-     */
     public static Component deprecationMessage() {
         return Component.text()
             .color(TextColor.color(0xffc93a))
@@ -184,7 +174,6 @@ public final class Timings {
      * <p>When Verbose is disabled, high-frequency timings will not be available.</p>
      *
      * @return Enabled or not
-     * @since 1.9.4
      */
     public static boolean isVerboseTimingsEnabled() {
         return verboseEnabled;
@@ -197,7 +186,6 @@ public final class Timings {
      * Calling this will reset timing data.
      *
      * @param enabled Should high-frequency timings be reported
-     * @since 1.9.4
      */
     public static void setVerboseTimingsEnabled(boolean enabled) {
         verboseEnabled = enabled;
@@ -210,7 +198,6 @@ public final class Timings {
      * Defaults to 5 minutes (6000 ticks)
      *
      * @return Interval in ticks
-     * @since 1.9.4
      */
     public static int getHistoryInterval() {
         return historyInterval;
@@ -225,7 +212,6 @@ public final class Timings {
      * history length if you need more than 60 history windows.
      *
      * @param interval Interval in ticks
-     * @since 1.9.4
      */
     public static void setHistoryInterval(int interval) {
         historyInterval = Math.max(20*60, interval);
@@ -241,7 +227,6 @@ public final class Timings {
      * Defaults to 1 hour (72000 ticks)
      *
      * @return Duration in Ticks
-     * @since 1.9.4
      */
     public static int getHistoryLength() {
         return historyLength;
@@ -257,7 +242,6 @@ public final class Timings {
      * Will not reset Timing Data but may truncate old history if the new length is less than old length.
      *
      * @param length Duration in ticks
-     * @since 1.9.4
      */
     public static void setHistoryLength(int length) {
         // Cap at 12 History Frames, 1 hour at 5 minute frames.
@@ -280,8 +264,6 @@ public final class Timings {
 
     /**
      * Resets all Timing Data
-     *
-     * @since 1.9.4
      */
     public static void reset() {
         TimingsManager.reset();
@@ -292,7 +274,6 @@ public final class Timings {
      *
      * If sender is null, ConsoleCommandSender will be used.
      * @param sender The sender to send to, or null to use the ConsoleCommandSender
-     * @since 1.9.4
      */
     public static void generateReport(@Nullable CommandSender sender) {
         if (sender == null) {
@@ -305,7 +286,6 @@ public final class Timings {
      * Generates a report and sends it to the specified listener.
      * Use with {@link org.bukkit.command.BufferedCommandSender} to get full response when done!
      * @param sender The listener to send responses too.
-     * @since 1.11.2
      */
     public static void generateReport(@NotNull TimingsReportListener sender) {
         Preconditions.checkNotNull(sender);

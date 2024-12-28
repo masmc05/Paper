@@ -5,7 +5,6 @@ import org.bukkit.Material;
 /**
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Cake extends MaterialData {
@@ -31,7 +30,6 @@ public class Cake extends MaterialData {
      * Gets the number of slices eaten from this cake
      *
      * @return The number of slices eaten
-     * @since 1.0.0
      */
     public int getSlicesEaten() {
         return getData();
@@ -41,7 +39,6 @@ public class Cake extends MaterialData {
      * Gets the number of slices remaining on this cake
      *
      * @return The number of slices remaining
-     * @since 1.0.0
      */
     public int getSlicesRemaining() {
         return 6 - getData();
@@ -51,7 +48,6 @@ public class Cake extends MaterialData {
      * Sets the number of slices eaten from this cake
      *
      * @param n The number of slices eaten
-     * @since 1.0.0
      */
     public void setSlicesEaten(int n) {
         if (n < 6) {
@@ -63,7 +59,6 @@ public class Cake extends MaterialData {
      * Sets the number of slices remaining on this cake
      *
      * @param n The number of slices remaining
-     * @since 1.0.0
      */
     public void setSlicesRemaining(int n) {
         if (n > 6) {

@@ -13,7 +13,6 @@ import org.jetbrains.annotations.NotNull;
  * Called when a living entity receives knockback.
  *
  * @deprecated use {@link io.papermc.paper.event.entity.EntityKnockbackEvent}
- * @since 1.20.4
  */
 @Deprecated(forRemoval = true) // Paper
 public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
@@ -34,9 +33,6 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
         this.knockback = knockback;
     }
 
-    /**
-     * @since 1.20.4
-     */
     @NotNull
     @Override
     public LivingEntity getEntity() {
@@ -47,7 +43,6 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
      * Gets the cause of the knockback.
      *
      * @return the cause of the knockback
-     * @since 1.20.4
      */
     @NotNull
     public KnockbackCause getCause() {
@@ -61,7 +56,6 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
      * {@link Attribute#KNOCKBACK_RESISTANCE} of the entity.
      *
      * @return the knockback force
-     * @since 1.20.4
      */
     public double getForce() {
         return force;
@@ -74,7 +68,6 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
      *
      * @return the raw knockback
      * @see #getFinalKnockback()
-     * @since 1.20.4
      */
     @NotNull
     public Vector getKnockback() {
@@ -91,7 +84,6 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
      * {@link #setFinalKnockback(Vector)}.
      *
      * @return the final knockback
-     * @since 1.20.4
      */
     @NotNull
     public Vector getFinalKnockback() {
@@ -102,7 +94,6 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
      * Sets the force that will be applied to the entity.
      *
      * @param knockback the force to apply
-     * @since 1.20.4
      */
     @NotNull
     public void setFinalKnockback(@NotNull Vector knockback) {
@@ -111,34 +102,22 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
         this.knockback = knockback.clone();
     }
 
-    /**
-     * @since 1.20.4
-     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
-    /**
-     * @since 1.20.4
-     */
     @Override
     public void setCancelled(boolean cancel) {
         cancelled = cancel;
     }
 
-    /**
-     * @since 1.20.4
-     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return handlers;
     }
 
-    /**
-     * @since 1.20.4
-     */
     @NotNull
     public static HandlerList getHandlerList() {
         return handlers;
@@ -146,8 +125,6 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
 
     /**
      * An enum to specify the cause of the knockback.
-     *
-     * @since 1.20.4
      */
     public enum KnockbackCause {
 

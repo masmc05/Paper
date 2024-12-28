@@ -4859,7 +4859,6 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return the item rarity
      * @deprecated use {@link org.bukkit.inventory.meta.ItemMeta#hasRarity()} and {@link org.bukkit.inventory.meta.ItemMeta#getRarity()}
-     * @since 1.16.5
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20.5")
@@ -4877,7 +4876,6 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @throws IllegalArgumentException if {@link #isItem()} is false
      * @return an immutable multimap of attributes
      * @deprecated use {@link #getDefaultAttributeModifiers(EquipmentSlot)}
-     * @since 1.16.5
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20.5")
@@ -5709,7 +5707,6 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @see #getBlockTranslationKey()
      * @see #getItemTranslationKey()
      * @deprecated use {@link #translationKey()}
-     * @since 1.16.2
      */
     @Override
     @NotNull
@@ -5755,7 +5752,6 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @param world the world to check
      * @return true if this material can be used in this World.
-     * @since 1.19.4
      */
     @Deprecated(forRemoval = true, since = "1.20") // Paper
     public boolean isEnabledByFeature(@NotNull World world) {

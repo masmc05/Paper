@@ -359,7 +359,6 @@ public final class Bukkit {
      *
      * @deprecated use {@link #getDatapackManager()}
      * @return the manager
-     * @since 1.19.4
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20")

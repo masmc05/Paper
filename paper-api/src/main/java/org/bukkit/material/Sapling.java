@@ -10,7 +10,6 @@ import org.bukkit.TreeSpecies;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.9.4
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Sapling extends Wood {
@@ -89,7 +88,6 @@ public class Sapling extends Wood {
      * Checks if the Sapling would grow when next ticked with bonemeal
      *
      * @return true if the Sapling would grow when next ticked with bonemeal
-     * @since 1.9.4
      */
     public boolean isInstantGrowable() {
         return (getData() & 0x8) == 0x8;
@@ -100,7 +98,6 @@ public class Sapling extends Wood {
      *
      * @param isInstantGrowable true if the Sapling should grow when next ticked
      * with bonemeal
-     * @since 1.9.4
      */
     public void setIsInstantGrowable(boolean isInstantGrowable) {
         setData(isInstantGrowable ? (byte) ((getData() & 0x7) | 0x8) : (byte) (getData() & 0x7));

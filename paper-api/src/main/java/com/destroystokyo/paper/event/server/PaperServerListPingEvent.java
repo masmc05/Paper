@@ -195,7 +195,6 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      *
      * @return The mutable player sample list
      * @deprecated Use {@link #getListedPlayers()}, as this does not contain real player profiles
-     * @since 1.12.2
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.20.6")
@@ -314,7 +313,6 @@ public class PaperServerListPingEvent extends ServerListPingEvent implements Can
      *     the removed player (based on their {@link UUID}).</li>
      * </ul>
      * @deprecated the Iterable interface will be removed at some point
-     * @since 1.12.2
      */
     @NotNull
     @Override

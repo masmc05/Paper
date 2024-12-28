@@ -40,7 +40,6 @@ public interface JukeboxSong extends Keyed, Translatable {
     /**
      * @deprecated this method assumes that jukebox song description will
      * always be a translatable component which is not guaranteed.
-     * @since 1.21
      */
     @Override
     @Deprecated(forRemoval = true)

@@ -72,7 +72,6 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
      * @return unique id
      * @see #getKey()
      * @deprecated attributes are now identified by keys
-     * @since 1.9.4
      */
     @NotNull
     @Deprecated(since = "1.21", forRemoval = true)

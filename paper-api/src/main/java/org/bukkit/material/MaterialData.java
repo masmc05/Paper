@@ -8,7 +8,6 @@ import org.bukkit.inventory.ItemStack;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class MaterialData implements Cloneable {
@@ -35,7 +34,6 @@ public class MaterialData implements Cloneable {
      *
      * @return Raw data
      * @deprecated Magic value
-     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public byte getData() {
@@ -47,7 +45,6 @@ public class MaterialData implements Cloneable {
      *
      * @param data New raw data
      * @deprecated Magic value
-     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public void setData(byte data) {
@@ -58,7 +55,6 @@ public class MaterialData implements Cloneable {
      * Gets the Material that this MaterialData represents
      *
      * @return Material represented by this MaterialData
-     * @since 1.0.0
      */
     public Material getItemType() {
         return type;
@@ -70,7 +66,6 @@ public class MaterialData implements Cloneable {
      * @return New ItemStack containing a copy of this MaterialData
      * @deprecated this method creates an ItemStack of size 0 which is not
      * generally useful. Consider {@link #toItemStack(int)}.
-     * @since 1.0.0
      */
     @Deprecated(since = "1.12")
     public ItemStack toItemStack() {
@@ -82,7 +77,6 @@ public class MaterialData implements Cloneable {
      *
      * @param amount The stack size of the new stack
      * @return New ItemStack containing a copy of this MaterialData
-     * @since 1.0.0
      */
     public ItemStack toItemStack(int amount) {
         return new ItemStack(type, amount, data);

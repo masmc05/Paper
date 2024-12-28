@@ -8,7 +8,6 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Lever extends SimpleAttachableMaterialData implements Redstone {
@@ -35,7 +34,6 @@ public class Lever extends SimpleAttachableMaterialData implements Redstone {
      * unpowered
      *
      * @return true if powered, otherwise false
-     * @since 1.0.0
      */
     @Override
     public boolean isPowered() {
@@ -46,7 +44,6 @@ public class Lever extends SimpleAttachableMaterialData implements Redstone {
      * Set this lever to be powered or not.
      *
      * @param isPowered whether the lever should be powered or not
-     * @since 1.0.0
      */
     public void setPowered(boolean isPowered) {
         setData((byte) (isPowered ? (getData() | 0x8) : (getData() & ~0x8)));
@@ -56,7 +53,6 @@ public class Lever extends SimpleAttachableMaterialData implements Redstone {
      * Gets the face that this block is attached on
      *
      * @return BlockFace attached to
-     * @since 1.0.0
      */
     @Override
     public BlockFace getAttachedFace() {
@@ -90,8 +86,6 @@ public class Lever extends SimpleAttachableMaterialData implements Redstone {
 
     /**
      * Sets the direction this lever is pointing in
-     *
-     * @since 1.0.0
      */
     @Override
     public void setFacingDirection(BlockFace face) {

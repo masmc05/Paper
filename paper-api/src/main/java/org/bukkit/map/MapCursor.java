@@ -231,7 +231,6 @@ public final class MapCursor {
      *
      * @param type The type (color/style) of the map cursor.
      * @deprecated use {@link #setType(Type)}
-     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2", forRemoval = true) // Paper
     public void setRawType(byte type) {
@@ -389,7 +388,6 @@ public final class MapCursor {
          * @param name of the type.
          * @return the type with the given name.
          * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
-         * @since 1.0.0
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -402,7 +400,6 @@ public final class MapCursor {
         /**
          * @return an array of all known map cursor types.
          * @deprecated use {@link Registry#iterator()}.
-         * @since 1.0.0
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

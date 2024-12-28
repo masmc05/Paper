@@ -9,7 +9,6 @@ import org.bukkit.Material;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Step extends TexturedMaterial {
@@ -46,9 +45,6 @@ public class Step extends TexturedMaterial {
         super(type, data);
     }
 
-    /**
-     * @since 1.0.0
-     */
     @Override
     public List<Material> getTextures() {
         return textures;
@@ -58,7 +54,6 @@ public class Step extends TexturedMaterial {
      * Test if step is inverted
      *
      * @return true if inverted (top half), false if normal (bottom half)
-     * @since 1.3.1
      */
     public boolean isInverted() {
         return ((getData() & 0x8) != 0);
@@ -69,7 +64,6 @@ public class Step extends TexturedMaterial {
      *
      * @param inv - true if step is inverted (top half), false if step is
      *     normal (bottom half)
-     * @since 1.3.1
      */
     public void setInverted(boolean inv) {
         int dat = getData() & 0x7;

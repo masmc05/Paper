@@ -8,7 +8,6 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Sign extends MaterialData implements Attachable {
@@ -35,7 +34,6 @@ public class Sign extends MaterialData implements Attachable {
      *
      * @return true if this sign is attached to a wall, false if set on top of
      *     a block
-     * @since 1.0.0
      */
     public boolean isWallSign() {
         return getItemType() == Material.LEGACY_WALL_SIGN;
@@ -45,7 +43,6 @@ public class Sign extends MaterialData implements Attachable {
      * Gets the face that this block is attached on
      *
      * @return BlockFace attached to
-     * @since 1.0.0
      */
     @Override
     public BlockFace getAttachedFace() {
@@ -76,7 +73,6 @@ public class Sign extends MaterialData implements Attachable {
      * Gets the direction that this sign is currently facing
      *
      * @return BlockFace indicating where this sign is facing
-     * @since 1.0.0
      */
     @Override
     public BlockFace getFacing() {
@@ -139,9 +135,6 @@ public class Sign extends MaterialData implements Attachable {
         }
     }
 
-    /**
-     * @since 1.0.0
-     */
     @Override
     public void setFacingDirection(BlockFace face) {
         byte data;

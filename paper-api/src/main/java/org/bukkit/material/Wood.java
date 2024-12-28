@@ -12,7 +12,6 @@ import org.bukkit.TreeSpecies;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.9.4
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Wood extends MaterialData {
@@ -70,7 +69,6 @@ public class Wood extends MaterialData {
      * Gets the current species of this wood block
      *
      * @return TreeSpecies of this wood block
-     * @since 1.9.4
      */
     public TreeSpecies getSpecies() {
         switch (getItemType()) {
@@ -130,7 +128,6 @@ public class Wood extends MaterialData {
      * Sets the species of this wood block
      *
      * @param species New species of this wood block
-     * @since 1.9.4
      */
     public void setSpecies(final TreeSpecies species) {
         boolean firstType = false;

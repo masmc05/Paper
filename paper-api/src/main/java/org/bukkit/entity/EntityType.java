@@ -477,9 +477,6 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
         return living;
     }
 
-    /**
-     * @since 1.17.1
-     */
     @Override
     @NotNull
     @Deprecated(forRemoval = true) // Paper
@@ -525,7 +522,6 @@ public enum EntityType implements Keyed, Translatable, net.kyori.adventure.trans
      *
      * @param world the world to check
      * @return true if this EntityType can be used to spawn an Entity for this World.
-     * @since 1.19.4
      */
     @Deprecated(forRemoval = true, since = "1.20") // Paper
     public boolean isEnabledByFeature(@NotNull World world) {

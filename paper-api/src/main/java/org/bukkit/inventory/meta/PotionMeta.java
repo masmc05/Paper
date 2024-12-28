@@ -168,7 +168,6 @@ public interface PotionMeta extends ItemMeta {
      *
      * @deprecated conflicting name, use {@link #hasCustomPotionName()}
      * @return true if this has a custom potion name
-     * @since 1.21.3
      */
     @Deprecated(forRemoval = true, since = "1.21.4")
     default boolean hasCustomName() {
@@ -183,7 +182,6 @@ public interface PotionMeta extends ItemMeta {
      *
      * @deprecated conflicting name, use {@link #getCustomPotionName()}
      * @return the potion name that is set
-     * @since 1.21.3
      */
     @Deprecated(forRemoval = true, since = "1.21.4")
     @Nullable
@@ -196,7 +194,6 @@ public interface PotionMeta extends ItemMeta {
      *
      * @deprecated conflicting name, use {@link #setCustomPotionName(String)}
      * @param name the name to set
-     * @since 1.21.3
      */
     @Deprecated(forRemoval = true, since = "1.21.4")
     default void setCustomName(@Nullable String name) {

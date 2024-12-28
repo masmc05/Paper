@@ -7,7 +7,6 @@ import org.bukkit.inventory.meta.SpawnEggMeta;
 /**
  * Represents a spawn egg that can be used to spawn mobs
  * @deprecated use {@link SpawnEggMeta}
- * @since 1.1.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class SpawnEgg extends MaterialData {
@@ -45,7 +44,6 @@ public class SpawnEgg extends MaterialData {
      *
      * @return The entity type.
      * @deprecated This is now stored in {@link SpawnEggMeta}.
-     * @since 1.1.0
      */
     @Deprecated(since = "1.9")
     public EntityType getSpawnedType() {
@@ -57,7 +55,6 @@ public class SpawnEgg extends MaterialData {
      *
      * @param type The entity type.
      * @deprecated This is now stored in {@link SpawnEggMeta}.
-     * @since 1.1.0
      */
     @Deprecated(since = "1.9")
     public void setSpawnedType(EntityType type) {

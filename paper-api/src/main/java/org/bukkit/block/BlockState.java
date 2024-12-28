@@ -40,7 +40,6 @@ public interface BlockState extends Metadatable {
      *
      * @return block specific metadata
      * @deprecated use {@link #getBlockData()}
-     * @since 1.0.0
      */
     @NotNull
     @Deprecated(forRemoval = true, since = "1.13")
@@ -170,7 +169,6 @@ public interface BlockState extends Metadatable {
      *
      * @param data New block specific metadata
      * @deprecated use {@link #setBlockData(BlockData)}
-     * @since 1.0.0
      */
     @Deprecated(forRemoval = true, since = "1.13")
     void setData(@NotNull MaterialData data);

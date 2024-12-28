@@ -192,9 +192,6 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      */
     public record Result(Position pos, Structure structure) {
 
-        /**
-         * @since 1.18.2
-         */
         @Deprecated(forRemoval = true)
         public Location position() {
             //noinspection DataFlowIssue

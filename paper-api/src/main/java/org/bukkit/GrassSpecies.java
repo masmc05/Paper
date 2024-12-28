@@ -7,7 +7,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents the different types of grass.
  * @deprecated use {@link org.bukkit.block.data.BlockData}
- * @since 1.0.0
  */
 @Deprecated(forRemoval = true, since = "1.13")
 public enum GrassSpecies {
@@ -37,7 +36,6 @@ public enum GrassSpecies {
      *
      * @return A byte containing the data value of this grass species
      * @deprecated Magic value
-     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public byte getData() {
@@ -51,7 +49,6 @@ public enum GrassSpecies {
      * @return The {@link GrassSpecies} representing the given value, or null
      *     if it doesn't exist
      * @deprecated Magic value
-     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     @Nullable

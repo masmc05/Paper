@@ -548,7 +548,6 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * @return registered object or null if does not exist
      * @deprecated this method's behavior is broken and not useful. If you want to get an object
      * based on its vanilla name, or a key, wrap it in a {@link NamespacedKey} object and use {@link #get(NamespacedKey)}
-     * @since 1.19.3
      */
     @Nullable
     @Deprecated(forRemoval = true) // Paper

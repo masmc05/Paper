@@ -25,7 +25,6 @@ import org.jetbrains.annotations.Nullable;
  * Do not wrap the backing map with Collections.synchronizedMap.
  *
  * @param <V> Value
- * @since 1.9.4
  */
 @Deprecated(forRemoval = true)
 public class LoadingIntMap<V> extends Int2ObjectOpenHashMap<V> {
@@ -47,10 +46,6 @@ public class LoadingIntMap<V> extends Int2ObjectOpenHashMap<V> {
     }
 
 
-    /**
-     * {@inheritDoc}
-     * @since 1.9.4
-     */
     @Nullable
     @Override
     public V get(int key) {
@@ -68,22 +63,14 @@ public class LoadingIntMap<V> extends Int2ObjectOpenHashMap<V> {
      * Due to java stuff, you will need to cast it to (Function) for some cases
      *
      * @param <T> Type
-     * @since 1.9.4
      */
     public abstract static class Feeder <T> implements Function<T, T> {
-        /**
-         * {@inheritDoc}
-         * @since 1.9.4
-         */
         @Nullable
         @Override
         public T apply(@Nullable Object input) {
             return apply();
         }
 
-        /**
-         * @since 1.9.4
-         */
         @Nullable
         public abstract T apply();
     }

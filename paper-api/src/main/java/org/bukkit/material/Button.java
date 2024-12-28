@@ -8,7 +8,6 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.0.0
  */
 @Deprecated(forRemoval = true, since = "1.13")
 public class Button extends SimpleAttachableMaterialData implements Redstone {
@@ -35,7 +34,6 @@ public class Button extends SimpleAttachableMaterialData implements Redstone {
      * unpowered
      *
      * @return true if powered, otherwise false
-     * @since 1.0.0
      */
     @Override
     public boolean isPowered() {
@@ -47,7 +45,6 @@ public class Button extends SimpleAttachableMaterialData implements Redstone {
      *
      * @param bool
      *            whether or not the button is powered
-     * @since 1.0.0
      */
     public void setPowered(boolean bool) {
         setData((byte) (bool ? (getData() | 0x8) : (getData() & ~0x8)));
@@ -57,7 +54,6 @@ public class Button extends SimpleAttachableMaterialData implements Redstone {
      * Gets the face that this block is attached on
      *
      * @return BlockFace attached to
-     * @since 1.0.0
      */
     @Override
     public BlockFace getAttachedFace() {
@@ -88,8 +84,6 @@ public class Button extends SimpleAttachableMaterialData implements Redstone {
 
     /**
      * Sets the direction this button is pointing toward
-     *
-     * @since 1.0.0
      */
     @Override
     public void setFacingDirection(BlockFace face) {

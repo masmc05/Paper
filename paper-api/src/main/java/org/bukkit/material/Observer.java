@@ -8,7 +8,6 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.11.2
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Observer extends MaterialData implements Directional, Redstone {
@@ -36,17 +35,11 @@ public class Observer extends MaterialData implements Directional, Redstone {
         super(type, data);
     }
 
-    /**
-     * @since 1.11.2
-     */
     @Override
     public boolean isPowered() {
         return (getData() & 0x8) == 0x8;
     }
 
-    /**
-     * @since 1.11.2
-     */
     @Override
     public void setFacingDirection(BlockFace face) {
         byte data = (byte) (getData() & 0x8);
@@ -75,9 +68,6 @@ public class Observer extends MaterialData implements Directional, Redstone {
         setData(data);
     }
 
-    /**
-     * @since 1.11.2
-     */
     @Override
     public BlockFace getFacing() {
         int data = getData() & 0x7;

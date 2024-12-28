@@ -80,7 +80,6 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
          * @param name of the cat type.
          * @return the cat type with the given name.
          * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
-         * @since 1.14
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils
@@ -93,7 +92,6 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
         /**
          * @return an array of all known cat types.
          * @deprecated use {@link Registry#iterator()}.
-         * @since 1.14
          */
         @NotNull
         @Deprecated(since = "1.21", forRemoval = true) @org.jetbrains.annotations.ApiStatus.ScheduledForRemoval(inVersion = "1.22") // Paper - will be removed via asm-utils

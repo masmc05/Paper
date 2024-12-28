@@ -15,9 +15,6 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 public class PaperPluginLogger extends Logger {
 
-    /**
-     * @since 1.12.2
-     */
     @Deprecated(forRemoval = true)
     public static Logger getLogger(final PluginDescriptionFile description) {
         return getLogger((PluginMeta) description);

@@ -21,7 +21,6 @@ import org.bukkit.block.BlockFace;
  *
  * @deprecated all usage of MaterialData is deprecated and subject to removal.
  * Use {@link org.bukkit.block.data.BlockData}.
- * @since 1.0.0
  */
 @Deprecated(since = "1.13", forRemoval = true)
 public class Door extends MaterialData implements Directional, Openable {
@@ -183,7 +182,6 @@ public class Door extends MaterialData implements Directional, Openable {
      * @see Material#LEGACY_JUNGLE_DOOR
      * @see Material#LEGACY_ACACIA_DOOR
      * @see Material#LEGACY_DARK_OAK_DOOR
-     * @since 1.8.8
      */
     public static Material getWoodDoorOfSpecies(TreeSpecies species) {
         switch (species) {
@@ -205,8 +203,6 @@ public class Door extends MaterialData implements Directional, Openable {
 
     /**
      * Result is undefined if <code>isTopHalf()</code> is true.
-     *
-     * @since 1.0.0
      */
     @Override
     public boolean isOpen() {
@@ -215,8 +211,6 @@ public class Door extends MaterialData implements Directional, Openable {
 
     /**
      * Set whether the door is open. Undefined if <code>isTopHalf()</code> is true.
-     *
-     * @since 1.0.0
      */
     @Override
     public void setOpen(boolean isOpen) {
@@ -225,7 +219,6 @@ public class Door extends MaterialData implements Directional, Openable {
 
     /**
      * @return whether this is the top half of the door
-     * @since 1.0.0
      */
     public boolean isTopHalf() {
         return ((getData() & 0x8) == 0x8);
@@ -235,7 +228,6 @@ public class Door extends MaterialData implements Directional, Openable {
      * Configure this part of the door to be either the top or the bottom half
      *
      * @param isTopHalf True to make it the top half.
-     * @since 1.0.0
      */
     public void setTopHalf(boolean isTopHalf) {
         setData((byte) (isTopHalf ? (getData() | 0x8) : (getData() & ~0x8)));
@@ -244,7 +236,6 @@ public class Door extends MaterialData implements Directional, Openable {
     /**
      * @return BlockFace.SELF
      * @deprecated This method should not be used; use hinge and facing accessors instead.
-     * @since 1.0.0
      */
     @Deprecated(since = "1.4.5")
     public BlockFace getHingeCorner() {
@@ -262,7 +253,6 @@ public class Door extends MaterialData implements Directional, Openable {
      * Undefined if <code>isTopHalf()</code> is true.
      *
      * @param face the direction
-     * @since 1.0.0
      */
     @Override
     public void setFacingDirection(BlockFace face) {
@@ -290,7 +280,6 @@ public class Door extends MaterialData implements Directional, Openable {
      * Undefined if <code>isTopHalf()</code> is true.
      *
      * @return the direction
-     * @since 1.0.0
      */
     @Override
     public BlockFace getFacing() {
@@ -315,7 +304,6 @@ public class Door extends MaterialData implements Directional, Openable {
      * Undefined if <code>isTopHalf()</code> is false.
      *
      * @return false for left hinge, true for right hinge
-     * @since 1.8.8
      */
     public boolean getHinge() {
         return (getData() & 0x1) == 1;
@@ -327,7 +315,6 @@ public class Door extends MaterialData implements Directional, Openable {
      * Undefined if <code>isTopHalf()</code> is false.
      *
      * @param isHingeRight True if the hinge is on the right hand side, false if the hinge is on the left hand side.
-     * @since 1.8.8
      */
     public void setHinge(boolean isHingeRight) {
         setData((byte) (isHingeRight ? (getData() | 0x1) : (getData() & ~0x1)));
