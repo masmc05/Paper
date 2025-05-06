@@ -42,7 +42,7 @@ public interface PaperSharedSpawnerLogic extends Spawner {
 
         final net.minecraft.world.item.ItemStack item = CraftItemStack.asNMSCopy(itemStack);
         final CompoundTag entity = new CompoundTag();
-        entity.putString(Entity.ID_TAG, BuiltInRegistries.ENTITY_TYPE.getKey(EntityType.ITEM).toString());
+        entity.putString(Entity.TAG_ID, BuiltInRegistries.ENTITY_TYPE.getKey(EntityType.ITEM).toString());
         entity.store("Item", net.minecraft.world.item.ItemStack.CODEC, item);
 
         this.setNextSpawnData(

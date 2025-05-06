@@ -79,7 +79,7 @@ public class CraftTrialSpawnerConfiguration implements TrialSpawnerConfiguration
         Preconditions.checkArgument(entityType != EntityType.UNKNOWN, "Can't spawn EntityType %s from mob spawners!", entityType);
 
         SpawnData data = new SpawnData();
-        data.getEntityToSpawn().putString(Entity.ID_TAG, BuiltInRegistries.ENTITY_TYPE.getKey(CraftEntityType.bukkitToMinecraft(entityType)).toString());
+        data.getEntityToSpawn().putString(Entity.TAG_ID, BuiltInRegistries.ENTITY_TYPE.getKey(CraftEntityType.bukkitToMinecraft(entityType)).toString());
         this.getTrialData().nextSpawnData = Optional.of(data);
         this.spawnPotentialsDefinition = WeightedList.of(data);
     }

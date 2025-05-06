@@ -1014,7 +1014,7 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
     protected CompoundTag save() {
         TagValueOutput tagValueOutput = TagValueOutput.createDiscarding();
 
-        tagValueOutput.putString(Entity.ID_TAG, this.getHandle().getEncodeId()); // todo NPE?
+        tagValueOutput.putString(Entity.TAG_ID, this.getHandle().getEncodeId()); // todo NPE?
         this.getHandle().saveWithoutId(tagValueOutput);
 
         return tagValueOutput.buildResult();

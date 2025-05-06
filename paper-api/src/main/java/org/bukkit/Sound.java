@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 public interface Sound extends OldEnum<Sound>, Keyed, net.kyori.adventure.sound.Sound.Type { // Paper - implement Sound.Type
 
     // Start generate - Sound
-    // @GeneratedFrom 25w18a
+    // @GeneratedFrom 25w19a
     Sound AMBIENT_BASALT_DELTAS_ADDITIONS = getSound("ambient.basalt_deltas.additions");
 
     Sound AMBIENT_BASALT_DELTAS_LOOP = getSound("ambient.basalt_deltas.loop");
@@ -576,8 +576,6 @@ public interface Sound extends OldEnum<Sound>, Keyed, net.kyori.adventure.sound.
     Sound BLOCK_DRIED_GHAST_BREAK = getSound("block.dried_ghast.break");
 
     Sound BLOCK_DRIED_GHAST_FALL = getSound("block.dried_ghast.fall");
-
-    Sound BLOCK_DRIED_GHAST_HIT = getSound("block.dried_ghast.hit");
 
     Sound BLOCK_DRIED_GHAST_PLACE = getSound("block.dried_ghast.place");
 

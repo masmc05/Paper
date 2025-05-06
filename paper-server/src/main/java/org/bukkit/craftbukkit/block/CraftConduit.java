@@ -3,6 +3,7 @@ package org.bukkit.craftbukkit.block;
 import java.util.ArrayList;
 import java.util.Collection;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.EntityReference;
 import net.minecraft.world.level.block.entity.ConduitBlockEntity;
 import net.minecraft.world.phys.AABB;
 import org.bukkit.Location;
@@ -83,7 +84,7 @@ public class CraftConduit extends CraftBlockEntityState<ConduitBlockEntity> impl
             return false;
         }
 
-        net.minecraft.world.entity.LivingEntity currentTarget = conduit.destroyTarget;
+        net.minecraft.world.entity.LivingEntity currentTarget = EntityReference.get(conduit.destroyTarget, conduit.getLevel(), net.minecraft.world.entity.LivingEntity.class);
 
         if (target == null) {
             if (currentTarget == null) {
@@ -91,17 +92,15 @@ public class CraftConduit extends CraftBlockEntityState<ConduitBlockEntity> impl
             }
 
             conduit.destroyTarget = null;
-            conduit.destroyTargetUUID = null;
         } else {
             if (currentTarget != null && target.getUniqueId().equals(currentTarget.getUUID())) {
                 return false;
             }
 
-            conduit.destroyTarget = ((CraftLivingEntity) target).getHandle();
-            conduit.destroyTargetUUID = target.getUniqueId();
+            conduit.destroyTarget = new EntityReference<>(((CraftLivingEntity) target).getHandle());
         }
 
-        ConduitBlockEntity.updateDestroyTarget(conduit.getLevel(), this.getPosition(), this.data, conduit.effectBlocks, conduit, false);
+        ConduitBlockEntity.updateAndAttackTarget(conduit.getLevel().getMinecraftWorld(), this.getPosition(), this.data, conduit, conduit.effectBlocks.size() >= 42, false);
         return true;
     }
 
@@ -112,14 +111,14 @@ public class CraftConduit extends CraftBlockEntityState<ConduitBlockEntity> impl
             return null;
         }
 
-        net.minecraft.world.entity.LivingEntity nmsEntity = conduit.destroyTarget;
+        net.minecraft.world.entity.LivingEntity nmsEntity = EntityReference.get(conduit.destroyTarget, conduit.getLevel(), net.minecraft.world.entity.LivingEntity.class);
         return (nmsEntity != null) ? (LivingEntity) nmsEntity.getBukkitEntity() : null;
     }
 
     @Override
     public boolean hasTarget() {
         ConduitBlockEntity conduit = (ConduitBlockEntity) this.getBlockEntityFromWorld();
-        return conduit != null && conduit.destroyTarget != null && conduit.destroyTarget.isAlive();
+        return conduit != null && conduit.destroyTarget != null && EntityReference.get(conduit.destroyTarget, conduit.getLevel(), net.minecraft.world.entity.LivingEntity.class).isAlive();
     }
 
     @Override

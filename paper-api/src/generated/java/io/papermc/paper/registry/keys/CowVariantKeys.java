@@ -23,7 +23,7 @@ import org.jspecify.annotations.NullMarked;
         "SpellCheckingInspection"
 })
 @NullMarked
-@GeneratedFrom("25w18a")
+@GeneratedFrom("25w19a")
 public final class CowVariantKeys {
     /**
      * {@code minecraft:cold}

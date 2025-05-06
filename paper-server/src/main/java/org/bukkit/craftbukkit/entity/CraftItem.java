@@ -2,6 +2,7 @@ package org.bukkit.craftbukkit.entity;
 
 import java.util.UUID;
 import com.google.common.base.Preconditions;
+import net.minecraft.world.entity.EntityReference;
 import net.minecraft.world.entity.item.ItemEntity;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.inventory.CraftItemStack;
@@ -136,12 +137,12 @@ public class CraftItem extends CraftEntity implements Item {
 
     @Override
     public void setThrower(UUID uuid) {
-        this.getHandle().thrower = uuid;
+        this.getHandle().thrower = new EntityReference<>(uuid);
     }
 
     @Override
     public UUID getThrower() {
-        return this.getHandle().thrower;
+        return this.getHandle().thrower == null ? null : this.getHandle().thrower.getUUID();
     }
 
     @Override

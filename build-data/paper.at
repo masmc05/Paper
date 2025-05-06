@@ -144,6 +144,7 @@ public net.minecraft.world.effect.MobEffect attributeModifiers
 public net.minecraft.world.effect.MobEffect$AttributeTemplate
 public net.minecraft.world.effect.MobEffectInstance hiddenEffect
 public net.minecraft.world.entity.AreaEffectCloud durationOnUse
+public net.minecraft.world.entity.AreaEffectCloud owner
 public net.minecraft.world.entity.AreaEffectCloud ownerUUID
 public net.minecraft.world.entity.AreaEffectCloud potionContents
 public net.minecraft.world.entity.AreaEffectCloud radiusOnUse
@@ -460,6 +461,7 @@ public net.minecraft.world.entity.projectile.Arrow updateColor()V
 public net.minecraft.world.entity.projectile.EvokerFangs warmupDelayTicks
 public net.minecraft.world.entity.projectile.EyeOfEnder life
 public net.minecraft.world.entity.projectile.EyeOfEnder surviveAfterDeath
+public net.minecraft.world.entity.projectile.EyeOfEnder target
 public net.minecraft.world.entity.projectile.EyeOfEnder tx
 public net.minecraft.world.entity.projectile.EyeOfEnder ty
 public net.minecraft.world.entity.projectile.EyeOfEnder tz
@@ -485,6 +487,7 @@ public net.minecraft.world.entity.projectile.LargeFireball explosionPower
 public net.minecraft.world.entity.projectile.Projectile cachedOwner
 public net.minecraft.world.entity.projectile.Projectile hasBeenShot
 public net.minecraft.world.entity.projectile.Projectile leftOwner
+public net.minecraft.world.entity.projectile.Projectile owner
 public net.minecraft.world.entity.projectile.Projectile ownerUUID
 public net.minecraft.world.entity.projectile.ShulkerBullet currentMoveDirection
 public net.minecraft.world.entity.projectile.ShulkerBullet flightSteps

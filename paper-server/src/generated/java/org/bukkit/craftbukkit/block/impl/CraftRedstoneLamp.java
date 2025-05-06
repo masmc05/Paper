@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import org.bukkit.block.data.Lightable;
 import org.bukkit.craftbukkit.block.data.CraftBlockData;
 
-@GeneratedFrom("25w18a")
+@GeneratedFrom("25w19a")
 public class CraftRedstoneLamp extends CraftBlockData implements Lightable {
     private static final BooleanProperty LIT = RedstoneLampBlock.LIT;
 

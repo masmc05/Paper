@@ -17,6 +17,7 @@ import net.minecraft.network.protocol.game.ClientboundHorseScreenOpenPacket;
 import net.minecraft.network.protocol.game.ClientboundOpenScreenPacket;
 import net.minecraft.network.protocol.game.ServerboundContainerClosePacket;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.Entity;
@@ -160,7 +161,7 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
             return null;
         }
 
-        net.minecraft.server.level.ServerLevel level = ((ServerPlayer) this.getHandle()).server.getLevel(respawnConfig.dimension());
+        net.minecraft.server.level.ServerLevel level = MinecraftServer.getServer().getLevel(respawnConfig.dimension());
         if (level == null) {
             return null;
         }

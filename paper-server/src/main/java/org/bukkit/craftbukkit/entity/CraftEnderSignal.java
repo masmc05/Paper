@@ -3,6 +3,7 @@ package org.bukkit.craftbukkit.entity;
 import com.google.common.base.Preconditions;
 import net.minecraft.world.entity.projectile.EyeOfEnder;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.phys.Vec3;
 import org.bukkit.Location;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.inventory.CraftItemStack;
@@ -27,7 +28,11 @@ public class CraftEnderSignal extends CraftEntity implements EnderSignal {
 
     @Override
     public Location getTargetLocation() {
-        return new Location(this.getWorld(), this.getHandle().tx, this.getHandle().ty, this.getHandle().tz, this.getHandle().getYRot(), this.getHandle().getXRot());
+        Vec3 target = this.getHandle().target;
+        if (target == null) {
+            return null;
+        }
+        return new Location(this.getWorld(), target.x, target.y, target.z, this.getHandle().getYRot(), this.getHandle().getXRot());
     }
 
     @Override
@@ -40,7 +45,7 @@ public class CraftEnderSignal extends CraftEntity implements EnderSignal {
     public void setTargetLocation(Location location, boolean update) {
         // Paper end - Change EnderEye target without changing other things
         Preconditions.checkArgument(this.getWorld().equals(location.getWorld()), "Cannot target EnderSignal across worlds");
-        this.getHandle().signalTo(CraftLocation.toBlockPosition(location), update); // Paper - Change EnderEye target without changing other things
+        this.getHandle().signalTo(CraftLocation.toVec3(location), update); // Paper - Change EnderEye target without changing other things
     }
 
     @Override

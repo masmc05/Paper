@@ -23,7 +23,7 @@ import org.jspecify.annotations.NullMarked;
         "SpellCheckingInspection"
 })
 @NullMarked
-@GeneratedFrom("25w18a")
+@GeneratedFrom("25w19a")
 public final class SoundEventKeys {
     /**
      * {@code minecraft:ambient.basalt_deltas.additions}
@@ -1956,13 +1956,6 @@ public final class SoundEventKeys {
      * @apiNote This field is version-dependant and may be removed in future Minecraft versions
      */
     public static final TypedKey<Sound> BLOCK_DRIED_GHAST_FALL = create(key("block.dried_ghast.fall"));
-
-    /**
-     * {@code minecraft:block.dried_ghast.hit}
-     *
-     * @apiNote This field is version-dependant and may be removed in future Minecraft versions
-     */
-    public static final TypedKey<Sound> BLOCK_DRIED_GHAST_HIT = create(key("block.dried_ghast.hit"));
 
     /**
      * {@code minecraft:block.dried_ghast.place}

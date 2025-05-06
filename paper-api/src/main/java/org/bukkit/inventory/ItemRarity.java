@@ -10,7 +10,7 @@ import net.kyori.adventure.text.format.TextColor;
 public enum ItemRarity {
 
     // Start generate - ItemRarity
-    // @GeneratedFrom 25w18a
+    // @GeneratedFrom 25w19a
     COMMON(NamedTextColor.WHITE),
     UNCOMMON(NamedTextColor.YELLOW),
     RARE(NamedTextColor.AQUA),

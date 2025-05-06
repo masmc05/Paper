@@ -6,6 +6,7 @@ import java.util.Optional;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.EntityReference;
 import net.minecraft.world.item.alchemy.PotionContents;
 import org.bukkit.Color;
 import org.bukkit.Particle;
@@ -231,13 +232,13 @@ public class CraftAreaEffectCloud extends CraftEntity implements AreaEffectCloud
     // Paper start - owner API
     @Override
     public java.util.UUID getOwnerUniqueId() {
-        return this.getHandle().ownerUUID;
+        return this.getHandle().owner == null ? null : this.getHandle().owner.getUUID();
     }
 
     @Override
     public void setOwnerUniqueId(final java.util.UUID ownerUuid) {
         this.getHandle().setOwner(null);
-        this.getHandle().ownerUUID = ownerUuid;
+        this.getHandle().owner = new EntityReference<>(ownerUuid);
     }
     // Paper end
 }
