@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
  * Called just before a {@link FishHook}'s {@link FishHook.HookState} is changed.
  *
  * <p>If you want to monitor a player's fishing state transition, you can use {@link PlayerFishEvent}.</p>
+ *
+ * @since 1.21.6
  */
 @NullMarked
 public final class FishHookStateChangeEvent extends EntityEvent {
@@ -31,21 +33,31 @@ public final class FishHookStateChangeEvent extends EntityEvent {
      * <p>Refer to {@link FishHook#getState()} to get the current hook state.</p>
      *
      * @return the <strong>new</strong> hook state
+     * @since 1.21.6
      */
     public FishHook.HookState getNewHookState() {
         return this.newHookState;
     }
 
+    /**
+     * @since 1.21.6
+     */
     @Override
     public FishHook getEntity() {
         return (FishHook) super.getEntity();
     }
 
+    /**
+     * @since 1.21.6
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.6
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

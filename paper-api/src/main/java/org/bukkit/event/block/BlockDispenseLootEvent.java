@@ -20,6 +20,8 @@ import org.jetbrains.annotations.Nullable;
  * <br>
  * Example: A player unlocks a trial chamber vault and the vault block dispenses
  * its loot.
+ *
+ * @since 1.21.1
  */
 public class BlockDispenseLootEvent extends BlockEvent implements Cancellable {
 
@@ -43,6 +45,7 @@ public class BlockDispenseLootEvent extends BlockEvent implements Cancellable {
      * Gets the loot that will be dispensed.
      *
      * @return the loot that will be dispensed
+     * @since 1.21.1
      */
     @NotNull
     public List<ItemStack> getDispensedLoot() {
@@ -53,6 +56,7 @@ public class BlockDispenseLootEvent extends BlockEvent implements Cancellable {
      * Sets the loot that will be dispensed.
      *
      * @param dispensedLoot new loot to dispense
+     * @since 1.21.1
      */
     public void setDispensedLoot(@Nullable List<ItemStack> dispensedLoot) {
         this.dispensedLoot = dispensedLoot == null ? new ArrayList<>() : dispensedLoot;
@@ -62,6 +66,7 @@ public class BlockDispenseLootEvent extends BlockEvent implements Cancellable {
      * Gets the loot table used to generate the initial loot to dispense.
      *
      * @return the loot table used to generate the initial loot to dispense
+     * @since 1.21.8
      */
     @NotNull
     public LootTable getLootTable() {
@@ -76,28 +81,41 @@ public class BlockDispenseLootEvent extends BlockEvent implements Cancellable {
      * have a player associated with them and will return {@code null}.
      *
      * @return the player who unlocked the vault
+     * @since 1.21.1
      */
     @Nullable
     public Player getPlayer() {
         return this.player;
     }
 
+    /**
+     * @since 1.21.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.21.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.21.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

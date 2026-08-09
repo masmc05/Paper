@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
  * Called with the block changes resulting from a player fertilizing a given
  * block with bonemeal. Will be called after the applicable
  * {@link StructureGrowEvent}.
+ *
+ * @since 1.13
  */
 public class BlockFertilizeEvent extends BlockEvent implements Cancellable {
 
@@ -36,6 +38,7 @@ public class BlockFertilizeEvent extends BlockEvent implements Cancellable {
      * Gets the player that triggered the fertilization.
      *
      * @return triggering player, or {@code null} if not applicable
+     * @since 1.13
      */
     @Nullable
     public Player getPlayer() {
@@ -46,28 +49,41 @@ public class BlockFertilizeEvent extends BlockEvent implements Cancellable {
      * Gets a list of all blocks changed by the fertilization.
      *
      * @return list of all changed blocks
+     * @since 1.13
      */
     @NotNull
     public List<BlockState> getBlocks() {
         return this.blocks;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

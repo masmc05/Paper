@@ -8,21 +8,29 @@ import org.jetbrains.annotations.Contract;
 
 /**
  * A data-centric version-specific registry entry for the {@link Chicken.Variant} type.
+ *
+ * @since 1.21.6
  */
 @ApiStatus.NonExtendable
 public interface ChickenVariantRegistryEntry {
 
     /**
      * The model of the chicken variant to render the configured texture on.
+     *
+     * @since 1.21.6
      */
     enum Model {
         /**
          * The normal chicken model.
+         *
+         * @since 1.21.6
          */
         NORMAL,
 
         /**
          * The cold chicken model.
+         *
+         * @since 1.21.6
          */
         COLD,
     }
@@ -31,6 +39,7 @@ public interface ChickenVariantRegistryEntry {
      * Provides the client texture asset of the chicken variant, which represents the texture to use.
      *
      * @return the client texture asset
+     * @since 1.21.6
      */
     ClientTextureAsset clientTextureAsset();
 
@@ -38,6 +47,7 @@ public interface ChickenVariantRegistryEntry {
      * Provides the client texture asset of the baby chicken variant, which represents the texture to use.
      *
      * @return the baby client texture asset
+     * @since 26.2
      */
     ClientTextureAsset babyClientTextureAsset();
 
@@ -45,6 +55,7 @@ public interface ChickenVariantRegistryEntry {
      * Provides the model of the chicken variant.
      *
      * @return the model
+     * @since 1.21.6
      */
     Model model();
 
@@ -57,6 +68,8 @@ public interface ChickenVariantRegistryEntry {
      *     <li>{@link #babyClientTextureAsset(ClientTextureAsset)}</li>
      *     <li>{@link #model(Model)}</li>
      * </ul>
+     *
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     interface Builder extends ChickenVariantRegistryEntry, RegistryBuilder<Chicken.Variant> {
@@ -67,6 +80,7 @@ public interface ChickenVariantRegistryEntry {
          * @param clientTextureAsset the client texture asset
          * @return this builder instance
          * @see ChickenVariantRegistryEntry#clientTextureAsset()
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder clientTextureAsset(ClientTextureAsset clientTextureAsset);
@@ -77,6 +91,7 @@ public interface ChickenVariantRegistryEntry {
          * @param babyClientTextureAsset the baby client texture asset
          * @return this builder instance
          * @see ChickenVariantRegistryEntry#babyClientTextureAsset()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder babyClientTextureAsset(ClientTextureAsset babyClientTextureAsset);
@@ -87,6 +102,7 @@ public interface ChickenVariantRegistryEntry {
          * @param model the model
          * @return this builder instance
          * @see ChickenVariantRegistryEntry#model()
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder model(Model model);

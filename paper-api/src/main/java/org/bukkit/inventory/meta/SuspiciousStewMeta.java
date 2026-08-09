@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a suspicious stew that can have custom effects.
+ *
+ * @since 1.14.4
  */
 public interface SuspiciousStewMeta extends ItemMeta {
 
@@ -14,6 +16,7 @@ public interface SuspiciousStewMeta extends ItemMeta {
      * Checks for the presence of custom potion effects.
      *
      * @return true if custom potion effects are applied
+     * @since 1.14.4
      */
     boolean hasCustomEffects();
 
@@ -25,6 +28,7 @@ public interface SuspiciousStewMeta extends ItemMeta {
      * this method.
      *
      * @return the immutable list of custom potion effects
+     * @since 1.14.4
      */
     @NotNull
     List<PotionEffect> getCustomEffects();
@@ -37,6 +41,7 @@ public interface SuspiciousStewMeta extends ItemMeta {
      * @param overwrite true if any existing effect of the same type should be
      * overwritten
      * @return true if the suspicious stew meta changed as a result of this call
+     * @since 1.14.4
      */
     @Deprecated // Paper - add overloads to use suspicious effect entry to mushroom cow and suspicious stew meta
     boolean addCustomEffect(@NotNull PotionEffect effect, boolean overwrite);
@@ -50,6 +55,7 @@ public interface SuspiciousStewMeta extends ItemMeta {
      * overwritten
      * @return true if the suspicious stew meta changed as a result of this call
      * as a result of this call
+     * @since 1.20.4
      */
     boolean addCustomEffect(@NotNull io.papermc.paper.potion.SuspiciousEffectEntry suspiciousEffectEntry, boolean overwrite);
     // Paper end - add overloads to use suspicious effect entry to mushroom cow and suspicious stew meta
@@ -59,6 +65,7 @@ public interface SuspiciousStewMeta extends ItemMeta {
      *
      * @param type the potion effect type to remove
      * @return true if the suspicious stew meta changed as a result of this call
+     * @since 1.14.4
      */
     boolean removeCustomEffect(@NotNull PotionEffectType type);
 
@@ -67,6 +74,7 @@ public interface SuspiciousStewMeta extends ItemMeta {
      *
      * @param type the potion effect type to check for
      * @return true if the suspicious stew has this effect
+     * @since 1.14.4
      */
     boolean hasCustomEffect(@NotNull PotionEffectType type);
 
@@ -74,6 +82,7 @@ public interface SuspiciousStewMeta extends ItemMeta {
      * Removes all custom potion effects from this suspicious stew.
      *
      * @return true if the suspicious stew meta changed as a result of this call
+     * @since 1.14.4
      */
     boolean clearCustomEffects();
 

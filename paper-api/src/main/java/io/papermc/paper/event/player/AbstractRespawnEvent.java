@@ -9,6 +9,9 @@ import org.jetbrains.annotations.Unmodifiable;
 import org.jspecify.annotations.NullMarked;
 import java.util.Set;
 
+/**
+ * @since 1.21.6
+ */
 @NullMarked
 public abstract class AbstractRespawnEvent extends PlayerEvent {
 
@@ -40,6 +43,7 @@ public abstract class AbstractRespawnEvent extends PlayerEvent {
      * Gets the current respawn location.
      *
      * @return the current respawn location
+     * @since 1.21.6
      */
     public Location getRespawnLocation() {
         return this.respawnLocation.clone();
@@ -49,6 +53,7 @@ public abstract class AbstractRespawnEvent extends PlayerEvent {
      * Gets whether the respawn location is the player's bed.
      *
      * @return {@code true} if the respawn location is the player's bed
+     * @since 1.21.6
      */
     public boolean isBedSpawn() {
         return this.isBedSpawn;
@@ -58,6 +63,7 @@ public abstract class AbstractRespawnEvent extends PlayerEvent {
      * Gets whether the respawn location is the player's respawn anchor.
      *
      * @return {@code true} if the respawn location is the player's respawn anchor
+     * @since 1.21.6
      */
     public boolean isAnchorSpawn() {
         return this.isAnchorSpawn;
@@ -71,6 +77,7 @@ public abstract class AbstractRespawnEvent extends PlayerEvent {
      * in case of a respawn anchor, ran out of charges.
      *
      * @return whether the player is missing a valid respawn block
+     * @since 1.21.6
      */
     public boolean isMissingRespawnBlock() {
         return this.missingRespawnBlock;
@@ -80,6 +87,7 @@ public abstract class AbstractRespawnEvent extends PlayerEvent {
      * Gets the reason this respawn event was called.
      *
      * @return the reason the event was called
+     * @since 1.21.6
      */
     public PlayerRespawnEvent.RespawnReason getRespawnReason() {
         return this.respawnReason;
@@ -90,6 +98,7 @@ public abstract class AbstractRespawnEvent extends PlayerEvent {
      *
      * @return an immutable set of the flags that apply to this respawn
      * @deprecated in favour of {@link #getRespawnReason()}/{@link #isBedSpawn}/{@link #isAnchorSpawn()}
+     * @since 1.21.6
      */
     @Deprecated
     public @Unmodifiable Set<PlayerRespawnEvent.RespawnFlag> getRespawnFlags() {

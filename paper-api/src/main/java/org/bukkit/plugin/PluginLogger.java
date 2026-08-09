@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * PluginLogger is exactly the same as {@link Logger}.
  *
  * @see Logger
+ * @since 1.1.0
  */
 public class PluginLogger extends Logger {
     private String pluginName;
@@ -19,6 +20,7 @@ public class PluginLogger extends Logger {
      * Creates a new PluginLogger that extracts the name from a plugin.
      *
      * @param context A reference to the plugin
+     * @since 1.1.0
      */
     public PluginLogger(@NotNull Plugin context) {
         super(context.getClass().getCanonicalName(), null);
@@ -28,6 +30,10 @@ public class PluginLogger extends Logger {
         setLevel(Level.ALL);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.1.0
+     */
     @Override
     public void log(@NotNull LogRecord logRecord) {
         logRecord.setMessage(pluginName + logRecord.getMessage());

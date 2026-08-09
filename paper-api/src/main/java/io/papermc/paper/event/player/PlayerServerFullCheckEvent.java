@@ -33,6 +33,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Fires when computing if a server is currently considered full for a player.
+ *
+ * @since 1.21.7
  */
 @NullMarked
 public class PlayerServerFullCheckEvent extends Event {
@@ -52,6 +54,7 @@ public class PlayerServerFullCheckEvent extends Event {
 
     /**
      * @return the currently planned message to send to the user if they are unable to join the server
+     * @since 1.21.7
      */
     @Contract(pure = true)
     public Component kickMessage() {
@@ -62,6 +65,7 @@ public class PlayerServerFullCheckEvent extends Event {
      * Denies the player access to join this server.
      *
      * @param kickMessage The message to send to the player on kick if not able to join.
+     * @since 1.21.7
      */
     public void deny(final Component kickMessage) {
         this.kickMessage = kickMessage;
@@ -70,6 +74,7 @@ public class PlayerServerFullCheckEvent extends Event {
 
     /**
      * @return The profile of the player trying to connect
+     * @since 1.21.7
      */
     public PlayerProfile getPlayerProfile() {
         return this.profile;
@@ -78,6 +83,7 @@ public class PlayerServerFullCheckEvent extends Event {
     /**
      * Sets whether the player is able to join this server.
      * @param allow can join the server
+     * @since 1.21.7
      */
     public void allow(final boolean allow) {
         this.allow = allow;
@@ -87,16 +93,23 @@ public class PlayerServerFullCheckEvent extends Event {
      * Gets if the player is currently able to join the server.
      *
      * @return can join the server, or false if the server should be considered full
+     * @since 1.21.7
      */
     public boolean isAllowed() {
         return this.allow;
     }
 
+    /**
+     * @since 1.21.7
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.7
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

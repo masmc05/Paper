@@ -12,6 +12,8 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Called after a player is granted a criteria in an advancement.
  * If cancelled the criteria will be revoked.
+ *
+ * @since 1.12.2
  */
 @NullMarked
 public class PlayerAdvancementCriterionGrantEvent extends PlayerEvent implements Cancellable {
@@ -36,6 +38,7 @@ public class PlayerAdvancementCriterionGrantEvent extends PlayerEvent implements
      * Get the advancement which has been affected.
      *
      * @return affected advancement
+     * @since 1.12.2
      */
     public Advancement getAdvancement() {
         return this.advancement;
@@ -45,6 +48,7 @@ public class PlayerAdvancementCriterionGrantEvent extends PlayerEvent implements
      * Get the criterion which has been granted.
      *
      * @return granted criterion
+     * @since 1.12.2
      */
     public String getCriterion() {
         return this.criterion;
@@ -54,26 +58,39 @@ public class PlayerAdvancementCriterionGrantEvent extends PlayerEvent implements
      * Gets the current AdvancementProgress.
      *
      * @return advancement progress
+     * @since 1.20.2
      */
     public AdvancementProgress getAdvancementProgress() {
         return this.advancementProgress;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

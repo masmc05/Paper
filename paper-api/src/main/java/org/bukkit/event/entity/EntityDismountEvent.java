@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when an entity stops riding another entity.
+ *
+ * @since 1.20.4
  */
 public class EntityDismountEvent extends EntityEvent implements Cancellable {
 
@@ -34,17 +36,24 @@ public class EntityDismountEvent extends EntityEvent implements Cancellable {
      * Gets the entity which will no longer be ridden.
      *
      * @return dismounted entity
+     * @since 1.20.4
      */
     @NotNull
     public Entity getDismounted() {
         return this.dismounted;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         if (cancel && !this.isCancellable) {
@@ -53,16 +62,25 @@ public class EntityDismountEvent extends EntityEvent implements Cancellable {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.4
+     */
     public boolean isCancellable() {
         return this.isCancellable;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

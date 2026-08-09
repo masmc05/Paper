@@ -14,6 +14,8 @@ import org.jspecify.annotations.NullMarked;
  * Called when a player begins editing a sign's text.
  * <p>
  * Cancelling this event stops the sign editing menu from opening.
+ *
+ * @since 1.20.1
  */
 @NullMarked
 public class PlayerOpenSignEvent extends PlayerEvent implements Cancellable {
@@ -38,6 +40,7 @@ public class PlayerOpenSignEvent extends PlayerEvent implements Cancellable {
      * Gets the sign that was clicked.
      *
      * @return {@link Sign} that was clicked
+     * @since 1.20.1
      */
     public Sign getSign() {
         return this.sign;
@@ -48,6 +51,7 @@ public class PlayerOpenSignEvent extends PlayerEvent implements Cancellable {
      *
      * @return {@link Side} that was clicked
      * @see Sign#getSide(Side)
+     * @since 1.20.1
      */
     public Side getSide() {
         return this.side;
@@ -57,48 +61,71 @@ public class PlayerOpenSignEvent extends PlayerEvent implements Cancellable {
      * The cause of this sign open.
      *
      * @return the cause
+     * @since 1.20.1
      */
     public Cause getCause() {
         return this.cause;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
     /**
      * The cause of the {@link PlayerOpenSignEvent}.
+     *
+     * @since 1.20.1
      */
     public enum Cause {
         /**
          * The event was triggered by the placement of a sign.
+         *
+         * @since 1.20.1
          */
         PLACE,
         /**
          * The event was triggered by an interaction with a sign.
+         *
+         * @since 1.20.1
          */
         INTERACT,
         /**
          * The event was triggered via a plugin with {@link HumanEntity#openSign(Sign, Side)}
+         *
+         * @since 1.20.1
          */
         PLUGIN,
         /**
          * Fallback cause for any unknown cause.
+         *
+         * @since 1.20.1
          */
         UNKNOWN,
     }

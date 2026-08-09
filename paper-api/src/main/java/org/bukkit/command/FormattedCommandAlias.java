@@ -9,15 +9,24 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.7.10
+ */
 public class FormattedCommandAlias extends Command {
     private final String[] formatStrings;
 
+    /**
+     * @since 1.7.10
+     */
     public FormattedCommandAlias(@NotNull String alias, @NotNull String[] formatStrings) {
         super(alias);
         timings = co.aikar.timings.TimingsManager.getCommandTiming("minecraft", this); // Spigot
         this.formatStrings = formatStrings;
     }
 
+    /**
+     * @since 1.7.10
+     */
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String[] args) {
         boolean result = false;
@@ -122,6 +131,9 @@ public class FormattedCommandAlias extends Command {
         return formatString.trim(); // Paper - Causes an extra space at the end, breaks with brig commands
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override // Paper
     public String getTimingName() {return "Command Forwarder - " + super.getTimingName();} // Paper

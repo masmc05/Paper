@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
  * Minecraft triggers this twice internally, using this event skips one of the validation checks done by the server.
  * Additionally, this event causes the full player entity to be created much earlier than it would be in Vanilla,
  * leaving it with mostly dysfunctional methods and state.
+ * @since 1.0.0
  */
 @Warning(reason = "Listening to this event causes the player to be created early.")
 @Deprecated(since = "1.21.6")
@@ -69,6 +70,7 @@ public class PlayerLoginEvent extends PlayerEvent {
      * blank if unknown
      *
      * @return The hostname
+     * @since 1.3.1
      */
     @NotNull
     public String getHostname() {
@@ -82,6 +84,7 @@ public class PlayerLoginEvent extends PlayerEvent {
      *
      * @return The address for this player. For legacy compatibility, this may
      *     be {@code null}.
+     * @since 1.3.1
      */
     @NotNull
     public InetAddress getAddress() {
@@ -94,6 +97,7 @@ public class PlayerLoginEvent extends PlayerEvent {
      *
      * @return the player's connection address
      * @see #getAddress()
+     * @since 1.6.1
      */
     @NotNull
     public InetAddress getRealAddress() {
@@ -104,6 +108,7 @@ public class PlayerLoginEvent extends PlayerEvent {
      * Gets the current result of the login, as an enum
      *
      * @return Current Result of the login
+     * @since 1.0.0
      */
     @NotNull
     public Result getResult() {
@@ -114,6 +119,7 @@ public class PlayerLoginEvent extends PlayerEvent {
      * Sets the new result of the login, as an enum
      *
      * @param result New result to set
+     * @since 1.0.0
      */
     public void setResult(@NotNull final Result result) {
         this.result = result;
@@ -123,6 +129,7 @@ public class PlayerLoginEvent extends PlayerEvent {
      * Gets the current kick message that will be used when the outcome is not allowed
      *
      * @return Current kick message
+     * @since 1.16.5
      */
     public @NotNull Component kickMessage() {
         return this.message;
@@ -132,6 +139,7 @@ public class PlayerLoginEvent extends PlayerEvent {
      * Sets the kick message to display when the outcome is not allowed
      *
      * @param message New kick message
+     * @since 1.16.5
      */
     public void kickMessage(@NotNull Component message) {
         this.message = message;
@@ -142,6 +150,7 @@ public class PlayerLoginEvent extends PlayerEvent {
      *
      * @return Current kick message
      * @deprecated in favour of {@link #kickMessage()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -154,6 +163,7 @@ public class PlayerLoginEvent extends PlayerEvent {
      *
      * @param message New kick message
      * @deprecated in favour of {@link #kickMessage(Component)}
+     * @since 1.0.0
      */
     @Deprecated
     public void setKickMessage(@NotNull final String message) {
@@ -162,6 +172,8 @@ public class PlayerLoginEvent extends PlayerEvent {
 
     /**
      * Allows the player to log in
+     *
+     * @since 1.0.0
      */
     public void allow() {
         this.result = Result.ALLOWED;
@@ -174,6 +186,7 @@ public class PlayerLoginEvent extends PlayerEvent {
      * @param result New result for disallowing the player
      * @param message Kick message to display to the user
      * @deprecated in favour of {@link #disallow(Result, Component)}
+     * @since 1.0.0
      */
     @Deprecated
     public void disallow(@NotNull final Result result, @NotNull final String message) {
@@ -186,18 +199,25 @@ public class PlayerLoginEvent extends PlayerEvent {
      *
      * @param result New result for disallowing the player
      * @param message Kick message to display to the user
+     * @since 1.16.5
      */
     public void disallow(@NotNull final Result result, @NotNull final Component message) {
         this.result = result;
         this.message = message;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
@@ -205,28 +225,40 @@ public class PlayerLoginEvent extends PlayerEvent {
 
     /**
      * Basic kick reasons for communicating to plugins
+     *
+     * @since 1.0.0
      */
     public enum Result {
 
         /**
          * The player is allowed to log in
+         *
+         * @since 1.0.0
          */
         ALLOWED,
         /**
          * The player is not allowed to log in, due to the server being full
+         *
+         * @since 1.0.0
          */
         KICK_FULL,
         /**
          * The player is not allowed to log in, due to them being banned
+         *
+         * @since 1.0.0
          */
         KICK_BANNED,
         /**
          * The player is not allowed to log in, due to them not being on the
          * white list
+         *
+         * @since 1.0.0
          */
         KICK_WHITELIST,
         /**
          * The player is not allowed to log in, for reasons undefined
+         *
+         * @since 1.0.0
          */
         KICK_OTHER
     }

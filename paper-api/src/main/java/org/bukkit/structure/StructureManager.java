@@ -9,6 +9,9 @@ import org.bukkit.NamespacedKey;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.17.1
+ */
 public interface StructureManager {
 
     /**
@@ -24,6 +27,7 @@ public interface StructureManager {
      *
      * @return an unmodifiable shallow copy of the currently registered
      * structures
+     * @since 1.17.1
      */
     @NotNull
     Map<NamespacedKey, Structure> getStructures();
@@ -34,6 +38,7 @@ public interface StructureManager {
      * @param structureKey The key for which to get the structure
      * @return The structure that belongs to the structureKey or
      * <code>null</code> if there is none registered for that key.
+     * @since 1.17.1
      */
     @Nullable
     Structure getStructure(@NotNull NamespacedKey structureKey);
@@ -45,6 +50,7 @@ public interface StructureManager {
      * @param structure The structure to register
      * @return The structure for the specified key, or <code>null</code> if the
      * structure could not be found.
+     * @since 1.17.1
      */
     @Nullable
     Structure registerStructure(@NotNull NamespacedKey structureKey, @NotNull Structure structure);
@@ -58,6 +64,7 @@ public interface StructureManager {
      * @param structureKey The key for which to save the structure for
      * @return The structure that was registered for that key or
      * <code>null</code> if there was none
+     * @since 1.17.1
      */
     @Nullable
     Structure unregisterStructure(@NotNull NamespacedKey structureKey);
@@ -78,6 +85,7 @@ public interface StructureManager {
      * @param register <code>true</code> to register the loaded structure.
      * @return The structure, or <code>null</code> if no structure was found for
      * the specified key
+     * @since 1.17.1
      */
     @Nullable
     Structure loadStructure(@NotNull NamespacedKey structureKey, boolean register);
@@ -89,6 +97,7 @@ public interface StructureManager {
      * @param structureKey The key for which to load the structure
      * @return The structure for the specified key, or <code>null</code> if the
      * structure could not be found.
+     * @since 1.17.1
      */
     @Nullable
     Structure loadStructure(@NotNull NamespacedKey structureKey);
@@ -99,6 +108,7 @@ public interface StructureManager {
      * specified by {@link #getStructureFile(NamespacedKey)}.
      *
      * @param structureKey The key for which to save the structure for
+     * @since 1.17.1
      */
     void saveStructure(@NotNull NamespacedKey structureKey);
 
@@ -107,6 +117,7 @@ public interface StructureManager {
      *
      * @param structureKey The key for which to save the structure for
      * @param structure The structure to save for this structureKey
+     * @since 1.17.1
      */
     void saveStructure(@NotNull NamespacedKey structureKey, @NotNull Structure structure) throws IOException;
 
@@ -119,6 +130,7 @@ public interface StructureManager {
      *
      * @param structureKey The key of the structure to remove
      * @throws IOException If the file could not be removed for some reason.
+     * @since 1.17.1
      */
     void deleteStructure(@NotNull NamespacedKey structureKey) throws IOException;
 
@@ -133,6 +145,7 @@ public interface StructureManager {
      * @param unregister Whether to also unregister the specified structure if
      * it is currently loaded.
      * @throws IOException If the file could not be removed for some reason.
+     * @since 1.17.1
      */
     void deleteStructure(@NotNull NamespacedKey structureKey, boolean unregister) throws IOException;
 
@@ -144,6 +157,7 @@ public interface StructureManager {
      *
      * @param structureKey The key to build the filepath from.
      * @return The location where a file with this key would be.
+     * @since 1.17.1
      */
     @NotNull
     File getStructureFile(@NotNull NamespacedKey structureKey);
@@ -154,6 +168,7 @@ public interface StructureManager {
      * @param file The file of the structure
      * @return The read structure
      * @throws IOException when the given file can not be read from
+     * @since 1.17.1
      */
     @NotNull
     Structure loadStructure(@NotNull File file) throws IOException;
@@ -163,6 +178,7 @@ public interface StructureManager {
      *
      * @param inputStream The file of the structure
      * @return The read Structure
+     * @since 1.17.1
      */
     @NotNull
     Structure loadStructure(@NotNull InputStream inputStream) throws IOException;
@@ -174,6 +190,7 @@ public interface StructureManager {
      * @param file the target to save to.
      * @param structure the Structure to save.
      * @throws IOException when the given file can not be written to.
+     * @since 1.17.1
      */
     void saveStructure(@NotNull File file, @NotNull Structure structure) throws IOException;
 
@@ -183,6 +200,7 @@ public interface StructureManager {
      * @param outputStream the stream to write to.
      * @param structure the Structure to save.
      * @throws IOException when the given file can not be written to.
+     * @since 1.17.1
      */
     void saveStructure(@NotNull OutputStream outputStream, @NotNull Structure structure) throws IOException;
 
@@ -190,6 +208,7 @@ public interface StructureManager {
      * Creates a new empty structure.
      *
      * @return an empty structure.
+     * @since 1.17.1
      */
     @NotNull
     Structure createStructure();
@@ -199,6 +218,7 @@ public interface StructureManager {
      *
      * @param structure The structure to copy
      * @return a copy of the structure
+     * @since 1.17.1
      */
     @NotNull
     Structure copy(@NotNull Structure structure);

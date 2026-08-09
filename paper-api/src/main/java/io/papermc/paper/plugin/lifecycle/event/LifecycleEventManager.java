@@ -10,6 +10,7 @@ import org.jetbrains.annotations.ApiStatus;
  * from {@link org.bukkit.plugin.Plugin} or {@link io.papermc.paper.plugin.bootstrap.BootstrapContext}.
  *
  * @param <O> the owning type, {@link org.bukkit.plugin.Plugin} or {@link io.papermc.paper.plugin.bootstrap.BootstrapContext}
+ * @since 1.20.4
  */
 @ApiStatus.NonExtendable
 public interface LifecycleEventManager<O extends LifecycleEventOwner> {
@@ -32,6 +33,7 @@ public interface LifecycleEventManager<O extends LifecycleEventOwner> {
      * @param eventType the event type to listen to
      * @param eventHandler the handler for that event
      * @param <E> the type of the event object
+     * @since 1.20.4
      */
     default <E extends LifecycleEvent> void registerEventHandler(final LifecycleEventType<? super O, ? extends E, ?> eventType, final LifecycleEventHandler<? super E> eventHandler) {
         this.registerEventHandler(eventType.newHandler(eventHandler));
@@ -45,6 +47,7 @@ public interface LifecycleEventManager<O extends LifecycleEventOwner> {
      * returned by {@link LifecycleEventType#newHandler(LifecycleEventHandler)}.
      *
      * @param handlerConfiguration the handler configuration to register
+     * @since 1.20.4
      */
     void registerEventHandler(LifecycleEventHandlerConfiguration<? super O> handlerConfiguration);
 }

@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called whenever a villager acquires a new trade.
+ *
+ * @since 1.9.4
  */
 public class VillagerAcquireTradeEvent extends EntityEvent implements Cancellable {
 
@@ -23,6 +25,9 @@ public class VillagerAcquireTradeEvent extends EntityEvent implements Cancellabl
         this.recipe = recipe;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public AbstractVillager getEntity() {
@@ -33,6 +38,7 @@ public class VillagerAcquireTradeEvent extends EntityEvent implements Cancellabl
      * Get the recipe to be acquired.
      *
      * @return the new recipe
+     * @since 1.9.4
      */
     @NotNull
     public MerchantRecipe getRecipe() {
@@ -43,27 +49,40 @@ public class VillagerAcquireTradeEvent extends EntityEvent implements Cancellabl
      * Set the recipe to be acquired.
      *
      * @param recipe the new recipe
+     * @since 1.9.4
      */
     public void setRecipe(@NotNull MerchantRecipe recipe) {
         this.recipe = recipe;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

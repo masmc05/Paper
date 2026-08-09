@@ -5,6 +5,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Interface to the inventory of a Furnace.
+ *
+ * @since 1.1.0
  */
 public interface FurnaceInventory extends Inventory {
 
@@ -12,6 +14,7 @@ public interface FurnaceInventory extends Inventory {
      * Get the current item in the result slot.
      *
      * @return The item
+     * @since 1.1.0
      */
     @Nullable
     ItemStack getResult();
@@ -20,6 +23,7 @@ public interface FurnaceInventory extends Inventory {
      * Get the current fuel.
      *
      * @return The item
+     * @since 1.1.0
      */
     @Nullable
     ItemStack getFuel();
@@ -28,6 +32,7 @@ public interface FurnaceInventory extends Inventory {
      * Get the item currently smelting.
      *
      * @return The item
+     * @since 1.1.0
      */
     @Nullable
     ItemStack getSmelting();
@@ -36,6 +41,7 @@ public interface FurnaceInventory extends Inventory {
      * Set the current fuel.
      *
      * @param stack The item
+     * @since 1.1.0
      */
     void setFuel(@Nullable ItemStack stack);
 
@@ -43,6 +49,7 @@ public interface FurnaceInventory extends Inventory {
      * Set the current item in the result slot.
      *
      * @param stack The item
+     * @since 1.1.0
      */
     void setResult(@Nullable ItemStack stack);
 
@@ -50,6 +57,7 @@ public interface FurnaceInventory extends Inventory {
      * Set the item currently smelting.
      *
      * @param stack The item
+     * @since 1.1.0
      */
     void setSmelting(@Nullable ItemStack stack);
 
@@ -59,6 +67,7 @@ public interface FurnaceInventory extends Inventory {
      *
      * @param item Item to check
      * @return True if a valid fuel source
+     * @since 1.18.1
      */
     public boolean isFuel(@Nullable ItemStack item);
 
@@ -67,10 +76,14 @@ public interface FurnaceInventory extends Inventory {
      *
      * @param item Item to check
      * @return True if can be smelt
+     * @since 1.18.1
      */
     public boolean canSmelt(@Nullable ItemStack item);
     // Paper end
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @Nullable
     Furnace getHolder();

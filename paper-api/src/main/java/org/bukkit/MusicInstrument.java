@@ -13,6 +13,9 @@ import net.kyori.adventure.text.Component;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
+/**
+ * @since 1.19.3
+ */
 @NullMarked
 public abstract class MusicInstrument implements Keyed, net.kyori.adventure.translation.Translatable {
 
@@ -21,26 +24,51 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
      *
      * @param value a consumer for the builder factory
      * @return the created music instrument
+     * @since 1.21.7
      */
     public static MusicInstrument create(final Consumer<RegistryBuilderFactory<MusicInstrument, ? extends InstrumentRegistryEntry.Builder>> value) {
         return InlinedRegistryBuilderProvider.instance().createInstrument(value);
     }
 
+    /**
+     * @since 1.20.6
+     */
     // Start generate - MusicInstrument
     public static final MusicInstrument ADMIRE_GOAT_HORN = getInstrument("admire_goat_horn");
 
+    /**
+     * @since 1.20.6
+     */
     public static final MusicInstrument CALL_GOAT_HORN = getInstrument("call_goat_horn");
 
+    /**
+     * @since 1.20.6
+     */
     public static final MusicInstrument DREAM_GOAT_HORN = getInstrument("dream_goat_horn");
 
+    /**
+     * @since 1.20.6
+     */
     public static final MusicInstrument FEEL_GOAT_HORN = getInstrument("feel_goat_horn");
 
+    /**
+     * @since 1.20.6
+     */
     public static final MusicInstrument PONDER_GOAT_HORN = getInstrument("ponder_goat_horn");
 
+    /**
+     * @since 1.20.6
+     */
     public static final MusicInstrument SEEK_GOAT_HORN = getInstrument("seek_goat_horn");
 
+    /**
+     * @since 1.20.6
+     */
     public static final MusicInstrument SING_GOAT_HORN = getInstrument("sing_goat_horn");
 
+    /**
+     * @since 1.20.6
+     */
     public static final MusicInstrument YEARN_GOAT_HORN = getInstrument("yearn_goat_horn");
     // End generate - MusicInstrument
 
@@ -54,6 +82,7 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
      * @param namespacedKey the key
      * @return the event or null
      * @deprecated use {@link Registry#get(NamespacedKey)} instead
+     * @since 1.19.3
      */
     @Nullable
     @Deprecated(since = "1.20.1")
@@ -66,6 +95,7 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
      *
      * @return the music instruments
      * @deprecated use {@link Registry#iterator()}
+     * @since 1.19.3
      */
     @Deprecated(since = "1.20.1")
     public static Collection<MusicInstrument> values() {
@@ -76,6 +106,7 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
      * Gets the use duration of this music instrument.
      *
      * @return the duration expressed in seconds
+     * @since 1.21.6
      */
     public abstract float getDuration();
 
@@ -83,6 +114,7 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
      * Gets the range of the sound.
      *
      * @return the range of the sound
+     * @since 1.21.6
      */
     public abstract float getRange();
 
@@ -90,6 +122,7 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
      * Gets the description of this instrument as displayed to the client.
      *
      * @return the description component
+     * @since 1.21.6
      */
     public abstract Component description();
 
@@ -97,6 +130,7 @@ public abstract class MusicInstrument implements Keyed, net.kyori.adventure.tran
      * Gets the sound for this instrument.
      *
      * @return the sound
+     * @since 1.21.6
      */
     public abstract Sound getSound();
 

@@ -12,9 +12,13 @@ import org.jetbrains.annotations.Unmodifiable;
  * in the context of a {@link io.papermc.paper.registry.RegistryBuilder},
  * there are methods to create them like {@link DialogRegistryEntry.Builder#registryValueSet()}.
  * @param <T> registry value type
+ * @since 1.21
  */
 public sealed interface RegistryValueSet<T> extends Iterable<T>, RegistrySet<T> permits RegistryValueSetImpl {
 
+    /**
+     * @since 1.21
+     */
     @Override
     default int size() {
         return this.values().size();
@@ -24,9 +28,14 @@ public sealed interface RegistryValueSet<T> extends Iterable<T>, RegistrySet<T> 
      * Get the collection of values in this direct set.
      *
      * @return the values
+     * @since 1.21
      */
     @Unmodifiable Collection<T> values();
 
+    /**
+     * {@inheritDoc}
+     * @since 1.21
+     */
     @Override
     default Iterator<T> iterator() {
         return this.values().iterator();

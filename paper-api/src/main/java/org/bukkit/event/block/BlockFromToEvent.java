@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * If this event is cancelled, the block will not move (the liquid
  * will not flow).
+ *
+ * @since 1.0.0
  */
 public class BlockFromToEvent extends BlockEvent implements Cancellable {
 
@@ -39,6 +41,7 @@ public class BlockFromToEvent extends BlockEvent implements Cancellable {
      * Gets the BlockFace that the block is moving to.
      *
      * @return The BlockFace that the block is moving to
+     * @since 1.0.0
      */
     @NotNull
     public BlockFace getFace() {
@@ -49,6 +52,7 @@ public class BlockFromToEvent extends BlockEvent implements Cancellable {
      * Convenience method for getting the faced Block.
      *
      * @return The faced Block
+     * @since 1.0.0
      */
     @NotNull
     public Block getToBlock() {
@@ -58,22 +62,34 @@ public class BlockFromToEvent extends BlockEvent implements Cancellable {
         return this.to;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

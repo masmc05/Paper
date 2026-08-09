@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
  * outside.
  * <br>
  * Block may have 0, 1... {@link #getMaximumOccupiedSlots()}-1 occupied slots.
+ *
+ * @since 1.19.3
  */
 public interface ChiseledBookshelf extends Directional {
 
@@ -18,6 +20,7 @@ public interface ChiseledBookshelf extends Directional {
      *
      * @param slot to check
      * @return if slot is occupied
+     * @since 1.19.3
      */
     boolean isSlotOccupied(int slot);
 
@@ -26,6 +29,7 @@ public interface ChiseledBookshelf extends Directional {
      *
      * @param slot to set
      * @param occupied book
+     * @since 1.19.3
      */
     void setSlotOccupied(int slot, boolean occupied);
 
@@ -33,6 +37,7 @@ public interface ChiseledBookshelf extends Directional {
      * Get the indexes of all the occupied slots present on this block.
      *
      * @return set of all occupied slots
+     * @since 1.19.3
      */
     @NotNull
     Set<Integer> getOccupiedSlots();
@@ -41,6 +46,7 @@ public interface ChiseledBookshelf extends Directional {
      * Get the maximum amount of slots on this block.
      *
      * @return maximum occupied slots count
+     * @since 1.19.3
      */
     int getMaximumOccupiedSlots();
 }

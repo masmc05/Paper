@@ -15,6 +15,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Meow.
+ *
+ * @since 1.14
  */
 public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarColorable { // Paper - CollarColorable
 
@@ -22,6 +24,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * Gets the current type of this cat.
      *
      * @return Type of the cat.
+     * @since 1.14
      */
     @NotNull
     public Type getCatType();
@@ -30,6 +33,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * Sets the current type of this cat.
      *
      * @param type New type of this cat.
+     * @since 1.14
      */
     public void setCatType(@NotNull Type type);
 
@@ -37,6 +41,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * Get the sound variant of this cat.
      *
      * @return cat sound variant
+     * @since 26.2
      */
     @NotNull
     SoundVariant getSoundVariant();
@@ -45,6 +50,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * Set the sound variant of this cat.
      *
      * @param variant cat sound variant
+     * @since 26.2
      */
     void setSoundVariant(@NotNull SoundVariant variant);
 
@@ -52,6 +58,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * Get the collar color of this cat
      *
      * @return the color of the collar
+     * @since 1.14
      */
     @NotNull
     @Override // Paper
@@ -61,36 +68,72 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * Set the collar color of this cat
      *
      * @param color the color to apply
+     * @since 1.14
      */
     @Override // Paper
     public void setCollarColor(@NotNull DyeColor color);
 
     /**
      * Represents the various different cat types there are.
+     *
+     * @since 1.14
      */
     interface Type extends OldEnum<Type>, Keyed {
 
+        /**
+         * @since 1.14
+         */
         // Start generate - CatType
         Type ALL_BLACK = getType("all_black");
 
+        /**
+         * @since 1.14
+         */
         Type BLACK = getType("black");
 
+        /**
+         * @since 1.14
+         */
         Type BRITISH_SHORTHAIR = getType("british_shorthair");
 
+        /**
+         * @since 1.14
+         */
         Type CALICO = getType("calico");
 
+        /**
+         * @since 1.14
+         */
         Type JELLIE = getType("jellie");
 
+        /**
+         * @since 1.14
+         */
         Type PERSIAN = getType("persian");
 
+        /**
+         * @since 1.14
+         */
         Type RAGDOLL = getType("ragdoll");
 
+        /**
+         * @since 1.14
+         */
         Type RED = getType("red");
 
+        /**
+         * @since 1.14
+         */
         Type SIAMESE = getType("siamese");
 
+        /**
+         * @since 1.14
+         */
         Type TABBY = getType("tabby");
 
+        /**
+         * @since 1.14
+         */
         Type WHITE = getType("white");
         // End generate - CatType
 
@@ -126,12 +169,20 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
 
     /**
      * Represents the sound variant of a cat.
+     *
+     * @since 26.2
      */
     interface SoundVariant extends Keyed {
 
+        /**
+         * @since 26.2
+         */
         // Start generate - CatSoundVariant
         SoundVariant CLASSIC = getSoundVariant("classic");
 
+        /**
+         * @since 26.2
+         */
         SoundVariant ROYAL = getSoundVariant("royal");
         // End generate - CatSoundVariant
 
@@ -146,6 +197,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * This is visual and does not affect the behaviour of the cat.
      *
      * @param lyingDown whether the cat should lie down
+     * @since 1.17.1
      */
     public void setLyingDown(boolean lyingDown);
 
@@ -153,6 +205,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * Gets if the cat is lying down.
      *
      * @return whether the cat is lying down
+     * @since 1.17.1
      */
     public boolean isLyingDown();
 
@@ -161,6 +214,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * This is visual and does not affect the behaviour of the cat.
      *
      * @param headUp head is up
+     * @since 1.17.1
      */
     public void setHeadUp(boolean headUp);
 
@@ -168,6 +222,7 @@ public interface Cat extends Tameable, Sittable, io.papermc.paper.entity.CollarC
      * Gets if the cat has its head up.
      *
      * @return head is up
+     * @since 1.17.1
      */
     public boolean isHeadUp();
 }

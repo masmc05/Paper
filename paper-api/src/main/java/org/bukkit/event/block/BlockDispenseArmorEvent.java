@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * If this event is cancelled, the equipment will not be
  * equipped on the target entity.
+ *
+ * @since 1.13.1
  */
 public class BlockDispenseArmorEvent extends BlockDispenseEvent {
 
@@ -28,6 +30,7 @@ public class BlockDispenseArmorEvent extends BlockDispenseEvent {
      * Get the living entity on which the armor was dispensed.
      *
      * @return the target entity
+     * @since 1.13.1
      */
     @NotNull
     public LivingEntity getTargetEntity() {

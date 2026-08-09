@@ -15,6 +15,9 @@ import org.bukkit.Tag;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.16.4
+ */
 public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implements Tag<T> {
 
     protected final NamespacedKey key;
@@ -22,19 +25,31 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
     private final List<Predicate<T>> globalPredicates;
     private boolean locked = false;
 
+    /**
+     * @since 1.16.4
+     */
     public BaseTag(@NotNull Class<T> clazz, @NotNull NamespacedKey key, @NotNull Predicate<T> filter) {
         this(clazz, key);
         add(filter);
     }
 
+    /**
+     * @since 1.16.4
+     */
     public BaseTag(@NotNull Class<T> clazz, @NotNull NamespacedKey key, @NotNull T...values) {
         this(clazz, key, Lists.newArrayList(values));
     }
 
+    /**
+     * @since 1.16.4
+     */
     public BaseTag(@NotNull Class<T> clazz, @NotNull NamespacedKey key, @NotNull Collection<T> values) {
         this(clazz, key, values, o -> true);
     }
 
+    /**
+     * @since 1.16.4
+     */
     public BaseTag(@NotNull Class<T> clazz, @NotNull NamespacedKey key, @NotNull Collection<T> values, @NotNull Predicate<T>... globalPredicates) {
         this.key = key;
         this.tagged = clazz.isEnum() ? createEnumSet(clazz) : new HashSet<>();
@@ -47,11 +62,17 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         return (Set<E>) EnumSet.noneOf((Class<Enum>) enumClass);
     }
 
+    /**
+     * @since 1.18.1
+     */
     public @NotNull C lock() {
         this.locked = true;
         return (C) this;
     }
 
+    /**
+     * @since 1.18.1
+     */
     public boolean isLocked() {
         return this.locked;
     }
@@ -62,23 +83,35 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         }
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
         return key;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     @Override
     public Set<T> getValues() {
         return Collections.unmodifiableSet(tagged);
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public boolean isTagged(@NotNull T item) {
         return tagged.contains(item);
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C add(@NotNull Tag<T>...tags) {
         for (Tag<T> tag : tags) {
@@ -87,6 +120,9 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         return (C) this;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C add(@NotNull T...values) {
         this.checkLock();
@@ -94,6 +130,9 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         return (C) this;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C add(@NotNull Collection<T> collection) {
         this.checkLock();
@@ -101,26 +140,41 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         return (C) this;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C add(@NotNull Predicate<T> filter) {
         return add(getAllPossibleValues().stream().filter(globalPredicates.stream().reduce(Predicate::or).orElse(t -> true)).filter(filter).collect(Collectors.toSet()));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C contains(@NotNull String with) {
         return add(value -> getName(value).contains(with));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C endsWith(@NotNull String with) {
         return add(value -> getName(value).endsWith(with));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C startsWith(@NotNull String with) {
         return add(value -> getName(value).startsWith(with));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C not(@NotNull Tag<T>...tags) {
         for (Tag<T> tag : tags) {
@@ -129,6 +183,9 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         return (C) this;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C not(@NotNull T...values) {
         this.checkLock();
@@ -136,6 +193,9 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         return (C) this;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C not(@NotNull Collection<T> values) {
         this.checkLock();
@@ -143,27 +203,42 @@ public abstract class BaseTag<T extends Keyed, C extends BaseTag<T, C>> implemen
         return (C) this;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C not(@NotNull Predicate<T> filter) {
         not(getAllPossibleValues().stream().filter(globalPredicates.stream().reduce(Predicate::or).orElse(t -> true)).filter(filter).collect(Collectors.toSet()));
         return (C) this;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C notContains(@NotNull String with) {
         return not(value -> getName(value).contains(with));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C notEndsWith(@NotNull String with) {
         return not(value -> getName(value).endsWith(with));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C notStartsWith(@NotNull String with) {
         return not(value -> getName(value).startsWith(with));
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public C ensureSize(@NotNull String label, int size) {
         long actual = this.tagged.stream().filter(globalPredicates.stream().reduce(Predicate::or).orElse(t -> true)).count();

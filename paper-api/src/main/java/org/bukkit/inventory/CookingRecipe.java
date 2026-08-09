@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents a cooking recipe.
  * @param <T> type of recipe
+ * @since 1.14
  */
 public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, Keyed {
     private final NamespacedKey key;
@@ -29,6 +30,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * @param source The input material.
      * @param experience The experience given by this recipe
      * @param cookingTime The cooking time (in ticks)
+     * @since 1.14
      */
     public CookingRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @NotNull Material source, float experience, int cookingTime) {
         this(key, result, new RecipeChoice.MaterialChoice(Collections.singletonList(source)), experience, cookingTime);
@@ -42,6 +44,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * @param input The input choices.
      * @param experience The experience given by this recipe
      * @param cookingTime The cooking time (in ticks)
+     * @since 1.14
      */
     public CookingRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @NotNull RecipeChoice input, float experience, int cookingTime) {
         Preconditions.checkArgument(!result.isEmpty(), "Recipe cannot have an empty result."); // Paper
@@ -57,6 +60,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      *
      * @param input The input material.
      * @return The changed recipe, so you can chain calls.
+     * @since 1.14
      */
     @NotNull
     public CookingRecipe setInput(@NotNull Material input) {
@@ -69,6 +73,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      *
      * @return The input material.
      * @deprecated Use {@link #getInputChoice()} instead for more complete data.
+     * @since 1.14
      */
     @Deprecated // Paper
     @NotNull
@@ -81,6 +86,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      *
      * @param input The input choice.
      * @return The changed recipe, so you can chain calls.
+     * @since 1.14
      */
     @NotNull
     public T setInputChoice(@NotNull RecipeChoice input) {
@@ -92,6 +98,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Get the input choice.
      *
      * @return The input choice.
+     * @since 1.14
      */
     @NotNull
     public RecipeChoice getInputChoice() {
@@ -102,6 +109,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Get the result of this recipe.
      *
      * @return The resulting stack.
+     * @since 1.14
      */
     @NotNull
     @Override
@@ -113,6 +121,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Sets the experience given by this recipe.
      *
      * @param experience the experience level
+     * @since 1.14
      */
     public void setExperience(float experience) {
         this.experience = experience;
@@ -122,6 +131,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Get the experience given by this recipe.
      *
      * @return experience level
+     * @since 1.14
      */
     public float getExperience() {
         return experience;
@@ -131,6 +141,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Set the cooking time for this recipe in ticks.
      *
      * @param cookingTime new cooking time
+     * @since 1.14
      */
     public void setCookingTime(int cookingTime) {
         Preconditions.checkArgument(cookingTime >= 0, "cookingTime must be >= 0");
@@ -141,11 +152,15 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Get the cooking time for this recipe in ticks.
      *
      * @return cooking time
+     * @since 1.14
      */
     public int getCookingTime() {
         return cookingTime;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -157,6 +172,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * together when displayed in the client.
      *
      * @return recipe group. An empty string denotes no group. May not be null.
+     * @since 1.14
      */
     @NotNull
     public String getGroup() {
@@ -169,6 +185,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      *
      * @param group recipe group. An empty string denotes no group. May not be
      * null.
+     * @since 1.14
      */
     public void setGroup(@NotNull String group) {
         Preconditions.checkArgument(group != null, "group cannot be null");
@@ -181,6 +198,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Defaults to {@link CookingBookCategory#MISC} if not set.
      *
      * @return recipe book category
+     * @since 1.19.3
      */
     @NotNull
     public CookingBookCategory getCategory() {
@@ -193,6 +211,7 @@ public abstract class CookingRecipe<T extends CookingRecipe> implements Recipe, 
      * Defaults to {@link CookingBookCategory#MISC} if not set.
      *
      * @param category recipe book category
+     * @since 1.19.3
      */
     public void setCategory(@NotNull CookingBookCategory category) {
         Preconditions.checkArgument(category != null, "category cannot be null");

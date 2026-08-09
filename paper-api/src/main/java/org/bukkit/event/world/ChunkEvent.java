@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a Chunk related event
+ *
+ * @since 1.0.0
  */
 public abstract class ChunkEvent extends WorldEvent {
 
@@ -19,6 +21,7 @@ public abstract class ChunkEvent extends WorldEvent {
      * Gets the chunk being loaded/unloaded
      *
      * @return Chunk that triggered this event
+     * @since 1.0.0
      */
     @NotNull
     public Chunk getChunk() {

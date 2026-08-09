@@ -7,6 +7,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Represents a property on a {@link PlayerProfile}
+ *
+ * @since 1.12.2
  */
 @NullMarked
 public final class ProfileProperty {
@@ -15,10 +17,16 @@ public final class ProfileProperty {
     private final String value;
     private final @Nullable String signature;
 
+    /**
+     * @since 1.12.2
+     */
     public ProfileProperty(final String name, final String value) {
         this(name, value, null);
     }
 
+    /**
+     * @since 1.12.2
+     */
     public ProfileProperty(final String name, final String value, final @Nullable String signature) {
         this.name = Preconditions.checkNotNull(name, "ProfileProperty name can not be null");
         this.value = Preconditions.checkNotNull(value, "ProfileProperty value can not be null");
@@ -30,6 +38,7 @@ public final class ProfileProperty {
 
     /**
      * @return The property name, ie "textures"
+     * @since 1.12.2
      */
     public String getName() {
         return this.name;
@@ -37,6 +46,7 @@ public final class ProfileProperty {
 
     /**
      * @return The property value, likely to be base64 encoded
+     * @since 1.12.2
      */
     public String getValue() {
         return this.value;
@@ -44,6 +54,7 @@ public final class ProfileProperty {
 
     /**
      * @return A signature from Mojang for signed properties
+     * @since 1.12.2
      */
     public @Nullable String getSignature() {
         return this.signature;
@@ -51,6 +62,7 @@ public final class ProfileProperty {
 
     /**
      * @return If this property has a signature or not
+     * @since 1.12.2
      */
     public boolean isSigned() {
         return this.signature != null;

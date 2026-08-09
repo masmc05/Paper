@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when the progress of a block break is updated.
+ *
+ * @since 1.20.4
  */
 @NullMarked
 public class BlockBreakProgressUpdateEvent extends BlockEvent {
@@ -32,6 +34,7 @@ public class BlockBreakProgressUpdateEvent extends BlockEvent {
      * 1.0 is the most damaged
      *
      * @return The progress of the block break
+     * @since 1.20.4
      */
     public float getProgress() {
         return this.progress;
@@ -41,16 +44,23 @@ public class BlockBreakProgressUpdateEvent extends BlockEvent {
      * The entity breaking the block.
      *
      * @return The entity breaking the block
+     * @since 1.20.4
      */
     public Entity getEntity() {
         return this.entity;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a projectile is launched.
+ *
+ * @since 1.3.1
  */
 public class ProjectileLaunchEvent extends EntitySpawnEvent implements Cancellable {
 
@@ -18,17 +20,26 @@ public class ProjectileLaunchEvent extends EntitySpawnEvent implements Cancellab
         super(entity);
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public Projectile getEntity() {
         return (Projectile) this.entity;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

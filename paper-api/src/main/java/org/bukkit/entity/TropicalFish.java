@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Tropical fish.
+ *
+ * @since 1.13
  */
 public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { // Paper - Schooling Fish API
 
@@ -12,6 +14,7 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Gets the color of the fish's pattern.
      *
      * @return pattern color
+     * @since 1.13
      */
     @NotNull
     DyeColor getPatternColor();
@@ -20,6 +23,7 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Sets the color of the fish's pattern
      *
      * @param color pattern color
+     * @since 1.13
      */
     void setPatternColor(@NotNull DyeColor color);
 
@@ -27,6 +31,7 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Gets the color of the fish's body.
      *
      * @return pattern color
+     * @since 1.13
      */
     @NotNull
     DyeColor getBodyColor();
@@ -35,6 +40,7 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Sets the color of the fish's body
      *
      * @param color body color
+     * @since 1.13
      */
     void setBodyColor(@NotNull DyeColor color);
 
@@ -42,6 +48,7 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Gets the fish's pattern.
      *
      * @return pattern
+     * @since 1.13
      */
     @NotNull
     Pattern getPattern();
@@ -50,6 +57,7 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Sets the fish's pattern
      *
      * @param pattern new pattern
+     * @since 1.13
      */
     void setPattern(@NotNull Pattern pattern);
 
@@ -57,21 +65,59 @@ public interface TropicalFish extends io.papermc.paper.entity.SchoolableFish { /
      * Enumeration of all different fish patterns. Refer to the
      * <a href="https://minecraft.wiki/w/Fish">Minecraft Wiki</a>
      * for pictures.
+     *
+     * @since 1.13
      */
     public static enum Pattern {
 
+        /**
+         * @since 1.13
+         */
         // Start generate - TropicalFishPattern
         KOB,
+        /**
+         * @since 1.13
+         */
         SUNSTREAK,
+        /**
+         * @since 1.13
+         */
         SNOOPER,
+        /**
+         * @since 1.13
+         */
         DASHER,
+        /**
+         * @since 1.13
+         */
         BRINELY,
+        /**
+         * @since 1.13
+         */
         SPOTTY,
+        /**
+         * @since 1.13
+         */
         FLOPPER,
+        /**
+         * @since 1.13
+         */
         STRIPEY,
+        /**
+         * @since 1.13
+         */
         GLITTER,
+        /**
+         * @since 1.13
+         */
         BLOCKFISH,
+        /**
+         * @since 1.13
+         */
         BETTY,
+        /**
+         * @since 1.13
+         */
         CLAYFISH;
         // End generate - TropicalFishPattern
     }

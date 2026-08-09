@@ -8,6 +8,7 @@ import org.jetbrains.annotations.ApiStatus;
  * A predicate for a {@link Block}.
  *
  * @see ArgumentTypes#blockInWorldPredicate()
+ * @since 1.21.8
  */
 @ApiStatus.Experimental
 @ApiStatus.NonExtendable
@@ -20,6 +21,7 @@ public interface BlockInWorldPredicate {
      *
      * @param block the block instance to check
      * @return the predicate result.
+     * @since 1.21.8
      */
     default Result testBlock(final Block block) {
         return this.testBlock(block, true);
@@ -31,6 +33,7 @@ public interface BlockInWorldPredicate {
      * @param block     the block instance to check
      * @param loadChunk if the chunk the block is located at should be loaded.
      * @return the predicate result.
+     * @since 1.21.8
      */
     Result testBlock(Block block, boolean loadChunk);
 
@@ -39,20 +42,27 @@ public interface BlockInWorldPredicate {
      *
      * @see #testBlock(Block)
      * @see #testBlock(Block, boolean)
+     * @since 1.21.8
      */
     enum Result {
         /**
          * The block passed to the predicate matches the predicate.
+         *
+         * @since 1.21.8
          */
         TRUE,
 
         /**
          * The block passed to the predicate does not match the predicate.
+         *
+         * @since 1.21.8
          */
         FALSE,
 
         /**
          * The block passed to the predicate was in an unloaded chunk and the {@code loadChunk} flag was false.
+         *
+         * @since 1.21.8
          */
         UNLOADED_CHUNK,
         ;
@@ -67,6 +77,7 @@ public interface BlockInWorldPredicate {
          * </ul>
          *
          * @return the boolean representation.
+         * @since 1.21.8
          */
         public boolean asBoolean() {
             return this == TRUE;

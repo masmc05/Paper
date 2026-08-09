@@ -17,6 +17,8 @@ import org.jspecify.annotations.NullMarked;
  * cooldown.
  * It follows that, if this event is cancelled, no {@link PlayerItemCooldownEvent} is called as the shield is never
  * disabled in the first place.
+ *
+ * @since 1.20.4
  */
 @NullMarked
 public class PlayerShieldDisableEvent extends PlayerEvent implements Cancellable {
@@ -39,6 +41,7 @@ public class PlayerShieldDisableEvent extends PlayerEvent implements Cancellable
      * Provides the damager that disabled the shield.
      *
      * @return the entity instance that damaged the player in a way that caused the shield to be disabled.
+     * @since 1.20.4
      */
     public Entity getDamager() {
         return this.damager;
@@ -51,6 +54,7 @@ public class PlayerShieldDisableEvent extends PlayerEvent implements Cancellable
      * as said event is called if this event is not cancelled.
      *
      * @return cooldown in ticks
+     * @since 1.20.4
      */
     public int getCooldown() {
         return this.cooldown;
@@ -63,27 +67,40 @@ public class PlayerShieldDisableEvent extends PlayerEvent implements Cancellable
      * as said event is called if this event is not cancelled.
      *
      * @param cooldown cooldown in ticks, has to be a positive number
+     * @since 1.20.4
      */
     public void setCooldown(final int cooldown) {
         Preconditions.checkArgument(cooldown >= 0, "The cooldown has to be equal to or greater than 0!");
         this.cooldown = cooldown;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a vehicle-related event.
+ *
+ * @since 1.0.0
  */
 public abstract class VehicleEvent extends Event {
 
@@ -19,6 +21,7 @@ public abstract class VehicleEvent extends Event {
      * Get the vehicle.
      *
      * @return the vehicle
+     * @since 1.0.0
      */
     @NotNull
     public final Vehicle getVehicle() {

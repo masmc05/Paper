@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
  * This event is called when a player sends updated input to the server.
  *
  * @see Player#getCurrentInput()
+ * @since 1.21.3
  */
 public class PlayerInputEvent extends PlayerEvent {
 
@@ -27,18 +28,25 @@ public class PlayerInputEvent extends PlayerEvent {
      * Gets the new input received from this player.
      *
      * @return the new input
+     * @since 1.21.3
      */
     @NotNull
     public Input getInput() {
         return this.input;
     }
 
+    /**
+     * @since 1.21.3
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.3
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

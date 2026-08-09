@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when an item is put in a slot for upgrade by a Smithing Table.
+ *
+ * @since 1.16.1
  */
 public class PrepareSmithingEvent extends com.destroystokyo.paper.event.inventory.PrepareResultEvent {
 
@@ -17,6 +19,9 @@ public class PrepareSmithingEvent extends com.destroystokyo.paper.event.inventor
         super(inventory, result);
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     @Override
     public SmithingInventory getInventory() {

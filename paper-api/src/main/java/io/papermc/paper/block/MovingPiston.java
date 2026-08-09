@@ -5,6 +5,9 @@ import org.bukkit.block.TileState;
 import org.bukkit.block.data.BlockData;
 import org.jspecify.annotations.NullMarked;
 
+/**
+ * @since 1.19.2
+ */
 @NullMarked
 public interface MovingPiston extends TileState {
 
@@ -12,6 +15,7 @@ public interface MovingPiston extends TileState {
      * Gets the block that is being pushed
      *
      * @return the pushed block
+     * @since 1.19.2
      */
     BlockData getMovingBlock();
 
@@ -20,6 +24,7 @@ public interface MovingPiston extends TileState {
      * is pushing/pulling a block in.
      *
      * @return the direction
+     * @since 1.19.2
      */
     BlockFace getDirection();
 
@@ -28,6 +33,7 @@ public interface MovingPiston extends TileState {
      * Returns false if the piston is retracting.
      *
      * @return is extending or not
+     * @since 1.19.2
      */
     boolean isExtending();
 
@@ -36,6 +42,7 @@ public interface MovingPiston extends TileState {
      * from the original piston.
      *
      * @return is the piston head or not
+     * @since 1.19.2
      */
     boolean isPistonHead();
 

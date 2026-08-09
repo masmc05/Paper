@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Creates perlin noise through unbiased octaves
+ *
+ * @since 1.0.0
  */
 public class PerlinOctaveGenerator extends OctaveGenerator {
 
@@ -14,6 +16,7 @@ public class PerlinOctaveGenerator extends OctaveGenerator {
      *
      * @param world World to construct this generator for
      * @param octaves Amount of octaves to create
+     * @since 1.0.0
      */
     public PerlinOctaveGenerator(@NotNull World world, int octaves) {
         this(new Random(world.getSeed()), octaves);
@@ -24,6 +27,7 @@ public class PerlinOctaveGenerator extends OctaveGenerator {
      *
      * @param seed Seed to construct this generator for
      * @param octaves Amount of octaves to create
+     * @since 1.0.0
      */
     public PerlinOctaveGenerator(long seed, int octaves) {
         this(new Random(seed), octaves);
@@ -34,6 +38,7 @@ public class PerlinOctaveGenerator extends OctaveGenerator {
      *
      * @param rand Random object to construct this generator for
      * @param octaves Amount of octaves to create
+     * @since 1.0.0
      */
     public PerlinOctaveGenerator(@NotNull Random rand, int octaves) {
         super(createOctaves(rand, octaves));

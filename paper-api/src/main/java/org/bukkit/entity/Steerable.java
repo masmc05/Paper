@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents an entity which may be saddled, ridden and steered using an item.
+ *
+ * @since 1.16.1
  */
 public interface Steerable extends Animals {
 
@@ -12,6 +14,7 @@ public interface Steerable extends Animals {
      * Check if the pig has a saddle.
      *
      * @return if the pig has been saddled.
+     * @since 1.16.1
      */
     public boolean hasSaddle();
 
@@ -19,6 +22,7 @@ public interface Steerable extends Animals {
      * Sets if the pig has a saddle or not
      *
      * @param saddled set if the pig has a saddle or not.
+     * @since 1.16.1
      */
     public void setSaddle(boolean saddled);
 
@@ -29,6 +33,7 @@ public interface Steerable extends Animals {
      * {@link #getSteerMaterial()}.
      *
      * @return the current boost ticks
+     * @since 1.16.1
      */
     public int getBoostTicks();
 
@@ -39,6 +44,7 @@ public interface Steerable extends Animals {
      * ({@link #getCurrentBoostTicks()}).
      *
      * @param ticks the boost time
+     * @since 1.16.1
      */
     public void setBoostTicks(int ticks);
 
@@ -49,6 +55,7 @@ public interface Steerable extends Animals {
      * Current boost ticks will never be {@literal >} {@link #getBoostTicks()}.
      *
      * @return the current boost ticks
+     * @since 1.16.1
      */
     public int getCurrentBoostTicks();
 
@@ -58,6 +65,7 @@ public interface Steerable extends Animals {
      *
      * @param ticks the current boost ticks. Must be {@literal >=} 0 and {@literal <=}
      * {@link #getBoostTicks()}
+     * @since 1.16.1
      */
     public void setCurrentBoostTicks(int ticks);
 
@@ -65,6 +73,7 @@ public interface Steerable extends Animals {
      * Get the material used to steer this entity when ridden by a player.
      *
      * @return the lure material
+     * @since 1.16.1
      */
     @NotNull
     public Material getSteerMaterial();

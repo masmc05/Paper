@@ -12,6 +12,7 @@ import org.jspecify.annotations.NullMarked;
  * @param <T>
  * @see org.bukkit.Tag
  * @see org.bukkit.Registry#getTag(TagKey)
+ * @since 1.21
  */
 @ApiStatus.Experimental
 @NullMarked
@@ -21,6 +22,7 @@ public interface Tag<T extends Keyed> extends RegistryKeySet<T> { // TODO remove
      * Get the identifier for this named set.
      *
      * @return the tag key identifier
+     * @since 1.21
      */
     TagKey<T> tagKey();
 }

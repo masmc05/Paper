@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a component which determines the cooldown applied when using this item before it is available for use again.
+ *
+ * @since 1.21.3
  */
 @ApiStatus.Experimental
 public interface UseCooldownComponent extends ConfigurationSerializable {
@@ -16,6 +18,7 @@ public interface UseCooldownComponent extends ConfigurationSerializable {
      * to be available to use again.
      *
      * @return cooldown time
+     * @since 1.21.3
      */
     float getCooldownSeconds();
 
@@ -24,6 +27,7 @@ public interface UseCooldownComponent extends ConfigurationSerializable {
      * to be available to use again.
      *
      * @param cooldown new cooldown time, must be greater than 0
+     * @since 1.21.3
      */
     void setCooldownSeconds(float cooldown);
 
@@ -31,6 +35,7 @@ public interface UseCooldownComponent extends ConfigurationSerializable {
      * Gets the custom cooldown group to be used for similar items, if set.
      *
      * @return the cooldown group
+     * @since 1.21.3
      */
     @Nullable
     NamespacedKey getCooldownGroup();
@@ -39,6 +44,7 @@ public interface UseCooldownComponent extends ConfigurationSerializable {
      * Sets the custom cooldown group to be used for similar items.
      *
      * @param group the cooldown group
+     * @since 1.21.3
      */
     void setCooldownGroup(@Nullable NamespacedKey group);
 }

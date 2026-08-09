@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
  * Called when an {@link Entity} breaks a door
  * <p>
  * Cancelling the event will cause the event to be delayed
+ *
+ * @since 1.3.1
  */
 public class EntityBreakDoorEvent extends EntityChangeBlockEvent {
 
@@ -18,6 +20,9 @@ public class EntityBreakDoorEvent extends EntityChangeBlockEvent {
         super(entity, targetBlock, to);
     }
 
+    /**
+     * @since 1.4.5
+     */
     @NotNull
     @Override
     public LivingEntity getEntity() {

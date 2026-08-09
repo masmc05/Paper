@@ -2,6 +2,8 @@ package org.bukkit.entity;
 
 /**
  * Represents a Zoglin.
+ *
+ * @since 1.16.1
  */
 public interface Zoglin extends Monster, Ageable {
 
@@ -10,6 +12,7 @@ public interface Zoglin extends Monster, Ageable {
      *
      * @return Whether the zoglin is a baby
      * @deprecated see {@link Ageable#isAdult()}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.6.2")
     public boolean isBaby();
@@ -19,6 +22,7 @@ public interface Zoglin extends Monster, Ageable {
      *
      * @param baby Whether the zoglin is a baby
      * @deprecated see {@link Ageable#setBaby()} and {@link Ageable#setAdult()}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.16.2")
     public void setBaby(boolean baby);

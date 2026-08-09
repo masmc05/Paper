@@ -21,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * If this event is cancelled, the block will not fade, melt or
  * disappear.
+ *
+ * @since 1.0.0
  */
 public class BlockFadeEvent extends BlockEvent implements Cancellable {
 
@@ -41,28 +43,41 @@ public class BlockFadeEvent extends BlockEvent implements Cancellable {
      *
      * @return The block state of the new block that replaces the block
      *     fading, melting or disappearing
+     * @since 1.0.0
      */
     @NotNull
     public BlockState getNewState() {
         return this.newState;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

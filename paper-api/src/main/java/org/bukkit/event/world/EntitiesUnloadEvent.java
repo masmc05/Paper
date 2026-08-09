@@ -12,6 +12,8 @@ import org.jetbrains.annotations.Unmodifiable;
  * Called when entities are unloaded.
  * <br>
  * The provided chunk may or may not be loaded.
+ *
+ * @since 1.17.1
  */
 public class EntitiesUnloadEvent extends ChunkEvent {
 
@@ -29,18 +31,25 @@ public class EntitiesUnloadEvent extends ChunkEvent {
      * Get the entities which are being unloaded.
      *
      * @return unmodifiable list of unloaded entities.
+     * @since 1.17.1
      */
     @NotNull
     public @Unmodifiable List<Entity> getEntities() {
         return this.entities;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

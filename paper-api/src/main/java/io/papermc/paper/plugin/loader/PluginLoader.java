@@ -12,6 +12,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * It should be noted that this class will be called from a different classloader, this will cause any static values
  * set in this class/any other classes loaded not to persist when the plugin loads.
+ *
+ * @since 1.19.3
  */
 @ApiStatus.Experimental
 @NullMarked
@@ -25,6 +27,7 @@ public interface PluginLoader {
      *
      * @param classpathBuilder a mutable classpath builder that may be used to register custom runtime dependencies
      *                         for the plugin the loader was registered for.
+     * @since 1.19.3
      */
     void classloader(PluginClasspathBuilder classpathBuilder);
 

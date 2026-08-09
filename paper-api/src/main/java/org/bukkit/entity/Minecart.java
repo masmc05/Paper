@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a minecart entity.
+ *
+ * @since 1.0.0
  */
 public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { // Paper
 
@@ -17,6 +19,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * Sets a minecart's damage.
      *
      * @param damage over 40 to "kill" a minecart
+     * @since 1.6.1
      */
     public void setDamage(double damage);
 
@@ -24,6 +27,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * Gets a minecart's damage.
      *
      * @return The damage
+     * @since 1.0.0
      */
     public double getDamage();
 
@@ -32,6 +36,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * velocity.
      *
      * @return The max speed
+     * @since 1.0.0
      */
     public double getMaxSpeed();
 
@@ -40,6 +45,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * 0.4D or {@link GameRules#MAX_MINECART_SPEED}.
      *
      * @param speed The max speed
+     * @since 1.0.0
      */
     public void setMaxSpeed(double speed);
 
@@ -48,6 +54,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * occupying it
      *
      * @return Whether it decelerates faster
+     * @since 1.0.0
      */
     public boolean isSlowWhenEmpty();
 
@@ -56,6 +63,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * occupying it
      *
      * @param slow Whether it will decelerate faster
+     * @since 1.0.0
      */
     public void setSlowWhenEmpty(boolean slow);
 
@@ -65,6 +73,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * tick.
      *
      * @return The vector factor
+     * @since 1.0.0
      */
     @NotNull
     public Vector getFlyingVelocityMod();
@@ -75,6 +84,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * tick.
      *
      * @param flying velocity modifier vector
+     * @since 1.0.0
      */
     public void setFlyingVelocityMod(@NotNull Vector flying);
 
@@ -85,6 +95,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * A derailed minecart's velocity is multiplied by this factor each tick.
      *
      * @return derailed visible speed
+     * @since 1.0.0
      */
     @NotNull
     public Vector getDerailedVelocityMod();
@@ -95,6 +106,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * by this factor each tick.
      *
      * @param derailed visible speed
+     * @since 1.0.0
      */
     public void setDerailedVelocityMod(@NotNull Vector derailed);
 
@@ -124,6 +136,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * Passing a null value will set the minecart to have no display block.
      *
      * @param blockData the material to set as display block.
+     * @since 1.13
      */
     public void setDisplayBlockData(@Nullable BlockData blockData);
 
@@ -132,6 +145,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * This function will return the type AIR if none is set.
      *
      * @return the block displayed by this minecart.
+     * @since 1.13
      */
     @NotNull
     public BlockData getDisplayBlockData();
@@ -140,6 +154,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * Sets the offset of the display block.
      *
      * @param offset the block offset to set for this minecart.
+     * @since 1.8
      */
     public void setDisplayBlockOffset(int offset);
 
@@ -147,6 +162,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * Gets the offset of the display block.
      *
      * @return the current block offset for this minecart.
+     * @since 1.8
      */
     public int getDisplayBlockOffset();
 
@@ -155,6 +171,7 @@ public interface Minecart extends Vehicle, io.papermc.paper.entity.Frictional { 
      * Gets the {@link Material} that represents this Minecart type.
      *
      * @return the minecart material.
+     * @since 1.16.4
      */
     @NotNull
     public Material getMinecartMaterial();

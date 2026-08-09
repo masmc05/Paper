@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
  * brewing stand which indicate which bottles are rendered on the outside.
  * <br>
  * Stand may have 0, 1... {@link #getMaximumBottles()}-1 bottles.
+ *
+ * @since 1.13
  */
 public interface BrewingStand extends BlockData {
 
@@ -17,6 +19,7 @@ public interface BrewingStand extends BlockData {
      *
      * @param bottle to check
      * @return if bottle is present
+     * @since 1.13
      */
     boolean hasBottle(int bottle);
 
@@ -25,6 +28,7 @@ public interface BrewingStand extends BlockData {
      *
      * @param bottle to set
      * @param has bottle
+     * @since 1.13
      */
     void setBottle(int bottle, boolean has);
 
@@ -32,6 +36,7 @@ public interface BrewingStand extends BlockData {
      * Get the indexes of all the bottles present on this block.
      *
      * @return set of all bottles
+     * @since 1.13
      */
     @NotNull
     Set<Integer> getBottles();
@@ -40,6 +45,7 @@ public interface BrewingStand extends BlockData {
      * Get the maximum amount of bottles present on this stand.
      *
      * @return maximum bottle count
+     * @since 1.13
      */
     int getMaximumBottles();
 }

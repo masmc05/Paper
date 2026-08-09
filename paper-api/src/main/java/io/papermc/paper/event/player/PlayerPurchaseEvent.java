@@ -12,6 +12,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when a player trades with a standalone merchant GUI.
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public class PlayerPurchaseEvent extends PlayerEvent implements Cancellable {
@@ -38,6 +40,7 @@ public class PlayerPurchaseEvent extends PlayerEvent implements Cancellable {
      * Gets the merchant that the player is trading with
      *
      * @return the merchant
+     * @since 1.21.11
      */
     public Merchant getMerchant() {
         return merchant;
@@ -47,6 +50,7 @@ public class PlayerPurchaseEvent extends PlayerEvent implements Cancellable {
      * Gets the associated trade with this event
      *
      * @return the trade
+     * @since 1.16.5
      */
     public MerchantRecipe getTrade() {
         return this.trade;
@@ -56,6 +60,7 @@ public class PlayerPurchaseEvent extends PlayerEvent implements Cancellable {
      * Sets the trade. This is then used to determine the next prices
      *
      * @param trade the trade to use
+     * @since 1.16.5
      */
     public void setTrade(final MerchantRecipe trade) {
         Preconditions.checkArgument(trade != null, "Trade cannot be null!");
@@ -64,6 +69,7 @@ public class PlayerPurchaseEvent extends PlayerEvent implements Cancellable {
 
     /**
      * @return will trade try to reward exp
+     * @since 1.16.5
      */
     public boolean isRewardingExp() {
         return this.rewardExp;
@@ -73,6 +79,7 @@ public class PlayerPurchaseEvent extends PlayerEvent implements Cancellable {
      * Sets whether the trade will try to reward exp
      *
      * @param rewardExp try to reward exp
+     * @since 1.16.5
      */
     public void setRewardExp(final boolean rewardExp) {
         this.rewardExp = rewardExp;
@@ -80,6 +87,7 @@ public class PlayerPurchaseEvent extends PlayerEvent implements Cancellable {
 
     /**
      * @return whether the trade will count as a use of the trade
+     * @since 1.16.5
      */
     public boolean willIncreaseTradeUses() {
         return this.increaseTradeUses;
@@ -89,26 +97,39 @@ public class PlayerPurchaseEvent extends PlayerEvent implements Cancellable {
      * Sets whether the trade will count as a use
      *
      * @param increaseTradeUses {@code true} to count, {@code false} otherwise
+     * @since 1.16.5
      */
     public void setIncreaseTradeUses(final boolean increaseTradeUses) {
         this.increaseTradeUses = increaseTradeUses;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

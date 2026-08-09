@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Fired when an Entity is knocked back by the hit of another Entity. The acceleration
  * vector can be modified. If this event is cancelled, the entity is not knocked back.
+ *
+ * @since 1.12.2
  */
 @NullMarked
 public class EntityKnockbackByEntityEvent extends EntityPushedByEntityAttackEvent {
@@ -25,6 +27,7 @@ public class EntityKnockbackByEntityEvent extends EntityPushedByEntityAttackEven
 
     /**
      * @return the entity which was knocked back
+     * @since 1.12.2
      */
     @Override
     public LivingEntity getEntity() {
@@ -34,6 +37,7 @@ public class EntityKnockbackByEntityEvent extends EntityPushedByEntityAttackEven
     /**
      * @return the original knockback strength.
      * @apiNote this value doesn't necessarily relate to {@link #getKnockback()}.
+     * @since 1.12.2
      */
     @ApiStatus.Obsolete(since = "1.20.6")
     public float getKnockbackStrength() {
@@ -44,6 +48,7 @@ public class EntityKnockbackByEntityEvent extends EntityPushedByEntityAttackEven
      * Gets the causing entity. Same as {@link #getPushedBy()}.
      *
      * @return the Entity which hit
+     * @since 1.12.2
      */
     public Entity getHitBy() {
         return super.getPushedBy();

@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * A BlockTransformer is used to modify blocks that are placed by structure.
+ *
+ * @since 1.20.2
  */
 @FunctionalInterface
 @ApiStatus.Experimental
@@ -17,6 +19,8 @@ public interface BlockTransformer {
      * The TransformationState allows access to the original block state and the
      * block state of the block that was at the location of the transformation
      * in the world before the transformation started.
+     *
+     * @since 1.20.2
      */
     public static interface TransformationState {
 
@@ -25,6 +29,7 @@ public interface BlockTransformer {
          * to place and caches it for the current transformer.
          *
          * @return a clone of the original block state.
+         * @since 1.20.2
          */
         @NotNull
         BlockState getOriginal();
@@ -35,6 +40,7 @@ public interface BlockTransformer {
          * and caches it for the current transformer.
          *
          * @return a clone of the world block state.
+         * @since 1.20.2
          */
         @NotNull
         BlockState getWorld();
@@ -56,6 +62,7 @@ public interface BlockTransformer {
      * @param state the state of this transformation.
      *
      * @return the new block state
+     * @since 1.20.2
      */
     @NotNull
     BlockState transform(@NotNull LimitedRegion region, int x, int y, int z, @NotNull BlockState current, @NotNull TransformationState state);

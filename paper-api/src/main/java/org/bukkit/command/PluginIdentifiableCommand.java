@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
  * sub-indexes based on the {@link Plugin} they are a part of. Custom command
  * implementations will need to implement this interface to have a sub-index
  * automatically generated on the plugin's behalf.
+ *
+ * @since 1.3.1
  */
 public interface PluginIdentifiableCommand {
 
@@ -15,6 +17,7 @@ public interface PluginIdentifiableCommand {
      * Gets the owner of this PluginIdentifiableCommand.
      *
      * @return Plugin that owns this PluginIdentifiableCommand.
+     * @since 1.3.1
      */
     @NotNull
     public Plugin getPlugin();

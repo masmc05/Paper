@@ -26,8 +26,13 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Utility class for storing and retrieving classes for {@link Configuration}.
+ *
+ * @since 1.0.0
  */
 public class ConfigurationSerialization {
+    /**
+     * @since 1.0.0
+     */
     public static final String SERIALIZED_TYPE_KEY = "==";
     private final Class<? extends ConfigurationSerializable> clazz;
     private static Map<String, Class<? extends ConfigurationSerializable>> aliases = new HashMap<String, Class<? extends ConfigurationSerializable>>();
@@ -115,6 +120,9 @@ public class ConfigurationSerialization {
         return null;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Nullable
     public ConfigurationSerializable deserialize(@NotNull Map<String, ?> args) {
         Preconditions.checkArgument(args != null, "Args must not be null");
@@ -163,6 +171,7 @@ public class ConfigurationSerialization {
      * @param args Arguments for deserialization
      * @param clazz Class to deserialize into
      * @return New instance of the specified class
+     * @since 1.0.0
      */
     @Nullable
     public static ConfigurationSerializable deserializeObject(@NotNull Map<String, ?> args, @NotNull Class<? extends ConfigurationSerializable> clazz) {
@@ -182,6 +191,7 @@ public class ConfigurationSerialization {
      *
      * @param args Arguments for deserialization
      * @return New instance of the specified class
+     * @since 1.0.0
      */
     @Nullable
     public static ConfigurationSerializable deserializeObject(@NotNull Map<String, ?> args) {
@@ -214,6 +224,7 @@ public class ConfigurationSerialization {
      * alias
      *
      * @param clazz Class to register
+     * @since 1.0.0
      */
     public static void registerClass(@NotNull Class<? extends ConfigurationSerializable> clazz) {
         DelegateDeserialization delegate = clazz.getAnnotation(DelegateDeserialization.class);
@@ -231,6 +242,7 @@ public class ConfigurationSerialization {
      * @param clazz Class to register
      * @param alias Alias to register as
      * @see SerializableAs
+     * @since 1.0.0
      */
     public static void registerClass(@NotNull Class<? extends ConfigurationSerializable> clazz, @NotNull String alias) {
         aliases.put(alias, clazz);
@@ -240,6 +252,7 @@ public class ConfigurationSerialization {
      * Unregisters the specified alias to a {@link ConfigurationSerializable}
      *
      * @param alias Alias to unregister
+     * @since 1.0.0
      */
     public static void unregisterClass(@NotNull String alias) {
         aliases.remove(alias);
@@ -250,6 +263,7 @@ public class ConfigurationSerialization {
      * ConfigurationSerializable} class
      *
      * @param clazz Class to unregister
+     * @since 1.0.0
      */
     public static void unregisterClass(@NotNull Class<? extends ConfigurationSerializable> clazz) {
         while (aliases.values().remove(clazz)) {
@@ -263,6 +277,7 @@ public class ConfigurationSerialization {
      *
      * @param alias Alias of the serializable
      * @return Registered class, or null if not found
+     * @since 1.0.0
      */
     @Nullable
     public static Class<? extends ConfigurationSerializable> getClassByAlias(@NotNull String alias) {
@@ -275,6 +290,7 @@ public class ConfigurationSerialization {
      *
      * @param clazz Class to get alias for
      * @return Alias to use for the class
+     * @since 1.0.0
      */
     @NotNull
     public static String getAlias(@NotNull Class<? extends ConfigurationSerializable> clazz) {

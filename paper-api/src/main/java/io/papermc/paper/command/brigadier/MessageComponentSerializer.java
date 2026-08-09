@@ -9,6 +9,8 @@ import org.jetbrains.annotations.ApiStatus;
 
 /**
  * A component serializer for converting between {@link Message} and {@link Component}.
+ *
+ * @since 1.20.6
  */
 @ApiStatus.NonExtendable
 public interface MessageComponentSerializer extends ComponentSerializer<Component, Component, Message> {
@@ -17,6 +19,7 @@ public interface MessageComponentSerializer extends ComponentSerializer<Componen
      * A component serializer for converting between {@link Message} and {@link Component}.
      *
      * @return serializer instance
+     * @since 1.20.6
      */
     static MessageComponentSerializer message() {
         final class Holder {

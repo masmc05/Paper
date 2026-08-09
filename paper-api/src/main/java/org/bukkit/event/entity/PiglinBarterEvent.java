@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
  * Stores all data related to the bartering interaction with a piglin.
  * <br>
  * Called when a piglin completes a barter.
+ *
+ * @since 1.16.5
  */
 public class PiglinBarterEvent extends EntityEvent implements Cancellable {
 
@@ -30,6 +32,9 @@ public class PiglinBarterEvent extends EntityEvent implements Cancellable {
         this.outcome = outcome;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     @Override
     public Piglin getEntity() {
@@ -40,6 +45,7 @@ public class PiglinBarterEvent extends EntityEvent implements Cancellable {
      * Gets the input of the barter.
      *
      * @return The item that was used to barter with
+     * @since 1.16.5
      */
     @NotNull
     public ItemStack getInput() {
@@ -50,28 +56,41 @@ public class PiglinBarterEvent extends EntityEvent implements Cancellable {
      * Returns a mutable list representing the outcome of the barter.
      *
      * @return A mutable list of the item the player will receive
+     * @since 1.16.5
      */
     @NotNull
     public List<ItemStack> getOutcome() {
         return this.outcome;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

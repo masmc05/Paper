@@ -6,6 +6,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Interface to the inventory of a Brewing Stand.
+ *
+ * @since 1.1.0
  */
 public interface BrewerInventory extends Inventory {
 
@@ -13,6 +15,7 @@ public interface BrewerInventory extends Inventory {
      * Get the current ingredient for brewing.
      *
      * @return The ingredient.
+     * @since 1.1.0
      */
     @Nullable
     ItemStack getIngredient();
@@ -21,6 +24,7 @@ public interface BrewerInventory extends Inventory {
      * Set the current ingredient for brewing.
      *
      * @param ingredient The ingredient
+     * @since 1.1.0
      */
     void setIngredient(@Nullable ItemStack ingredient);
 
@@ -28,6 +32,7 @@ public interface BrewerInventory extends Inventory {
      * Get the current fuel for brewing.
      *
      * @return The fuel
+     * @since 1.9.4
      */
     @Nullable
     ItemStack getFuel();
@@ -37,9 +42,13 @@ public interface BrewerInventory extends Inventory {
      * {@link Material#BLAZE_POWDER} will be of use.
      *
      * @param fuel The fuel
+     * @since 1.9.4
      */
     void setFuel(@Nullable ItemStack fuel);
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @Nullable
     BrewingStand getHolder();

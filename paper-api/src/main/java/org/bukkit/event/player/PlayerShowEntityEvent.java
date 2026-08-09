@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
  * range.
  *
  * @see Player#showEntity(org.bukkit.plugin.Plugin, org.bukkit.entity.Entity)
+ * @since 1.18.1
  */
 public class PlayerShowEntityEvent extends PlayerEvent {
 
@@ -33,18 +34,25 @@ public class PlayerShowEntityEvent extends PlayerEvent {
      * Gets the entity which has been shown to the player.
      *
      * @return the shown entity
+     * @since 1.18.1
      */
     @NotNull
     public Entity getEntity() {
         return this.entity;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

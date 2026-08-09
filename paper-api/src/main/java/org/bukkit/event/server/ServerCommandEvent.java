@@ -39,6 +39,8 @@ import org.jetbrains.annotations.NotNull;
  * The state of whether there is a slash (<code>/</code>) at the
  * beginning of the message should be preserved. If a slash is added or
  * removed, unexpected behavior may result.
+ *
+ * @since 1.0.0
  */
 public class ServerCommandEvent extends ServerEvent implements Cancellable {
 
@@ -59,6 +61,7 @@ public class ServerCommandEvent extends ServerEvent implements Cancellable {
      * Get the command sender.
      *
      * @return The sender
+     * @since 1.0.0
      */
     @NotNull
     public CommandSender getSender() {
@@ -70,6 +73,7 @@ public class ServerCommandEvent extends ServerEvent implements Cancellable {
      * console
      *
      * @return Command the user is attempting to execute
+     * @since 1.0.0
      */
     @NotNull
     public String getCommand() {
@@ -80,27 +84,40 @@ public class ServerCommandEvent extends ServerEvent implements Cancellable {
      * Sets the command that the server will execute
      *
      * @param message New message that the server will execute
+     * @since 1.0.0
      */
     public void setCommand(@NotNull String message) {
         this.command = message;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

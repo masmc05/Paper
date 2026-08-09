@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents a Cow.
+ *
+ * @since 1.0.0
  */
 @NullMarked
 public interface Cow extends AbstractCow {
@@ -17,6 +19,7 @@ public interface Cow extends AbstractCow {
      * Gets the variant of this cow.
      *
      * @return the cow variant
+     * @since 1.21.6
      */
     Variant getVariant();
 
@@ -24,6 +27,7 @@ public interface Cow extends AbstractCow {
      * Sets the variant of this cow.
      *
      * @param variant the cow variant
+     * @since 1.21.6
      */
     void setVariant(Variant variant);
 
@@ -31,6 +35,7 @@ public interface Cow extends AbstractCow {
      * Get the sound variant of this cow.
      *
      * @return cow sound variant
+     * @since 26.2
      */
     SoundVariant getSoundVariant();
 
@@ -38,19 +43,31 @@ public interface Cow extends AbstractCow {
      * Set the sound variant of this cow.
      *
      * @param variant cow sound variant
+     * @since 26.2
      */
     void setSoundVariant(SoundVariant variant);
 
     /**
      * Represents the variant of a cow.
+     *
+     * @since 1.21.6
      */
     interface Variant extends Keyed {
 
+        /**
+         * @since 1.21.6
+         */
         // Start generate - CowVariant
         Variant COLD = getVariant("cold");
 
+        /**
+         * @since 1.21.6
+         */
         Variant TEMPERATE = getVariant("temperate");
 
+        /**
+         * @since 1.21.6
+         */
         Variant WARM = getVariant("warm");
         // End generate - CowVariant
 
@@ -61,12 +78,20 @@ public interface Cow extends AbstractCow {
 
     /**
      * Represents the sound variant of a cow.
+     *
+     * @since 26.2
      */
     interface SoundVariant extends Keyed {
 
+        /**
+         * @since 26.2
+         */
         // Start generate - CowSoundVariant
         SoundVariant CLASSIC = getSoundVariant("classic");
 
+        /**
+         * @since 26.2
+         */
         SoundVariant MOODY = getSoundVariant("moody");
         // End generate - CowSoundVariant
 

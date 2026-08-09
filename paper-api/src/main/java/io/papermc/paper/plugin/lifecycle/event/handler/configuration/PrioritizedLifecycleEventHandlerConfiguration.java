@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Contract;
  * The default priority is 0.
  *
  * @param <O> the required owner type
+ * @since 1.20.4
  */
 @ApiStatus.NonExtendable
 public interface PrioritizedLifecycleEventHandlerConfiguration<O extends LifecycleEventOwner> extends LifecycleEventHandlerConfiguration<O> {
@@ -21,6 +22,7 @@ public interface PrioritizedLifecycleEventHandlerConfiguration<O extends Lifecyc
      *
      * @param priority the numerical priority
      * @return this configuration for chaining
+     * @since 1.20.4
      */
     @Contract("_ -> this")
     PrioritizedLifecycleEventHandlerConfiguration<O> priority(int priority);
@@ -31,6 +33,7 @@ public interface PrioritizedLifecycleEventHandlerConfiguration<O extends Lifecyc
      * to observe any changes from previously ran handlers.
      *
      * @return this configuration for chaining
+     * @since 1.20.4
      */
     @Contract("-> this")
     PrioritizedLifecycleEventHandlerConfiguration<O> monitor();

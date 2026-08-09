@@ -7,6 +7,8 @@ import org.bukkit.block.data.Powerable;
 /**
  * 'in_wall' indicates if the fence gate is attached to a wall, and if true the
  * texture is lowered by a small amount to blend in better.
+ *
+ * @since 1.13
  */
 public interface Gate extends Directional, Openable, Powerable {
 
@@ -14,6 +16,7 @@ public interface Gate extends Directional, Openable, Powerable {
      * Gets the value of the 'in_wall' property.
      *
      * @return the 'in_wall' value
+     * @since 1.13
      */
     boolean isInWall();
 
@@ -21,6 +24,7 @@ public interface Gate extends Directional, Openable, Powerable {
      * Sets the value of the 'in_wall' property.
      *
      * @param inWall the new 'in_wall' value
+     * @since 1.13
      */
     void setInWall(boolean inWall);
 }

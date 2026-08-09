@@ -5,12 +5,16 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.9.4
+ */
 public interface BossBar {
 
     /**
      * Returns the title of this boss bar
      *
      * @return the title of the bar
+     * @since 1.9.4
      */
     @NotNull
     String getTitle();
@@ -19,6 +23,7 @@ public interface BossBar {
      * Sets the title of this boss bar
      *
      * @param title the title of the bar
+     * @since 1.9.4
      */
     void setTitle(@Nullable String title);
 
@@ -26,6 +31,7 @@ public interface BossBar {
      * Returns the color of this boss bar
      *
      * @return the color of the bar
+     * @since 1.9.4
      */
     @NotNull
     BarColor getColor();
@@ -34,6 +40,7 @@ public interface BossBar {
      * Sets the color of this boss bar.
      *
      * @param color the color of the bar
+     * @since 1.9.4
      */
     void setColor(@NotNull BarColor color);
 
@@ -41,6 +48,7 @@ public interface BossBar {
      * Returns the style of this boss bar
      *
      * @return the style of the bar
+     * @since 1.9.4
      */
     @NotNull
     BarStyle getStyle();
@@ -49,6 +57,7 @@ public interface BossBar {
      * Sets the bar style of this boss bar
      *
      * @param style the style of the bar
+     * @since 1.9.4
      */
     void setStyle(@NotNull BarStyle style);
 
@@ -56,6 +65,7 @@ public interface BossBar {
      * Remove an existing flag on this boss bar
      *
      * @param flag the existing flag to remove
+     * @since 1.9.4
      */
     void removeFlag(@NotNull BarFlag flag);
 
@@ -63,6 +73,7 @@ public interface BossBar {
      * Add an optional flag to this boss bar
      *
      * @param flag an optional flag to set on the boss bar
+     * @since 1.9.4
      */
     void addFlag(@NotNull BarFlag flag);
 
@@ -71,6 +82,7 @@ public interface BossBar {
      *
      * @param flag the flag to check
      * @return whether it has the flag
+     * @since 1.9.4
      */
     boolean hasFlag(@NotNull BarFlag flag);
 
@@ -79,6 +91,7 @@ public interface BossBar {
      * 1.0 (full)
      *
      * @param progress the progress of the bar
+     * @since 1.9.4
      */
     void setProgress(double progress);
 
@@ -86,6 +99,7 @@ public interface BossBar {
      * Returns the progress of the bar between 0.0 and 1.0
      *
      * @return the progress of the bar
+     * @since 1.9.4
      */
     double getProgress();
 
@@ -93,6 +107,7 @@ public interface BossBar {
      * Adds the player to this boss bar causing it to display on their screen.
      *
      * @param player the player to add
+     * @since 1.9.4
      */
     void addPlayer(@NotNull Player player);
 
@@ -101,6 +116,7 @@ public interface BossBar {
      * screen.
      *
      * @param player the player to remove
+     * @since 1.9.4
      */
     void removePlayer(@NotNull Player player);
 
@@ -108,6 +124,7 @@ public interface BossBar {
      * Removes all players from this boss bar
      *
      * @see #removePlayer(Player)
+     * @since 1.9.4
      */
     void removeAll();
 
@@ -115,6 +132,7 @@ public interface BossBar {
      * Returns all players viewing this boss bar
      *
      * @return a immutable list of players
+     * @since 1.9.4
      */
     @NotNull
     List<Player> getPlayers();
@@ -123,6 +141,7 @@ public interface BossBar {
      * Set if the boss bar is displayed to attached players.
      *
      * @param visible visible status
+     * @since 1.9.4
      */
     void setVisible(boolean visible);
 
@@ -130,12 +149,14 @@ public interface BossBar {
      * Return if the boss bar is displayed to attached players.
      *
      * @return visible status
+     * @since 1.9.4
      */
     boolean isVisible();
 
     /**
      * Shows the previously hidden boss bar to all attached players
      * @deprecated {@link #setVisible(boolean)}
+     * @since 1.9.4
      */
     @Deprecated(since = "1.9")
     void show();
@@ -143,6 +164,7 @@ public interface BossBar {
     /**
      * Hides this boss bar from all attached players
      * @deprecated {@link #setVisible(boolean)}
+     * @since 1.9.4
      */
     @Deprecated(since = "1.9")
     void hide();

@@ -8,6 +8,8 @@ import org.bukkit.block.data.BlockData;
  * <br>
  * May not be lower than {@link #getMinimumLayers()} or higher than
  * {@link #getMaximumLayers()}.
+ *
+ * @since 1.13
  */
 public interface Snow extends BlockData {
 
@@ -15,6 +17,7 @@ public interface Snow extends BlockData {
      * Gets the value of the 'layers' property.
      *
      * @return the 'layers' value
+     * @since 1.13
      */
     int getLayers();
 
@@ -22,6 +25,7 @@ public interface Snow extends BlockData {
      * Sets the value of the 'layers' property.
      *
      * @param layers the new 'layers' value
+     * @since 1.13
      */
     void setLayers(int layers);
 
@@ -29,6 +33,7 @@ public interface Snow extends BlockData {
      * Gets the minimum allowed value of the 'layers' property.
      *
      * @return the minimum 'layers' value
+     * @since 1.13
      */
     int getMinimumLayers();
 
@@ -36,6 +41,7 @@ public interface Snow extends BlockData {
      * Gets the maximum allowed value of the 'layers' property.
      *
      * @return the maximum 'layers' value
+     * @since 1.13
      */
     int getMaximumLayers();
 }

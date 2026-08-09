@@ -9,9 +9,14 @@ import org.jetbrains.annotations.NotNull;
 /**
  * An instance of {@link InventoryView} which provides extra methods related to
  * loom view data.
+ *
+ * @since 1.21
  */
 public interface LoomView extends InventoryView {
 
+    /**
+     * @since 1.21.1
+     */
     @NotNull
     @Override
     LoomInventory getTopInventory();
@@ -21,6 +26,7 @@ public interface LoomView extends InventoryView {
      *
      * @return A copy of the {@link PatternType}'s currently selectable by the
      * player
+     * @since 1.21
      */
     @NotNull
     List<PatternType> getSelectablePatterns();
@@ -29,6 +35,7 @@ public interface LoomView extends InventoryView {
      * Gets an index of the selected pattern.
      *
      * @return Index of the selected pattern
+     * @since 1.21
      */
     int getSelectedPatternIndex();
 }

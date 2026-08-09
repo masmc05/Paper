@@ -12,6 +12,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a portal is created
+ *
+ * @since 1.0.0
  */
 public class PortalCreateEvent extends WorldEvent implements Cancellable {
 
@@ -42,6 +44,7 @@ public class PortalCreateEvent extends WorldEvent implements Cancellable {
      * Gets an array list of all the blocks associated with the created portal
      *
      * @return array list of all the blocks associated with the created portal
+     * @since 1.0.0
      */
     @NotNull
     public List<BlockState> getBlocks() {
@@ -52,6 +55,7 @@ public class PortalCreateEvent extends WorldEvent implements Cancellable {
      * Returns the Entity that triggered this portal creation (if available)
      *
      * @return Entity involved in this event
+     * @since 1.14.1
      */
     @Nullable
     public Entity getEntity() {
@@ -62,28 +66,41 @@ public class PortalCreateEvent extends WorldEvent implements Cancellable {
      * Gets the reason for the portal's creation
      *
      * @return CreateReason for the portal's creation
+     * @since 1.1.0
      */
     @NotNull
     public CreateReason getReason() {
         return this.reason;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
@@ -91,21 +108,29 @@ public class PortalCreateEvent extends WorldEvent implements Cancellable {
 
     /**
      * An enum to specify the various reasons for a portal's creation
+     *
+     * @since 1.1.0
      */
     public enum CreateReason {
         /**
          * When the blocks inside a portal are created due to a portal frame
          * being set on fire.
+         *
+         * @since 1.1.0
          */
         FIRE,
         /**
          * When a nether portal frame and portal is created at the exit of an
          * entered nether portal.
+         *
+         * @since 1.14
          */
         NETHER_PAIR,
         /**
          * When the target end platform is created as a result of a player
          * entering an end portal.
+         *
+         * @since 1.14
          */
         END_PLATFORM
     }

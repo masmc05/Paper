@@ -9,6 +9,8 @@ import org.jetbrains.annotations.ApiStatus;
  * the types that implement this interface also provide
  * a {@link LifecycleEventManager} where you can register
  * event handlers.
+ *
+ * @since 1.20.4
  */
 @ApiStatus.NonExtendable
 public interface LifecycleEventOwner {
@@ -17,6 +19,7 @@ public interface LifecycleEventOwner {
      * Get the plugin meta for this plugin.
      *
      * @return the plugin meta
+     * @since 1.20.4
      */
     PluginMeta getPluginMeta();
 }

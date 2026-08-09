@@ -7,6 +7,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * A block position, which does not have a y value.
+ *
+ * @since 1.21.8
  */
 @ApiStatus.Experimental
 @NullMarked
@@ -16,6 +18,7 @@ public interface ColumnBlockPosition {
      * Gets the X-coordinate of the block position.
      *
      * @return the block's X-coordinate
+     * @since 1.21.8
      */
     int blockX();
 
@@ -23,6 +26,7 @@ public interface ColumnBlockPosition {
      * Gets the Z-coordinate of the block position.
      *
      * @return the block's Z-coordinate
+     * @since 1.21.8
      */
     int blockZ();
 
@@ -32,6 +36,7 @@ public interface ColumnBlockPosition {
      *
      * @param y the Y-coordinate to include in the new position
      * @return a {@link BlockPosition} representing the full 3D position
+     * @since 1.21.8
      */
     default BlockPosition toPosition(final int y) {
         return Position.block(this.blockX(), y, this.blockZ());

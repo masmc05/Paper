@@ -12,6 +12,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * Note: Some entities might trigger this multiple times on the same entity
  * as multiple acceleration calculations are done.
+ *
+ * @since 1.19.3
  */
 @NullMarked
 public class EntityPushedByEntityAttackEvent extends EntityKnockbackEvent {
@@ -28,6 +30,7 @@ public class EntityPushedByEntityAttackEvent extends EntityKnockbackEvent {
      * Gets the entity which pushed the affected entity.
      *
      * @return the pushing entity
+     * @since 1.19.3
      */
     public Entity getPushedBy() {
         return this.pushedBy;

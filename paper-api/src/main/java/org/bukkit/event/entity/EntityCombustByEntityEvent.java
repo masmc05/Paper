@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when an entity causes another entity to combust.
+ *
+ * @since 1.1.0
  */
 public class EntityCombustByEntityEvent extends EntityCombustEvent {
 
@@ -27,6 +29,7 @@ public class EntityCombustByEntityEvent extends EntityCombustEvent {
      * Get the entity that caused the combustion event.
      *
      * @return the Entity that set the combustee alight.
+     * @since 1.1.0
      */
     @NotNull
     public Entity getCombuster() {

@@ -10,6 +10,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Represents an input for dialog.
+ *
+ * @since 1.21.7
  */
 public sealed interface DialogInput permits BooleanDialogInput, NumberRangeDialogInput, SingleOptionDialogInput, TextDialogInput {
 
@@ -22,6 +24,7 @@ public sealed interface DialogInput permits BooleanDialogInput, NumberRangeDialo
      * @param onTrue the input's value in a template when the value is true
      * @param onFalse the input's value in a template when the value is false
      * @return a new boolean dialog input instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_, _, _, _, _ -> new")
     static BooleanDialogInput bool(final String key, final Component label, final boolean initial, final String onTrue, final String onFalse) {
@@ -38,6 +41,7 @@ public sealed interface DialogInput permits BooleanDialogInput, NumberRangeDialo
      * @param key the key identifier for the input
      * @param label the label for the input
      * @return a new builder instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_, _ -> new")
     static BooleanDialogInput.Builder bool(final String key, final Component label) {
@@ -56,6 +60,7 @@ public sealed interface DialogInput permits BooleanDialogInput, NumberRangeDialo
      * @param initial the initial value, or null if not set
      * @param step the step size, or null if not set
      * @return a new number range dialog input instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_, _, _, _, _, _, _, _ -> new")
     static NumberRangeDialogInput numberRange(
@@ -79,6 +84,7 @@ public sealed interface DialogInput permits BooleanDialogInput, NumberRangeDialo
      * @param start the start of the range
      * @param end   the end of the range
      * @return a new builder instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_, _, _, _ -> new")
     static NumberRangeDialogInput.Builder numberRange(final String key, final Component label, final float start, final float end) {
@@ -94,6 +100,7 @@ public sealed interface DialogInput permits BooleanDialogInput, NumberRangeDialo
      * @param label the label for the input
      * @param labelVisible whether the label should be visible
      * @return a new single option dialog input instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_, _, _, _, _ -> new")
     static SingleOptionDialogInput singleOption(
@@ -113,6 +120,7 @@ public sealed interface DialogInput permits BooleanDialogInput, NumberRangeDialo
      * @param label the label for the input
      * @param entries the list of options for the input
      * @return a new builder instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_, _, _ -> new")
     static SingleOptionDialogInput.Builder singleOption(final String key, final Component label, final List<SingleOptionDialogInput.OptionEntry> entries) {
@@ -130,6 +138,7 @@ public sealed interface DialogInput permits BooleanDialogInput, NumberRangeDialo
      * @param maxLength the maximum length of the input
      * @param multilineOptions the multiline options, or null if not set
      * @return a new text dialog input instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_, _, _, _, _, _, _ -> new")
     static TextDialogInput text(
@@ -150,6 +159,7 @@ public sealed interface DialogInput permits BooleanDialogInput, NumberRangeDialo
      * @param key the key identifier for the input
      * @param label the label for the input
      * @return a new builder instance
+     * @since 1.21.7
      */
     @Contract(value = "_, _ -> new", pure = true)
     static TextDialogInput.Builder text(final String key, final Component label) {
@@ -161,6 +171,7 @@ public sealed interface DialogInput permits BooleanDialogInput, NumberRangeDialo
      * <p>Used in dialog actions to identify this dialog input's value</p>
      *
      * @return the key
+     * @since 1.21.7
      */
     @Contract(pure = true)
     String key();

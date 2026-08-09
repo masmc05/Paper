@@ -22,11 +22,15 @@ import org.jetbrains.annotations.Nullable;
 /**
  * This is a base class for all File based implementations of {@link
  * Configuration}
+ *
+ * @since 1.0.0
  */
 public abstract class FileConfiguration extends MemoryConfiguration {
 
     /**
      * Creates an empty {@link FileConfiguration} with no default values.
+     *
+     * @since 1.0.0
      */
     public FileConfiguration() {
         super();
@@ -37,6 +41,7 @@ public abstract class FileConfiguration extends MemoryConfiguration {
      * Configuration} as a source for all default values.
      *
      * @param defaults Default value provider
+     * @since 1.0.0
      */
     public FileConfiguration(@Nullable Configuration defaults) {
         super(defaults);
@@ -56,6 +61,7 @@ public abstract class FileConfiguration extends MemoryConfiguration {
      * @throws IOException Thrown when the given file cannot be written to for
      *     any reason.
      * @throws IllegalArgumentException Thrown when file is null.
+     * @since 1.0.0
      */
     public void save(@NotNull File file) throws IOException {
         Preconditions.checkArgument(file != null, "File cannot be null");
@@ -87,6 +93,7 @@ public abstract class FileConfiguration extends MemoryConfiguration {
      * @throws IOException Thrown when the given file cannot be written to for
      *     any reason.
      * @throws IllegalArgumentException Thrown when file is null.
+     * @since 1.0.0
      */
     public void save(@NotNull String file) throws IOException {
         Preconditions.checkArgument(file != null, "File cannot be null");
@@ -98,6 +105,7 @@ public abstract class FileConfiguration extends MemoryConfiguration {
      * Saves this {@link FileConfiguration} to a string, and returns it.
      *
      * @return String containing this configuration.
+     * @since 1.0.0
      */
     @NotNull
     public abstract String saveToString();
@@ -119,6 +127,7 @@ public abstract class FileConfiguration extends MemoryConfiguration {
      * @throws InvalidConfigurationException Thrown when the given file is not
      *     a valid Configuration.
      * @throws IllegalArgumentException Thrown when file is null.
+     * @since 1.0.0
      */
     public void load(@NotNull File file) throws FileNotFoundException, IOException, InvalidConfigurationException {
         Preconditions.checkArgument(file != null, "File cannot be null");
@@ -140,6 +149,7 @@ public abstract class FileConfiguration extends MemoryConfiguration {
      * @throws InvalidConfigurationException thrown when the reader does not
      *      represent a valid Configuration
      * @throws IllegalArgumentException thrown when reader is null
+     * @since 1.7.10
      */
     public void load(@NotNull Reader reader) throws IOException, InvalidConfigurationException {
         BufferedReader input = reader instanceof BufferedReader ? (BufferedReader) reader : new BufferedReader(reader);
@@ -177,6 +187,7 @@ public abstract class FileConfiguration extends MemoryConfiguration {
      * @throws InvalidConfigurationException Thrown when the given file is not
      *     a valid Configuration.
      * @throws IllegalArgumentException Thrown when file is null.
+     * @since 1.0.0
      */
     public void load(@NotNull String file) throws FileNotFoundException, IOException, InvalidConfigurationException {
         Preconditions.checkArgument(file != null, "File cannot be null");
@@ -198,6 +209,7 @@ public abstract class FileConfiguration extends MemoryConfiguration {
      * @throws InvalidConfigurationException Thrown if the specified string is
      *     invalid.
      * @throws IllegalArgumentException Thrown if contents is null.
+     * @since 1.0.0
      */
     public abstract void loadFromString(@NotNull String contents) throws InvalidConfigurationException;
 
@@ -214,6 +226,9 @@ public abstract class FileConfiguration extends MemoryConfiguration {
         return "";
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public FileConfigurationOptions options() {

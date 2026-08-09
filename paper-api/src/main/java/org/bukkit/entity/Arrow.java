@@ -9,6 +9,9 @@ import org.bukkit.potion.PotionType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.0.0
+ */
 public interface Arrow extends AbstractArrow {
 
     /**
@@ -34,6 +37,7 @@ public interface Arrow extends AbstractArrow {
      * Sets the underlying potion type
      *
      * @param type PotionType to set the base potion state to
+     * @since 1.20.2
      */
     void setBasePotionType(@Nullable PotionType type);
 
@@ -41,6 +45,7 @@ public interface Arrow extends AbstractArrow {
      * Returns the potion type about the base potion
      *
      * @return a PotionType object
+     * @since 1.20.2
      */
     @Nullable
     PotionType getBasePotionType();
@@ -49,6 +54,7 @@ public interface Arrow extends AbstractArrow {
      * Gets the color of this arrow.
      *
      * @return arrow {@link Color} or null if not color is set
+     * @since 1.14
      */
     @Nullable
     Color getColor();
@@ -57,6 +63,7 @@ public interface Arrow extends AbstractArrow {
      * Sets the color of this arrow. Will be applied as a tint to its particles.
      *
      * @param color arrow color, null to clear the color
+     * @since 1.14
      */
     void setColor(@Nullable Color color);
 
@@ -64,6 +71,7 @@ public interface Arrow extends AbstractArrow {
      * Checks for the presence of custom potion effects.
      *
      * @return true if custom potion effects are applied
+     * @since 1.14
      */
     boolean hasCustomEffects();
 
@@ -75,6 +83,7 @@ public interface Arrow extends AbstractArrow {
      * this method.
      *
      * @return the immutable list of custom potion effects
+     * @since 1.14
      */
     @NotNull
     List<PotionEffect> getCustomEffects();
@@ -86,6 +95,7 @@ public interface Arrow extends AbstractArrow {
      * @param overwrite true if any existing effect of the same type should be
      * overwritten
      * @return true if the effect was added as a result of this call
+     * @since 1.14
      */
     boolean addCustomEffect(@NotNull PotionEffect effect, boolean overwrite);
 
@@ -96,6 +106,7 @@ public interface Arrow extends AbstractArrow {
      * @return true if the effect was removed as a result of this call
      * @throws IllegalArgumentException if this operation would leave the Arrow
      * in a state with no Custom Effects and PotionType.UNCRAFTABLE
+     * @since 1.14
      */
     boolean removeCustomEffect(@NotNull PotionEffectType type);
 
@@ -104,6 +115,7 @@ public interface Arrow extends AbstractArrow {
      *
      * @param type the potion effect type to check for
      * @return true if the potion has this effect
+     * @since 1.14
      */
     boolean hasCustomEffect(@Nullable PotionEffectType type);
 
@@ -112,6 +124,7 @@ public interface Arrow extends AbstractArrow {
      *
      * @throws IllegalArgumentException if this operation would leave the Arrow
      * in a state with no Custom Effects and PotionType.UNCRAFTABLE
+     * @since 1.14
      */
     void clearCustomEffects();
 }

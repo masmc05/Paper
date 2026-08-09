@@ -15,6 +15,8 @@ import java.util.Set;
 
 /**
  * Holds information for player teleport events
+ *
+ * @since 1.0.0
  */
 public class PlayerTeleportEvent extends PlayerMoveEvent {
 
@@ -46,6 +48,7 @@ public class PlayerTeleportEvent extends PlayerMoveEvent {
      * Gets the cause of this teleportation event
      *
      * @return Cause of the event
+     * @since 1.1.0
      */
     @NotNull
     public TeleportCause getCause() {
@@ -57,6 +60,7 @@ public class PlayerTeleportEvent extends PlayerMoveEvent {
      * This determines which axis the player will not lose their velocity in.
      *
      * @return an immutable set of relative teleportation flags
+     * @since 1.19
      */
     @NotNull
     public @Unmodifiable Set<TeleportFlag.Relative> getRelativeTeleportationFlags() {
@@ -75,67 +79,98 @@ public class PlayerTeleportEvent extends PlayerMoveEvent {
         return true;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public enum TeleportCause {
         /**
          * Indicates the teleportation was caused by a player throwing an Ender
          * Pearl
+         *
+         * @since 1.1.0
          */
         ENDER_PEARL,
         /**
          * Indicates the teleportation was caused by a player executing a
          * command
+         *
+         * @since 1.1.0
          */
         COMMAND,
         /**
          * Indicates the teleportation was caused by a plugin
+         *
+         * @since 1.1.0
          */
         PLUGIN,
         /**
          * Indicates the teleportation was caused by a player entering a
          * Nether portal
+         *
+         * @since 1.1.0
          */
         NETHER_PORTAL,
         /**
          * Indicates the teleportation was caused by a player entering an End
          * portal
+         *
+         * @since 1.1.0
          */
         END_PORTAL,
         /**
          * Indicates the teleportation was caused by a player teleporting to an
          * Entity/Player via the spectator menu
+         *
+         * @since 1.8
          */
         SPECTATE,
         /**
          * Indicates the teleportation was caused by a player entering an End
          * gateway
+         *
+         * @since 1.9.4
          */
         END_GATEWAY,
         /**
          * Indicates the teleportation was caused by a player consuming an item with a {@link ConsumeEffect.TeleportRandomly} effect
+         *
+         * @since 1.21.6
          */
         CONSUMABLE_EFFECT,
         /**
          * Indicates the teleportation was caused by a player exiting a vehicle
+         *
+         * @since 1.19.3
          */
         DISMOUNT,
         /**
          * Indicates the teleportation was caused by a player exiting a bed
+         *
+         * @since 1.20.1
          */
         EXIT_BED,
         /**
          * Indicates the teleportation was caused by an event not covered by
          * this enum
+         *
+         * @since 1.1.0
          */
         UNKNOWN;
 

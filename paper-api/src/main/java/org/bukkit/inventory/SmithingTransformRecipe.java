@@ -6,6 +6,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a smithing transform recipe.
+ *
+ * @since 1.19.4
  */
 public class SmithingTransformRecipe extends SmithingRecipe {
 
@@ -19,6 +21,7 @@ public class SmithingTransformRecipe extends SmithingRecipe {
      * @param template The template item ({@link RecipeChoice#empty()} can be used)
      * @param base The base ingredient ({@link RecipeChoice#empty()} can be used)
      * @param addition The addition ingredient ({@link RecipeChoice#empty()} can be used)
+     * @since 1.19.4
      */
     public SmithingTransformRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @NotNull RecipeChoice template, @NotNull RecipeChoice base, @NotNull RecipeChoice addition) { // Paper - fix issues with recipe api - prevent null choices
         super(key, result, base, addition);
@@ -34,6 +37,7 @@ public class SmithingTransformRecipe extends SmithingRecipe {
      * @param base The base ingredient ({@link RecipeChoice#empty()} can be used)
      * @param addition The addition ingredient ({@link RecipeChoice#empty()} can be used)
      * @param copyDataComponents whether to copy the data components from the input base item to the output
+     * @since 1.20
      */
     public SmithingTransformRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @NotNull RecipeChoice template, @NotNull RecipeChoice base, @NotNull RecipeChoice addition, boolean copyDataComponents) {
         super(key, result, base, addition, copyDataComponents);
@@ -45,6 +49,7 @@ public class SmithingTransformRecipe extends SmithingRecipe {
      * Get the template recipe item.
      *
      * @return template choice
+     * @since 1.19.4
      */
     @NotNull // Paper - fix issues with recipe api - prevent null choices
     public RecipeChoice getTemplate() {

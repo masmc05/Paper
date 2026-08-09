@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a Hanging entity
+ *
+ * @since 1.4.5
  */
 public interface Hanging extends Entity, Attachable {
 
@@ -18,6 +20,7 @@ public interface Hanging extends Entity, Attachable {
      * @param force Whether to force it.
      * @return False if force was false and there was no block for it to
      *     attach to in order to face the given direction.
+     * @since 1.4.5
      */
     public boolean setFacingDirection(@NotNull BlockFace face, boolean force);
 }

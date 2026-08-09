@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * 'type' represents the type of piston which this (technical) block corresponds
  * to.
+ *
+ * @since 1.13
  */
 public interface TechnicalPiston extends Directional {
 
@@ -13,6 +15,7 @@ public interface TechnicalPiston extends Directional {
      * Gets the value of the 'type' property.
      *
      * @return the 'type' value
+     * @since 1.13
      */
     @NotNull
     Type getType();
@@ -21,20 +24,27 @@ public interface TechnicalPiston extends Directional {
      * Sets the value of the 'type' property.
      *
      * @param type the new 'type' value
+     * @since 1.13
      */
     void setType(@NotNull Type type);
 
     /**
      * Different piston variants.
+     *
+     * @since 1.13
      */
     public enum Type {
         /**
          * A normal piston which does not pull connected blocks backwards on
          * retraction.
+         *
+         * @since 1.13
          */
         NORMAL,
         /**
          * A sticky piston which will also retract connected blocks.
+         *
+         * @since 1.13
          */
         STICKY;
     }

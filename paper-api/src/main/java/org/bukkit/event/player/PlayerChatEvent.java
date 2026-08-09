@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
  * Holds information for player chat and commands
  *
  * @deprecated Listening to this event forces chat to wait for the main thread, delaying chat messages. It is recommended to use {@link io.papermc.paper.event.player.AsyncChatEvent} instead, wherever possible.
+ * @since 1.0.0
  */
 @Deprecated(since = "1.3.1")
 @Warning(reason = "Listening to this event forces chat to wait for the main thread, delaying chat messages.")
@@ -47,6 +48,7 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
      * Gets the message that the player is attempting to send
      *
      * @return Message the player is attempting to send
+     * @since 1.0.0
      */
     @NotNull
     public String getMessage() {
@@ -57,6 +59,7 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
      * Sets the message that the player will send
      *
      * @param message New message that the player will send
+     * @since 1.0.0
      */
     public void setMessage(@NotNull String message) {
         this.message = message;
@@ -67,6 +70,7 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
      * executed as
      *
      * @param player New player which this event will execute as
+     * @since 1.0.0
      */
     public void setPlayer(@NotNull final Player player) {
         Preconditions.checkArgument(player != null, "Player cannot be null");
@@ -77,6 +81,7 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
      * Gets the format to use to display this chat message
      *
      * @return String.Format compatible format string
+     * @since 1.0.0
      */
     @NotNull
     public String getFormat() {
@@ -87,6 +92,7 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
      * Sets the format to use to display this chat message
      *
      * @param format String.Format compatible format string
+     * @since 1.0.0
      */
     public void setFormat(@NotNull final String format) {
         // Oh for a better way to do this!
@@ -104,28 +110,41 @@ public class PlayerChatEvent extends PlayerEvent implements Cancellable {
      * Gets a set of recipients that this chat message will be displayed to
      *
      * @return All Players who will see this chat message
+     * @since 1.0.0
      */
     @NotNull
     public Set<Player> getRecipients() {
         return this.recipients;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents a mutable instance of an attribute and its associated modifiers
  * and values.
+ *
+ * @since 1.9.4
  */
 public interface AttributeInstance {
 
@@ -13,6 +15,7 @@ public interface AttributeInstance {
      * The attribute pertaining to this instance.
      *
      * @return the attribute
+     * @since 1.9.4
      */
     @NotNull
     Attribute getAttribute();
@@ -21,6 +24,7 @@ public interface AttributeInstance {
      * Base value of this instance before modifiers are applied.
      *
      * @return base value
+     * @since 1.9.4
      */
     double getBaseValue();
 
@@ -28,6 +32,7 @@ public interface AttributeInstance {
      * Set the base value of this instance.
      *
      * @param value new base value
+     * @since 1.9.4
      */
     void setBaseValue(double value);
 
@@ -35,6 +40,7 @@ public interface AttributeInstance {
      * Get all modifiers present on this instance.
      *
      * @return a copied collection of all modifiers
+     * @since 1.9.4
      */
     @NotNull
     Collection<AttributeModifier> getModifiers();
@@ -45,6 +51,7 @@ public interface AttributeInstance {
      *
      * @param key the key of the modifier
      * @return the modifier, if it exists
+     * @since 1.21
      */
     @org.jetbrains.annotations.Nullable AttributeModifier getModifier(@NotNull net.kyori.adventure.key.Key key);
 
@@ -52,6 +59,7 @@ public interface AttributeInstance {
      * Remove a modifier with the corresponding key from this instance.
      *
      * @param key the key of the modifier
+     * @since 1.21
      */
     void removeModifier(@NotNull net.kyori.adventure.key.Key key);
 
@@ -79,6 +87,7 @@ public interface AttributeInstance {
      * Add a modifier to this instance.
      *
      * @param modifier to add
+     * @since 1.9.4
      */
     void addModifier(@NotNull AttributeModifier modifier);
 
@@ -88,6 +97,7 @@ public interface AttributeInstance {
      * Transient modifiers are not persisted (saved with the NBT data)
      *
      * @param modifier to add
+     * @since 1.19.4
      */
     void addTransientModifier(@NotNull AttributeModifier modifier);
     // Paper end
@@ -96,6 +106,7 @@ public interface AttributeInstance {
      * Remove a modifier from this instance.
      *
      * @param modifier to remove
+     * @since 1.9.4
      */
     void removeModifier(@NotNull AttributeModifier modifier);
 
@@ -104,6 +115,7 @@ public interface AttributeInstance {
      * applied.
      *
      * @return the total attribute value
+     * @since 1.9.4
      */
     double getValue();
 
@@ -115,6 +127,7 @@ public interface AttributeInstance {
      *  Use {@link Attribute#getDefaultValue()} as a replacement and see the note there about default values for specific entity types
      * @see Attribute#getDefaultValue()
      * @see org.bukkit.entity.EntityType#getDefaultAttributes()
+     * @since 1.11
      */
     @Deprecated(since = "26.1")
     double getDefaultValue();

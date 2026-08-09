@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * 'shape' represents the texture and bounding box shape of these stairs.
+ *
+ * @since 1.13
  */
 public interface Stairs extends Bisected, Directional, Waterlogged {
 
@@ -14,6 +16,7 @@ public interface Stairs extends Bisected, Directional, Waterlogged {
      * Gets the value of the 'shape' property.
      *
      * @return the 'shape' value
+     * @since 1.13
      */
     @NotNull
     Shape getShape();
@@ -22,31 +25,44 @@ public interface Stairs extends Bisected, Directional, Waterlogged {
      * Sets the value of the 'shape' property.
      *
      * @param shape the new 'shape' value
+     * @since 1.13
      */
     void setShape(@NotNull Shape shape);
 
     /**
      * The shape of a stair block - used for constructing corners.
+     *
+     * @since 1.13
      */
     public enum Shape {
         /**
          * Regular stair block.
+         *
+         * @since 1.13
          */
         STRAIGHT,
         /**
          * Inner corner stair block with higher left side.
+         *
+         * @since 1.13
          */
         INNER_LEFT,
         /**
          * Inner corner stair block with higher right side.
+         *
+         * @since 1.13
          */
         INNER_RIGHT,
         /**
          * Outer corner stair block with higher left side.
+         *
+         * @since 1.13
          */
         OUTER_LEFT,
         /**
          * Outer corner stair block with higher right side.
+         *
+         * @since 1.13
          */
         OUTER_RIGHT;
     }

@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
  * instantiation logic.
  * A bootstrap context may be used to access data or logic usually provided to {@link org.bukkit.plugin.Plugin} instances
  * like the plugin's configuration or logger during the plugins bootstrap.
+ *
+ * @since 1.19.3
  */
 @ApiStatus.Experimental
 @NullMarked
@@ -21,6 +23,7 @@ public interface PluginProviderContext {
      * Provides the plugin's configuration.
      *
      * @return the plugin's configuration
+     * @since 1.19.3
      */
     PluginMeta getConfiguration();
 
@@ -28,6 +31,7 @@ public interface PluginProviderContext {
      * Provides the path to the data directory of the plugin.
      *
      * @return the previously described path
+     * @since 1.19.3
      */
     Path getDataDirectory();
 
@@ -35,6 +39,7 @@ public interface PluginProviderContext {
      * Provides the logger used for this plugin.
      *
      * @return the logger instance
+     * @since 1.19.3
      */
     ComponentLogger getLogger();
 
@@ -42,6 +47,7 @@ public interface PluginProviderContext {
      * Provides the path to the originating source of the plugin, such as the plugin's JAR file.
      *
      * @return the previously described path
+     * @since 1.19.4
      */
     Path getPluginSource();
 

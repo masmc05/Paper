@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
  * Called when an entity jumps
  * <p>
  * Cancelling the event will stop the entity from jumping
+ *
+ * @since 1.15.2
  */
 @NullMarked
 public class EntityJumpEvent extends EntityEvent implements Cancellable {
@@ -24,26 +26,41 @@ public class EntityJumpEvent extends EntityEvent implements Cancellable {
         super(entity);
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public LivingEntity getEntity() {
         return (LivingEntity) super.getEntity();
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

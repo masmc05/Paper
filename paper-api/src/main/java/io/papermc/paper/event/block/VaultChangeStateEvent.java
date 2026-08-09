@@ -12,6 +12,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Called when a vault block changes state.
+ *
+ * @since 1.21.6
  */
 @NullMarked
 public class VaultChangeStateEvent extends BlockEvent implements Cancellable {
@@ -36,6 +38,7 @@ public class VaultChangeStateEvent extends BlockEvent implements Cancellable {
      * Gets the player associated with this state change, if applicable.
      *
      * @return The associated player, or {@code null} if not known.
+     * @since 1.21.6
      */
     public @Nullable Player getPlayer() {
         return this.player;
@@ -45,6 +48,7 @@ public class VaultChangeStateEvent extends BlockEvent implements Cancellable {
      * Gets the state the vault is currently in.
      *
      * @return The current vault state.
+     * @since 1.21.6
      */
     public Vault.State getCurrentState() {
         return this.currentState;
@@ -54,26 +58,39 @@ public class VaultChangeStateEvent extends BlockEvent implements Cancellable {
      * Gets the state the vault is attempting to transition to.
      *
      * @return The new vault state.
+     * @since 1.21.6
      */
     public Vault.State getNewState() {
         return this.newState;
     }
 
+    /**
+     * @since 1.21.6
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.21.6
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.21.6
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.6
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

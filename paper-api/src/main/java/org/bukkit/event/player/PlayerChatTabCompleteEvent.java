@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * Called when a player attempts to tab-complete a chat message.
  *
  * @deprecated This event is no longer fired due to client changes
+ * @since 1.3.2
  */
 @Deprecated(since = "1.13")
 @Warning(reason = "This event is no longer fired due to client changes")
@@ -42,6 +43,7 @@ public class PlayerChatTabCompleteEvent extends PlayerEvent {
      * Gets the chat message being tab-completed.
      *
      * @return the chat message
+     * @since 1.3.2
      */
     @NotNull
     public String getChatMessage() {
@@ -55,6 +57,7 @@ public class PlayerChatTabCompleteEvent extends PlayerEvent {
      * space in the message.
      *
      * @return The last token for the chat message
+     * @since 1.3.2
      */
     @NotNull
     public String getLastToken() {
@@ -65,18 +68,25 @@ public class PlayerChatTabCompleteEvent extends PlayerEvent {
      * This is the collection of completions for this event.
      *
      * @return the current completions
+     * @since 1.3.2
      */
     @NotNull
     public Collection<String> getTabCompletions() {
         return this.completions;
     }
 
+    /**
+     * @since 1.3.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.3.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

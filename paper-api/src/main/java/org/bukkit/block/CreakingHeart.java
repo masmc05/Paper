@@ -7,6 +7,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Represents a captured state of a creaking heart.
+ *
+ * @since 1.21.3
  */
 @NullMarked
 public interface CreakingHeart extends TileState {
@@ -15,6 +17,7 @@ public interface CreakingHeart extends TileState {
      * Gets the creaking protecting this creaking heart.
      *
      * @return the creaking, or {@code null} if this creaking heart doesn't have a protector.
+     * @since 26.2
      */
     @Nullable Creaking getCreaking();
 
@@ -24,6 +27,7 @@ public interface CreakingHeart extends TileState {
      * @param creaking the creaking, or {@code null} to remove any existing creaking.
      * @throws IllegalArgumentException if the creaking is in another world.
      * @throws IllegalStateException if this block state is not placed.
+     * @since 26.2
      */
     void setCreaking(@Nullable Creaking creaking);
 
@@ -32,6 +36,7 @@ public interface CreakingHeart extends TileState {
      *
      * @return the {@link Creaking} that was spawned to protect this heart, or {@code null} if it failed.
      * @throws IllegalStateException if this block state is not placed.
+     * @since 26.2
      */
     @Nullable Creaking spawnCreaking();
 
@@ -41,6 +46,7 @@ public interface CreakingHeart extends TileState {
      * @apiNote This method triggers events related to a block being modified.
      * @return the location resin was spread to, or {@code null} if it failed to spread.
      * @throws IllegalStateException if this block state is not placed.
+     * @since 26.2
      */
     @Nullable Location spreadResin();
 }

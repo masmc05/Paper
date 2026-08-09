@@ -14,6 +14,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when the player changes their client settings
+ *
+ * @since 1.15.2
  */
 @NullMarked
 public class PlayerClientOptionsChangeEvent extends PlayerEvent {
@@ -45,83 +47,143 @@ public class PlayerClientOptionsChangeEvent extends PlayerEvent {
         this.particleVisibility = (ParticleVisibility) options.get(ClientOption.PARTICLE_VISIBILITY);
     }
 
+    /**
+     * @since 1.15.2
+     */
     public String getLocale() {
         return this.locale;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public boolean hasLocaleChanged() {
         return !this.locale.equals(this.player.getClientOption(ClientOption.LOCALE));
     }
 
+    /**
+     * @since 1.15.2
+     */
     public int getViewDistance() {
         return this.viewDistance;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public boolean hasViewDistanceChanged() {
         return this.viewDistance != this.player.getClientOption(ClientOption.VIEW_DISTANCE);
     }
 
+    /**
+     * @since 1.15.2
+     */
     public ChatVisibility getChatVisibility() {
         return this.chatVisibility;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public boolean hasChatVisibilityChanged() {
         return this.chatVisibility != this.player.getClientOption(ClientOption.CHAT_VISIBILITY);
     }
 
+    /**
+     * @since 1.15.2
+     */
     public boolean hasChatColorsEnabled() {
         return this.chatColors;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public boolean hasChatColorsEnabledChanged() {
         return this.chatColors != this.player.getClientOption(ClientOption.CHAT_COLORS_ENABLED);
     }
 
+    /**
+     * @since 1.15.2
+     */
     public SkinParts getSkinParts() {
         return this.skinparts;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public boolean hasSkinPartsChanged() {
         return this.skinparts.getRaw() != this.player.getClientOption(ClientOption.SKIN_PARTS).getRaw();
     }
 
+    /**
+     * @since 1.15.2
+     */
     public MainHand getMainHand() {
         return this.mainHand;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public boolean hasMainHandChanged() {
         return this.mainHand != this.player.getClientOption(ClientOption.MAIN_HAND);
     }
 
+    /**
+     * @since 1.19.2
+     */
     public boolean hasTextFilteringEnabled() {
         return this.textFilteringEnabled;
     }
 
+    /**
+     * @since 1.19.2
+     */
     public boolean hasTextFilteringChanged() {
         return this.textFilteringEnabled != this.player.getClientOption(ClientOption.TEXT_FILTERING_ENABLED);
     }
 
+    /**
+     * @since 1.19.2
+     */
     public boolean allowsServerListings() {
         return this.allowsServerListings;
     }
 
+    /**
+     * @since 1.19.2
+     */
     public boolean hasAllowServerListingsChanged() {
         return this.allowsServerListings != this.player.getClientOption(ClientOption.ALLOW_SERVER_LISTINGS);
     }
 
+    /**
+     * @since 1.21.3
+     */
     public ParticleVisibility getParticleVisibility() {
         return this.particleVisibility;
     }
 
+    /**
+     * @since 1.21.3
+     */
     public boolean hasParticleVisibilityChanged() {
         return this.particleVisibility != this.player.getClientOption(ClientOption.PARTICLE_VISIBILITY);
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

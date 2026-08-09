@@ -10,16 +10,23 @@ import org.jspecify.annotations.Nullable;
 /**
  * If present, specifies the target Lodestone that a Compass should point towards.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#LODESTONE_TRACKER
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface LodestoneTracker {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_, _ -> new", pure = true)
     static LodestoneTracker lodestoneTracker(final @Nullable Location location, final boolean tracked) {
         return lodestoneTracker().location(location).tracked(tracked).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static LodestoneTracker.Builder lodestoneTracker() {
         return ItemComponentTypesBridge.bridge().lodestoneTracker();
@@ -29,6 +36,7 @@ public interface LodestoneTracker {
      * The location that the compass should point towards.
      *
      * @return location
+     * @since 1.21.3
      */
     @Contract(value = "-> new", pure = true)
     @Nullable Location location();
@@ -37,12 +45,15 @@ public interface LodestoneTracker {
      * If {@code true}, when the Lodestone at the target position is removed, the component will be removed.
      *
      * @return tracked
+     * @since 1.21.3
      */
     @Contract(pure = true)
     boolean tracked();
 
     /**
      * Builder for {@link LodestoneTracker}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<LodestoneTracker> {
@@ -53,6 +64,7 @@ public interface LodestoneTracker {
          * @param location location to point towards
          * @return the builder for chaining
          * @see #location()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder location(@Nullable Location location);
@@ -63,6 +75,7 @@ public interface LodestoneTracker {
          * @param tracked is tracked
          * @return the builder for chaining
          * @see #tracked()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder tracked(boolean tracked);

@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see Player#setResourcePack(String, String)
  * @see Player#setResourcePack(String, String, boolean)
+ * @since 1.8.8
  */
 public class PlayerResourcePackStatusEvent extends PlayerEvent {
 
@@ -31,6 +32,7 @@ public class PlayerResourcePackStatusEvent extends PlayerEvent {
      * Gets the unique ID of this pack.
      *
      * @return unique resource pack ID.
+     * @since 1.20.4
      */
     @NotNull
     public UUID getID() {
@@ -41,6 +43,7 @@ public class PlayerResourcePackStatusEvent extends PlayerEvent {
      * Gets the status of this pack.
      *
      * @return the current status
+     * @since 1.8.8
      */
     @NotNull
     public Status getStatus() {
@@ -56,12 +59,18 @@ public class PlayerResourcePackStatusEvent extends PlayerEvent {
         return null;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
@@ -69,40 +78,58 @@ public class PlayerResourcePackStatusEvent extends PlayerEvent {
 
     /**
      * Status of the resource pack.
+     *
+     * @since 1.8.8
      */
     public enum Status {
 
         /**
          * The resource pack has been successfully downloaded and applied to the
          * client.
+         *
+         * @since 1.8.8
          */
         SUCCESSFULLY_LOADED,
         /**
          * The client refused to accept the resource pack.
+         *
+         * @since 1.8.8
          */
         DECLINED,
         /**
          * The client accepted the pack, but download failed.
+         *
+         * @since 1.8.8
          */
         FAILED_DOWNLOAD,
         /**
          * The client accepted the pack and is beginning a download of it.
+         *
+         * @since 1.8.8
          */
         ACCEPTED,
         /**
          * The client successfully downloaded the pack.
+         *
+         * @since 1.20.4
          */
         DOWNLOADED,
         /**
          * The pack URL was invalid.
+         *
+         * @since 1.20.4
          */
         INVALID_URL,
         /**
          * The client was unable to reload the pack.
+         *
+         * @since 1.20.4
          */
         FAILED_RELOAD,
         /**
          * The pack was discarded by the client.
+         *
+         * @since 1.20.4
          */
         DISCARDED
     }

@@ -15,6 +15,8 @@ import org.jetbrains.annotations.NotNull;
  * by {@link #getBlockPlaced()} and its related methods is the block where
  * the placed block would exist if the placement only affected a single
  * block.
+ *
+ * @since 1.7.10
  */
 public class BlockMultiPlaceEvent extends BlockPlaceEvent {
 
@@ -38,6 +40,7 @@ public class BlockMultiPlaceEvent extends BlockPlaceEvent {
      * Material type of AIR.
      *
      * @return immutable list of replaced BlockStates
+     * @since 1.7.10
      */
     @NotNull
     public List<BlockState> getReplacedBlockStates() {

@@ -6,17 +6,28 @@ import com.destroystokyo.paper.event.server.ServerExceptionEvent;
 
 /**
  * Thrown when the internal server throws a recoverable exception.
+ *
+ * @since 1.9.4
  */
 public class ServerInternalException extends ServerException {
 
+    /**
+     * @since 1.9.4
+     */
     public ServerInternalException(String message) {
         super(message);
     }
 
+    /**
+     * @since 1.9.4
+     */
     public ServerInternalException(String message, Throwable cause) {
         super(message, cause);
     }
 
+    /**
+     * @since 1.9.4
+     */
     public ServerInternalException(Throwable cause) {
         super(cause);
     }
@@ -25,6 +36,9 @@ public class ServerInternalException extends ServerException {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 
+    /**
+     * @since 1.9.4
+     */
     public static void reportInternalException(Throwable cause) {
         try {
             Bukkit.getPluginManager().callEvent(new ServerExceptionEvent(new ServerInternalException(cause)));

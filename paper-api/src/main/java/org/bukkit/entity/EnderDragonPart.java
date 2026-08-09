@@ -4,8 +4,13 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents an ender dragon part
+ *
+ * @since 1.0.0
  */
 public interface EnderDragonPart extends ComplexEntityPart, Damageable {
+    /**
+     * @since 1.0.0
+     */
     @Override
     @NotNull
     public EnderDragon getParent();

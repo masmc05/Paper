@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
  * Fired when a shulker duplicates itself by spawning a new shulker.
  * <p>
  * The event is fired prior to the newly created shulker, accessible via {@link #getEntity()}, being added to the world.
+ *
+ * @since 1.20.4
  */
 @NullMarked
 public class ShulkerDuplicateEvent extends EntityEvent implements Cancellable {
@@ -31,6 +33,7 @@ public class ShulkerDuplicateEvent extends EntityEvent implements Cancellable {
      * At the point of this event, said shulker is not part of the world yet.
      *
      * @return the newly duplicated shulker.
+     * @since 1.20.4
      */
     @Override
     public Shulker getEntity() {
@@ -42,26 +45,39 @@ public class ShulkerDuplicateEvent extends EntityEvent implements Cancellable {
      * The parent shulker is the one that initiated the duplication.
      *
      * @return the previously existing shulker which duplicated.
+     * @since 1.20.4
      */
     public Shulker getParent() {
         return this.parent;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

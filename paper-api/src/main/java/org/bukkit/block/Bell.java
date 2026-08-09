@@ -6,6 +6,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a captured state of Bell.
+ *
+ * @since 1.14
  */
 public interface Bell extends TileState {
 
@@ -16,6 +18,7 @@ public interface Bell extends TileState {
      * @param direction the direction from which the bell was rung or null to
      * ring in the direction that the bell is facing
      * @return true if rung successfully, false if the event was cancelled
+     * @since 1.19.4
      */
     public boolean ring(@Nullable Entity entity, @Nullable BlockFace direction);
 
@@ -25,6 +28,7 @@ public interface Bell extends TileState {
      *
      * @param entity the entity ringing the bell
      * @return true if rung successfully, false if the event was cancelled
+     * @since 1.19.4
      */
     default boolean ring(@Nullable Entity entity) {
         return this.ring(entity, null);
@@ -36,6 +40,7 @@ public interface Bell extends TileState {
      * @param direction the direction from which the bell was rung or null to
      * ring in the direction that the bell is facing
      * @return true if rung successfully, false if the event was cancelled
+     * @since 1.19.4
      */
     default boolean ring(@Nullable BlockFace direction) {
         return this.ring(null, direction);
@@ -46,6 +51,7 @@ public interface Bell extends TileState {
      * {@link BellRingEvent}.
      *
      * @return true if rung successfully, false if the event was cancelled
+     * @since 1.19.4
      */
     default boolean ring() {
         return this.ring(null, null);
@@ -58,6 +64,7 @@ public interface Bell extends TileState {
      * A bell will typically shake for 50 ticks.
      *
      * @return true if shaking, false otherwise
+     * @since 1.19.4
      */
     public boolean isShaking();
 
@@ -68,6 +75,7 @@ public interface Bell extends TileState {
      * A bell will typically shake for 50 ticks.
      *
      * @return the time in ticks since the bell was rung, or 0 if not shaking
+     * @since 1.19.4
      */
     public int getShakingTicks();
 
@@ -79,6 +87,7 @@ public interface Bell extends TileState {
      * A bell will typically resonate for 40 ticks.
      *
      * @return true if resonating, false otherwise
+     * @since 1.19.4
      */
     public boolean isResonating();
 
@@ -90,6 +99,7 @@ public interface Bell extends TileState {
      *
      * @return the time in ticks since the bell has been resonating, or 0 if not
      * resonating
+     * @since 1.19.4
      */
     public int getResonatingTicks();
 }

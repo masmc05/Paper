@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
  * <br>
  * This can be cancelled but the item will still be consumed that was used to
  * make the entity enter into love mode.
+ *
+ * @since 1.16.1
  */
 public class EntityEnterLoveModeEvent extends EntityEvent implements Cancellable {
 
@@ -34,6 +36,7 @@ public class EntityEnterLoveModeEvent extends EntityEvent implements Cancellable
      * Gets the animal that is entering love mode.
      *
      * @return The animal that is entering love mode
+     * @since 1.16.1
      */
     @NotNull
     @Override
@@ -46,6 +49,7 @@ public class EntityEnterLoveModeEvent extends EntityEvent implements Cancellable
      *
      * @return The Human entity that caused the animal to enter love mode, or
      * {@code null} if there wasn't one.
+     * @since 1.16.1
      */
     @Nullable
     public HumanEntity getHumanEntity() {
@@ -56,6 +60,7 @@ public class EntityEnterLoveModeEvent extends EntityEvent implements Cancellable
      * Gets the amount of ticks that the animal will fall in love for.
      *
      * @return The amount of ticks that the animal will fall in love for
+     * @since 1.16.1
      */
     public int getTicksInLove() {
         return this.ticksInLove;
@@ -66,27 +71,40 @@ public class EntityEnterLoveModeEvent extends EntityEvent implements Cancellable
      *
      * @param ticksInLove The amount of ticks that the animal will fall in love
      * for
+     * @since 1.16.1
      */
     public void setTicksInLove(int ticksInLove) {
         this.ticksInLove = ticksInLove;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

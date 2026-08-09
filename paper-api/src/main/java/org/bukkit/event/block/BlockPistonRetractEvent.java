@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Unmodifiable;
 
 /**
  * Called when a piston retracts
+ *
+ * @since 1.0.0
  */
 public class BlockPistonRetractEvent extends BlockPistonEvent {
 
@@ -30,6 +32,7 @@ public class BlockPistonRetractEvent extends BlockPistonEvent {
      * retracting piston is sticky.
      *
      * @return The possible location of the possibly moving block.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.8")
     @NotNull
@@ -42,6 +45,7 @@ public class BlockPistonRetractEvent extends BlockPistonEvent {
      * retracting.
      *
      * @return Immutable list of the moved blocks.
+     * @since 1.8
      */
     @NotNull
     @Unmodifiable
@@ -49,12 +53,18 @@ public class BlockPistonRetractEvent extends BlockPistonEvent {
         return this.blocks;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

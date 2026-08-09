@@ -13,6 +13,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * This command is run with elevated permissions which allows players to access commands on signs they wouldn't
  * normally be able to run.
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public class PlayerSignCommandPreprocessEvent extends PlayerCommandPreprocessEvent {
@@ -31,6 +33,7 @@ public class PlayerSignCommandPreprocessEvent extends PlayerCommandPreprocessEve
      * Gets the sign that the command originated from.
      *
      * @return the sign
+     * @since 1.16.5
      */
     public Sign getSign() {
         return this.sign;
@@ -40,6 +43,7 @@ public class PlayerSignCommandPreprocessEvent extends PlayerCommandPreprocessEve
      * Gets the side of the sign that the command originated from.
      *
      * @return the sign side
+     * @since 1.20
      */
     public Side getSide() {
         return this.side;

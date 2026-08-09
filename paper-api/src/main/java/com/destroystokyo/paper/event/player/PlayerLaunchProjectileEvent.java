@@ -16,6 +16,8 @@ import org.jspecify.annotations.NullMarked;
  * Notably this event is not called for arrows as the player does not launch them, rather shoots them with the help
  * of a bow or crossbow. A plugin may listen to {@link EntityShootBowEvent}
  * for these actions instead.
+ *
+ * @since 1.13
  */
 @NullMarked
 public class PlayerLaunchProjectileEvent extends PlayerEvent implements Cancellable {
@@ -39,6 +41,7 @@ public class PlayerLaunchProjectileEvent extends PlayerEvent implements Cancella
      * Gets the projectile which will be launched by this event
      *
      * @return the launched projectile
+     * @since 1.13
      */
     public Projectile getProjectile() {
         return this.projectile;
@@ -48,6 +51,7 @@ public class PlayerLaunchProjectileEvent extends PlayerEvent implements Cancella
      * Get the ItemStack used to fire the projectile
      *
      * @return The ItemStack used
+     * @since 1.13
      */
     public ItemStack getItemStack() {
         return this.itemStack;
@@ -57,6 +61,7 @@ public class PlayerLaunchProjectileEvent extends PlayerEvent implements Cancella
      * Get whether to consume the ItemStack or not
      *
      * @return {@code true} to consume
+     * @since 1.13
      */
     public boolean shouldConsume() {
         return this.consumeItem;
@@ -66,26 +71,39 @@ public class PlayerLaunchProjectileEvent extends PlayerEvent implements Cancella
      * Set whether to consume the ItemStack or not
      *
      * @param consumeItem {@code true} to consume
+     * @since 1.13
      */
     public void setShouldConsume(final boolean consumeItem) {
         this.consumeItem = consumeItem;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

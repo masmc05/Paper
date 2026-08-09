@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Called when a bell resonated after being rung and highlights nearby raiders.
  * A bell will only resonate if raiders are in the vicinity of the bell.
+ *
+ * @since 1.19.4
  */
 public class BellResonateEvent extends BlockEvent {
 
@@ -34,18 +36,25 @@ public class BellResonateEvent extends BlockEvent {
      * client and cannot be controlled by the server.
      *
      * @return a list of resonated entities
+     * @since 1.19.4
      */
     @NotNull
     public List<LivingEntity> getResonatedEntities() {
         return this.resonatedEntities;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

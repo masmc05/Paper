@@ -2,6 +2,8 @@ package org.bukkit.entity;
 
 /**
  * Represents a Slime.
+ *
+ * @since 1.0.0
  */
 public interface Slime extends AbstractCubeMob, Enemy {
 
@@ -17,6 +19,7 @@ public interface Slime extends AbstractCubeMob, Enemy {
      * slime to its max health (assuming it's alive).
      *
      * @param size the new size of the slime.
+     * @since 1.0.0
      */
     void setSize(int size);
 }

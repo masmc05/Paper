@@ -10,10 +10,14 @@ import org.jspecify.annotations.Nullable;
  * depending on the player's set configuration.
  *
  * @param <T> type of value
+ * @since 1.21.3
  */
 @NullMarked
 public interface Filtered<T> {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_, _ -> new", pure = true)
     static <T> Filtered<T> of(final T raw, final @Nullable T filtered) {
         @ApiStatus.Internal
@@ -22,9 +26,15 @@ public interface Filtered<T> {
         return new Instance<>(raw, filtered);
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(pure = true)
     T raw();
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(pure = true)
     @Nullable
     T filtered();

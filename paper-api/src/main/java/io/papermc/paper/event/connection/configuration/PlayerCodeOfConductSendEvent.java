@@ -10,6 +10,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * This event is called when the code of conduct is potentially sent to the player.
+ *
+ * @since 26.2
  */
 @NullMarked
 public class PlayerCodeOfConductSendEvent extends Event {
@@ -29,6 +31,7 @@ public class PlayerCodeOfConductSendEvent extends Event {
      * Gets the connection that will receive the code of conduct.
      *
      * @return connection
+     * @since 26.2
      */
     public PlayerCommonConnection getConnection() {
         return connection;
@@ -38,6 +41,7 @@ public class PlayerCodeOfConductSendEvent extends Event {
      * Gets the code of conduct to be sent.
      *
      * @return the code of conduct or null if none will be sent
+     * @since 26.2
      */
     public @Nullable String getCodeOfConduct() {
         return this.codeOfConduct;
@@ -47,16 +51,23 @@ public class PlayerCodeOfConductSendEvent extends Event {
      * Sets the code of conduct to be sent.
      *
      * @param codeOfConduct the code of conduct or null to not send one
+     * @since 26.2
      */
     public void setCodeOfConduct(final @Nullable String codeOfConduct) {
         this.codeOfConduct = codeOfConduct;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 26.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

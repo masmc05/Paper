@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
  * are not required to securely remove all traces of the command. If secure
  * removal of commands is required, then the command should be assigned a
  * permission which is not granted to the player.
+ *
+ * @since 1.13
  */
 public class PlayerCommandSendEvent extends PlayerEvent {
 
@@ -34,18 +36,25 @@ public class PlayerCommandSendEvent extends PlayerEvent {
      * Behaviour of adding entries is undefined.
      *
      * @return collection of all commands
+     * @since 1.13
      */
     @NotNull
     public Collection<String> getCommands() {
         return this.commands;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

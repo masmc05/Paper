@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents events related to raids.
+ *
+ * @since 1.14.4
  */
 public abstract class RaidEvent extends WorldEvent {
 
@@ -21,6 +23,7 @@ public abstract class RaidEvent extends WorldEvent {
      * Returns the raid involved with this event.
      *
      * @return the raid
+     * @since 1.14.4
      */
     @NotNull
     public Raid getRaid() {

@@ -4,6 +4,8 @@ import org.bukkit.block.data.Directional;
 
 /**
  * 'honey_level' represents the amount of honey stored in the hive.
+ *
+ * @since 1.15
  */
 public interface Beehive extends Directional {
 
@@ -11,6 +13,7 @@ public interface Beehive extends Directional {
      * Gets the value of the 'honey_level' property.
      *
      * @return the 'honey_level' value
+     * @since 1.15
      */
     int getHoneyLevel();
 
@@ -18,6 +21,7 @@ public interface Beehive extends Directional {
      * Sets the value of the 'honey_level' property.
      *
      * @param honeyLevel the new 'honey_level' value
+     * @since 1.15
      */
     void setHoneyLevel(int honeyLevel);
 
@@ -25,6 +29,7 @@ public interface Beehive extends Directional {
      * Gets the maximum allowed value of the 'honey_level' property.
      *
      * @return the maximum 'honey_level' value
+     * @since 1.15
      */
     int getMaximumHoneyLevel();
 }

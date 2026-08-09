@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * After modifying the data provided by a TileState, {@link #update()} needs to
  * be called to store the data.
+ *
+ * @since 1.14
  */
 public interface TileState extends BlockState, PersistentDataHolder {
 
@@ -32,6 +34,7 @@ public interface TileState extends BlockState, PersistentDataHolder {
      * {@link #update()} methods is called.
      *
      * @return the custom tag container
+     * @since 1.14
      */
     @NotNull
     @Override
@@ -47,6 +50,7 @@ public interface TileState extends BlockState, PersistentDataHolder {
      *
      * @return true if this is a snapshot
      * @see Block#getState(boolean)
+     * @since 1.18.2
      */
     boolean isSnapshot();
     // Paper end

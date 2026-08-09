@@ -9,6 +9,7 @@ import org.jspecify.annotations.NullMarked;
  * This represents an object capable of holding and mutating data components.
  *
  * @see PersistentDataContainer
+ * @since 1.21.6
  */
 @NullMarked
 @ApiStatus.NonExtendable
@@ -20,6 +21,7 @@ public interface DataComponentHolder extends DataComponentView {
      * @param type the data component type
      * @param valueBuilder value builder
      * @param <T> value type
+     * @since 1.21.6
      */
     @Utility
     <T> void setData(final DataComponentType.Valued<T> type, final DataComponentBuilder<T> valueBuilder);
@@ -30,6 +32,7 @@ public interface DataComponentHolder extends DataComponentView {
      * @param type the data component type
      * @param value value to set
      * @param <T> value type
+     * @since 1.21.6
      */
     <T> void setData(final DataComponentType.Valued<T> type, final T value);
 
@@ -37,6 +40,7 @@ public interface DataComponentHolder extends DataComponentView {
      * Marks this non-valued data component type as present in this itemstack.
      *
      * @param type the data component type
+     * @since 1.21.6
      */
     void setData(final DataComponentType.NonValued type);
 

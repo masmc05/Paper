@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a captured state of a ShulkerBox.
+ *
+ * @since 1.11
  */
 public interface ShulkerBox extends Container, LootableBlockInventory, Lidded { // Paper
 
@@ -14,6 +16,7 @@ public interface ShulkerBox extends Container, LootableBlockInventory, Lidded { 
      * Get the {@link DyeColor} corresponding to this ShulkerBox
      *
      * @return the {@link DyeColor} of this ShulkerBox, or null if default
+     * @since 1.11
      */
     @Nullable
     public DyeColor getColor();

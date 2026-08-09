@@ -9,9 +9,14 @@ import org.jetbrains.annotations.Nullable;
 /**
  * An instance of {@link InventoryView} which provides extra methods related to
  * beacon view data.
+ *
+ * @since 1.21
  */
 public interface BeaconView extends InventoryView {
 
+    /**
+     * @since 1.21.1
+     */
     @NotNull
     @Override
     BeaconInventory getTopInventory();
@@ -23,6 +28,7 @@ public interface BeaconView extends InventoryView {
      * standing on. The level of the beacon is 0 unless the beacon is activated.
      *
      * @return The tier of the beacon
+     * @since 1.21
      */
     int getTier();
 
@@ -35,6 +41,7 @@ public interface BeaconView extends InventoryView {
      * returns the same {@link PotionEffectType} as this method.
      *
      * @return The primary effect enabled on the beacon
+     * @since 1.21
      */
     @Nullable
     PotionEffectType getPrimaryEffect();
@@ -47,6 +54,7 @@ public interface BeaconView extends InventoryView {
      * same effect as {@link #getPrimaryEffect()}.
      *
      * @return The secondary effect enabled on the beacon
+     * @since 1.21
      */
     @Nullable
     PotionEffectType getSecondaryEffect();
@@ -66,6 +74,7 @@ public interface BeaconView extends InventoryView {
      * </ol>
      *
      * @param effect desired primary effect
+     * @since 1.21
      */
     void setPrimaryEffect(@Nullable final PotionEffectType effect);
 
@@ -86,6 +95,7 @@ public interface BeaconView extends InventoryView {
      * </ol>
      *
      * @param effect the desired secondary effect
+     * @since 1.21
      */
     void setSecondaryEffect(@Nullable final PotionEffectType effect);
 }

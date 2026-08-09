@@ -5,6 +5,8 @@ import org.bukkit.block.data.Waterlogged;
 
 /**
  * 'candles' represents the number of candles which are present.
+ *
+ * @since 1.17
  */
 public interface Candle extends Lightable, Waterlogged {
 
@@ -12,6 +14,7 @@ public interface Candle extends Lightable, Waterlogged {
      * Gets the value of the 'candles' property.
      *
      * @return the 'candles' value
+     * @since 1.17
      */
     int getCandles();
 
@@ -19,6 +22,7 @@ public interface Candle extends Lightable, Waterlogged {
      * Sets the value of the 'candles' property.
      *
      * @param candles the new 'candles' value
+     * @since 1.17
      */
     void setCandles(int candles);
 
@@ -26,6 +30,7 @@ public interface Candle extends Lightable, Waterlogged {
      * Gets the maximum allowed value of the 'candles' property.
      *
      * @return the maximum 'candles' value
+     * @since 1.17
      */
     int getMaximumCandles();
 
@@ -34,6 +39,7 @@ public interface Candle extends Lightable, Waterlogged {
      * Gets the minimum allowed value of the 'candles' property.
      *
      * @return the minimum 'candles' value
+     * @since 1.18.1
      */
     int getMinimumCandles();
     // Paper end

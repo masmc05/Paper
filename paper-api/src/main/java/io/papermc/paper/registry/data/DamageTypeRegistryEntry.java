@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Contract;
 
 /**
  * A data-centric version-specific registry entry for the {@link DamageType} type.
+ *
+ * @since 1.21.4
  */
 @ApiStatus.NonExtendable
 public interface DamageTypeRegistryEntry {
@@ -21,6 +23,7 @@ public interface DamageTypeRegistryEntry {
      * {@link #deathMessageType()} is {@link DeathMessageType#DEFAULT}
      *
      * @return part of the translation key
+     * @since 1.21.4
      */
     String messageId();
 
@@ -28,6 +31,7 @@ public interface DamageTypeRegistryEntry {
      * Provides the {@link DamageScaling} for this damage type.
      *
      * @return the damage scaling
+     * @since 1.21.4
      */
     DamageScaling damageScaling();
 
@@ -35,6 +39,7 @@ public interface DamageTypeRegistryEntry {
      * Provides the amount of hunger exhaustion caused by this damage type.
      *
      * @return the exhaustion
+     * @since 1.21.4
      */
     float exhaustion();
 
@@ -42,6 +47,7 @@ public interface DamageTypeRegistryEntry {
      * Provides the {@link DamageEffect} for this damage type.
      *
      * @return the damage effect
+     * @since 1.21.4
      */
     DamageEffect damageEffect();
 
@@ -49,6 +55,7 @@ public interface DamageTypeRegistryEntry {
      * Provides the {@link DeathMessageType} for this damage type.
      *
      * @return the death message type
+     * @since 1.21.4
      */
     DeathMessageType deathMessageType();
 
@@ -61,6 +68,8 @@ public interface DamageTypeRegistryEntry {
      *     <li>{@link #exhaustion(float)}</li>
      *     <li>{@link #damageScaling(DamageScaling)}</li>
      * </ul>
+     *
+     * @since 1.21.4
      */
     @ApiStatus.NonExtendable
     interface Builder extends DamageTypeRegistryEntry, RegistryBuilder<DamageType> {
@@ -71,6 +80,7 @@ public interface DamageTypeRegistryEntry {
          * @return this builder instance
          * @see DamageTypeRegistryEntry#messageId()
          * @see DamageType#getTranslationKey()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder messageId(String messageId);
@@ -81,6 +91,7 @@ public interface DamageTypeRegistryEntry {
          * @return this builder instance
          * @see DamageTypeRegistryEntry#exhaustion()
          * @see DamageType#getExhaustion()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder exhaustion(float exhaustion);
@@ -91,6 +102,7 @@ public interface DamageTypeRegistryEntry {
          * @return this builder instance
          * @see DamageTypeRegistryEntry#damageScaling()
          * @see DamageType#getDamageScaling()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder damageScaling(DamageScaling scaling);
@@ -101,6 +113,7 @@ public interface DamageTypeRegistryEntry {
          * @return this builder instance
          * @see DamageTypeRegistryEntry#damageEffect()
          * @see DamageType#getDamageEffect()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder damageEffect(DamageEffect effect);
@@ -111,6 +124,7 @@ public interface DamageTypeRegistryEntry {
          * @return this builder instance
          * @see DamageTypeRegistryEntry#deathMessageType()
          * @see DamageType#getDeathMessageType()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder deathMessageType(DeathMessageType deathMessageType);

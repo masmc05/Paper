@@ -5,6 +5,8 @@ import org.jetbrains.annotations.Nullable; // Paper
 
 /**
  * Represents an Experience Orb.
+ *
+ * @since 1.0.0
  */
 public interface ExperienceOrb extends Entity {
 
@@ -12,6 +14,7 @@ public interface ExperienceOrb extends Entity {
      * Gets how much experience is contained within this orb
      *
      * @return Amount of experience
+     * @since 1.0.0
      */
     public int getExperience();
 
@@ -19,6 +22,7 @@ public interface ExperienceOrb extends Entity {
      * Sets how much experience is contained within this orb
      *
      * @param value Amount of experience
+     * @since 1.0.0
      */
     public void setExperience(int value);
 
@@ -27,6 +31,7 @@ public interface ExperienceOrb extends Entity {
      * Get the stacked count for this experience orb.
      *
      * @return the count
+     * @since 1.20.6
      */
     int getCount();
 
@@ -34,6 +39,7 @@ public interface ExperienceOrb extends Entity {
      * Sets the stacked count for this experience orb.
      *
      * @param count the new count
+     * @since 1.20.6
      */
     void setCount(int count);
     // Paper end
@@ -44,6 +50,7 @@ public interface ExperienceOrb extends Entity {
      *
      * @return if orb was spawned from a bottle
      * @deprecated Use getSpawnReason() == EXP_BOTTLE
+     * @since 1.11.2
      */
     @Deprecated
     default boolean isFromBottle() {
@@ -52,50 +59,74 @@ public interface ExperienceOrb extends Entity {
 
     /**
      * Reasons for why this Experience Orb was spawned
+     *
+     * @since 1.12.2
      */
     enum SpawnReason {
         /**
          * Spawned by a player dying
+         *
+         * @since 1.12.2
          */
         PLAYER_DEATH,
         /**
          * Spawned by an entity dying after being damaged by a player
+         *
+         * @since 1.12.2
          */
         ENTITY_DEATH,
         /**
          * Spawned by player using a furnace
+         *
+         * @since 1.12.2
          */
         FURNACE,
         /**
          * Spawned by player breeding animals
+         *
+         * @since 1.12.2
          */
         BREED,
         /**
          * Spawned by player trading with a villager
+         *
+         * @since 1.12.2
          */
         VILLAGER_TRADE,
         /**
          * Spawned by player fishing
+         *
+         * @since 1.12.2
          */
         FISHING,
         /**
          * Spawned by player breaking a block that gives experience points such as Diamond Ore
+         *
+         * @since 1.12.2
          */
         BLOCK_BREAK,
         /**
          * Spawned by Bukkit API
+         *
+         * @since 1.12.2
          */
         CUSTOM,
         /**
          * Spawned by a player throwing an experience points bottle
+         *
+         * @since 1.12.2
          */
         EXP_BOTTLE,
         /**
          * Spawned by a player using a grindstone
+         *
+         * @since 1.14
          */
         GRINDSTONE,
         /**
          * We do not know why it was spawned
+         *
+         * @since 1.12.2
          */
         UNKNOWN
     }
@@ -109,6 +140,7 @@ public interface ExperienceOrb extends Entity {
      * In the case of an entity being killed, this will be the killers UUID.
      *
      * @return UUID of the player that triggered this orb to drop, or null if unknown/no triggering entity
+     * @since 1.12.2
      */
     @Nullable java.util.UUID getTriggerEntityId();
 
@@ -121,6 +153,7 @@ public interface ExperienceOrb extends Entity {
      * In the case of an entity being killed, this will be the dead entities UUID.
      *
      * @return The UUID of the entity that sourced this experience orb
+     * @since 1.12.2
      */
     @Nullable java.util.UUID getSourceEntityId();
 
@@ -128,6 +161,7 @@ public interface ExperienceOrb extends Entity {
      * Gets the reason that this experience orb was spawned. For any case that we
      * do not know, such as orbs spawned before this API was added, UNKNOWN is returned.
      * @return The reason for this orb being spawned.
+     * @since 1.12.2
      */
     @NotNull
     SpawnReason getSpawnReason();

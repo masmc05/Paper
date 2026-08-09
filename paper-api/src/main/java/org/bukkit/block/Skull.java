@@ -14,6 +14,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a captured state of a skull block.
+ *
+ * @since 1.4.6
  */
 public interface Skull extends TileState {
 
@@ -21,6 +23,7 @@ public interface Skull extends TileState {
      * Gets the {@link ResolvableProfile} to use for this skull's skin.
      *
      * @return the profile, or null if not set
+     * @since 1.21.10
      */
     @Nullable ResolvableProfile getProfile();
 
@@ -28,6 +31,7 @@ public interface Skull extends TileState {
      * Sets the {@link ResolvableProfile} to use for this skull's skin.
      *
      * @param profile the profile to set, or null to clear it
+     * @since 1.21.10
      */
     void setProfile(@Nullable ResolvableProfile profile);
 
@@ -37,6 +41,7 @@ public interface Skull extends TileState {
      *
      * @return true if the skull has an owner
      * @deprecated Use {@link #getProfile()} {@code != null}.
+     * @since 1.4.6
      */
     @Deprecated(since = "1.21.9")
     public boolean hasOwner();
@@ -46,6 +51,7 @@ public interface Skull extends TileState {
      *
      * @return the owner of the skull or null if the skull does not have an owner
      * @deprecated See {@link #getProfile()}.
+     * @since 1.4.6
      */
     @Deprecated(since = "1.9.4")
     @Nullable
@@ -60,6 +66,7 @@ public interface Skull extends TileState {
      * @param name the new owner of the skull
      * @return true if the owner was successfully set
      * @deprecated see {@link #setProfile(ResolvableProfile)}.
+     * @since 1.4.6
      */
     @Deprecated(since = "1.9.4")
     @Contract("null -> false")
@@ -71,6 +78,7 @@ public interface Skull extends TileState {
      *
      * @return owning player
      * @deprecated see {@link #getProfile()}.
+     * @since 1.9.4
      */
     @Deprecated(since = "1.21.9")
     @Nullable
@@ -82,6 +90,7 @@ public interface Skull extends TileState {
      *
      * @param player the owning player
      * @deprecated see {@link #setProfile(ResolvableProfile)}.
+     * @since 1.9.4
      */
     @Deprecated(since = "1.21.9")
     public void setOwningPlayer(@NotNull OfflinePlayer player);
@@ -91,6 +100,7 @@ public interface Skull extends TileState {
      * Sets this skull to use the supplied Player Profile, which can include textures already prefilled.
      * @param profile The profile to set this Skull to use, may not be null
      * @deprecated Use {@link #setProfile(ResolvableProfile)} instead.
+     * @since 1.13
      */
     @Deprecated(since = "1.21.9")
     void setPlayerProfile(@NotNull com.destroystokyo.paper.profile.PlayerProfile profile);
@@ -99,6 +109,7 @@ public interface Skull extends TileState {
      * If the skull has an owner, per {@link #hasOwner()}, return the owners {@link com.destroystokyo.paper.profile.PlayerProfile}
      * @return The profile of the owner, if set
      * @deprecated Use {@link #getProfile()} instead.
+     * @since 1.13
      */
     @Deprecated(since = "1.21.9")
     @Nullable com.destroystokyo.paper.profile.PlayerProfile getPlayerProfile();
@@ -111,6 +122,7 @@ public interface Skull extends TileState {
      * @return the profile of the owning player
      *
      * @deprecated Use {@link #getProfile()} instead.
+     * @since 1.18.1
      */
     @Nullable
     @Deprecated // Paper
@@ -129,6 +141,7 @@ public interface Skull extends TileState {
      * necessary information
      *
      * @deprecated Use {@link #setProfile(ResolvableProfile)} instead.
+     * @since 1.18.1
      */
     @Deprecated // Paper
     void setOwnerProfile(@Nullable PlayerProfile profile);
@@ -141,6 +154,7 @@ public interface Skull extends TileState {
      * see {@link org.bukkit.Instrument}.
      *
      * @return the key of the sound, or null
+     * @since 1.19.3
      */
     @Nullable
     public NamespacedKey getNoteBlockSound();
@@ -153,6 +167,7 @@ public interface Skull extends TileState {
      *
      * @param noteBlockSound the key of the sound to be played, or null
      *
+     * @since 1.19.3
      */
     public void setNoteBlockSound(@Nullable NamespacedKey noteBlockSound);
 
@@ -162,6 +177,7 @@ public interface Skull extends TileState {
      *
      * @return the rotation of the skull
      * @deprecated use {@link BlockData}
+     * @since 1.4.6
      */
     @Deprecated(since = "1.13")
     @NotNull
@@ -173,6 +189,7 @@ public interface Skull extends TileState {
      *
      * @param rotation the rotation of the skull
      * @deprecated use {@link BlockData}
+     * @since 1.4.6
      */
     @Deprecated(since = "1.13")
     public void setRotation(@NotNull BlockFace rotation);
@@ -204,6 +221,7 @@ public interface Skull extends TileState {
      * (skeleton/creeper heads will not retain the name).</p>
      *
      * @return Custom name of skull
+     * @since 1.21.4
      */
     public @Nullable Component customName();
 
@@ -214,6 +232,7 @@ public interface Skull extends TileState {
      * (skeleton/creeper heads will not retain the name).</p>
      *
      * @param customName Custom name of skull
+     * @since 1.21.4
      */
     public void customName(@Nullable Component customName);
 }

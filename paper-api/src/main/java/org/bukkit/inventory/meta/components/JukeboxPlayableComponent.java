@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a component which can be inserted into a jukebox.
+ *
+ * @since 1.21
  */
 @ApiStatus.Experimental
 public interface JukeboxPlayableComponent extends ConfigurationSerializable {
@@ -18,6 +20,7 @@ public interface JukeboxPlayableComponent extends ConfigurationSerializable {
      * Gets the song assigned to this component.
      *
      * @return song, or null if the song does not exist on the server
+     * @since 1.21
      */
     @Nullable
     JukeboxSong getSong();
@@ -26,6 +29,7 @@ public interface JukeboxPlayableComponent extends ConfigurationSerializable {
      * Gets the key of the song assigned to this component.
      *
      * @return the song key
+     * @since 1.21
      */
     @NotNull
     NamespacedKey getSongKey();
@@ -34,6 +38,7 @@ public interface JukeboxPlayableComponent extends ConfigurationSerializable {
      * Sets the song assigned to this component.
      *
      * @param song the song
+     * @since 1.21
      */
     void setSong(@NotNull JukeboxSong song);
 
@@ -41,6 +46,7 @@ public interface JukeboxPlayableComponent extends ConfigurationSerializable {
      * Sets the key of the song assigned to this component.
      *
      * @param song the song key
+     * @since 1.21
      */
     void setSongKey(@NotNull NamespacedKey song);
 

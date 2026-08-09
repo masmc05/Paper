@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
  *     <li>Player lands on ground while they are gliding (with an Elytra)</li>
  * </ul>
  * This can be visually estimated by the animation in which a player turns horizontal.
+ *
+ * @since 1.9.4
  */
 public class EntityToggleGlideEvent extends EntityEvent implements Cancellable {
 
@@ -29,11 +31,17 @@ public class EntityToggleGlideEvent extends EntityEvent implements Cancellable {
         this.isGliding = isGliding;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
@@ -44,17 +52,24 @@ public class EntityToggleGlideEvent extends EntityEvent implements Cancellable {
      * {@code false} if the entity stops gliding.
      *
      * @return new gliding state
+     * @since 1.9.4
      */
     public boolean isGliding() {
         return this.isGliding;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

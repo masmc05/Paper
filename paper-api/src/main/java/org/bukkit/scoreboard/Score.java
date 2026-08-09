@@ -8,6 +8,8 @@ import org.jetbrains.annotations.Nullable;
  * A score entry for an {@link #getEntry() entry} on an {@link
  * #getObjective() objective}. Changing this will not affect any other
  * objective or scoreboard.
+ *
+ * @since 1.5.1
  */
 public interface Score {
 
@@ -17,6 +19,7 @@ public interface Score {
      * @return this Score's tracked player
      * @see #getEntry()
      * @deprecated Scoreboards can contain entries that aren't players
+     * @since 1.5.1
      */
     @Deprecated(since = "1.7.8")
     @NotNull
@@ -26,6 +29,7 @@ public interface Score {
      * Gets the entry being tracked by this Score
      *
      * @return this Score's tracked entry
+     * @since 1.7.10
      */
     @NotNull
     String getEntry();
@@ -34,6 +38,7 @@ public interface Score {
      * Gets the Objective being tracked by this Score
      *
      * @return this Score's tracked objective
+     * @since 1.5.1
      */
     @NotNull
     Objective getObjective();
@@ -44,6 +49,7 @@ public interface Score {
      * @return the current score
      * @throws IllegalStateException if the associated objective has been
      *     unregistered
+     * @since 1.5.1
      */
     int getScore();
 
@@ -53,6 +59,7 @@ public interface Score {
      * @param score New score
      * @throws IllegalStateException if the associated objective has been
      *     unregistered
+     * @since 1.5.1
      */
     void setScore(int score);
 
@@ -62,6 +69,7 @@ public interface Score {
      * @return if this score has been set before
      * @throws IllegalStateException if the associated objective has been
      *     unregistered
+     * @since 1.7.10
      */
     boolean isScoreSet();
 
@@ -70,6 +78,7 @@ public interface Score {
      *
      * @return the owning objective's scoreboard, or null if it has been
      *     {@link Objective#unregister() unregistered}
+     * @since 1.5.1
      */
     @Nullable
     Scoreboard getScoreboard();
@@ -80,6 +89,7 @@ public interface Score {
      *
      * @throws IllegalStateException if the associated objective has been
      *     unregistered
+     * @since 1.17.1
      */
     void resetScore() throws IllegalStateException;
     // Paper end
@@ -92,6 +102,7 @@ public interface Score {
      *
      * @return true if triggerable, false if not triggerable, score isn't set, or the objective isn't {@link Criteria#TRIGGER}
      * @throws IllegalStateException if the associated objective has been unregistered
+     * @since 1.20.4
      */
     boolean isTriggerable();
 
@@ -107,6 +118,7 @@ public interface Score {
      * @param triggerable true to enable trigger, false to disable
      * @throws IllegalArgumentException if this objective isn't {@link Criteria#TRIGGER}
      * @throws IllegalStateException if the associated objective has been unregistered
+     * @since 1.20.4
      */
     void setTriggerable(boolean triggerable);
 
@@ -115,6 +127,7 @@ public interface Score {
      *
      * @return the custom name or null if not set (or score isn't set)
      * @throws IllegalStateException if the associated objective has been unregistered
+     * @since 1.20.4
      */
     @Nullable net.kyori.adventure.text.Component customName();
 
@@ -126,6 +139,7 @@ public interface Score {
      *
      * @param customName the custom name or null to reset
      * @throws IllegalStateException if the associated objective has been unregistered
+     * @since 1.20.4
      */
     void customName(net.kyori.adventure.text.@Nullable Component customName);
     // Paper end - add more score API
@@ -138,6 +152,7 @@ public interface Score {
      * @return this score's number format, or null if the objective's default is used or the score doesn't exist
      * @throws IllegalStateException if the associated objective has been
      *     unregistered
+     * @since 1.20.4
      */
     @Nullable io.papermc.paper.scoreboard.numbers.NumberFormat numberFormat();
 
@@ -147,6 +162,7 @@ public interface Score {
      * @param format the number format to set, pass null to reset format to default
      * @throws IllegalStateException if the associated objective has been
      *     unregistered
+     * @since 1.20.4
      */
     void numberFormat(@Nullable io.papermc.paper.scoreboard.numbers.NumberFormat format);
     // Paper end - number format api

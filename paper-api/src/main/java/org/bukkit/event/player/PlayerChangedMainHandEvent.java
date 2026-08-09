@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * Called when a player changes their main hand in the client settings.
  *
  * @apiNote Obsolete and replaced by {@link PlayerClientOptionsChangeEvent}.
+ * @since 1.9.4
  */
 @ApiStatus.Obsolete
 public class PlayerChangedMainHandEvent extends PlayerEvent {
@@ -44,18 +45,25 @@ public class PlayerChangedMainHandEvent extends PlayerEvent {
      * Gets the new main hand of the player.
      *
      * @return the new {@link MainHand} of the player
+     * @since 1.21.4
      */
     @NotNull
     public MainHand getNewMainHand() {
         return this.newMainHand;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

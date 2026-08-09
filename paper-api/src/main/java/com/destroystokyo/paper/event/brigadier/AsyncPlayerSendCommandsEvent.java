@@ -28,6 +28,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>If your logic is not safe to run asynchronously, only react to the synchronous version.</p>
  *
  * <p>This is a draft/experimental API and is subject to change.</p>
+ *
+ * @since 1.20.6
  */
 @ApiStatus.Experimental
 @NullMarked
@@ -49,6 +51,7 @@ public class AsyncPlayerSendCommandsEvent<S extends CommandSourceStack> extends 
      * Gets the full Root Command Node being sent to the client, which is mutable.
      *
      * @return the root command node
+     * @since 1.20.6
      */
     public RootCommandNode<S> getCommandNode() {
         return this.node;
@@ -58,16 +61,23 @@ public class AsyncPlayerSendCommandsEvent<S extends CommandSourceStack> extends 
      * Gets if this event has already fired asynchronously.
      *
      * @return whether this event has already fired asynchronously
+     * @since 1.20.6
      */
     public boolean hasFiredAsync() {
         return this.hasFiredAsync;
     }
 
+    /**
+     * @since 1.20.6
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.6
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

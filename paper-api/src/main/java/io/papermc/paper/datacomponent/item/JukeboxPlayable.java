@@ -9,21 +9,30 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Holds the jukebox song for an item.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#JUKEBOX_PLAYABLE
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface JukeboxPlayable  {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static JukeboxPlayable.Builder jukeboxPlayable(final JukeboxSong song) {
         return ItemComponentTypesBridge.bridge().jukeboxPlayable(song);
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(pure = true)
     JukeboxSong jukeboxSong();
 
     /**
      * Builder for {@link JukeboxPlayable}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<JukeboxPlayable> {
@@ -34,6 +43,7 @@ public interface JukeboxPlayable  {
          * @param song the song
          * @return the builder for chaining
          * @see #jukeboxSong()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder jukeboxSong(JukeboxSong song);

@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when an ItemStack is successfully cooked in a block.
+ *
+ * @since 1.14
  */
 public class BlockCookEvent extends BlockEvent implements Cancellable {
 
@@ -40,6 +42,7 @@ public class BlockCookEvent extends BlockEvent implements Cancellable {
      * Gets the smelted ItemStack for this event
      *
      * @return smelting source ItemStack
+     * @since 1.14
      */
     @NotNull
     public ItemStack getSource() {
@@ -50,6 +53,7 @@ public class BlockCookEvent extends BlockEvent implements Cancellable {
      * Gets the resultant ItemStack for this event
      *
      * @return smelting result ItemStack
+     * @since 1.14
      */
     @NotNull
     public ItemStack getResult() {
@@ -60,6 +64,7 @@ public class BlockCookEvent extends BlockEvent implements Cancellable {
      * Sets the resultant ItemStack for this event
      *
      * @param result new result ItemStack
+     * @since 1.14
      */
     public void setResult(@NotNull ItemStack result) {
         this.result = result;
@@ -69,28 +74,41 @@ public class BlockCookEvent extends BlockEvent implements Cancellable {
      * Gets the cooking recipe associated with this event.
      *
      * @return the recipe
+     * @since 1.16.5
      */
     @Nullable
     public org.bukkit.inventory.CookingRecipe<?> getRecipe() {
         return this.recipe;
     }
 
+    /**
+     * @since 1.14
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.14
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

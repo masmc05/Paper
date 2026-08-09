@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a piston block is triggered
+ *
+ * @since 1.0.0
  */
 public abstract class BlockPistonEvent extends BlockEvent implements Cancellable {
 
@@ -23,6 +25,7 @@ public abstract class BlockPistonEvent extends BlockEvent implements Cancellable
      * Returns {@code true} if the Piston in the event is sticky.
      *
      * @return stickiness of the piston
+     * @since 1.0.0
      */
     public boolean isSticky() {
         return this.block.getType() == Material.STICKY_PISTON || this.block.getType() == Material.MOVING_PISTON;
@@ -32,6 +35,7 @@ public abstract class BlockPistonEvent extends BlockEvent implements Cancellable
      * Return the direction in which the piston will operate.
      *
      * @return direction of the piston
+     * @since 1.0.0
      */
     @NotNull
     public BlockFace getDirection() {
@@ -41,11 +45,17 @@ public abstract class BlockPistonEvent extends BlockEvent implements Cancellable
         return this.direction;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

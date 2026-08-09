@@ -11,6 +11,7 @@ import org.jspecify.annotations.Nullable;
 /**
  * Represents a server links dialog that displays links.
  * @see DialogType#serverLinks(ActionButton, int, int)
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public non-sealed interface ServerLinksType extends DialogType {
@@ -19,6 +20,7 @@ public non-sealed interface ServerLinksType extends DialogType {
      * Returns the action button to exit the dialog, or null if there is no exit action.
      *
      * @return the exit action button, or null
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Nullable ActionButton exitAction();
@@ -27,6 +29,7 @@ public non-sealed interface ServerLinksType extends DialogType {
      * Returns the number of columns to display in the server links dialog.
      *
      * @return the number of columns
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Positive int columns();
@@ -35,6 +38,7 @@ public non-sealed interface ServerLinksType extends DialogType {
      * Returns the width of each button in the server links dialog.
      *
      * @return the width of the buttons
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Range(from = 1, to = 1024) int buttonWidth();

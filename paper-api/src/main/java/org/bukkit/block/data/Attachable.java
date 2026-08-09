@@ -8,6 +8,8 @@ package org.bukkit.block.data;
  * a connected string, but will not have any effect when used on the tripwire
  * string itself. It may however still be used to check whether the string forms
  * a circuit.
+ *
+ * @since 1.13
  */
 public interface Attachable extends BlockData {
 
@@ -15,6 +17,7 @@ public interface Attachable extends BlockData {
      * Gets the value of the 'attached' property.
      *
      * @return the 'attached' value
+     * @since 1.13
      */
     boolean isAttached();
 
@@ -22,6 +25,7 @@ public interface Attachable extends BlockData {
      * Sets the value of the 'attached' property.
      *
      * @param attached the new 'attached' value
+     * @since 1.13
      */
     void setAttached(boolean attached);
 }

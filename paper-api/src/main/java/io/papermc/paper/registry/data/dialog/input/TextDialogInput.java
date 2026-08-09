@@ -11,6 +11,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * A text dialog input.
  * <p>Created via {@link DialogInput#text(String, int, Component, boolean, String, int, MultilineOptions)}</p>
+ *
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public non-sealed interface TextDialogInput extends DialogInput {
@@ -19,6 +21,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
      * The width of the input.
      *
      * @return the width of the input
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Range(from = 1, to = 1024) int width();
@@ -27,6 +30,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
      * The label for the input.
      *
      * @return the label component
+     * @since 1.21.7
      */
     @Contract(pure = true)
     Component label();
@@ -35,6 +39,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
      * Whether the label should be visible.
      *
      * @return true if the label is visible, false otherwise
+     * @since 1.21.7
      */
     @Contract(pure = true)
     boolean labelVisible();
@@ -43,6 +48,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
      * The initial value of the input.
      *
      * @return the initial text
+     * @since 1.21.7
      */
     @Contract(pure = true)
     String initial();
@@ -51,6 +57,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
      * The format for the label (a translation key or format string).
      *
      * @return the label format
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Positive int maxLength();
@@ -59,12 +66,15 @@ public non-sealed interface TextDialogInput extends DialogInput {
      * The multiline options for the input, or null if not set.
      *
      * @return the multiline options
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Nullable MultilineOptions multiline();
 
     /**
      * Represents the multiline options for a text dialog input.
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     interface MultilineOptions {
@@ -75,6 +85,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
          * @param maxLines the maximum number of lines, or null if not set
          * @param height the height of the input, or null if not set
          * @return a new MultilineOptions instance
+         * @since 1.21.7
          */
         static MultilineOptions create(
             final @Positive @Nullable Integer maxLines,
@@ -87,6 +98,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
          * Gets the maximum number of lines.
          *
          * @return the maximum number of lines, or null if not set
+         * @since 1.21.7
          */
         @Contract(pure = true)
         @Positive @Nullable Integer maxLines();
@@ -95,6 +107,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
          * Gets the height of the input.
          *
          * @return the height of the input, or null if not set
+         * @since 1.21.7
          */
         @Contract(pure = true)
         @Range(from = 1, to = 512) @Nullable Integer height();
@@ -103,6 +116,8 @@ public non-sealed interface TextDialogInput extends DialogInput {
     /**
      * A builder for a text dialog input.
      * <p>Created via {@link DialogInput#text(String, Component)}</p>
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     interface Builder {
@@ -112,6 +127,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
          *
          * @param width the width of the input
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder width(final @Range(from = 1, to = 1024) int width);
@@ -121,6 +137,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
          *
          * @param labelVisible true if the label should be visible, false otherwise
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder labelVisible(final boolean labelVisible);
@@ -130,6 +147,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
          *
          * @param initial the initial value of the input
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder initial(final String initial);
@@ -139,6 +157,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
          *
          * @param maxLength the maximum length of the input
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder maxLength(final @Positive int maxLength);
@@ -148,6 +167,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
          *
          * @param multiline the multiline options, or null if not set
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder multiline(final @Nullable MultilineOptions multiline);
@@ -156,6 +176,7 @@ public non-sealed interface TextDialogInput extends DialogInput {
          * Builds the text dialog input.
          *
          * @return the text dialog input
+         * @since 1.21.7
          */
         @Contract(value = "-> new", pure = true)
         TextDialogInput build();

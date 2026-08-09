@@ -32,6 +32,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Fired anytime the server is about to merge 2 experience orbs into one
+ *
+ * @since 1.12.2
  */
 @NullMarked
 public class ExperienceOrbMergeEvent extends EntityEvent implements Cancellable {
@@ -52,6 +54,7 @@ public class ExperienceOrbMergeEvent extends EntityEvent implements Cancellable 
 
     /**
      * @return The orb that will absorb the other experience orb
+     * @since 1.12.2
      */
     public ExperienceOrb getMergeTarget() {
         return this.mergeTarget;
@@ -59,11 +62,15 @@ public class ExperienceOrbMergeEvent extends EntityEvent implements Cancellable 
 
     /**
      * @return The orb that is subject to being removed and merged into the target orb
+     * @since 1.12.2
      */
     public ExperienceOrb getMergeSource() {
         return this.mergeSource;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -71,17 +78,24 @@ public class ExperienceOrbMergeEvent extends EntityEvent implements Cancellable 
 
     /**
      * @param cancel {@code true} if you wish to cancel this event, and prevent the orbs from merging
+     * @since 1.12.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

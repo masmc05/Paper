@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * This event is fired when the player is leaving a bed.
+ *
+ * @since 1.0.0
  */
 public class PlayerBedLeaveEvent extends PlayerEvent implements Cancellable {
 
@@ -30,6 +32,7 @@ public class PlayerBedLeaveEvent extends PlayerEvent implements Cancellable {
      * Returns the bed block involved in this event.
      *
      * @return the bed block involved in this event
+     * @since 1.0.0
      */
     @NotNull
     public Block getBed() {
@@ -74,22 +77,34 @@ public class PlayerBedLeaveEvent extends PlayerEvent implements Cancellable {
         this.setBedSpawn = setBedSpawn;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

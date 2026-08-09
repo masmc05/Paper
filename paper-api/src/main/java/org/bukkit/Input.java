@@ -2,6 +2,8 @@ package org.bukkit;
 
 /**
  * Represents a movement input applied to an entity.
+ *
+ * @since 1.21.3
  */
 public interface Input {
 
@@ -9,6 +11,7 @@ public interface Input {
      * Gets whether a forward input is applied.
      *
      * @return forward input
+     * @since 1.21.3
      */
     boolean isForward();
 
@@ -16,6 +19,7 @@ public interface Input {
      * Gets whether a backward input is applied.
      *
      * @return backward input
+     * @since 1.21.3
      */
     boolean isBackward();
 
@@ -23,6 +27,7 @@ public interface Input {
      * Gets whether a left input is applied.
      *
      * @return left input
+     * @since 1.21.3
      */
     boolean isLeft();
 
@@ -30,6 +35,7 @@ public interface Input {
      * Gets whether a right input is applied.
      *
      * @return right input
+     * @since 1.21.3
      */
     boolean isRight();
 
@@ -37,6 +43,7 @@ public interface Input {
      * Gets whether a jump input is applied.
      *
      * @return jump input
+     * @since 1.21.3
      */
     boolean isJump();
 
@@ -44,6 +51,7 @@ public interface Input {
      * Gets whether a sneak input is applied.
      *
      * @return sneak input
+     * @since 1.21.3
      */
     boolean isSneak();
 
@@ -51,6 +59,7 @@ public interface Input {
      * Gets whether a sprint input is applied.
      *
      * @return sprint input
+     * @since 1.21.3
      */
     boolean isSprint();
 }

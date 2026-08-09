@@ -2,21 +2,29 @@ package org.bukkit.block.structure;
 
 /**
  * Represents how a {@link org.bukkit.block.Structure} can be used.
+ *
+ * @since 1.12.2
  */
 public enum UsageMode {
 
     /**
      * The mode used when saving a structure.
+     *
+     * @since 1.12.2
      */
     SAVE,
     /**
      * The mode used when loading a structure.
+     *
+     * @since 1.12.2
      */
     LOAD,
     /**
      * Used when saving a structure for easy size calculation. When using this
      * mode, the Structure name MUST match the name in the second Structure
      * block that is in {@link UsageMode#SAVE}.
+     *
+     * @since 1.12.2
      */
     CORNER,
     /**
@@ -24,6 +32,8 @@ public enum UsageMode {
      * Structures. The structure block is removed after this function completes.
      * The data tags (functions) can be found on the
      * <a href="https://minecraft.wiki/w/Structure_Block#Data">wiki</a>.
+     *
+     * @since 1.12.2
      */
     DATA;
 }

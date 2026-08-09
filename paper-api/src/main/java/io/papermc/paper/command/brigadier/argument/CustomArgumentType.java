@@ -21,6 +21,7 @@ import org.jetbrains.annotations.ApiStatus;
  *
  * @param <T> custom type
  * @param <N> type with an argument native to vanilla Minecraft (from {@link ArgumentTypes})
+ * @since 1.20.6
  */
 public interface CustomArgumentType<T, N> extends ArgumentType<T> {
 
@@ -35,6 +36,7 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
      * @return parsed value
      * @throws CommandSyntaxException if an error occurs while parsing
      * @see #parse(StringReader, Object)
+     * @since 1.20.6
      */
     @Override
     T parse(final StringReader reader) throws CommandSyntaxException;
@@ -53,6 +55,7 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
      * @param source source of the command
      * @return parsed value
      * @throws CommandSyntaxException if an error occurs while parsing
+     * @since 1.21.4
      */
     @Override
     default <S> T parse(final StringReader reader, final S source) throws CommandSyntaxException {
@@ -64,6 +67,7 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
      * the type that is sent to the client.
      *
      * @return native argument type
+     * @since 1.20.6
      */
     ArgumentType<N> getNativeType();
 
@@ -73,6 +77,7 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
      * This helps differentiate and tell the player what the possible inputs are.
      *
      * @return client set examples
+     * @since 1.20.6
      */
     @Override
     @ApiStatus.NonExtendable
@@ -87,6 +92,7 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
      * @param builder suggestion builder
      * @return suggestions
      * @param <S> context type
+     * @since 1.20.6
      */
     @Override
     default <S> CompletableFuture<Suggestions> listSuggestions(final CommandContext<S> context, final SuggestionsBuilder builder) {
@@ -103,15 +109,24 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
      *
      * @param <T> custom type
      * @param <N> type with an argument native to vanilla Minecraft (from {@link ArgumentTypes})
+     * @since 1.20.6
      */
     interface Converted<T, N> extends CustomArgumentType<T, N> {
 
+        /**
+         * {@inheritDoc}
+         * @since 1.20.6
+         */
         @ApiStatus.NonExtendable
         @Override
         default T parse(final StringReader reader) throws CommandSyntaxException {
             return this.convert(this.getNativeType().parse(reader));
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.21.4
+         */
         @ApiStatus.NonExtendable
         @Override
         default <S> T parse(final StringReader reader, final S source) throws CommandSyntaxException {
@@ -125,6 +140,7 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
          * @return converted value
          * @throws CommandSyntaxException if an exception occurs while parsing
          * @see #convert(Object, Object)
+         * @since 1.20.6
          */
         T convert(N nativeType) throws CommandSyntaxException;
 
@@ -138,6 +154,7 @@ public interface CustomArgumentType<T, N> extends ArgumentType<T> {
          * @param source     source of the command
          * @return converted value
          * @throws CommandSyntaxException if an exception occurs while parsing
+         * @since 1.21.4
          */
         default <S> T convert(final N nativeType, final S source) throws CommandSyntaxException {
             return this.convert(nativeType);

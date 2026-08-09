@@ -9,6 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.Range;
 
+/**
+ * @since 1.8
+ */
 public interface WorldBorder {
 
     /**
@@ -16,11 +19,14 @@ public interface WorldBorder {
      *
      * @return the associated world, or null if this world border is not associated
      * with any specific world, such as those created via {@link Server#createWorldBorder()}
+     * @since 1.18.2
      */
     @Nullable World getWorld();
 
     /**
      * Resets the border to default values.
+     *
+     * @since 1.8
      */
     void reset();
 
@@ -28,6 +34,7 @@ public interface WorldBorder {
      * Gets the current side length of the border.
      *
      * @return The current side length of the border.
+     * @since 1.8
      */
     double getSize();
 
@@ -38,6 +45,7 @@ public interface WorldBorder {
      *
      * @throws IllegalArgumentException if newSize is less than 1.0 or greater than {@link #getMaxSize()}
      * @see #changeSize(double, long)
+     * @since 1.8
      */
     void setSize(double newSize);
 
@@ -50,6 +58,7 @@ public interface WorldBorder {
      * @throws IllegalArgumentException if newSize is less than 1.0 or greater than {@link #getMaxSize()}
      * @throws IllegalArgumentException if ticks is out of range
      * @see #setSize(double)
+     * @since 1.21.11
      */
     void changeSize(double newSize, @Range(from = 0, to = Integer.MAX_VALUE) long ticks);
 
@@ -88,6 +97,7 @@ public interface WorldBorder {
      * Gets the current border center.
      *
      * @return The current border center.
+     * @since 1.8
      */
     @NotNull Location getCenter();
 
@@ -98,6 +108,7 @@ public interface WorldBorder {
      * @param z The new center z-coordinate.
      *
      * @throws IllegalArgumentException if the absolute value of x or z is higher than {@link #getMaxCenterCoordinate()}
+     * @since 1.8
      */
     void setCenter(double x, double z);
 
@@ -107,6 +118,7 @@ public interface WorldBorder {
      * @param location The new location of the border center. (Only x/z used)
      *
      * @throws IllegalArgumentException if location is <code>null</code> or the absolute value of {@link Location#getX()} or {@link Location#getZ()} is higher than {@link #getMaxCenterCoordinate()}
+     * @since 1.8
      */
     void setCenter(@NotNull Location location);
 
@@ -114,6 +126,7 @@ public interface WorldBorder {
      * Gets the current border damage buffer.
      *
      * @return The current border damage buffer.
+     * @since 1.8
      */
     double getDamageBuffer();
 
@@ -121,6 +134,7 @@ public interface WorldBorder {
      * Sets the amount of blocks a player may safely be outside the border before taking damage.
      *
      * @param blocks The amount of blocks. (The default is 5 blocks.)
+     * @since 1.8
      */
     void setDamageBuffer(double blocks);
 
@@ -128,6 +142,7 @@ public interface WorldBorder {
      * Gets the current border damage amount.
      *
      * @return The current border damage amount.
+     * @since 1.8
      */
     double getDamageAmount();
 
@@ -135,6 +150,7 @@ public interface WorldBorder {
      * Sets the amount of damage a player takes when outside the border plus the border buffer.
      *
      * @param damage The amount of damage. (The default is 0.2 damage per second per block.)
+     * @since 1.8
      */
     void setDamageAmount(double damage);
 
@@ -166,6 +182,7 @@ public interface WorldBorder {
      * Gets the current border warning time in ticks.
      *
      * @return The current border warning time in ticks.
+     * @since 1.21.11
      */
     @NonNegative int getWarningTimeTicks();
 
@@ -173,6 +190,7 @@ public interface WorldBorder {
      * Sets the warning time that causes the screen to be tinted red when a contracting border will reach the player within the specified time.
      *
      * @param ticks The number of ticks.
+     * @since 1.21.11
      */
     void setWarningTimeTicks(@NonNegative int ticks);
 
@@ -180,6 +198,7 @@ public interface WorldBorder {
      * Gets the current border warning distance.
      *
      * @return The current border warning distance.
+     * @since 1.8
      */
     int getWarningDistance();
 
@@ -187,6 +206,7 @@ public interface WorldBorder {
      * Sets the warning distance that causes the screen to be tinted red when the player is within the specified number of blocks from the border.
      *
      * @param distance The distance in blocks. (The default is 5 blocks.)
+     * @since 1.8
      */
     void setWarningDistance(int distance);
 
@@ -195,6 +215,7 @@ public interface WorldBorder {
      *
      * @param location the location to check
      * @return if this location is inside the border or not
+     * @since 1.11.2
      */
     boolean isInside(@NotNull Location location);
 
@@ -202,6 +223,7 @@ public interface WorldBorder {
      * Gets the maximum possible size of a WorldBorder.
      *
      * @return The maximum size the WorldBorder
+     * @since 1.19.1
      */
     double getMaxSize();
 
@@ -210,6 +232,7 @@ public interface WorldBorder {
      * WorldBorder.
      *
      * @return The absolute maximum center coordinate of the WorldBorder
+     * @since 1.19.1
      */
     double getMaxCenterCoordinate();
 }

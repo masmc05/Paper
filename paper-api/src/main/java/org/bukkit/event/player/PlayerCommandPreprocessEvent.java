@@ -45,6 +45,8 @@ import org.jetbrains.annotations.NotNull;
  * The state of whether there is a slash (<code>/</code>) at the
  * beginning of the message should be preserved. If a slash is added or
  * removed, unexpected behavior may result.
+ *
+ * @since 1.0.0
  */
 public class PlayerCommandPreprocessEvent extends PlayerEvent implements Cancellable {
 
@@ -76,6 +78,7 @@ public class PlayerCommandPreprocessEvent extends PlayerEvent implements Cancell
      * consider the first character when executing the content.
      *
      * @return Message the player is attempting to send
+     * @since 1.3.1
      */
     @NotNull
     public String getMessage() {
@@ -90,6 +93,7 @@ public class PlayerCommandPreprocessEvent extends PlayerEvent implements Cancell
      *
      * @param command New message that the player will send
      * @throws IllegalArgumentException if command is {@code null} or empty
+     * @since 1.3.1
      */
     public void setMessage(@NotNull String command) throws IllegalArgumentException {
         Preconditions.checkArgument(command != null, "Command cannot be null");
@@ -129,22 +133,34 @@ public class PlayerCommandPreprocessEvent extends PlayerEvent implements Cancell
         this.player = player;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

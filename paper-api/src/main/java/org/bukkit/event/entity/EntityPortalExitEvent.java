@@ -15,6 +15,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * Cancelling this event does not prevent the teleport, but it does prevent
  * any changes to velocity and location from taking place.
+ *
+ * @since 1.4.7
  */
 public class EntityPortalExitEvent extends EntityTeleportEvent {
 
@@ -35,6 +37,7 @@ public class EntityPortalExitEvent extends EntityTeleportEvent {
      * portal.
      *
      * @return velocity of entity before entering the portal
+     * @since 1.4.7
      */
     @NotNull
     public Vector getBefore() {
@@ -46,6 +49,7 @@ public class EntityPortalExitEvent extends EntityTeleportEvent {
      * portal.
      *
      * @return velocity of entity after exiting the portal
+     * @since 1.4.7
      */
     @NotNull
     public Vector getAfter() {
@@ -56,17 +60,24 @@ public class EntityPortalExitEvent extends EntityTeleportEvent {
      * Sets the velocity that the entity will have after exiting the portal.
      *
      * @param after the velocity after exiting the portal
+     * @since 1.4.7
      */
     public void setAfter(@NotNull Vector after) {
         this.after = after.clone();
     }
 
+    /**
+     * @since 1.4.7
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.4.7
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

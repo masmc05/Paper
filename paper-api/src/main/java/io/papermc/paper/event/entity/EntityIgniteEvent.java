@@ -12,6 +12,8 @@ import static io.papermc.paper.util.BoundChecker.requirePositive;
 
 /**
  * Called when an entity is ignited often by fire or redstone power.
+ *
+ * @since 26.2
  */
 @NullMarked
 public class EntityIgniteEvent extends EntityEvent implements Cancellable {
@@ -31,6 +33,7 @@ public class EntityIgniteEvent extends EntityEvent implements Cancellable {
      * Gets the amount of ticks required for this entity to explode.
      *
      * @return the amount of ticks required
+     * @since 26.2
      */
     public @Positive int getFuseTime() {
         return this.fuseTime;
@@ -40,26 +43,39 @@ public class EntityIgniteEvent extends EntityEvent implements Cancellable {
      * Sets the amount of ticks required for this entity to explode.
      *
      * @param ticks the amount of ticks required
+     * @since 26.2
      */
     public void setFuseTime(final @Positive int ticks) {
         this.fuseTime = requirePositive(ticks, "ticks");
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 26.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

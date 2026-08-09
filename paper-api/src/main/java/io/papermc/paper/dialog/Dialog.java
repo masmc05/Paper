@@ -17,6 +17,8 @@ import org.jetbrains.annotations.ApiStatus;
 /**
  * Represents a dialog. Can be created during normal server operation via {@link #create(Consumer)}.
  * Can also be created during bootstrap via {@link io.papermc.paper.registry.event.RegistryEvents#DIALOG}.
+ *
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public interface Dialog extends Keyed, DialogLike {
@@ -26,16 +28,26 @@ public interface Dialog extends Keyed, DialogLike {
      *
      * @param value the builder to use for creating the dialog
      * @return a new dialog instance
+     * @since 1.21.7
      */
     static Dialog create(final Consumer<RegistryBuilderFactory<Dialog, ? extends DialogRegistryEntry.Builder>> value) {
         return InlinedRegistryBuilderProvider.instance().createDialog(value);
     }
 
+    /**
+     * @since 1.21.7
+     */
     // Start generate - Dialog
     Dialog CUSTOM_OPTIONS = getDialog("custom_options");
 
+    /**
+     * @since 1.21.7
+     */
     Dialog QUICK_ACTIONS = getDialog("quick_actions");
 
+    /**
+     * @since 1.21.7
+     */
     Dialog SERVER_LINKS = getDialog("server_links");
     // End generate - Dialog
 

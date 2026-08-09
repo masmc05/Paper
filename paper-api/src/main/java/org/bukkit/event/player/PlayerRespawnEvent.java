@@ -15,6 +15,8 @@ import java.util.Set;
  * <p>
  * If changing player state, see {@link com.destroystokyo.paper.event.player.PlayerPostRespawnEvent}
  * because the player is "reset" between this event and that event and some changes won't persist.
+ *
+ * @since 1.0.0
  */
 public class PlayerRespawnEvent extends AbstractRespawnEvent {
 
@@ -41,6 +43,7 @@ public class PlayerRespawnEvent extends AbstractRespawnEvent {
      * Sets the new respawn location.
      *
      * @param respawnLocation new location for the respawn
+     * @since 1.0.0
      */
     public void setRespawnLocation(@NotNull Location respawnLocation) {
         Preconditions.checkArgument(respawnLocation != null, "Respawn location can not be null");
@@ -49,12 +52,18 @@ public class PlayerRespawnEvent extends AbstractRespawnEvent {
         this.respawnLocation = respawnLocation.clone();
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
@@ -62,34 +71,51 @@ public class PlayerRespawnEvent extends AbstractRespawnEvent {
 
     /**
      * An enum to specify the reason a respawn event was called.
+     *
+     * @since 1.19.4
      */
     public enum RespawnReason {
 
         /**
          * When the player dies and presses the respawn button.
+         *
+         * @since 1.19.4
          */
         DEATH,
         /**
          * When the player exits the end through the end portal.
+         *
+         * @since 1.19.4
          */
         END_PORTAL,
         /**
          * When a plugin respawns the player.
+         *
+         * @since 1.19.4
          */
         PLUGIN
     }
 
+    /**
+     * @since 1.16.5
+     */
     public enum RespawnFlag {
         /**
          * Will use the bed spawn location
+         *
+         * @since 1.16.5
          */
         BED_SPAWN,
         /**
          * Will use the respawn anchor location
+         *
+         * @since 1.16.5
          */
         ANCHOR_SPAWN,
         /**
          * Is caused by going to the end portal in the end.
+         *
+         * @since 1.16.5
          */
         END_PORTAL
     }

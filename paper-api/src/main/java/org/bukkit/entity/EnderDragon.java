@@ -7,39 +7,55 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents an Ender Dragon
+ *
+ * @since 1.0.0
  */
 public interface EnderDragon extends ComplexLivingEntity, Boss, Mob, Enemy {
 
     /**
      * Represents a phase or action that an Ender Dragon can perform.
+     *
+     * @since 1.9.4
      */
     enum Phase {
         /**
          * The dragon will circle outside the ring of pillars if ender
          * crystals remain or inside the ring if not.
+         *
+         * @since 1.9.4
          */
         CIRCLING,
         /**
          * The dragon will fly towards a targeted player and shoot a
          * fireball when within 64 blocks.
+         *
+         * @since 1.9.4
          */
         STRAFING,
         /**
          * The dragon will fly towards the empty portal (approaching
          * from the other side, if applicable).
+         *
+         * @since 1.9.4
          */
         FLY_TO_PORTAL,
         /**
          * The dragon will land on the portal. If the dragon is not near
          * the portal, it will fly to it before mounting.
+         *
+         * @since 1.9.4
          */
         LAND_ON_PORTAL,
         /**
          * The dragon will leave the portal.
+         *
+         * @since 1.9.4
          */
         LEAVE_PORTAL,
         /**
          * The dragon will attack with dragon breath at its current location.
+         *
+         * @since 1.9.4
          */
         BREATH_ATTACK,
         /**
@@ -47,22 +63,32 @@ public interface EnderDragon extends ComplexLivingEntity, Boss, Mob, Enemy {
          * If no player is close enough to the dragon for 5 seconds, the
          * dragon will charge at a player within 150 blocks or will take off
          * and begin circling if no player is found.
+         *
+         * @since 1.9.4
          */
         SEARCH_FOR_BREATH_ATTACK_TARGET,
         /**
          * The dragon will roar before performing a breath attack.
+         *
+         * @since 1.9.4
          */
         ROAR_BEFORE_ATTACK,
         /**
          * The dragon will charge a player.
+         *
+         * @since 1.9.4
          */
         CHARGE_PLAYER,
         /**
          * The dragon will fly to the vicinity of the portal and die.
+         *
+         * @since 1.9.4
          */
         DYING,
         /**
          * The dragon will hover at its current location, not performing any actions.
+         *
+         * @since 1.9.4
          */
         HOVER
     }
@@ -71,6 +97,7 @@ public interface EnderDragon extends ComplexLivingEntity, Boss, Mob, Enemy {
      * Gets the current phase that the dragon is performing.
      *
      * @return the current phase
+     * @since 1.9.4
      */
     @NotNull
     Phase getPhase();
@@ -79,6 +106,7 @@ public interface EnderDragon extends ComplexLivingEntity, Boss, Mob, Enemy {
      * Sets the next phase for the dragon to perform.
      *
      * @param phase the next phase
+     * @since 1.9.4
      */
     void setPhase(@NotNull Phase phase);
 
@@ -94,6 +122,7 @@ public interface EnderDragon extends ComplexLivingEntity, Boss, Mob, Enemy {
      * @return the dragon battle
      *
      * @see World#getEnderDragonBattle()
+     * @since 1.15.2
      */
     @Nullable
     DragonBattle getDragonBattle();
@@ -106,6 +135,7 @@ public interface EnderDragon extends ComplexLivingEntity, Boss, Mob, Enemy {
      * 200 (the length of the animation).
      *
      * @return this dragon's death animation ticks
+     * @since 1.15.2
      */
     int getDeathAnimationTicks();
 
@@ -115,6 +145,7 @@ public interface EnderDragon extends ComplexLivingEntity, Boss, Mob, Enemy {
      * Get the podium location used by the ender dragon.
      *
      * @return the podium location of the dragon
+     * @since 1.18.2
      */
     @NotNull
     org.bukkit.Location getPodium();
@@ -123,6 +154,7 @@ public interface EnderDragon extends ComplexLivingEntity, Boss, Mob, Enemy {
      * Sets the location of the podium for the ender dragon.
      *
      * @param location the location of the podium or null to use the default podium location (exit portal of the end)
+     * @since 1.18.2
      */
     void setPodium(@Nullable org.bukkit.Location location);
     // Paper end

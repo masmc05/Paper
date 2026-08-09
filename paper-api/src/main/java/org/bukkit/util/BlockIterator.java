@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * This class performs ray tracing and iterates along blocks on a line
+ *
+ * @since 1.0.0
  */
 public class BlockIterator implements Iterator<Block> {
 
@@ -52,6 +54,7 @@ public class BlockIterator implements Iterator<Block> {
      *     trace. Setting this value above 140 may lead to problems with
      *     unloaded chunks. A value of 0 indicates no limit
      *
+     * @since 1.0.0
      */
     public BlockIterator(@NotNull World world, @NotNull Vector start, @NotNull Vector direction, double yOffset, int maxDistance) {
         Preconditions.checkArgument(world != null, "world must not be null");
@@ -237,6 +240,7 @@ public class BlockIterator implements Iterator<Block> {
      * @param maxDistance This is the maximum distance in blocks for the
      *     trace. Setting this value above 140 may lead to problems with
      *     unloaded chunks. A value of 0 indicates no limit
+     * @since 1.0.0
      */
     public BlockIterator(@NotNull Location loc, double yOffset, int maxDistance) {
         this(loc.getWorld(), loc.toVector(), loc.getDirection(), yOffset, maxDistance);
@@ -250,6 +254,7 @@ public class BlockIterator implements Iterator<Block> {
      * @param loc The location for the start of the ray trace
      * @param yOffset The trace begins vertically offset from the start vector
      *     by this value
+     * @since 1.0.0
      */
 
     public BlockIterator(@NotNull Location loc, double yOffset) {
@@ -262,6 +267,7 @@ public class BlockIterator implements Iterator<Block> {
      * This considers all blocks as 1x1x1 in size.
      *
      * @param loc The location for the start of the ray trace
+     * @since 1.0.0
      */
 
     public BlockIterator(@NotNull Location loc) {
@@ -277,6 +283,7 @@ public class BlockIterator implements Iterator<Block> {
      * @param maxDistance This is the maximum distance in blocks for the
      *     trace. Setting this value above 140 may lead to problems with
      *     unloaded chunks. A value of 0 indicates no limit
+     * @since 1.0.0
      */
 
     public BlockIterator(@NotNull LivingEntity entity, int maxDistance) {
@@ -289,6 +296,7 @@ public class BlockIterator implements Iterator<Block> {
      * This considers all blocks as 1x1x1 in size.
      *
      * @param entity Information from the entity is used to set up the trace
+     * @since 1.0.0
      */
 
     public BlockIterator(@NotNull LivingEntity entity) {
@@ -297,6 +305,8 @@ public class BlockIterator implements Iterator<Block> {
 
     /**
      * Returns true if the iteration has more elements
+     *
+     * @since 1.0.0
      */
 
     @Override
@@ -309,6 +319,7 @@ public class BlockIterator implements Iterator<Block> {
      * Returns the next Block in the trace
      *
      * @return the next Block in the trace
+     * @since 1.0.0
      */
     @Override
     @NotNull
@@ -321,6 +332,10 @@ public class BlockIterator implements Iterator<Block> {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.0.0
+     */
     @Override
     public void remove() {
         throw new UnsupportedOperationException("[BlockIterator] doesn't support block removal");

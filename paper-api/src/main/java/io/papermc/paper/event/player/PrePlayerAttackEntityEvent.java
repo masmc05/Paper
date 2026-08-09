@@ -18,6 +18,8 @@ import org.jspecify.annotations.NullMarked;
  * to indicate that this entity will not actually be attacked.
  * <p>
  * Note: there may be other factors (invulnerability, etc.) that will prevent this entity from being attacked that this event will not cover
+ *
+ * @since 1.19.2
  */
 @NullMarked
 public class PrePlayerAttackEntityEvent extends PlayerEvent implements Cancellable {
@@ -41,6 +43,7 @@ public class PrePlayerAttackEntityEvent extends PlayerEvent implements Cancellab
      * Gets the entity that was attacked in this event.
      *
      * @return entity that was attacked
+     * @since 1.19.2
      */
     public Entity getAttacked() {
         return this.attacked;
@@ -54,11 +57,15 @@ public class PrePlayerAttackEntityEvent extends PlayerEvent implements Cancellab
      * Note: there may be other factors (invulnerability, etc.) that will prevent this entity from being attacked that this event will not cover
      *
      * @return if the entity will actually be attacked
+     * @since 1.19.2
      */
     public boolean willAttack() {
         return this.willAttack;
     }
 
+    /**
+     * @since 1.19.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -69,6 +76,7 @@ public class PrePlayerAttackEntityEvent extends PlayerEvent implements Cancellab
      * this event will always be cancelled.
      *
      * @param cancel {@code true} if you wish to cancel this event
+     * @since 1.19.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
@@ -79,11 +87,17 @@ public class PrePlayerAttackEntityEvent extends PlayerEvent implements Cancellab
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.19.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

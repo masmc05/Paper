@@ -9,6 +9,8 @@ import org.bukkit.block.data.Waterlogged;
  * 'bottom' scaffold.
  * <br>
  * When 'distance' reaches {@link #getMaximumDistance()} the block will drop.
+ *
+ * @since 1.14
  */
 public interface Scaffolding extends Waterlogged {
 
@@ -16,6 +18,7 @@ public interface Scaffolding extends Waterlogged {
      * Gets the value of the 'bottom' property.
      *
      * @return the 'bottom' value
+     * @since 1.14
      */
     boolean isBottom();
 
@@ -23,6 +26,7 @@ public interface Scaffolding extends Waterlogged {
      * Sets the value of the 'bottom' property.
      *
      * @param bottom the new 'bottom' value
+     * @since 1.14
      */
     void setBottom(boolean bottom);
 
@@ -30,6 +34,7 @@ public interface Scaffolding extends Waterlogged {
      * Gets the value of the 'distance' property.
      *
      * @return the 'distance' value
+     * @since 1.14
      */
     int getDistance();
 
@@ -37,6 +42,7 @@ public interface Scaffolding extends Waterlogged {
      * Sets the value of the 'distance' property.
      *
      * @param distance the new 'distance' value
+     * @since 1.14
      */
     void setDistance(int distance);
 
@@ -44,6 +50,7 @@ public interface Scaffolding extends Waterlogged {
      * Gets the maximum allowed value of the 'distance' property.
      *
      * @return the maximum 'distance' value
+     * @since 1.14
      */
     int getMaximumDistance();
 }

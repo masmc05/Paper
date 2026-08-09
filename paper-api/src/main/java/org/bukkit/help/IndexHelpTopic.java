@@ -16,6 +16,8 @@ import org.jetbrains.annotations.Nullable;
  * <p>
  * If a preamble is provided to the constructor, that text will be displayed
  * before the first item in the index.
+ *
+ * @since 1.3.1
  */
 public class IndexHelpTopic extends HelpTopic {
 
@@ -23,10 +25,16 @@ public class IndexHelpTopic extends HelpTopic {
     protected String preamble;
     protected Collection<HelpTopic> allTopics;
 
+    /**
+     * @since 1.3.1
+     */
     public IndexHelpTopic(@NotNull String name, @Nullable String shortText, @Nullable String permission, @NotNull Collection<HelpTopic> topics) {
         this(name, shortText, permission, topics, null);
     }
 
+    /**
+     * @since 1.3.1
+     */
     public IndexHelpTopic(@NotNull String name, @Nullable String shortText, @Nullable String permission, @NotNull Collection<HelpTopic> topics, @Nullable String preamble) {
         this.name = name;
         this.shortText = (shortText == null) ? "" : shortText;
@@ -44,6 +52,9 @@ public class IndexHelpTopic extends HelpTopic {
         this.allTopics = topics;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean canSee(@NotNull CommandSender sender) {
         if (sender instanceof ConsoleCommandSender) {
@@ -60,11 +71,17 @@ public class IndexHelpTopic extends HelpTopic {
         // Paper end - Fix HelpCommand searching - do not show index if no topic is visible to the sender
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public void amendCanSee(@Nullable String amendedPermission) {
         permission = amendedPermission;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     @NotNull
     public String getFullText(@NotNull CommandSender sender) {

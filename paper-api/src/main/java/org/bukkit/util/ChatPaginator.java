@@ -11,13 +11,33 @@ import org.jetbrains.annotations.Nullable;
  * The ChatPaginator takes a raw string of arbitrary length and breaks it down
  * into an array of strings appropriate for displaying on the Minecraft player
  * console.
+ *
+ * @since 1.1.0
  */
 public class ChatPaginator {
+    /**
+     * @since 1.1.0
+     */
     public static final int GUARANTEED_NO_WRAP_CHAT_PAGE_WIDTH = 55; // Will never wrap, even with the largest characters
+    /**
+     * @since 1.1.0
+     */
     public static final int AVERAGE_CHAT_PAGE_WIDTH = 65; // Will typically not wrap using an average character distribution
+    /**
+     * @since 1.1.0
+     */
     public static final int UNBOUNDED_PAGE_WIDTH = Integer.MAX_VALUE;
+    /**
+     * @since 1.1.0
+     */
     public static final int OPEN_CHAT_PAGE_HEIGHT = 20; // The height of an expanded chat window
+    /**
+     * @since 1.1.0
+     */
     public static final int CLOSED_CHAT_PAGE_HEIGHT = 10; // The height of the default chat window
+    /**
+     * @since 1.1.0
+     */
     public static final int UNBOUNDED_PAGE_HEIGHT = Integer.MAX_VALUE;
 
     /**
@@ -26,6 +46,7 @@ public class ChatPaginator {
      * @param unpaginatedString The raw string to break.
      * @param pageNumber The page number to fetch.
      * @return A single chat page.
+     * @since 1.1.0
      */
     @NotNull
     public static ChatPage paginate(@Nullable String unpaginatedString, int pageNumber) {
@@ -40,6 +61,7 @@ public class ChatPaginator {
      * @param lineLength The desired width of a chat line.
      * @param pageHeight The desired number of lines in a page.
      * @return A single chat page.
+     * @since 1.1.0
      */
     @NotNull
     public static ChatPage paginate(@Nullable String unpaginatedString, int pageNumber, int lineLength, int pageHeight) {
@@ -62,6 +84,7 @@ public class ChatPaginator {
      * @param rawString The raw string to break.
      * @param lineLength The length of a line of text.
      * @return An array of word-wrapped lines.
+     * @since 1.1.0
      */
     @NotNull
     public static String[] wordWrap(@Nullable String rawString, int lineLength) {
@@ -144,26 +167,41 @@ public class ChatPaginator {
         return lines.toArray(new String[lines.size()]);
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static class ChatPage {
 
         private String[] lines;
         private int pageNumber;
         private int totalPages;
 
+        /**
+         * @since 1.1.0
+         */
         public ChatPage(@NotNull String @NotNull [] lines, int pageNumber, int totalPages) {
             this.lines = lines;
             this.pageNumber = pageNumber;
             this.totalPages = totalPages;
         }
 
+        /**
+         * @since 1.1.0
+         */
         public int getPageNumber() {
             return pageNumber;
         }
 
+        /**
+         * @since 1.1.0
+         */
         public int getTotalPages() {
             return totalPages;
         }
 
+        /**
+         * @since 1.1.0
+         */
         @NotNull
         public String @NotNull [] getLines() {
             return lines;

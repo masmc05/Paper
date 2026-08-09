@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
  * If this event is cancelled, the block will not be formed.
  *
  * @see BlockSpreadEvent
+ * @since 1.0.0
  */
 public class BlockFormEvent extends BlockGrowEvent {
 
@@ -33,12 +34,18 @@ public class BlockFormEvent extends BlockGrowEvent {
         super(block, newState);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

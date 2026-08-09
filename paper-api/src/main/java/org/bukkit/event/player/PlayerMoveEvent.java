@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Holds information for player movement events
+ *
+ * @since 1.0.0
  */
 public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
 
@@ -32,6 +34,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Gets the location this player moved from
      *
      * @return Location the player moved from
+     * @since 1.0.0
      */
     @NotNull
     public Location getFrom() {
@@ -42,6 +45,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Sets the location to mark as where the player moved from
      *
      * @param from New location to mark as the players previous location
+     * @since 1.0.0
      */
     public void setFrom(@NotNull Location from) {
         this.validateLocation(from);
@@ -52,6 +56,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Gets the location this player moved to
      *
      * @return Location the player moved to
+     * @since 1.0.0
      */
     @NotNull // Paper
     public Location getTo() {
@@ -62,6 +67,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Sets the location that this player will move to
      *
      * @param to New Location this player will move to
+     * @since 1.0.0
      */
     public void setTo(@NotNull Location to) {
         this.validateLocation(to);
@@ -72,6 +78,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Check if the player has changed position (even within the same block) in the event
      *
      * @return whether the player has changed position or not
+     * @since 1.16.5
      */
     public boolean hasChangedPosition() {
         return this.hasExplicitlyChangedPosition() || !this.from.getWorld().equals(this.to.getWorld());
@@ -81,6 +88,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Check if the player has changed position (even within the same block) in the event, disregarding a possible world change
      *
      * @return whether the player has changed position or not
+     * @since 1.16.5
      */
     public boolean hasExplicitlyChangedPosition() {
         return this.from.getX() != this.to.getX() || this.from.getY() != this.to.getY() || this.from.getZ() != this.to.getZ();
@@ -90,6 +98,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Check if the player has moved to a new block in the event
      *
      * @return whether the player has moved to a new block or not
+     * @since 1.16.5
      */
     public boolean hasChangedBlock() {
         return this.hasExplicitlyChangedBlock() || !this.from.getWorld().equals(this.to.getWorld());
@@ -99,6 +108,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Check if the player has moved to a new block in the event, disregarding a possible world change
      *
      * @return whether the player has moved to a new block or not
+     * @since 1.16.5
      */
     public boolean hasExplicitlyChangedBlock() {
         return this.from.getBlockX() != this.to.getBlockX() || this.from.getBlockY() != this.to.getBlockY() || this.from.getBlockZ() != this.to.getBlockZ();
@@ -108,6 +118,7 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * Check if the player has changed orientation in the event
      *
      * @return whether the player has changed orientation or not
+     * @since 1.16.5
      */
     public boolean hasChangedOrientation() {
         return this.from.getPitch() != this.to.getPitch() || this.from.getYaw() != this.to.getYaw();
@@ -119,6 +130,8 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * If a move or teleport event is cancelled, the player will be moved or
      * teleported back to the Location as defined by getFrom(). This will not
      * fire an event
+     *
+     * @since 1.0.0
      */
     @Override
     public boolean isCancelled() {
@@ -131,6 +144,8 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
      * If a move or teleport event is cancelled, the player will be moved or
      * teleported back to the Location as defined by getFrom(). This will not
      * fire an event
+     *
+     * @since 1.0.0
      */
     @Override
     public void setCancelled(boolean cancel) {
@@ -142,12 +157,18 @@ public class PlayerMoveEvent extends PlayerEvent implements Cancellable {
         Preconditions.checkArgument(loc.getWorld() != null, "Cannot use null location with null world!");
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

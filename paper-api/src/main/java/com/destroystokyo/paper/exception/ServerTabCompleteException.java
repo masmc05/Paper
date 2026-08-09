@@ -5,13 +5,21 @@ import org.bukkit.command.CommandSender;
 
 /**
  * Called when a tab-complete request throws an exception
+ *
+ * @since 1.9.4
  */
 public class ServerTabCompleteException extends ServerCommandException {
 
+    /**
+     * @since 1.9.4
+     */
     public ServerTabCompleteException(String message, Throwable cause, Command command, CommandSender commandSender, String[] arguments) {
         super(message, cause, command, commandSender, arguments);
     }
 
+    /**
+     * @since 1.9.4
+     */
     public ServerTabCompleteException(Throwable cause, Command command, CommandSender commandSender, String[] arguments) {
         super(cause, command, commandSender, arguments);
     }

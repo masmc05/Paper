@@ -15,6 +15,8 @@ import java.util.UUID;
  * <p>
  * No guarantees are made about thread execution context for this event. If you need to know, check
  * {@link Event#isAsynchronous()}
+ *
+ * @since 1.12
  */
 @NullMarked
 public class LookupProfileEvent extends Event {
@@ -33,6 +35,7 @@ public class LookupProfileEvent extends Event {
      * Gets the name of the profile that was looked up.
      *
      * @return the name of the profile
+     * @since 1.21.10
      */
     public String getName() {
         return Objects.requireNonNull(this.profile.getName(), "profile name");
@@ -42,6 +45,7 @@ public class LookupProfileEvent extends Event {
      * Gets the UUID of the profile that was looked up.
      *
      * @return the UUID of the profile
+     * @since 1.21.10
      */
     public UUID getId() {
         return Objects.requireNonNull(this.profile.getId(), "profile id");
@@ -56,11 +60,17 @@ public class LookupProfileEvent extends Event {
         return this.profile;
     }
 
+    /**
+     * @since 1.12
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

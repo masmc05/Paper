@@ -5,6 +5,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a Primed TNT.
+ *
+ * @since 1.0.0
  */
 public interface TNTPrimed extends Explosive {
 
@@ -12,6 +14,7 @@ public interface TNTPrimed extends Explosive {
      * Set the number of ticks until the TNT blows up after being primed.
      *
      * @param fuseTicks The fuse ticks
+     * @since 1.0.0
      */
     public void setFuseTicks(int fuseTicks);
 
@@ -20,6 +23,7 @@ public interface TNTPrimed extends Explosive {
      * entity
      *
      * @return the number of ticks until this TNTPrimed explodes
+     * @since 1.0.0
      */
     public int getFuseTicks();
 
@@ -36,6 +40,7 @@ public interface TNTPrimed extends Explosive {
      * {@link Entity#isValid()}.
      *
      * @return the source of this primed TNT
+     * @since 1.5.1
      */
     @Nullable
     public Entity getSource();
@@ -51,6 +56,7 @@ public interface TNTPrimed extends Explosive {
      * org.bukkit.entity.TNTPrimed#getSource()} method.
      *
      * @param source the source of this primed TNT
+     * @since 1.16.3
      */
     public void setSource(@Nullable Entity source);
 
@@ -59,6 +65,7 @@ public interface TNTPrimed extends Explosive {
      *
      * @return the source block location the TNTPrimed was spawned from
      * @deprecated replaced by {@link Entity#getOrigin()}
+     * @since 1.9.4
      */
     @Deprecated
     default org.bukkit.Location getSourceLoc() {
@@ -73,6 +80,7 @@ public interface TNTPrimed extends Explosive {
      * same and is not affected by this change.
      *
      * @param data the visual block data
+     * @since 1.20.4
      */
     void setBlockData(@org.jetbrains.annotations.NotNull org.bukkit.block.data.BlockData data);
 
@@ -81,6 +89,7 @@ public interface TNTPrimed extends Explosive {
      * primed tnt.
      *
      * @return the visual block data
+     * @since 1.20.4
      */
     @org.jetbrains.annotations.NotNull
     org.bukkit.block.data.BlockData getBlockData();

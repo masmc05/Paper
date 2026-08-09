@@ -11,11 +11,15 @@ import org.jspecify.annotations.NullMarked;
  *
  * @see io.papermc.paper.datacomponent.DataComponentTypes#BLOCKS_ATTACKS
  * @see io.papermc.paper.datacomponent.item.BlocksAttacks#itemDamage()
+ * @since 1.21.6
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface ItemDamageFunction {
 
+    /**
+     * @since 1.21.6
+     */
     @Contract(value = "-> new", pure = true)
     static ItemDamageFunction.Builder itemDamageFunction() {
         return BlocksAttacksBridge.bridge().blocksAttacksItemDamageFunction();
@@ -25,6 +29,7 @@ public interface ItemDamageFunction {
      * Get the minimum amount of damage dealt by the attack before item damage is applied to the item.
      *
      * @return the threshold
+     * @since 1.21.6
      */
     @NonNegative float threshold();
 
@@ -32,6 +37,7 @@ public interface ItemDamageFunction {
      * Get the constant amount of damage applied to the item, if threshold is passed.
      *
      * @return the base
+     * @since 1.21.6
      */
     float base();
 
@@ -39,6 +45,7 @@ public interface ItemDamageFunction {
      * Get the fraction of the dealt damage that should be applied to the item, if threshold is passed.
      *
      * @return the factor
+     * @since 1.21.6
      */
     float factor();
 
@@ -47,21 +54,33 @@ public interface ItemDamageFunction {
      *
      * @apiNote this doesn't apply enchantments like {@link org.bukkit.enchantments.Enchantment#UNBREAKING}
      * @return the damage to apply
+     * @since 1.21.6
      */
     int damageToApply(float damage);
 
     /**
      * Builder for {@link ItemDamageFunction}.
+     *
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<ItemDamageFunction> {
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         ItemDamageFunction.Builder threshold(final @NonNegative float threshold);
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         ItemDamageFunction.Builder base(final float base);
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         ItemDamageFunction.Builder factor(final float factor);
     }

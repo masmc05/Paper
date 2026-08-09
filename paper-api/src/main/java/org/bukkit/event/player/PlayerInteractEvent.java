@@ -27,6 +27,8 @@ import org.jetbrains.annotations.Nullable;
  * of some prediction made by the server where no subsequent code will run,
  * rather than when the subsequent interaction activity (e.g. placing a block in
  * an illegal position ({@link BlockCanBuildEvent}) will fail).
+ *
+ * @since 1.0.0
  */
 public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
 
@@ -69,6 +71,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Returns the action type
      *
      * @return Action returns the type of interaction
+     * @since 1.0.0
      */
     @NotNull
     public Action getAction() {
@@ -85,6 +88,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * possible a call might have the former false, but the latter {@code true}, e.g. in
      * the case of using a firework whilst gliding. Callers should check the
      * relevant methods individually.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.14")
     @Override
@@ -98,6 +102,8 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Canceling this event will prevent use of food (player won't lose the
      * food item), prevent bows/snowballs/eggs from firing, etc. (player won't
      * lose the ammo)
+     *
+     * @since 1.0.0
      */
     @Override
     public void setCancelled(boolean cancel) {
@@ -109,6 +115,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Returns the item in hand represented by this event
      *
      * @return ItemStack the item used
+     * @since 1.0.0
      */
     @Nullable
     public ItemStack getItem() {
@@ -120,6 +127,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * this event
      *
      * @return Material the material of the item used
+     * @since 1.0.0
      */
     @NotNull
     public Material getMaterial() {
@@ -134,6 +142,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Check if this event involved a block
      *
      * @return boolean {@code true} if it did
+     * @since 1.0.0
      */
     public boolean hasBlock() {
         return this.blockClicked != null;
@@ -143,6 +152,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Check if this event involved an item
      *
      * @return boolean {@code true} if it did
+     * @since 1.0.0
      */
     public boolean hasItem() {
         return this.item != null;
@@ -153,6 +163,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * placement event.
      *
      * @return boolean {@code true} if the item in hand was a block
+     * @since 1.0.0
      */
     public boolean isBlockInHand() {
         if (!this.hasItem()) {
@@ -166,6 +177,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Returns the clicked block
      *
      * @return Block returns the block clicked with this item.
+     * @since 1.0.0
      */
     @Nullable
     public Block getClickedBlock() {
@@ -176,6 +188,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * Returns the face of the block that was clicked
      *
      * @return BlockFace returns the face of the block that was clicked
+     * @since 1.0.0
      */
     @NotNull
     public BlockFace getBlockFace() {
@@ -187,6 +200,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * {@link Action#PHYSICAL}.
      *
      * @return the hand used to interact. May be {@code null}.
+     * @since 1.9.4
      */
     @Nullable
     public EquipmentSlot getHand() {
@@ -201,6 +215,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      *
      * @deprecated misleading, use {@link #getInteractionPoint()}
      * @return the clicked position. May be {@code null}.
+     * @since 1.20.1
      */
     @Nullable
     @Deprecated
@@ -215,6 +230,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * The exact point at which the interaction occurred. May be {@code null}.
      *
      * @return the exact interaction point. May be {@code null}.
+     * @since 1.16.4
      */
     @Nullable
     public Location getInteractionPoint() {
@@ -230,6 +246,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * have a default action
      *
      * @return the action to take with the interacted block
+     * @since 1.0.0
      */
     @NotNull
     public Result useInteractedBlock() {
@@ -238,6 +255,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
 
     /**
      * @param useInteractedBlock the action to take with the interacted block
+     * @since 1.0.0
      */
     public void setUseInteractedBlock(@NotNull Result useInteractedBlock) {
         this.useClickedBlock = useInteractedBlock;
@@ -250,6 +268,7 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
      * is taken on the interacted block.
      *
      * @return the action to take with the item in hand
+     * @since 1.0.0
      */
     @NotNull
     public Result useItemInHand() {
@@ -258,17 +277,24 @@ public class PlayerInteractEvent extends PlayerEvent implements Cancellable {
 
     /**
      * @param useItemInHand the action to take with the item in hand
+     * @since 1.0.0
      */
     public void setUseItemInHand(@NotNull Result useItemInHand) {
         this.useItemInHand = useItemInHand;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

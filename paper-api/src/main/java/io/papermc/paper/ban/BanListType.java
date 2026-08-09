@@ -8,16 +8,22 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Represents a ban-type that a {@link BanList} may track.
  * It enforces the correct return value at compile time.
+ *
+ * @since 1.20.4
  */
 @NullMarked
 public interface BanListType<T> {
 
     /**
      * Banned IP addresses
+     *
+     * @since 1.20.4
      */
     BanListType<IpBanList> IP = new BanListTypeImpl<>(IpBanList.class);
     /**
      * Banned player profiles
+     *
+     * @since 1.20.4
      */
     BanListType<ProfileBanList> PROFILE = new BanListTypeImpl<>(ProfileBanList.class);
 
@@ -25,6 +31,7 @@ public interface BanListType<T> {
      * Returns the type class of the ban list used generically
      *
      * @return the type class
+     * @since 1.20.4
      */
     Class<T> typeClass();
 }

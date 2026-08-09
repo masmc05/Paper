@@ -8,6 +8,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when a moving world border has finished its move.
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public class WorldBorderBoundsChangeFinishEvent extends WorldBorderEvent {
@@ -30,6 +32,7 @@ public class WorldBorderBoundsChangeFinishEvent extends WorldBorderEvent {
      * Gets the old size of the worldborder.
      *
      * @return the old size
+     * @since 1.16.5
      */
     public double getOldSize() {
         return this.oldSize;
@@ -39,6 +42,7 @@ public class WorldBorderBoundsChangeFinishEvent extends WorldBorderEvent {
      * Gets the new size of the worldborder.
      *
      * @return the new size
+     * @since 1.16.5
      */
     public double getNewSize() {
         return this.newSize;
@@ -50,16 +54,23 @@ public class WorldBorderBoundsChangeFinishEvent extends WorldBorderEvent {
      * Can be 0 if handlers for {@link WorldBorderCenterChangeEvent} set the duration to 0.
      *
      * @return the duration of the transition
+     * @since 1.16.5
      */
     public double getDuration() {
         return this.duration;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

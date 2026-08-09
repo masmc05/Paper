@@ -18,6 +18,8 @@ import org.jspecify.annotations.NullMarked;
  * player uses the shears on a block to collect drops from it and/or modify its state.
  * <p>
  * Examples include shearing a pumpkin to turn it into a carved pumpkin or shearing a beehive to get honeycomb.
+ *
+ * @since 1.16.4
  */
 @NullMarked
 public class PlayerShearBlockEvent extends PlayerEvent implements Cancellable {
@@ -44,6 +46,7 @@ public class PlayerShearBlockEvent extends PlayerEvent implements Cancellable {
      * Gets the block being sheared in this event.
      *
      * @return The {@link Block} which block is being sheared in this event.
+     * @since 1.16.4
      */
     public Block getBlock() {
         return this.block;
@@ -53,6 +56,7 @@ public class PlayerShearBlockEvent extends PlayerEvent implements Cancellable {
      * Gets the item used to shear the block.
      *
      * @return The {@link ItemStack} of the shears.
+     * @since 1.16.4
      */
     public ItemStack getItem() {
         return this.item;
@@ -62,6 +66,7 @@ public class PlayerShearBlockEvent extends PlayerEvent implements Cancellable {
      * Gets the hand used to shear the block.
      *
      * @return Either {@link EquipmentSlot#HAND} OR {@link EquipmentSlot#OFF_HAND}.
+     * @since 1.16.4
      */
     public EquipmentSlot getHand() {
         return this.hand;
@@ -71,6 +76,7 @@ public class PlayerShearBlockEvent extends PlayerEvent implements Cancellable {
      * Gets the resulting drops of this event.
      *
      * @return A mutable {@link List list} of {@link ItemStack items} that will be dropped as result of this event.
+     * @since 1.16.4
      */
     public List<ItemStack> getDrops() {
         return this.drops;
@@ -80,6 +86,7 @@ public class PlayerShearBlockEvent extends PlayerEvent implements Cancellable {
      * Gets whether the shearing of the block should be cancelled or not.
      *
      * @return Whether the shearing of the block should be cancelled or not.
+     * @since 1.16.4
      */
     @Override
     public boolean isCancelled() {
@@ -90,17 +97,24 @@ public class PlayerShearBlockEvent extends PlayerEvent implements Cancellable {
      * Sets whether the shearing of the block should be cancelled or not.
      *
      * @param cancel whether the shearing of the block should be cancelled or not.
+     * @since 1.16.4
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

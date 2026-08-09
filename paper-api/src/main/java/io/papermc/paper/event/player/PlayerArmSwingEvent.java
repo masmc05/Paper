@@ -7,6 +7,9 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
+/**
+ * @since 1.16.5
+ */
 @NullMarked
 public class PlayerArmSwingEvent extends PlayerAnimationEvent { // todo redundant with parent?
 
@@ -22,6 +25,7 @@ public class PlayerArmSwingEvent extends PlayerAnimationEvent { // todo redundan
      * Returns the hand of the arm swing.
      *
      * @return the hand
+     * @since 1.16.5
      */
     public EquipmentSlot getHand() {
         return this.equipmentSlot;

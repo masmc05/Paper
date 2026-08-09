@@ -4,6 +4,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents the built-in Minecraft font.
+ *
+ * @since 1.0.0
  */
 public class MinecraftFont extends MapFont {
 
@@ -283,12 +285,16 @@ public class MinecraftFont extends MapFont {
 
     /**
      * A static non-malleable MinecraftFont.
+     *
+     * @since 1.0.0
      */
     @NotNull
     public static final MinecraftFont Font = new MinecraftFont(false);
 
     /**
      * Initialize a new MinecraftFont.
+     *
+     * @since 1.0.0
      */
     public MinecraftFont() {
         this(true);

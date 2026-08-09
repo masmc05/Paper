@@ -4,6 +4,9 @@ import java.util.List;
 import org.bukkit.command.Command;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.3.1
+ */
 public abstract class BukkitCommand extends Command {
     protected BukkitCommand(@NotNull String name) {
         super(name);

@@ -12,6 +12,8 @@ import org.jetbrains.annotations.Nullable;
  * services manager in order to use a service (if one is available). If
  * multiple plugins register a service, then the service with the highest
  * priority takes precedence.
+ *
+ * @since 1.0.0
  */
 public interface ServicesManager {
 
@@ -23,6 +25,7 @@ public interface ServicesManager {
      * @param provider provider to register
      * @param plugin plugin with the provider
      * @param priority priority of the provider
+     * @since 1.0.0
      */
     public <T> void register(@NotNull Class<T> service, @NotNull T provider, @NotNull Plugin plugin, @NotNull ServicePriority priority);
 
@@ -30,6 +33,7 @@ public interface ServicesManager {
      * Unregister all the providers registered by a particular plugin.
      *
      * @param plugin The plugin
+     * @since 1.0.0
      */
     public void unregisterAll(@NotNull Plugin plugin);
 
@@ -38,6 +42,7 @@ public interface ServicesManager {
      *
      * @param service The service interface
      * @param provider The service provider implementation
+     * @since 1.0.0
      */
     public void unregister(@NotNull Class<?> service, @NotNull Object provider);
 
@@ -45,6 +50,7 @@ public interface ServicesManager {
      * Unregister a particular provider.
      *
      * @param provider The service provider implementation
+     * @since 1.0.0
      */
     public void unregister(@NotNull Object provider);
 
@@ -55,6 +61,7 @@ public interface ServicesManager {
      * @param <T> The service interface
      * @param service The service interface
      * @return provider or null
+     * @since 1.0.0
      */
     @Nullable
     public <T> T load(@NotNull Class<T> service);
@@ -66,6 +73,7 @@ public interface ServicesManager {
      * @param <T> The service interface
      * @param service The service interface
      * @return provider registration or null
+     * @since 1.0.0
      */
     @Nullable
     public <T> RegisteredServiceProvider<T> getRegistration(@NotNull Class<T> service);
@@ -75,6 +83,7 @@ public interface ServicesManager {
      *
      * @param plugin The plugin
      * @return provider registrations
+     * @since 1.0.0
      */
     @NotNull
     public List<RegisteredServiceProvider<?>> getRegistrations(@NotNull Plugin plugin);
@@ -86,6 +95,7 @@ public interface ServicesManager {
      * @param <T> The service interface
      * @param service The service interface
      * @return list of registrations
+     * @since 1.0.0
      */
     @NotNull
     public <T> Collection<RegisteredServiceProvider<T>> getRegistrations(@NotNull Class<T> service);
@@ -95,6 +105,7 @@ public interface ServicesManager {
      * providers for it.
      *
      * @return list of known services
+     * @since 1.0.0
      */
     @NotNull
     public Collection<Class<?>> getKnownServices();
@@ -107,6 +118,7 @@ public interface ServicesManager {
      * @param <T> service
      * @param service service to check
      * @return whether there has been a registered provider
+     * @since 1.0.0
      */
     public <T> boolean isProvidedFor(@NotNull Class<T> service);
 

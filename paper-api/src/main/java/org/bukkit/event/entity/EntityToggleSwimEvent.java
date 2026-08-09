@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Sent when an entity's swimming status is toggled.
+ *
+ * @since 1.13
  */
 public class EntityToggleSwimEvent extends EntityEvent implements Cancellable {
 
@@ -27,11 +29,15 @@ public class EntityToggleSwimEvent extends EntityEvent implements Cancellable {
      * {@code false} if the entity stops swimming.
      *
      * @return new swimming state
+     * @since 1.13
      */
     public boolean isSwimming() {
         return this.isSwimming;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -43,6 +49,7 @@ public class EntityToggleSwimEvent extends EntityEvent implements Cancellable {
      * exists. If you want to cancel the switch from the ground state to the
      * swimming state you need to disable the sprinting flag for the player after
      * the cancel action.
+     * @since 1.13
      */
     @Deprecated
     @Override
@@ -50,12 +57,18 @@ public class EntityToggleSwimEvent extends EntityEvent implements Cancellable {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

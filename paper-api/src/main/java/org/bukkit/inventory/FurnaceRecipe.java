@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a furnace recipe.
+ *
+ * @since 1.0.0
  */
 public class FurnaceRecipe extends CookingRecipe<FurnaceRecipe> {
 
@@ -39,6 +41,7 @@ public class FurnaceRecipe extends CookingRecipe<FurnaceRecipe> {
      * @param source The input material.
      * @param experience The experience given by this recipe
      * @param cookingTime The cooking time (in ticks)
+     * @since 1.13
      */
     public FurnaceRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @NotNull Material source, float experience, int cookingTime) {
         this(key, result, source, 0, experience, cookingTime);
@@ -57,6 +60,7 @@ public class FurnaceRecipe extends CookingRecipe<FurnaceRecipe> {
      * @param input The input choices.
      * @param experience The experience given by this recipe
      * @param cookingTime The cooking time (in ticks)
+     * @since 1.13.2
      */
     public FurnaceRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @NotNull RecipeChoice input, float experience, int cookingTime) {
         super(key, result, input, experience, cookingTime);
@@ -75,6 +79,9 @@ public class FurnaceRecipe extends CookingRecipe<FurnaceRecipe> {
         return setInput(input.getItemType(), input.getData());
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public FurnaceRecipe setInput(@NotNull Material input) {
@@ -95,6 +102,9 @@ public class FurnaceRecipe extends CookingRecipe<FurnaceRecipe> {
         return setInputChoice(new RecipeChoice.MaterialChoice(Collections.singletonList(input)));
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     @Override
     public FurnaceRecipe setInputChoice(@NotNull RecipeChoice input) {

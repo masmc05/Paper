@@ -12,6 +12,8 @@ import org.jetbrains.annotations.Unmodifiable;
 
 /**
  * This event is called when a {@link Raid} was complete with a clear result.
+ *
+ * @since 1.14.4
  */
 public class RaidFinishEvent extends RaidEvent {
 
@@ -32,18 +34,25 @@ public class RaidFinishEvent extends RaidEvent {
      * end would not be included in this list.</b>
      *
      * @return the winners
+     * @since 1.14.4
      */
     @NotNull
     public @Unmodifiable List<Player> getWinners() {
         return Collections.unmodifiableList(this.winners);
     }
 
+    /**
+     * @since 1.14.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.14.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents a captured state of a trial spawner.
+ *
+ * @since 1.20.4
  */
 @NullMarked
 public interface TrialSpawner extends TileState {
@@ -18,6 +20,7 @@ public interface TrialSpawner extends TileState {
      *
      * @return the game time in ticks
      * @see org.bukkit.World#getGameTime()
+     * @since 1.21.4
      */
     long getCooldownEnd();
 
@@ -25,6 +28,7 @@ public interface TrialSpawner extends TileState {
      * Sets the game time in ticks when the cooldown ends.
      *
      * @param ticks the game time in ticks for the new cooldown
+     * @since 1.21.4
      */
     void setCooldownEnd(long ticks);
 
@@ -33,6 +37,7 @@ public interface TrialSpawner extends TileState {
      *
      * @return the game time in ticks
      * @see org.bukkit.World#getGameTime()
+     * @since 1.21.4
      */
     long getNextSpawnAttempt();
 
@@ -40,6 +45,7 @@ public interface TrialSpawner extends TileState {
      * Sets the game time in ticks when the next spawn attempt happens.
      *
      * @param ticks the game time in ticks for the next mob spawn
+     * @since 1.21.4
      */
     void setNextSpawnAttempt(long ticks);
 
@@ -47,6 +53,7 @@ public interface TrialSpawner extends TileState {
      * Gets the length in ticks the spawner will stay in cooldown for.
      *
      * @return the number of ticks
+     * @since 1.21
      */
     int getCooldownLength();
 
@@ -54,6 +61,7 @@ public interface TrialSpawner extends TileState {
      * Sets the length in ticks the spawner will stay in cooldown for.
      *
      * @param ticks the number of ticks
+     * @since 1.21
      */
     void setCooldownLength(int ticks);
 
@@ -68,6 +76,7 @@ public interface TrialSpawner extends TileState {
      *
      * @return the maximum distance(squared) a player can be in order for this
      * spawner to be active.
+     * @since 1.21
      */
     int getRequiredPlayerRange();
 
@@ -80,6 +89,7 @@ public interface TrialSpawner extends TileState {
      *
      * @param requiredPlayerRange the maximum distance (squared) a player can be
      * in order for this spawner to be active.
+     * @since 1.21
      */
     void setRequiredPlayerRange(int requiredPlayerRange);
 
@@ -92,6 +102,7 @@ public interface TrialSpawner extends TileState {
      *
      * @return a collection of players this spawner is tracking or an empty
      *         collection if there aren't any
+     * @since 1.21
      */
     Collection<Player> getTrackedPlayers();
 
@@ -100,6 +111,7 @@ public interface TrialSpawner extends TileState {
      *
      * @param player the player
      * @return true if this spawner is tracking the provided player
+     * @since 1.21
      */
     boolean isTrackingPlayer(final Player player);
 
@@ -110,6 +122,7 @@ public interface TrialSpawner extends TileState {
      * time.
      *
      * @param player the player
+     * @since 1.21
      */
     void startTrackingPlayer(final Player player);
 
@@ -120,6 +133,7 @@ public interface TrialSpawner extends TileState {
      * any given time.
      *
      * @param player the player
+     * @since 1.21
      */
     void stopTrackingPlayer(final Player player);
 
@@ -132,6 +146,7 @@ public interface TrialSpawner extends TileState {
      *
      * @return a collection of entities this spawner is tracking or an empty
      *         collection if there aren't any
+     * @since 1.21
      */
     Collection<Entity> getTrackedEntities();
 
@@ -140,6 +155,7 @@ public interface TrialSpawner extends TileState {
      *
      * @param entity the entity
      * @return true if this spawner is tracking the provided entity
+     * @since 1.21
      */
     boolean isTrackingEntity(final Entity entity);
 
@@ -150,6 +166,7 @@ public interface TrialSpawner extends TileState {
      * time.
      *
      * @param entity the entity
+     * @since 1.21
      */
     void startTrackingEntity(final Entity entity);
 
@@ -160,6 +177,7 @@ public interface TrialSpawner extends TileState {
      * any given time.
      *
      * @param entity the entity
+     * @since 1.21
      */
     void stopTrackingEntity(final Entity entity);
 
@@ -168,6 +186,7 @@ public interface TrialSpawner extends TileState {
      * {@link TrialSpawnerConfiguration}.
      *
      * @return true is using the ominous configuration
+     * @since 1.21
      */
     boolean isOminous();
 
@@ -177,6 +196,7 @@ public interface TrialSpawner extends TileState {
      *
      * @param ominous true to use the ominous TrialSpawnerConfiguration, false to
      *                use the normal one.
+     * @since 1.21
      */
     void setOminous(boolean ominous);
 
@@ -185,6 +205,7 @@ public interface TrialSpawner extends TileState {
      * false.
      *
      * @return the TrialSpawnerConfiguration
+     * @since 1.21
      */
     @ApiStatus.Experimental
     TrialSpawnerConfiguration getNormalConfiguration();
@@ -194,6 +215,7 @@ public interface TrialSpawner extends TileState {
      * true.
      *
      * @return the TrialSpawnerConfiguration
+     * @since 1.21
      */
     @ApiStatus.Experimental
     TrialSpawnerConfiguration getOminousConfiguration();

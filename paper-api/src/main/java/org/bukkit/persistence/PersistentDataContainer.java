@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * This interface represents a map like object, capable of storing custom tags
  * in it.
+ *
+ * @since 1.14
  */
 public interface PersistentDataContainer extends io.papermc.paper.persistence.PersistentDataContainerView { // Paper - split up view and mutable
 
@@ -29,6 +31,7 @@ public interface PersistentDataContainer extends io.papermc.paper.persistence.Pe
      * be done using {@link #remove(NamespacedKey)}
      * @throws IllegalArgumentException if no suitable adapter was found for
      * the {@link PersistentDataType#getPrimitiveType()}
+     * @since 1.14
      */
     <P, C> void set(@NotNull NamespacedKey key, @NotNull PersistentDataType<P, C> type, @NotNull C value);
     // Paper - move to PersistentDataContainerView
@@ -39,6 +42,7 @@ public interface PersistentDataContainer extends io.papermc.paper.persistence.Pe
      * @param key the key to remove
      *
      * @throws IllegalArgumentException if the provided key is null
+     * @since 1.14
      */
     void remove(@NotNull NamespacedKey key);
     // Paper - move to PersistentDataContainerView
@@ -53,6 +57,7 @@ public interface PersistentDataContainer extends io.papermc.paper.persistence.Pe
      * @param clear if true, this {@link PersistentDataContainer} instance
      *              will be cleared before reading
      * @throws java.io.IOException if the byte array has an invalid format
+     * @since 1.19.2
      */
     void readFromBytes(byte @NotNull [] bytes, boolean clear) throws java.io.IOException;
 
@@ -64,6 +69,7 @@ public interface PersistentDataContainer extends io.papermc.paper.persistence.Pe
      *
      * @param bytes the byte array to read from
      * @throws java.io.IOException if the byte array has an invalid format
+     * @since 1.19.2
      */
     default void readFromBytes(final byte @NotNull [] bytes) throws java.io.IOException {
         this.readFromBytes(bytes, true);

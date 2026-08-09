@@ -20,6 +20,8 @@ import org.jetbrains.annotations.NotNull;
  * <br>
  * <b>Note:</b> The players in {@link #iterator()} will not be shown in the
  * server info if {@link Bukkit#getHideOnlinePlayers()} is {@code true}.
+ *
+ * @since 1.0.0
  */
 public class ServerListPingEvent extends ServerEvent implements Iterable<Player> {
 
@@ -97,6 +99,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      * blank if unknown
      *
      * @return The hostname
+     * @since 1.19.2
      */
     @NotNull
     public String getHostname() {
@@ -107,6 +110,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      * Get the address the ping is coming from.
      *
      * @return the address
+     * @since 1.0.0
      */
     @NotNull
     public InetAddress getAddress() {
@@ -117,6 +121,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      * Get the message of the day message.
      *
      * @return the message of the day
+     * @since 1.16.5
      */
     public @NotNull Component motd() {
         return this.motd;
@@ -126,6 +131,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      * Change the message of the day message.
      *
      * @param motd the message of the day
+     * @since 1.16.5
      */
     public void motd(@NotNull Component motd) {
         this.motd = motd;
@@ -136,6 +142,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      *
      * @return the message of the day
      * @deprecated in favour of {@link #motd()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated
@@ -148,6 +155,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      *
      * @param motd the message of the day
      * @deprecated in favour of {@link #motd(Component)}
+     * @since 1.0.0
      */
     @Deprecated
     public void setMotd(@NotNull String motd) {
@@ -158,6 +166,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      * Get the number of players sent.
      *
      * @return the number of players
+     * @since 1.0.0
      */
     public int getNumPlayers() {
         int numPlayers = this.numPlayers;
@@ -174,6 +183,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      * Get the maximum number of players sent.
      *
      * @return the maximum number of players
+     * @since 1.0.0
      */
     public int getMaxPlayers() {
         return this.maxPlayers;
@@ -183,6 +193,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      * Set the maximum number of players sent.
      *
      * @param maxPlayers the maximum number of player
+     * @since 1.0.0
      */
     public void setMaxPlayers(int maxPlayers) {
         this.maxPlayers = maxPlayers;
@@ -210,6 +221,7 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
      *     implementations
      * @throws UnsupportedOperationException if the caller of this event does
      *     not support setting the server icon
+     * @since 1.7.2
      */
     public void setServerIcon(@UndefinedNullability("implementation dependent") CachedServerIcon icon) throws IllegalArgumentException, UnsupportedOperationException {
         throw new UnsupportedOperationException();
@@ -237,12 +249,18 @@ public class ServerListPingEvent extends ServerEvent implements Iterable<Player>
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

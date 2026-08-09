@@ -19,6 +19,7 @@ import org.jetbrains.annotations.ApiStatus;
  *
  * @param <T> registry entry type
  * @param <B> registry entry builder type
+ * @since 1.21
  */
 @ApiStatus.NonExtendable
 public interface RegistryEventProvider<T, B extends RegistryBuilder<T>> {
@@ -31,6 +32,7 @@ public interface RegistryEventProvider<T, B extends RegistryBuilder<T>> {
      * to register a handler for {@link RegistryEntryAddEvent}.
      *
      * @return the registry entry add event type
+     * @since 1.21
      */
     RegistryEntryAddEventType<T, B> entryAdd();
 
@@ -42,6 +44,7 @@ public interface RegistryEventProvider<T, B extends RegistryBuilder<T>> {
      * to register a handler for {@link RegistryComposeEvent}.
      *
      * @return the registry compose event type
+     * @since 1.21.6
      */
     LifecycleEventType.Prioritizable<BootstrapContext, RegistryComposeEvent<T, B>> compose();
 
@@ -49,6 +52,7 @@ public interface RegistryEventProvider<T, B extends RegistryBuilder<T>> {
      * Gets the registry key associated with this event type provider.
      *
      * @return the registry key
+     * @since 1.21
      */
     RegistryKey<T> registryKey();
 }

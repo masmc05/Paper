@@ -13,6 +13,7 @@ import org.jspecify.annotations.NullMarked;
  * Called when an entity receives knockback.
  * @see EntityPushedByEntityAttackEvent
  * @see com.destroystokyo.paper.event.entity.EntityKnockbackByEntityEvent
+ * @since 1.20.6
  */
 @NullMarked
 public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
@@ -34,6 +35,7 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
      * Gets the cause of the knockback.
      *
      * @return the cause of the knockback
+     * @since 1.20.6
      */
     public EntityKnockbackEvent.Cause getCause() {
         return this.cause;
@@ -47,6 +49,7 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
      * to make changes.
      *
      * @return the knockback
+     * @since 1.20.6
      */
     public Vector getKnockback() {
         return this.knockback.clone();
@@ -56,62 +59,91 @@ public class EntityKnockbackEvent extends EntityEvent implements Cancellable {
      * Sets the knockback force that will be applied to the entity.
      *
      * @param knockback the knockback
+     * @since 1.20.6
      */
     public void setKnockback(final Vector knockback) {
         Preconditions.checkArgument(knockback != null, "knockback");
         this.knockback = knockback.clone();
     }
 
+    /**
+     * @since 1.20.6
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.20.6
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.6
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.6
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
     /**
      * An enum to specify the cause of the knockback.
+     *
+     * @since 1.20.6
      */
     public enum Cause {
 
         /**
          * Knockback caused by non-entity damage.
+         *
+         * @since 1.20.6
          */
         DAMAGE,
         /**
          * Knockback caused by an attacking entity.
+         *
+         * @since 1.20.6
          */
         ENTITY_ATTACK,
         /**
          * Knockback caused by an explosion.
+         *
+         * @since 1.20.6
          */
         EXPLOSION,
         /**
          * Knockback caused by the target blocking with a shield.
+         *
+         * @since 1.20.6
          */
         SHIELD_BLOCK,
         /**
          * Knockback caused by a sweeping attack.
+         *
+         * @since 1.20.6
          */
         SWEEP_ATTACK,
         /**
          * A generic push.
+         *
+         * @since 1.20.6
          */
         PUSH,
         /**
          * Knockback with an unknown cause.
+         *
+         * @since 1.20.6
          */
         UNKNOWN
     }

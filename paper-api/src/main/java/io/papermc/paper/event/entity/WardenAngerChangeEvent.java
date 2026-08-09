@@ -14,6 +14,8 @@ import org.jspecify.annotations.NullMarked;
  * Called when a Warden's anger level has changed due to another entity.
  * <p>
  * If the event is cancelled, the warden's anger level will not change.
+ *
+ * @since 1.19
  */
 @NullMarked
 public class WardenAngerChangeEvent extends EntityEvent implements Cancellable {
@@ -38,6 +40,7 @@ public class WardenAngerChangeEvent extends EntityEvent implements Cancellable {
      * Gets the entity which triggered this anger update.
      *
      * @return triggering entity
+     * @since 1.19
      */
     public Entity getTarget() {
         return this.target;
@@ -48,6 +51,7 @@ public class WardenAngerChangeEvent extends EntityEvent implements Cancellable {
      *
      * @return old anger level
      * @see Warden#getAnger(Entity)
+     * @since 1.19
      */
     public @Range(from = 0, to = 150) int getOldAnger() {
         return this.oldAnger;
@@ -58,6 +62,7 @@ public class WardenAngerChangeEvent extends EntityEvent implements Cancellable {
      *
      * @return new anger level
      * @see Warden#getAnger(Entity)
+     * @since 1.19
      */
     public @Range(from = 0, to = 150) int getNewAnger() {
         return this.newAnger;
@@ -71,32 +76,48 @@ public class WardenAngerChangeEvent extends EntityEvent implements Cancellable {
      * @param newAnger the new anger level, max 150
      * @throws IllegalArgumentException if newAnger is greater than 150
      * @see Warden#setAnger(Entity, int)
+     * @since 1.19
      */
     public void setNewAnger(final @Range(from = 0, to = 150) int newAnger) {
         Preconditions.checkArgument(newAnger <= 150, "newAnger must not be greater than 150");
         this.newAnger = newAnger;
     }
 
+    /**
+     * @since 1.19
+     */
     @Override
     public Warden getEntity() {
         return (Warden) super.getEntity();
     }
 
+    /**
+     * @since 1.19
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.19
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.19
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -10,6 +10,8 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Called when a beacon is activated.
  * Activation occurs when the beacon beam becomes visible.
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public class BeaconActivatedEvent extends BlockEvent {
@@ -25,16 +27,23 @@ public class BeaconActivatedEvent extends BlockEvent {
      * Returns the beacon that was activated.
      *
      * @return the beacon that was activated.
+     * @since 1.16.5
      */
     public Beacon getBeacon() {
         return (Beacon) this.block.getState();
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

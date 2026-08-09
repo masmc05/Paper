@@ -8,6 +8,8 @@ import java.util.function.Consumer;
 
 /**
  * Scheduler that may be used by plugins to schedule tasks to execute asynchronously from the server tick process.
+ *
+ * @since 1.20.1
  */
 public interface AsyncScheduler {
 
@@ -16,6 +18,7 @@ public interface AsyncScheduler {
      * @param plugin Plugin which owns the specified task.
      * @param task Specified task.
      * @return The {@link ScheduledTask} that represents the scheduled task.
+     * @since 1.20.1
      */
     @NotNull ScheduledTask runNow(@NotNull Plugin plugin, @NotNull Consumer<ScheduledTask> task);
 
@@ -26,6 +29,7 @@ public interface AsyncScheduler {
      * @param delay The time delay to pass before the task should be executed.
      * @param unit The time unit for the time delay.
      * @return The {@link ScheduledTask} that represents the scheduled task.
+     * @since 1.20.1
      */
     @NotNull ScheduledTask runDelayed(@NotNull Plugin plugin, @NotNull Consumer<ScheduledTask> task, long delay,
                                       @NotNull TimeUnit unit);
@@ -39,6 +43,7 @@ public interface AsyncScheduler {
      * @param period The time between task executions after the first execution of the task.
      * @param unit The time unit for the initial delay and period.
      * @return The {@link ScheduledTask} that represents the scheduled task.
+     * @since 1.20.1
      */
     @NotNull ScheduledTask runAtFixedRate(@NotNull Plugin plugin, @NotNull Consumer<ScheduledTask> task,
                                           long initialDelay, long period, @NotNull TimeUnit unit);
@@ -46,6 +51,7 @@ public interface AsyncScheduler {
     /**
      * Attempts to cancel all tasks scheduled by the specified plugin.
      * @param plugin Specified plugin.
+     * @since 1.20.1
      */
     void cancelTasks(@NotNull Plugin plugin);
 }

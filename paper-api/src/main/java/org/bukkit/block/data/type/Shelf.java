@@ -6,6 +6,9 @@ import org.bukkit.block.data.SideChaining;
 import org.bukkit.block.data.Waterlogged;
 import org.jspecify.annotations.NullMarked;
 
+/**
+ * @since 1.21.10
+ */
 @NullMarked
 public interface Shelf extends Directional, SideChaining, Waterlogged, Powerable {
 }

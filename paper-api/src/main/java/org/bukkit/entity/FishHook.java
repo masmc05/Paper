@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a fishing hook.
+ *
+ * @since 1.7.10
  */
 public interface FishHook extends Projectile {
 
@@ -17,6 +19,7 @@ public interface FishHook extends Projectile {
      * Note that this is before applying lure.
      *
      * @return Minimum number of ticks one has to wait for a fish appearing
+     * @since 1.16.4
      */
     public int getMinWaitTime();
 
@@ -28,6 +31,7 @@ public interface FishHook extends Projectile {
      *
      * @param minWaitTime Minimum number of ticks one has to wait for a fish
      * appearing
+     * @since 1.16.4
      */
     public void setMinWaitTime(int minWaitTime);
 
@@ -38,6 +42,7 @@ public interface FishHook extends Projectile {
      * Note that this is before applying lure.
      *
      * @return Maximum number of ticks one has to wait for a fish appearing
+     * @since 1.16.4
      */
     public int getMaxWaitTime();
 
@@ -49,6 +54,7 @@ public interface FishHook extends Projectile {
      *
      * @param maxWaitTime Maximum number of ticks one has to wait for a fish
      * appearing
+     * @since 1.16.4
      */
     public void setMaxWaitTime(int maxWaitTime);
 
@@ -58,6 +64,7 @@ public interface FishHook extends Projectile {
      *
      * @param min minimum ticks for a fish to appear
      * @param max maximum ticks for a fish to appear
+     * @since 1.19.4
      */
     public void setWaitTime(int min, int max);
 
@@ -71,6 +78,7 @@ public interface FishHook extends Projectile {
      * the fish will appear.
      *
      * @return Minimum number of ticks one has to wait for a fish to bite
+     * @since 1.19.4
      */
     public int getMinLureTime();
 
@@ -85,6 +93,7 @@ public interface FishHook extends Projectile {
      *
      * @param minLureTime Minimum number of ticks one has to wait for a fish
      * to bite
+     * @since 1.19.4
      */
     public void setMinLureTime(int minLureTime);
 
@@ -98,6 +107,7 @@ public interface FishHook extends Projectile {
      * the fish will appear.
      *
      * @return Maximum number of ticks one has to wait for a fish to bite
+     * @since 1.19.4
      */
     public int getMaxLureTime();
 
@@ -112,6 +122,7 @@ public interface FishHook extends Projectile {
      *
      * @param maxLureTime Maximum number of ticks one has to wait for a fish
      * to bite
+     * @since 1.19.4
      */
     public void setMaxLureTime(int maxLureTime);
 
@@ -121,6 +132,7 @@ public interface FishHook extends Projectile {
      *
      * @param min minimum ticks to wait for a bite
      * @param max maximum ticks to wait for a bite
+     * @since 1.19.4
      */
     public void setLureTime(int min, int max);
 
@@ -131,6 +143,7 @@ public interface FishHook extends Projectile {
      * The default is 0 degrees.
      *
      * @return Minimum angle of where a fish will appear
+     * @since 1.19.4
      */
     public float getMinLureAngle();
 
@@ -141,6 +154,7 @@ public interface FishHook extends Projectile {
      * The default is 0 degrees.
      *
      * @param minLureAngle Minimum angle of where a fish may appear
+     * @since 1.19.4
      */
     public void setMinLureAngle(float minLureAngle);
 
@@ -151,6 +165,7 @@ public interface FishHook extends Projectile {
      * The default is 360 degrees.
      *
      * @return Maximum angle of where a fish will appear
+     * @since 1.19.4
      */
     public float getMaxLureAngle();
 
@@ -161,6 +176,7 @@ public interface FishHook extends Projectile {
      * The default is 360 degrees.
      *
      * @param maxLureAngle Maximum angle of where a fish may appear
+     * @since 1.19.4
      */
     public void setMaxLureAngle(float maxLureAngle);
 
@@ -172,6 +188,7 @@ public interface FishHook extends Projectile {
      *
      * @param min minimum angle in degrees
      * @param max maximum angle in degrees
+     * @since 1.19.4
      */
     public void setLureAngle(float min, float max);
 
@@ -185,6 +202,7 @@ public interface FishHook extends Projectile {
      *
      * @return Whether the lure enchantment should be applied to reduce the wait
      * time
+     * @since 1.16.4
      */
     public boolean getApplyLure();
 
@@ -198,6 +216,7 @@ public interface FishHook extends Projectile {
      *
      * @param applyLure Whether the lure enchantment should be applied to reduce
      * the wait time
+     * @since 1.16.4
      */
     public void setApplyLure(boolean applyLure);
 
@@ -234,6 +253,7 @@ public interface FishHook extends Projectile {
      * open water, treasure items may be caught.
      *
      * @return true if in open water, false otherwise
+     * @since 1.16.5
      */
     public boolean isInOpenWater();
 
@@ -241,6 +261,7 @@ public interface FishHook extends Projectile {
      * Get the entity hooked by this fish hook.
      *
      * @return the hooked entity. null if none
+     * @since 1.16.5
      */
     @Nullable
     public Entity getHookedEntity();
@@ -249,6 +270,7 @@ public interface FishHook extends Projectile {
      * Set the entity hooked by this fish hook.
      *
      * @param entity the entity to set, or null to unhook
+     * @since 1.16.5
      */
     public void setHookedEntity(@Nullable Entity entity);
 
@@ -257,6 +279,7 @@ public interface FishHook extends Projectile {
      * hooked, this method has no effect.
      *
      * @return true if pulled, false if no entity is hooked
+     * @since 1.16.5
      */
     public boolean pullHookedEntity();
 
@@ -266,6 +289,7 @@ public interface FishHook extends Projectile {
      * True by default, causes a 50% time increase on average.
      *
      * @return skylight access influences catch rate
+     * @since 1.19.4
      */
     public boolean isSkyInfluenced();
 
@@ -276,6 +300,7 @@ public interface FishHook extends Projectile {
      * True by default, causes a 50% time increase on average.
      *
      * @param skyInfluenced if this hook is influenced by skylight access
+     * @since 1.19.4
      */
     public void setSkyInfluenced(boolean skyInfluenced);
 
@@ -285,6 +310,7 @@ public interface FishHook extends Projectile {
      * True by default, causes a 25% time decrease on average.
      *
      * @return rain influences catch rate
+     * @since 1.19.4
      */
     public boolean isRainInfluenced();
 
@@ -294,6 +320,7 @@ public interface FishHook extends Projectile {
      * True by default, causes a 25% time decrease on average.
      *
      * @param rainInfluenced if this hook is influenced by rain
+     * @since 1.19.4
      */
     public void setRainInfluenced(boolean rainInfluenced);
 
@@ -301,6 +328,7 @@ public interface FishHook extends Projectile {
      * Get the current state of this fish hook.
      *
      * @return the fish hook state
+     * @since 1.16.5
      */
     @NotNull
     public HookState getState();
@@ -308,20 +336,28 @@ public interface FishHook extends Projectile {
     /**
      * Represents a state in which a fishing hook may be.
      * State transitions can be listened for using {@link FishHookStateChangeEvent}
+     *
+     * @since 1.16.5
      */
     public enum HookState {
 
         /**
          * The fishing hook has been cast and is either in the air or resting
          * against a block on the ground.
+         *
+         * @since 1.16.5
          */
         UNHOOKED,
         /**
          * The fishing hook has hooked an entity.
+         *
+         * @since 1.16.5
          */
         HOOKED_ENTITY,
         /**
          * The fishing hook is bobbing in the water, waiting for a bite.
+         *
+         * @since 1.16.5
          */
         BOBBING;
     }
@@ -330,6 +366,7 @@ public interface FishHook extends Projectile {
      * Get the number of ticks the hook needs to wait for a fish to bite.
      *
      * @return Number of ticks
+     * @since 1.18.2
      */
     int getWaitTime();
 
@@ -337,6 +374,7 @@ public interface FishHook extends Projectile {
      * Sets the number of ticks the hook needs to wait for a fish to bite.
      *
      * @param ticks Number of ticks
+     * @since 1.18.2
      */
     void setWaitTime(int ticks);
 
@@ -348,6 +386,7 @@ public interface FishHook extends Projectile {
      *         A value of one indicates that the fish bites the very next time the fish hook is ticked
      *         while a value of zero represents a fish that has already bitten the hook.
      * @see #getWaitTime()
+     * @since 1.20.6
      */
     @org.jetbrains.annotations.Range(from = 0, to = Integer.MAX_VALUE)
     int getTimeUntilBite();
@@ -358,6 +397,7 @@ public interface FishHook extends Projectile {
      * @param ticks number of ticks.
      *              One is the minimum that can be passed to this method and instructs the fish to bite the very next tick.
      * @throws IllegalArgumentException if the passed tick value is less than one.
+     * @since 1.20.6
      */
     void setTimeUntilBite(@org.jetbrains.annotations.Range(from = 1, to = Integer.MAX_VALUE) int ticks) throws IllegalArgumentException;
 
@@ -367,6 +407,8 @@ public interface FishHook extends Projectile {
      * <p>
      * This method takes all properties of the fishing hook into account when resetting said values, such as a lure
      * enchantment.
+     *
+     * @since 1.20.6
      */
     void resetFishingState();
 
@@ -381,6 +423,7 @@ public interface FishHook extends Projectile {
      * @throws IllegalStateException if the fish hook does not have a player casting it.
      * @throws IllegalStateException if the player casting it is not holding a
      *                               {@link org.bukkit.inventory.ItemType#FISHING_ROD} in the specified equipment slot.
+     * @since 1.21.6
      */
     int retrieve(@NotNull EquipmentSlot slot);
 }

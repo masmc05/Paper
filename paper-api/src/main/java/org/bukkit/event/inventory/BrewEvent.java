@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Called when the brewing of the contents inside the Brewing Stand is
  * complete.
+ *
+ * @since 1.1.0
  */
 public class BrewEvent extends BlockEvent implements Cancellable {
 
@@ -38,6 +40,7 @@ public class BrewEvent extends BlockEvent implements Cancellable {
      * @return the contents
      * @apiNote The brewer inventory still holds the items found prior to
      * the finalization of the brewing process, e.g. the plain water bottles.
+     * @since 1.1.0
      */
     @NotNull
     public BrewerInventory getContents() {
@@ -53,6 +56,7 @@ public class BrewEvent extends BlockEvent implements Cancellable {
      * remaining items will be set to air.
      *
      * @return List of {@link ItemStack} resulting for this operation
+     * @since 1.17.1
      */
     @NotNull
     public List<ItemStack> getResults() {
@@ -63,27 +67,40 @@ public class BrewEvent extends BlockEvent implements Cancellable {
      * Gets the remaining fuel level.
      *
      * @return the remaining fuel
+     * @since 1.11
      */
     public int getFuelLevel() {
         return this.fuelLevel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

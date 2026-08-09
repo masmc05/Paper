@@ -17,11 +17,15 @@ import org.jspecify.annotations.Nullable;
 /**
  * Controls the behavior of the item as a tool.
  * @see DataComponentTypes#TOOL
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface Tool {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static Tool.Builder tool() {
         return ItemComponentTypesBridge.bridge().tool();
@@ -42,6 +46,7 @@ public interface Tool {
      *                          <li>{@link TriState#NOT_SET} - The default drop behavior is used.</li>
      *                        </ul>
      * @return A new {@link Rule} instance representing the mining rule.
+     * @since 1.21.3
      */
     static Rule rule(final RegistryKeySet<BlockType> blocks, final @Nullable Float speed, final TriState correctForDrops) {
         return ItemComponentTypesBridge.bridge().rule(blocks, speed, correctForDrops);
@@ -51,6 +56,7 @@ public interface Tool {
      * Mining speed to use if no rules match and don't override mining speed.
      *
      * @return default mining speed
+     * @since 1.21.3
      */
     @Contract(pure = true)
     float defaultMiningSpeed();
@@ -59,6 +65,7 @@ public interface Tool {
      * Amount of durability to remove each time a block is mined with this tool.
      *
      * @return durability
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @NonNegative int damagePerBlock();
@@ -67,6 +74,7 @@ public interface Tool {
      * List of rule entries.
      *
      * @return rules
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<Tool.Rule> rules();
@@ -75,10 +83,14 @@ public interface Tool {
      * Whether this tool can destroy blocks in creative mode.
      *
      * @return whether this tool can destroy blocks in creative mode
+     * @since 1.21.6
      */
     @Contract(pure = true)
     boolean canDestroyBlocksInCreative();
 
+    /**
+     * @since 1.21.3
+     */
     @ApiStatus.NonExtendable
     interface Rule {
 
@@ -86,6 +98,7 @@ public interface Tool {
          * Blocks to match.
          *
          * @return blocks
+         * @since 1.21.3
          */
         RegistryKeySet<BlockType> blocks();
 
@@ -93,6 +106,7 @@ public interface Tool {
          * Overrides the mining speed if present and matched.
          *
          * @return speed override
+         * @since 1.21.3
          */
         @Nullable Float speed();
 
@@ -102,12 +116,15 @@ public interface Tool {
          * {@code true} will cause the block to mine at its most efficient speed, and drop items if the targeted block requires that.
          *
          * @return a tri-state
+         * @since 1.21.3
          */
         TriState correctForDrops();
     }
 
     /**
      * Builder for {@link Tool}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<Tool> {
@@ -118,6 +135,7 @@ public interface Tool {
          * @param damage durability to remove
          * @return the builder for chaining
          * @see #damagePerBlock()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder damagePerBlock(@NonNegative int damage);
@@ -128,6 +146,7 @@ public interface Tool {
          * @param miningSpeed mining speed
          * @return the builder for chaining
          * @see #defaultMiningSpeed()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder defaultMiningSpeed(float miningSpeed);
@@ -138,6 +157,7 @@ public interface Tool {
          * @param rule rule
          * @return the builder for chaining
          * @see #rules()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addRule(Rule rule);
@@ -148,6 +168,7 @@ public interface Tool {
          * @param canDestroyBlocksInCreative whether this tool can destroy blocks in creative mode
          * @return the builder for chaining
          * @see #canDestroyBlocksInCreative()
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder canDestroyBlocksInCreative(boolean canDestroyBlocksInCreative);
@@ -158,6 +179,7 @@ public interface Tool {
          * @param rules rules
          * @return the builder for chaining
          * @see #rules()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addRules(Collection<Rule> rules);

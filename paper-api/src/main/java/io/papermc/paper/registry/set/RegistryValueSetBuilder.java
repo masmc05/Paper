@@ -10,6 +10,7 @@ import org.jetbrains.annotations.ApiStatus;
  *
  * @param <API> the API type
  * @param <ENTRY_BUILDER> the type of the entry builder,
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public interface RegistryValueSetBuilder<API, ENTRY_BUILDER extends RegistryBuilder<API>> {
@@ -19,6 +20,7 @@ public interface RegistryValueSetBuilder<API, ENTRY_BUILDER extends RegistryBuil
      *
      * @param builder the builder for the value to add
      * @return this builder for chaining
+     * @since 1.21.7
      */
     RegistryValueSetBuilder<API, ENTRY_BUILDER> add(Consumer<RegistryBuilderFactory<API, ? extends ENTRY_BUILDER>> builder);
 
@@ -26,6 +28,7 @@ public interface RegistryValueSetBuilder<API, ENTRY_BUILDER extends RegistryBuil
      * Builds the {@link RegistryValueSet}.
      *
      * @return the built registry value set
+     * @since 1.21.7
      */
     RegistryValueSet<API> build();
 }

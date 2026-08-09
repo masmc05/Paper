@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Triggered when a {@link Player} swaps an item with an equipment slot.
+ *
+ * @since 1.21.11
  */
 @NullMarked
 public class PlayerSwapWithEquipmentSlotEvent extends PlayerEvent implements Cancellable {
@@ -35,6 +37,8 @@ public class PlayerSwapWithEquipmentSlotEvent extends PlayerEvent implements Can
 
     /**
      * {@return the item in one of the hand slots}
+     *
+     * @since 1.21.11
      */
     public ItemStack getItemInHand() {
         return this.itemInHand.clone();
@@ -42,6 +46,8 @@ public class PlayerSwapWithEquipmentSlotEvent extends PlayerEvent implements Can
 
     /**
      * {@return the slot to swap into}
+     *
+     * @since 1.21.11
      */
     public EquipmentSlot getSlot() {
         return this.slot;
@@ -49,26 +55,40 @@ public class PlayerSwapWithEquipmentSlotEvent extends PlayerEvent implements Can
 
     /**
      * {@return the item to swap}
+     *
+     * @since 1.21.11
      */
     public ItemStack getItemToSwap() {
         return this.itemToSwap.clone();
     }
 
+    /**
+     * @since 1.21.11
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.21.11
+     */
     @Override
     public void setCancelled(final boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.21.11
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLERS;
     }
 
+    /**
+     * @since 1.21.11
+     */
     public static HandlerList getHandlerList() {
         return HANDLERS;
     }

@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Manager of Scoreboards
+ *
+ * @since 1.5.1
  */
 public interface ScoreboardManager {
 
@@ -15,6 +17,7 @@ public interface ScoreboardManager {
      * command, and is the scoreboard shown by default to players.
      *
      * @return the default server scoreboard
+     * @since 1.5.1
      */
     @NotNull
     Scoreboard getMainScoreboard();
@@ -26,6 +29,7 @@ public interface ScoreboardManager {
      *
      * @return the registered Scoreboard
      * @see WeakReference
+     * @since 1.5.1
      */
     @NotNull
     Scoreboard getNewScoreboard();

@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a mushroom {@link Cow}
+ *
+ * @since 1.0.0
  */
 public interface MushroomCow extends AbstractCow, io.papermc.paper.entity.Shearable { // Paper
 
@@ -15,6 +17,7 @@ public interface MushroomCow extends AbstractCow, io.papermc.paper.entity.Sheara
      * next suspicious stew received from milking this {@link MushroomCow}.
      *
      * @return true if custom potion effects are applied to the stew
+     * @since 1.20.4
      */
     boolean hasEffectsForNextStew();
 
@@ -26,6 +29,7 @@ public interface MushroomCow extends AbstractCow, io.papermc.paper.entity.Sheara
      * this method.
      *
      * @return an immutable list of custom potion effects
+     * @since 1.20.4
      */
     @NotNull
     List<PotionEffect> getEffectsForNextStew();
@@ -54,6 +58,7 @@ public interface MushroomCow extends AbstractCow, io.papermc.paper.entity.Sheara
      * overwritten
      * @return true if the effects to be applied to the suspicious stew changed
      * as a result of this call
+     * @since 1.20.4
      */
     boolean addEffectToNextStew(@NotNull io.papermc.paper.potion.SuspiciousEffectEntry suspiciousEffectEntry, boolean overwrite);
     // Paper end - add overloads to use suspicious effect entry to mushroom cow and suspicious stew meta
@@ -65,6 +70,7 @@ public interface MushroomCow extends AbstractCow, io.papermc.paper.entity.Sheara
      * @param type the potion effect type to remove
      * @return true if the effects to be applied to the suspicious stew changed
      * as a result of this call
+     * @since 1.20.4
      */
     boolean removeEffectFromNextStew(@NotNull PotionEffectType type);
 
@@ -74,12 +80,15 @@ public interface MushroomCow extends AbstractCow, io.papermc.paper.entity.Sheara
      *
      * @param type the potion effect type to check for
      * @return true if the suspicious stew to be generated has this effect
+     * @since 1.20.4
      */
     boolean hasEffectForNextStew(@NotNull PotionEffectType type);
 
     /**
      * Removes all custom potion effects to be applied to the next suspicious
      * stew received from milking this {@link MushroomCow}.
+     *
+     * @since 1.20.4
      */
     void clearEffectsForNextStew();
 
@@ -87,6 +96,7 @@ public interface MushroomCow extends AbstractCow, io.papermc.paper.entity.Sheara
      * Get the variant of this cow.
      *
      * @return cow variant
+     * @since 1.14
      */
     @NotNull
     public Variant getVariant();
@@ -95,19 +105,26 @@ public interface MushroomCow extends AbstractCow, io.papermc.paper.entity.Sheara
      * Set the variant of this cow.
      *
      * @param variant cow variant
+     * @since 1.14
      */
     public void setVariant(@NotNull Variant variant);
 
     /**
      * Represents the variant of a cow - ie its color.
+     *
+     * @since 1.14
      */
     public enum Variant {
         /**
          * Red mushroom cow.
+         *
+         * @since 1.14
          */
         RED,
         /**
          * Brown mushroom cow.
+         *
+         * @since 1.14
          */
         BROWN;
     }
@@ -172,6 +189,7 @@ public interface MushroomCow extends AbstractCow, io.papermc.paper.entity.Sheara
      * items for this mushroom cow.
      *
      * @return immutable effect entry collection
+     * @since 1.20.2
      */
     java.util.@NotNull @org.jetbrains.annotations.Unmodifiable List<io.papermc.paper.potion.SuspiciousEffectEntry> getStewEffects();
 
@@ -179,6 +197,7 @@ public interface MushroomCow extends AbstractCow, io.papermc.paper.entity.Sheara
      * Sets effects applied to stew items for this mushroom cow.
      *
      * @param effects effect entry list
+     * @since 1.20.2
      */
     void setStewEffects(java.util.@NotNull List<io.papermc.paper.potion.SuspiciousEffectEntry> effects);
     // Paper end

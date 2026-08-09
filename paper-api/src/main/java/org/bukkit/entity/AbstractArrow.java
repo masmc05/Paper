@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Unmodifiable;
 
 /**
  * Represents an arrow.
+ *
+ * @since 1.14
  */
 public interface AbstractArrow extends Projectile {
 
@@ -42,6 +44,7 @@ public interface AbstractArrow extends Projectile {
      * enchanted bows.
      *
      * @return base damage amount
+     * @since 1.14
      */
     public double getDamage();
 
@@ -49,6 +52,7 @@ public interface AbstractArrow extends Projectile {
      * Sets the base amount of damage this arrow will do.
      *
      * @param damage new damage amount
+     * @since 1.14
      */
     public void setDamage(double damage);
 
@@ -56,6 +60,7 @@ public interface AbstractArrow extends Projectile {
      * Gets the number of times this arrow can pierce through an entity.
      *
      * @return pierce level
+     * @since 1.14.3
      */
     public int getPierceLevel();
 
@@ -65,6 +70,7 @@ public interface AbstractArrow extends Projectile {
      * Must be between 0 and 127 times.
      *
      * @param pierceLevel new pierce level
+     * @since 1.14.3
      */
     public void setPierceLevel(int pierceLevel);
 
@@ -77,6 +83,7 @@ public interface AbstractArrow extends Projectile {
      * firing.
      *
      * @return true if it is critical
+     * @since 1.14
      */
     public boolean isCritical();
 
@@ -84,6 +91,7 @@ public interface AbstractArrow extends Projectile {
      * Sets whether or not this arrow should be critical.
      *
      * @param critical whether or not it should be critical
+     * @since 1.14
      */
     public void setCritical(boolean critical);
 
@@ -93,6 +101,7 @@ public interface AbstractArrow extends Projectile {
      * Arrows in a block are motionless and may be picked up by players.
      *
      * @return true if in a block
+     * @since 1.14
      */
     public boolean isInBlock();
 
@@ -101,6 +110,7 @@ public interface AbstractArrow extends Projectile {
      *
      * @return the attached block or null if not attached
      * @deprecated can be attached to multiple blocks use {@link AbstractArrow#getAttachedBlocks()} instead
+     * @since 1.14
      */
     @Nullable
     @Deprecated(since = "1.21.4")
@@ -112,6 +122,7 @@ public interface AbstractArrow extends Projectile {
      * the arrow from falling.
      *
      * @return the attached block(s) or an empty list if not attached
+     * @since 1.21.4
      */
     @NotNull
     @Unmodifiable
@@ -121,6 +132,7 @@ public interface AbstractArrow extends Projectile {
      * Gets the current pickup status of this arrow.
      *
      * @return the pickup status of this arrow.
+     * @since 1.14
      */
     @NotNull
     public PickupStatus getPickupStatus();
@@ -129,6 +141,7 @@ public interface AbstractArrow extends Projectile {
      * Sets the current pickup status of this arrow.
      *
      * @param status new pickup status of this arrow.
+     * @since 1.14
      */
     public void setPickupStatus(@NotNull PickupStatus status);
 
@@ -136,6 +149,7 @@ public interface AbstractArrow extends Projectile {
      * Gets if this arrow was shot from a crossbow.
      *
      * @return if shot from a crossbow
+     * @since 1.15.2
      */
     public boolean isShotFromCrossbow();
 
@@ -172,6 +186,7 @@ public interface AbstractArrow extends Projectile {
      * Gets the ItemStack which fired this arrow.
      *
      * @return The firing ItemStack
+     * @since 1.21
      */
     @Nullable // Paper
     public ItemStack getWeapon();
@@ -180,23 +195,32 @@ public interface AbstractArrow extends Projectile {
      * Sets the ItemStack which fired this arrow.
      *
      * @param item The firing ItemStack
+     * @since 1.21
      */
     public void setWeapon(@NotNull ItemStack item);
 
     /**
      * Represents the pickup status of this arrow.
+     *
+     * @since 1.14
      */
     public enum PickupStatus {
         /**
          * The arrow cannot be picked up.
+         *
+         * @since 1.14
          */
         DISALLOWED,
         /**
          * The arrow can be picked up.
+         *
+         * @since 1.14
          */
         ALLOWED,
         /**
          * The arrow can only be picked up by players in creative mode.
+         *
+         * @since 1.14
          */
         CREATIVE_ONLY
     }
@@ -210,6 +234,7 @@ public interface AbstractArrow extends Projectile {
      *
      * @return The pickup rule
      * @deprecated Use {@link Arrow#getPickupStatus()} as an upstream compatible replacement for this function
+     * @since 1.14
      */
     @Deprecated
     default PickupRule getPickupRule() {
@@ -221,16 +246,29 @@ public interface AbstractArrow extends Projectile {
      *
      * @param rule The pickup rule
      * @deprecated Use {@link Arrow#setPickupStatus(PickupStatus)} with {@link PickupStatus} as an upstream compatible replacement for this function
+     * @since 1.14
      */
     @Deprecated
     default void setPickupRule(PickupRule rule) {
         this.setPickupStatus(PickupStatus.valueOf(rule.name()));
     }
 
+    /**
+     * @since 1.14
+     */
     @Deprecated
     enum PickupRule {
+        /**
+         * @since 1.14
+         */
         DISALLOWED,
+        /**
+         * @since 1.14
+         */
         ALLOWED,
+        /**
+         * @since 1.14
+         */
         CREATIVE_ONLY;
     }
     // Paper end
@@ -241,6 +279,7 @@ public interface AbstractArrow extends Projectile {
      * for both visuals on the arrow and the stack that could be picked up.
      *
      * @return The ItemStack, as if a player picked up the arrow
+     * @since 1.15.2
      */
     @NotNull ItemStack getItemStack();
 
@@ -249,6 +288,7 @@ public interface AbstractArrow extends Projectile {
      * visuals on the arrow and the stack that could be picked up.
      *
      * @param stack the arrow stack
+     * @since 1.20.6
      */
     void setItemStack(@NotNull ItemStack stack);
 
@@ -257,6 +297,7 @@ public interface AbstractArrow extends Projectile {
      * This is used to determine when the arrow should be automatically despawned.
      *
      * @param ticks lifetime ticks
+     * @since 1.19.2
      */
     void setLifetimeTicks(int ticks);
 
@@ -264,6 +305,7 @@ public interface AbstractArrow extends Projectile {
      * Gets how many ticks this arrow has been in the world for.
      *
      * @return ticks this arrow has been in the world
+     * @since 1.19.2
      */
     int getLifetimeTicks();
 
@@ -271,6 +313,7 @@ public interface AbstractArrow extends Projectile {
      * Gets the sound that is played when this arrow hits an entity.
      *
      * @return sound that plays
+     * @since 1.19.2
      */
     @NotNull
     org.bukkit.Sound getHitSound();
@@ -279,6 +322,7 @@ public interface AbstractArrow extends Projectile {
      * Sets the sound that is played when this arrow hits an entity.
      *
      * @param sound sound that is played
+     * @since 1.19.2
      */
     void setHitSound(@NotNull org.bukkit.Sound sound);
     // Paper end - more projectile API
@@ -289,6 +333,7 @@ public interface AbstractArrow extends Projectile {
      *
      * @param source the {@link org.bukkit.projectiles.ProjectileSource} that shot this projectile
      * @param resetPickupStatus whether the {@link org.bukkit.entity.AbstractArrow.PickupStatus} should be reset
+     * @since 1.21
      */
     void setShooter(@Nullable org.bukkit.projectiles.ProjectileSource source, boolean resetPickupStatus);
     // Paper end - Fix PickupStatus getting reset

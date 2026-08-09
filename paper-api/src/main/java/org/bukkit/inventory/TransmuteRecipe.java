@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
  * item type of the result stack will be used.
  * <br>
  * Used for dyeing shulker boxes in Vanilla.
+ *
+ * @since 1.21.3
  */
 public class TransmuteRecipe extends CraftingRecipe implements ComplexRecipe {
 
@@ -23,6 +25,7 @@ public class TransmuteRecipe extends CraftingRecipe implements ComplexRecipe {
      * @param result the transmuted result material
      * @param input the input ingredient
      * @param material the additional ingredient
+     * @since 1.21.3
      */
     public TransmuteRecipe(@NotNull NamespacedKey key, @NotNull Material result, @NotNull RecipeChoice input, @NotNull RecipeChoice material) {
         super(key, checkResult(new ItemStack(result)));
@@ -34,6 +37,7 @@ public class TransmuteRecipe extends CraftingRecipe implements ComplexRecipe {
      * Gets the input material, which will be transmuted.
      *
      * @return the input from transmutation
+     * @since 1.21.3
      */
     @NotNull
     public RecipeChoice getInput() {
@@ -44,6 +48,7 @@ public class TransmuteRecipe extends CraftingRecipe implements ComplexRecipe {
      * Gets the additional material required to cause the transmutation.
      *
      * @return the ingredient material
+     * @since 1.21.3
      */
     @NotNull
     public RecipeChoice getMaterial() {

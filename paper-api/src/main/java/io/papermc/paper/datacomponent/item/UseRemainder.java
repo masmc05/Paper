@@ -8,11 +8,15 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Holds the contents of item transformation information when an item is used.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#USE_REMAINDER
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface UseRemainder {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static UseRemainder useRemainder(final ItemStack itemStack) {
         return ItemComponentTypesBridge.bridge().useRemainder(itemStack);
@@ -22,6 +26,7 @@ public interface UseRemainder {
      * The item that the item that is consumed is transformed into.
      *
      * @return item
+     * @since 1.21.3
      */
     @Contract(value = "-> new", pure = true)
     ItemStack transformInto();

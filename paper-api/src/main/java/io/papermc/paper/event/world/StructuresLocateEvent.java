@@ -27,6 +27,8 @@ import org.jspecify.annotations.Nullable;
  *     <li>{@link World#locateNearestStructure(Location, StructureType, int, boolean)} is invoked.</li>
  *     <li>{@link World#locateNearestStructure(Location, Structure, int, boolean)} is invoked.</li>
  * </ul>
+ *
+ * @since 1.18.2
  */
 @NullMarked
 public class StructuresLocateEvent extends WorldEvent implements Cancellable {
@@ -54,6 +56,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * Gets the {@link Location} from which the search is to be conducted.
      *
      * @return {@link Location} where search begins
+     * @since 1.18.2
      */
     public Location getOrigin() {
         return this.origin.clone();
@@ -67,6 +70,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      *
      * @return The result location and structure, if it has been set. {@code null} if it has not.
      * @see World#locateNearestStructure(Location, StructureType, int, boolean)
+     * @since 1.18.2
      */
     public @Nullable Result getResult() {
         return this.result;
@@ -77,6 +81,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * skipped, and the result object passed here to be used as the result.
      *
      * @param result the {@link Location} and {@link Structure} of the search.
+     * @since 1.18.2
      */
     public void setResult(final @Nullable Result result) {
         this.result = result;
@@ -86,6 +91,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * Gets an unmodifiable list of Structures that are valid targets for the search.
      *
      * @return an unmodifiable list of Structures
+     * @since 1.19.3
      */
     public @UnmodifiableView List<Structure> getStructures() {
         return Collections.unmodifiableList(this.structures);
@@ -95,6 +101,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * Sets the list of Structures that are valid targets for the search.
      *
      * @param structures a list of Structures targets
+     * @since 1.19.3
      */
     public void setStructures(final List<Structure> structures) {
         this.structures = structures;
@@ -106,6 +113,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * This radius may not always be obeyed during the structure search!
      *
      * @return the search radius (in chunks)
+     * @since 1.18.2
      */
     public int getRadius() {
         return this.radius;
@@ -117,6 +125,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * This radius may not always be obeyed during the structure search!
      *
      * @param radius the search radius (in chunks)
+     * @since 1.18.2
      */
     public void setRadius(final int radius) {
         this.radius = radius;
@@ -128,6 +137,7 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * As with the search radius, this value is not always obeyed.
      *
      * @return Whether to search for only unexplored structures.
+     * @since 1.18.2
      */
     public boolean shouldFindUnexplored() {
         return this.findUnexplored;
@@ -139,32 +149,47 @@ public class StructuresLocateEvent extends WorldEvent implements Cancellable {
      * As with the search radius, this value is not always obeyed.
      *
      * @param findUnexplored Whether to search for only unexplored structures.
+     * @since 1.18.2
      */
     public void setFindUnexplored(final boolean findUnexplored) {
         this.findUnexplored = findUnexplored;
     }
 
+    /**
+     * @since 1.18.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.18.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.18.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.18.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
     /**
      * Result for {@link StructuresLocateEvent}.
+     *
+     * @since 1.18.2
      */
     public record Result(Position pos, Structure structure) {
 

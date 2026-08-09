@@ -5,6 +5,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents an object which may contain attributes.
+ *
+ * @since 1.9.4
  */
 public interface Attributable {
 
@@ -14,6 +16,7 @@ public interface Attributable {
      *
      * @param attribute the attribute to get
      * @return the attribute instance or null if not applicable to this object
+     * @since 1.9.4
      */
     @Nullable
     AttributeInstance getAttribute(@NotNull Attribute attribute);
@@ -24,6 +27,7 @@ public interface Attributable {
      * Allows it to add attributes not registered by default to that entity.
      *
      * @param attribute the generic attribute to register
+     * @since 1.16.5
      */
     void registerAttribute(@NotNull Attribute attribute);
     // Paper end

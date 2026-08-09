@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Called when the fluid level of a block changes due to changes in adjacent
  * blocks.
+ *
+ * @since 1.13.2
  */
 public class FluidLevelChangeEvent extends BlockEvent implements Cancellable {
 
@@ -29,6 +31,7 @@ public class FluidLevelChangeEvent extends BlockEvent implements Cancellable {
      * Gets the new data of the changed block.
      *
      * @return new data
+     * @since 1.13.2
      */
     @NotNull
     public BlockData getNewData() {
@@ -40,6 +43,7 @@ public class FluidLevelChangeEvent extends BlockEvent implements Cancellable {
      * the old one.
      *
      * @param newData the new data
+     * @since 1.13.2
      */
     public void setNewData(@NotNull BlockData newData) {
         Preconditions.checkArgument(newData != null, "newData null");
@@ -48,22 +52,34 @@ public class FluidLevelChangeEvent extends BlockEvent implements Cancellable {
         this.newData = newData.clone();
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

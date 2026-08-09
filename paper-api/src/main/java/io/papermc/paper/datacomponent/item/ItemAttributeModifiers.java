@@ -14,11 +14,15 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Holds attribute modifiers applied to any item.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#ATTRIBUTE_MODIFIERS
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface ItemAttributeModifiers {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static ItemAttributeModifiers.Builder itemAttributes() {
         return ItemComponentTypesBridge.bridge().modifiers();
@@ -28,12 +32,15 @@ public interface ItemAttributeModifiers {
      * Lists the attribute modifiers that are present on this item.
      *
      * @return modifiers
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<Entry> modifiers();
 
     /**
      * Holds an attribute entry.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Entry {
@@ -42,6 +49,7 @@ public interface ItemAttributeModifiers {
          * Gets the target attribute for the paired modifier.
          *
          * @return the attribute
+         * @since 1.21.3
          */
         @Contract(pure = true)
         Attribute attribute();
@@ -50,6 +58,7 @@ public interface ItemAttributeModifiers {
          * The modifier for the paired attribute.
          *
          * @return the modifier
+         * @since 1.21.3
          */
         @Contract(pure = true)
         AttributeModifier modifier();
@@ -58,6 +67,7 @@ public interface ItemAttributeModifiers {
          * Gets the slot group for the paired attribute.
          *
          * @return the slot group
+         * @since 1.21.3
          */
         default EquipmentSlotGroup getGroup() {
             return this.modifier().getSlotGroup();
@@ -67,6 +77,7 @@ public interface ItemAttributeModifiers {
          * The display behavior for the attribute modifier.
          *
          * @return the display behavior
+         * @since 1.21.6
          */
         @Contract(pure = true)
         AttributeModifierDisplay display();
@@ -74,6 +85,8 @@ public interface ItemAttributeModifiers {
 
     /**
      * Builder for {@link ItemAttributeModifiers}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<ItemAttributeModifiers> {
@@ -85,6 +98,7 @@ public interface ItemAttributeModifiers {
          * @param modifier  the modifier
          * @return the builder for chaining
          * @see #modifiers()
+         * @since 1.21.3
          */
         @Contract(value = "_, _ -> this", mutates = "this")
         default Builder addModifier(Attribute attribute, AttributeModifier modifier) {
@@ -99,6 +113,7 @@ public interface ItemAttributeModifiers {
          * @param equipmentSlotGroup the slot group this modifier applies to (overrides any slot group in the modifier)
          * @return the builder for chaining
          * @see #modifiers()
+         * @since 1.21.3
          */
         @Contract(value = "_, _, _ -> this", mutates = "this")
         default Builder addModifier(Attribute attribute, AttributeModifier modifier, EquipmentSlotGroup equipmentSlotGroup) {
@@ -113,6 +128,7 @@ public interface ItemAttributeModifiers {
          * @param display            the modifier display behavior
          * @return the builder for chaining
          * @see #modifiers()
+         * @since 1.21.6
          */
         @Contract(value = "_, _, _ -> this", mutates = "this")
         default Builder addModifier(Attribute attribute, AttributeModifier modifier, AttributeModifierDisplay display) {
@@ -128,6 +144,7 @@ public interface ItemAttributeModifiers {
          * @param display            the modifier display behavior
          * @return the builder for chaining
          * @see #modifiers()
+         * @since 1.21.6
          */
         @Contract(value = "_, _, _, _ -> this", mutates = "this")
         Builder addModifier(Attribute attribute, AttributeModifier modifier, EquipmentSlotGroup equipmentSlotGroup, AttributeModifierDisplay display);

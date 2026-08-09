@@ -9,6 +9,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Implementing this interface allows for easily creating "Bukkit-style" {@code String[] args} commands.
  * The implementation handles converting the command to a representation compatible with Brigadier on registration, usually in the form of {@literal /commandlabel <greedy_string>}.
+ *
+ * @since 1.20.6
  */
 @FunctionalInterface
 public interface BasicCommand {
@@ -18,6 +20,7 @@ public interface BasicCommand {
      *
      * @param commandSourceStack the commandSourceStack of the command
      * @param args the arguments of the command ignoring repeated spaces
+     * @since 1.20.6
      */
     @ApiStatus.OverrideOnly
     void execute(CommandSourceStack commandSourceStack, String[] args);
@@ -28,6 +31,7 @@ public interface BasicCommand {
      * @param commandSourceStack the commandSourceStack of the command
      * @param args the arguments of the command including repeated spaces
      * @return a collection of suggestions
+     * @since 1.20.6
      */
     @ApiStatus.OverrideOnly
     default Collection<String> suggest(final CommandSourceStack commandSourceStack, final String[] args) {
@@ -40,6 +44,7 @@ public interface BasicCommand {
      * @param sender the command sender trying to execute the command
      * @return whether the command sender fulfills the root command requirement
      * @see #permission()
+     * @since 1.21
      */
     @ApiStatus.OverrideOnly
     default boolean canUse(final CommandSender sender) {
@@ -51,6 +56,7 @@ public interface BasicCommand {
      * Returns the permission for the root command used in {@link #canUse(CommandSender)} by default.
      *
      * @return the permission for the root command used in {@link #canUse(CommandSender)}
+     * @since 1.21
      */
     @ApiStatus.OverrideOnly
     default @Nullable String permission() {

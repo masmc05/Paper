@@ -7,6 +7,8 @@ import org.bukkit.loot.Lootable;
 
 /**
  * Represents a Minecart with a Hopper inside it
+ *
+ * @since 1.5.1
  */
 public interface HopperMinecart extends Minecart, InventoryHolder, LootableEntityInventory {
 
@@ -15,6 +17,7 @@ public interface HopperMinecart extends Minecart, InventoryHolder, LootableEntit
      * items into its inventory.
      *
      * @return true if the Minecart will pick up items
+     * @since 1.9.4
      */
     boolean isEnabled();
 
@@ -22,6 +25,7 @@ public interface HopperMinecart extends Minecart, InventoryHolder, LootableEntit
      * Sets whether this Minecart will pick up items.
      *
      * @param enabled new enabled state
+     * @since 1.9.4
      */
     void setEnabled(boolean enabled);
     // Paper start

@@ -7,16 +7,24 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * A reputation score for a player on a villager.
+ *
+ * @since 1.15.2
  */
 @NullMarked
 public final class Reputation {
 
     private final Map<ReputationType, Integer> reputation;
 
+    /**
+     * @since 1.15.2
+     */
     public Reputation() {
         this(new EnumMap<>(ReputationType.class));
     }
 
+    /**
+     * @since 1.15.2
+     */
     public Reputation(final Map<ReputationType, Integer> reputation) {
         Preconditions.checkArgument(reputation != null, "reputation cannot be null");
         this.reputation = reputation;
@@ -27,6 +35,7 @@ public final class Reputation {
      *
      * @param type The {@link ReputationType type} of reputation to get.
      * @return The value of the {@link ReputationType type}.
+     * @since 1.15.2
      */
     public int getReputation(final ReputationType type) {
         Preconditions.checkArgument(type != null, "type cannot be null");
@@ -38,6 +47,7 @@ public final class Reputation {
      *
      * @param type The {@link ReputationType type} of reputation to set.
      * @param value The value of the {@link ReputationType type}.
+     * @since 1.15.2
      */
     public void setReputation(final ReputationType type, final int value) {
         Preconditions.checkArgument(type != null, "type cannot be null");
@@ -49,6 +59,7 @@ public final class Reputation {
      *
      * @param type The {@link ReputationType type} to check
      * @return If there is a value for this {@link ReputationType type} set.
+     * @since 1.19.2
      */
     public boolean hasReputationSet(final ReputationType type) {
         return this.reputation.containsKey(type);

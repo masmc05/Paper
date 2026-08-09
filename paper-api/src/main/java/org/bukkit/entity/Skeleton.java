@@ -6,6 +6,8 @@ package org.bukkit.entity;
  * This interface only represents the normal skeleton type on the server.
  * Other skeleton-like entities, such as the {@link WitherSkeleton} or the
  * {@link Stray} are not related to this type.
+ *
+ * @since 1.0.0
  */
 public interface Skeleton extends AbstractSkeleton {
 
@@ -14,6 +16,7 @@ public interface Skeleton extends AbstractSkeleton {
      * converting to a {@link Stray} due to it being frozen by powdered snow.
      *
      * @return whether or not the skeleton is converting to a stray.
+     * @since 1.17
      */
     boolean isConverting();
 
@@ -26,6 +29,7 @@ public interface Skeleton extends AbstractSkeleton {
      * @return the conversion time left represented in ticks.
      *
      * @throws IllegalStateException if {@link #isConverting()} is false.
+     * @since 1.17
      */
     int getConversionTime();
 
@@ -38,6 +42,7 @@ public interface Skeleton extends AbstractSkeleton {
      * entity.
      *
      * @param time the new conversion time left before the conversion in ticks.
+     * @since 1.17
      */
     void setConversionTime(int time);
 
@@ -46,6 +51,7 @@ public interface Skeleton extends AbstractSkeleton {
      * has been inside powdered snow.
      *
      * @return time in ticks
+     * @since 1.18.1
      */
     int inPowderedSnowTime();
 
@@ -55,28 +61,39 @@ public interface Skeleton extends AbstractSkeleton {
      *
      * @deprecated classes are different types. This interface only remains in
      *     the Skeleton interface to preserve backwards compatibility.
+     * @since 1.4.5
      */
     @Deprecated(since = "1.11")
     public enum SkeletonType {
 
         /**
          * Standard skeleton type.
+         *
+         * @since 1.4.5
          */
         NORMAL,
         /**
          * Wither skeleton. Generally found in Nether fortresses.
+         *
+         * @since 1.4.5
          */
         WITHER,
         /**
          * Stray skeleton. Generally found in ice biomes. Shoots tipped arrows.
+         *
+         * @since 1.10.2
          */
         STRAY,
         /**
          * Bogged skeleton.
+         *
+         * @since 1.20.6
          */
         BOGGED,
         /**
          * Parched skeleton.
+         *
+         * @since 1.21.11
          */
         PARCHED;
     }

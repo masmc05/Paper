@@ -5,6 +5,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a compass that can track a specific location.
+ *
+ * @since 1.16.1
  */
 public interface CompassMeta extends ItemMeta {
 
@@ -12,6 +14,7 @@ public interface CompassMeta extends ItemMeta {
      * Checks if this compass has been paired to a lodestone.
      *
      * @return paired status
+     * @since 1.16.1
      */
     boolean hasLodestone();
 
@@ -21,6 +24,7 @@ public interface CompassMeta extends ItemMeta {
      * Check {@link #hasLodestone()} first!
      *
      * @return lodestone location
+     * @since 1.16.1
      */
     @Nullable
     Location getLodestone();
@@ -30,6 +34,7 @@ public interface CompassMeta extends ItemMeta {
      *
      * @param lodestone new location or null to clear the targeted location
      * @see #clearLodestone() to reset the compass to a normal compass
+     * @since 1.16.1
      */
     void setLodestone(@Nullable Location lodestone);
 
@@ -40,6 +45,7 @@ public interface CompassMeta extends ItemMeta {
      * location.
      *
      * @return lodestone tracked
+     * @since 1.16.1
      */
     boolean isLodestoneTracked();
 
@@ -51,6 +57,7 @@ public interface CompassMeta extends ItemMeta {
      *
      * @param tracked new tracked status
      * @see #clearLodestone() to reset the compass to a normal compass
+     * @since 1.16.1
      */
     void setLodestoneTracked(boolean tracked);
 
@@ -59,12 +66,15 @@ public interface CompassMeta extends ItemMeta {
      * Checks if this compass is considered a lodestone compass.
      * @see #hasLodestone() to check if a position is being tracked
      * @see #isLodestoneTracked() to check if it verifies the position is a lodestone
+     * @since 1.21.1
      */
     boolean isLodestoneCompass();
 
     /**
      * Reset this compass to a normal compass, removing any tracked
      * location.
+     *
+     * @since 1.21.1
      */
     void clearLodestone();
     // Paper end - Add more lodestone compass methods

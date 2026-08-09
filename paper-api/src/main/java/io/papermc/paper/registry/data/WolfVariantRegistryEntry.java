@@ -8,6 +8,8 @@ import org.jetbrains.annotations.Contract;
 
 /**
  * A data-centric version-specific registry entry for the {@link Wolf.Variant} type.
+ *
+ * @since 1.21.6
  */
 @ApiStatus.NonExtendable
 public interface WolfVariantRegistryEntry {
@@ -16,6 +18,7 @@ public interface WolfVariantRegistryEntry {
      * Provides the client texture asset of the wolf variant for when it is angry, which is the location of the texture to use.
      *
      * @return the client texture asset
+     * @since 1.21.6
      */
     ClientTextureAsset angryClientTextureAsset();
 
@@ -23,6 +26,7 @@ public interface WolfVariantRegistryEntry {
      * Provides the client texture asset of the wolf variant for when it is wild, which is the location of the texture to use.
      *
      * @return the client texture asset
+     * @since 1.21.6
      */
     ClientTextureAsset wildClientTextureAsset();
 
@@ -30,6 +34,7 @@ public interface WolfVariantRegistryEntry {
      * Provides the client texture asset of the wolf variant for when it is tame, which is the location of the texture to use.
      *
      * @return the client texture asset
+     * @since 1.21.6
      */
     ClientTextureAsset tameClientTextureAsset();
 
@@ -37,6 +42,7 @@ public interface WolfVariantRegistryEntry {
      * Provides the client texture asset of the wolf variant for when it is an angry baby.
      *
      * @return the baby angry client texture asset
+     * @since 26.2
      */
     ClientTextureAsset babyAngryClientTextureAsset();
 
@@ -44,6 +50,7 @@ public interface WolfVariantRegistryEntry {
      * Provides the client texture asset of the wolf variant for when it is a wild baby.
      *
      * @return the baby wild client texture asset
+     * @since 26.2
      */
     ClientTextureAsset babyWildClientTextureAsset();
 
@@ -51,6 +58,7 @@ public interface WolfVariantRegistryEntry {
      * Provides the client texture asset of the wolf variant for when it is a tame baby.
      *
      * @return the baby tame client texture asset
+     * @since 26.2
      */
     ClientTextureAsset babyTameClientTextureAsset();
 
@@ -66,6 +74,8 @@ public interface WolfVariantRegistryEntry {
      *     <li>{@link #babyWildClientTextureAsset(ClientTextureAsset)}</li>
      *     <li>{@link #babyTameClientTextureAsset(ClientTextureAsset)}</li>
      * </ul>
+     *
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     interface Builder extends WolfVariantRegistryEntry, RegistryBuilder<Wolf.Variant> {
@@ -76,6 +86,7 @@ public interface WolfVariantRegistryEntry {
          * @param angryClientTextureAsset the client texture asset
          * @return this builder instance
          * @see WolfVariantRegistryEntry#angryClientTextureAsset()
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder angryClientTextureAsset(ClientTextureAsset angryClientTextureAsset);
@@ -86,6 +97,7 @@ public interface WolfVariantRegistryEntry {
          * @param wildClientTextureAsset the client texture asset
          * @return this builder instance
          * @see WolfVariantRegistryEntry#wildClientTextureAsset()
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder wildClientTextureAsset(ClientTextureAsset wildClientTextureAsset);
@@ -96,6 +108,7 @@ public interface WolfVariantRegistryEntry {
          * @param tameClientTextureAsset the client texture asset
          * @return this builder instance
          * @see WolfVariantRegistryEntry#tameClientTextureAsset()
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder tameClientTextureAsset(ClientTextureAsset tameClientTextureAsset);
@@ -106,6 +119,7 @@ public interface WolfVariantRegistryEntry {
          * @param babyAngryClientTextureAsset the baby angry client texture asset
          * @return this builder instance
          * @see WolfVariantRegistryEntry#babyAngryClientTextureAsset()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder babyAngryClientTextureAsset(ClientTextureAsset babyAngryClientTextureAsset);
@@ -116,6 +130,7 @@ public interface WolfVariantRegistryEntry {
          * @param babyWildClientTextureAsset the baby wild client texture asset
          * @return this builder instance
          * @see WolfVariantRegistryEntry#babyWildClientTextureAsset()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder babyWildClientTextureAsset(ClientTextureAsset babyWildClientTextureAsset);
@@ -126,6 +141,7 @@ public interface WolfVariantRegistryEntry {
          * @param babyTameClientTextureAsset the baby tame client texture asset
          * @return this builder instance
          * @see WolfVariantRegistryEntry#babyTameClientTextureAsset()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder babyTameClientTextureAsset(ClientTextureAsset babyTameClientTextureAsset);

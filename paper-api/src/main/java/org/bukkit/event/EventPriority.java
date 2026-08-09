@@ -8,36 +8,50 @@ package org.bukkit.event;
  * <p>
  * Listeners are called in following order:
  * {@link #LOWEST} -> {@link #LOW} -> {@link #NORMAL} -> {@link #HIGH} -> {@link #HIGHEST} -> {@link #MONITOR}
+ *
+ * @since 1.1.0
  */
 public enum EventPriority {
 
     /**
      * Event call is of very low importance and should be run first, to allow
      * other plugins to further customise the outcome
+     *
+     * @since 1.1.0
      */
     LOWEST(0),
     /**
      * Event call is of low importance
+     *
+     * @since 1.1.0
      */
     LOW(1),
     /**
      * Event call is neither important nor unimportant, and may be run
      * normally
+     *
+     * @since 1.1.0
      */
     NORMAL(2),
     /**
      * Event call is of high importance
+     *
+     * @since 1.1.0
      */
     HIGH(3),
     /**
      * Event call is critical and must have the final say in what happens
      * to the event
+     *
+     * @since 1.1.0
      */
     HIGHEST(4),
     /**
      * Event is listened to purely for monitoring the outcome of an event.
      * <p>
      * No modifications to the event should be made under this priority
+     *
+     * @since 1.1.0
      */
     MONITOR(5);
 
@@ -47,6 +61,9 @@ public enum EventPriority {
         this.slot = slot;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public int getSlot() {
         return slot;
     }

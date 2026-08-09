@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Raised when a vehicle receives damage.
+ *
+ * @since 1.0.0
  */
 public class VehicleDamageEvent extends VehicleEvent implements Cancellable {
 
@@ -34,6 +36,7 @@ public class VehicleDamageEvent extends VehicleEvent implements Cancellable {
      * Gets the DamageSource that caused the damage.
      *
      * @return the DamageSource that caused the damage
+     * @since 26.2
      */
     @NotNull
     public DamageSource getDamageSource() {
@@ -44,6 +47,7 @@ public class VehicleDamageEvent extends VehicleEvent implements Cancellable {
      * Gets the Entity that is attacking the vehicle
      *
      * @return the Entity that is attacking the vehicle
+     * @since 1.0.0
      */
     @Nullable
     public Entity getAttacker() {
@@ -54,6 +58,7 @@ public class VehicleDamageEvent extends VehicleEvent implements Cancellable {
      * Gets the damage done to the vehicle
      *
      * @return the damage done to the vehicle
+     * @since 1.0.0
      */
     public double getDamage() {
         return this.damage;
@@ -63,27 +68,40 @@ public class VehicleDamageEvent extends VehicleEvent implements Cancellable {
      * Sets the damage done to the vehicle
      *
      * @param damage The damage
+     * @since 1.6.1
      */
     public void setDamage(double damage) {
         this.damage = damage;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

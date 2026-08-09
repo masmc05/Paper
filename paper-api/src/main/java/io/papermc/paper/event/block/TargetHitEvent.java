@@ -16,6 +16,8 @@ import org.jspecify.annotations.NullMarked;
  * Cancelling this event will stop the Target from emitting a redstone signal,
  * and in the case that the shooter is a player, will stop them from receiving
  * advancement criteria.
+ *
+ * @since 1.16.4
  */
 @NullMarked
 public class TargetHitEvent extends ProjectileHitEvent {
@@ -34,6 +36,7 @@ public class TargetHitEvent extends ProjectileHitEvent {
      * Gets the strength of the redstone signal to be emitted by the Target block
      *
      * @return the strength of the redstone signal to be emitted
+     * @since 1.16.4
      */
     public @Range(from = 0, to = 15) int getSignalStrength() {
         return this.signalStrength;
@@ -43,17 +46,24 @@ public class TargetHitEvent extends ProjectileHitEvent {
      * Sets the strength of the redstone signal to be emitted by the Target block
      *
      * @param signalStrength the strength of the redstone signal to be emitted
+     * @since 1.16.4
      */
     public void setSignalStrength(final @Range(from = 0, to = 15) int signalStrength) {
         Preconditions.checkArgument(signalStrength >= 0 && signalStrength <= 15, "Signal strength out of range (%s), must be in range [0,15]", signalStrength);
         this.signalStrength = signalStrength;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

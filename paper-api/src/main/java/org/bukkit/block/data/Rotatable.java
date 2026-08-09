@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * 'rotation' represents the current rotation of this block.
+ *
+ * @since 1.13
  */
 public interface Rotatable extends BlockData {
 
@@ -12,6 +14,7 @@ public interface Rotatable extends BlockData {
      * Gets the value of the 'rotation' property.
      *
      * @return the 'rotation' value
+     * @since 1.13
      */
     @NotNull
     BlockFace getRotation();
@@ -20,6 +23,7 @@ public interface Rotatable extends BlockData {
      * Sets the value of the 'rotation' property.
      *
      * @param rotation the new 'rotation' value
+     * @since 1.13
      */
     void setRotation(@NotNull BlockFace rotation);
 }

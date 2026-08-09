@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a sheep regrows its wool
+ *
+ * @since 1.1.0
  */
 public class SheepRegrowWoolEvent extends EntityEvent implements Cancellable {
 
@@ -20,28 +22,43 @@ public class SheepRegrowWoolEvent extends EntityEvent implements Cancellable {
         super(sheep);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public Sheep getEntity() {
         return (Sheep) this.entity;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

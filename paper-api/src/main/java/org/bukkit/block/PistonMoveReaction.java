@@ -7,19 +7,27 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents how a block or entity will react when interacting with a piston
  * when it is extending or retracting.
+ *
+ * @since 1.0.0
  */
 public enum PistonMoveReaction {
 
     /**
      * Indicates that the block can be pushed or pulled.
+     *
+     * @since 1.0.0
      */
     MOVE(0),
     /**
      * Indicates the block is fragile and will break if pushed on.
+     *
+     * @since 1.0.0
      */
     BREAK(1),
     /**
      * Indicates that the block will resist being pushed or pulled.
+     *
+     * @since 1.0.0
      */
     BLOCK(2),
     /**
@@ -27,10 +35,14 @@ public enum PistonMoveReaction {
      * pistons.
      * <br>
      * Blocks should use {@link PistonMoveReaction#BLOCK}.
+     *
+     * @since 1.12
      */
     IGNORE(3),
     /**
      * Indicates that the block can only be pushed by pistons, not pulled.
+     *
+     * @since 1.12
      */
     PUSH_ONLY(4);
 

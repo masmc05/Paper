@@ -6,6 +6,8 @@ import org.jetbrains.annotations.ApiStatus;
 
 /**
  * A callback for a dialog action.
+ *
+ * @since 1.21.7
  */
 @FunctionalInterface
 public interface DialogActionCallback {
@@ -15,6 +17,7 @@ public interface DialogActionCallback {
      *
      * @param response the response to the action
      * @param audience the audience to send the response to
+     * @since 1.21.7
      */
     @ApiStatus.OverrideOnly
     void accept(DialogResponseView response, Audience audience);

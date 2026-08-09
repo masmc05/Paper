@@ -8,18 +8,26 @@ import static com.google.common.base.Preconditions.*;
 
 /**
  * Exception thrown when a server event listener throws an exception
+ *
+ * @since 1.9.4
  */
 public class ServerEventException extends ServerPluginException {
 
     private final Listener listener;
     private final Event event;
 
+    /**
+     * @since 1.9.4
+     */
     public ServerEventException(String message, Throwable cause, Plugin responsiblePlugin, Listener listener, Event event) {
         super(message, cause, responsiblePlugin);
         this.listener = checkNotNull(listener, "listener");
         this.event = checkNotNull(event, "event");
     }
 
+    /**
+     * @since 1.9.4
+     */
     public ServerEventException(Throwable cause, Plugin responsiblePlugin, Listener listener, Event event) {
         super(cause, responsiblePlugin);
         this.listener = checkNotNull(listener, "listener");
@@ -36,6 +44,7 @@ public class ServerEventException extends ServerPluginException {
      * Gets the listener which threw the exception
      *
      * @return event listener
+     * @since 1.9.4
      */
     public Listener getListener() {
         return listener;
@@ -45,6 +54,7 @@ public class ServerEventException extends ServerPluginException {
      * Gets the event which caused the exception
      *
      * @return event
+     * @since 1.9.4
      */
     public Event getEvent() {
         return event;

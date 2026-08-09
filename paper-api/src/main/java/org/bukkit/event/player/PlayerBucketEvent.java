@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a player interacts with a Bucket
+ *
+ * @since 1.0.0
  */
 public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellable {
 
@@ -58,6 +60,7 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
      * Gets the block involved in this event.
      *
      * @return The Block which block is involved in this event
+     * @since 1.14.4
      */
     @NotNull
     public final Block getBlock() {
@@ -68,6 +71,7 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
      * Return the block clicked
      *
      * @return the clicked block
+     * @since 1.0.0
      */
     @NotNull
     public Block getBlockClicked() {
@@ -78,6 +82,7 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
      * Get the face on the clicked block
      *
      * @return the clicked face
+     * @since 1.0.0
      */
     @NotNull
     public BlockFace getBlockFace() {
@@ -88,6 +93,7 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
      * Returns the bucket used in this event
      *
      * @return the used bucket
+     * @since 1.0.0
      */
     @NotNull
     public Material getBucket() {
@@ -98,6 +104,7 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
      * Get the hand that was used in this event.
      *
      * @return the hand
+     * @since 1.13
      */
     @NotNull
     public EquipmentSlot getHand() {
@@ -108,6 +115,7 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
      * Get the resulting item in hand after the bucket event
      *
      * @return ItemStack hold in hand after the event.
+     * @since 1.0.0
      */
     @Nullable
     public ItemStack getItemStack() {
@@ -118,16 +126,23 @@ public abstract class PlayerBucketEvent extends PlayerEvent implements Cancellab
      * Set the item in hand after the event
      *
      * @param itemStack the new held ItemStack after the bucket event.
+     * @since 1.0.0
      */
     public void setItemStack(@Nullable ItemStack itemStack) {
         this.itemStack = itemStack;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

@@ -14,6 +14,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when a world border changes its bounds, either over time, or instantly.
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Cancellable {
@@ -39,6 +41,7 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
      * Gets if this change is an instant change or over-time change.
      *
      * @return the change type
+     * @since 1.16.5
      */
     public Type getType() {
         return this.type;
@@ -48,6 +51,7 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
      * Gets the old size or the world border.
      *
      * @return the old size
+     * @since 1.16.5
      */
     public double getOldSize() {
         return this.oldSize;
@@ -57,6 +61,7 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
      * Gets the new size of the world border.
      *
      * @return the new size
+     * @since 1.16.5
      */
     public double getNewSize() {
         return this.newSize;
@@ -66,6 +71,7 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
      * Sets the new size of the world border.
      *
      * @param newSize the new size
+     * @since 1.16.5
      */
     public void setNewSize(final double newSize) {
         this.newSize = Math.clamp(newSize, 1.0, this.worldBorder.getMaxSize());
@@ -75,6 +81,7 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
      * Gets the time in ticks for the change. Will be 0 if instant.
      *
      * @return the time in ticks for the change
+     * @since 1.21.11
      */
     public @Range(from = 0, to = Integer.MAX_VALUE) long getDurationTicks() {
         return this.duration;
@@ -85,6 +92,7 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
      * {@link Type#STARTED_MOVE}.
      *
      * @param duration the time in ticks for the change
+     * @since 1.21.11
      */
     public void setDurationTicks(final @Range(from = 0, to = Integer.MAX_VALUE) long duration) {
         Preconditions.checkArgument(duration >= 0 && duration <= Integer.MAX_VALUE, "duration must be between 0-%s", Integer.MAX_VALUE);
@@ -117,27 +125,48 @@ public class WorldBorderBoundsChangeEvent extends WorldBorderEvent implements Ca
         this.setDurationTicks(Tick.tick().fromDuration(Duration.ofMillis(duration)));
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public enum Type {
+        /**
+         * @since 1.16.5
+         */
         STARTED_MOVE,
+        /**
+         * @since 1.16.5
+         */
         INSTANT_MOVE
     }
 }

@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
  * This event is called when a player in creative mode puts down or picks up
  * an item in their inventory / hotbar and when they drop items from their
  * Inventory while in creative mode.
+ *
+ * @since 1.6.1
  */
 public class InventoryCreativeEvent extends InventoryClickEvent {
 
@@ -21,12 +23,18 @@ public class InventoryCreativeEvent extends InventoryClickEvent {
         this.item = newItem;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @Override
     @NotNull
     public ItemStack getCursor() {
         return this.item;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @Override
     public void setCursor(@NotNull ItemStack item) {
         this.item = item;

@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Raised when a vehicle collides with an entity.
+ *
+ * @since 1.0.0
  */
 public class VehicleEntityCollisionEvent extends VehicleCollisionEvent implements Cancellable {
 
@@ -24,6 +26,9 @@ public class VehicleEntityCollisionEvent extends VehicleCollisionEvent implement
         this.entity = entity;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public Entity getEntity() {
         return this.entity;
@@ -49,11 +54,17 @@ public class VehicleEntityCollisionEvent extends VehicleCollisionEvent implement
         this.cancelledCollision = cancel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

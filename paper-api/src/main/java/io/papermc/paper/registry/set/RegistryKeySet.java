@@ -23,10 +23,14 @@ import org.jetbrains.annotations.Unmodifiable;
  * </ul>
  *
  * @param <T> registry value type
+ * @since 1.21
  */
 @ApiStatus.NonExtendable
 public non-sealed interface RegistryKeySet<T extends Keyed> extends Iterable<TypedKey<T>>, RegistrySet<T> { // TODO remove Keyed
 
+    /**
+     * @since 1.21
+     */
     @Override
     default int size() {
         return this.values().size();
@@ -36,6 +40,7 @@ public non-sealed interface RegistryKeySet<T extends Keyed> extends Iterable<Typ
      * Get the keys for the values in this set.
      *
      * @return the keys
+     * @since 1.21
      */
     @Unmodifiable Collection<TypedKey<T>> values();
 
@@ -47,6 +52,7 @@ public non-sealed interface RegistryKeySet<T extends Keyed> extends Iterable<Typ
      * @return the resolved values
      * @see RegistryKeySet#values()
      * @see Registry#getTagValues(TagKey)
+     * @since 1.21
      */
     @Unmodifiable Collection<T> resolve(final Registry<T> registry);
 
@@ -55,9 +61,14 @@ public non-sealed interface RegistryKeySet<T extends Keyed> extends Iterable<Typ
      *
      * @param valueKey the key to check
      * @return true if the value is in this set
+     * @since 1.21
      */
     boolean contains(TypedKey<T> valueKey);
 
+    /**
+     * {@inheritDoc}
+     * @since 1.21
+     */
     @Override
     default Iterator<TypedKey<T>> iterator() {
         return this.values().iterator();

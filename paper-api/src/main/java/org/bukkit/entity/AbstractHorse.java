@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a Horse-like creature.
+ *
+ * @since 1.11
  */
 public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
 
@@ -40,6 +42,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * domestication level, the chance of the horse becoming tame increases.
      *
      * @return domestication level
+     * @since 1.11
      */
     public int getDomestication();
 
@@ -54,6 +57,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * {@link #getMaxDomestication()}
      *
      * @param level domestication level
+     * @since 1.11
      */
     public void setDomestication(int level);
 
@@ -64,6 +68,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * for the horse to be tamed.
      *
      * @return the max domestication level
+     * @since 1.11
      */
     public int getMaxDomestication();
 
@@ -77,6 +82,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * Maximum domestication must be greater than zero.
      *
      * @param level the max domestication level
+     * @since 1.11
      */
     public void setMaxDomestication(int level);
 
@@ -87,6 +93,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * increases how high a jump will go.
      *
      * @return the horse's jump strength
+     * @since 1.11
      */
     public double getJumpStrength();
 
@@ -99,6 +106,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * above 2.
      *
      * @param strength jump strength for this horse
+     * @since 1.11
      */
     public void setJumpStrength(double strength);
 
@@ -120,6 +128,9 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
     @Deprecated(forRemoval = true)
     void setEatingHaystack(boolean eatingHaystack);
 
+    /**
+     * @since 1.12.2
+     */
     @NotNull
     @Override
     public AbstractHorseInventory getInventory();
@@ -129,6 +140,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * Gets if a horse is in their eating grass animation.
      *
      * @return eating grass animation is active
+     * @since 1.17.1
      */
     public boolean isEatingGrass();
 
@@ -138,6 +150,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * <p>When true, the horse will lower its neck.</p>
      *
      * @param eating eating grass animation is active
+     * @since 1.17.1
      */
     public void setEatingGrass(boolean eating);
 
@@ -145,6 +158,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * Gets if a horse is in their rearing animation.
      *
      * @return rearing animation is active
+     * @since 1.17.1
      */
     public boolean isRearing();
 
@@ -154,6 +168,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * <p>When true, the horse will stand on its hind legs.</p>
      *
      * @param rearing rearing animation is active
+     * @since 1.17.1
      */
     public void setRearing(boolean rearing);
 
@@ -161,6 +176,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * Gets if a horse is in their eating animation.
      *
      * @return eating animation is active
+     * @since 1.17.1
      */
     public boolean isEating();
 
@@ -170,6 +186,7 @@ public interface AbstractHorse extends Vehicle, InventoryHolder, Tameable {
      * <p>When true, the horse will bob its head.</p>
      *
      * @param eating eating animation is active
+     * @since 1.17.1
      */
     public void setEating(boolean eating);
     // Paper end - Horse API

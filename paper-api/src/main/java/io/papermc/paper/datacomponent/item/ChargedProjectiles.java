@@ -11,16 +11,23 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Holds all projectiles that have been loaded into a Crossbow.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#CHARGED_PROJECTILES
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface ChargedProjectiles {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static ChargedProjectiles chargedProjectiles(final List<ItemStack> projectiles) {
         return chargedProjectiles().addAll(projectiles).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static ChargedProjectiles.Builder chargedProjectiles() {
         return ItemComponentTypesBridge.bridge().chargedProjectiles();
@@ -30,12 +37,15 @@ public interface ChargedProjectiles {
      * Lists the projectiles that are currently loaded into this component.
      *
      * @return the loaded projectiles
+     * @since 1.21.3
      */
     @Contract(value = "-> new", pure = true)
     @Unmodifiable List<ItemStack> projectiles();
 
     /**
      * Builder for {@link ChargedProjectiles}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<ChargedProjectiles> {
@@ -46,6 +56,7 @@ public interface ChargedProjectiles {
          * @param item projectile
          * @return the builder for chaining
          * @see #projectiles()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder add(ItemStack item);
@@ -56,6 +67,7 @@ public interface ChargedProjectiles {
          * @param items projectiles
          * @return the builder for chaining
          * @see #projectiles()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addAll(List<ItemStack> items);

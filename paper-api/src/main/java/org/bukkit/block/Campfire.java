@@ -6,12 +6,15 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a captured state of a campfire.
+ *
+ * @since 1.14
  */
 public interface Campfire extends TileState {
 
     /**
      * @return The size of the inventory
      * @see Inventory#getSize()
+     * @since 1.14
      */
     int getSize();
 
@@ -19,6 +22,7 @@ public interface Campfire extends TileState {
      * @param index The index of the Slot's ItemStack to return
      * @return The ItemStack in the slot
      * @see Inventory#getItem(int)
+     * @since 1.14
      */
     @Nullable
     ItemStack getItem(int index);
@@ -27,6 +31,7 @@ public interface Campfire extends TileState {
      * @param index The index where to put the ItemStack
      * @param item The ItemStack to set
      * @see Inventory#setItem(int, org.bukkit.inventory.ItemStack)
+     * @since 1.14
      */
     void setItem(int index, @Nullable ItemStack item);
 
@@ -37,6 +42,7 @@ public interface Campfire extends TileState {
      *
      * @param index item slot index
      * @return Cook time
+     * @since 1.14
      */
     int getCookTime(int index);
 
@@ -47,6 +53,7 @@ public interface Campfire extends TileState {
      *
      * @param index item slot index
      * @param cookTime Cook time
+     * @since 1.14
      */
     void setCookTime(int index, int cookTime);
 
@@ -57,6 +64,7 @@ public interface Campfire extends TileState {
      *
      * @param index item slot index
      * @return Cook time total
+     * @since 1.14
      */
     int getCookTimeTotal(int index);
 
@@ -67,16 +75,21 @@ public interface Campfire extends TileState {
      *
      * @param index item slot index
      * @param cookTimeTotal Cook time total
+     * @since 1.14
      */
     void setCookTimeTotal(int index, int cookTimeTotal);
 
     /**
      * Disable cooking in all slots.
+     *
+     * @since 1.18.1
      */
     void stopCooking();
 
     /**
      * Re-enable cooking in all slots.
+     *
+     * @since 1.18.1
      */
     void startCooking();
 
@@ -85,6 +98,7 @@ public interface Campfire extends TileState {
      *
      * @param index item slot index
      * @return whether the slot had cooking enabled before this call
+     * @since 1.18.1
      */
     boolean stopCooking(int index);
 
@@ -93,6 +107,7 @@ public interface Campfire extends TileState {
      *
      * @param index item slot index
      * @return whether the slot couldn't cook before this call
+     * @since 1.18.1
      */
     boolean startCooking(int index);
 
@@ -101,6 +116,7 @@ public interface Campfire extends TileState {
      *
      * @param index item slot index
      * @return {@code true} if the specified slot index cannot cook
+     * @since 1.18.1
      */
     boolean isCookingDisabled(int index);
 }

@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a ThrownExpBottle hits and releases experience.
+ *
+ * @since 1.3.1
  */
 public class ExpBottleEvent extends ProjectileHitEvent {
 
@@ -31,6 +33,9 @@ public class ExpBottleEvent extends ProjectileHitEvent {
         this.exp = exp;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public ThrownExpBottle getEntity() {
@@ -41,6 +46,7 @@ public class ExpBottleEvent extends ProjectileHitEvent {
      * This method indicates if the particle effect should be shown.
      *
      * @return {@code true} if the effect will be shown, {@code false} otherwise
+     * @since 1.3.1
      */
     public boolean getShowEffect() {
         return this.showEffect;
@@ -53,6 +59,7 @@ public class ExpBottleEvent extends ProjectileHitEvent {
      *
      * @param showEffect {@code true} indicates the effect will be shown, false
      *     indicates no effect will be shown
+     * @since 1.3.1
      */
     public void setShowEffect(final boolean showEffect) {
         this.showEffect = showEffect;
@@ -64,6 +71,7 @@ public class ExpBottleEvent extends ProjectileHitEvent {
      * The number indicates a total amount to be divided into orbs.
      *
      * @return the total amount of experience to be created
+     * @since 1.3.1
      */
     public int getExperience() {
         return this.exp;
@@ -75,17 +83,24 @@ public class ExpBottleEvent extends ProjectileHitEvent {
      * The number indicates a total amount to be divided into orbs.
      *
      * @param exp the total amount of experience to be created
+     * @since 1.3.1
      */
     public void setExperience(final int exp) {
         this.exp = exp;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

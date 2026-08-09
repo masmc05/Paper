@@ -5,6 +5,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a Vex.
+ *
+ * @since 1.11
  */
 public interface Vex extends Monster {
 
@@ -14,6 +16,7 @@ public interface Vex extends Monster {
      * When this entity is charging it will have a glowing red texture.
      *
      * @return charging state
+     * @since 1.13.2
      */
     boolean isCharging();
 
@@ -23,6 +26,7 @@ public interface Vex extends Monster {
      * When this entity is charging it will have a glowing red texture.
      *
      * @param charging new state
+     * @since 1.13.2
      */
     void setCharging(boolean charging);
 
@@ -36,6 +40,7 @@ public interface Vex extends Monster {
      * summoner.
      *
      * @return {@link Location} of the bound or null if not set
+     * @since 1.18.2
      */
     @Nullable
     Location getBound();
@@ -50,6 +55,7 @@ public interface Vex extends Monster {
      * summoner.
      *
      * @param location {@link Location} of the bound or null to clear
+     * @since 1.18.2
      */
     void setBound(@Nullable Location location);
 
@@ -58,6 +64,7 @@ public interface Vex extends Monster {
      *
      * @return life in ticks
      * @deprecated use {@link #getLimitedLifetimeTicks()}
+     * @since 1.18.2
      */
     @Deprecated
     default int getLifeTicks() {
@@ -70,6 +77,7 @@ public interface Vex extends Monster {
      * @param lifeTicks life in ticks, or negative for unlimited lifepan
      * @deprecated This API duplicates existing API which uses the more
      * preferable name due to mirroring internals better
+     * @since 1.18.2
      */
     @Deprecated
     void setLifeTicks(int lifeTicks);
@@ -79,6 +87,7 @@ public interface Vex extends Monster {
      *
      * @return true if the entity has limited life
      * @deprecated use {@link #hasLimitedLifetime()}
+     * @since 1.18.2
      */
     @Deprecated
     default boolean hasLimitedLife() {
@@ -113,6 +122,7 @@ public interface Vex extends Monster {
      * often its summoner.
      *
      * @return new owner
+     * @since 1.12.2
      */
     @Nullable LivingEntity getOwner();
 
@@ -120,6 +130,7 @@ public interface Vex extends Monster {
      * Sets the owner of this vex.
      *
      * @param owner new owner
+     * @since 26.2
      */
     void setOwner(@Nullable LivingEntity owner);
 
@@ -128,6 +139,7 @@ public interface Vex extends Monster {
      * once {@link Vex#getLimitedLifetimeTicks()} is less than or equal to 0.
      *
      * @return will take damage
+     * @since 1.18.2
      */
     boolean hasLimitedLifetime();
 
@@ -136,6 +148,7 @@ public interface Vex extends Monster {
      * once {@link Vex#getLimitedLifetimeTicks()} is less than or equal to 0.
      *
      * @param hasLimitedLifetime should take damage
+     * @since 1.18.2
      */
     void setLimitedLifetime(boolean hasLimitedLifetime);
 
@@ -144,6 +157,7 @@ public interface Vex extends Monster {
      * to take damage.
      *
      * @return ticks until the vex will start to take damage
+     * @since 1.18.2
      */
     int getLimitedLifetimeTicks();
 
@@ -152,6 +166,7 @@ public interface Vex extends Monster {
      * This number is ticked down only if {@link Vex#hasLimitedLifetime()} is true.
      *
      * @param ticks ticks remaining
+     * @since 1.18.2
      */
     void setLimitedLifetimeTicks(int ticks);
     // Paper end

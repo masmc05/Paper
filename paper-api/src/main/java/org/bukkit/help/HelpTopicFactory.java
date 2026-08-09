@@ -30,6 +30,7 @@ import org.jetbrains.annotations.Nullable;
  * factory is found, a generic help topic is created for the command.
  *
  * @param <TCommand> The base class for your custom commands.
+ * @since 1.1.0
  */
 public interface HelpTopicFactory<TCommand extends Command> {
     /**
@@ -39,6 +40,7 @@ public interface HelpTopicFactory<TCommand extends Command> {
      * @param command The custom command to build a help topic for.
      * @return A new custom help topic or {@code null} to intentionally NOT
      *     create a topic.
+     * @since 1.1.0
      */
     @Nullable
     public HelpTopic createTopic(@NotNull TCommand command);

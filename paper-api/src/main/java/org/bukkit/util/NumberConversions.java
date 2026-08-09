@@ -5,28 +5,45 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Utils for casting number types to other number types
+ *
+ * @since 1.1.0
  */
 public final class NumberConversions {
     private NumberConversions() {}
 
+    /**
+     * @since 1.1.0
+     */
     public static int floor(double num) {
         final int floor = (int) num;
         return floor == num ? floor : floor - (int) (Double.doubleToRawLongBits(num) >>> 63);
     }
 
+    /**
+     * @since 1.3.1
+     */
     public static int ceil(final double num) {
         final int floor = (int) num;
         return floor == num ? floor : floor + (int) (~Double.doubleToRawLongBits(num) >>> 63);
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static int round(double num) {
         return floor(num + 0.5);
     }
 
+    /**
+     * @since 1.6.4
+     */
     public static double square(double num) {
         return num * num;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static int toInt(@Nullable Object object) {
         if (object instanceof Number) {
             return ((Number) object).intValue();
@@ -40,6 +57,9 @@ public final class NumberConversions {
         return 0;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static float toFloat(@Nullable Object object) {
         if (object instanceof Number) {
             return ((Number) object).floatValue();
@@ -53,6 +73,9 @@ public final class NumberConversions {
         return 0;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static double toDouble(@Nullable Object object) {
         if (object instanceof Number) {
             return ((Number) object).doubleValue();
@@ -66,6 +89,9 @@ public final class NumberConversions {
         return 0;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static long toLong(@Nullable Object object) {
         if (object instanceof Number) {
             return ((Number) object).longValue();
@@ -79,6 +105,9 @@ public final class NumberConversions {
         return 0;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static short toShort(@Nullable Object object) {
         if (object instanceof Number) {
             return ((Number) object).shortValue();
@@ -92,6 +121,9 @@ public final class NumberConversions {
         return 0;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static byte toByte(@Nullable Object object) {
         if (object instanceof Number) {
             return ((Number) object).byteValue();
@@ -105,20 +137,32 @@ public final class NumberConversions {
         return 0;
     }
 
+    /**
+     * @since 1.8
+     */
     public static boolean isFinite(double d) {
         return Math.abs(d) <= Double.MAX_VALUE;
     }
 
+    /**
+     * @since 1.8
+     */
     public static boolean isFinite(float f) {
         return Math.abs(f) <= Float.MAX_VALUE;
     }
 
+    /**
+     * @since 1.8
+     */
     public static void checkFinite(double d, @NotNull String message) {
         if (!isFinite(d)) {
             throw new IllegalArgumentException(message);
         }
     }
 
+    /**
+     * @since 1.8
+     */
     public static void checkFinite(float d, @NotNull String message) {
         if (!isFinite(d)) {
             throw new IllegalArgumentException(message);

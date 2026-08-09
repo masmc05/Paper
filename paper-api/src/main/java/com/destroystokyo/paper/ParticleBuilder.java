@@ -18,6 +18,8 @@ import org.jspecify.annotations.Nullable;
  * Helps prepare a particle to be sent to players.
  * <p>
  * Usage of the builder is preferred over the super long {@link World#spawnParticle(Particle, Location, int, double, double, double, double, Object)} API
+ *
+ * @since 1.12.2
  */
 @NullMarked
 public class ParticleBuilder implements Cloneable {
@@ -32,6 +34,9 @@ public class ParticleBuilder implements Cloneable {
     private @Nullable Object data;
     private boolean force = true;
 
+    /**
+     * @since 1.12.2
+     */
     public ParticleBuilder(final Particle particle) {
         this.particle = particle;
     }
@@ -41,6 +46,7 @@ public class ParticleBuilder implements Cloneable {
      * Asynchronously
      *
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder spawn() {
         if (this.location == null) {
@@ -56,6 +62,7 @@ public class ParticleBuilder implements Cloneable {
 
     /**
      * @return The particle going to be sent
+     * @since 1.12.2
      */
     public Particle particle() {
         return this.particle;
@@ -66,6 +73,7 @@ public class ParticleBuilder implements Cloneable {
      *
      * @param particle The particle
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder particle(final Particle particle) {
         this.particle = particle;
@@ -74,6 +82,7 @@ public class ParticleBuilder implements Cloneable {
 
     /**
      * @return List of players who will receive the particle, or null for all in world
+     * @since 1.12.2
      */
     public @Nullable List<Player> receivers() {
         return this.receivers;
@@ -85,6 +94,7 @@ public class ParticleBuilder implements Cloneable {
      * builder.receivers(16); if (builder.hasReceivers()) { sendParticleAsync(builder); }
      *
      * @return If this particle is going to be sent to someone
+     * @since 1.12.2
      */
     public boolean hasReceivers() {
         return (this.receivers == null && this.location != null && !this.location.getWorld().getPlayers().isEmpty()) || (
@@ -98,6 +108,7 @@ public class ParticleBuilder implements Cloneable {
      * Just be a logical person and use receivers by radius or collection.
      *
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder allPlayers() {
         this.receivers = null;
@@ -108,6 +119,7 @@ public class ParticleBuilder implements Cloneable {
      * @param receivers List of players to receive this particle, or null for all players in the
      *                  world
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder receivers(final @Nullable List<Player> receivers) {
         // Had to keep this as we first made API List<> and not Collection, but removing this may break plugins compiled on older jars
@@ -120,6 +132,7 @@ public class ParticleBuilder implements Cloneable {
      * @param receivers List of players to receive this particle, or null for all players in the
      *                  world
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder receivers(final @Nullable Collection<Player> receivers) {
         this.receivers = receivers != null ? Lists.newArrayList(receivers) : null;
@@ -130,6 +143,7 @@ public class ParticleBuilder implements Cloneable {
      * @param receivers List of players to receive this particle, or null for all players in the
      *                  world
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder receivers(final Player @Nullable... receivers) {
         this.receivers = receivers != null ? Lists.newArrayList(receivers) : null;
@@ -143,6 +157,7 @@ public class ParticleBuilder implements Cloneable {
      *
      * @param radius amount to add on all axis
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder receivers(final int radius) {
         return this.receivers(radius, radius);
@@ -156,6 +171,7 @@ public class ParticleBuilder implements Cloneable {
      * @param radius     amount to add on each axis
      * @param byDistance true to use a spherical radius, false to use a cuboid
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder receivers(final int radius, final boolean byDistance) {
         if (!byDistance) {
@@ -188,6 +204,7 @@ public class ParticleBuilder implements Cloneable {
      * @param xzRadius amount to add on the x/z axis
      * @param yRadius  amount to add on the y axis
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder receivers(final int xzRadius, final int yRadius) {
         return this.receivers(xzRadius, yRadius, xzRadius);
@@ -203,6 +220,7 @@ public class ParticleBuilder implements Cloneable {
      * @param byDistance true to use a cylinder shape, false to use cuboid
      * @return a reference to this object.
      * @throws IllegalStateException if a location hasn't been specified yet
+     * @since 1.12.2
      */
     public ParticleBuilder receivers(final int xzRadius, final int yRadius, final boolean byDistance) {
         if (!byDistance) {
@@ -238,6 +256,7 @@ public class ParticleBuilder implements Cloneable {
      * @param yRadius amount to add on the y axis
      * @param zRadius amount to add on the z axis
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder receivers(final int xRadius, final int yRadius, final int zRadius) {
         if (this.location == null) {
@@ -248,6 +267,7 @@ public class ParticleBuilder implements Cloneable {
 
     /**
      * @return The player considered the source of this particle (for Visibility concerns), or null
+     * @since 1.12.2
      */
     public @Nullable Player source() {
         return this.source;
@@ -258,6 +278,7 @@ public class ParticleBuilder implements Cloneable {
      *
      * @param source The player who is considered the source
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder source(final @Nullable Player source) {
         this.source = source;
@@ -266,6 +287,7 @@ public class ParticleBuilder implements Cloneable {
 
     /**
      * @return Location of where the particle will spawn
+     * @since 1.12.2
      */
     public @Nullable Location location() {
         return this.location;
@@ -276,6 +298,7 @@ public class ParticleBuilder implements Cloneable {
      *
      * @param location The location of the particle
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder location(final Location location) {
         this.location = location.clone();
@@ -290,6 +313,7 @@ public class ParticleBuilder implements Cloneable {
      * @param y     Y location
      * @param z     Z location
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder location(final World world, final double x, final double y, final double z) {
         this.location = new Location(world, x, y, z);
@@ -298,6 +322,7 @@ public class ParticleBuilder implements Cloneable {
 
     /**
      * @return Number of particles to spawn
+     * @since 1.12.2
      */
     public int count() {
         return this.count;
@@ -308,6 +333,7 @@ public class ParticleBuilder implements Cloneable {
      *
      * @param count Number of particles
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder count(final int count) {
         this.count = count;
@@ -318,6 +344,7 @@ public class ParticleBuilder implements Cloneable {
      * Particle offset X. Varies by particle on how this is used
      *
      * @return Particle offset X.
+     * @since 1.12.2
      */
     public double offsetX() {
         return this.offsetX;
@@ -327,6 +354,7 @@ public class ParticleBuilder implements Cloneable {
      * Particle offset Y. Varies by particle on how this is used
      *
      * @return Particle offset Y.
+     * @since 1.12.2
      */
     public double offsetY() {
         return this.offsetY;
@@ -336,6 +364,7 @@ public class ParticleBuilder implements Cloneable {
      * Particle offset Z. Varies by particle on how this is used
      *
      * @return Particle offset Z.
+     * @since 1.12.2
      */
     public double offsetZ() {
         return this.offsetZ;
@@ -348,6 +377,7 @@ public class ParticleBuilder implements Cloneable {
      * @param offsetY Particle offset Y
      * @param offsetZ Particle offset Z
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder offset(final double offsetX, final double offsetY, final double offsetZ) {
         this.offsetX = offsetX;
@@ -360,6 +390,7 @@ public class ParticleBuilder implements Cloneable {
      * Gets the Particle extra data. Varies by particle on how this is used
      *
      * @return the extra particle data
+     * @since 1.12.2
      */
     public double extra() {
         return this.extra;
@@ -370,6 +401,7 @@ public class ParticleBuilder implements Cloneable {
      *
      * @param extra the extra particle data
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder extra(final double extra) {
         this.extra = extra;
@@ -381,6 +413,7 @@ public class ParticleBuilder implements Cloneable {
      *
      * @param <T> The Particle data type
      * @return the ParticleData for this particle
+     * @since 1.12.2
      */
     public @Nullable <T> T data() {
         //noinspection unchecked
@@ -393,6 +426,7 @@ public class ParticleBuilder implements Cloneable {
      * @param data The new particle data
      * @param <T>  The Particle data type
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public <T> ParticleBuilder data(final @Nullable T data) {
         this.data = data;
@@ -401,6 +435,7 @@ public class ParticleBuilder implements Cloneable {
 
     /**
      * @return whether the particle is forcefully shown to players.
+     * @since 1.17.1
      */
     public boolean force() {
         return this.force;
@@ -413,6 +448,7 @@ public class ParticleBuilder implements Cloneable {
      *
      * @param force true to force, false for normal
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder force(final boolean force) {
         this.force = force;
@@ -425,6 +461,7 @@ public class ParticleBuilder implements Cloneable {
      *
      * @param color the new particle color
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder color(final @Nullable Color color) {
         if (this.particle.getDataType() == Color.class) {
@@ -440,6 +477,7 @@ public class ParticleBuilder implements Cloneable {
      * @param color the new particle color
      * @param value the size or power of the particle
      * @return a reference to this object.
+     * @since 1.13.1
      */
     public ParticleBuilder color(final @Nullable Color color, final float value) {
         if (this.particle.getDataType() != Particle.DustOptions.class && this.particle.getDataType() != Particle.Spell.class && color != null) {
@@ -470,6 +508,7 @@ public class ParticleBuilder implements Cloneable {
      * @param g green color component
      * @param b blue color component
      * @return a reference to this object.
+     * @since 1.12.2
      */
     public ParticleBuilder color(final int r, final int g, final int b) {
         return this.color(Color.fromRGB(r, g, b));
@@ -485,6 +524,7 @@ public class ParticleBuilder implements Cloneable {
      * @param color an integer representing the color components. If the highest byte (alpha channel) is zero,
      *              the color is treated as RGB. Otherwise, it is treated as ARGB.
      * @return a reference to this object.
+     * @since 1.20.4
      */
     public ParticleBuilder color(final int color) {
         final int alpha = (color >> 24) & 0xFF;
@@ -503,6 +543,7 @@ public class ParticleBuilder implements Cloneable {
      * @param g green color component
      * @param b blue color component
      * @return a reference to this object.
+     * @since 1.21.1
      */
     public ParticleBuilder color(final int a, final int r, final int g, final int b) {
         return this.color(Color.fromARGB(a, r, g, b));
@@ -516,6 +557,7 @@ public class ParticleBuilder implements Cloneable {
      * @param toColor   the new particle to color
      * @return a reference to this object.
      * @throws IllegalArgumentException if the particle builder's {@link #particle()} isn't {@link Particle#DUST_COLOR_TRANSITION}.
+     * @since 1.20.4
      */
     public ParticleBuilder colorTransition(final Color fromColor, final Color toColor) {
         return this.colorTransition(fromColor, toColor, 1);
@@ -533,6 +575,7 @@ public class ParticleBuilder implements Cloneable {
      * @param toBlue    blue color component for the to color
      * @return a reference to this object.
      * @throws IllegalArgumentException if the particle builder's {@link #particle()} isn't {@link Particle#DUST_COLOR_TRANSITION}.
+     * @since 1.20.4
      */
     public ParticleBuilder colorTransition(
         final int fromRed, final int fromGreen, final int fromBlue,
@@ -549,6 +592,7 @@ public class ParticleBuilder implements Cloneable {
      * @param toRgb   an integer representing the red, green, and blue color components for the "to" color
      * @return a reference to this object.
      * @throws IllegalArgumentException if the particle builder's {@link #particle()} isn't {@link Particle#DUST_COLOR_TRANSITION}.
+     * @since 1.20.4
      */
     public ParticleBuilder colorTransition(final int fromRgb, final int toRgb) {
         return this.colorTransition(Color.fromRGB(fromRgb), Color.fromRGB(toRgb));
@@ -563,6 +607,7 @@ public class ParticleBuilder implements Cloneable {
      * @param size      the size of the particle
      * @return a reference to this object.
      * @throws IllegalArgumentException if the particle builder's {@link #particle()} isn't {@link Particle#DUST_COLOR_TRANSITION}.
+     * @since 1.20.4
      */
     public ParticleBuilder colorTransition(final Color fromColor, final Color toColor, final float size) {
         Preconditions.checkArgument(fromColor != null, "Cannot define color transition with null fromColor.");

@@ -13,16 +13,23 @@ import org.jspecify.annotations.NullMarked;
  * Stores a list of enchantments and their levels on an item.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#ENCHANTMENTS
  * @see io.papermc.paper.datacomponent.DataComponentTypes#STORED_ENCHANTMENTS
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface ItemEnchantments {
 
+    /**
+     * @since 1.21.6
+     */
     @Contract(value = "_ -> new", pure = true)
     static ItemEnchantments itemEnchantments(final Map<Enchantment, @IntRange(from = 1, to = 255) Integer> enchantments) {
         return itemEnchantments().addAll(enchantments).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static ItemEnchantments.Builder itemEnchantments() {
         return ItemComponentTypesBridge.bridge().enchantments();
@@ -32,12 +39,15 @@ public interface ItemEnchantments {
      * Enchantments currently present on this item.
      *
      * @return enchantments
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable Map<Enchantment, @IntRange(from = 1, to = 255) Integer> enchantments();
 
     /**
      * Builder for {@link ItemEnchantments}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<ItemEnchantments> {
@@ -49,6 +59,7 @@ public interface ItemEnchantments {
          * @param level level
          * @return the builder for chaining
          * @see #enchantments()
+         * @since 1.21.3
          */
         @Contract(value = "_, _ -> this", mutates = "this")
         Builder add(Enchantment enchantment, @IntRange(from = 1, to = 255) int level);
@@ -59,6 +70,7 @@ public interface ItemEnchantments {
          * @param enchantments enchantments
          * @return the builder for chaining
          * @see #enchantments()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addAll(Map<Enchantment, @IntRange(from = 1, to = 255) Integer> enchantments);

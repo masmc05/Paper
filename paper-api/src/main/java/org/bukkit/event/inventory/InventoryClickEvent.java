@@ -47,6 +47,8 @@ import org.jetbrains.annotations.Nullable;
  * Alternatively, scheduling a task using {@link BukkitScheduler#runTask(
  * Plugin, Runnable)}, which would execute the task on the next tick, would
  * work as well.
+ *
+ * @since 1.1.0
  */
 public class InventoryClickEvent extends InventoryInteractEvent {
 
@@ -80,6 +82,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      * Gets the type of slot that was clicked.
      *
      * @return the slot type
+     * @since 1.1.0
      */
     @NotNull
     public SlotType getSlotType() {
@@ -90,6 +93,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      * Gets the current ItemStack on the cursor.
      *
      * @return the cursor ItemStack
+     * @since 1.1.0
      */
     @NotNull
     public ItemStack getCursor() {
@@ -100,6 +104,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      * Gets the ItemStack currently in the clicked slot.
      *
      * @return the item in the clicked slot
+     * @since 1.1.0
      */
     @Nullable
     public ItemStack getCurrentItem() {
@@ -115,6 +120,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      *
      * @return {@code true} if the ClickType uses the right mouse button.
      * @see ClickType#isRightClick()
+     * @since 1.1.0
      */
     public boolean isRightClick() {
         return this.click.isRightClick();
@@ -126,6 +132,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      *
      * @return {@code true} if the ClickType uses the left mouse button.
      * @see ClickType#isLeftClick()
+     * @since 1.1.0
      */
     public boolean isLeftClick() {
         return this.click.isLeftClick();
@@ -137,6 +144,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      *
      * @return {@code true} if the ClickType uses Shift or Ctrl.
      * @see ClickType#isShiftClick()
+     * @since 1.1.0
      */
     public boolean isShiftClick() {
         return this.click.isShiftClick();
@@ -150,6 +158,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      *     calculations are applied to the Inventory, which has a tendency to
      *     create inconsistencies between the Player and the server, and to
      *     make unexpected changes in the behavior of the clicked Inventory.
+     * @since 1.1.0
      */
     @Deprecated(since = "1.5.2")
     public void setCursor(@Nullable ItemStack stack) {
@@ -160,6 +169,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      * Sets the ItemStack currently in the clicked slot.
      *
      * @param stack the item to be placed in the current slot
+     * @since 1.1.0
      */
     public void setCurrentItem(@Nullable ItemStack stack) {
         if (this.slotType == SlotType.OUTSIDE) {
@@ -174,6 +184,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      *
      * @return inventory, or {@code null} if clicked outside
      * @see InventoryView#getInventory(int)
+     * @since 1.6.2
      */
     @Nullable
     public Inventory getClickedInventory() {
@@ -186,6 +197,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      * the same slot number, since a view links two different inventories.
      *
      * @return the slot number
+     * @since 1.1.0
      */
     public int getSlot() {
         return this.whichSlot;
@@ -196,6 +208,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      * #getItem(int)} This slot number is unique for the view.
      *
      * @return the slot number
+     * @since 1.1.0
      */
     public int getRawSlot() {
         return this.rawSlot;
@@ -207,6 +220,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      *
      * @return the number on the key minus 1 (range 0-8);
      * or -1 if ClickType is NUMBER_KEY and player did an off-hand swap. Is also -1 if ClickType is not NUMBER_KEY
+     * @since 1.6.1
      */
     public int getHotbarButton() {
         return this.hotbarKey;
@@ -220,6 +234,7 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      * InventoryClickEvent, changes must be manually applied.
      *
      * @return the InventoryAction that triggered this event.
+     * @since 1.6.1
      */
     @NotNull
     public InventoryAction getAction() {
@@ -232,18 +247,25 @@ public class InventoryClickEvent extends InventoryInteractEvent {
      * This is insulated against changes to the inventory by other plugins.
      *
      * @return the type of inventory click
+     * @since 1.6.1
      */
     @NotNull
     public ClickType getClick() {
         return this.click;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

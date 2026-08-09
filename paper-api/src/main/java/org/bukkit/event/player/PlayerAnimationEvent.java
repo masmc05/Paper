@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a player animation event
+ *
+ * @since 1.0.0
  */
 public class PlayerAnimationEvent extends PlayerEvent implements Cancellable {
 
@@ -32,28 +34,41 @@ public class PlayerAnimationEvent extends PlayerEvent implements Cancellable {
      * Get the type of this animation event
      *
      * @return the animation type
+     * @since 1.0.0
      */
     @NotNull
     public PlayerAnimationType getAnimationType() {
         return this.animationType;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

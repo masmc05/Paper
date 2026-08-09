@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a component which adds custom model data.
+ *
+ * @since 1.21.4
  */
 @ApiStatus.Experimental
 public interface CustomModelDataComponent extends ConfigurationSerializable {
@@ -16,6 +18,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Gets a list of the floats for the range_dispatch model type.
      *
      * @return unmodifiable list
+     * @since 1.21.4
      */
     @NotNull
     List<Float> getFloats();
@@ -24,6 +27,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Sets a list of the floats for the range_dispatch model type.
      *
      * @param floats new list
+     * @since 1.21.4
      */
     void setFloats(@NotNull List<Float> floats);
 
@@ -31,6 +35,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Gets a list of the booleans for the condition model type.
      *
      * @return unmodifiable list
+     * @since 1.21.4
      */
     @NotNull
     List<Boolean> getFlags();
@@ -39,6 +44,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Sets a list of the booleans for the condition model type.
      *
      * @param flags new list
+     * @since 1.21.4
      */
     void setFlags(@NotNull List<Boolean> flags);
 
@@ -46,6 +52,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Gets a list of strings for the select model type.
      *
      * @return unmodifiable list
+     * @since 1.21.4
      */
     @NotNull
     List<String> getStrings();
@@ -54,6 +61,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Sets a list of strings for the select model type.
      *
      * @param strings new list
+     * @since 1.21.4
      */
     void setStrings(@NotNull List<String> strings);
 
@@ -61,6 +69,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Gets a list of colors for the model type's tints.
      *
      * @return unmodifiable list
+     * @since 1.21.4
      */
     @NotNull
     List<Color> getColors();
@@ -69,6 +78,7 @@ public interface CustomModelDataComponent extends ConfigurationSerializable {
      * Sets a list of colors for the model type's tints.
      *
      * @param colors new list
+     * @since 1.21.4
      */
     void setColors(@NotNull List<Color> colors);
 }

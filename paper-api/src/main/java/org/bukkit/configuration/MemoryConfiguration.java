@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
  * This is a {@link Configuration} implementation that does not save or load
  * from any source, and stores all values in memory only.
  * This is useful for temporary Configurations for providing defaults.
+ *
+ * @since 1.0.0
  */
 public class MemoryConfiguration extends MemorySection implements Configuration {
     protected Configuration defaults;
@@ -16,6 +18,8 @@ public class MemoryConfiguration extends MemorySection implements Configuration 
 
     /**
      * Creates an empty {@link MemoryConfiguration} with no default values.
+     *
+     * @since 1.0.0
      */
     public MemoryConfiguration() {}
 
@@ -25,11 +29,15 @@ public class MemoryConfiguration extends MemorySection implements Configuration 
      *
      * @param defaults Default value provider
      * @throws IllegalArgumentException Thrown if defaults is null
+     * @since 1.0.0
      */
     public MemoryConfiguration(@Nullable Configuration defaults) {
         this.defaults = defaults;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void addDefault(@NotNull String path, @Nullable Object value) {
         Preconditions.checkArgument(path != null, "Path may not be null");
@@ -41,6 +49,9 @@ public class MemoryConfiguration extends MemorySection implements Configuration 
         defaults.set(path, value);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void addDefaults(@NotNull Map<String, Object> defaults) {
         Preconditions.checkArgument(defaults != null, "Defaults may not be null");
@@ -50,6 +61,9 @@ public class MemoryConfiguration extends MemorySection implements Configuration 
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void addDefaults(@NotNull Configuration defaults) {
         Preconditions.checkArgument(defaults != null, "Defaults may not be null");
@@ -61,6 +75,9 @@ public class MemoryConfiguration extends MemorySection implements Configuration 
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setDefaults(@NotNull Configuration defaults) {
         Preconditions.checkArgument(defaults != null, "Defaults may not be null");
@@ -68,18 +85,27 @@ public class MemoryConfiguration extends MemorySection implements Configuration 
         this.defaults = defaults;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @Nullable
     public Configuration getDefaults() {
         return defaults;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Nullable
     @Override
     public ConfigurationSection getParent() {
         return null;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @NotNull
     public MemoryConfigurationOptions options() {

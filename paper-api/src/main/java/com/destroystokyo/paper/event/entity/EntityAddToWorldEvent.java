@@ -12,6 +12,8 @@ import org.jspecify.annotations.NullMarked;
  * Fired any time an entity is being added to the world for any reason (including a chunk loading).
  * <p>
  * Not to be confused with {@link CreatureSpawnEvent}
+ *
+ * @since 1.9.4
  */
 @NullMarked
 public class EntityAddToWorldEvent extends EntityEvent {
@@ -28,16 +30,23 @@ public class EntityAddToWorldEvent extends EntityEvent {
 
     /**
      * @return The world that the entity is being added to
+     * @since 1.20.4
      */
     public World getWorld() {
         return this.world;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

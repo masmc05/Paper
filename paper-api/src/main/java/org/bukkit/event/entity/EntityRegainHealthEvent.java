@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Stores data for health-regain events
+ *
+ * @since 1.0.0
  */
 public class EntityRegainHealthEvent extends EntityEvent implements Cancellable {
 
@@ -36,6 +38,7 @@ public class EntityRegainHealthEvent extends EntityEvent implements Cancellable 
      * Gets the amount of regained health
      *
      * @return The amount of health regained
+     * @since 1.0.0
      */
     public double getAmount() {
         return this.amount;
@@ -45,6 +48,7 @@ public class EntityRegainHealthEvent extends EntityEvent implements Cancellable 
      * Sets the amount of regained health
      *
      * @param amount the amount of health the entity will regain
+     * @since 1.6.1
      */
     public void setAmount(double amount) {
         this.amount = amount;
@@ -55,6 +59,7 @@ public class EntityRegainHealthEvent extends EntityEvent implements Cancellable 
      *
      * @return A RegainReason detailing the reason for the entity regaining
      *     health
+     * @since 1.0.0
      */
     @NotNull
     public RegainReason getRegainReason() {
@@ -65,27 +70,40 @@ public class EntityRegainHealthEvent extends EntityEvent implements Cancellable 
      * Is this event a result of the fast regeneration mechanic
      *
      * @return Whether the event is the result of a fast regeneration mechanic
+     * @since 1.9.4
      */
     public boolean isFastRegen() {
         return this.isFastRegen;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
@@ -93,45 +111,65 @@ public class EntityRegainHealthEvent extends EntityEvent implements Cancellable 
 
     /**
      * An enum to specify the type of health regaining that is occurring
+     *
+     * @since 1.0.0
      */
     public enum RegainReason {
 
         /**
          * When a player regains health from regenerating due to Peaceful mode
          * (difficulty=0)
+         *
+         * @since 1.0.0
          */
         REGEN,
         /**
          * When a player regains health from regenerating due to their hunger
          * being satisfied
+         *
+         * @since 1.0.0
          */
         SATIATED,
         /**
          * When an animal regains health from eating consumables
+         *
+         * @since 1.0.0
          */
         EATING,
         /**
          * When an ender dragon regains health from an ender crystal
+         *
+         * @since 1.1.0
          */
         ENDER_CRYSTAL,
         /**
          * When a player is healed by a potion or spell
+         *
+         * @since 1.1.0
          */
         MAGIC,
         /**
          * When a player is healed over time by a potion or spell
+         *
+         * @since 1.1.0
          */
         MAGIC_REGEN,
         /**
          * When a wither is filling its health during spawning
+         *
+         * @since 1.4.5
          */
         WITHER_SPAWN,
         /**
          * When an entity is damaged by the Wither potion effect
+         *
+         * @since 1.4.5
          */
         WITHER,
         /**
          * Any other reason not covered by the reasons above
+         *
+         * @since 1.0.0
          */
         CUSTOM
     }

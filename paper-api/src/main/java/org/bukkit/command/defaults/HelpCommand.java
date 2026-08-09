@@ -25,7 +25,13 @@ import org.bukkit.util.ChatPaginator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.0.0
+ */
 public class HelpCommand extends BukkitCommand {
+    /**
+     * @since 1.0.0
+     */
     public HelpCommand() {
         super("help");
         this.description = "Shows the help menu";
@@ -34,6 +40,9 @@ public class HelpCommand extends BukkitCommand {
         this.setPermission("bukkit.command.help");
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String currentAlias, @NotNull String[] args) {
         if (!testPermission(sender)) return true;
@@ -110,6 +119,9 @@ public class HelpCommand extends BukkitCommand {
         return true;
     }
 
+    /**
+     * @since 1.3.2
+     */
     @NotNull
     @Override
     public List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String[] args) {

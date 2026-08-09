@@ -6,6 +6,9 @@ import org.bukkit.Bukkit;
 import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
+/**
+ * @since 1.14.1
+ */
 @NullMarked
 public interface VersionFetcher {
 
@@ -15,6 +18,7 @@ public interface VersionFetcher {
      * Negative values will never cache.
      *
      * @return cache time
+     * @since 1.14.1
      */
     long getCacheTime();
 
@@ -23,6 +27,7 @@ public interface VersionFetcher {
      *
      * @return the message to show when requesting a version
      * @apiNote This method may involve a web request which will block the executing thread
+     * @since 1.21.6
      */
     Component getVersionMessage();
 
@@ -34,6 +39,7 @@ public interface VersionFetcher {
      * @apiNote This method may involve a web request which will block the current thread
      * @see #getVersionMessage()
      * @deprecated {@code serverVersion} is not required
+     * @since 1.14.1
      */
     @Deprecated
     default Component getVersionMessage(String serverVersion) {

@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when the moisture level of a soil block changes.
+ *
+ * @since 1.13.1
  */
 public class MoistureChangeEvent extends BlockEvent implements Cancellable {
 
@@ -27,28 +29,41 @@ public class MoistureChangeEvent extends BlockEvent implements Cancellable {
      * Gets the new state of the affected block.
      *
      * @return new block state
+     * @since 1.13.1
      */
     @NotNull
     public BlockState getNewState() {
         return this.newState;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

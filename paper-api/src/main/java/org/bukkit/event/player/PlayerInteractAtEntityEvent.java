@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents an event that is called when a player right clicks an entity that
  * also contains the location where the entity was clicked.
+ *
+ * @since 1.8
  */
 public class PlayerInteractAtEntityEvent extends PlayerInteractEntityEvent {
 
@@ -27,6 +29,9 @@ public class PlayerInteractAtEntityEvent extends PlayerInteractEntityEvent {
         this.position = position;
     }
 
+    /**
+     * @since 1.8
+     */
     @NotNull
     public Vector getClickedPosition() {
         return this.position.clone();

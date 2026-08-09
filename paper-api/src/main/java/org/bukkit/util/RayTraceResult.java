@@ -14,6 +14,8 @@ import org.jetbrains.annotations.Nullable;
  * Only the hit position is guaranteed to always be available. The availability
  * of the other attributes depends on what got hit and on the context in which
  * the ray trace was performed.
+ *
+ * @since 1.13.2
  */
 public class RayTraceResult {
 
@@ -35,6 +37,7 @@ public class RayTraceResult {
      * Creates a RayTraceResult.
      *
      * @param hitPosition the hit position
+     * @since 1.13.2
      */
     public RayTraceResult(@NotNull Vector hitPosition) {
         this(hitPosition, null, null, null);
@@ -45,6 +48,7 @@ public class RayTraceResult {
      *
      * @param hitPosition the hit position
      * @param hitBlockFace the hit block face
+     * @since 1.13.2
      */
     public RayTraceResult(@NotNull Vector hitPosition, @Nullable BlockFace hitBlockFace) {
         this(hitPosition, null, hitBlockFace, null);
@@ -56,6 +60,7 @@ public class RayTraceResult {
      * @param hitPosition the hit position
      * @param hitBlock the hit block
      * @param hitBlockFace the hit block face
+     * @since 1.13.2
      */
     public RayTraceResult(@NotNull Vector hitPosition, @Nullable Block hitBlock, @Nullable BlockFace hitBlockFace) {
         this(hitPosition, hitBlock, hitBlockFace, null);
@@ -66,6 +71,7 @@ public class RayTraceResult {
      *
      * @param hitPosition the hit position
      * @param hitEntity the hit entity
+     * @since 1.13.2
      */
     public RayTraceResult(@NotNull Vector hitPosition, @Nullable Entity hitEntity) {
         this(hitPosition, null, null, hitEntity);
@@ -77,6 +83,7 @@ public class RayTraceResult {
      * @param hitPosition the hit position
      * @param hitEntity the hit entity
      * @param hitBlockFace the hit block face
+     * @since 1.13.2
      */
     public RayTraceResult(@NotNull Vector hitPosition, @Nullable Entity hitEntity, @Nullable BlockFace hitBlockFace) {
         this(hitPosition, null, hitBlockFace, hitEntity);
@@ -86,6 +93,7 @@ public class RayTraceResult {
      * Gets the exact position of the hit.
      *
      * @return a copy of the exact hit position
+     * @since 1.13.2
      */
     @NotNull
     public Vector getHitPosition() {
@@ -96,6 +104,7 @@ public class RayTraceResult {
      * Gets the hit block.
      *
      * @return the hit block, or <code>null</code> if not available
+     * @since 1.13.2
      */
     @Nullable
     public Block getHitBlock() {
@@ -106,6 +115,7 @@ public class RayTraceResult {
      * Gets the hit block face.
      *
      * @return the hit block face, or <code>null</code> if not available
+     * @since 1.13.2
      */
     @Nullable
     public BlockFace getHitBlockFace() {
@@ -116,6 +126,7 @@ public class RayTraceResult {
      * Gets the hit entity.
      *
      * @return the hit entity, or <code>null</code> if not available
+     * @since 1.13.2
      */
     @Nullable
     public Entity getHitEntity() {

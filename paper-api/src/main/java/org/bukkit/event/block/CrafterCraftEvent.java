@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Event called when a Crafter is about to craft an item.
+ *
+ * @since 1.21
  */
 public class CrafterCraftEvent extends BlockEvent implements Cancellable {
 
@@ -31,6 +33,7 @@ public class CrafterCraftEvent extends BlockEvent implements Cancellable {
      * Gets the result for the craft.
      *
      * @return the result for the craft
+     * @since 1.21
      */
     @NotNull
     public ItemStack getResult() {
@@ -41,6 +44,7 @@ public class CrafterCraftEvent extends BlockEvent implements Cancellable {
      * Sets the result of the craft.
      *
      * @param result the result of the craft
+     * @since 1.21
      */
     public void setResult(@NotNull ItemStack result) {
         this.result = result.clone();
@@ -50,28 +54,41 @@ public class CrafterCraftEvent extends BlockEvent implements Cancellable {
      * Gets the recipe that was used to craft this item.
      *
      * @return the recipe that was used to craft this item
+     * @since 1.21
      */
     @NotNull
     public CraftingRecipe getRecipe() {
         return this.recipe;
     }
 
+    /**
+     * @since 1.21
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.21
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.21
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

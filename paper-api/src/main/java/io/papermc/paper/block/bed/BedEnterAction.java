@@ -8,6 +8,8 @@ import org.jspecify.annotations.Nullable;
  * An action type that represents the action that will happen after
  * {@link org.bukkit.event.player.PlayerBedEnterEvent} and that is
  * happening during {@link io.papermc.paper.event.player.PlayerBedFailEnterEvent}
+ *
+ * @since 1.21.11
  */
 @ApiStatus.NonExtendable
 public interface BedEnterAction {
@@ -20,6 +22,7 @@ public interface BedEnterAction {
      * the bed interaction is prevented
      *
      * @return whether the player is allowed to sleep
+     * @since 1.21.11
      */
     BedRuleResult canSleep();
 
@@ -31,6 +34,7 @@ public interface BedEnterAction {
      * the bed interaction is prevented
      *
      * @return whether the player is allowed to save its spawn point
+     * @since 1.21.11
      */
     BedRuleResult canSetSpawn();
 
@@ -40,6 +44,7 @@ public interface BedEnterAction {
      * see {@link #canSleep()} and {@link #canSetSpawn()} for individual successes
      *
      * @return any of {@link BedEnterProblem}s if one is found, otherwise {@code null}
+     * @since 1.21.11
      */
     @Nullable
     BedEnterProblem problem();
@@ -48,6 +53,7 @@ public interface BedEnterAction {
      * Returns the default error message to be shown as an actionbar message to the player
      *
      * @return the error message
+     * @since 1.21.11
      */
     @Nullable
     Component errorMessage();

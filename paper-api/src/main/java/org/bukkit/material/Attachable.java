@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Indicates that a block can be attached to another block
+ *
+ * @since 1.0.0
  */
 public interface Attachable extends Directional {
 
@@ -12,6 +14,7 @@ public interface Attachable extends Directional {
      * Gets the face that this block is attached on
      *
      * @return BlockFace attached to
+     * @since 1.0.0
      */
     @NotNull
     public BlockFace getAttachedFace();

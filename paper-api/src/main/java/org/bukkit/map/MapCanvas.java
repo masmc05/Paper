@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
  * Represents a canvas for drawing to a map. Each canvas is associated with a
  * specific {@link MapRenderer} and represents that renderer's layer on the
  * map.
+ *
+ * @since 1.0.0
  */
 public interface MapCanvas {
 
@@ -16,6 +18,7 @@ public interface MapCanvas {
      * Get the map this canvas is attached to.
      *
      * @return The MapView this canvas is attached to.
+     * @since 1.0.0
      */
     @NotNull
     public MapView getMapView();
@@ -24,6 +27,7 @@ public interface MapCanvas {
      * Get the cursor collection associated with this canvas.
      *
      * @return The MapCursorCollection associated with this canvas.
+     * @since 1.0.0
      */
     @NotNull
     public MapCursorCollection getCursors();
@@ -34,6 +38,7 @@ public interface MapCanvas {
      * provided.
      *
      * @param cursors The MapCursorCollection to associate with this canvas.
+     * @since 1.0.0
      */
     public void setCursors(@NotNull MapCursorCollection cursors);
 
@@ -51,6 +56,7 @@ public interface MapCanvas {
      * @param x The x coordinate, from 0 to 127.
      * @param y The y coordinate, from 0 to 127.
      * @param color The color.
+     * @since 1.19
      */
     void setPixelColor(int x, int y, @Nullable Color color);
 
@@ -64,6 +70,7 @@ public interface MapCanvas {
      * @param x The x coordinate, from 0 to 127.
      * @param y The y coordinate, from 0 to 127.
      * @return The color, or null if no color is set.
+     * @since 1.19
      */
     @Nullable
     Color getPixelColor(int x, int y);
@@ -74,6 +81,7 @@ public interface MapCanvas {
      * @param x The x coordinate, from 0 to 127.
      * @param y The y coordinate, from 0 to 127.
      * @return The color.
+     * @since 1.19
      */
     @NotNull
     Color getBasePixelColor(int x, int y);
@@ -85,6 +93,7 @@ public interface MapCanvas {
      * @param y The y coordinate, from 0 to 127.
      * @param color The color. See {@link MapPalette}.
      * @deprecated Magic value, use {@link #setPixelColor(int, int, Color)}
+     * @since 1.0.0
      */
     @Deprecated(since = "1.20.5")
     public void setPixel(int x, int y, byte color);
@@ -117,6 +126,7 @@ public interface MapCanvas {
      * @param x The x coordinate of the image.
      * @param y The y coordinate of the image.
      * @param image The Image to draw.
+     * @since 1.0.0
      */
     public void drawImage(int x, int y, @NotNull Image image);
 
@@ -130,6 +140,7 @@ public interface MapCanvas {
      * @param y The row to start rendering on.
      * @param font The font to use.
      * @param text The formatted text to render.
+     * @since 1.0.0
      */
     public void drawText(int x, int y, @NotNull MapFont font, @NotNull String text);
 

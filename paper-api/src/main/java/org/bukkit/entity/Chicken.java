@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents a Chicken.
+ *
+ * @since 1.0.0
  */
 @NullMarked
 public interface Chicken extends Animals {
@@ -17,6 +19,7 @@ public interface Chicken extends Animals {
      * Gets the variant of this chicken.
      *
      * @return the chicken variant
+     * @since 1.21.6
      */
     Variant getVariant();
 
@@ -24,6 +27,7 @@ public interface Chicken extends Animals {
      * Sets the variant of this chicken.
      *
      * @param variant the chicken variant
+     * @since 1.21.6
      */
     void setVariant(Variant variant);
 
@@ -31,6 +35,7 @@ public interface Chicken extends Animals {
      * Get the sound variant of this chicken.
      *
      * @return chicken sound variant
+     * @since 26.2
      */
     SoundVariant getSoundVariant();
 
@@ -38,6 +43,7 @@ public interface Chicken extends Animals {
      * Set the sound variant of this chicken.
      *
      * @param variant chicken sound variant
+     * @since 26.2
      */
     void setSoundVariant(SoundVariant variant);
 
@@ -45,6 +51,7 @@ public interface Chicken extends Animals {
      * Gets if this chicken was spawned as a chicken jockey.
      *
      * @return is chicken jockey
+     * @since 1.19.2
      */
     boolean isChickenJockey();
 
@@ -52,6 +59,7 @@ public interface Chicken extends Animals {
      * Sets if this chicken was spawned as a chicken jockey.
      *
      * @param isChickenJockey is chicken jockey
+     * @since 1.19.2
      */
     void setIsChickenJockey(boolean isChickenJockey);
 
@@ -59,6 +67,7 @@ public interface Chicken extends Animals {
      * Gets the number of ticks till this chicken lays an egg.
      *
      * @return ticks till the chicken lays an egg
+     * @since 1.19.2
      */
     int getEggLayTime();
 
@@ -66,19 +75,31 @@ public interface Chicken extends Animals {
      * Sets the number of ticks till this chicken lays an egg.
      *
      * @param eggLayTime ticks till the chicken lays an egg
+     * @since 1.19.2
      */
     void setEggLayTime(int eggLayTime);
 
     /**
      * Represents the variant of a chicken.
+     *
+     * @since 1.21.6
      */
     interface Variant extends Keyed {
 
+        /**
+         * @since 1.21.6
+         */
         // Start generate - ChickenVariant
         Variant COLD = getVariant("cold");
 
+        /**
+         * @since 1.21.6
+         */
         Variant TEMPERATE = getVariant("temperate");
 
+        /**
+         * @since 1.21.6
+         */
         Variant WARM = getVariant("warm");
         // End generate - ChickenVariant
 
@@ -89,12 +110,20 @@ public interface Chicken extends Animals {
 
     /**
      * Represents the sound variant of a chicken.
+     *
+     * @since 26.2
      */
     interface SoundVariant extends Keyed {
 
+        /**
+         * @since 26.2
+         */
         // Start generate - ChickenSoundVariant
         SoundVariant CLASSIC = getSoundVariant("classic");
 
+        /**
+         * @since 26.2
+         */
         SoundVariant PICKY = getSoundVariant("picky");
         // End generate - ChickenSoundVariant
 

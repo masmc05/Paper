@@ -8,17 +8,36 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a map item.
+ *
+ * @since 1.0.0
  */
 public interface MapView {
 
     /**
      * An enum representing all possible scales a map can be set to.
+     *
+     * @since 1.0.0
      */
     public static enum Scale {
+        /**
+         * @since 1.0.0
+         */
         CLOSEST(0),
+        /**
+         * @since 1.0.0
+         */
         CLOSE(1),
+        /**
+         * @since 1.0.0
+         */
         NORMAL(2),
+        /**
+         * @since 1.0.0
+         */
         FAR(3),
+        /**
+         * @since 1.0.0
+         */
         FARTHEST(4);
 
         private byte value;
@@ -63,6 +82,7 @@ public interface MapView {
      * Get the ID of this map item for use with {@link MapMeta}.
      *
      * @return The ID of the map.
+     * @since 1.0.0
      */
     public int getId();
 
@@ -71,6 +91,7 @@ public interface MapView {
      * MapRenderer is plugin-provided.
      *
      * @return Whether the map is virtual.
+     * @since 1.0.0
      */
     public boolean isVirtual();
 
@@ -78,6 +99,7 @@ public interface MapView {
      * Get the scale of this map.
      *
      * @return The scale of the map.
+     * @since 1.0.0
      */
     @NotNull
     public Scale getScale();
@@ -86,6 +108,7 @@ public interface MapView {
      * Set the scale of this map.
      *
      * @param scale The scale to set.
+     * @since 1.0.0
      */
     public void setScale(@NotNull Scale scale);
 
@@ -93,6 +116,7 @@ public interface MapView {
      * Get the center X position of this map.
      *
      * @return The center X position.
+     * @since 1.0.0
      */
     public int getCenterX();
 
@@ -100,6 +124,7 @@ public interface MapView {
      * Get the center Z position of this map.
      *
      * @return The center Z position.
+     * @since 1.0.0
      */
     public int getCenterZ();
 
@@ -107,6 +132,7 @@ public interface MapView {
      * Set the center X position of this map.
      *
      * @param x The center X position.
+     * @since 1.0.0
      */
     public void setCenterX(int x);
 
@@ -114,6 +140,7 @@ public interface MapView {
      * Set the center Z position of this map.
      *
      * @param z The center Z position.
+     * @since 1.0.0
      */
     public void setCenterZ(int z);
 
@@ -123,6 +150,7 @@ public interface MapView {
      * null if the world the map is associated with is not loaded.
      *
      * @return The World this map is associated with.
+     * @since 1.0.0
      */
     @Nullable
     public World getWorld();
@@ -132,6 +160,7 @@ public interface MapView {
      * the internal renderer, and may also be used by external renderers.
      *
      * @param world The World to associate this map with.
+     * @since 1.0.0
      */
     public void setWorld(@NotNull World world);
 
@@ -139,6 +168,7 @@ public interface MapView {
      * Get a list of MapRenderers currently in effect.
      *
      * @return A {@code List<MapRenderer>} containing each map renderer.
+     * @since 1.0.0
      */
     @NotNull
     public List<MapRenderer> getRenderers();
@@ -147,6 +177,7 @@ public interface MapView {
      * Add a renderer to this map.
      *
      * @param renderer The MapRenderer to add.
+     * @since 1.0.0
      */
     public void addRenderer(@NotNull MapRenderer renderer);
 
@@ -155,6 +186,7 @@ public interface MapView {
      *
      * @param renderer The MapRenderer to remove.
      * @return True if the renderer was successfully removed.
+     * @since 1.0.0
      */
     public boolean removeRenderer(@Nullable MapRenderer renderer);
 
@@ -163,6 +195,7 @@ public interface MapView {
      * center.
      *
      * @return tracking status
+     * @since 1.14.1
      */
     boolean isTrackingPosition();
 
@@ -171,6 +204,7 @@ public interface MapView {
      * center.
      *
      * @param trackingPosition tracking status
+     * @since 1.14.1
      */
     void setTrackingPosition(boolean trackingPosition);
 
@@ -179,6 +213,7 @@ public interface MapView {
      * position cursor (false) when cursor is outside of map's range.
      *
      * @return unlimited tracking state
+     * @since 1.11
      */
     boolean isUnlimitedTracking();
 
@@ -187,6 +222,7 @@ public interface MapView {
      * position cursor (false) when cursor is outside of map's range.
      *
      * @param unlimited tracking state
+     * @since 1.11
      */
     void setUnlimitedTracking(boolean unlimited);
 
@@ -196,6 +232,7 @@ public interface MapView {
      * A locked map may not be explored further.
      *
      * @return lock status
+     * @since 1.14
      */
     boolean isLocked();
 
@@ -205,6 +242,7 @@ public interface MapView {
      * A locked map may not be explored further.
      *
      * @param locked status
+     * @since 1.14
      */
     void setLocked(boolean locked);
 }

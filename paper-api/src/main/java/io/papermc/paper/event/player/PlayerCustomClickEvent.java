@@ -18,6 +18,7 @@ import org.jspecify.annotations.Nullable;
  *
  * @see net.kyori.adventure.text.event.ClickEvent#custom(Key, BinaryTagHolder)
  * @see io.papermc.paper.registry.data.dialog.action.DialogAction#customClick(DialogActionCallback, ClickCallback.Options)
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 @NullMarked
@@ -36,6 +37,7 @@ public abstract class PlayerCustomClickEvent extends Event {
      * The identifier of the custom click event.
      *
      * @return the identifier
+     * @since 1.21.7
      */
     public final Key getIdentifier() {
         return this.identifier;
@@ -45,6 +47,7 @@ public abstract class PlayerCustomClickEvent extends Event {
      * The tag payload of the custom click event.
      *
      * @return the tag (if any)
+     * @since 1.21.7
      */
     public abstract @Nullable BinaryTagHolder getTag();
 
@@ -52,6 +55,7 @@ public abstract class PlayerCustomClickEvent extends Event {
      * The dialog response view of the custom click event.
      *
      * @return the dialog response view
+     * @since 1.21.7
      */
     public abstract @Nullable DialogResponseView getDialogResponseView();
 
@@ -59,17 +63,24 @@ public abstract class PlayerCustomClickEvent extends Event {
      * The common connection of the player.
      *
      * @return the common connection
+     * @since 1.21.7
      */
     public final PlayerCommonConnection getCommonConnection() {
         return this.commonConnection;
     }
 
+    /**
+     * @since 1.21.7
+     */
     @Override
     public HandlerList getHandlers() {
         // this will be how handler lists will work on interfaces
         return PlayerCustomClickEvent.getHandlerList();
     }
 
+    /**
+     * @since 1.21.7
+     */
     public static HandlerList getHandlerList() {
         final class Holder {
             private static final HandlerList HANDLER_LIST = new HandlerList();

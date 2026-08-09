@@ -11,6 +11,7 @@ import org.jetbrains.annotations.ApiStatus;
  * A resolver for a {@link SignedMessage}
  *
  * @see ArgumentTypes#signedMessage()
+ * @since 1.20.6
  */
 @ApiStatus.NonExtendable
 public interface SignedMessageResolver {
@@ -19,6 +20,7 @@ public interface SignedMessageResolver {
      * Gets the string content of the message
      *
      * @return string content
+     * @since 1.20.6
      */
     String content();
 
@@ -33,6 +35,7 @@ public interface SignedMessageResolver {
      * @param context the command context
      * @return a completable future for the {@link SignedMessage}
      * @throws CommandSyntaxException syntax exception
+     * @since 1.20.6
      */
     CompletableFuture<SignedMessage> resolveSignedMessage(String argumentName, CommandContext<CommandSourceStack> context) throws CommandSyntaxException;
 }

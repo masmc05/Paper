@@ -7,6 +7,8 @@ import org.bukkit.block.data.Powerable;
 /**
  * 'disarmed' denotes that the tripwire was broken with shears and will not
  * subsequently produce a current when destroyed.
+ *
+ * @since 1.13
  */
 public interface Tripwire extends Attachable, MultipleFacing, Powerable {
 
@@ -14,6 +16,7 @@ public interface Tripwire extends Attachable, MultipleFacing, Powerable {
      * Gets the value of the 'disarmed' property.
      *
      * @return the 'disarmed' value
+     * @since 1.13
      */
     boolean isDisarmed();
 
@@ -21,6 +24,7 @@ public interface Tripwire extends Attachable, MultipleFacing, Powerable {
      * Sets the value of the 'disarmed' property.
      *
      * @param disarmed the new 'disarmed' value
+     * @since 1.13
      */
     void setDisarmed(boolean disarmed);
 }

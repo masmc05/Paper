@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
  * If this event is cancelled, the block will not be damaged.
  *
  * @see BlockDamageAbortEvent
+ * @since 1.0.0
  */
 public class BlockDamageEvent extends BlockEvent implements Cancellable {
 
@@ -47,6 +48,7 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
      * Gets the player damaging the block involved in this event.
      *
      * @return The player damaging the block involved in this event
+     * @since 1.0.0
      */
     @NotNull
     public Player getPlayer() {
@@ -58,6 +60,7 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
      *
      * @return {@code true} if the block should instantly break when damaged by the
      *     player
+     * @since 1.0.0
      */
     public boolean getInstaBreak() {
         return this.instaBreak;
@@ -68,6 +71,7 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
      *
      * @param instaBreak {@code true} if you want the block to instantly break when damaged
      *     by the player
+     * @since 1.0.0
      */
     public void setInstaBreak(boolean instaBreak) {
         this.instaBreak = instaBreak;
@@ -77,6 +81,7 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
      * Gets the ItemStack for the item currently in the player's hand.
      *
      * @return The ItemStack for the item currently in the player's hand
+     * @since 1.0.0
      */
     @NotNull
     public ItemStack getItemInHand() {
@@ -87,6 +92,7 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
      * Gets the BlockFace the player is interacting with.
      *
      * @return The BlockFace clicked to damage the block
+     * @since 1.20.1
      */
     @NotNull
     public org.bukkit.block.BlockFace getBlockFace() {
@@ -94,22 +100,34 @@ public class BlockDamageEvent extends BlockEvent implements Cancellable {
         return this.blockFace;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

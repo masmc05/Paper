@@ -10,6 +10,7 @@ import org.jetbrains.annotations.ApiStatus;
  *
  * @param <T> resolved type
  * @see io.papermc.paper.command.brigadier.argument.ArgumentTypes
+ * @since 1.20.6
  */
 @ApiStatus.NonExtendable
 public interface ArgumentResolver<T> {
@@ -19,6 +20,7 @@ public interface ArgumentResolver<T> {
      * command source stack.
      * @param sourceStack source stack
      * @return resolved
+     * @since 1.20.6
      */
     T resolve(CommandSourceStack sourceStack) throws CommandSyntaxException;
 }

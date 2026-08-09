@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Called when a player interacts with an armor stand and will either swap, retrieve or
  * place an item.
+ *
+ * @since 1.8
  */
 public class PlayerArmorStandManipulateEvent extends PlayerInteractEntityEvent {
 
@@ -43,6 +45,7 @@ public class PlayerArmorStandManipulateEvent extends PlayerInteractEntityEvent {
      * <p>
      * In the case that this event is cancelled, the original items will remain the same.
      * @return the item held by the player.
+     * @since 1.8
      */
     @NotNull
     public ItemStack getPlayerItem() {
@@ -61,6 +64,7 @@ public class PlayerArmorStandManipulateEvent extends PlayerInteractEntityEvent {
      * <p>
      * In the case that the event is cancelled the original items will remain the same.
      * @return the item held by the armor stand.
+     * @since 1.8
      */
     @NotNull
     public ItemStack getArmorStandItem() {
@@ -71,6 +75,7 @@ public class PlayerArmorStandManipulateEvent extends PlayerInteractEntityEvent {
      * Returns the raw item slot of the armor stand in this event.
      *
      * @return the index of the item obtained or placed of the armor stand.
+     * @since 1.8
      */
     @NotNull
     public EquipmentSlot getSlot() {
@@ -82,6 +87,8 @@ public class PlayerArmorStandManipulateEvent extends PlayerInteractEntityEvent {
      * <p>
      * Note that this is not the hand of the armor stand that was changed, but rather
      * the hand used by the player to swap items with the armor stand.
+     *
+     * @since 1.19.2
      */
     @NotNull
     @Override
@@ -89,18 +96,27 @@ public class PlayerArmorStandManipulateEvent extends PlayerInteractEntityEvent {
         return super.getHand();
     }
 
+    /**
+     * @since 1.8
+     */
     @NotNull
     @Override
     public ArmorStand getRightClicked() {
         return (ArmorStand) this.clickedEntity;
     }
 
+    /**
+     * @since 1.8
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.8
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

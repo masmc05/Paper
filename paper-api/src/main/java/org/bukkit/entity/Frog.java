@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A Frog.
+ *
+ * @since 1.19
  */
 public interface Frog extends Animals {
 
@@ -22,6 +24,7 @@ public interface Frog extends Animals {
      * Gets the tongue target of this frog.
      *
      * @return tongue target or null if not set
+     * @since 1.19
      */
     @Nullable
     Entity getTongueTarget();
@@ -30,6 +33,7 @@ public interface Frog extends Animals {
      * Sets the tongue target of this frog.
      *
      * @param target tongue target or null to clear
+     * @since 1.19
      */
     void setTongueTarget(@Nullable Entity target);
 
@@ -37,6 +41,7 @@ public interface Frog extends Animals {
      * Get the variant of this frog.
      *
      * @return frog variant
+     * @since 1.19
      */
     @NotNull
     Variant getVariant();
@@ -45,19 +50,31 @@ public interface Frog extends Animals {
      * Set the variant of this frog.
      *
      * @param variant frog variant
+     * @since 1.19
      */
     void setVariant(@NotNull Variant variant);
 
     /**
      * Represents the variant of a frog - ie its color.
+     *
+     * @since 1.19
      */
     interface Variant extends OldEnum<Variant>, Keyed {
 
+        /**
+         * @since 1.19
+         */
         // Start generate - FrogVariant
         Variant COLD = getVariant("cold");
 
+        /**
+         * @since 1.19
+         */
         Variant TEMPERATE = getVariant("temperate");
 
+        /**
+         * @since 1.19
+         */
         Variant WARM = getVariant("warm");
         // End generate - FrogVariant
 

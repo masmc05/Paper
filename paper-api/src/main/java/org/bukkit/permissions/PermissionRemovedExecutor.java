@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents a class which is to be notified when a {@link
  * PermissionAttachment} is removed from a {@link Permissible}
+ *
+ * @since 1.0.0
  */
 public interface PermissionRemovedExecutor {
 
@@ -13,6 +15,7 @@ public interface PermissionRemovedExecutor {
      * Permissible}
      *
      * @param attachment Attachment which was removed
+     * @since 1.0.0
      */
     public void attachmentRemoved(@NotNull PermissionAttachment attachment);
 }

@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see SimplexNoiseGenerator "Improved" and faster version with slightly
  *     different results
+ * @since 1.0.0
  */
 public class PerlinNoiseGenerator extends NoiseGenerator {
     protected static final int[][] grad3 = {{1, 1, 0}, {-1, 1, 0}, {1, -1, 0}, {-1, -1, 0},
@@ -45,6 +46,7 @@ public class PerlinNoiseGenerator extends NoiseGenerator {
      * Creates a seeded perlin noise generator for the given world
      *
      * @param world World to construct this generator for
+     * @since 1.0.0
      */
     public PerlinNoiseGenerator(@NotNull World world) {
         this(new Random(world.getSeed()));
@@ -54,6 +56,7 @@ public class PerlinNoiseGenerator extends NoiseGenerator {
      * Creates a seeded perlin noise generator for the given seed
      *
      * @param seed Seed to construct this generator for
+     * @since 1.0.0
      */
     public PerlinNoiseGenerator(long seed) {
         this(new Random(seed));
@@ -63,6 +66,7 @@ public class PerlinNoiseGenerator extends NoiseGenerator {
      * Creates a seeded perlin noise generator with the given Random
      *
      * @param rand Random to construct with
+     * @since 1.0.0
      */
     public PerlinNoiseGenerator(@NotNull Random rand) {
         offsetX = rand.nextDouble() * 256;
@@ -89,6 +93,7 @@ public class PerlinNoiseGenerator extends NoiseGenerator {
      *
      * @param x X coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public static double getNoise(double x) {
         return instance.noise(x);
@@ -101,6 +106,7 @@ public class PerlinNoiseGenerator extends NoiseGenerator {
      * @param x X coordinate
      * @param y Y coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public static double getNoise(double x, double y) {
         return instance.noise(x, y);
@@ -114,6 +120,7 @@ public class PerlinNoiseGenerator extends NoiseGenerator {
      * @param y Y coordinate
      * @param z Z coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public static double getNoise(double x, double y, double z) {
         return instance.noise(x, y, z);
@@ -123,12 +130,16 @@ public class PerlinNoiseGenerator extends NoiseGenerator {
      * Gets the singleton unseeded instance of this generator
      *
      * @return Singleton
+     * @since 1.0.0
      */
     @NotNull
     public static PerlinNoiseGenerator getInstance() {
         return instance;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public double noise(double x, double y, double z) {
         x += offsetX;
@@ -181,6 +192,7 @@ public class PerlinNoiseGenerator extends NoiseGenerator {
      * @param frequency How much to alter the frequency by each octave
      * @param amplitude How much to alter the amplitude by each octave
      * @return Resulting noise
+     * @since 1.0.0
      */
     public static double getNoise(double x, int octaves, double frequency, double amplitude) {
         return instance.noise(x, octaves, frequency, amplitude);
@@ -196,6 +208,7 @@ public class PerlinNoiseGenerator extends NoiseGenerator {
      * @param frequency How much to alter the frequency by each octave
      * @param amplitude How much to alter the amplitude by each octave
      * @return Resulting noise
+     * @since 1.0.0
      */
     public static double getNoise(double x, double y, int octaves, double frequency, double amplitude) {
         return instance.noise(x, y, octaves, frequency, amplitude);
@@ -212,6 +225,7 @@ public class PerlinNoiseGenerator extends NoiseGenerator {
      * @param frequency How much to alter the frequency by each octave
      * @param amplitude How much to alter the amplitude by each octave
      * @return Resulting noise
+     * @since 1.0.0
      */
     public static double getNoise(double x, double y, double z, int octaves, double frequency, double amplitude) {
         return instance.noise(x, y, z, octaves, frequency, amplitude);

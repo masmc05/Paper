@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Thrown whenever a {@link Player} dies
+ *
+ * @since 1.0.0
  */
 public class PlayerDeathEvent extends EntityDeathEvent {
 
@@ -84,6 +86,9 @@ public class PlayerDeathEvent extends EntityDeathEvent {
         this.doExpDrop = doExpDrop;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public Player getEntity() {
@@ -97,6 +102,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * @return whether the death message should be shown
      * @see #deathMessage()
      * @see #deathScreenMessageOverride()
+     * @since 1.21.6
      */
     public boolean getShowDeathMessages() {
         return showDeathMessages;
@@ -109,6 +115,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * @param displayDeathMessage whether the death message should be shown
      * @see #deathMessage()
      * @see #deathScreenMessageOverride()
+     * @since 1.21.6
      */
     public void setShowDeathMessages(boolean displayDeathMessage) {
         this.showDeathMessages = displayDeathMessage;
@@ -119,6 +126,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * for reasons of clarity.
      *
      * @return Player who is involved in this event
+     * @since 1.17.1
      */
     public @NotNull Player getPlayer() {
         return this.getEntity();
@@ -131,6 +139,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * {@link #getDroppedExp()} for that.
      *
      * @return New EXP of the respawned player
+     * @since 1.0.0
      */
     public int getNewExp() {
         return this.newExp;
@@ -143,6 +152,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * {@link #setDroppedExp(int)} for that.
      *
      * @param exp New EXP of the respawned player
+     * @since 1.0.0
      */
     public void setNewExp(int exp) {
         this.newExp = exp;
@@ -152,6 +162,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * Gets the Level the Player should have at respawn.
      *
      * @return New Level of the respawned player
+     * @since 1.1.0
      */
     public int getNewLevel() {
         return this.newLevel;
@@ -161,6 +172,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * Sets the Level the Player should have at respawn.
      *
      * @param level New Level of the respawned player
+     * @since 1.1.0
      */
     public void setNewLevel(int level) {
         this.newLevel = level;
@@ -170,6 +182,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * Gets the Total EXP the Player should have at respawn.
      *
      * @return New Total EXP of the respawned player
+     * @since 1.1.0
      */
     public int getNewTotalExp() {
         return this.newTotalExp;
@@ -179,6 +192,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * Sets the Total EXP the Player should have at respawn.
      *
      * @param totalExp New Total EXP of the respawned player
+     * @since 1.1.0
      */
     public void setNewTotalExp(int totalExp) {
         this.newTotalExp = totalExp;
@@ -188,6 +202,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * Set the death message that will appear to everyone on the server.
      *
      * @param deathMessage Component message to appear to other players on the server.
+     * @since 1.16.5
      */
     public void deathMessage(final @Nullable Component deathMessage) {
         this.deathMessage = deathMessage;
@@ -197,6 +212,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * Get the death message that will appear to everyone on the server.
      *
      * @return Component message to appear to other players on the server.
+     * @since 1.16.5
      */
     public @Nullable Component deathMessage() {
         return this.deathMessage;
@@ -207,6 +223,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      *
      * @param deathMessage message to appear to other players on the server.
      * @deprecated in favour of {@link #deathMessage(Component)}
+     * @since 1.0.0
      */
     @Deprecated
     public void setDeathMessage(@Nullable String deathMessage) {
@@ -218,6 +235,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      *
      * @return Message to appear to other players on the server.
      * @deprecated in favour of {@link #deathMessage()}
+     * @since 1.0.0
      */
     @Nullable
     @Deprecated
@@ -234,6 +252,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * If the message exceeds 256 characters it will be truncated.
      *
      * @param deathScreenMessageOverride Message to appear on the death screen to the dying player.
+     * @since 1.21.6
      */
     public void deathScreenMessageOverride(@Nullable Component deathScreenMessageOverride) {
         this.deathScreenMessageOverride = deathScreenMessageOverride;
@@ -246,6 +265,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * If set to null, death screen message will be same as {@code deathMessage()}.
      * <p>
      * @return Message to appear on the death screen to the dying player.
+     * @since 1.21.6
      */
     public @Nullable Component deathScreenMessageOverride() {
         return this.deathScreenMessageOverride;
@@ -253,6 +273,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
 
     /**
      * @return should experience be dropped from this death
+     * @since 1.15.1
      */
     public boolean shouldDropExperience() {
         return this.doExpDrop;
@@ -260,6 +281,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
 
     /**
      * @param doExpDrop sets if experience should be dropped from this death
+     * @since 1.15.1
      */
     public void setShouldDropExperience(boolean doExpDrop) {
         this.doExpDrop = doExpDrop;
@@ -271,6 +293,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * This flag overrides other EXP settings
      *
      * @return {@code true} if Player should keep all pre-death exp
+     * @since 1.1.0
      */
     public boolean getKeepLevel() {
         return this.keepLevel;
@@ -286,6 +309,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * EXP from dropping.</b>
      *
      * @param keepLevel {@code true} to keep all current value levels
+     * @since 1.1.0
      */
     public void setKeepLevel(boolean keepLevel) {
         this.keepLevel = keepLevel;
@@ -299,6 +323,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * items from dropping.</b>
      *
      * @param keepInventory {@code true} to keep the inventory
+     * @since 1.7.10
      */
     public void setKeepInventory(boolean keepInventory) {
         this.keepInventory = keepInventory;
@@ -308,6 +333,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * Gets if the Player keeps inventory on death.
      *
      * @return {@code true} if the player keeps inventory on death
+     * @since 1.7.10
      */
     public boolean getKeepInventory() {
         return this.keepInventory;
@@ -336,6 +362,7 @@ public class PlayerDeathEvent extends EntityDeathEvent {
      * An example case could be a "Note" that "You died at X/Y/Z coordinates"
      *
      * @return The list to hold items to keep
+     * @since 1.13.2
      */
     @NotNull
     public List<ItemStack> getItemsToKeep() {

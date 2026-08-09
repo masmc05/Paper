@@ -8,6 +8,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents a merchant. A merchant is a special type of inventory which can
  * facilitate custom trades between items.
+ *
+ * @since 1.11
  */
 public interface Merchant {
 
@@ -15,6 +17,7 @@ public interface Merchant {
      * Get a list of trades currently available from this merchant.
      *
      * @return an immutable list of trades
+     * @since 1.11
      */
     @NotNull
     List<MerchantRecipe> getRecipes();
@@ -26,6 +29,7 @@ public interface Merchant {
      * with this merchant.
      *
      * @param recipes a list of recipes
+     * @since 1.11
      */
     void setRecipes(@NotNull List<MerchantRecipe> recipes);
 
@@ -35,6 +39,7 @@ public interface Merchant {
      * @param i the index
      * @return the recipe
      * @throws IndexOutOfBoundsException if recipe index out of bounds
+     * @since 1.11
      */
     @NotNull
     MerchantRecipe getRecipe(int i) throws IndexOutOfBoundsException;
@@ -45,6 +50,7 @@ public interface Merchant {
      * @param i the index
      * @param recipe the recipe
      * @throws IndexOutOfBoundsException if recipe index out of bounds
+     * @since 1.11
      */
     void setRecipe(int i, @NotNull MerchantRecipe recipe) throws IndexOutOfBoundsException;
 
@@ -52,6 +58,7 @@ public interface Merchant {
      * Get the number of trades this merchant currently has available.
      *
      * @return the recipe count
+     * @since 1.11
      */
     int getRecipeCount();
 
@@ -59,6 +66,7 @@ public interface Merchant {
      * Gets whether this merchant is currently trading.
      *
      * @return whether the merchant is trading
+     * @since 1.11
      */
     boolean isTrading();
 
@@ -67,6 +75,7 @@ public interface Merchant {
      * currently trading.
      *
      * @return the trader, or null
+     * @since 1.11
      */
     @Nullable
     HumanEntity getTrader();

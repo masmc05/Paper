@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a map is initialized.
+ *
+ * @since 1.0.0
  */
 public class MapInitializeEvent extends ServerEvent {
 
@@ -23,18 +25,25 @@ public class MapInitializeEvent extends ServerEvent {
      * Gets the map initialized in this event.
      *
      * @return Map for this event
+     * @since 1.0.0
      */
     @NotNull
     public MapView getMap() {
         return this.mapView;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

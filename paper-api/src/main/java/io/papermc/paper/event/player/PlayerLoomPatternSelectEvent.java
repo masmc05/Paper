@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when a player selects a banner pattern in a loom inventory.
+ *
+ * @since 1.16.4
  */
 @NullMarked
 public class PlayerLoomPatternSelectEvent extends PlayerEvent implements Cancellable {
@@ -33,6 +35,7 @@ public class PlayerLoomPatternSelectEvent extends PlayerEvent implements Cancell
      * Gets the loom inventory involved.
      *
      * @return the loom inventory
+     * @since 1.16.4
      */
     public LoomInventory getLoomInventory() {
         return this.loomInventory;
@@ -42,6 +45,7 @@ public class PlayerLoomPatternSelectEvent extends PlayerEvent implements Cancell
      * Gets the pattern type selected.
      *
      * @return the pattern type
+     * @since 1.16.4
      */
     public PatternType getPatternType() {
         return this.patternType;
@@ -51,26 +55,39 @@ public class PlayerLoomPatternSelectEvent extends PlayerEvent implements Cancell
      * Sets the pattern type selected.
      *
      * @param patternType the pattern type
+     * @since 1.16.4
      */
     public void setPatternType(final PatternType patternType) {
         this.patternType = patternType;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

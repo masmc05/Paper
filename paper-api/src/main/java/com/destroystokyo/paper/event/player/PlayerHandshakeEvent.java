@@ -19,6 +19,8 @@ import org.jspecify.annotations.Nullable;
  * to your server platform will be run.
  *
  * <p>WARNING: TAMPERING WITH THIS EVENT CAN BE DANGEROUS</p>
+ *
+ * @since 1.9.4
  */
 @NullMarked
 public class PlayerHandshakeEvent extends Event implements Cancellable {
@@ -54,6 +56,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * Gets the original handshake string.
      *
      * @return the original handshake string
+     * @since 1.9.4
      */
     public String getOriginalHandshake() {
         return this.originalHandshake;
@@ -66,6 +69,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * <p>In cases where this event is manually fired and the plugin wasn't updated yet, the default is {@code "127.0.0.1"}.</p>
      *
      * @return the original socket address hostname
+     * @since 1.16.5
      */
     public String getOriginalSocketAddressHostname() {
         return this.originalSocketAddressHostname;
@@ -77,6 +81,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * <p>This should not include the port.</p>
      *
      * @return the server hostname string
+     * @since 1.9.4
      */
     public @Nullable String getServerHostname() {
         return this.serverHostname;
@@ -88,6 +93,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * <p>This should not include the port.</p>
      *
      * @param serverHostname the server hostname string
+     * @since 1.9.4
      */
     public void setServerHostname(final String serverHostname) {
         this.serverHostname = serverHostname;
@@ -99,6 +105,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * <p>This should not include the port.</p>
      *
      * @return the socket address hostname string
+     * @since 1.9.4
      */
     public @Nullable String getSocketAddressHostname() {
         return this.socketAddressHostname;
@@ -110,6 +117,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * <p>This should not include the port.</p>
      *
      * @param socketAddressHostname the socket address hostname string
+     * @since 1.9.4
      */
     public void setSocketAddressHostname(final String socketAddressHostname) {
         this.socketAddressHostname = socketAddressHostname;
@@ -119,6 +127,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * Gets the unique id.
      *
      * @return the unique id
+     * @since 1.9.4
      */
     public @Nullable UUID getUniqueId() {
         return this.uniqueId;
@@ -128,6 +137,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * Sets the unique id.
      *
      * @param uniqueId the unique id
+     * @since 1.9.4
      */
     public void setUniqueId(final UUID uniqueId) {
         this.uniqueId = uniqueId;
@@ -139,6 +149,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * <p>This should be a valid JSON string.</p>
      *
      * @return the profile properties, as JSON
+     * @since 1.9.4
      */
     public @Nullable String getPropertiesJson() {
         return this.propertiesJson;
@@ -151,6 +162,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * with the {@link #getFailMessage() fail message}.
      *
      * @return {@code true} if authentication failed, {@code false} otherwise
+     * @since 1.9.4
      */
     public boolean isFailed() {
         return this.failed;
@@ -163,6 +175,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * with the {@link #getFailMessage() fail message}.
      *
      * @param failed {@code true} if authentication failed, {@code false} otherwise
+     * @since 1.9.4
      */
     public void setFailed(final boolean failed) {
         this.failed = failed;
@@ -174,6 +187,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * <p>This should be a valid JSON string.</p>
      *
      * @param propertiesJson the profile properties, as JSON
+     * @since 1.9.4
      */
     public void setPropertiesJson(final String propertiesJson) {
         this.propertiesJson = propertiesJson;
@@ -183,6 +197,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * Gets the message to display to the client when authentication fails.
      *
      * @return the message to display to the client
+     * @since 1.16.5
      */
     public Component failMessage() {
         return this.failMessage;
@@ -192,6 +207,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * Sets the message to display to the client when authentication fails.
      *
      * @param failMessage the message to display to the client
+     * @since 1.16.5
      */
     public void failMessage(final Component failMessage) {
         this.failMessage = failMessage;
@@ -202,6 +218,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      *
      * @return the message to display to the client
      * @deprecated use {@link #failMessage()}
+     * @since 1.9.4
      */
     @Deprecated
     public String getFailMessage() {
@@ -213,6 +230,7 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      *
      * @param failMessage the message to display to the client
      * @deprecated use {@link #failMessage(Component)}
+     * @since 1.9.4
      */
     @Deprecated
     public void setFailMessage(final String failMessage) {
@@ -225,6 +243,8 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * <p>
      * When this event is cancelled, custom handshake logic will not
      * be processed.
+     *
+     * @since 1.9.4
      */
     @Override
     public boolean isCancelled() {
@@ -236,17 +256,25 @@ public class PlayerHandshakeEvent extends Event implements Cancellable {
      * <p>
      * When this event is cancelled, custom handshake logic will not
      * be processed.
+     *
+     * @since 1.9.4
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -6,6 +6,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Interface to the inventory of a Player, including the four armor slots and any extra slots.
+ *
+ * @since 1.0.0
  */
 public interface PlayerInventory extends Inventory {
 
@@ -15,6 +17,7 @@ public interface PlayerInventory extends Inventory {
      * @return all the ItemStacks from the armor slots. Individual items can be
      * null and are returned in a fixed order starting from the boots and going
      * up to the helmet
+     * @since 1.0.0
      */
     public @Nullable ItemStack @NotNull [] getArmorContents(); // Paper - make array elements nullable instead array
 
@@ -26,6 +29,7 @@ public interface PlayerInventory extends Inventory {
      * {@link #getArmorContents()}
      *
      * @return All additional ItemStacks. Individual items can be null.
+     * @since 1.9.4
      */
     public @Nullable ItemStack @NotNull [] getExtraContents(); // Paper - make array elements nullable instead array
 
@@ -33,6 +37,7 @@ public interface PlayerInventory extends Inventory {
      * Return the ItemStack from the helmet slot
      *
      * @return The ItemStack in the helmet slot
+     * @since 1.0.0
      */
     public @NotNull ItemStack getHelmet();
 
@@ -40,6 +45,7 @@ public interface PlayerInventory extends Inventory {
      * Return the ItemStack from the chestplate slot
      *
      * @return The ItemStack in the chestplate slot
+     * @since 1.0.0
      */
     public @NotNull ItemStack getChestplate();
 
@@ -47,6 +53,7 @@ public interface PlayerInventory extends Inventory {
      * Return the ItemStack from the leg slot
      *
      * @return The ItemStack in the leg slot
+     * @since 1.0.0
      */
     public @NotNull ItemStack getLeggings();
 
@@ -54,6 +61,7 @@ public interface PlayerInventory extends Inventory {
      * Return the ItemStack from the boots slot
      *
      * @return The ItemStack in the boots slot
+     * @since 1.0.0
      */
     public @NotNull ItemStack getBoots();
 
@@ -84,6 +92,7 @@ public interface PlayerInventory extends Inventory {
      * @see #setHelmet(ItemStack)
      * @see #setLeggings(ItemStack)
      * @see #setItemInOffHand(ItemStack)
+     * @since 1.8.8
      */
     @Override
     public void setItem(int index, @Nullable ItemStack item);
@@ -97,6 +106,7 @@ public interface PlayerInventory extends Inventory {
      * @throws IllegalArgumentException if the slot is invalid for the player
      * @see org.bukkit.entity.LivingEntity#canUseEquipmentSlot(EquipmentSlot)
      * @see #setItem(int, ItemStack)
+     * @since 1.9.4
      */
     public void setItem(@NotNull EquipmentSlot slot, @Nullable ItemStack item);
 
@@ -108,6 +118,7 @@ public interface PlayerInventory extends Inventory {
      * @return the ItemStack in the given slot
      * @throws IllegalArgumentException if the slot is invalid for the player
      * @see org.bukkit.entity.LivingEntity#canUseEquipmentSlot(EquipmentSlot)
+     * @since 1.9.4
      */
     @NotNull // Paper
     public ItemStack getItem(@NotNull EquipmentSlot slot);
@@ -116,6 +127,7 @@ public interface PlayerInventory extends Inventory {
      * Put the given ItemStacks into the armor slots
      *
      * @param items The ItemStacks to use as armour
+     * @since 1.0.0
      */
     public void setArmorContents(@Nullable ItemStack @NotNull [] items);
 
@@ -125,6 +137,7 @@ public interface PlayerInventory extends Inventory {
      * See {@link #getExtraContents()} for an explanation of extra slots.
      *
      * @param items The ItemStacks to use as extra
+     * @since 1.9.4
      */
     public void setExtraContents(@Nullable ItemStack @NotNull [] items);
 
@@ -133,6 +146,7 @@ public interface PlayerInventory extends Inventory {
      * the ItemStack is a helmet
      *
      * @param helmet The ItemStack to use as helmet
+     * @since 1.0.0
      */
     public void setHelmet(@Nullable ItemStack helmet);
 
@@ -141,6 +155,7 @@ public interface PlayerInventory extends Inventory {
      * if the ItemStack is a chestplate
      *
      * @param chestplate The ItemStack to use as chestplate
+     * @since 1.0.0
      */
     public void setChestplate(@Nullable ItemStack chestplate);
 
@@ -149,6 +164,7 @@ public interface PlayerInventory extends Inventory {
      * ItemStack is a pair of leggings
      *
      * @param leggings The ItemStack to use as leggings
+     * @since 1.0.0
      */
     public void setLeggings(@Nullable ItemStack leggings);
 
@@ -157,6 +173,7 @@ public interface PlayerInventory extends Inventory {
      * ItemStack is a boots
      *
      * @param boots The ItemStack to use as boots
+     * @since 1.0.0
      */
     public void setBoots(@Nullable ItemStack boots);
 
@@ -165,6 +182,7 @@ public interface PlayerInventory extends Inventory {
      * in their main hand.
      *
      * @return the currently held item
+     * @since 1.9.4
      */
     @NotNull
     ItemStack getItemInMainHand();
@@ -173,6 +191,7 @@ public interface PlayerInventory extends Inventory {
      * Sets the item the player is holding in their main hand.
      *
      * @param item The item to put into the player's hand
+     * @since 1.9.4
      */
     void setItemInMainHand(@Nullable ItemStack item);
 
@@ -181,6 +200,7 @@ public interface PlayerInventory extends Inventory {
      * in their off hand.
      *
      * @return the currently held item
+     * @since 1.9.4
      */
     @NotNull
     ItemStack getItemInOffHand();
@@ -189,6 +209,7 @@ public interface PlayerInventory extends Inventory {
      * Sets the item the player is holding in their off hand.
      *
      * @param item The item to put into the player's hand
+     * @since 1.9.4
      */
     void setItemInOffHand(@Nullable ItemStack item);
 
@@ -200,6 +221,7 @@ public interface PlayerInventory extends Inventory {
      * @see #getItemInOffHand()
      * @deprecated players can duel wield now use the methods for the
      *      specific hand instead
+     * @since 1.0.0
      */
     @Deprecated(since = "1.9")
     @NotNull
@@ -213,6 +235,7 @@ public interface PlayerInventory extends Inventory {
      * @see #setItemInOffHand(ItemStack)
      * @deprecated players can duel wield now use the methods for the
      *      specific hand instead
+     * @since 1.0.0
      */
     @Deprecated(since = "1.9")
     public void setItemInHand(@Nullable ItemStack stack);
@@ -221,6 +244,7 @@ public interface PlayerInventory extends Inventory {
      * Get the slot number of the currently held item
      *
      * @return Held item slot number
+     * @since 1.0.0
      */
     public int getHeldItemSlot();
 
@@ -232,9 +256,13 @@ public interface PlayerInventory extends Inventory {
      * @param slot The new slot number
      * @throws IllegalArgumentException Thrown if slot is not between 0 and 8
      *     inclusive
+     * @since 1.5.1
      */
     public void setHeldItemSlot(int slot);
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @Nullable
     public HumanEntity getHolder();

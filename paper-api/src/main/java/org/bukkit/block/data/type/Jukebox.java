@@ -5,6 +5,8 @@ import org.bukkit.block.data.BlockData;
 /**
  * 'has_record' is a quick flag to check whether this jukebox has a record
  * inside it.
+ *
+ * @since 1.13
  */
 public interface Jukebox extends BlockData {
 
@@ -12,6 +14,7 @@ public interface Jukebox extends BlockData {
      * Gets the value of the 'has_record' property.
      *
      * @return the 'has_record' value
+     * @since 1.13
      */
     boolean hasRecord();
 
@@ -19,6 +22,7 @@ public interface Jukebox extends BlockData {
      * Sets the value of the 'has_record' property.
      *
      * @param hasRecord the new 'has_record' value
+     * @since 1.21.6
      */
     void setHasRecord(boolean hasRecord);
 }

@@ -4,12 +4,16 @@ import org.bukkit.MusicInstrument;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.19.3
+ */
 public interface MusicInstrumentMeta extends ItemMeta {
 
     /**
      * Sets the goat horn's instrument.
      *
      * @param instrument the instrument to set
+     * @since 1.19.3
      */
     void setInstrument(@Nullable MusicInstrument instrument);
 
@@ -17,6 +21,7 @@ public interface MusicInstrumentMeta extends ItemMeta {
      * Gets the instrument of the goat horn.
      *
      * @return The instrument of the goat horn
+     * @since 1.19.3
      */
     @Nullable
     MusicInstrument getInstrument();

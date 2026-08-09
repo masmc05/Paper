@@ -13,6 +13,8 @@ package org.bukkit.block.data;
  * whilst 7 is the lowest.</b>
  * <br>
  * May not be higher than {@link #getMaximumLevel()}.
+ *
+ * @since 1.13
  */
 public interface Levelled extends BlockData {
 
@@ -20,6 +22,7 @@ public interface Levelled extends BlockData {
      * Gets the value of the 'level' property.
      *
      * @return the 'level' value
+     * @since 1.13
      */
     int getLevel();
 
@@ -27,6 +30,7 @@ public interface Levelled extends BlockData {
      * Sets the value of the 'level' property.
      *
      * @param level the new 'level' value
+     * @since 1.13
      */
     void setLevel(int level);
 
@@ -34,6 +38,7 @@ public interface Levelled extends BlockData {
      * Gets the maximum allowed value of the 'level' property.
      *
      * @return the maximum 'level' value
+     * @since 1.13
      */
     int getMaximumLevel();
 
@@ -42,6 +47,7 @@ public interface Levelled extends BlockData {
      * Gets the minimum allowed value of the 'level' property.
      *
      * @return the minimum 'level' value
+     * @since 1.18.1
      */
     int getMinimumLevel();
     // Paper end

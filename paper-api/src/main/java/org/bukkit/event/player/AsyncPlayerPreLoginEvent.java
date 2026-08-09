@@ -25,6 +25,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * Consider rendering any translatable yourself with {@link net.kyori.adventure.translation.GlobalTranslator#render}
  * if the client's language is known.
+ *
+ * @since 1.3.1
  */
 public class AsyncPlayerPreLoginEvent extends Event {
 
@@ -85,6 +87,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * Gets the current result of the login, as an enum
      *
      * @return Current Result of the login
+     * @since 1.3.2
      */
     @NotNull
     public Result getLoginResult() {
@@ -98,6 +101,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * @see #getLoginResult()
      * @deprecated This method uses a deprecated enum from {@link
      *     PlayerPreLoginEvent}
+     * @since 1.3.1
      */
     @Deprecated(since = "1.3.2")
     @NotNull
@@ -109,6 +113,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * Sets the new result of the login, as an enum
      *
      * @param result New result to set
+     * @since 1.3.2
      */
     public void setLoginResult(@NotNull final Result result) {
         this.result = result;
@@ -121,6 +126,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * @see #setLoginResult(Result)
      * @deprecated This method uses a deprecated enum from {@link
      *     PlayerPreLoginEvent}
+     * @since 1.3.1
      */
     @Deprecated(since = "1.3.2")
     public void setResult(@NotNull final PlayerPreLoginEvent.Result result) {
@@ -131,6 +137,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * Gets the current kick message that will be used when the outcome is not allowed
      *
      * @return Current kick message
+     * @since 1.16.5
      */
     @NotNull
     public Component kickMessage() {
@@ -141,6 +148,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * Sets the kick message to display when the outcome is not allowed
      *
      * @param message New kick message
+     * @since 1.16.5
      */
     public void kickMessage(@NotNull final Component message) {
         this.message = message;
@@ -151,6 +159,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      *
      * @param result New result for disallowing the player
      * @param message Kick message to display to the user
+     * @since 1.16.5
      */
     public void disallow(@NotNull final Result result, @NotNull final Component message) {
         this.result = result;
@@ -165,6 +174,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * @deprecated This method uses a deprecated enum from {@link
      *     PlayerPreLoginEvent}
      * @see #disallow(Result, String)
+     * @since 1.16.5
      */
     @Deprecated
     public void disallow(@NotNull final PlayerPreLoginEvent.Result result, @NotNull final net.kyori.adventure.text.Component message) {
@@ -177,6 +187,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      *
      * @return Current kick message
      * @deprecated in favour of {@link #kickMessage()}
+     * @since 1.3.1
      */
     @NotNull
     @Deprecated
@@ -189,6 +200,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      *
      * @param message New kick message
      * @deprecated in favour of {@link #kickMessage(Component)}
+     * @since 1.3.1
      */
     @Deprecated
     public void setKickMessage(@NotNull final String message) {
@@ -197,6 +209,8 @@ public class AsyncPlayerPreLoginEvent extends Event {
 
     /**
      * Allows the player to log in
+     *
+     * @since 1.3.1
      */
     public void allow() {
         this.result = Result.ALLOWED;
@@ -209,6 +223,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * @param result New result for disallowing the player
      * @param message Kick message to display to the user
      * @deprecated in favour of {@link #disallow(org.bukkit.event.player.AsyncPlayerPreLoginEvent.Result, Component)}
+     * @since 1.3.1
      */
     @Deprecated
     public void disallow(@NotNull final Result result, @NotNull final String message) {
@@ -224,6 +239,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * @see #disallow(Result, String)
      * @deprecated This method uses a deprecated enum from {@link
      *     PlayerPreLoginEvent}
+     * @since 1.3.1
      */
     @Deprecated(since = "1.3.2")
     public void disallow(@NotNull final PlayerPreLoginEvent.Result result, @NotNull final String message) {
@@ -235,6 +251,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * Gets the player's name.
      *
      * @return the player's name
+     * @since 1.3.1
      */
     @NotNull
     public String getName() {
@@ -245,6 +262,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * Gets the player IP address.
      *
      * @return The IP address
+     * @since 1.3.1
      */
     @NotNull
     public InetAddress getAddress() {
@@ -255,6 +273,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * Gets the player's unique ID.
      *
      * @return The unique ID
+     * @since 1.7.10
      */
     @NotNull
     public UUID getUniqueId() {
@@ -264,6 +283,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
     /**
      * Gets the PlayerProfile of the player logging in
      * @return The Profile
+     * @since 1.12.2
      */
     @NotNull
     public com.destroystokyo.paper.profile.PlayerProfile getPlayerProfile() {
@@ -273,6 +293,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
     /**
      * Changes the PlayerProfile the player will login as
      * @param profile The profile to use
+     * @since 1.12.2
      */
     public void setPlayerProfile(@NotNull com.destroystokyo.paper.profile.PlayerProfile profile) {
         this.profile = profile;
@@ -281,6 +302,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
     /**
      * Gets the raw address of the player logging in
      * @return The address
+     * @since 1.16.5
      */
     @NotNull
     public InetAddress getRawAddress() {
@@ -292,6 +314,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * blank if unknown
      *
      * @return The hostname
+     * @since 1.18.1
      */
     @NotNull
     public String getHostname() {
@@ -302,6 +325,7 @@ public class AsyncPlayerPreLoginEvent extends Event {
      * Gets if this connection has been transferred from another server.
      *
      * @return {@code true} if the connection has been transferred
+     * @since 1.20.6
      */
     public boolean isTransferred() {
         return this.transferred;
@@ -310,18 +334,25 @@ public class AsyncPlayerPreLoginEvent extends Event {
     /**
      * Gets the connection for the player logging in.
      * @return connection
+     * @since 1.21.7
      */
     @NotNull
     public PlayerLoginConnection getConnection() {
         return playerLoginConnection;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
@@ -329,28 +360,40 @@ public class AsyncPlayerPreLoginEvent extends Event {
 
     /**
      * Basic kick reasons for communicating to plugins
+     *
+     * @since 1.3.2
      */
     public enum Result {
 
         /**
          * The player is allowed to log in
+         *
+         * @since 1.3.2
          */
         ALLOWED,
         /**
          * The player is not allowed to log in, due to the server being full
+         *
+         * @since 1.3.2
          */
         KICK_FULL,
         /**
          * The player is not allowed to log in, due to them being banned
+         *
+         * @since 1.3.2
          */
         KICK_BANNED,
         /**
          * The player is not allowed to log in, due to them not being on the
          * white list
+         *
+         * @since 1.3.2
          */
         KICK_WHITELIST,
         /**
          * The player is not allowed to log in, for reasons undefined
+         *
+         * @since 1.3.2
          */
         KICK_OTHER;
 

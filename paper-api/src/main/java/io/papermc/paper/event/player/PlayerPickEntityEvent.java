@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
  * (middle-clicking an entity to get the appropriate item).
  * After the handling of this event, the contents of the source and the target slot will be swapped,
  * and the currently selected hotbar slot of the player will be set to the target slot.
+ *
+ * @since 1.21.6
  */
 @NullMarked
 public class PlayerPickEntityEvent extends PlayerPickItemEvent {
@@ -27,6 +29,7 @@ public class PlayerPickEntityEvent extends PlayerPickItemEvent {
      * Retrieves the entity associated with this event.
      *
      * @return the entity involved in the event
+     * @since 1.21.6
      */
     public Entity getEntity() {
         return this.entity;

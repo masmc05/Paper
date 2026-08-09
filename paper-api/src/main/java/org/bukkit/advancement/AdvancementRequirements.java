@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see <a href=https://minecraft.wiki/w/Advancement_definition>Advancement Definition</a>
  * @see <a href=https://www.minecraftforum.net/forums/minecraft-java-edition/redstone-discussion-and/commands-command-blocks-and/2809368-1-12-custom-advancements-aka-achievements#Requirements>Advancement Requirements</a>
+ * @since 1.21.3
  */
 public interface AdvancementRequirements {
 
@@ -20,6 +21,7 @@ public interface AdvancementRequirements {
      * Get all the requirements present in this advancement.
      *
      * @return an unmodifiable copy of all requirements.
+     * @since 1.21.3
      */
     @NotNull
     List<AdvancementRequirement> getRequirements();

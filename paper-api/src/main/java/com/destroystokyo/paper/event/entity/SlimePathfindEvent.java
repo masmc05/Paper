@@ -12,6 +12,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * This event does not fire for the entity's actual movement. Only when it
  * is choosing to start moving.
+ *
+ * @since 1.13
  */
 @NullMarked
 public class SlimePathfindEvent extends EntityEvent implements Cancellable {
@@ -29,27 +31,40 @@ public class SlimePathfindEvent extends EntityEvent implements Cancellable {
      * The Slime that is pathfinding.
      *
      * @return The Slime that is pathfinding.
+     * @since 1.13
      */
     @Override
     public AbstractCubeMob getEntity() {
         return (AbstractCubeMob) super.getEntity();
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -6,11 +6,15 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a {@link Zombie} which was once a {@link Villager}.
+ *
+ * @since 1.11
  */
 public interface ZombieVillager extends Zombie {
 
     /**
      * Sets the villager profession of this zombie.
+     *
+     * @since 1.11
      */
     @Override
     void setVillagerProfession(@NotNull Villager.Profession profession); // Paper
@@ -19,6 +23,7 @@ public interface ZombieVillager extends Zombie {
      * Returns the villager profession of this zombie.
      *
      * @return the profession
+     * @since 1.11
      */
     @Override
     @NotNull // Paper
@@ -28,6 +33,7 @@ public interface ZombieVillager extends Zombie {
      * Gets the current type of this villager.
      *
      * @return Current type.
+     * @since 1.15.2
      */
     @NotNull
     public Villager.Type getVillagerType();
@@ -36,6 +42,7 @@ public interface ZombieVillager extends Zombie {
      * Sets the new type of this villager.
      *
      * @param type New type.
+     * @since 1.15.2
      */
     public void setVillagerType(@NotNull Villager.Type type);
 
@@ -44,6 +51,7 @@ public interface ZombieVillager extends Zombie {
      * result of being cured.
      *
      * @return conversion status
+     * @since 1.13.2
      */
     @Override
     boolean isConverting();
@@ -56,6 +64,7 @@ public interface ZombieVillager extends Zombie {
      *
      * @return conversion time
      * @throws IllegalStateException if {@link #isConverting()} is false.
+     * @since 1.13.2
      */
     @Override
     int getConversionTime();
@@ -69,6 +78,7 @@ public interface ZombieVillager extends Zombie {
      * entity.
      *
      * @param time new conversion time
+     * @since 1.13.2
      */
     @Override
     void setConversionTime(int time);
@@ -78,6 +88,7 @@ public interface ZombieVillager extends Zombie {
      *
      * @return the player, or <code>null</code> if the player is unknown or the
      * entity isn't converting currently
+     * @since 1.14.1
      */
     @Nullable
     OfflinePlayer getConversionPlayer();
@@ -88,6 +99,7 @@ public interface ZombieVillager extends Zombie {
      * This has no effect if this entity isn't converting currently.
      *
      * @param conversionPlayer the player
+     * @since 1.14.1
      */
     void setConversionPlayer(@Nullable OfflinePlayer conversionPlayer);
 
@@ -105,6 +117,7 @@ public interface ZombieVillager extends Zombie {
      *                             org.bukkit.{@link org.bukkit.EntityEffect#ZOMBIE_TRANSFORM} entity event to the
      *                             world. If false, no entity event is published, preventing for example the
      *                             org.bukkit.{@link org.bukkit.Sound#ENTITY_ZOMBIE_VILLAGER_CURE} from playing.
+     * @since 1.19
      */
     void setConversionTime(int time, boolean broadcastEntityEvent);
     // Paper end - missing entity behaviour api - converting without entity event

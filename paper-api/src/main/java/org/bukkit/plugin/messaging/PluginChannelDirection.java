@@ -2,16 +2,22 @@ package org.bukkit.plugin.messaging;
 
 /**
  * Represents the different directions a plugin channel may go.
+ *
+ * @since 1.1.0
  */
 public enum PluginChannelDirection {
 
     /**
      * The plugin channel is being sent to the server from a client.
+     *
+     * @since 1.1.0
      */
     INCOMING,
 
     /**
      * The plugin channel is being sent to a client from the server.
+     *
+     * @since 1.1.0
      */
     OUTGOING
 }

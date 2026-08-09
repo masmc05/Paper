@@ -6,6 +6,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents an entity that can be sheared.
+ *
+ * @since 1.19.4
  */
 @NullMarked
 public interface Shearable extends Entity {
@@ -16,6 +18,8 @@ public interface Shearable extends Entity {
      * <p>
      * Some shearing behavior may cause the entity to no longer be valid
      * due to it being replaced by a different entity.
+     *
+     * @since 1.19.4
      */
     default void shear() {
         this.shear(Sound.Source.PLAYER);
@@ -32,6 +36,7 @@ public interface Shearable extends Entity {
      * for mooshrooms, and EntityDropItemEvent to be called for sheep.
      *
      * @param source Sound source to play any sound effects on
+     * @since 1.19.4
      */
     void shear(Sound.Source source);
 
@@ -39,6 +44,7 @@ public interface Shearable extends Entity {
      * Gets if the entity would be able to be sheared or not naturally using shears.
      *
      * @return if the entity can be sheared
+     * @since 1.19.4
      */
     boolean readyToBeSheared();
 }

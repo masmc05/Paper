@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when an entity is damaged by an entity
+ *
+ * @since 1.0.0
  */
 public class EntityDamageByEntityEvent extends EntityDamageEvent {
 
@@ -55,6 +57,7 @@ public class EntityDamageByEntityEvent extends EntityDamageEvent {
      * Returns the entity that damaged the defender.
      *
      * @return Entity that damaged the defender.
+     * @since 1.0.0
      */
     @NotNull
     public Entity getDamager() {
@@ -68,6 +71,7 @@ public class EntityDamageByEntityEvent extends EntityDamageEvent {
      *
      * @return if the hit was critical.
      * @see <a href="https://minecraft.wiki/wiki/Damage#Critical_hit">https://minecraft.wiki/wiki/Damage#Critical_hit</a>
+     * @since 1.17.1
      */
     public boolean isCritical() {
         return this.critical;
@@ -79,6 +83,8 @@ public class EntityDamageByEntityEvent extends EntityDamageEvent {
      * The {@link DamageSource#getDirectEntity()} may be different from the {@link #getDamager()}
      * if the damage source did not originally include a damager entity, but one was included
      * for this event {@link #getDamager()}.
+     *
+     * @since 1.20.4
      */
     @Override
     public @NotNull DamageSource getDamageSource() {

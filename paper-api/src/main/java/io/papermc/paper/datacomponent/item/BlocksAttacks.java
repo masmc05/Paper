@@ -17,11 +17,15 @@ import org.jspecify.annotations.Nullable;
  * Holds block attacks to the holding player like Shield.
  *
  * @see io.papermc.paper.datacomponent.DataComponentTypes#BLOCKS_ATTACKS
+ * @since 1.21.6
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface BlocksAttacks {
 
+    /**
+     * @since 1.21.6
+     */
     @Contract(value = "-> new", pure = true)
     static Builder blocksAttacks() {
         return ItemComponentTypesBridge.bridge().blocksAttacks();
@@ -31,6 +35,7 @@ public interface BlocksAttacks {
      * Gets the amount of time (in seconds) that use must be held before successfully blocking attacks.
      *
      * @return the delay in seconds
+     * @since 1.21.6
      */
     @Contract(pure = true)
     @NonNegative float blockDelaySeconds();
@@ -41,6 +46,7 @@ public interface BlocksAttacks {
      * If set to 0, this item can never be disabled by attacks.
      *
      * @return the multiplier for the cooldown time
+     * @since 1.21.6
      */
     @Contract(pure = true)
     @NonNegative float disableCooldownScale();
@@ -49,6 +55,7 @@ public interface BlocksAttacks {
      * Gets a list of {@link DamageReduction} of how much damage should be blocked in a given attack.
      *
      * @return a list of damage reductions
+     * @since 1.21.6
      */
     @Contract(pure = true)
     List<DamageReduction> damageReductions();
@@ -57,6 +64,7 @@ public interface BlocksAttacks {
      * Gets how much damage should be applied to the item from a given attack.
      *
      * @return the damage function
+     * @since 1.21.6
      */
     @Contract(pure = true)
     ItemDamageFunction itemDamage();
@@ -65,6 +73,7 @@ public interface BlocksAttacks {
      * Gets the DamageType that can bypass the blocking.
      *
      * @return a damage type tag key, or null if there is no such tag key
+     * @since 1.21.6
      */
     @Contract(pure = true)
     @Nullable RegistryKeySet<DamageType> bypassedBy();
@@ -73,6 +82,7 @@ public interface BlocksAttacks {
      * Gets the key sound to play when an attack is successfully blocked.
      *
      * @return a key of the sound
+     * @since 1.21.6
      */
     @Contract(pure = true)
     @Nullable Key blockSound();
@@ -81,37 +91,64 @@ public interface BlocksAttacks {
      * Gets the key sound to play when the item goes on its disabled cooldown due to an attack.
      *
      * @return a key of the sound
+     * @since 1.21.6
      */
     @Contract(pure = true)
     @Nullable Key disableSound();
 
     /**
      * Builder for {@link BlocksAttacks}.
+     *
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<BlocksAttacks> {
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         Builder blockDelaySeconds(@NonNegative float delay);
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         Builder disableCooldownScale(@NonNegative float scale);
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addDamageReduction(DamageReduction reduction);
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         Builder damageReductions(List<DamageReduction> reductions);
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         Builder itemDamage(ItemDamageFunction function);
 
+        /**
+         * @since 26.2
+         */
         @Contract(value = "_ -> this", mutates = "this")
         Builder bypassedBy(@Nullable RegistryKeySet<DamageType> bypassedBy);
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         Builder blockSound(@Nullable Key sound);
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         Builder disableSound(@Nullable Key sound);
     }

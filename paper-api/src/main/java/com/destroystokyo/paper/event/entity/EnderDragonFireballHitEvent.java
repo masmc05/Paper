@@ -12,6 +12,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Fired when a DragonFireball collides with a block/entity and spawns an AreaEffectCloud
+ *
+ * @since 1.13
  */
 @NullMarked
 public class EnderDragonFireballHitEvent extends EntityEvent implements Cancellable {
@@ -31,6 +33,8 @@ public class EnderDragonFireballHitEvent extends EntityEvent implements Cancella
 
     /**
      * The fireball involved in this event
+     *
+     * @since 1.13
      */
     @Override
     public DragonFireball getEntity() {
@@ -41,6 +45,7 @@ public class EnderDragonFireballHitEvent extends EntityEvent implements Cancella
      * The living entities hit by fireball
      *
      * @return the targets
+     * @since 1.13
      */
     public Collection<LivingEntity> getTargets() {
         return this.targets;
@@ -48,26 +53,39 @@ public class EnderDragonFireballHitEvent extends EntityEvent implements Cancella
 
     /**
      * @return The area effect cloud spawned in this collision
+     * @since 1.13
      */
     public AreaEffectCloud getAreaEffectCloud() {
         return this.areaEffectCloud;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

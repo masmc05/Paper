@@ -8,11 +8,25 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents the possible default values for permissions
+ *
+ * @since 1.0.0
  */
 public enum PermissionDefault {
+    /**
+     * @since 1.0.0
+     */
     TRUE("true"),
+    /**
+     * @since 1.0.0
+     */
     FALSE("false"),
+    /**
+     * @since 1.0.0
+     */
     OP("op", "isop", "operator", "isoperator", "admin", "isadmin"),
+    /**
+     * @since 1.0.0
+     */
     NOT_OP("!op", "notop", "!operator", "notoperator", "!admin", "notadmin");
 
     private final String[] names;
@@ -28,6 +42,7 @@ public enum PermissionDefault {
      *
      * @param op If the target is op
      * @return True if the default should be true, or false
+     * @since 1.0.0
      */
     public boolean getValue(boolean op) {
         switch (this) {
@@ -49,6 +64,7 @@ public enum PermissionDefault {
      *
      * @param name Name of the default
      * @return Specified value, or null if not found
+     * @since 1.0.0
      */
     @Nullable
     public static PermissionDefault getByName(@NotNull String name) {

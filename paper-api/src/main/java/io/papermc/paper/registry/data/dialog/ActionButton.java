@@ -10,6 +10,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Represents an action button in a dialog, which can be used to trigger actions or navigate within the dialog.
  * Action buttons can have labels, tooltips, and associated actions.
+ *
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public interface ActionButton {
@@ -22,6 +24,7 @@ public interface ActionButton {
      * @param width   the width of the button
      * @param action  the action to perform when the button is clicked, or null if no action is associated
      * @return a new ActionButton instance
+     * @since 1.21.7
      */
     @Contract(value = "_, _, _, _ -> new", pure = true)
     static ActionButton create(final Component label, final @Nullable Component tooltip, final @Range(from = 1, to = 1024) int width, final @Nullable DialogAction action) {
@@ -33,6 +36,7 @@ public interface ActionButton {
      *
      * @param label the label of the button
      * @return a new ActionButton.Builder instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_ -> new")
     static ActionButton.Builder builder(final Component label) {
@@ -43,6 +47,7 @@ public interface ActionButton {
      * Returns the label of the action button.
      *
      * @return the label of the button
+     * @since 1.21.7
      */
     @Contract(pure = true)
     Component label();
@@ -51,6 +56,7 @@ public interface ActionButton {
      * Returns the tooltip of the action button, or null if no tooltip is set.
      *
      * @return the tooltip of the button, or null
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Nullable Component tooltip();
@@ -59,6 +65,7 @@ public interface ActionButton {
      * Returns the width of the action button.
      *
      * @return the width of the button
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Range(from = 1, to = 1024) int width();
@@ -67,12 +74,15 @@ public interface ActionButton {
      * Returns the action associated with this button, or null if no action is associated.
      *
      * @return the action to perform when the button is clicked, or null
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Nullable DialogAction action();
 
     /**
      * A builder for creating ActionButton instances.
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     interface Builder {
@@ -82,6 +92,7 @@ public interface ActionButton {
          *
          * @param tooltip the tooltip of the button, or null
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder tooltip(@Nullable Component tooltip);
@@ -91,6 +102,7 @@ public interface ActionButton {
          *
          * @param width the width of the button
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder width(@Range(from = 1, to = 1024) int width);
@@ -100,6 +112,7 @@ public interface ActionButton {
          *
          * @param action the action to perform when the button is clicked, or null
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder action(@Nullable DialogAction action);
@@ -108,6 +121,7 @@ public interface ActionButton {
          * Builds the ActionButton instance with the configured values.
          *
          * @return a new ActionButton instance
+         * @since 1.21.7
          */
         @Contract(value = "-> new", pure = true)
         ActionButton build();

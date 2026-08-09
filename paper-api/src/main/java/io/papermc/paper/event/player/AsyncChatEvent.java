@@ -22,6 +22,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * Care should be taken to check {@link #isAsynchronous()} and treat the event
  * appropriately.
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public final class AsyncChatEvent extends AbstractChatEvent {
@@ -33,11 +35,17 @@ public final class AsyncChatEvent extends AbstractChatEvent {
         super(async, player, viewers, renderer, message, originalMessage, signedMessage);
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Class for providing biomes.
+ *
+ * @since 1.17.1
  */
 public abstract class BiomeProvider {
 
@@ -27,6 +29,7 @@ public abstract class BiomeProvider {
      * @param y The Y-coordinate from world origin
      * @param z The Z-coordinate from world origin
      * @return Biome for the given location
+     * @since 1.17.1
      */
     @NotNull
     public abstract Biome getBiome(@NotNull WorldInfo worldInfo, int x, int y, int z);
@@ -55,6 +58,7 @@ public abstract class BiomeProvider {
      *                       continentalness, erosion, depth and weirdness)
      * @return Biome for the given location
      * @see #getBiome(WorldInfo, int, int, int)
+     * @since 1.19.3
      */
     @NotNull
     public Biome getBiome(@NotNull WorldInfo worldInfo, int x, int y, int z, @NotNull BiomeParameterPoint biomeParameterPoint) {
@@ -76,6 +80,7 @@ public abstract class BiomeProvider {
      *
      * @param worldInfo The world info of the world the list will be used for
      * @return A list with every biome the {@link BiomeProvider} uses
+     * @since 1.17.1
      */
     @NotNull
     public abstract List<Biome> getBiomes(@NotNull WorldInfo worldInfo);

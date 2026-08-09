@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents an immutable copy of an entity's state. Can be used at any time to
  * create an instance of the stored entity.
+ *
+ * @since 1.20.4
  */
 public interface EntitySnapshot {
 
@@ -17,6 +19,7 @@ public interface EntitySnapshot {
      *
      * @param world the world to create the entity in
      * @return a copy of this entity.
+     * @since 1.20.4
      */
     @NotNull
     Entity createEntity(@NotNull World world);
@@ -26,6 +29,7 @@ public interface EntitySnapshot {
      *
      * @param to the location to copy to
      * @return the new entity.
+     * @since 1.20.4
      */
     @NotNull
     Entity createEntity(@NotNull Location to);
@@ -34,6 +38,7 @@ public interface EntitySnapshot {
      * Gets the type of entity this template holds.
      *
      * @return the type
+     * @since 1.20.4
      */
     @NotNull
     EntityType getEntityType();
@@ -44,6 +49,7 @@ public interface EntitySnapshot {
      * This string should not be relied upon as a serializable value.
      *
      * @return the NBT string
+     * @since 1.20.6
      */
     @NotNull
     @ApiStatus.Experimental

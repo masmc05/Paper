@@ -8,6 +8,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents all the map cursors on a {@link MapCanvas}. Like MapCanvas, a
  * MapCursorCollection is linked to a specific {@link MapRenderer}.
+ *
+ * @since 1.0.0
  */
 public final class MapCursorCollection {
     private List<MapCursor> cursors = new ArrayList<MapCursor>();
@@ -16,6 +18,7 @@ public final class MapCursorCollection {
      * Get the amount of cursors in this collection.
      *
      * @return The size of this collection.
+     * @since 1.0.0
      */
     public int size() {
         return cursors.size();
@@ -26,6 +29,7 @@ public final class MapCursorCollection {
      *
      * @param index The index of the cursor.
      * @return The MapCursor.
+     * @since 1.0.0
      */
     @NotNull
     public MapCursor getCursor(int index) {
@@ -37,6 +41,7 @@ public final class MapCursorCollection {
      *
      * @param cursor The MapCursor to remove.
      * @return Whether the cursor was removed successfully.
+     * @since 1.0.0
      */
     public boolean removeCursor(@NotNull MapCursor cursor) {
         return cursors.remove(cursor);
@@ -47,6 +52,7 @@ public final class MapCursorCollection {
      *
      * @param cursor The MapCursor to add.
      * @return The MapCursor that was passed.
+     * @since 1.0.0
      */
     @NotNull
     public MapCursor addCursor(@NotNull MapCursor cursor) {
@@ -61,6 +67,7 @@ public final class MapCursorCollection {
      * @param y The y coordinate, from -128 to 127.
      * @param direction The facing of the cursor, from 0 to 15.
      * @return The newly added MapCursor.
+     * @since 1.0.0
      */
     @NotNull
     public MapCursor addCursor(int x, int y, byte direction) {
@@ -76,6 +83,7 @@ public final class MapCursorCollection {
      * @param type The type (color/style) of the map cursor.
      * @return The newly added MapCursor.
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -93,6 +101,7 @@ public final class MapCursorCollection {
      * @param visible Whether the cursor is visible.
      * @return The newly added MapCursor.
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -111,6 +120,7 @@ public final class MapCursorCollection {
      * @param caption banner caption
      * @return The newly added MapCursor.
      * @deprecated Magic value
+     * @since 1.13
      */
     @Deprecated(since = "1.13")
     @NotNull
@@ -129,6 +139,7 @@ public final class MapCursorCollection {
      * @param caption banner caption
      * @return The newly added MapCursor.
      * @deprecated Magic value
+     * @since 1.16.5
      */
     @Deprecated
     public @NotNull MapCursor addCursor(int x, int y, byte direction, byte type, boolean visible, net.kyori.adventure.text.@Nullable Component caption) {

@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Called when an item used by the player takes durability damage as a result of
  * being used.
+ *
+ * @since 1.5.1
  */
 public class PlayerItemDamageEvent extends PlayerEvent implements Cancellable {
 
@@ -39,6 +41,7 @@ public class PlayerItemDamageEvent extends PlayerEvent implements Cancellable {
      * Gets the item being damaged.
      *
      * @return the item
+     * @since 1.5.1
      */
     @NotNull
     public ItemStack getItem() {
@@ -49,11 +52,15 @@ public class PlayerItemDamageEvent extends PlayerEvent implements Cancellable {
      * Gets the amount of durability damage this item will be taking.
      *
      * @return durability change
+     * @since 1.5.1
      */
     public int getDamage() {
         return this.damage;
     }
 
+    /**
+     * @since 1.5.1
+     */
     public void setDamage(int damage) {
         this.damage = damage;
     }
@@ -64,27 +71,40 @@ public class PlayerItemDamageEvent extends PlayerEvent implements Cancellable {
      * this value will be the same as the {@link #getDamage()} value.
      *
      * @return pre-reduction damage amount
+     * @since 1.18.2
      */
     public int getOriginalDamage() {
         return this.originalDamage;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

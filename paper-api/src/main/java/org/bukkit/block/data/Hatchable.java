@@ -2,6 +2,8 @@ package org.bukkit.block.data;
 
 /**
  * 'hatch' is the number of entities which may hatch from these eggs.
+ *
+ * @since 1.20
  */
 public interface Hatchable extends BlockData {
 
@@ -9,6 +11,7 @@ public interface Hatchable extends BlockData {
      * Gets the value of the 'hatch' property.
      *
      * @return the 'hatch' value
+     * @since 1.20
      */
     int getHatch();
 
@@ -16,6 +19,7 @@ public interface Hatchable extends BlockData {
      * Sets the value of the 'hatch' property.
      *
      * @param hatch the new 'hatch' value
+     * @since 1.20
      */
     void setHatch(int hatch);
 
@@ -23,6 +27,7 @@ public interface Hatchable extends BlockData {
      * Gets the maximum allowed value of the 'hatch' property.
      *
      * @return the maximum 'hatch' value
+     * @since 1.20
      */
     int getMaximumHatch();
 }

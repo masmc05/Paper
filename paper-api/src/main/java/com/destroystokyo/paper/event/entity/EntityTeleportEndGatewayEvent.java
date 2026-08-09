@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Fired any time an entity attempts to teleport in an end gateway
+ *
+ * @since 1.12.2
  */
 @NullMarked
 public class EntityTeleportEndGatewayEvent extends EntityTeleportEvent {
@@ -25,6 +27,7 @@ public class EntityTeleportEndGatewayEvent extends EntityTeleportEvent {
      * The gateway triggering the teleport
      *
      * @return EndGateway used
+     * @since 1.12.2
      */
     public EndGateway getGateway() {
         return this.gateway;

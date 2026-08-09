@@ -10,6 +10,8 @@ import org.jspecify.annotations.Nullable;
  * Used for accessing different {@link Registry} instances
  * by a {@link RegistryKey}. Get the main instance of {@link RegistryAccess}
  * with {@link RegistryAccess#registryAccess()}.
+ *
+ * @since 1.20.6
  */
 @NullMarked
 @ApiStatus.NonExtendable
@@ -19,6 +21,7 @@ public interface RegistryAccess {
      * Get the {@link RegistryAccess} instance for the server.
      *
      * @return the RegistryAccess instance
+     * @since 1.20.6
      */
     static RegistryAccess registryAccess() {
         return RegistryAccessHolder.INSTANCE.orElseThrow(() -> new IllegalStateException("No RegistryAccess implementation found"));
@@ -43,6 +46,7 @@ public interface RegistryAccess {
      * @param <T> the type
      * @throws java.util.NoSuchElementException if no registry with the key is found
      * @throws IllegalArgumentException if the registry is not available yet
+     * @since 1.20.6
      */
     // Future note: We should have no trouble removing this generic qualifier when
     // registry types no longer have to be "keyed" as it shouldn't break ABI or API.

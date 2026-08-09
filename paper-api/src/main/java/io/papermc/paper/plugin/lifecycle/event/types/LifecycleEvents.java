@@ -15,6 +15,8 @@ import org.jetbrains.annotations.ApiStatus;
  * Holds various types of lifecycle events for
  * use when creating event handler configurations
  * in {@link LifecycleEventManager}.
+ *
+ * @since 1.20.4
  */
 public final class LifecycleEvents {
 
@@ -22,12 +24,15 @@ public final class LifecycleEvents {
      * This event is for registering commands to the server's brigadier command system. You can register a handler for this event in
      * {@link org.bukkit.plugin.java.JavaPlugin#onEnable()} or {@link io.papermc.paper.plugin.bootstrap.PluginBootstrap#bootstrap(BootstrapContext)}.
      * @see Commands an example of a command being registered
+     * @since 1.20.6
      */
     public static final LifecycleEventType.Prioritizable<LifecycleEventOwner, ReloadableRegistrarEvent<Commands>> COMMANDS = prioritized("commands", LifecycleEventOwner.class);
 
     /**
      * These events are for registering tags to the server's tag system. You can register a handler for these events
      * only in {@link io.papermc.paper.plugin.bootstrap.PluginBootstrap#bootstrap(BootstrapContext)}.
+     *
+     * @since 1.21.1
      */
     @ApiStatus.Experimental
     public static final TagEventTypeProvider TAGS = LifecycleEventTypeProvider.provider().tagProvider();
@@ -37,6 +42,7 @@ public final class LifecycleEvents {
      * This event is for informing the server about any available datapacks from other sources such as inside a plugin's jar. You
      * can register a handler for this event only in {@link io.papermc.paper.plugin.bootstrap.PluginBootstrap#bootstrap(BootstrapContext)}.
      * @see DatapackRegistrar an example of a datapack being discovered
+     * @since 1.21.4
      */
     @ApiStatus.Experimental
     public static final LifecycleEventType.Prioritizable<BootstrapContext, RegistrarEvent<DatapackRegistrar>> DATAPACK_DISCOVERY = bootstrapPrioritized("datapack_discovery");

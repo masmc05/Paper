@@ -9,16 +9,19 @@ import org.bukkit.entity.LivingEntity;
  *
  * @see org.bukkit.entity.Player#lookAt(Position, LookAnchor)
  * @see org.bukkit.entity.Player#lookAt(Entity, LookAnchor, LookAnchor)
+ * @since 1.19
  */
 public enum LookAnchor {
     /**
      * Represents the entity's feet.
      * @see LivingEntity#getLocation()
+     * @since 1.19
      */
     FEET,
     /**
      * Represents the entity's eyes.
      * @see LivingEntity#getEyeLocation()
+     * @since 1.19
      */
     EYES;
 }

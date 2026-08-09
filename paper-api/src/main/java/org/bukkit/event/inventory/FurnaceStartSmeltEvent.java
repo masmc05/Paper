@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * Furnace-like blocks are {@link org.bukkit.block.Furnace},
  * {@link org.bukkit.block.Smoker}, and {@link org.bukkit.block.BlastFurnace}.
+ *
+ * @since 1.17.1
  */
 public class FurnaceStartSmeltEvent extends InventoryBlockStartEvent {
 
@@ -36,6 +38,7 @@ public class FurnaceStartSmeltEvent extends InventoryBlockStartEvent {
      * Gets the FurnaceRecipe associated with this event
      *
      * @return the FurnaceRecipe being cooked
+     * @since 1.17.1
      */
     @NotNull
     public CookingRecipe<?> getRecipe() {
@@ -46,6 +49,7 @@ public class FurnaceStartSmeltEvent extends InventoryBlockStartEvent {
      * Gets the total cook time associated with this event
      *
      * @return the total cook time
+     * @since 1.17.1
      */
     public int getTotalCookTime() {
         return this.totalCookTime;
@@ -55,6 +59,7 @@ public class FurnaceStartSmeltEvent extends InventoryBlockStartEvent {
      * Sets the total cook time for this event
      *
      * @param cookTime the new total cook time
+     * @since 1.17.1
      */
     public void setTotalCookTime(int cookTime) {
         this.totalCookTime = cookTime;

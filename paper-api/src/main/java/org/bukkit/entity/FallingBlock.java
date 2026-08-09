@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a falling block
+ *
+ * @since 1.3.2
  */
 public interface FallingBlock extends Entity {
 
@@ -14,6 +16,7 @@ public interface FallingBlock extends Entity {
      *
      * @return Material of the block
      * @deprecated use {@link #getBlockData()}
+     * @since 1.3.2
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -23,6 +26,7 @@ public interface FallingBlock extends Entity {
      * Get the data for the falling block
      *
      * @return data of the block
+     * @since 1.3.2
      */
     @NotNull
     BlockData getBlockData();
@@ -34,6 +38,7 @@ public interface FallingBlock extends Entity {
      * purged by calling this setter.
      *
      * @param blockData the data to use as the block
+     * @since 1.20.2
      */
     void setBlockData(@NotNull BlockData blockData);
 
@@ -42,6 +47,7 @@ public interface FallingBlock extends Entity {
      * which includes potential NBT data that gets applied when the block gets placed on landing.
      *
      * @return the BlockState representing this block
+     * @since 1.20.2
      */
     @NotNull
     org.bukkit.block.BlockState getBlockState();
@@ -50,6 +56,7 @@ public interface FallingBlock extends Entity {
      * Sets the {@link BlockData} and possibly present block entity data for the falling block.
      *
      * @param blockState the BlockState to use
+     * @since 1.20.2
      */
     void setBlockState(@NotNull org.bukkit.block.BlockState blockState);
     // Paper end
@@ -62,6 +69,7 @@ public interface FallingBlock extends Entity {
      * {@code true}.
      *
      * @return true if the block will break into an item when obstructed
+     * @since 1.3.2
      */
     boolean getDropItem();
 
@@ -73,6 +81,7 @@ public interface FallingBlock extends Entity {
      * {@code true}.
      *
      * @param drop true to break into an item when obstructed
+     * @since 1.3.2
      */
     void setDropItem(boolean drop);
 
@@ -86,6 +95,7 @@ public interface FallingBlock extends Entity {
      * be dropped.
      *
      * @return true if the block will disappear
+     * @since 1.20.1
      */
     boolean getCancelDrop();
 
@@ -99,6 +109,7 @@ public interface FallingBlock extends Entity {
      * <strong>NOT</strong> be dropped.
      *
      * @param cancelDrop true to make the block disappear when landing
+     * @since 1.20.1
      */
     void setCancelDrop(boolean cancelDrop);
 
@@ -106,6 +117,7 @@ public interface FallingBlock extends Entity {
      * Get the HurtEntities state of this block.
      *
      * @return whether entities will be damaged by this block.
+     * @since 1.8.8
      */
     boolean canHurtEntities();
 
@@ -113,6 +125,7 @@ public interface FallingBlock extends Entity {
      * Set the HurtEntities state of this block.
      *
      * @param hurtEntities whether entities will be damaged by this block.
+     * @since 1.8.8
      */
     void setHurtEntities(boolean hurtEntities);
 
@@ -121,6 +134,7 @@ public interface FallingBlock extends Entity {
      * that the block had fallen when this falling block lands on them.
      *
      * @return the damage per block
+     * @since 1.19.4
      */
     float getDamagePerBlock();
 
@@ -132,6 +146,7 @@ public interface FallingBlock extends Entity {
      * {@link #setHurtEntities(boolean) setHurtEntities(true)}.
      *
      * @param damage the damage per block to set. Must be >= 0.0
+     * @since 1.19.4
      */
     void setDamagePerBlock(float damage);
 
@@ -140,6 +155,7 @@ public interface FallingBlock extends Entity {
      * this falling block lands on them.
      *
      * @return the max damage
+     * @since 1.19.4
      */
     int getMaxDamage();
 
@@ -151,6 +167,7 @@ public interface FallingBlock extends Entity {
      * {@link #setHurtEntities(boolean) setHurtEntities(true)}.
      *
      * @param damage the max damage to set. Must be >= 0
+     * @since 1.19.4
      */
     void setMaxDamage(int damage);
 
@@ -159,6 +176,7 @@ public interface FallingBlock extends Entity {
      *
      * @return the source block location the FallingBlock was spawned from
      * @deprecated replaced by {@link Entity#getOrigin()}
+     * @since 1.9.4
      */
     @Deprecated
     default org.bukkit.Location getSourceLoc() {
@@ -171,6 +189,7 @@ public interface FallingBlock extends Entity {
      * - 5 seconds and is outside of the world
      *
      * @return if this behavior occurs
+     * @since 1.18.2
      */
     boolean doesAutoExpire();
 
@@ -180,6 +199,7 @@ public interface FallingBlock extends Entity {
      * - 5 seconds and is outside of the world
      *
      * @param autoExpires if this behavior should occur
+     * @since 1.18.2
      */
     void shouldAutoExpire(boolean autoExpires);
     // Paper end - Auto expire setting

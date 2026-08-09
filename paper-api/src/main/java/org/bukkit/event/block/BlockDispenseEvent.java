@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * If this event is cancelled, the block will not dispense the
  * item.
+ *
+ * @since 1.0.0
  */
 public class BlockDispenseEvent extends BlockEvent implements Cancellable {
 
@@ -36,6 +38,7 @@ public class BlockDispenseEvent extends BlockEvent implements Cancellable {
      * #setItem(ItemStack)} instead.
      *
      * @return An ItemStack for the item being dispensed
+     * @since 1.0.0
      */
     @NotNull
     public ItemStack getItem() {
@@ -46,6 +49,7 @@ public class BlockDispenseEvent extends BlockEvent implements Cancellable {
      * Sets the item being dispensed.
      *
      * @param item the item being dispensed
+     * @since 1.0.0
      */
     public void setItem(@NotNull ItemStack item) {
         this.item = item;
@@ -58,6 +62,7 @@ public class BlockDispenseEvent extends BlockEvent implements Cancellable {
      * must use {@link #setVelocity(Vector)} instead.
      *
      * @return A Vector for the dispensed item's velocity
+     * @since 1.0.0
      */
     @NotNull
     public Vector getVelocity() {
@@ -68,27 +73,40 @@ public class BlockDispenseEvent extends BlockEvent implements Cancellable {
      * Sets the velocity of the item being dispensed in meters per tick.
      *
      * @param velocity the velocity of the item being dispensed
+     * @since 1.0.0
      */
     public void setVelocity(@NotNull Vector velocity) {
         this.velocity = velocity.clone();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

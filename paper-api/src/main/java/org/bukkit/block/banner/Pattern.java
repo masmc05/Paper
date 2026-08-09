@@ -13,6 +13,9 @@ import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.8
+ */
 @SerializableAs("Pattern")
 public class Pattern implements ConfigurationSerializable {
 
@@ -28,6 +31,7 @@ public class Pattern implements ConfigurationSerializable {
      *
      * @param color   the pattern color
      * @param pattern the pattern type
+     * @since 1.8
      */
     public Pattern(@NotNull DyeColor color, @NotNull PatternType pattern) {
         this.color = color;
@@ -38,6 +42,7 @@ public class Pattern implements ConfigurationSerializable {
      * Constructor for deserialization.
      *
      * @param map the map to deserialize from
+     * @since 1.8
      */
     public Pattern(@NotNull Map<String, Object> map) {
         color = DyeColor.legacyValueOf(getString(map, COLOR));
@@ -62,6 +67,9 @@ public class Pattern implements ConfigurationSerializable {
         throw new NoSuchElementException(map + " does not contain " + key);
     }
 
+    /**
+     * @since 1.8
+     */
     @NotNull
     @Override
     public Map<String, Object> serialize() {
@@ -75,6 +83,7 @@ public class Pattern implements ConfigurationSerializable {
      * Returns the color of the pattern
      *
      * @return the color of the pattern
+     * @since 1.8
      */
     @NotNull
     public DyeColor getColor() {
@@ -85,6 +94,7 @@ public class Pattern implements ConfigurationSerializable {
      * Returns the type of pattern
      *
      * @return the pattern type
+     * @since 1.8
      */
     @NotNull
     public PatternType getPattern() {

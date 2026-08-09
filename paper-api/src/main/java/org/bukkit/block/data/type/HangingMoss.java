@@ -4,6 +4,8 @@ import org.bukkit.block.data.BlockData;
 
 /**
  * 'tip' indicates whether this block is a tip.
+ *
+ * @since 1.21.3
  */
 public interface HangingMoss extends BlockData {
 
@@ -11,6 +13,7 @@ public interface HangingMoss extends BlockData {
      * Gets the value of the 'tip' property.
      *
      * @return the 'tip' value
+     * @since 1.21.3
      */
     boolean isTip();
 
@@ -18,6 +21,7 @@ public interface HangingMoss extends BlockData {
      * Sets the value of the 'tip' property.
      *
      * @param tip the new 'tip' value
+     * @since 1.21.3
      */
     void setTip(boolean tip);
 }

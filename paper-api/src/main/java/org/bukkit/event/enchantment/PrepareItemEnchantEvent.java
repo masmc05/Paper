@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Called when an ItemStack is inserted in an enchantment table - can be
  * called multiple times
+ *
+ * @since 1.1.0
  */
 public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellable {
 
@@ -38,6 +40,9 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
         this.bonus = bonus;
     }
 
+    /**
+     * @since 1.21
+     */
     @NotNull
     @Override
     public EnchantmentView getView() {
@@ -48,6 +53,7 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
      * Gets the player enchanting the item
      *
      * @return enchanting player
+     * @since 1.1.0
      */
     @NotNull
     public Player getEnchanter() {
@@ -58,6 +64,7 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
      * Gets the block being used to enchant the item
      *
      * @return the block used for enchanting
+     * @since 1.1.0
      */
     @NotNull
     public Block getEnchantBlock() {
@@ -68,6 +75,7 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
      * Gets the item to be enchanted.
      *
      * @return ItemStack of item
+     * @since 1.1.0
      */
     @NotNull
     public ItemStack getItem() {
@@ -79,6 +87,7 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
      *
      * @return experience level costs offered
      * @deprecated Use {@link #getOffers()} instead of this method
+     * @since 1.1.0
      */
     @NotNull
     @Deprecated(since = "1.20.5")
@@ -97,6 +106,7 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
      * are 3 slots in the enchantment table available to modify.
      *
      * @return list of available enchantment offers
+     * @since 1.11
      */
     public @Nullable EnchantmentOffer @NotNull[] getOffers() {
         return this.offers;
@@ -106,27 +116,40 @@ public class PrepareItemEnchantEvent extends InventoryEvent implements Cancellab
      * Get enchantment bonus in effect - corresponds to number of bookshelves
      *
      * @return enchantment bonus
+     * @since 1.1.0
      */
     public int getEnchantmentBonus() {
         return this.bonus;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

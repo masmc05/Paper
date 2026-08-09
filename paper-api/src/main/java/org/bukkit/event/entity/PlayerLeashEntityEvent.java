@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called immediately prior to a creature being leashed by a player.
+ *
+ * @since 1.6.2
  */
 public class PlayerLeashEntityEvent extends Event implements Cancellable {
 
@@ -41,6 +43,7 @@ public class PlayerLeashEntityEvent extends Event implements Cancellable {
      * Returns the entity that is holding the leash.
      *
      * @return The leash holder
+     * @since 1.6.2
      */
     @NotNull
     public Entity getLeashHolder() {
@@ -51,6 +54,7 @@ public class PlayerLeashEntityEvent extends Event implements Cancellable {
      * Returns the entity being leashed.
      *
      * @return The entity
+     * @since 1.6.2
      */
     @NotNull
     public Entity getEntity() {
@@ -61,6 +65,7 @@ public class PlayerLeashEntityEvent extends Event implements Cancellable {
      * Returns the player involved in this event
      *
      * @return Player who is involved in this event
+     * @since 1.6.2
      */
     @NotNull
     public final Player getPlayer() {
@@ -71,28 +76,41 @@ public class PlayerLeashEntityEvent extends Event implements Cancellable {
      * Returns the hand used by the player to leash the entity.
      *
      * @return the hand
+     * @since 1.19.2
      */
     @NotNull
     public EquipmentSlot getHand() {
         return this.hand;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

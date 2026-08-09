@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when an arrow enters or exists an entity's body.
+ *
+ * @since 1.16.2
  */
 public class ArrowBodyCountChangeEvent extends EntityEvent implements Cancellable {
 
@@ -33,6 +35,7 @@ public class ArrowBodyCountChangeEvent extends EntityEvent implements Cancellabl
      * Whether the event was called because the entity was reset.
      *
      * @return was reset
+     * @since 1.16.2
      */
     public boolean isReset() {
         return this.reset;
@@ -42,6 +45,7 @@ public class ArrowBodyCountChangeEvent extends EntityEvent implements Cancellabl
      * Gets the old amount of arrows in the entity's body.
      *
      * @return amount of arrows
+     * @since 1.16.2
      */
     public int getOldAmount() {
         return this.oldAmount;
@@ -51,6 +55,7 @@ public class ArrowBodyCountChangeEvent extends EntityEvent implements Cancellabl
      * Get the new amount of arrows in the entity's body.
      *
      * @return amount of arrows
+     * @since 1.16.2
      */
     public int getNewAmount() {
         return this.newAmount;
@@ -60,34 +65,50 @@ public class ArrowBodyCountChangeEvent extends EntityEvent implements Cancellabl
      * Sets the final amount of arrows in the entity's body.
      *
      * @param newAmount amount of arrows
+     * @since 1.16.2
      */
     public void setNewAmount(int newAmount) {
         Preconditions.checkArgument(newAmount >= 0, "New arrow amount must be >= 0");
         this.newAmount = newAmount;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @Override
     @NotNull
     public LivingEntity getEntity() {
         return (LivingEntity) this.entity;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @Override
     @NotNull
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.3
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

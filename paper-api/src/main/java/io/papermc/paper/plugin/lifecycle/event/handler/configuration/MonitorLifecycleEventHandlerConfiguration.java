@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Contract;
  * Handler configuration for event types that allow "monitor" handlers.
  *
  * @param <O> the required owner type
+ * @since 1.20.4
  */
 @ApiStatus.NonExtendable
 public interface MonitorLifecycleEventHandlerConfiguration<O extends LifecycleEventOwner> extends LifecycleEventHandlerConfiguration<O> {
@@ -18,6 +19,7 @@ public interface MonitorLifecycleEventHandlerConfiguration<O extends LifecycleEv
      * to observe changes from previously run handlers.
      *
      * @return this configuration for chaining
+     * @since 1.20.4
      */
     @Contract("-> this")
     MonitorLifecycleEventHandlerConfiguration<O> monitor();

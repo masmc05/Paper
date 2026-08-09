@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
  * Called when an entity is spawned into a world by a spawner.
  * <p>
  * If this event is cancelled, the entity will not spawn.
+ *
+ * @since 1.6.1
  */
 public class SpawnerSpawnEvent extends EntitySpawnEvent {
 
@@ -27,6 +29,7 @@ public class SpawnerSpawnEvent extends EntitySpawnEvent {
      * spawner.
      *
      * @return the spawner tile state
+     * @since 1.6.1
      */
     @Nullable
     public CreatureSpawner getSpawner() {

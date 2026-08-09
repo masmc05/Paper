@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Contract;
  * Represents a confirmation dialog.
  * This interface defines the structure for a confirmation dialog with "confirm" and "deny" buttons.
  * @see DialogType#confirmation(ActionButton, ActionButton)
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public non-sealed interface ConfirmationType extends DialogType {
@@ -16,6 +17,7 @@ public non-sealed interface ConfirmationType extends DialogType {
      * Gets the button for confirming the action.
      *
      * @return the confirmation button
+     * @since 1.21.7
      */
     @Contract(pure = true)
     ActionButton yesButton();
@@ -24,6 +26,7 @@ public non-sealed interface ConfirmationType extends DialogType {
      * Gets the button for denying the action.
      *
      * @return the denial button
+     * @since 1.21.7
      */
     @Contract(pure = true)
     ActionButton noButton();

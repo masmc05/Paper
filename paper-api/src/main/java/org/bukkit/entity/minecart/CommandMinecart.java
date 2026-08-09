@@ -4,6 +4,9 @@ import org.bukkit.entity.Minecart;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.7.2
+ */
 public interface CommandMinecart extends Minecart, io.papermc.paper.command.CommandBlockHolder { // Paper
 
     /**
@@ -12,6 +15,7 @@ public interface CommandMinecart extends Minecart, io.papermc.paper.command.Comm
      * command, an empty String will be returned instead.
      *
      * @return Command that this CommandMinecart will run when powered.
+     * @since 1.7.2
      */
     @NotNull
     public String getCommand();
@@ -23,6 +27,7 @@ public interface CommandMinecart extends Minecart, io.papermc.paper.command.Comm
      *
      * @param command Command that this CommandMinecart will run when
      *     activated.
+     * @since 1.7.2
      */
     public void setCommand(@Nullable String command);
 
@@ -32,6 +37,7 @@ public interface CommandMinecart extends Minecart, io.papermc.paper.command.Comm
      *
      * @param name New name for this CommandMinecart.
      * @deprecated in favour of {@link #customName(net.kyori.adventure.text.Component)}
+     * @since 1.7.2
      */
     @Deprecated // Paper
     public void setName(@Nullable String name);

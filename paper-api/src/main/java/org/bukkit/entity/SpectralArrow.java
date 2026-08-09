@@ -2,6 +2,8 @@ package org.bukkit.entity;
 
 /**
  * Represents a spectral arrow.
+ *
+ * @since 1.9.4
  */
 public interface SpectralArrow extends AbstractArrow {
 
@@ -10,6 +12,7 @@ public interface SpectralArrow extends AbstractArrow {
      * the glowing effect for.
      *
      * @return the glowing effect ticks
+     * @since 1.9.4
      */
     int getGlowingTicks();
 
@@ -17,6 +20,7 @@ public interface SpectralArrow extends AbstractArrow {
      * Sets the amount of time to apply the glowing effect for.
      *
      * @param duration the glowing effect ticks
+     * @since 1.9.4
      */
     void setGlowingTicks(int duration);
 }

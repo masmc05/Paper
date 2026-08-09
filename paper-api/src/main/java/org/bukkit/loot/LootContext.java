@@ -10,9 +10,14 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents additional information a {@link LootTable} can use to modify it's
  * generated loot.
+ *
+ * @since 1.13
  */
 public final class LootContext {
 
+    /**
+     * @since 1.13
+     */
     public static final int DEFAULT_LOOT_MODIFIER = -1;
 
     private final Location location;
@@ -35,6 +40,7 @@ public final class LootContext {
      * The {@link Location} to store where the loot will be generated.
      *
      * @return the Location of where the loot will be generated
+     * @since 1.13
      */
     @NotNull
     public Location getLocation() {
@@ -47,6 +53,7 @@ public final class LootContext {
      * loot.
      *
      * @return luck
+     * @since 1.13
      */
     public float getLuck() {
         return luck;
@@ -73,6 +80,7 @@ public final class LootContext {
      * Get the {@link Entity} that was killed. Can be null.
      *
      * @return the looted entity or null
+     * @since 1.13
      */
     @Nullable
     public Entity getLootedEntity() {
@@ -84,6 +92,7 @@ public final class LootContext {
      * Can be null.
      *
      * @return the killer entity, or null.
+     * @since 1.13
      */
     @Nullable
     public HumanEntity getKiller() {
@@ -94,6 +103,8 @@ public final class LootContext {
      * Utility class to make building {@link LootContext} easier. The only
      * required argument is {@link Location} with a valid (non-null)
      * {@link org.bukkit.World}.
+     *
+     * @since 1.13
      */
     public static class Builder {
 
@@ -108,6 +119,7 @@ public final class LootContext {
          * creation of {@link LootContext}s.
          *
          * @param location the location the LootContext should use
+         * @since 1.13
          */
         public Builder(@NotNull Location location) {
             this.location = location.clone();
@@ -118,6 +130,7 @@ public final class LootContext {
          *
          * @param luck the luck level
          * @return the Builder
+         * @since 1.13
          */
         @NotNull
         public Builder luck(float luck) {
@@ -147,6 +160,7 @@ public final class LootContext {
          *
          * @param lootedEntity the looted entity
          * @return the Builder
+         * @since 1.13
          */
         @NotNull
         public Builder lootedEntity(@Nullable Entity lootedEntity) {
@@ -161,6 +175,7 @@ public final class LootContext {
          *
          * @param killer the killer entity
          * @return the Builder
+         * @since 1.13
          */
         @NotNull
         public Builder killer(@Nullable HumanEntity killer) {
@@ -173,6 +188,7 @@ public final class LootContext {
          * parameters.
          *
          * @return a new {@link LootContext} instance
+         * @since 1.13
          */
         @NotNull
         public LootContext build() {

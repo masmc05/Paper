@@ -3,6 +3,9 @@ package io.papermc.paper.connection;
 import com.destroystokyo.paper.profile.PlayerProfile;
 import org.jspecify.annotations.Nullable;
 
+/**
+ * @since 1.21.7
+ */
 public interface PlayerLoginConnection extends ReadablePlayerCookieConnection {
 
     /**
@@ -10,6 +13,7 @@ public interface PlayerLoginConnection extends ReadablePlayerCookieConnection {
      * This may return null depending on what stage this connection is at.
      *
      * @return authenticated profile, or null if not present
+     * @since 1.21.7
      */
     @Nullable PlayerProfile getAuthenticatedProfile();
 
@@ -17,6 +21,7 @@ public interface PlayerLoginConnection extends ReadablePlayerCookieConnection {
      * Gets the player profile that this connection is requesting to authenticate as.
      *
      * @return the unsafe unauthenticated profile, or null if not sent
+     * @since 1.21.7
      */
     @Nullable
     PlayerProfile getUnsafeProfile();

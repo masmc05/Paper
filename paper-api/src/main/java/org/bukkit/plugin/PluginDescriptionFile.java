@@ -198,6 +198,8 @@ import org.yaml.snakeyaml.representer.Representer;
  *    children:
  *      inferno.burningdeaths: true
  *</pre></blockquote>
+ *
+ * @since 1.0.0
  */
 public final class PluginDescriptionFile implements io.papermc.paper.plugin.configuration.PluginMeta { // Paper
     private static final Pattern VALID_NAME = Pattern.compile("^[A-Za-z0-9 _.-]+$");
@@ -296,42 +298,66 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
         this.libraries = libraries;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public @NotNull String getMainClass() {
         return this.main;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public @NotNull PluginLoadOrder getLoadOrder() {
         return this.order;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public @Nullable String getLoggerPrefix() {
         return this.prefix;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public @NotNull List<String> getPluginDependencies() {
         return this.depend;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public @NotNull List<String> getPluginSoftDependencies() {
         return this.softDepend;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public @NotNull List<String> getLoadBeforePlugins() {
         return this.loadBefore;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public @NotNull List<String> getProvidedPlugins() {
         return this.provides;
     }
     // Paper end
 
+    /**
+     * @since 1.0.0
+     */
     public PluginDescriptionFile(@NotNull final InputStream stream) throws InvalidDescriptionException {
         loadMap(asMap(YAML.get().load(stream)));
     }
@@ -342,6 +368,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * @param reader The reader
      * @throws InvalidDescriptionException If the PluginDescriptionFile is
      *     invalid
+     * @since 1.0.0
      */
     public PluginDescriptionFile(@NotNull final Reader reader) throws InvalidDescriptionException {
         loadMap(asMap(YAML.get().load(reader)));
@@ -353,6 +380,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * @param pluginName Name of this plugin
      * @param pluginVersion Version of this plugin
      * @param mainClass Full location of the main class of this plugin
+     * @since 1.0.0
      */
     public PluginDescriptionFile(@NotNull final String pluginName, @NotNull final String pluginVersion, @NotNull final String mainClass) {
         name = rawName = pluginName;
@@ -389,6 +417,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * Example:<blockquote><pre>name: MyPlugin</pre></blockquote>
      *
      * @return the name of the plugin
+     * @since 1.0.0
      */
     @NotNull
     public String getName() {
@@ -420,6 +449,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      *- OldPluginName</pre></blockquote>
      *
      * @return immutable list of the plugin APIs which this plugin provides
+     * @since 1.15.2
      */
     @NotNull
     public List<String> getProvides() {
@@ -441,6 +471,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * Example:<blockquote><pre>version: 1.4.1</pre></blockquote>
      *
      * @return the version of the plugin
+     * @since 1.0.0
      */
     @NotNull
     public String getVersion() {
@@ -468,6 +499,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * <blockquote><pre>main: org.bukkit.plugin.MyPlugin</pre></blockquote>
      *
      * @return the fully qualified main class for the plugin
+     * @since 1.0.0
      */
     @NotNull
     public String getMain() {
@@ -488,6 +520,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * <blockquote><pre>description: This plugin is so 31337. You can set yourself on fire.</pre></blockquote>
      *
      * @return description of this plugin, or null if not specified
+     * @since 1.0.0
      */
     @Nullable
     public String getDescription() {
@@ -512,6 +545,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * Example:<blockquote><pre>load: STARTUP</pre></blockquote>
      *
      * @return the phase when the plugin should be loaded
+     * @since 1.0.0
      */
     @NotNull
     public PluginLoadOrder getLoad() {
@@ -548,6 +582,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * <pre>authors: [Grum, feildmaster, aramanth]</pre>
      *
      * @return an immutable list of the plugin's authors
+     * @since 1.0.0
      */
     @NotNull
     public List<String> getAuthors() {
@@ -572,6 +607,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * <blockquote><pre>authors: [Choco, md_5]</pre></blockquote>
      *
      * @return an immutable list of the plugin's contributors
+     * @since 1.16.1
      */
     @NotNull
     public List<String> getContributors() {
@@ -592,6 +628,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * <blockquote><pre>website: http://www.curse.com/server-mods/minecraft/myplugin</pre></blockquote>
      *
      * @return description of this plugin, or null if not specified
+     * @since 1.0.0
      */
     @Nullable
     public String getWebsite() {
@@ -623,6 +660,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      *- AnotherPlugin</pre></blockquote>
      *
      * @return immutable list of the plugin's dependencies
+     * @since 1.0.0
      */
     @NotNull
     public List<String> getDepend() {
@@ -653,6 +691,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * <blockquote><pre>softdepend: [OnePlugin, AnotherPlugin]</pre></blockquote>
      *
      * @return immutable list of the plugin's preferred dependencies
+     * @since 1.0.0
      */
     @NotNull
     public List<String> getSoftDepend() {
@@ -683,6 +722,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      *
      * @return immutable list of plugins that should consider this plugin a
      *     soft-dependency
+     * @since 1.3.1
      */
     @NotNull
     public List<String> getLoadBefore() {
@@ -703,6 +743,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * Example:<blockquote><pre>prefix: ex-why-zee</pre></blockquote>
      *
      * @return the prefixed logging token, or null if not specified
+     * @since 1.1.0
      */
     @Nullable
     public String getPrefix() {
@@ -822,6 +863,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * Note: Command names may not have a colon in their name.
      *
      * @return the commands this plugin will register
+     * @since 1.0.0
      */
     @NotNull
     public Map<String, Map<String, Object>> getCommands() {
@@ -935,6 +977,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * href="doc-files/permissions-example_plugin.yml">here</a>.
      *
      * @return the permissions this plugin will register
+     * @since 1.0.0
      */
     @NotNull
     public List<Permission> getPermissions() {
@@ -965,6 +1008,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * Example:<blockquote><pre>default-permission: NOT_OP</pre></blockquote>
      *
      * @return the default value for the plugin's permissions
+     * @since 1.0.0
      */
     @NotNull
     public PermissionDefault getPermissionDefault() {
@@ -1005,6 +1049,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * defines any awareness.
      *
      * @return a set containing every awareness for the plugin
+     * @since 1.7.10
      */
     @NotNull
     public Set<PluginAwareness> getAwareness() {
@@ -1017,6 +1062,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * #getVersion()} entries.
      *
      * @return a descriptive name of the plugin and respective version
+     * @since 1.0.0
      */
     @NotNull
     public String getFullName() {
@@ -1035,6 +1081,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * Example:<blockquote><pre>api-version: 1.13</pre></blockquote>
      *
      * @return the version of the plugin
+     * @since 1.13
      */
     @Nullable
     public String getAPIVersion() {
@@ -1051,6 +1098,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      *     - com.squareup.okhttp3:okhttp:4.9.0</pre></blockquote>
      *
      * @return required libraries
+     * @since 1.16.5
      */
     @NotNull
     public List<String> getLibraries() {
@@ -1071,6 +1119,7 @@ public final class PluginDescriptionFile implements io.papermc.paper.plugin.conf
      * Saves this PluginDescriptionFile to the given writer
      *
      * @param writer Writer to output this file to
+     * @since 1.0.0
      */
     public void save(@NotNull Writer writer) {
         YAML.get().dump(saveMap(), writer);

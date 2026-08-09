@@ -19,6 +19,8 @@ import org.jspecify.annotations.NullMarked;
  * at runtime.
  * <p>
  * The jar library implementation will error if the file does not exist at the specified path.
+ *
+ * @since 1.19.3
  */
 @NullMarked
 public class JarLibrary implements ClassPathLibrary {
@@ -29,11 +31,15 @@ public class JarLibrary implements ClassPathLibrary {
      * Creates a new jar library that references the jar file found at the provided path.
      *
      * @param path the path, relative to the JVMs start directory.
+     * @since 1.19.3
      */
     public JarLibrary(final Path path) {
         this.path = path;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public void register(final LibraryStore store) throws LibraryLoadingException {
         if (Files.notExists(this.path)) {

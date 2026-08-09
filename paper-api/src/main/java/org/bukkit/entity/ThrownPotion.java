@@ -10,6 +10,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents a thrown potion bottle
+ *
+ * @since 1.0.0
  */
 @NullMarked
 public interface ThrownPotion extends ThrowableProjectile {
@@ -18,6 +20,7 @@ public interface ThrownPotion extends ThrowableProjectile {
      * Returns the effects that are applied by this potion.
      *
      * @return The potion effects
+     * @since 1.1.0
      */
     Collection<PotionEffect> getEffects();
 
@@ -29,6 +32,7 @@ public interface ThrownPotion extends ThrowableProjectile {
      * #setItem(ItemStack) setItemStack} method.
      *
      * @return A copy of the ItemStack for this thrown potion.
+     * @since 1.5.1
      */
     ItemStack getItem();
 
@@ -36,6 +40,7 @@ public interface ThrownPotion extends ThrowableProjectile {
      * Set the ItemStack for this thrown potion.
      *
      * @param item New ItemStack
+     * @since 1.5.1
      */
     void setItem(ItemStack item);
 
@@ -45,6 +50,7 @@ public interface ThrownPotion extends ThrowableProjectile {
      *
      * @return potion meta
      * @apiNote obsolete in favor of {@link #getItem()} / {@link #setItem(ItemStack)} with the equivalent {@link DataComponentTypes#POTION_CONTENTS} component
+     * @since 1.18.2
      */
     @ApiStatus.Obsolete
     PotionMeta getPotionMeta();
@@ -57,12 +63,15 @@ public interface ThrownPotion extends ThrowableProjectile {
      *
      * @param meta potion meta
      * @apiNote obsolete in favor of {@link #getItem()} / {@link #setItem(ItemStack)} with the equivalent {@link DataComponentTypes#POTION_CONTENTS} component
+     * @since 1.18.2
      */
     @ApiStatus.Obsolete
     void setPotionMeta(PotionMeta meta);
 
     /**
      * Splashes the potion at its current location.
+     *
+     * @since 1.19.2
      */
     void splash();
 }

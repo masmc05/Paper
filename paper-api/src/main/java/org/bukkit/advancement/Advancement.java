@@ -8,6 +8,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents an advancement that may be awarded to a player. This class is not
  * reference safe as the underlying advancement may be reloaded.
+ *
+ * @since 1.12
  */
 public interface Advancement extends Keyed {
 
@@ -15,6 +17,7 @@ public interface Advancement extends Keyed {
      * Get all the criteria present in this advancement.
      *
      * @return an unmodifiable copy of all criteria
+     * @since 1.12
      */
     @NotNull
     Collection<String> getCriteria();
@@ -23,6 +26,7 @@ public interface Advancement extends Keyed {
      * Returns the requirements for this advancement.
      *
      * @return an AdvancementRequirements object.
+     * @since 1.21.3
      */
     @NotNull
     AdvancementRequirements getRequirements();
@@ -35,6 +39,7 @@ public interface Advancement extends Keyed {
      * recipes.
      *
      * @return the display info
+     * @since 1.17.1
      */
     @Nullable
     io.papermc.paper.advancement.AdvancementDisplay getDisplay();
@@ -48,6 +53,7 @@ public interface Advancement extends Keyed {
      *
      * @return the display name
      * @see io.papermc.paper.advancement.AdvancementDisplay#displayName()
+     * @since 1.19.2
      */
     @NotNull net.kyori.adventure.text.Component displayName();
 
@@ -55,6 +61,7 @@ public interface Advancement extends Keyed {
      * Gets the parent advancement, if any.
      *
      * @return the parent advancement
+     * @since 1.17.1
      */
     @Nullable
     Advancement getParent();
@@ -63,6 +70,7 @@ public interface Advancement extends Keyed {
      * Gets all the direct children advancements.
      *
      * @return the children advancements
+     * @since 1.17.1
      */
     @NotNull
     @org.jetbrains.annotations.Unmodifiable
@@ -72,6 +80,7 @@ public interface Advancement extends Keyed {
      * Gets the root advancement of the tree this is located in.
      *
      * @return the root advancement
+     * @since 1.17.1
      */
     @NotNull
     Advancement getRoot();

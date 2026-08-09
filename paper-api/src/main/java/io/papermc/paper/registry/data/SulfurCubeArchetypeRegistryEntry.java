@@ -21,23 +21,31 @@ import static io.papermc.paper.util.BoundChecker.requirePositive;
 
 /**
  * A data-centric version-specific registry entry for the {@link SulfurCube.Archetype} type.
+ *
+ * @since 26.2
  */
 @ApiStatus.NonExtendable
 public interface SulfurCubeArchetypeRegistryEntry {
 
     /**
      * An attribute entry to apply to a sulfur cube of this archetype.
+     *
+     * @since 26.2
      */
     @ApiStatus.NonExtendable
     interface AttributeEntry {
 
         /**
          * {@return the attribute to modify}
+         *
+         * @since 26.2
          */
         TypedKey<Attribute> attribute();
 
         /**
          * {@return the modifier of the given attribute}
+         *
+         * @since 26.2
          */
         AttributeModifier modifier();
 
@@ -47,6 +55,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param attribute the attribute to modify, as returned by {@link #attribute()}
          * @param modifier the modifier of the given attribute, as returned by {@link #modifier()}
          * @return the created instance
+         * @since 26.2
          */
         @Contract(value = "_, _ -> new", pure = true)
         static AttributeEntry of(final TypedKey<Attribute> attribute, final AttributeModifier modifier) {
@@ -60,12 +69,16 @@ public interface SulfurCubeArchetypeRegistryEntry {
     /**
      * The contact damage a sulfur cube of this archetype will deal when pushed
      * by another entity.
+     *
+     * @since 26.2
      */
     @ApiStatus.NonExtendable
     interface ContactDamage {
 
         /**
          * {@return the damage type of the damage dealt}
+         *
+         * @since 26.2
          */
         TypedKey<DamageType> damageType();
 
@@ -73,6 +86,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * {@return the damage amount of the damage dealt}
          * @apiNote for non-constant damage this will return one possible sample
          * instead of the exact amount
+         * @since 26.2
          */
         @ApiStatus.Experimental
         @NonNegative float amount(); // todo expose FloatProvider/IntProvider in a consistent way (should match Machine's PR for dimension type)
@@ -80,6 +94,8 @@ public interface SulfurCubeArchetypeRegistryEntry {
         /**
          * {@return whether the sulfur cube of this damage should be recorded in the
          * damage source}
+         *
+         * @since 26.2
          */
         boolean attributeToSource();
 
@@ -90,6 +106,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param amount the damage amount of the damage dealt, as returned by {@link #amount()}
          * @param attributeToSource whether the sulfur cube of this damage should be recorded, as returned by {@link #attributeToSource()}
          * @return the created instance
+         * @since 26.2
          */
         @Contract(value = "_, _, _ -> new", pure = true)
         @ApiStatus.Experimental
@@ -103,23 +120,31 @@ public interface SulfurCubeArchetypeRegistryEntry {
 
     /**
      * The explosion settings of a sulfur cube of this archetype.
+     *
+     * @since 26.2
      */
     @ApiStatus.NonExtendable
     interface ExplosionSettings {
 
         /**
          * {@return the radius of the explosion}
+         *
+         * @since 26.2
          */
         @NonNegative int power();
 
         /**
          * {@return whether the explosion will produce fire on the ground}
+         *
+         * @since 26.2
          */
         boolean incendiary();
 
         /**
          * {@return the amount of ticks needed once the sulfur cube
          * is ignited before exploding}
+         *
+         * @since 26.2
          */
         @Positive int fuseTicks();
 
@@ -131,6 +156,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param fuseTicks the amount of ticks needed once the sulfur cube
          * is ignited before exploding, as returned by {@link #fuseTicks()}
          * @return the created instance
+         * @since 26.2
          */
         @Contract(value = "_, _, _ -> new", pure = true)
         static ExplosionSettings of(final @NonNegative int power, final boolean incendiary, final @Positive int fuseTicks) {
@@ -144,17 +170,23 @@ public interface SulfurCubeArchetypeRegistryEntry {
     /**
      * The knockback modifiers a sulfur cube of this archetype will receive
      * when knocked by another entity.
+     *
+     * @since 26.2
      */
     @ApiStatus.NonExtendable
     interface KnockbackModifiers {
 
         /**
          * {@return the horizontal base power of the knockback to receive before all other environmental/contextual changes}
+         *
+         * @since 26.2
          */
         float horizontalPower();
 
         /**
          * {@return the vertical base power of the knockback to receive before all other environmental/contextual changes}
+         *
+         * @since 26.2
          */
         float verticalPower();
 
@@ -164,6 +196,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param horizontalPower the horizontal base power of the knockback, as returned by {@link #horizontalPower()}
          * @param verticalPower the vertical base power of the knockback, as returned by {@link #verticalPower()}
          * @return the created instance
+         * @since 26.2
          */
         @Contract(value = "_, _ -> new", pure = true)
         static KnockbackModifiers of(final float horizontalPower, final float verticalPower) {
@@ -176,6 +209,8 @@ public interface SulfurCubeArchetypeRegistryEntry {
 
     /**
      * The sound settings of a sulfur cube of this archetype.
+     *
+     * @since 26.2
      */
     @ApiStatus.NonExtendable
     interface SoundSettings {
@@ -183,23 +218,31 @@ public interface SulfurCubeArchetypeRegistryEntry {
         // todo The sounds should take a RegistryHolder but need more thoughts on the create method
         /**
          * {@return the sound played once the sulfur cube is knocked}
+         *
+         * @since 26.2
          */
         @ApiStatus.Experimental
         TypedKey<Sound> hitSound();
 
         /**
          * {@return the sound played once the sulfur cube is pushed}
+         *
+         * @since 26.2
          */
         @ApiStatus.Experimental
         TypedKey<Sound> pushSound();
 
         /**
          * {@return the smallest impulse required to play the push sound}
+         *
+         * @since 26.2
          */
         float pushSoundImpulseThreshold();
 
         /**
          * {@return the amount of seconds before the push sound can be played again}
+         *
+         * @since 26.2
          */
         float pushSoundCooldown();
 
@@ -211,6 +254,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param pushSoundImpulseThreshold the smallest impulse required to play the push sound, as returned by {@link #pushSoundImpulseThreshold()}
          * @param pushSoundCooldown the amount of seconds before the push sound can be played again, as returned by {@link #pushSoundCooldown()}
          * @return the created instance
+         * @since 26.2
          */
         @Contract(value = "_, _, _, _ -> new", pure = true)
         @ApiStatus.Experimental
@@ -226,6 +270,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
      * Provides the items a sulfur cube of this archetype can absorb.
      *
      * @return the items absorbable
+     * @since 26.2
      */
     RegistryKeySet<ItemType> items();
 
@@ -233,6 +278,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
      * Provides the attribute modifiers to apply to a sulfur cube of this archetype.
      *
      * @return the attribute modifiers to apply
+     * @since 26.2
      */
     List<AttributeEntry> attributeModifiers();
 
@@ -240,6 +286,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
      * Checks if a sulfur cube of this archetype can float in liquid.
      *
      * @return the ability of the sulfur cube to float
+     * @since 26.2
      */
     boolean buoyant();
 
@@ -248,6 +295,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
      * If defined the sulfur cube can be ignited like a tnt.
      *
      * @return the explosion settings
+     * @since 26.2
      */
     @Nullable ExplosionSettings explosion();
 
@@ -256,6 +304,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
      * when in contact of another entity.
      *
      * @return the contact damage
+     * @since 26.2
      */
     @Nullable ContactDamage contactDamage();
 
@@ -264,6 +313,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
      * when knocked by another entity.
      *
      * @return the knockback modifiers
+     * @since 26.2
      */
     KnockbackModifiers knockbackModifiers();
 
@@ -271,6 +321,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
      * Provides the sound settings of a sulfur cube of this archetype.
      *
      * @return the sound settings
+     * @since 26.2
      */
     SoundSettings soundSettings();
 
@@ -283,6 +334,8 @@ public interface SulfurCubeArchetypeRegistryEntry {
      *     <li>{@link #knockbackModifiers(KnockbackModifiers)}</li>
      *     <li>{@link #soundSettings(SoundSettings)}</li>
      * </ul>
+     *
+     * @since 26.2
      */
     @ApiStatus.NonExtendable
     interface Builder extends SulfurCubeArchetypeRegistryEntry, RegistryBuilder<SulfurCube.Archetype> {
@@ -293,6 +346,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param items the items absorbable
          * @return this builder instance
          * @see SulfurCubeArchetypeRegistryEntry#items()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder items(RegistryKeySet<ItemType> items);
@@ -303,6 +357,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param entries the attribute modifiers to apply
          * @return this builder instance
          * @see SulfurCubeArchetypeRegistryEntry#attributeModifiers()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         default Builder attributeModifiers(final AttributeEntry... entries) {
@@ -315,6 +370,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param entries the attribute modifiers to apply
          * @return this builder instance
          * @see SulfurCubeArchetypeRegistryEntry#attributeModifiers()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder attributeModifiers(Iterable<AttributeEntry> entries);
@@ -325,6 +381,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param buoyant the ability of the sulfur cube to float
          * @return this builder instance
          * @see SulfurCubeArchetypeRegistryEntry#buoyant()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder buoyant(boolean buoyant);
@@ -335,6 +392,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param settings the explosion settings
          * @return this builder instance
          * @see SulfurCubeArchetypeRegistryEntry#explosion()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder explosion(@Nullable ExplosionSettings settings);
@@ -346,6 +404,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param damage the contact damage
          * @return this builder instance
          * @see SulfurCubeArchetypeRegistryEntry#contactDamage()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder contactDamage(@Nullable ContactDamage damage);
@@ -357,6 +416,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param modifiers the knockback modifiers
          * @return this builder instance
          * @see SulfurCubeArchetypeRegistryEntry#knockbackModifiers()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder knockbackModifiers(KnockbackModifiers modifiers);
@@ -367,6 +427,7 @@ public interface SulfurCubeArchetypeRegistryEntry {
          * @param settings the sound settings
          * @return this builder instance
          * @see SulfurCubeArchetypeRegistryEntry#soundSettings()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder soundSettings(SoundSettings settings);

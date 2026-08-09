@@ -11,6 +11,8 @@ import java.lang.annotation.Target;
  * <p>
  * This is solely meant for identifying methods that don't need to be
  * overridden / handled manually.
+ *
+ * @since 1.4.5
  */
 @Target({ElementType.CONSTRUCTOR, ElementType.METHOD})
 @Retention(RetentionPolicy.SOURCE)

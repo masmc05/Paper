@@ -45,6 +45,8 @@ import org.jetbrains.annotations.Nullable;
  * integer value greater than or equal to 0, and the special price, and then
  * constraining the resulting value between <code>1</code> and the item stack's
  * {@link ItemStack#getMaxStackSize() maximum stack size}.
+ *
+ * @since 1.9.4
  */
 public class MerchantRecipe implements Recipe {
 
@@ -59,25 +61,43 @@ public class MerchantRecipe implements Recipe {
     private float priceMultiplier;
     private boolean ignoreDiscounts; // Paper
 
+    /**
+     * @since 1.9.4
+     */
     public MerchantRecipe(@NotNull ItemStack result, int maxUses) {
         this(result, 0, maxUses, false);
     }
 
+    /**
+     * @since 1.9.4
+     */
     public MerchantRecipe(@NotNull ItemStack result, int uses, int maxUses, boolean experienceReward) {
         this(result, uses, maxUses, experienceReward, 0, 0.0F, 0, 0);
     }
 
+    /**
+     * @since 1.14
+     */
     public MerchantRecipe(@NotNull ItemStack result, int uses, int maxUses, boolean experienceReward, int villagerExperience, float priceMultiplier) {
         this(result, uses, maxUses, experienceReward, villagerExperience, priceMultiplier, 0, 0);
     }
 
+    /**
+     * @since 1.18.1
+     */
     public MerchantRecipe(@NotNull ItemStack result, int uses, int maxUses, boolean experienceReward, int villagerExperience, float priceMultiplier, int demand, int specialPrice) {
         // Paper start - add ignoreDiscounts param
         this(result, uses, maxUses, experienceReward, villagerExperience, priceMultiplier, demand, specialPrice, false);
     }
+    /**
+     * @since 1.16.4
+     */
     public MerchantRecipe(@NotNull ItemStack result, int uses, int maxUses, boolean experienceReward, int villagerExperience, float priceMultiplier, boolean ignoreDiscounts) {
         this(result, uses, maxUses, experienceReward, villagerExperience, priceMultiplier, 0, 0, ignoreDiscounts);
     }
+    /**
+     * @since 1.18.1
+     */
     public MerchantRecipe(@NotNull ItemStack result, int uses, int maxUses, boolean experienceReward, int villagerExperience, float priceMultiplier, int demand, int specialPrice, boolean ignoreDiscounts) {
         Preconditions.checkArgument(!result.isEmpty(), "Recipe cannot have an empty result."); // Paper
         this.ignoreDiscounts = ignoreDiscounts;
@@ -92,6 +112,9 @@ public class MerchantRecipe implements Recipe {
         this.specialPrice = specialPrice;
     }
 
+    /**
+     * @since 1.20.1
+     */
     // Paper start - add copy ctor
     public MerchantRecipe(@NotNull MerchantRecipe recipe) {
         this(recipe.result.clone(), recipe.uses, recipe.maxUses, recipe.experienceReward, recipe.villagerExperience, recipe.priceMultiplier, recipe.demand, recipe.specialPrice, recipe.ignoreDiscounts);
@@ -99,22 +122,34 @@ public class MerchantRecipe implements Recipe {
     }
     // Paper end
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public ItemStack getResult() {
         return result.clone(); // Paper
     }
 
+    /**
+     * @since 1.9.4
+     */
     public void addIngredient(@NotNull ItemStack item) {
         Preconditions.checkState(ingredients.size() < 2, "MerchantRecipe can only have maximum 2 ingredients");
         Preconditions.checkArgument(!item.isEmpty(), "Recipe cannot have an empty itemstack ingredient."); // Paper
         ingredients.add(item.clone());
     }
 
+    /**
+     * @since 1.9.4
+     */
     public void removeIngredient(int index) {
         ingredients.remove(index);
     }
 
+    /**
+     * @since 1.9.4
+     */
     public void setIngredients(@NotNull List<ItemStack> ingredients) {
         Preconditions.checkState(ingredients.size() <= 2, "MerchantRecipe can only have maximum 2 ingredients");
         this.ingredients = new ArrayList<ItemStack>();
@@ -124,6 +159,9 @@ public class MerchantRecipe implements Recipe {
         }
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public List<ItemStack> getIngredients() {
         List<ItemStack> copy = new ArrayList<ItemStack>();
@@ -139,6 +177,7 @@ public class MerchantRecipe implements Recipe {
      * @return the adjusted first ingredient, or <code>null</code> if this
      * recipe has no ingredients
      * @see #adjust(ItemStack)
+     * @since 1.18.1
      */
     @Nullable
     public ItemStack getAdjustedIngredient1() {
@@ -165,6 +204,7 @@ public class MerchantRecipe implements Recipe {
      * maximum stack size}.
      *
      * @param itemStack the item to adjust
+     * @since 1.18.1
      */
     public void adjust(@Nullable ItemStack itemStack) {
         if (itemStack == null || itemStack.getType() == Material.AIR || itemStack.getAmount() <= 0) {
@@ -180,6 +220,7 @@ public class MerchantRecipe implements Recipe {
      * Get the demand for this trade.
      *
      * @return the demand
+     * @since 1.18.1
      */
     public int getDemand() {
         return demand;
@@ -189,6 +230,7 @@ public class MerchantRecipe implements Recipe {
      * Set the demand for this trade.
      *
      * @param demand the new demand
+     * @since 1.18.1
      */
     public void setDemand(int demand) {
         this.demand = demand;
@@ -198,6 +240,7 @@ public class MerchantRecipe implements Recipe {
      * Get the special price for this trade.
      *
      * @return special price value
+     * @since 1.18.1
      */
     public int getSpecialPrice() {
         return specialPrice;
@@ -207,6 +250,7 @@ public class MerchantRecipe implements Recipe {
      * Set the special price for this trade.
      *
      * @param specialPrice special price value
+     * @since 1.18.1
      */
     public void setSpecialPrice(int specialPrice) {
         this.specialPrice = specialPrice;
@@ -216,6 +260,7 @@ public class MerchantRecipe implements Recipe {
      * Get the number of times this trade has been used.
      *
      * @return the number of uses
+     * @since 1.9.4
      */
     public int getUses() {
         return uses;
@@ -225,6 +270,7 @@ public class MerchantRecipe implements Recipe {
      * Set the number of times this trade has been used.
      *
      * @param uses the number of uses
+     * @since 1.9.4
      */
     public void setUses(int uses) {
         this.uses = uses;
@@ -234,6 +280,7 @@ public class MerchantRecipe implements Recipe {
      * Get the maximum number of uses this trade has.
      *
      * @return the maximum number of uses
+     * @since 1.9.4
      */
     public int getMaxUses() {
         return maxUses;
@@ -243,6 +290,7 @@ public class MerchantRecipe implements Recipe {
      * Set the maximum number of uses this trade has.
      *
      * @param maxUses the maximum number of time this trade can be used
+     * @since 1.9.4
      */
     public void setMaxUses(int maxUses) {
         this.maxUses = maxUses;
@@ -253,6 +301,7 @@ public class MerchantRecipe implements Recipe {
      *
      * @return whether to reward experience to the player for completing this
      * trade
+     * @since 1.9.4
      */
     public boolean hasExperienceReward() {
         return experienceReward;
@@ -263,6 +312,7 @@ public class MerchantRecipe implements Recipe {
      *
      * @param flag whether to reward experience to the player for completing
      * this trade
+     * @since 1.9.4
      */
     public void setExperienceReward(boolean flag) {
         this.experienceReward = flag;
@@ -272,6 +322,7 @@ public class MerchantRecipe implements Recipe {
      * Gets the amount of experience the villager earns from this trade.
      *
      * @return villager experience
+     * @since 1.14
      */
     public int getVillagerExperience() {
         return villagerExperience;
@@ -281,6 +332,7 @@ public class MerchantRecipe implements Recipe {
      * Sets the amount of experience the villager earns from this trade.
      *
      * @param villagerExperience new experience amount
+     * @since 1.14
      */
     public void setVillagerExperience(int villagerExperience) {
         this.villagerExperience = villagerExperience;
@@ -290,6 +342,7 @@ public class MerchantRecipe implements Recipe {
      * Gets the price multiplier for the cost of this trade.
      *
      * @return price multiplier
+     * @since 1.14
      */
     public float getPriceMultiplier() {
         return priceMultiplier;
@@ -299,6 +352,7 @@ public class MerchantRecipe implements Recipe {
      * Sets the price multiplier for the cost of this trade.
      *
      * @param priceMultiplier new price multiplier
+     * @since 1.14
      */
     public void setPriceMultiplier(float priceMultiplier) {
         this.priceMultiplier = priceMultiplier;
@@ -307,6 +361,7 @@ public class MerchantRecipe implements Recipe {
     // Paper start
     /**
      * @return Whether all discounts on this trade should be ignored.
+     * @since 1.16.4
      */
     public boolean shouldIgnoreDiscounts() {
         return ignoreDiscounts;
@@ -314,6 +369,7 @@ public class MerchantRecipe implements Recipe {
 
     /**
      * @param ignoreDiscounts Whether all discounts on this trade should be ignored.
+     * @since 1.16.4
      */
     public void setIgnoreDiscounts(boolean ignoreDiscounts) {
         this.ignoreDiscounts = ignoreDiscounts;

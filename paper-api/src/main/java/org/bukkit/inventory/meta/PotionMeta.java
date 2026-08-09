@@ -12,6 +12,8 @@ import org.jetbrains.annotations.Unmodifiable;
 
 /**
  * Represents a potion or item that can have custom effects.
+ *
+ * @since 1.4.5
  */
 public interface PotionMeta extends ItemMeta {
 
@@ -38,6 +40,7 @@ public interface PotionMeta extends ItemMeta {
      * Sets the underlying potion type
      *
      * @param type PotionType to set the base potion state to
+     * @since 1.20.2
      */
     void setBasePotionType(@Nullable PotionType type);
 
@@ -45,6 +48,7 @@ public interface PotionMeta extends ItemMeta {
      * Returns the potion type about the base potion
      *
      * @return a PotionType object
+     * @since 1.20.2
      */
     @Nullable
     PotionType getBasePotionType();
@@ -53,6 +57,7 @@ public interface PotionMeta extends ItemMeta {
      * Checks for the presence of a base potion type
      *
      * @return true if a base potion type is present
+     * @since 1.20.6
      */
     boolean hasBasePotionType();
 
@@ -60,6 +65,7 @@ public interface PotionMeta extends ItemMeta {
      * Checks for the presence of custom potion effects.
      *
      * @return true if custom potion effects are applied
+     * @since 1.4.5
      */
     boolean hasCustomEffects();
 
@@ -71,6 +77,7 @@ public interface PotionMeta extends ItemMeta {
      * this method.
      *
      * @return the immutable list of custom potion effects
+     * @since 1.4.5
      */
     @NotNull
     List<PotionEffect> getCustomEffects();
@@ -81,6 +88,7 @@ public interface PotionMeta extends ItemMeta {
      * This is a combination of the base potion type and any custom effects.
      *
      * @return an unmodifiable list of all effects.
+     * @since 1.21.6
      */
     @NotNull
     @Unmodifiable List<PotionEffect> getAllEffects();
@@ -92,6 +100,7 @@ public interface PotionMeta extends ItemMeta {
      * @param overwrite true if any existing effect of the same type should be
      * overwritten
      * @return true if the potion meta changed as a result of this call
+     * @since 1.4.5
      */
     boolean addCustomEffect(@NotNull PotionEffect effect, boolean overwrite);
 
@@ -100,6 +109,7 @@ public interface PotionMeta extends ItemMeta {
      *
      * @param type the potion effect type to remove
      * @return true if the potion meta changed as a result of this call
+     * @since 1.4.5
      */
     boolean removeCustomEffect(@NotNull PotionEffectType type);
 
@@ -108,6 +118,7 @@ public interface PotionMeta extends ItemMeta {
      *
      * @param type the potion effect type to check for
      * @return true if the potion has this effect
+     * @since 1.4.5
      */
     boolean hasCustomEffect(@NotNull PotionEffectType type);
 
@@ -119,6 +130,7 @@ public interface PotionMeta extends ItemMeta {
      * @param type the potion effect type to move
      * @return true if the potion meta changed as a result of this call
      * @deprecated use {@link #setBasePotionType(org.bukkit.potion.PotionType)}
+     * @since 1.4.5
      */
     @Deprecated(since = "1.9")
     boolean setMainEffect(@NotNull PotionEffectType type);
@@ -127,6 +139,7 @@ public interface PotionMeta extends ItemMeta {
      * Removes all custom potion effects from this potion.
      *
      * @return true if the potion meta changed as a result of this call
+     * @since 1.4.5
      */
     boolean clearCustomEffects();
 
@@ -134,6 +147,7 @@ public interface PotionMeta extends ItemMeta {
      * Checks for existence of a potion color.
      *
      * @return true if this has a custom potion color
+     * @since 1.11
      */
     boolean hasColor();
 
@@ -145,6 +159,7 @@ public interface PotionMeta extends ItemMeta {
      * calling this method.
      *
      * @return the potion color that is set
+     * @since 1.11
      */
     @Nullable
     Color getColor();
@@ -154,6 +169,7 @@ public interface PotionMeta extends ItemMeta {
      * the potion in an inventory slot.
      *
      * @param color the color to set
+     * @since 1.11
      */
     void setColor(@Nullable Color color);
 
@@ -163,6 +179,7 @@ public interface PotionMeta extends ItemMeta {
      * This blends all custom effects, or uses a default fallback color.
      *
      * @return the effective potion color
+     * @since 1.21.6
      */
     @NotNull
     Color computeEffectiveColor();
@@ -208,6 +225,7 @@ public interface PotionMeta extends ItemMeta {
      * Checks for existence of a custom potion name translation suffix.
      *
      * @return true if this has a custom potion name
+     * @since 1.21.3
      */
     boolean hasCustomPotionName();
 
@@ -218,6 +236,7 @@ public interface PotionMeta extends ItemMeta {
      * before calling this method.
      *
      * @return the potion name that is set
+     * @since 1.21.3
      */
     @Nullable
     String getCustomPotionName();
@@ -226,6 +245,7 @@ public interface PotionMeta extends ItemMeta {
      * Sets the potion name translation suffix.
      *
      * @param name the name to set
+     * @since 1.21.3
      */
     void setCustomPotionName(@Nullable String name);
 

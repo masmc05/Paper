@@ -9,6 +9,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Represents a connection that has properties shared between the GAME and CONFIG stage.
+ *
+ * @since 1.21.7
  */
 public interface PlayerCommonConnection extends WritablePlayerCookieConnection, ReadablePlayerCookieConnection, PluginMessageRecipient {
 
@@ -21,6 +23,7 @@ public interface PlayerCommonConnection extends WritablePlayerCookieConnection, 
      * values are limited to 4096, and 32 maximum entries can be sent.
      *
      * @param details report details
+     * @since 1.21.7
      */
     void sendReportDetails(Map<String, String> details);
 
@@ -28,6 +31,7 @@ public interface PlayerCommonConnection extends WritablePlayerCookieConnection, 
      * Sends the given server links to this connection.
      *
      * @param links links to send
+     * @since 1.21.7
      */
     void sendLinks(ServerLinks links);
 
@@ -36,12 +40,14 @@ public interface PlayerCommonConnection extends WritablePlayerCookieConnection, 
      *
      * @param host host
      * @param port port
+     * @since 1.21.7
      */
     void transfer(String host, int port);
 
     /**
      * @param type client option
      * @return the client option value of the player
+     * @since 1.21.7
      */
     <T> T getClientOption(ClientOption<T> type);
 
@@ -51,6 +57,7 @@ public interface PlayerCommonConnection extends WritablePlayerCookieConnection, 
      * For the Notchian client this name defaults to {@code vanilla}. Some modified clients report other names such as {@code neoforge}.
      *
      * @return client brand name
+     * @since 26.2
      */
     @Nullable String getClientBrandName();
 }

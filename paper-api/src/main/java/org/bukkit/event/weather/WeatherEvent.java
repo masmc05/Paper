@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a Weather-related event
+ *
+ * @since 1.0.0
  */
 public abstract class WeatherEvent extends Event {
 
@@ -19,6 +21,7 @@ public abstract class WeatherEvent extends Event {
      * Returns the World where this event is occurring
      *
      * @return World this event is occurring in
+     * @since 1.0.0
      */
     @NotNull
     public final World getWorld() {

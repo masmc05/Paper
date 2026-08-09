@@ -21,6 +21,8 @@ import org.jspecify.annotations.NullMarked;
  * server runs smoothly. This is also applicable for the chunk loading worker threads, which the server main thread
  * might be blocking on.
  * Schedule large amount of work into separate thread pools.
+ *
+ * @since 26.2
  */
 @NullMarked
 public class AsyncServerDataFixerRemoveBlockEntityEvent extends Event {
@@ -48,6 +50,8 @@ public class AsyncServerDataFixerRemoveBlockEntityEvent extends Event {
 
     /**
      * {@return the key representing the no longer existing block entity type}
+     *
+     * @since 26.2
      */
     public Key getBlockEntityType() {
         return blockEntityType;
@@ -57,6 +61,7 @@ public class AsyncServerDataFixerRemoveBlockEntityEvent extends Event {
      * {@return the key of the world this block entity was removed from}
      *
      * @see org.bukkit.Server#getWorld(Key)
+     * @since 26.2
      */
     public Key getWorldKey() {
         return worldKey;
@@ -64,6 +69,8 @@ public class AsyncServerDataFixerRemoveBlockEntityEvent extends Event {
 
     /**
      * {@return the position of the block entity that was removed}
+     *
+     * @since 26.2
      */
     public BlockPosition getBlockPosition() {
         return blockPosition;
@@ -71,16 +78,24 @@ public class AsyncServerDataFixerRemoveBlockEntityEvent extends Event {
 
     /**
      * {@return an immutable view of the persistent data container that was attached to the removed block entity}
+     *
+     * @since 26.2
      */
     public PersistentDataContainerView getPersistentDataContainerView() {
         return persistentDataContainerView;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 26.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

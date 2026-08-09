@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * An event that's called when a block yields experience.
+ *
+ * @since 1.4.5
  */
 public class BlockExpEvent extends BlockEvent {
 
@@ -25,6 +27,7 @@ public class BlockExpEvent extends BlockEvent {
      * Get the experience dropped by the block after the event has processed
      *
      * @return The experience to drop
+     * @since 1.4.5
      */
     public int getExpToDrop() {
         return this.exp;
@@ -35,17 +38,24 @@ public class BlockExpEvent extends BlockEvent {
      * processed
      *
      * @param exp 1 or higher to drop experience, else nothing will drop
+     * @since 1.4.5
      */
     public void setExpToDrop(int exp) {
         this.exp = exp;
     }
 
+    /**
+     * @since 1.4.5
+     */
     @Override
     @NotNull
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.4.5
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a component which can turn any item into equippable armor.
+ *
+ * @since 1.21.3
  */
 @ApiStatus.Experimental
 public interface EquippableComponent extends ConfigurationSerializable {
@@ -21,6 +23,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Gets the slot the item can be equipped to.
      *
      * @return slot
+     * @since 1.21.3
      */
     @NotNull
     EquipmentSlot getSlot();
@@ -29,6 +32,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Sets the slot the item can be equipped to.
      *
      * @param slot new slot
+     * @since 1.21.3
      */
     void setSlot(@NotNull EquipmentSlot slot);
 
@@ -36,6 +40,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Gets the sound to play when the item is equipped.
      *
      * @return the sound
+     * @since 1.21.3
      */
     @NotNull // Paper
     Sound getEquipSound();
@@ -44,6 +49,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Sets the sound to play when the item is equipped.
      *
      * @param sound sound or null for current default
+     * @since 1.21.3
      */
     void setEquipSound(@Nullable Sound sound);
 
@@ -51,6 +57,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Gets the key of the model to use when equipped.
      *
      * @return model key
+     * @since 1.21.3
      */
     @Nullable
     NamespacedKey getModel();
@@ -59,6 +66,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Sets the key of the model to use when equipped.
      *
      * @param key model key
+     * @since 1.21.3
      */
     void setModel(@Nullable NamespacedKey key);
 
@@ -66,6 +74,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Gets the key of the camera overlay to use when equipped.
      *
      * @return camera overlay key
+     * @since 1.21.3
      */
     @Nullable
     NamespacedKey getCameraOverlay();
@@ -74,6 +83,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Sets the key of the camera overlay to use when equipped.
      *
      * @param key camera overlay key
+     * @since 1.21.3
      */
     void setCameraOverlay(@Nullable NamespacedKey key);
 
@@ -81,6 +91,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Gets the entities which can equip this item.
      *
      * @return the entities
+     * @since 1.21.3
      */
     @Nullable
     Collection<EntityType> getAllowedEntities();
@@ -89,6 +100,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Sets the entities which can equip this item.
      *
      * @param entities the entity types
+     * @since 1.21.3
      */
     void setAllowedEntities(@Nullable EntityType entities);
 
@@ -96,6 +108,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Sets the entities which can equip this item.
      *
      * @param entities the entity types
+     * @since 1.21.3
      */
     void setAllowedEntities(@Nullable Collection<EntityType> entities);
 
@@ -106,6 +119,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * @param tag the entity tag
      * @throws IllegalArgumentException if the passed {@code tag} is not an entity
      * tag
+     * @since 1.21.3
      */
     void setAllowedEntities(@Nullable Tag<EntityType> tag);
 
@@ -113,6 +127,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Gets whether the item can be equipped by a dispenser.
      *
      * @return equippable status
+     * @since 1.21.3
      */
     boolean isDispensable();
 
@@ -120,6 +135,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Sets whether the item can be equipped by a dispenser.
      *
      * @param dispensable new equippable status
+     * @since 1.21.3
      */
     void setDispensable(boolean dispensable);
 
@@ -127,6 +143,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Gets if the item is swappable by right clicking.
      *
      * @return swappable status
+     * @since 1.21.3
      */
     boolean isSwappable();
 
@@ -134,6 +151,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Sets if the item is swappable by right clicking.
      *
      * @param swappable new status
+     * @since 1.21.3
      */
     void setSwappable(boolean swappable);
 
@@ -141,6 +159,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Gets if the item will be damaged when the wearing entity is damaged.
      *
      * @return whether the item will be damaged
+     * @since 1.21.3
      */
     boolean isDamageOnHurt();
 
@@ -148,6 +167,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Sets if the item will be damaged when the wearing entity is damaged.
      *
      * @param damage whether the item will be damaged
+     * @since 1.21.3
      */
     void setDamageOnHurt(boolean damage);
 
@@ -155,6 +175,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Gets if the item should be equipped when interacting with an entity.
      *
      * @return whether the item equips on interact
+     * @since 1.21.6
      */
     boolean isEquipOnInteract();
 
@@ -162,6 +183,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Sets if the item should be equipped when interacting with an entity.
      *
      * @param equip whether the item equips on interact
+     * @since 1.21.6
      */
     void setEquipOnInteract(boolean equip);
 
@@ -169,6 +191,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Checks if the item can be unequipped when interacting with an entity using shears.
      *
      * @return whether the item can be unequipped using shears
+     * @since 26.2
      */
     boolean canBeSheared();
 
@@ -176,6 +199,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Sets if the item can be unequipped when interacting with an entity using shears.
      *
      * @param sheared whether the item can be unequipped using shears
+     * @since 26.2
      */
     void setCanBeSheared(boolean sheared);
 
@@ -183,6 +207,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Gets the sound to play when the item is sheared.
      *
      * @return the sound
+     * @since 26.2
      */
     @Nullable Sound getShearingSound();
 
@@ -190,6 +215,7 @@ public interface EquippableComponent extends ConfigurationSerializable {
      * Sets the sound to play when the item is sheared.
      *
      * @param sound sound or null for current default
+     * @since 26.2
      */
     void setShearingSound(@Nullable Sound sound);
 }

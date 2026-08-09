@@ -17,6 +17,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents a material that may be used in an {@link ArmorTrim}.
+ *
+ * @since 1.19.4
  */
 @NullMarked
 public interface TrimMaterial extends Keyed, Translatable {
@@ -26,32 +28,66 @@ public interface TrimMaterial extends Keyed, Translatable {
      *
      * @param value a consumer for the builder factory
      * @return the created trim material
+     * @since 26.2
      */
     static TrimMaterial create(final Consumer<RegistryBuilderFactory<TrimMaterial, ? extends TrimMaterialRegistryEntry.Builder>> value) {
         return InlinedRegistryBuilderProvider.instance().createTrimMaterial(value);
     }
 
+    /**
+     * @since 1.19.4
+     */
     // Start generate - TrimMaterial
     TrimMaterial AMETHYST = getTrimMaterial("amethyst");
 
+    /**
+     * @since 1.19.4
+     */
     TrimMaterial COPPER = getTrimMaterial("copper");
 
+    /**
+     * @since 1.19.4
+     */
     TrimMaterial DIAMOND = getTrimMaterial("diamond");
 
+    /**
+     * @since 1.19.4
+     */
     TrimMaterial EMERALD = getTrimMaterial("emerald");
 
+    /**
+     * @since 1.19.4
+     */
     TrimMaterial GOLD = getTrimMaterial("gold");
 
+    /**
+     * @since 1.19.4
+     */
     TrimMaterial IRON = getTrimMaterial("iron");
 
+    /**
+     * @since 1.19.4
+     */
     TrimMaterial LAPIS = getTrimMaterial("lapis");
 
+    /**
+     * @since 1.19.4
+     */
     TrimMaterial NETHERITE = getTrimMaterial("netherite");
 
+    /**
+     * @since 1.19.4
+     */
     TrimMaterial QUARTZ = getTrimMaterial("quartz");
 
+    /**
+     * @since 1.19.4
+     */
     TrimMaterial REDSTONE = getTrimMaterial("redstone");
 
+    /**
+     * @since 1.21.4
+     */
     TrimMaterial RESIN = getTrimMaterial("resin");
     // End generate - TrimMaterial
 
@@ -63,6 +99,7 @@ public interface TrimMaterial extends Keyed, Translatable {
      * Get the description of this {@link TrimMaterial}.
      *
      * @return the description
+     * @since 1.20.4
      */
     Component description();
 

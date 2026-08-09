@@ -2,6 +2,8 @@ package org.bukkit.entity;
 
 /**
  * Represents a MagmaCube.
+ *
+ * @since 1.1.0
  */
 public interface MagmaCube extends AbstractCubeMob, Enemy {
 
@@ -18,6 +20,7 @@ public interface MagmaCube extends AbstractCubeMob, Enemy {
      * magma cube to its max health (assuming it's alive).
      *
      * @param size the new size of the magma cube.
+     * @since 26.2
      */
     void setSize(int size);
 }

@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a World is loaded
+ *
+ * @since 1.0.0
  */
 public class WorldLoadEvent extends WorldEvent {
 
@@ -17,12 +19,18 @@ public class WorldLoadEvent extends WorldEvent {
         super(world);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

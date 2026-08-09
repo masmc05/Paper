@@ -5,12 +5,16 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.17
+ */
 public interface BundleMeta extends ItemMeta {
 
     /**
      * Returns whether the item has any items.
      *
      * @return whether items are present
+     * @since 1.17
      */
     boolean hasItems();
 
@@ -18,6 +22,7 @@ public interface BundleMeta extends ItemMeta {
      * Returns an immutable list of the items stored in this item.
      *
      * @return items
+     * @since 1.17
      */
     @NotNull
     List<ItemStack> getItems();
@@ -28,6 +33,7 @@ public interface BundleMeta extends ItemMeta {
      * Removes all items when given null.
      *
      * @param items the items to set
+     * @since 1.17
      */
     void setItems(@Nullable List<ItemStack> items);
 
@@ -35,6 +41,7 @@ public interface BundleMeta extends ItemMeta {
      * Adds an item to this item.
      *
      * @param item item to add
+     * @since 1.17
      */
     void addItem(@NotNull ItemStack item);
 }

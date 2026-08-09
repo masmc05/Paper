@@ -5,6 +5,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents an Inventory that can generate loot, such as Chests inside of Fortresses and Mineshafts
+ *
+ * @since 1.9.4
  */
 @NullMarked
 public interface LootableBlockInventory extends LootableInventory {
@@ -12,6 +14,7 @@ public interface LootableBlockInventory extends LootableInventory {
     /**
      * Gets the block that is lootable
      * @return The Block
+     * @since 1.9.4
      */
     Block getBlock();
 }

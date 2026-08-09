@@ -9,8 +9,13 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents a view linking two inventories and a single player (whose
  * inventory may or may not be one of the two).
+ *
+ * @since 1.1.0
  */
 public interface InventoryView {
+    /**
+     * @since 1.1.0
+     */
     public static final int OUTSIDE = -999;
     /**
      * Represents various extra properties of certain inventory windows.
@@ -135,6 +140,7 @@ public interface InventoryView {
      * Get the upper inventory involved in this transaction.
      *
      * @return the inventory
+     * @since 1.1.0
      */
     @NotNull
     public Inventory getTopInventory();
@@ -143,6 +149,7 @@ public interface InventoryView {
      * Get the lower inventory involved in this transaction.
      *
      * @return the inventory
+     * @since 1.1.0
      */
     @NotNull
     public Inventory getBottomInventory();
@@ -151,6 +158,7 @@ public interface InventoryView {
      * Get the player viewing.
      *
      * @return the player
+     * @since 1.1.0
      */
     @NotNull
     public HumanEntity getPlayer();
@@ -161,6 +169,7 @@ public interface InventoryView {
      * since that is common to all windows.
      *
      * @return the inventory type
+     * @since 1.1.0
      */
     @NotNull
     public InventoryType getType();
@@ -173,6 +182,7 @@ public interface InventoryView {
      *
      * @param slot The ID as returned by InventoryClickEvent.getRawSlot()
      * @param item The new item to put in the slot, or null to clear it.
+     * @since 1.1.0
      */
     public void setItem(int slot, @Nullable ItemStack item);
 
@@ -181,6 +191,7 @@ public interface InventoryView {
      *
      * @param slot The ID as returned by InventoryClickEvent.getRawSlot()
      * @return The item currently in the slot.
+     * @since 1.1.0
      */
     @Nullable
     public ItemStack getItem(int slot);
@@ -190,6 +201,7 @@ public interface InventoryView {
      *
      * @param item The item to put on the cursor, or null to remove the item
      *     on their cursor.
+     * @since 1.1.0
      */
     public void setCursor(@Nullable ItemStack item);
 
@@ -198,6 +210,7 @@ public interface InventoryView {
      *
      * @return The item on the player's cursor, or an empty stack
      * if they aren't holding one.
+     * @since 1.1.0
      */
     @NotNull // Paper - fix nullability
     public ItemStack getCursor();
@@ -213,6 +226,7 @@ public interface InventoryView {
      *
      * @param rawSlot The raw slot ID.
      * @return corresponding inventory, or null
+     * @since 1.13.2
      */
     @Nullable
     public Inventory getInventory(int rawSlot);
@@ -228,6 +242,7 @@ public interface InventoryView {
      *
      * @param rawSlot The raw slot ID.
      * @return The converted slot ID.
+     * @since 1.1.0
      */
     public int convertSlot(int rawSlot);
 
@@ -239,17 +254,22 @@ public interface InventoryView {
      *
      * @param slot The raw slot ID
      * @return the slot type
+     * @since 1.13.2
      */
     @NotNull
     public InventoryType.SlotType getSlotType(int slot);
 
     /**
      * Opens the inventory view.
+     *
+     * @since 1.21.4
      */
     void open();
 
     /**
      * Closes the inventory view.
+     *
+     * @since 1.1.0
      */
     public void close();
 
@@ -261,6 +281,7 @@ public interface InventoryView {
      * the two inventories if for example some slots are not being used.
      *
      * @return The total size
+     * @since 1.1.0
      */
     public int countSlots();
 
@@ -272,6 +293,7 @@ public interface InventoryView {
      * @param value the new value for the window property
      * @return true if the property was updated successfully, false if the
      *     property is not supported by that inventory
+     * @since 1.1.0
      */
     public boolean setProperty(@NotNull Property prop, int value);
 
@@ -280,6 +302,7 @@ public interface InventoryView {
      * Get the title of this inventory window.
      *
      * @return The title.
+     * @since 1.16.5
      */
     @NotNull
     default net.kyori.adventure.text.Component title() {
@@ -292,6 +315,7 @@ public interface InventoryView {
      *
      * @return The title.
      * @deprecated in favour of {@link #title()}
+     * @since 1.1.0
      */
     @Deprecated // Paper
     @NotNull
@@ -303,6 +327,7 @@ public interface InventoryView {
      *
      * @return the original title
      * @deprecated changing the title is not supported
+     * @since 1.19.4
      */
     @NotNull
     @Deprecated(since = "1.21.1") // Paper
@@ -319,6 +344,7 @@ public interface InventoryView {
      * @param title The new title.
      * @deprecated changing the title is not supported. This method has
      * poorly defined and broken behaviors. It should not be used.
+     * @since 1.19.4
      */
     @Deprecated(since = "1.21.1") // Paper
     public void setTitle(@NotNull String title);
@@ -331,6 +357,7 @@ public interface InventoryView {
      * like players or animals (e.g., a horse).
      *
      * @return the menu type of the inventory view or null if not applicable
+     * @since 1.21.6
      */
     @Nullable MenuType getMenuType();
 }

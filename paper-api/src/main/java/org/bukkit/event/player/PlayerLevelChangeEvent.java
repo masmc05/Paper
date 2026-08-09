@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a players level changes
+ *
+ * @since 1.1.0
  */
 public class PlayerLevelChangeEvent extends PlayerEvent {
 
@@ -26,6 +28,7 @@ public class PlayerLevelChangeEvent extends PlayerEvent {
      * Gets the old level of the player
      *
      * @return The old level of the player
+     * @since 1.1.0
      */
     public int getOldLevel() {
         return this.oldLevel;
@@ -35,17 +38,24 @@ public class PlayerLevelChangeEvent extends PlayerEvent {
      * Gets the new level of the player
      *
      * @return The new (current) level of the player
+     * @since 1.1.0
      */
     public int getNewLevel() {
         return this.newLevel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

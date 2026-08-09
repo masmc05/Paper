@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a player toggles their sneaking state
+ *
+ * @since 1.0.0
  */
 public class PlayerToggleSneakEvent extends PlayerEvent implements Cancellable {
 
@@ -26,27 +28,40 @@ public class PlayerToggleSneakEvent extends PlayerEvent implements Cancellable {
      * Returns whether the player is now sneaking or not.
      *
      * @return sneaking state
+     * @since 1.0.0
      */
     public boolean isSneaking() {
         return this.isSneaking;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

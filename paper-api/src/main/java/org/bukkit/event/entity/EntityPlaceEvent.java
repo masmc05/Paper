@@ -17,6 +17,8 @@ import org.jetbrains.annotations.Nullable;
  * <br>
  * Note that this event is currently only fired for four specific placements:
  * armor stands, boats, minecarts, and end crystals.
+ *
+ * @since 1.13.2
  */
 public class EntityPlaceEvent extends EntityEvent implements Cancellable {
 
@@ -48,6 +50,7 @@ public class EntityPlaceEvent extends EntityEvent implements Cancellable {
      * Returns the player placing the entity
      *
      * @return the player placing the entity
+     * @since 1.13.2
      */
     @Nullable
     public Player getPlayer() {
@@ -58,6 +61,7 @@ public class EntityPlaceEvent extends EntityEvent implements Cancellable {
      * Returns the block that the entity was placed on
      *
      * @return the block that the entity was placed on
+     * @since 1.13.2
      */
     @NotNull
     public Block getBlock() {
@@ -68,6 +72,7 @@ public class EntityPlaceEvent extends EntityEvent implements Cancellable {
      * Returns the face of the block that the entity was placed on
      *
      * @return the face of the block that the entity was placed on
+     * @since 1.13.2
      */
     @NotNull
     public BlockFace getBlockFace() {
@@ -78,28 +83,41 @@ public class EntityPlaceEvent extends EntityEvent implements Cancellable {
      * Get the hand used to place the entity.
      *
      * @return the hand
+     * @since 1.19.2
      */
     @NotNull
     public EquipmentSlot getHand() {
         return this.hand;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

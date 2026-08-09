@@ -10,6 +10,8 @@ import java.util.List;
 
 /**
  * Represents entity's combat tracker
+ *
+ * @since 1.21.6
  */
 @NullMarked
 @ApiStatus.NonExtendable
@@ -19,6 +21,7 @@ public interface CombatTracker {
      * Gets the entity behind this combat tracker.
      *
      * @return the entity behind this combat tracker
+     * @since 1.21.6
      */
     LivingEntity getEntity();
 
@@ -31,6 +34,7 @@ public interface CombatTracker {
      *
      * @return the list of combat entries
      * @see #setCombatEntries(List)
+     * @since 1.21.6
      */
     List<CombatEntry> getCombatEntries();
 
@@ -45,6 +49,7 @@ public interface CombatTracker {
      * @param combatEntries combat entries
      * @see #resetCombatState()
      * @see #addCombatEntry(CombatEntry)
+     * @since 1.21.6
      */
     void setCombatEntries(List<CombatEntry> combatEntries);
 
@@ -52,6 +57,7 @@ public interface CombatTracker {
      * Calculates the most significant fall damage entry.
      *
      * @return the most significant fall damage entry
+     * @since 1.21.6
      */
     @Nullable CombatEntry computeMostSignificantFall();
 
@@ -61,6 +67,7 @@ public interface CombatTracker {
      * since the combat tracking has begun.
      *
      * @return whether the entity is in combat
+     * @since 1.21.6
      */
     boolean isInCombat();
 
@@ -69,6 +76,7 @@ public interface CombatTracker {
      * i.e. its combat tracking is active.
      *
      * @return whether the entity has started recording damage
+     * @since 1.21.6
      */
     boolean isTakingDamage();
 
@@ -77,6 +85,7 @@ public interface CombatTracker {
      *
      * @return the combat duration
      * @see #isInCombat()
+     * @since 1.21.6
      */
     int getCombatDuration();
 
@@ -85,6 +94,7 @@ public interface CombatTracker {
      * updating the entity's combat state.
      *
      * @param combatEntry combat entry
+     * @since 1.21.6
      */
     void addCombatEntry(CombatEntry combatEntry);
 
@@ -92,11 +102,14 @@ public interface CombatTracker {
      * Constructs a death message based on the current combat history.
      *
      * @return a death message
+     * @since 1.21.6
      */
     Component getDeathMessage();
 
     /**
      * Resets entity's combat state, clearing combat history.
+     *
+     * @since 1.21.6
      */
     void resetCombatState();
 
@@ -104,6 +117,7 @@ public interface CombatTracker {
      * Calculates the fall location type from the current entity's location.
      *
      * @return the fall location type
+     * @since 1.21.6
      */
     @Nullable FallLocationType calculateFallLocationType();
 
@@ -111,6 +125,7 @@ public interface CombatTracker {
      * Returns time since last damage in ticks.
      *
      * @return ticks since last damage
+     * @since 26.2
      */
     int getLastDamageTime();
 }

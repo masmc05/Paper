@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when an entity attempts to perform a smash attack.
+ *
+ * @since 1.21.4
  */
 @NullMarked
 public class EntityAttemptSmashAttackEvent extends EntityEvent {
@@ -37,6 +39,7 @@ public class EntityAttemptSmashAttackEvent extends EntityEvent {
      * Yields the target of the attempted smash attack.
      *
      * @return the target entity
+     * @since 1.21.4
      */
     public LivingEntity getTarget() {
         return target;
@@ -46,6 +49,7 @@ public class EntityAttemptSmashAttackEvent extends EntityEvent {
      * Yields a copy of the itemstack used in the smash attack attempt.
      *
      * @return the itemstack
+     * @since 1.21.4
      */
     public ItemStack getWeapon() {
         return weapon.clone();
@@ -55,6 +59,7 @@ public class EntityAttemptSmashAttackEvent extends EntityEvent {
      * Yields the original result the server computed.
      *
      * @return {@code true} if this attempt would have been successful by vanilla's logic, {@code false} otherwise.
+     * @since 1.21.4
      */
     public boolean getOriginalResult() {
         return originalResult;
@@ -71,6 +76,7 @@ public class EntityAttemptSmashAttackEvent extends EntityEvent {
      * </ul>
      *
      * @return the result.
+     * @since 1.21.4
      */
     public Result getResult() {
         return this.result;
@@ -87,16 +93,23 @@ public class EntityAttemptSmashAttackEvent extends EntityEvent {
      * </ul>
      *
      * @param result the new result of the event.
+     * @since 1.21.4
      */
     public void setResult(final Result result) {
         this.result = result;
     }
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * This event is called after a player registers or unregisters a new plugin
  * channel.
+ *
+ * @since 1.3.1
  */
 public abstract class PlayerChannelEvent extends PlayerEvent {
 
@@ -19,17 +21,26 @@ public abstract class PlayerChannelEvent extends PlayerEvent {
         this.channel = channel;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public final String getChannel() {
         return this.channel;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

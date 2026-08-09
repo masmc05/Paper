@@ -12,6 +12,8 @@ import java.util.UUID;
 
 /**
  * Represents a captured state of a vault.
+ *
+ * @since 1.20.6
  */
 @NullMarked
 public interface Vault extends TileState {
@@ -19,6 +21,7 @@ public interface Vault extends TileState {
      * Gets the range in blocks at which this vault will become active when a player is near.
      *
      * @return This vault's activation range.
+     * @since 1.21.4
      */
     double getActivationRange();
 
@@ -27,6 +30,7 @@ public interface Vault extends TileState {
      *
      * @param activationRange The new activation range.
      * @throws IllegalArgumentException if the new range is not a number, or if the new range is more than {@link #getDeactivationRange()}.
+     * @since 1.21.4
      */
     void setActivationRange(double activationRange);
 
@@ -34,6 +38,7 @@ public interface Vault extends TileState {
      * Gets the range in blocks at which this vault will become inactive when a player is not near.
      *
      * @return This vault's deactivation range.
+     * @since 1.21.4
      */
     double getDeactivationRange();
 
@@ -42,6 +47,7 @@ public interface Vault extends TileState {
      *
      * @param deactivationRange The new deactivation range
      * @throws IllegalArgumentException if the new range is not a number, or if the new range is less than {@link #getActivationRange()}.
+     * @since 1.21.4
      */
     void setDeactivationRange(double deactivationRange);
 
@@ -49,6 +55,7 @@ public interface Vault extends TileState {
      * Gets the {@link ItemStack} that players must use to unlock this vault.
      *
      * @return The item that players must use to unlock this vault.
+     * @since 1.21.4
      */
     ItemStack getKeyItem();
 
@@ -56,6 +63,7 @@ public interface Vault extends TileState {
      * Sets the {@link ItemStack} that players must use to unlock this vault.
      *
      * @param key The key item.
+     * @since 1.21.4
      */
     void setKeyItem(ItemStack key);
 
@@ -63,6 +71,7 @@ public interface Vault extends TileState {
      * Gets the {@link LootTable} that this vault will select rewards from.
      *
      * @return The loot table.
+     * @since 1.21.4
      */
     LootTable getLootTable();
 
@@ -70,6 +79,7 @@ public interface Vault extends TileState {
      * Sets the {@link LootTable} that this vault will select rewards from.
      *
      * @param lootTable The new loot table.
+     * @since 1.21.4
      */
     void setLootTable(LootTable lootTable);
 
@@ -79,6 +89,7 @@ public interface Vault extends TileState {
      * Falls back to the regular {@link #getLootTable() loot table} if unset.
      *
      * @return The {@link LootTable} that will be used to display items.
+     * @since 1.21.4
      */
     @Nullable
     LootTable getDisplayedLootTable();
@@ -87,6 +98,7 @@ public interface Vault extends TileState {
      * Sets the loot table that this vault will display items from.
      *
      * @param lootTable The new loot table to display, or {@code null} to clear this display override.
+     * @since 1.21.4
      */
     void setDisplayedLootTable(@Nullable LootTable lootTable);
 
@@ -95,6 +107,7 @@ public interface Vault extends TileState {
      *
      * @return The next time that this vault block will be updated/ticked at.
      * @see World#getGameTime()
+     * @since 1.21.4
      */
     long getNextStateUpdateTime();
 
@@ -104,6 +117,7 @@ public interface Vault extends TileState {
      *
      * @param nextStateUpdateTime The next time that this vault block will be updated/ticked at.
      * @see World#getGameTime()
+     * @since 1.21.4
      */
     void setNextStateUpdateTime(long nextStateUpdateTime);
 
@@ -113,6 +127,7 @@ public interface Vault extends TileState {
      * @return An unmodifiable collection of player uuids.
      *
      * @apiNote Only the most recent 128 player UUIDs will be stored by vault blocks.
+     * @since 1.21.4
      */
     @Unmodifiable
     Collection<UUID> getRewardedPlayers();
@@ -125,6 +140,7 @@ public interface Vault extends TileState {
      *
      * @apiNote Only the most recent 128 player UUIDs will be stored by vault blocks. Attempting to add more will result in
      *      the first player UUID being removed.
+     * @since 1.21.4
      */
     boolean addRewardedPlayer(UUID playerUUID);
 
@@ -135,6 +151,7 @@ public interface Vault extends TileState {
      * @return {@code true} if this player was previously rewarded, and has been removed as a result of this operation.
      *
      * @apiNote Only the most recent 128 player UUIDs will be stored by vault blocks.
+     * @since 1.21.4
      */
     boolean removeRewardedPlayer(UUID playerUUID);
 
@@ -143,6 +160,7 @@ public interface Vault extends TileState {
      *
      * @param playerUUID The player's uuid.
      * @return Whether this player was previously rewarded by this vault.
+     * @since 1.21.4
      */
     boolean hasRewardedPlayer(UUID playerUUID);
 
@@ -153,6 +171,7 @@ public interface Vault extends TileState {
      * collection to be updated upon a player entering its range.
      *
      * @return An unmodifiable set of connected player uuids.
+     * @since 1.21.4
      */
     @Unmodifiable
     Set<UUID> getConnectedPlayers();
@@ -164,6 +183,7 @@ public interface Vault extends TileState {
      * @return {@code true} if this player is currently connected to this vault.
      *
      * @see #getConnectedPlayers()
+     * @since 1.21.4
      */
     boolean hasConnectedPlayer(UUID playerUUID);
 
@@ -172,6 +192,7 @@ public interface Vault extends TileState {
      * or {@link #getLootTable()} loot tables while this vault is active.
      *
      * @return The item currently being displayed inside this vault.
+     * @since 1.21.4
      */
     ItemStack getDisplayedItem();
 
@@ -179,6 +200,7 @@ public interface Vault extends TileState {
      * Sets the item to display inside this vault until the next cycle.
      *
      * @param displayedItem The item to display
+     * @since 1.21.4
      */
     void setDisplayedItem(ItemStack displayedItem);
 }

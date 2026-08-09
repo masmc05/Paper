@@ -22,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see DelegateDeserialization
  * @see SerializableAs
+ * @since 1.0.0
  */
 public interface ConfigurationSerializable {
 
@@ -35,6 +36,7 @@ public interface ConfigurationSerializable {
      * be called by the {@link ConfigurationSerialization} class.
      *
      * @return Map containing the current state of this class
+     * @since 1.0.0
      */
     @NotNull
     @ApiStatus.OverrideOnly

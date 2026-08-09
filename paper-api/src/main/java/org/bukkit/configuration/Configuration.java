@@ -6,6 +6,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a source of configurable options and settings
+ *
+ * @since 1.0.0
  */
 public interface Configuration extends ConfigurationSection {
     /**
@@ -21,6 +23,7 @@ public interface Configuration extends ConfigurationSection {
      * @param path Path of the value to set.
      * @param value Value to set the default to.
      * @throws IllegalArgumentException Thrown if path is null.
+     * @since 1.0.0
      */
     @Override
     public void addDefault(@NotNull String path, @Nullable Object value);
@@ -34,6 +37,7 @@ public interface Configuration extends ConfigurationSection {
      *
      * @param defaults A map of Path{@literal ->}Values to add to defaults.
      * @throws IllegalArgumentException Thrown if defaults is null.
+     * @since 1.0.0
      */
     public void addDefaults(@NotNull Map<String, Object> defaults);
 
@@ -51,6 +55,7 @@ public interface Configuration extends ConfigurationSection {
      *
      * @param defaults A configuration holding a list of defaults to copy.
      * @throws IllegalArgumentException Thrown if defaults is null or this.
+     * @since 1.0.0
      */
     public void addDefaults(@NotNull Configuration defaults);
 
@@ -62,6 +67,7 @@ public interface Configuration extends ConfigurationSection {
      *
      * @param defaults New source of default values for this configuration.
      * @throws IllegalArgumentException Thrown if defaults is null or this.
+     * @since 1.0.0
      */
     public void setDefaults(@NotNull Configuration defaults);
 
@@ -73,6 +79,7 @@ public interface Configuration extends ConfigurationSection {
      * and no defaults were set, then this method will return null.
      *
      * @return Configuration source for default values, or null if none exist.
+     * @since 1.0.0
      */
     @Nullable
     public Configuration getDefaults();
@@ -83,6 +90,7 @@ public interface Configuration extends ConfigurationSection {
      * All setters through this method are chainable.
      *
      * @return Options for this configuration
+     * @since 1.0.0
      */
     @NotNull
     public ConfigurationOptions options();

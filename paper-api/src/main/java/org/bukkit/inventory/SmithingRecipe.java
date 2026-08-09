@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a smithing recipe.
+ *
+ * @since 1.16.1
  */
 public class SmithingRecipe implements Recipe, Keyed {
 
@@ -27,6 +29,7 @@ public class SmithingRecipe implements Recipe, Keyed {
      * distinct recipe types, {@link SmithingTransformRecipe} and {@link SmithingTrimRecipe}.
      * This class now acts as a base class to these two classes and will do nothing when
      * added to the server.
+     * @since 1.16.1
      */
     @Deprecated(since = "1.20.1")
     public SmithingRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @Nullable RecipeChoice base, @Nullable RecipeChoice addition) {
@@ -42,6 +45,7 @@ public class SmithingRecipe implements Recipe, Keyed {
      * @param addition The addition ingredient
      * @param copyDataComponents whether to copy the data components from the input base item to the output
      * @deprecated use {@link SmithingTrimRecipe} or {@link SmithingTransformRecipe}
+     * @since 1.17.1
      */
     @Deprecated
     public SmithingRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @Nullable RecipeChoice base, @Nullable RecipeChoice addition, boolean copyDataComponents) {
@@ -58,6 +62,7 @@ public class SmithingRecipe implements Recipe, Keyed {
      * Get the base recipe item.
      *
      * @return base choice
+     * @since 1.16.1
      */
     @NotNull // Paper - fix issues with recipe api
     public RecipeChoice getBase() {
@@ -68,18 +73,25 @@ public class SmithingRecipe implements Recipe, Keyed {
      * Get the addition recipe item.
      *
      * @return addition choice
+     * @since 1.16.1
      */
     @NotNull // Paper - fix issues with recipe api
     public RecipeChoice getAddition() {
         return (addition != null) ? addition.clone() : null;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     @Override
     public ItemStack getResult() {
         return result.clone();
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -92,6 +104,7 @@ public class SmithingRecipe implements Recipe, Keyed {
      *
      * @return true to copy the NBT (default for vanilla smithing recipes)
      * @apiNote use {@link #willCopyDataComponents()}
+     * @since 1.17.1
      */
     @org.jetbrains.annotations.ApiStatus.Obsolete(since = "1.20.5")
     public boolean willCopyNbt() {
@@ -102,6 +115,7 @@ public class SmithingRecipe implements Recipe, Keyed {
      * Whether to copy the data components of the input base item to the output.
      *
      * @return true to copy the data components (default for vanilla smithing recipes)
+     * @since 1.20.6
      */
     public boolean willCopyDataComponents() {
         return this.copyDataComponents;

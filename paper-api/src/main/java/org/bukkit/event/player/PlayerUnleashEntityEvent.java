@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called prior to an entity being unleashed due to a player's action.
+ *
+ * @since 1.6.2
  */
 public class PlayerUnleashEntityEvent extends EntityUnleashEvent implements Cancellable {
 
@@ -41,6 +43,7 @@ public class PlayerUnleashEntityEvent extends EntityUnleashEvent implements Canc
      * Returns the player who is unleashing the entity.
      *
      * @return The player
+     * @since 1.6.2
      */
     @NotNull
     public Player getPlayer() {
@@ -51,17 +54,24 @@ public class PlayerUnleashEntityEvent extends EntityUnleashEvent implements Canc
      * Get the hand used by the player to unleash the entity.
      *
      * @return the hand
+     * @since 1.19.2
      */
     @NotNull
     public EquipmentSlot getHand() {
         return this.hand;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;

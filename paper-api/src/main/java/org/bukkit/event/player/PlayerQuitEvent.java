@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a player leaves a server
+ *
+ * @since 1.0.0
  */
 public class PlayerQuitEvent extends PlayerEvent {
 
@@ -49,6 +51,7 @@ public class PlayerQuitEvent extends PlayerEvent {
      * Gets the quit message to send to all online players
      *
      * @return string quit message
+     * @since 1.16.5
      */
     public @Nullable Component quitMessage() {
         return this.quitMessage;
@@ -58,6 +61,7 @@ public class PlayerQuitEvent extends PlayerEvent {
      * Sets the quit message to send to all online players
      *
      * @param quitMessage quit message
+     * @since 1.16.5
      */
     public void quitMessage(@Nullable Component quitMessage) {
         this.quitMessage = quitMessage;
@@ -68,6 +72,7 @@ public class PlayerQuitEvent extends PlayerEvent {
      *
      * @return string quit message
      * @deprecated in favour of {@link #quitMessage()}
+     * @since 1.0.0
      */
     @Nullable
     @Deprecated
@@ -80,28 +85,41 @@ public class PlayerQuitEvent extends PlayerEvent {
      *
      * @param quitMessage quit message
      * @deprecated in favour of {@link #quitMessage(Component)}
+     * @since 1.0.0
      */
     @Deprecated
     public void setQuitMessage(@Nullable String quitMessage) {
         this.quitMessage = quitMessage != null ? LegacyComponentSerializer.legacySection().deserialize(quitMessage) : null;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @NotNull
     public QuitReason getReason() {
         return this.reason;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public enum QuitReason {
 
         /**
@@ -109,14 +127,20 @@ public class PlayerQuitEvent extends PlayerEvent {
          * <p>
          * This does not mean they pressed the disconnect button in their client, but rather that the client severed the
          * connection themselves. This may occur if no keep-alive packet is received on their side, among other things.
+         *
+         * @since 1.16.4
          */
         DISCONNECTED,
         /**
          * The player was kicked from the server.
+         *
+         * @since 1.16.4
          */
         KICKED,
         /**
          * The player has timed out.
+         *
+         * @since 1.16.4
          */
         TIMED_OUT,
         /**
@@ -124,6 +148,8 @@ public class PlayerQuitEvent extends PlayerEvent {
          * <p>
          * Reasons for this may include invalid packets, invalid data, and uncaught exceptions in the packet handler,
          * among others.
+         *
+         * @since 1.16.4
          */
         ERRONEOUS_STATE
     }

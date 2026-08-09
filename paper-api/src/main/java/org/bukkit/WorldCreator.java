@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents various types of options that may be used to create a world.
+ *
+ * @since 1.0.0
  */
 public class WorldCreator {
     private final NamespacedKey key; // Paper
@@ -37,6 +39,7 @@ public class WorldCreator {
      * <p>Prefer {@link #ofKey(NamespacedKey)} for new or already-migrated worlds.</p>
      *
      * @param name Name of the world that will be created
+     * @since 1.0.0
      */
     @ApiStatus.Obsolete
     public WorldCreator(@NotNull String name) {
@@ -71,6 +74,7 @@ public class WorldCreator {
      * @param worldKey NamespacedKey of the world that will be created
      * @deprecated To load unconverted pre-26.1 worlds identified by their name (custom key was never persisted), use
      * {@link #WorldCreator(String)}. For new worlds and already-converted worlds, prefer {@link #ofKey(NamespacedKey)}.
+     * @since 1.16.5
      */
     @Deprecated(since = "26.1")
     public WorldCreator(@Nullable String levelName, @Nullable NamespacedKey worldKey) {
@@ -93,6 +97,7 @@ public class WorldCreator {
      * with {@link NamespacedKey#minecraft(String)} and {@link NamespacedKey#getKey()}.</p>
      *
      * @param worldKey NamespacedKey of the world that will be created
+     * @since 1.16.5
      */
     public WorldCreator(@NotNull NamespacedKey worldKey) {
         this(null, worldKey);
@@ -102,6 +107,7 @@ public class WorldCreator {
      * Gets the key for this WorldCreator
      *
      * @return the key
+     * @since 1.16.5
      */
     @NotNull
     public NamespacedKey key() {
@@ -115,6 +121,7 @@ public class WorldCreator {
      * @param worldKey NamespacedKey of the world that will be created
      * @deprecated Prior to 26.1, custom world keys were never persisted. To load unconverted pre-26.1 worlds created
      * with this method, use {@link #WorldCreator(String)} with the name.
+     * @since 1.16.5
      */
     @Deprecated(since = "26.1")
     @NotNull
@@ -133,6 +140,7 @@ public class WorldCreator {
      * with {@link NamespacedKey#minecraft(String)} and {@link NamespacedKey#getKey()}.</p>
      *
      * @param worldKey NamespacedKey of the world that will be created
+     * @since 1.16.5
      */
     @NotNull
     public static WorldCreator ofKey(@NotNull NamespacedKey worldKey) {
@@ -144,6 +152,7 @@ public class WorldCreator {
      *
      * @param world World to copy options from
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator copy(@NotNull World world) {
@@ -166,6 +175,7 @@ public class WorldCreator {
      *
      * @param creator World creator to copy options from
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator copy(@NotNull WorldCreator creator) {
@@ -191,6 +201,7 @@ public class WorldCreator {
      * Prefer using {@link #key()}.</p>
      *
      * @return legacy Bukkit world name
+     * @since 1.0.0
      */
     @ApiStatus.Obsolete
     @NotNull
@@ -202,6 +213,7 @@ public class WorldCreator {
      * Gets the seed that will be used to create this world
      *
      * @return World seed
+     * @since 1.0.0
      */
     public long seed() {
         return seed;
@@ -212,6 +224,7 @@ public class WorldCreator {
      *
      * @param seed World seed
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator seed(long seed) {
@@ -224,6 +237,7 @@ public class WorldCreator {
      * Gets the environment that will be used to create or load the world
      *
      * @return World environment
+     * @since 1.0.0
      */
     @NotNull
     public World.Environment environment() {
@@ -235,6 +249,7 @@ public class WorldCreator {
      *
      * @param env World environment
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator environment(@NotNull World.Environment env) {
@@ -247,6 +262,7 @@ public class WorldCreator {
      * Gets the type of the world that will be created or loaded
      *
      * @return World type
+     * @since 1.1.0
      */
     @NotNull
     public WorldType type() {
@@ -258,6 +274,7 @@ public class WorldCreator {
      *
      * @param type World type
      * @return This object, for chaining
+     * @since 1.1.0
      */
     @NotNull
     public WorldCreator type(@NotNull WorldType type) {
@@ -276,6 +293,7 @@ public class WorldCreator {
      * @param yaw      the yaw rotation at spawn
      * @param pitch    the pitch rotation at spawn
      * @return this object, for chaining
+     * @since 26.2
      */
     @NotNull
     public WorldCreator forcedSpawnPosition(@NotNull Position position, float yaw, float pitch) {
@@ -291,6 +309,7 @@ public class WorldCreator {
      * After calling this, vanilla spawn selection behavior is used.
      *
      * @return this object, for chaining
+     * @since 26.2
      */
     @NotNull
     public WorldCreator clearForcedSpawnPosition() {
@@ -307,6 +326,7 @@ public class WorldCreator {
      * to determine the spawn position.
      *
      * @return the forced spawn position, or {@code null} for the vanilla behavior
+     * @since 26.2
      */
     public @Nullable Position forcedSpawnPosition() {
         return this.spawnPositionOverride;
@@ -321,6 +341,7 @@ public class WorldCreator {
      * This value is only meaningful if a forced spawn position is present.
      *
      * @return the forced spawn yaw, or {@code null} for the vanilla behavior
+     * @since 26.2
      */
     public @Nullable Float forcedSpawnYaw() {
         return this.spawnYawOverride;
@@ -335,6 +356,7 @@ public class WorldCreator {
      * This value is only meaningful if a forced spawn position is present.
      *
      * @return the forced spawn pitch, or {@code null} for the vanilla behavior
+     * @since 26.2
      */
     public @Nullable Float forcedSpawnPitch() {
         return this.spawnPitchOverride;
@@ -347,6 +369,7 @@ public class WorldCreator {
      * environment will be used.
      *
      * @return Chunk generator
+     * @since 1.0.0
      */
     @Nullable
     public ChunkGenerator generator() {
@@ -361,6 +384,7 @@ public class WorldCreator {
      *
      * @param generator Chunk generator
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator generator(@Nullable ChunkGenerator generator) {
@@ -381,6 +405,7 @@ public class WorldCreator {
      *
      * @param generator Name of the generator to use, in "plugin:id" notation
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator generator(@Nullable String generator) {
@@ -403,6 +428,7 @@ public class WorldCreator {
      * @param output {@link CommandSender} that will receive any error
      *     messages
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public WorldCreator generator(@Nullable String generator, @Nullable CommandSender output) {
@@ -419,6 +445,7 @@ public class WorldCreator {
      * for this environment will be used.
      *
      * @return Biome provider
+     * @since 1.17.1
      */
     @Nullable
     public BiomeProvider biomeProvider() {
@@ -434,6 +461,7 @@ public class WorldCreator {
      *
      * @param biomeProvider Biome provider
      * @return This object, for chaining
+     * @since 1.17.1
      */
     @NotNull
     public WorldCreator biomeProvider(@Nullable BiomeProvider biomeProvider) {
@@ -457,6 +485,7 @@ public class WorldCreator {
      * @param biomeProvider Name of the biome provider to use, in "plugin:id"
      * notation
      * @return This object, for chaining
+     * @since 1.17.1
      */
     @NotNull
     public WorldCreator biomeProvider(@Nullable String biomeProvider) {
@@ -481,6 +510,7 @@ public class WorldCreator {
      * notation
      * @param output {@link CommandSender} that will receive any error messages
      * @return This object, for chaining
+     * @since 1.17.1
      */
     @NotNull
     public WorldCreator biomeProvider(@Nullable String biomeProvider, @Nullable CommandSender output) {
@@ -503,6 +533,7 @@ public class WorldCreator {
      * @see <a href="https://minecraft.wiki/w/Custom_dimension">Custom
      * dimension</a> (scroll to "When the generator ID type is
      * <code>minecraft:flat</code>)"
+     * @since 1.8
      */
     @NotNull
     public WorldCreator generatorSettings(@NotNull String generatorSettings) {
@@ -516,6 +547,7 @@ public class WorldCreator {
      *
      * @return The settings that should be used by the generator
      * @see #generatorSettings(java.lang.String)
+     * @since 1.8
      */
     @NotNull
     public String generatorSettings() {
@@ -528,6 +560,7 @@ public class WorldCreator {
      *
      * @param generate Whether to generate structures
      * @return This object, for chaining
+     * @since 1.1.0
      */
     @NotNull
     public WorldCreator generateStructures(boolean generate) {
@@ -540,6 +573,7 @@ public class WorldCreator {
      * Gets whether or not structures will be generated in the world.
      *
      * @return True if structures will be generated
+     * @since 1.1.0
      */
     public boolean generateStructures() {
         return generateStructures;
@@ -552,6 +586,7 @@ public class WorldCreator {
      *
      * @param hardcore Whether the world will be hardcore
      * @return This object, for chaining
+     * @since 1.15.1
      */
     @NotNull
     public WorldCreator hardcore(boolean hardcore) {
@@ -566,6 +601,7 @@ public class WorldCreator {
      * In a hardcore world the difficulty will be locked to hard.
      *
      * @return hardcore status
+     * @since 1.15.1
      */
     public boolean hardcore() {
         return hardcore;
@@ -576,6 +612,7 @@ public class WorldCreator {
      *
      * @param bonusChest indicating whether the bonus chest should be generated
      * @return This object, for chaining
+     * @since 1.21.6
      */
     @NotNull
     public WorldCreator bonusChest(final boolean bonusChest) {
@@ -587,6 +624,7 @@ public class WorldCreator {
      * Gets whether the bonus chest feature is enabled.
      *
      * @return true if the bonus chest is enabled, false otherwise.
+     * @since 1.21.6
      */
     public boolean bonusChest() {
         return bonusChest;
@@ -599,6 +637,7 @@ public class WorldCreator {
      * options may be ignored.
      *
      * @return Newly created or loaded world
+     * @since 1.0.0
      */
     @Nullable
     public World createWorld() {
@@ -610,6 +649,7 @@ public class WorldCreator {
      *
      * @param name Name of the world to load or create
      * @return Resulting WorldCreator
+     * @since 1.0.0
      */
     @NotNull
     public static WorldCreator name(@NotNull String name) {
@@ -631,6 +671,7 @@ public class WorldCreator {
      * @param name Name of the generator to retrieve
      * @param output Where to output if errors are present
      * @return Resulting generator, or null
+     * @since 1.0.0
      */
     @Nullable
     public static ChunkGenerator getGeneratorForName(@NotNull String world, @Nullable String name, @Nullable CommandSender output) {
@@ -673,6 +714,7 @@ public class WorldCreator {
      * @param name Name of the biome provider to retrieve
      * @param output Where to output if errors are present
      * @return Resulting biome provider, or null
+     * @since 1.17.1
      */
     @Nullable
     public static BiomeProvider getBiomeProviderForName(@NotNull String world, @Nullable String name, @Nullable CommandSender output) {

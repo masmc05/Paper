@@ -20,6 +20,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a Command, which executes various tasks upon user input
+ *
+ * @since 1.0.0
  */
 public abstract class Command {
     private String name;
@@ -64,6 +66,7 @@ public abstract class Command {
      * @param commandLabel The alias of the command used
      * @param args All arguments passed to the command, split via ' '
      * @return true if the command was successful, otherwise false
+     * @since 1.0.0
      */
     public abstract boolean execute(@NotNull CommandSender sender, @NotNull String commandLabel, @NotNull String @NotNull [] args);
 
@@ -77,6 +80,7 @@ public abstract class Command {
      * @return a list of tab-completions for the specified arguments. This
      *     will never be null. List may be immutable.
      * @throws IllegalArgumentException if sender, alias, or args is null
+     * @since 1.3.2
      */
     @NotNull
     public List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String @NotNull [] args) throws IllegalArgumentException {
@@ -94,6 +98,7 @@ public abstract class Command {
      * @return a list of tab-completions for the specified arguments. This
      *     will never be null. List may be immutable.
      * @throws IllegalArgumentException if sender, alias, or args is null
+     * @since 1.9.4
      */
     @NotNull
     public List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String @NotNull [] args, @Nullable Location location) throws IllegalArgumentException {
@@ -130,6 +135,7 @@ public abstract class Command {
      * Returns the name of this command
      *
      * @return Name of this command
+     * @since 1.0.0
      */
     @NotNull
     public String getName() {
@@ -146,6 +152,7 @@ public abstract class Command {
      * @param name New command name
      * @return returns true if the name change happened instantly or false if
      *     the command was already registered
+     * @since 1.8.8
      */
     public boolean setName(@NotNull String name) {
         if (!isRegistered()) {
@@ -160,6 +167,7 @@ public abstract class Command {
      * command
      *
      * @return Permission name, or null if none
+     * @since 1.0.0
      */
     @Nullable
     public String getPermission() {
@@ -171,6 +179,7 @@ public abstract class Command {
      * command
      *
      * @param permission Permission name or null
+     * @since 1.0.0
      */
     public void setPermission(@Nullable String permission) {
         this.permission = permission;
@@ -185,6 +194,7 @@ public abstract class Command {
      *
      * @param target User to test
      * @return true if they can use it, otherwise false
+     * @since 1.0.0
      */
     public boolean testPermission(@NotNull CommandSender target) {
         if (testPermissionSilent(target)) {
@@ -209,6 +219,7 @@ public abstract class Command {
      *
      * @param target User to test
      * @return true if they can use it, otherwise false
+     * @since 1.1.0
      */
     public boolean testPermissionSilent(@NotNull CommandSender target) {
         if ((permission == null) || (permission.length() == 0)) {
@@ -228,6 +239,7 @@ public abstract class Command {
      * Returns the label for this command
      *
      * @return Label of this command
+     * @since 1.0.0
      */
     @NotNull
     public String getLabel() {
@@ -244,6 +256,7 @@ public abstract class Command {
      * @param name The command's name
      * @return returns true if the name change happened instantly or false if
      *     the command was already registered
+     * @since 1.0.0
      */
     public boolean setLabel(@NotNull String name) {
         if (name == null) {
@@ -264,6 +277,7 @@ public abstract class Command {
      * @param commandMap the CommandMap to register this command to
      * @return true if the registration was successful (the current registered
      *     CommandMap was the passed CommandMap or null) false otherwise
+     * @since 1.0.0
      */
     public boolean register(@NotNull CommandMap commandMap) {
         if (allowChangesFrom(commandMap)) {
@@ -282,6 +296,7 @@ public abstract class Command {
      * @return true if the unregistration was successful (the current
      *     registered CommandMap was the passed CommandMap or null) false
      *     otherwise
+     * @since 1.0.0
      */
     public boolean unregister(@NotNull CommandMap commandMap) {
         if (allowChangesFrom(commandMap)) {
@@ -302,6 +317,7 @@ public abstract class Command {
      * Returns the current registered state of this command
      *
      * @return true if this command is currently registered false otherwise
+     * @since 1.0.0
      */
     public boolean isRegistered() {
         return (null != this.commandMap);
@@ -311,6 +327,7 @@ public abstract class Command {
      * Returns a list of active aliases of this command
      *
      * @return List of aliases
+     * @since 1.0.0
      */
     @NotNull
     public List<String> getAliases() {
@@ -328,6 +345,7 @@ public abstract class Command {
      * command execution to the server. This message will only ever be shown to
      * consoles or when this command is executed with
      * {@link Bukkit#dispatchCommand(CommandSender, String)}.
+     * @since 1.1.0
      */
     @Deprecated(since = "1.20.4")
     @Nullable
@@ -339,6 +357,7 @@ public abstract class Command {
      * Gets a brief description of this command
      *
      * @return Description of this command
+     * @since 1.0.0
      */
     @NotNull
     public String getDescription() {
@@ -349,6 +368,7 @@ public abstract class Command {
      * Gets an example usage of this command
      *
      * @return One or more example usages
+     * @since 1.0.0
      */
     @NotNull
     public String getUsage() {
@@ -363,6 +383,7 @@ public abstract class Command {
      *
      * @param aliases aliases to register to this command
      * @return this command object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public Command setAliases(@NotNull List<String> aliases) {
@@ -380,6 +401,7 @@ public abstract class Command {
      *
      * @param description new command description
      * @return this command object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public Command setDescription(@NotNull String description) {
@@ -399,6 +421,7 @@ public abstract class Command {
      * command execution to the server. This message will only ever be shown to
      * consoles or when this command is executed with
      * {@link Bukkit#dispatchCommand(CommandSender, String)}.
+     * @since 1.1.0
      */
     @Deprecated(since = "1.20.4")
     @NotNull
@@ -412,6 +435,7 @@ public abstract class Command {
      *
      * @param usage new example usage
      * @return this command object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public Command setUsage(@NotNull String usage) {
@@ -429,6 +453,7 @@ public abstract class Command {
      * command execution to the server. This message will only ever be shown to
      * consoles or when this command is executed with
      * {@link Bukkit#dispatchCommand(CommandSender, String)}.
+     * @since 1.17.1
      */
     @Deprecated
     public net.kyori.adventure.text.@Nullable Component permissionMessage() {
@@ -445,6 +470,7 @@ public abstract class Command {
      * command execution to the server. This message will only ever be shown to
      * consoles or when this command is executed with
      * {@link Bukkit#dispatchCommand(CommandSender, String)}.
+     * @since 1.17.1
      */
     @Deprecated
     public void permissionMessage(net.kyori.adventure.text.@Nullable Component permissionMessage) {
@@ -452,19 +478,31 @@ public abstract class Command {
     }
     // Paper end
 
+    /**
+     * @since 1.0.0
+     */
     public static void broadcastCommandMessage(@NotNull CommandSender source, @NotNull String message) {
         broadcastCommandMessage(source, message, true);
     }
 
+    /**
+     * @since 1.3.1
+     */
     public static void broadcastCommandMessage(@NotNull CommandSender source, @NotNull String message, boolean sendToSource) {
         // Paper start
         broadcastCommandMessage(source, net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer.legacySection().deserialize(message), sendToSource);
     }
 
+    /**
+     * @since 1.18.2
+     */
     public static void broadcastCommandMessage(@NotNull CommandSender source, net.kyori.adventure.text.@NotNull Component message) {
         broadcastCommandMessage(source, message, true);
     }
 
+    /**
+     * @since 1.18.2
+     */
     public static void broadcastCommandMessage(@NotNull CommandSender source, net.kyori.adventure.text.@NotNull Component message, boolean sendToSource) {
         net.kyori.adventure.text.TextComponent.Builder result = net.kyori.adventure.text.Component.text()
             .color(net.kyori.adventure.text.format.NamedTextColor.WHITE)

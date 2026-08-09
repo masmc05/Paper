@@ -11,6 +11,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
+/**
+ * @since 1.16.5
+ */
 @NullMarked
 public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable {
 
@@ -37,6 +40,7 @@ public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable 
     /**
      * @deprecated This enum has been replaced with a system that better
      * represents how beds work. See {@link #enterAction}
+     * @since 1.16.5
      */
     @ApiStatus.Obsolete(since = "1.21.11")
     public FailReason getFailReason() {
@@ -47,31 +51,50 @@ public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable 
      * This describes the default outcome of this event.
      *
      * @return the action representing the default outcome of this event
+     * @since 1.21.11
      */
     public BedEnterAction enterAction() {
         return this.enterAction;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public Block getBed() {
         return this.bed;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public boolean getWillExplode() {
         return this.willExplode;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public void setWillExplode(final boolean willExplode) {
         this.willExplode = willExplode;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public @Nullable Component getMessage() {
         return this.message;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public void setMessage(final @Nullable Component message) {
         this.message = message;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -82,17 +105,25 @@ public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable 
      * <p>
      * <b>NOTE</b>: This does not cancel the player getting in the bed, but any messages/explosions
      * that may occur because of the interaction.
+     *
+     * @since 1.16.5
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
@@ -100,6 +131,7 @@ public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable 
     /**
      * @deprecated Enums no longer represents reliably how beds work and fail. This has been
      * replaced with {@link BedEnterAction} that better fits the new beds
+     * @since 1.16.5
      */
     @ApiStatus.Obsolete(since = "1.21.11")
     public enum FailReason {
@@ -107,6 +139,8 @@ public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable 
          * The world doesn't allow sleeping (ex. Nether or The End). Entering
          * the bed is prevented but the bed doesn't explode. When the bed
          * explodes, {@link #EXPLOSION} is used instead.
+         *
+         * @since 1.16.5
          */
         NOT_POSSIBLE_HERE,
         /**
@@ -116,26 +150,38 @@ public class PlayerBedFailEnterEvent extends PlayerEvent implements Cancellable 
          * If the event is forcefully allowed during daytime, the player will
          * enter the bed (and set its bed location), but might get immediately
          * thrown out again.
+         *
+         * @since 1.16.5
          */
         NOT_POSSIBLE_NOW,
         /**
          * Entering the bed is prevented due to the player being too far away.
+         *
+         * @since 1.16.5
          */
         TOO_FAR_AWAY,
         /**
          * Bed is obstructed.
+         *
+         * @since 1.16.5
          */
         OBSTRUCTED,
         /**
          * Entering the bed is prevented due to there being some other problem.
+         *
+         * @since 1.16.5
          */
         OTHER_PROBLEM,
         /**
          * Entering the bed is prevented due to there being monsters nearby.
+         *
+         * @since 1.16.5
          */
         NOT_SAFE,
         /**
          * Entering the bed is prevented and the bed explodes.
+         *
+         * @since 1.21.11
          */
         EXPLOSION
     }

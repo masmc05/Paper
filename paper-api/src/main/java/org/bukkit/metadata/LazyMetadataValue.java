@@ -22,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
  * removed. It is recommended that when wanting persistent metadata, you use {@link org.bukkit.persistence.PersistentDataContainer}.
  * <p>
  * If you want temporary values on an entity, use the entity lifecycle events and a {@link java.util.Map} of your own. (See {@link com.destroystokyo.paper.event.entity.EntityAddToWorldEvent} and {@link com.destroystokyo.paper.event.entity.EntityRemoveFromWorldEvent})
+ * @since 1.1.0
  */
 @Deprecated
 public class LazyMetadataValue extends MetadataValueAdapter {
@@ -37,6 +38,7 @@ public class LazyMetadataValue extends MetadataValueAdapter {
      * @param owningPlugin the {@link Plugin} that created this metadata
      *     value.
      * @param lazyValue the lazy value assigned to this metadata value.
+     * @since 1.1.0
      */
     public LazyMetadataValue(@NotNull Plugin owningPlugin, @NotNull Callable<Object> lazyValue) {
         this(owningPlugin, CacheStrategy.CACHE_AFTER_FIRST_EVAL, lazyValue);
@@ -50,6 +52,7 @@ public class LazyMetadataValue extends MetadataValueAdapter {
      * @param cacheStrategy determines the rules for caching this metadata
      *     value.
      * @param lazyValue the lazy value assigned to this metadata value.
+     * @since 1.1.0
      */
     public LazyMetadataValue(@NotNull Plugin owningPlugin, @NotNull CacheStrategy cacheStrategy, @NotNull Callable<Object> lazyValue) {
         super(owningPlugin);
@@ -70,6 +73,9 @@ public class LazyMetadataValue extends MetadataValueAdapter {
         super(owningPlugin);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @Nullable
     public Object value() {
@@ -101,6 +107,9 @@ public class LazyMetadataValue extends MetadataValueAdapter {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public synchronized void invalidate() {
         if (cacheStrategy != CacheStrategy.CACHE_ETERNALLY) {
@@ -110,22 +119,30 @@ public class LazyMetadataValue extends MetadataValueAdapter {
 
     /**
      * Describes possible caching strategies for metadata.
+     *
+     * @since 1.1.0
      */
     public enum CacheStrategy {
         /**
          * Once the metadata value has been evaluated, do not re-evaluate the
          * value until it is manually invalidated.
+         *
+         * @since 1.1.0
          */
         CACHE_AFTER_FIRST_EVAL,
 
         /**
          * Re-evaluate the metadata item every time it is requested
+         *
+         * @since 1.1.0
          */
         NEVER_CACHE,
 
         /**
          * Once the metadata value has been evaluated, do not re-evaluate the
          * value in spite of manual invalidation.
+         *
+         * @since 1.1.0
          */
         CACHE_ETERNALLY
     }

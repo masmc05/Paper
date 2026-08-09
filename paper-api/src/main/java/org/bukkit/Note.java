@@ -8,26 +8,53 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A note class to store a specific note.
+ *
+ * @since 1.0.0
  */
 public class Note {
 
     /**
      * An enum holding tones.
+     *
+     * @since 1.0.0
      */
     public enum Tone {
+        /**
+         * @since 1.0.0
+         */
         G(0x1, true),
+        /**
+         * @since 1.0.0
+         */
         A(0x3, true),
+        /**
+         * @since 1.0.0
+         */
         B(0x5, false),
+        /**
+         * @since 1.0.0
+         */
         C(0x6, true),
+        /**
+         * @since 1.0.0
+         */
         D(0x8, true),
+        /**
+         * @since 1.0.0
+         */
         E(0xA, false),
+        /**
+         * @since 1.0.0
+         */
         F(0xB, true);
 
         private final boolean sharpable;
         private final byte id;
 
         private static final Map<Byte, Note.Tone> BY_DATA = Maps.newHashMap();
-        /** The number of tones including sharped tones. */
+        /** The number of tones including sharped tones. *
+         * @since 1.0.0
+         */
         public static final byte TONES_COUNT = 12;
 
         private Tone(int id, boolean sharpable) {
@@ -66,6 +93,7 @@ public class Note {
          * Returns if this tone could be sharped.
          *
          * @return if this tone could be sharped.
+         * @since 1.0.0
          */
         public boolean isSharpable() {
             return sharpable;
@@ -133,6 +161,7 @@ public class Note {
      *
      * @param note Internal note id. {@link #getId()} always return this
      *     value. The value has to be in the interval [0;&nbsp;24].
+     * @since 1.1.0
      */
     public Note(int note) {
         Preconditions.checkArgument(note >= 0 && note <= 24, "The note value has to be between 0 and 24.");
@@ -147,6 +176,7 @@ public class Note {
      * @param tone The tone within the octave. If the octave is 2 the note has
      *     to be F#.
      * @param sharped Set if the tone is sharped (e.g. for F#).
+     * @since 1.1.0
      */
     public Note(int octave, @NotNull Tone tone, boolean sharped) {
         if (sharped && !tone.isSharpable()) {
@@ -166,6 +196,7 @@ public class Note {
      * @param octave The octave where the note is in. Has to be 0 - 1.
      * @param tone The tone within the octave.
      * @return The new note.
+     * @since 1.1.0
      */
     @NotNull
     public static Note flat(int octave, @NotNull Tone tone) {
@@ -181,6 +212,7 @@ public class Note {
      * @param tone The tone within the octave. If the octave is 2 the note has
      *     to be F#.
      * @return The new note.
+     * @since 1.1.0
      */
     @NotNull
     public static Note sharp(int octave, @NotNull Tone tone) {
@@ -193,6 +225,7 @@ public class Note {
      * @param octave The octave where the note is in. Has to be 0 - 1.
      * @param tone The tone within the octave.
      * @return The new note.
+     * @since 1.1.0
      */
     @NotNull
     public static Note natural(int octave, @NotNull Tone tone) {
@@ -202,6 +235,7 @@ public class Note {
 
     /**
      * @return The note a semitone above this one.
+     * @since 1.1.0
      */
     @NotNull
     public Note sharped() {
@@ -211,6 +245,7 @@ public class Note {
 
     /**
      * @return The note a semitone below this one.
+     * @since 1.1.0
      */
     @NotNull
     public Note flattened() {
@@ -233,6 +268,7 @@ public class Note {
      * Returns the octave of this note.
      *
      * @return the octave of this note.
+     * @since 1.0.0
      */
     public int getOctave() {
         return note / Tone.TONES_COUNT;
@@ -246,6 +282,7 @@ public class Note {
      * Returns the tone of this note.
      *
      * @return the tone of this note.
+     * @since 1.0.0
      */
     @NotNull
     public Tone getTone() {
@@ -256,6 +293,7 @@ public class Note {
      * Returns if this note is sharped.
      *
      * @return if this note is sharped.
+     * @since 1.0.0
      */
     public boolean isSharped() {
         byte note = getToneByte();
@@ -267,6 +305,7 @@ public class Note {
      * {@link World#playSound} or the /playsound command.
      *
      * @return the pitch
+     * @since 1.20.2
      */
     public float getPitch() {
         return pitchArray[this.note];

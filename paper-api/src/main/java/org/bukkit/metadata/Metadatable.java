@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * removed. It is recommended that when wanting persistent metadata, you use {@link org.bukkit.persistence.PersistentDataContainer}.
  * <p>
  * If you want temporary values on an entity, use the entity lifecycle events and a {@link java.util.Map} of your own. (See {@link com.destroystokyo.paper.event.entity.EntityAddToWorldEvent} and {@link com.destroystokyo.paper.event.entity.EntityRemoveFromWorldEvent})
+ * @since 1.1.0
  */
 @Deprecated
 public interface Metadatable {
@@ -22,6 +23,7 @@ public interface Metadatable {
      * @param newMetadataValue The metadata value to apply.
      * @throws IllegalArgumentException If value is null, or the owning plugin
      *     is null
+     * @since 1.1.0
      */
     public void setMetadata(@NotNull String metadataKey, @NotNull MetadataValue newMetadataValue);
 
@@ -32,6 +34,7 @@ public interface Metadatable {
      * @param metadataKey the unique metadata key being sought.
      * @return A list of values, one for each plugin that has set the
      *     requested value.
+     * @since 1.1.0
      */
     @NotNull
     public List<MetadataValue> getMetadata(@NotNull String metadataKey);
@@ -42,6 +45,7 @@ public interface Metadatable {
      *
      * @param metadataKey the unique metadata key being queried.
      * @return the existence of the metadataKey within subject.
+     * @since 1.1.0
      */
     public boolean hasMetadata(@NotNull String metadataKey);
 
@@ -54,6 +58,7 @@ public interface Metadatable {
      * @param owningPlugin This plugin's metadata value will be removed. All
      *     other values will be left untouched.
      * @throws IllegalArgumentException If plugin is null
+     * @since 1.1.0
      */
     public void removeMetadata(@NotNull String metadataKey, @NotNull Plugin owningPlugin);
 }

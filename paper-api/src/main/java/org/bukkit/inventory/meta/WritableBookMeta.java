@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
  * {@link org.bukkit.inventory.ItemStack#getType()}. {@code instanceof} on
  * the meta instance is not sufficient due to unusual inheritance
  * with relation to {@link BookMeta}.
+ *
+ * @since 1.20.6
  */
 public interface WritableBookMeta extends ItemMeta, BookLike {
 
@@ -21,6 +23,7 @@ public interface WritableBookMeta extends ItemMeta, BookLike {
      * Checks for the existence of pages in the book.
      *
      * @return true if the book has pages
+     * @since 1.20.6
      */
     boolean hasPages();
 
@@ -31,6 +34,7 @@ public interface WritableBookMeta extends ItemMeta, BookLike {
      *
      * @param page the page number to get, in range [1, getPageCount()]
      * @return the page from the book
+     * @since 1.20.6
      */
     @NotNull
     String getPage(int page);
@@ -46,6 +50,7 @@ public interface WritableBookMeta extends ItemMeta, BookLike {
      *
      * @param page the page number to set, in range [1, getPageCount()]
      * @param data the data to set for that page
+     * @since 1.20.6
      */
     void setPage(int page, @NotNull String data);
 
@@ -53,6 +58,7 @@ public interface WritableBookMeta extends ItemMeta, BookLike {
      * Gets all the pages in the book.
      *
      * @return list of all the pages in the book
+     * @since 1.20.6
      */
     @NotNull
     List<String> getPages();
@@ -62,6 +68,7 @@ public interface WritableBookMeta extends ItemMeta, BookLike {
      * pages. Maximum 100 pages with 1024 characters per page.
      *
      * @param pages A list of pages to set the book to use
+     * @since 1.20.6
      */
     void setPages(@NotNull List<String> pages);
 
@@ -70,6 +77,7 @@ public interface WritableBookMeta extends ItemMeta, BookLike {
      * pages. Maximum 100 pages with 1024 characters per page.
      *
      * @param pages A list of strings, each being a page
+     * @since 1.20.6
      */
     void setPages(@NotNull String... pages);
 
@@ -78,6 +86,7 @@ public interface WritableBookMeta extends ItemMeta, BookLike {
      * 1024 characters per page.
      *
      * @param pages A list of strings, each being a page
+     * @since 1.20.6
      */
     void addPage(@NotNull String... pages);
 
@@ -85,6 +94,7 @@ public interface WritableBookMeta extends ItemMeta, BookLike {
      * Gets the number of pages in the book.
      *
      * @return the number of pages in the book
+     * @since 1.20.6
      */
     int getPageCount();
 

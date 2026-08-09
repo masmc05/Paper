@@ -6,6 +6,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * A scoreboard number format that applies a custom formatting to the score number.
+ *
+ * @since 1.20.4
  */
 @NullMarked
 public interface StyledFormat extends NumberFormat, StyleBuilderApplicable {
@@ -14,6 +16,7 @@ public interface StyledFormat extends NumberFormat, StyleBuilderApplicable {
      * The style that is being applied to the number in the score
      *
      * @return the style to apply
+     * @since 1.20.4
      */
     Style style();
 

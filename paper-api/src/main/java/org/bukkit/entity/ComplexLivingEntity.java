@@ -6,12 +6,15 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents a complex living entity - one that is made up of various smaller
  * parts
+ *
+ * @since 1.0.0
  */
 public interface ComplexLivingEntity extends LivingEntity {
     /**
      * Gets a list of parts that belong to this complex entity
      *
      * @return List of parts
+     * @since 1.0.0
      */
     @NotNull
     public Set<ComplexEntityPart> getParts();

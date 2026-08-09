@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a bell is being rung.
+ *
+ * @since 1.19.4
  */
 public class BellRingEvent extends BlockEvent implements Cancellable {
 
@@ -32,6 +34,7 @@ public class BellRingEvent extends BlockEvent implements Cancellable {
      * Get the direction in which the bell was rung.
      *
      * @return the direction
+     * @since 1.19.4
      */
     @NotNull
     public BlockFace getDirection() {
@@ -42,28 +45,41 @@ public class BellRingEvent extends BlockEvent implements Cancellable {
      * Get the {@link Entity} that rang the bell (if there was one).
      *
      * @return the entity
+     * @since 1.19.4
      */
     @Nullable
     public Entity getEntity() {
         return this.entity;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

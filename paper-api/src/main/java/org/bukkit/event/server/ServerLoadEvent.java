@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * This event is called when either the server startup or reload has completed.
+ *
+ * @since 1.13.1
  */
 public class ServerLoadEvent extends ServerEvent {
 
@@ -22,18 +24,25 @@ public class ServerLoadEvent extends ServerEvent {
      * Gets the context in which the server was loaded.
      *
      * @return the context in which the server was loaded
+     * @since 1.13.1
      */
     @NotNull
     public LoadType getType() {
         return this.type;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
@@ -41,9 +50,17 @@ public class ServerLoadEvent extends ServerEvent {
 
     /**
      * Represents the context in which the enclosing event has been completed.
+     *
+     * @since 1.13.1
      */
     public enum LoadType {
+        /**
+         * @since 1.13.1
+         */
         STARTUP,
+        /**
+         * @since 1.13.1
+         */
         RELOAD
     }
 }

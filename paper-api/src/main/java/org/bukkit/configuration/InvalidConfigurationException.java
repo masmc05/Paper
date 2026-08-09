@@ -2,6 +2,8 @@ package org.bukkit.configuration;
 
 /**
  * Exception thrown when attempting to load an invalid {@link Configuration}
+ *
+ * @since 1.0.0
  */
 @SuppressWarnings("serial")
 public class InvalidConfigurationException extends Exception {
@@ -9,6 +11,8 @@ public class InvalidConfigurationException extends Exception {
     /**
      * Creates a new instance of InvalidConfigurationException without a
      * message or cause.
+     *
+     * @since 1.0.0
      */
     public InvalidConfigurationException() {}
 
@@ -17,6 +21,7 @@ public class InvalidConfigurationException extends Exception {
      * specified message.
      *
      * @param msg The details of the exception.
+     * @since 1.0.0
      */
     public InvalidConfigurationException(String msg) {
         super(msg);
@@ -27,6 +32,7 @@ public class InvalidConfigurationException extends Exception {
      * specified cause.
      *
      * @param cause The cause of the exception.
+     * @since 1.0.0
      */
     public InvalidConfigurationException(Throwable cause) {
         super(cause);
@@ -38,6 +44,7 @@ public class InvalidConfigurationException extends Exception {
      *
      * @param cause The cause of the exception.
      * @param msg The details of the exception.
+     * @since 1.0.0
      */
     public InvalidConfigurationException(String msg, Throwable cause) {
         super(msg, cause);

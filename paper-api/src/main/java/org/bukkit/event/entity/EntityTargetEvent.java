@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a creature targets or untargets another entity
+ *
+ * @since 1.0.0
  */
 public class EntityTargetEvent extends EntityEvent implements Cancellable {
 
@@ -30,6 +32,7 @@ public class EntityTargetEvent extends EntityEvent implements Cancellable {
      * Returns the reason for the targeting
      *
      * @return The reason
+     * @since 1.0.0
      */
     @NotNull
     public TargetReason getReason() {
@@ -43,6 +46,7 @@ public class EntityTargetEvent extends EntityEvent implements Cancellable {
      * forgets its target.
      *
      * @return The entity
+     * @since 1.0.0
      */
     @Nullable
     public Entity getTarget() {
@@ -60,27 +64,40 @@ public class EntityTargetEvent extends EntityEvent implements Cancellable {
      * will cause the entity to be reset.
      *
      * @param target The entity to target
+     * @since 1.0.0
      */
     public void setTarget(@Nullable Entity target) {
         this.target = target;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
@@ -88,20 +105,28 @@ public class EntityTargetEvent extends EntityEvent implements Cancellable {
 
     /**
      * An enum to specify the reason for the targeting
+     *
+     * @since 1.0.0
      */
     public enum TargetReason {
 
         /**
          * When the entity's target has died, and so it no longer targets it
+         *
+         * @since 1.0.0
          */
         TARGET_DIED,
         /**
          * When the entity doesn't have a target, so it attacks the nearest
          * player
+         *
+         * @since 1.0.0
          */
         CLOSEST_PLAYER,
         /**
          * When the target attacks the entity, so entity targets it
+         *
+         * @since 1.0.0
          */
         TARGET_ATTACKED_ENTITY,
         /**
@@ -114,66 +139,96 @@ public class EntityTargetEvent extends EntityEvent implements Cancellable {
         PIG_ZOMBIE_TARGET,
         /**
          * When the target is forgotten for whatever reason.
+         *
+         * @since 1.0.0
          */
         FORGOT_TARGET,
         /**
          * When the target attacks the owner of the entity, so the entity
          * targets it.
+         *
+         * @since 1.0.0
          */
         TARGET_ATTACKED_OWNER,
         /**
          * When the owner of the entity attacks the target attacks, so the
          * entity targets it.
+         *
+         * @since 1.0.0
          */
         OWNER_ATTACKED_TARGET,
         /**
          * When the entity has no target, so the entity randomly chooses one.
+         *
+         * @since 1.0.0
          */
         RANDOM_TARGET,
         /**
          * When an entity selects a target while defending a village.
+         *
+         * @since 1.3.1
          */
         DEFEND_VILLAGE,
         /**
          * When the target attacks a nearby entity of the same type, so the entity targets it
+         *
+         * @since 1.7.10
          */
         TARGET_ATTACKED_NEARBY_ENTITY,
         /**
          * When a zombie targeting an entity summons reinforcements, so the reinforcements target the same entity
+         *
+         * @since 1.7.10
          */
         REINFORCEMENT_TARGET,
         /**
          * When an entity targets another entity after colliding with it.
+         *
+         * @since 1.7.10
          */
         COLLISION,
         /**
          * For custom calls to the event.
+         *
+         * @since 1.0.0
          */
         CUSTOM,
         /**
          * When the entity doesn't have a target, so it attacks the nearest
          * entity
+         *
+         * @since 1.8
          */
         CLOSEST_ENTITY,
         /**
          * When a raiding entity selects the same target as one of its compatriots.
+         *
+         * @since 1.14
          */
         FOLLOW_LEADER,
         /**
          * When another entity tempts this entity by having a desired item such
          * as wheat in its hand.
+         *
+         * @since 1.10.2
          */
         TEMPT,
         /**
          * When the target is in a different dimension
+         *
+         * @since 1.16.1
          */
         TARGET_OTHER_LEVEL,
         /**
          * When the target is in creative or spectator gamemode, or the difficulty is peaceful, or other reasons
+         *
+         * @since 1.16.1
          */
         TARGET_INVALID,
         /**
          * A currently unknown reason for the entity changing target.
+         *
+         * @since 1.8
          */
         UNKNOWN;
     }

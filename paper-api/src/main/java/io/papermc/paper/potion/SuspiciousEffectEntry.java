@@ -7,6 +7,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents a {@link PotionEffectType} paired with a duration.
+ *
+ * @since 1.20.2
  */
 @NullMarked
 public sealed interface SuspiciousEffectEntry permits SuspiciousEffectEntryImpl {
@@ -15,6 +17,7 @@ public sealed interface SuspiciousEffectEntry permits SuspiciousEffectEntryImpl 
      * Gets the effect type.
      *
      * @return effect type
+     * @since 1.20.2
      */
     PotionEffectType effect();
 
@@ -22,6 +25,7 @@ public sealed interface SuspiciousEffectEntry permits SuspiciousEffectEntryImpl 
      * Gets the duration for this effect instance.
      *
      * @return duration (in ticks) or {@link PotionEffect#INFINITE_DURATION}
+     * @since 1.20.2
      */
     int duration();
 
@@ -31,6 +35,7 @@ public sealed interface SuspiciousEffectEntry permits SuspiciousEffectEntryImpl 
      * @param effectType effect type
      * @param duration duration (in ticks) or {@link PotionEffect#INFINITE_DURATION}
      * @return new instance of an entry
+     * @since 1.20.2
      */
     @Contract(value = "_, _ -> new", pure = true)
     static SuspiciousEffectEntry create(final PotionEffectType effectType, final int duration) {

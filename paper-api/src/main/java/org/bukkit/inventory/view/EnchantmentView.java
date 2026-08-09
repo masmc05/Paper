@@ -9,9 +9,14 @@ import org.jspecify.annotations.Nullable;
 /**
  * An instance of {@link InventoryView} which provides extra methods related to
  * enchantment table view data.
+ *
+ * @since 1.21
  */
 public interface EnchantmentView extends InventoryView {
 
+    /**
+     * @since 1.21.1
+     */
     @NotNull
     @Override
     EnchantingInventory getTopInventory();
@@ -20,6 +25,7 @@ public interface EnchantmentView extends InventoryView {
      * Gets the random enchantment seed used in this view
      *
      * @return The random seed used
+     * @since 1.21
      */
     int getEnchantmentSeed();
 
@@ -28,6 +34,7 @@ public interface EnchantmentView extends InventoryView {
      * Sets the random enchantment seed used in this view. Loses its effect once the view is closed.
      *
      * @param seed the random seed to use
+     * @since 1.21.1
      */
     void setEnchantmentSeed(int seed);
     // Paper end - add enchantment seed update API
@@ -36,6 +43,7 @@ public interface EnchantmentView extends InventoryView {
      * Gets the offers of this EnchantmentView
      *
      * @return The enchantment offers that are provided
+     * @since 1.21
      */
     @Nullable EnchantmentOffer @NotNull [] getOffers();
 
@@ -44,6 +52,7 @@ public interface EnchantmentView extends InventoryView {
      *
      * @param offers The offers to provide
      * @throws IllegalArgumentException if the array length isn't 3
+     * @since 1.21
      */
     void setOffers(@Nullable EnchantmentOffer @NotNull [] offers) throws IllegalArgumentException;
 }

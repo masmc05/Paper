@@ -27,28 +27,60 @@ import org.jetbrains.annotations.Nullable;
  * Their existence and behavior is not guaranteed across future versions. They
  * may be poorly named, throw exceptions, have misleading parameters, or any
  * other bad programming practice.
+ *
+ * @since 1.7.2
  */
 @Deprecated(since = "1.7.2")
 public interface UnsafeValues {
 
+    /**
+     * @since 1.13
+     */
     Material toLegacy(Material material);
 
+    /**
+     * @since 1.13
+     */
     Material fromLegacy(Material material);
 
+    /**
+     * @since 1.13
+     */
     Material fromLegacy(MaterialData material);
 
+    /**
+     * @since 1.13
+     */
     Material fromLegacy(MaterialData material, boolean itemPriority);
 
+    /**
+     * @since 1.13
+     */
     BlockData fromLegacy(Material material, byte data);
 
+    /**
+     * @since 1.14
+     */
     Material getMaterial(String material, int version);
 
+    /**
+     * @since 1.13
+     */
     int getDataVersion();
 
+    /**
+     * @since 1.7.2
+     */
     ItemStack modifyItemStack(ItemStack item, String components);
 
+    /**
+     * @since 1.13
+     */
     void checkSupported(PluginDescriptionFile pdf) throws InvalidPluginException;
 
+    /**
+     * @since 1.13
+     */
     byte[] processClass(PluginDescriptionFile pdf, String path, byte[] clazz);
 
     /**
@@ -63,6 +95,7 @@ public interface UnsafeValues {
      * @param key the unique advancement key
      * @param advancement representation of the advancement
      * @return the loaded advancement or {@code null} if an error occurred
+     * @since 1.12
      */
     default @Nullable Advancement loadAdvancement(final NamespacedKey key, @Language("json") final String advancement) {
         return this.loadAdvancement(key, advancement, true);
@@ -81,6 +114,7 @@ public interface UnsafeValues {
      * @param advancement representation of the advancement
      * @param persist whether to store this advancement in the bukkit datapack for persistence
      * @return the loaded advancement or {@code null} if an error occurred
+     * @since 26.2
      */
     @Nullable Advancement loadAdvancement(Key key, @Language("json") String advancement, boolean persist);
 
@@ -98,6 +132,7 @@ public interface UnsafeValues {
      * @param advancements the advancements to register. The key is the unique advancement key and the value is the advancement's JSON representation
      * @param persist whether to store this advancement in the bukkit datapack for persistence
      * @return list of all successfully loaded advancements
+     * @since 26.2
      */
     List<Advancement> loadAdvancements(Map<Key, String> advancements, boolean persist);
 
@@ -111,6 +146,7 @@ public interface UnsafeValues {
      *
      * @param key the unique advancement key
      * @return true if a file matching this key was found and deleted
+     * @since 1.12
      */
     boolean removeAdvancement(NamespacedKey key);
 
@@ -152,6 +188,7 @@ public interface UnsafeValues {
      * @return json object representing this item.
      * @see #deserializeItemFromJson(com.google.gson.JsonObject)
      * @throws IllegalArgumentException if the passed itemstack is {@link ItemStack#empty()}.
+     * @since 1.21.1
      */
     @NotNull
     com.google.gson.JsonObject serializeItemAsJson(@NotNull ItemStack itemStack);
@@ -168,6 +205,7 @@ public interface UnsafeValues {
      * @return the deserialize item stack, migrated to the latest data version if needed.
      * @throws IllegalArgumentException if the json object is not a valid item
      * @see #serializeItemAsJson(ItemStack)
+     * @since 1.21.1
      */
     @NotNull ItemStack deserializeItemFromJson(@NotNull com.google.gson.JsonObject data) throws IllegalArgumentException;
 
@@ -251,11 +289,15 @@ public interface UnsafeValues {
      * Creates and returns the next EntityId available.
      * <p>
      * Use this when sending custom packets, so that there are no collisions on the client or server.
+     *
+     * @since 26.2
      */
     int nextEntityId(final World world);
 
     /**
      * Just don't use it.
+     *
+     * @since 1.18.2
      */
     @org.jetbrains.annotations.NotNull String getMainLevelName();
 
@@ -263,10 +305,14 @@ public interface UnsafeValues {
      * Returns the server's protocol version.
      *
      * @return the server's protocol version
+     * @since 1.16.5
      */
     int getProtocolVersion();
     // Paper end
 
+    /**
+     * @since 1.21.6
+     */
     @NotNull ItemStack deserializeStack(@NotNull Map<String, Object> args);
 
     /**
@@ -274,6 +320,7 @@ public interface UnsafeValues {
      *
      * @param itemHover the hover to deserialize
      * @return the deserialized {@code ItemStack}
+     * @since 1.21.11
      */
     @NotNull ItemStack deserializeItemHover(HoverEvent.@NotNull ShowItem itemHover);
 

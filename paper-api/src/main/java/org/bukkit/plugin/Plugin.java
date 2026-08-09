@@ -16,6 +16,8 @@ import org.jetbrains.annotations.Nullable;
  * Represents a Plugin
  * <p>
  * The use of {@link PluginBase} is recommended for actual Implementation
+ *
+ * @since 1.0.0
  */
 public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.event.LifecycleEventOwner, Namespaced { // Paper
     /**
@@ -23,6 +25,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * folder may not yet exist.
      *
      * @return The folder
+     * @since 1.0.0
      */
     @NotNull
     public File getDataFolder();
@@ -34,6 +37,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      *
      * @see #getDataFolder()
      * @return The folder
+     * @since 1.21
      */
     default @NotNull java.nio.file.Path getDataPath() {
         return getDataFolder().toPath();
@@ -46,6 +50,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * @return Contents of the plugin.yml file
      * @deprecated May be inaccurate due to different plugin implementations.
      * @see Plugin#getPluginMeta()
+     * @since 1.0.0
      */
     @Deprecated // Paper
     @NotNull
@@ -55,6 +60,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
     /**
      * Gets the plugin meta for this plugin.
      * @return configuration
+     * @since 1.19.3
      */
     @NotNull
     io.papermc.paper.plugin.configuration.PluginMeta getPluginMeta();
@@ -67,6 +73,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * provided as a default for this Configuration.
      *
      * @return Plugin configuration
+     * @since 1.0.0
      */
     @NotNull
     public FileConfiguration getConfig();
@@ -76,12 +83,15 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      *
      * @param filename Filename of the resource
      * @return File if found, otherwise null
+     * @since 1.0.0
      */
     @Nullable
     public InputStream getResource(@NotNull String filename);
 
     /**
      * Saves the {@link FileConfiguration} retrievable by {@link #getConfig()}.
+     *
+     * @since 1.0.0
      */
     public void saveConfig();
 
@@ -90,6 +100,8 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * retrievable by {@link #getConfig()}.
      * <p>
      * This should fail silently if the config.yml already exists.
+     *
+     * @since 1.1.0
      */
     public void saveDefaultConfig();
 
@@ -106,11 +118,14 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      *     contents of an existing file.
      * @throws IllegalArgumentException if the resource path is null, empty,
      *     or points to a nonexistent resource.
+     * @since 1.1.0
      */
     public void saveResource(@NotNull String resourcePath, boolean replace);
 
     /**
      * Discards any data in {@link #getConfig()} and reloads from disk.
+     *
+     * @since 1.0.0
      */
     public void reloadConfig();
 
@@ -127,6 +142,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * Returns the Server instance currently running this plugin
      *
      * @return Server running this plugin
+     * @since 1.0.0
      */
     @NotNull
     public Server getServer();
@@ -136,11 +152,14 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * enabled
      *
      * @return true if this plugin is enabled, otherwise false
+     * @since 1.0.0
      */
     public boolean isEnabled();
 
     /**
      * Called when this plugin is disabled
+     *
+     * @since 1.0.0
      */
     public void onDisable();
 
@@ -149,11 +168,15 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * <p>
      * When multiple plugins are loaded, the onLoad() for all plugins is
      * called before any onEnable() is called.
+     *
+     * @since 1.0.0
      */
     public void onLoad();
 
     /**
      * Called when this plugin is enabled
+     *
+     * @since 1.0.0
      */
     public void onEnable();
 
@@ -161,6 +184,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * Simple boolean if we can still nag to the logs about things
      *
      * @return boolean whether we can nag
+     * @since 1.0.0
      */
     public boolean isNaggable();
 
@@ -168,6 +192,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * Set naggable state
      *
      * @param canNag is this plugin still naggable?
+     * @since 1.0.0
      */
     public void setNaggable(boolean canNag);
 
@@ -179,6 +204,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * @param id Unique ID, if any, that was specified to indicate which
      *     generator was requested
      * @return ChunkGenerator for use in the default world generation
+     * @since 1.0.0
      */
     @Nullable
     public ChunkGenerator getDefaultWorldGenerator(@NotNull String worldName, @Nullable String id);
@@ -191,6 +217,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * @param id Unique ID, if any, that was specified to indicate which
      *     biome provider was requested
      * @return BiomeProvider for use in the default world generation
+     * @since 1.17.1
      */
     @Nullable
     public BiomeProvider getDefaultBiomeProvider(@NotNull String worldName, @Nullable String id);
@@ -201,10 +228,14 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * name.
      *
      * @return Logger associated with this plugin
+     * @since 1.1.0
      */
     @NotNull
     public Logger getLogger();
 
+    /**
+     * @since 1.18.2
+     */
     // Paper start - Adventure component logger
     @NotNull
     default net.kyori.adventure.text.logger.slf4j.ComponentLogger getComponentLogger() {
@@ -212,6 +243,9 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
     }
     // Paper end
 
+    /**
+     * @since 1.12.2
+     */
     // Paper start - Add SLF4J/Log4J loggers
     @NotNull
     default org.slf4j.Logger getSLF4JLogger() {
@@ -220,6 +254,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
 
     /**
      * @deprecated use {@link #getSLF4JLogger()}
+     * @since 1.17.1
      */
     @Deprecated
     @NotNull
@@ -235,6 +270,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * comparison.
      *
      * @return name of the plugin
+     * @since 1.1.0
      */
     @NotNull
     public String getName();
@@ -245,6 +281,7 @@ public interface Plugin extends TabExecutor, io.papermc.paper.plugin.lifecycle.e
      * for lifecycle events allowed on the {@link Plugin}.
      *
      * @return the lifecycle event manager
+     * @since 1.20.4
      */
     io.papermc.paper.plugin.lifecycle.event.@NotNull LifecycleEventManager<Plugin> getLifecycleManager();
     // Paper end - lifecycle events

@@ -14,6 +14,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Event that is called when an organic structure attempts to grow (Sapling {@literal ->}
  * Tree), (Mushroom {@literal ->} Huge Mushroom), naturally or using bonemeal.
+ *
+ * @since 1.1.0
  */
 public class StructureGrowEvent extends WorldEvent implements Cancellable {
 
@@ -41,6 +43,7 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
      * Gets the location of the structure.
      *
      * @return Location of the structure
+     * @since 1.1.0
      */
     @NotNull
     public Location getLocation() {
@@ -52,6 +55,7 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
      * mushroom)
      *
      * @return Structure species
+     * @since 1.1.0
      */
     @NotNull
     public TreeType getSpecies() {
@@ -62,6 +66,7 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
      * Checks if structure was grown using bonemeal.
      *
      * @return {@code true} if the structure was grown using bonemeal.
+     * @since 1.1.0
      */
     public boolean isFromBonemeal() {
         return this.bonemeal;
@@ -72,6 +77,7 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
      *
      * @return Player that created the structure, {@code null} if was not created
      *     manually
+     * @since 1.1.0
      */
     @Nullable
     public Player getPlayer() {
@@ -82,28 +88,41 @@ public class StructureGrowEvent extends WorldEvent implements Cancellable {
      * Gets a list of all blocks associated with the structure.
      *
      * @return list of all blocks associated with the structure.
+     * @since 1.1.0
      */
     @NotNull
     public List<BlockState> getBlocks() {
         return this.blocks;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

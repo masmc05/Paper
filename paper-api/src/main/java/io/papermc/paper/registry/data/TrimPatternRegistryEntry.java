@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Contract;
 
 /**
  * A data-centric version-specific registry entry for the {@link org.bukkit.inventory.meta.trim.TrimPattern} type.
+ *
+ * @since 26.2
  */
 @ApiStatus.NonExtendable
 public interface TrimPatternRegistryEntry {
@@ -17,6 +19,7 @@ public interface TrimPatternRegistryEntry {
      * Provides the asset id of the trim pattern.
      *
      * @return the asset id
+     * @since 26.2
      */
     @Contract(pure = true)
     Key assetId();
@@ -25,6 +28,7 @@ public interface TrimPatternRegistryEntry {
      * Provides the description of the trim pattern.
      *
      * @return the description
+     * @since 26.2
      */
     @Contract(pure = true)
     Component description();
@@ -33,6 +37,7 @@ public interface TrimPatternRegistryEntry {
      * Checks if the trim pattern is a decal.
      *
      * @return true if decal, false otherwise
+     * @since 26.2
      */
     @Contract(pure = true)
     boolean decal();
@@ -45,6 +50,8 @@ public interface TrimPatternRegistryEntry {
      *     <li>{@link #assetId(Key)}</li>
      *     <li>{@link #description(Component)}</li>
      * </ul>
+     *
+     * @since 26.2
      */
     @ApiStatus.NonExtendable
     interface Builder extends TrimPatternRegistryEntry, RegistryBuilder<TrimPattern> {
@@ -55,6 +62,7 @@ public interface TrimPatternRegistryEntry {
          * @param assetId the asset id
          * @return this builder instance
          * @see #assetId()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder assetId(Key assetId);
@@ -65,6 +73,7 @@ public interface TrimPatternRegistryEntry {
          * @param description the description
          * @return this builder instance
          * @see #description()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder description(Component description);
@@ -75,6 +84,7 @@ public interface TrimPatternRegistryEntry {
          * @param decal true if decal, false otherwise
          * @return this builder instance
          * @see #decal()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder decal(boolean decal);

@@ -10,6 +10,9 @@ import org.bukkit.permissions.Permissible;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.0.0
+ */
 public interface CommandSender extends net.kyori.adventure.audience.Audience, Permissible { // Paper
 
     /**
@@ -19,6 +22,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * @see #sendMessage(net.kyori.adventure.text.Component)
      * @see #sendPlainMessage(String)
      * @see #sendRichMessage(String)
+     * @since 1.0.0
      */
     @org.jetbrains.annotations.ApiStatus.Obsolete // Paper
     public void sendMessage(@NotNull String message);
@@ -30,6 +34,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * @see #sendMessage(net.kyori.adventure.text.Component)
      * @see #sendPlainMessage(String)
      * @see #sendRichMessage(String)
+     * @since 1.1.0
      */
     @org.jetbrains.annotations.ApiStatus.Obsolete // Paper
     public void sendMessage(@NotNull String... messages);
@@ -41,6 +46,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * @param sender The sender of this message
      * @see #sendMessage(net.kyori.adventure.text.Component)
      * @deprecated sender UUID is ignored
+     * @since 1.16.3
      */
     @Deprecated // Paper
     public void sendMessage(@Nullable UUID sender, @NotNull String message);
@@ -52,6 +58,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * @param sender The sender of this message
      * @see #sendMessage(net.kyori.adventure.text.Component)
      * @deprecated sender UUID is ignored
+     * @since 1.16.3
      */
     @Deprecated // Paper
     public void sendMessage(@Nullable UUID sender, @NotNull String... messages);
@@ -60,6 +67,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * Returns the server instance that this command is running on
      *
      * @return Server instance
+     * @since 1.0.0
      */
     @NotNull
     public Server getServer();
@@ -68,10 +76,14 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * Gets the name of this command sender
      *
      * @return Name of the sender
+     * @since 1.0.0
      */
     @NotNull
     public String getName();
 
+    /**
+     * @since 1.12
+     */
     // Spigot start
     public class Spigot {
 
@@ -80,6 +92,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
          *
          * @param component the components to send
          * @deprecated use {@code sendMessage} methods that accept {@link net.kyori.adventure.text.Component}
+         * @since 1.12
          */
         @Deprecated // Paper
         public void sendMessage(@NotNull net.md_5.bungee.api.chat.BaseComponent component) {
@@ -91,6 +104,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
          *
          * @param components the components to send
          * @deprecated use {@code sendMessage} methods that accept {@link net.kyori.adventure.text.Component}
+         * @since 1.12
          */
         @Deprecated // Paper
         public void sendMessage(@NotNull net.md_5.bungee.api.chat.BaseComponent... components) {
@@ -103,6 +117,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
          * @param component the components to send
          * @param sender the sender of the message
          * @deprecated use {@code sendMessage} methods that accept {@link net.kyori.adventure.text.Component}
+         * @since 1.16.4
          */
         @Deprecated // Paper
         public void sendMessage(@Nullable UUID sender, @NotNull net.md_5.bungee.api.chat.BaseComponent component) {
@@ -115,6 +130,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
          * @param components the components to send
          * @param sender the sender of the message
          * @deprecated use {@code sendMessage} methods that accept {@link net.kyori.adventure.text.Component}
+         * @since 1.16.4
          */
         @Deprecated // Paper
         public void sendMessage(@Nullable UUID sender, @NotNull net.md_5.bungee.api.chat.BaseComponent... components) {
@@ -122,6 +138,9 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
         }
     }
 
+    /**
+     * @since 1.12
+     */
     @NotNull
     Spigot spigot();
     // Spigot end
@@ -131,19 +150,32 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * Gets the name of this command sender
      *
      * @return Name of the sender
+     * @since 1.17.1
      */
     public net.kyori.adventure.text.@NotNull Component name();
 
+    /**
+     * {@inheritDoc}
+     * @since 26.2
+     */
     @Override
     default void sendMessage(final net.kyori.adventure.text.@NotNull Component message) {
         this.sendMessage(net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer.legacySection().serialize(message));
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 26.2
+     */
     @Override
     default void sendMessage(final @NotNull Component message, final ChatType.@NotNull Bound boundChatType) {
         this.sendMessage(message);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 26.2
+     */
     @Override
     default void sendMessage(final @NotNull SignedMessage signedMessage, final ChatType.@NotNull Bound boundChatType) {
         this.sendMessage(Objects.requireNonNullElseGet(signedMessage.unsignedContent(), () -> Component.text(signedMessage.message())));
@@ -156,6 +188,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * for more information on the format.
      *
      * @param message MiniMessage content
+     * @since 1.19
      */
     default void sendRichMessage(final @NotNull String message) {
         this.sendMessage(net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(message, this));
@@ -169,6 +202,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      *
      * @param message MiniMessage content
      * @param resolvers resolvers to use
+     * @since 1.20.1
      */
     default void sendRichMessage(final @NotNull String message, final net.kyori.adventure.text.minimessage.tag.resolver.@NotNull TagResolver... resolvers) {
         this.sendMessage(net.kyori.adventure.text.minimessage.MiniMessage.miniMessage().deserialize(message, this, resolvers));
@@ -178,6 +212,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      * Sends a plain message to the command sender.
      *
      * @param message plain message
+     * @since 1.19
      */
     default void sendPlainMessage(final @NotNull String message) {
         this.sendMessage(net.kyori.adventure.text.Component.text(message));
@@ -191,6 +226,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      *
      * @param component the component to send
      * @deprecated use {@link #sendMessage(Component)} instead
+     * @since 1.9.4
      */
     @Deprecated
     default void sendMessage(@NotNull net.md_5.bungee.api.chat.BaseComponent component) {
@@ -205,6 +241,7 @@ public interface CommandSender extends net.kyori.adventure.audience.Audience, Pe
      *
      * @param components the components to send
      * @deprecated use {@link #sendMessage(Component)} instead
+     * @since 1.9.4
      */
     @Deprecated
     default void sendMessage(@NotNull net.md_5.bungee.api.chat.BaseComponent... components) {

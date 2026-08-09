@@ -34,6 +34,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a living entity, such as a monster or player
+ *
+ * @since 1.0.0
  */
 public interface LivingEntity extends Attributable, Damageable, ProjectileSource, io.papermc.paper.entity.Frictional { // Paper
 
@@ -41,6 +43,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets the height of the living entity's eyes above its Location.
      *
      * @return height of the living entity's eyes above its location
+     * @since 1.0.0
      */
     public double getEyeHeight();
 
@@ -50,6 +53,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param ignorePose if set to true, the effects of pose changes, eg
      *     sneaking and gliding will be ignored
      * @return height of the living entity's eyes above its location
+     * @since 1.0.0
      */
     public double getEyeHeight(boolean ignorePose);
 
@@ -57,6 +61,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Get a Location detailing the current eye position of the living entity.
      *
      * @return a location at the eyes of the living entity
+     * @since 1.0.0
      */
     @NotNull
     public Location getEyeLocation();
@@ -73,6 +78,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *     by server by at least 100 blocks, no less)
      * @return list containing all blocks along the living entity's line of
      *     sight
+     * @since 1.8
      */
     @NotNull
     public List<Block> getLineOfSight(@Nullable Set<Material> transparent, int maxDistance);
@@ -89,6 +95,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param maxDistance this is the maximum distance to scan (may be limited
      *     by server by at least 100 blocks, no less)
      * @return block that the living entity has targeted
+     * @since 1.8
      */
     @NotNull
     public Block getTargetBlock(@Nullable Set<Material> transparent, int maxDistance);
@@ -127,6 +134,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param maxDistance this is the maximum distance to scan
      * @return blockface of the block that the living entity has targeted,
      *     or null if no block is targeted
+     * @since 1.13.1
      */
     @Nullable
     public default org.bukkit.block.BlockFace getTargetBlockFace(int maxDistance) {
@@ -153,6 +161,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param fluidMode whether to check fluids or not
      * @return blockface of the block that the living entity has targeted,
      *     or null if no block is targeted
+     * @since 1.19.3
      */
     @Nullable
     public org.bukkit.block.BlockFace getTargetBlockFace(int maxDistance, @NotNull FluidCollisionMode fluidMode);
@@ -189,6 +198,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param maxDistance this is the maximum distance to scan
      * @return entity being targeted, or null if no entity is targeted
+     * @since 1.13.1
      */
     @Nullable
     public default Entity getTargetEntity(int maxDistance) {
@@ -201,6 +211,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param maxDistance this is the maximum distance to scan
      * @param ignoreBlocks true to scan through blocks
      * @return entity being targeted, or null if no entity is targeted
+     * @since 1.13.1
      */
     @Nullable
     public Entity getTargetEntity(int maxDistance, boolean ignoreBlocks);
@@ -225,6 +236,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param maxDistance this is the maximum distance to scan
      * @return RayTraceResult about the entity being targeted,
      *     or null if no entity is targeted
+     * @since 1.19.3
      */
     @Nullable
     default RayTraceResult rayTraceEntities(int maxDistance) {
@@ -251,6 +263,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param ignoreBlocks true to scan through blocks
      * @return RayTraceResult about the entity being targeted,
      *     or null if no entity is targeted
+     * @since 1.19.3
      */
     @Nullable
     RayTraceResult rayTraceEntities(int maxDistance, boolean ignoreBlocks);
@@ -268,6 +281,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *     further limited by the server, but never to less than 100 blocks
      * @return list containing the last 2 blocks along the living entity's
      *     line of sight
+     * @since 1.8
      */
     @NotNull
     public List<Block> getLastTwoTargetBlocks(@Nullable Set<Material> transparent, int maxDistance);
@@ -284,6 +298,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param maxDistance the maximum distance to scan
      * @return block that the living entity has targeted
      * @see #getTargetBlockExact(int, org.bukkit.FluidCollisionMode)
+     * @since 1.13.2
      */
     @Nullable
     default Block getTargetBlockExact(int maxDistance) {
@@ -302,6 +317,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param fluidCollisionMode the fluid collision mode
      * @return block that the living entity has targeted
      * @see #rayTraceBlocks(double, FluidCollisionMode)
+     * @since 1.13.2
      */
     @Nullable
     public Block getTargetBlockExact(int maxDistance, @NotNull FluidCollisionMode fluidCollisionMode);
@@ -319,6 +335,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @return information on the targeted block, or <code>null</code> if there
      *     is no targeted block in range
      * @see #rayTraceBlocks(double, FluidCollisionMode)
+     * @since 1.13.2
      */
     @Nullable
     default RayTraceResult rayTraceBlocks(double maxDistance) {
@@ -338,6 +355,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @return information on the targeted block, or <code>null</code> if there
      *     is no targeted block in range
      * @see World#rayTraceBlocks(Location, Vector, double, FluidCollisionMode)
+     * @since 1.13.2
      */
     @Nullable
     public RayTraceResult rayTraceBlocks(double maxDistance, @NotNull FluidCollisionMode fluidCollisionMode);
@@ -347,6 +365,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * ticks.
      *
      * @return amount of air remaining
+     * @since 1.0.0
      */
     public int getRemainingAir();
 
@@ -354,6 +373,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Sets the amount of air that the living entity has remaining, in ticks.
      *
      * @param ticks amount of air remaining
+     * @since 1.0.0
      */
     public void setRemainingAir(int ticks);
 
@@ -361,6 +381,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Returns the maximum amount of air the living entity can have, in ticks.
      *
      * @return maximum amount of air
+     * @since 1.0.0
      */
     public int getMaximumAir();
 
@@ -368,6 +389,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Sets the maximum amount of air the living entity can have, in ticks.
      *
      * @param ticks maximum amount of air
+     * @since 1.0.0
      */
     public void setMaximumAir(int ticks);
 
@@ -407,6 +429,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets the time in ticks until the next arrow leaves the entity's body.
      *
      * @return ticks until arrow leaves
+     * @since 1.16.2
      */
     public @NonNegative int getArrowCooldown();
 
@@ -416,6 +439,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * A value of 0 will cause the server to re-calculate the time on the next tick.
      *
      * @param ticks time until arrow leaves
+     * @since 1.16.2
      */
     public void setArrowCooldown(@NonNegative int ticks);
 
@@ -423,6 +447,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets the amount of arrows in an entity's body.
      *
      * @return amount of arrows in body
+     * @since 1.16.2
      */
     public @NonNegative int getArrowsInBody();
 
@@ -432,6 +457,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Does not fire the {@link org.bukkit.event.entity.ArrowBodyCountChangeEvent}.
      *
      * @param count amount of arrows in entity's body
+     * @since 1.16.2
      */
     default void setArrowsInBody(final @NonNegative int count) {
         this.setArrowsInBody(count, false);
@@ -442,6 +468,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param count amount of arrows in entity's body
      * @param fireEvent whether to fire the {@link org.bukkit.event.entity.ArrowBodyCountChangeEvent} event
+     * @since 1.19.3
      */
     void setArrowsInBody(@NonNegative int count, boolean fireEvent); // Paper
 
@@ -452,6 +479,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param ticks Amount of ticks
      * @deprecated use {@link #setArrowCooldown(int)}
+     * @since 1.20.4
      */
     @Deprecated(since = "1.21.10")
     default void setNextArrowRemoval(@NonNegative int ticks) {
@@ -463,6 +491,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @return ticks Amount of ticks
      * @deprecated use {@link #getArrowCooldown()}
+     * @since 1.20.4
      */
     @Deprecated(since = "1.21.10")
     default @NonNegative int getNextArrowRemoval() {
@@ -473,6 +502,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets the time in ticks until the next bee stinger leaves the entity's body.
      *
      * @return ticks until bee stinger leaves
+     * @since 1.17.1
      */
     public @NonNegative int getBeeStingerCooldown();
 
@@ -482,6 +512,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * A value of 0 will cause the server to re-calculate the time on the next tick.
      *
      * @param ticks time until bee stinger leaves
+     * @since 1.17.1
      */
     public void setBeeStingerCooldown(@NonNegative int ticks);
 
@@ -489,6 +520,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets the amount of bee stingers in an entity's body.
      *
      * @return amount of bee stingers in body
+     * @since 1.17.1
      */
     public @NonNegative int getBeeStingersInBody();
 
@@ -496,6 +528,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Set the amount of bee stingers in the entity's body.
      *
      * @param count amount of bee stingers in entity's body
+     * @since 1.17.1
      */
     public void setBeeStingersInBody(@NonNegative int count);
 
@@ -506,6 +539,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param ticks Amount of ticks
      * @deprecated use {@link #setBeeStingerCooldown(int)}
+     * @since 1.20.4
      */
     @Deprecated(since = "1.21.10")
     default void setNextBeeStingerRemoval(@NonNegative int ticks) {
@@ -517,6 +551,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @return ticks Amount of ticks
      * @deprecated use {@link #getBeeStingerCooldown()}
+     * @since 1.20.4
      */
     @Deprecated(since = "1.21.10")
     default @NonNegative int getNextBeeStingerRemoval() {
@@ -530,6 +565,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * damage.
      *
      * @return maximum no damage ticks
+     * @since 1.0.0
      */
     public int getMaximumNoDamageTicks();
 
@@ -537,6 +573,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Sets the living entity's current maximum no damage ticks.
      *
      * @param ticks maximum amount of no damage ticks
+     * @since 1.0.0
      */
     public void setMaximumNoDamageTicks(int ticks);
 
@@ -548,6 +585,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * entity.
      *
      * @return damage taken since the last no damage ticks time period
+     * @since 1.0.0
      */
     public double getLastDamage();
 
@@ -555,6 +593,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Sets the damage dealt within the current no damage ticks time period.
      *
      * @param damage amount of damage
+     * @since 1.6.1
      */
     public void setLastDamage(double damage);
 
@@ -562,6 +601,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Returns the living entity's current no damage ticks.
      *
      * @return amount of no damage ticks
+     * @since 1.0.0
      */
     public int getNoDamageTicks();
 
@@ -569,6 +609,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Sets the living entity's current no damage ticks.
      *
      * @param ticks amount of no damage ticks
+     * @since 1.0.0
      */
     public void setNoDamageTicks(int ticks);
 
@@ -581,6 +622,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * from raids, or creatures (such as withers) as a requirement to be despawned.
      *
      * @return amount of no action ticks
+     * @since 1.20.1
      */
     public int getNoActionTicks();
 
@@ -593,6 +635,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * from raids, or creatures (such as withers) as a requirement to be despawned.
      *
      * @param ticks amount of no action ticks
+     * @since 1.20.1
      */
     public void setNoActionTicks(int ticks);
 
@@ -602,6 +645,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * May be null.
      *
      * @return killer player, or null if none found
+     * @since 1.1.0
      */
     @Nullable
     public Player getKiller();
@@ -611,6 +655,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Sets the player identified as the killer of the living entity.
      *
      * @param killer player
+     * @since 1.12.1
      */
     public void setKiller(@Nullable Player killer);
     // Paper end
@@ -623,6 +668,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param effect PotionEffect to be added
      * @return whether the effect could be added
+     * @since 1.1.0
      */
     boolean addPotionEffect(@NotNull PotionEffect effect);
 
@@ -636,6 +682,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @return whether the effect could be added
      * @deprecated no need to force since multiple effects of the same type are
      * now supported.
+     * @since 1.1.0
      */
     @Deprecated(since = "1.15.2")
     default boolean addPotionEffect(@NotNull PotionEffect effect, boolean force) {
@@ -651,6 +698,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param effects the effects to add
      * @return whether all of the effects could be added
+     * @since 1.1.0
      */
     public boolean addPotionEffects(@NotNull Collection<PotionEffect> effects);
 
@@ -660,6 +708,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param type the potion type to check
      * @return whether the living entity has this potion effect active on them
+     * @since 1.1.0
      */
     public boolean hasPotionEffect(@NotNull PotionEffectType type);
 
@@ -670,6 +719,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param type the potion type to check
      * @return the effect active on this entity, or null if not active.
+     * @since 1.10.2
      */
     @Nullable
     public PotionEffect getPotionEffect(@NotNull PotionEffectType type);
@@ -678,6 +728,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Removes any effects present of the given {@link PotionEffectType}.
      *
      * @param type the potion type to remove
+     * @since 1.1.0
      */
     public void removePotionEffect(@NotNull PotionEffectType type);
 
@@ -686,6 +737,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * entity.
      *
      * @return a collection of {@link PotionEffect}s
+     * @since 1.1.0
      */
     @NotNull
     public Collection<PotionEffect> getActivePotionEffects();
@@ -694,6 +746,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Removes all active potion effects for this entity.
      *
      * @return true if any were removed
+     * @since 1.20.1
      */
     boolean clearActivePotionEffects();
 
@@ -705,6 +758,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param other the entity to determine line of sight to
      * @return true if there is a line of sight, false if not
+     * @since 1.3.1
      */
     public boolean hasLineOfSight(@NotNull Entity other);
 
@@ -716,6 +770,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param location the location to determine line of sight to
      * @return true if there is a line of sight, false if not
+     * @since 1.16.5
      */
     public boolean hasLineOfSight(@NotNull Location location);
 
@@ -725,6 +780,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * By default, animals are not removed while other mobs are.
      *
      * @return true if the living entity is removed when away from players
+     * @since 1.4.5
      */
     public boolean getRemoveWhenFarAway();
 
@@ -733,6 +789,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * or not.
      *
      * @param remove the removal status
+     * @since 1.4.5
      */
     public void setRemoveWhenFarAway(boolean remove);
 
@@ -740,6 +797,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets the inventory with the equipment worn by the living entity.
      *
      * @return the living entity's inventory
+     * @since 1.4.5
      */
     @Nullable
     public EntityEquipment getEquipment();
@@ -748,6 +806,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Sets whether or not the living entity can pick up items.
      *
      * @param pickup whether or not the living entity can pick up items
+     * @since 1.4.5
      */
     public void setCanPickupItems(boolean pickup);
 
@@ -755,6 +814,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets if the living entity can pick up items.
      *
      * @return whether or not the living entity can pick up items
+     * @since 1.4.5
      */
     public boolean getCanPickupItems();
 
@@ -762,6 +822,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Returns whether the entity is currently leashed.
      *
      * @return whether the entity is leashed
+     * @since 1.6.2
      */
     public boolean isLeashed();
 
@@ -770,6 +831,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @return the entity holding the leash
      * @throws IllegalStateException if not currently leashed
+     * @since 1.6.2
      */
     @NotNull
     public Entity getLeashHolder() throws IllegalStateException;
@@ -783,12 +845,14 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param holder the entity to leash this entity to, or null to unleash
      * @return whether the operation was successful
+     * @since 1.6.2
      */
     public boolean setLeashHolder(@Nullable Entity holder);
 
     /**
      * Checks to see if an entity is gliding, such as using an Elytra.
      * @return True if this entity is gliding.
+     * @since 1.9.4
      */
     public boolean isGliding();
 
@@ -797,6 +861,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * is not equipped, but will be reverted by the server immediately after
      * unless an event-cancelling mechanism is put in place.
      * @param gliding True if the entity is gliding.
+     * @since 1.9.4
      */
     public void setGliding(boolean gliding);
 
@@ -804,6 +869,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Checks to see if an entity is swimming.
      *
      * @return True if this entity is swimming.
+     * @since 1.13
      */
     public boolean isSwimming();
 
@@ -814,6 +880,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param swimming True if the entity is swimming.
      * @deprecated This does nothing and is immediately reverted by the server, in the next tick <!-- Paper - future note: should wait a mojang input client/server side -->
+     * @since 1.13
      */
     @Deprecated // Paper
     public void setSwimming(boolean swimming);
@@ -822,6 +889,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Checks to see if an entity is currently riptiding.
      *
      * @return True if this entity is currently riptiding.
+     * @since 1.13
      */
     public boolean isRiptiding();
 
@@ -832,6 +900,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param riptiding whether the entity should start riptiding.
      * @see HumanEntity#startRiptideAttack(int, float, ItemStack)
+     * @since 1.21.1
      */
     public void setRiptiding(boolean riptiding);
 
@@ -839,6 +908,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Returns whether this entity is slumbering.
      *
      * @return slumber state
+     * @since 1.14
      */
     public boolean isSleeping();
 
@@ -846,6 +916,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets if the entity is climbing.
      *
      * @return if the entity is climbing
+     * @since 1.17
      */
     public boolean isClimbing();
 
@@ -855,6 +926,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * The entity will be completely unable to move if it has no AI.
      *
      * @param ai whether the mob will have AI or not.
+     * @since 1.9.4
      */
     void setAI(boolean ai);
 
@@ -864,6 +936,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * The entity will be completely unable to move if it has no AI.
      *
      * @return true if the entity has AI, otherwise false.
+     * @since 1.9.4
      */
     boolean hasAI();
 
@@ -875,6 +948,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * appropriate.
      *
      * @param target entity to attack.
+     * @since 1.15.2
      */
     public void attack(@NotNull Entity target);
 
@@ -883,6 +957,8 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * This method does nothing if this entity does not have an animation for
      * swinging their main hand.
+     *
+     * @since 1.15.2
      */
     public void swingMainHand();
 
@@ -891,6 +967,8 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * This method does nothing if this entity does not have an animation for
      * swinging their off hand.
+     *
+     * @since 1.15.2
      */
     public void swingOffHand();
 
@@ -900,6 +978,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param yaw The direction the damage is coming from in relation to the
      * entity, where 0 is in front of the player, 90 is to the right, 180 is
      * behind, and 270 is to the left
+     * @since 1.20.1
      */
     public void playHurtAnimation(float yaw);
 
@@ -918,6 +997,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * combination with a {@link Scoreboard} and a {@link Team}.
      *
      * @param collidable collision status
+     * @since 1.9.4
      */
     void setCollidable(boolean collidable);
 
@@ -941,6 +1021,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * {@link Scoreboard} and a {@link Team}.
      *
      * @return collision status
+     * @since 1.9.4
      */
     boolean isCollidable();
 
@@ -966,6 +1047,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * in combination with a {@link Scoreboard} and a {@link Team}.
      *
      * @return the collidable exemption set
+     * @since 1.16.1
      */
     @NotNull
     Set<UUID> getCollidableExemptions();
@@ -979,6 +1061,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param memoryKey memory to access
      * @param <T> the type of the return value
      * @return an instance of the memory section value or null if not present
+     * @since 1.14.1
      */
     @Nullable
     <T> T getMemory(@NotNull MemoryKey<T> memoryKey);
@@ -992,6 +1075,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param memoryKey the memory to access
      * @param memoryValue a typed memory value
      * @param <T> the type of the passed value
+     * @since 1.14.1
      */
     <T> void setMemory(@NotNull MemoryKey<T> memoryKey, @Nullable T memoryValue);
 
@@ -999,6 +1083,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Get the sound volume at which this entity plays its sounds with.
      *
      * @return the sound volume of this entity
+     * @since 26.2
      */
     float getSoundVolume();
 
@@ -1007,6 +1092,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Might not be constant across all invocations.
      *
      * @return the sound pitch of this entity
+     * @since 26.2
      */
     float getSoundPitch();
 
@@ -1014,6 +1100,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Get the {@link Sound} this entity will make when damaged.
      *
      * @return the hurt sound, or null if the entity does not make any sound
+     * @since 1.19.2
      */
     @Nullable
     public Sound getHurtSound();
@@ -1023,6 +1110,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param damageSource the damage source to get the hurt sound of
      * @return the hurt sound, or null if the entity does not make any sound
+     * @since 26.2
      */
     @Nullable Sound getHurtSound(@NotNull DamageSource damageSource);
 
@@ -1030,6 +1118,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Get the {@link Sound} this entity will make on death.
      *
      * @return the death sound, or null if the entity does not make any sound
+     * @since 1.19.2
      */
     @Nullable
     public Sound getDeathSound();
@@ -1043,6 +1132,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @return the fall damage sound
      * @see #getFallDamageSoundSmall()
      * @see #getFallDamageSoundBig()
+     * @since 1.19.2
      */
     @NotNull
     public Sound getFallDamageSound(int fallHeight);
@@ -1052,6 +1142,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * height.
      *
      * @return the fall damage sound
+     * @since 1.19.2
      */
     @NotNull
     public Sound getFallDamageSoundSmall();
@@ -1061,6 +1152,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * height.
      *
      * @return the fall damage sound
+     * @since 1.19.2
      */
     @NotNull
     public Sound getFallDamageSoundBig();
@@ -1071,6 +1163,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param itemStack the item stack being drank
      * @return the drinking sound
+     * @since 1.19.2
      */
     @NotNull
     public Sound getDrinkingSound(@NotNull ItemStack itemStack);
@@ -1081,6 +1174,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param itemStack the item stack being eaten
      * @return the eating sound
+     * @since 1.19.2
      */
     @NotNull
     public Sound getEatingSound(@NotNull ItemStack itemStack);
@@ -1090,6 +1184,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * drowning damage when its air supply reaches zero.
      *
      * @return <code>true</code> if the entity can breathe underwater
+     * @since 1.19.2
      */
     public boolean canBreatheUnderwater();
 
@@ -1111,6 +1206,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @return Number of arrows stuck
      * @deprecated use {@link #getArrowsInBody()}
+     * @since 1.9.4
      */
     @Deprecated
     default @NonNegative int getArrowsStuck() {
@@ -1123,6 +1219,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param arrows Number of arrows to stick in this entity
      * @deprecated use {@link #setArrowsInBody(int, boolean)}. <b>This method previously fired {@link org.bukkit.event.entity.ArrowBodyCountChangeEvent} so if
      * you want to retain exact functionality, pass {@code true} for {@code fireEvent}.</b>
+     * @since 1.9.4
      */
     @Deprecated
     default void setArrowsStuck(@NonNegative int arrows) {
@@ -1134,6 +1231,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @return Delay in ticks
      * @deprecated no longer applicable, check the blocks_attacks component on the shield
+     * @since 1.12.2
      */
     @Deprecated(since = "1.21.9")
     default int getShieldBlockingDelay() {
@@ -1145,6 +1243,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param delay Delay in ticks
      * @deprecated no longer applicable, use the blocks_attacks component on the shield
+     * @since 1.12.2
      */
     @Deprecated(since = "1.21.9")
     default void setShieldBlockingDelay(int delay) {
@@ -1166,6 +1265,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * a vector representing the entity's overall current momentum.
      *
      * @return Sideways movement direction, ranging from -1 (right) to 1 (left).
+     * @since 1.20.2
      */
     float getSidewaysMovement();
 
@@ -1185,6 +1285,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * current momentum.
      *
      * @return Upwards movement direction, ranging from -1 (downward) to 1 (upward).
+     * @since 1.20.2
      */
     float getUpwardsMovement();
 
@@ -1204,6 +1305,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * whereas {@link #getVelocity()} returns a vector representing the entity's overall current momentum.
      *
      * @return Forwards movement direction, ranging from -1 (backward) to 1 (forward).
+     * @since 1.20.2
      */
     float getForwardsMovement();
 
@@ -1222,6 +1324,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * as such depends on the entity and its state.
      *
      * @param hand the hand that contains the item to be used
+     * @since 1.20.4
      */
     void startUsingItem(@NotNull org.bukkit.inventory.EquipmentSlot hand);
 
@@ -1232,6 +1335,8 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * <p>
      * This method does not make any guarantees about the effect of this method
      * as such depends on the entity and its state.
+     *
+     * @since 1.20.4
      */
     void completeUsingActiveItem();
 
@@ -1239,11 +1344,14 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets the item being actively "used" or consumed.
      *
      * @return the item
+     * @since 1.12.2
      */
     org.bukkit.inventory.@NotNull ItemStack getActiveItem();
 
     /**
      * Interrupts any ongoing active "usage" or consumption or an item.
+     *
+     * @since 1.16.4
      */
     void clearActiveItem();
 
@@ -1251,6 +1359,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets the remaining number of ticks for {@link #getActiveItem()}'s usage.
      *
      * @return remaining ticks to use {@link #getActiveItem()}
+     * @since 1.20.4
      */
     int getActiveItemRemainingTime();
 
@@ -1262,6 +1371,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * the specific item type.
      *
      * @param ticks time in ticks remaining
+     * @since 1.20.4
      */
     void setActiveItemRemainingTime(@org.jetbrains.annotations.Range(from = 0, to = Integer.MAX_VALUE) int ticks);
 
@@ -1269,6 +1379,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets if the entity is using an item (eating, drinking, etc).
      *
      * @return true if using an item
+     * @since 1.20.4
      */
     boolean hasActiveItem();
 
@@ -1276,6 +1387,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Get how long the {@link #getActiveItem()} has been in use for.
      *
      * @return time used in ticks
+     * @since 1.20.4
      */
     int getActiveItemUsedTime();
 
@@ -1285,6 +1397,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * {@link org.bukkit.inventory.EquipmentSlot#OFF_HAND}.
      *
      * @return the hand being used
+     * @since 1.20.4
      */
     org.bukkit.inventory.@NotNull EquipmentSlot getActiveItemHand();
 
@@ -1293,6 +1406,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @return remaining ticks to use the item
      * @see #getActiveItemRemainingTime()
+     * @since 1.12.2
      */
     @org.jetbrains.annotations.ApiStatus.Obsolete(since = "1.20.4")
     default int getItemUseRemainingTime() {
@@ -1304,6 +1418,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @return Get how long the players hands have been raised (Charging Bow attack, using a potion, etc)
      * @see #getActiveItemUsedTime()
+     * @since 1.12.2
      */
     @org.jetbrains.annotations.ApiStatus.Obsolete(since = "1.20.4")
     default int getHandRaisedTime() {
@@ -1315,6 +1430,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @return whether this entity is using or charging an attack (Bow pulled back, drinking potion, eating food)
      * @see #hasActiveItem()
+     * @since 1.12.2
      */
     @org.jetbrains.annotations.ApiStatus.Obsolete(since = "1.20.4")
     default boolean isHandRaised() {
@@ -1328,6 +1444,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @return the hand raised
      * @see #getActiveItemHand()
+     * @since 1.16.5
      */
     @NotNull
     @org.jetbrains.annotations.ApiStatus.Obsolete(since = "1.20.4")
@@ -1343,6 +1460,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Jump state will be true when the entity has been marked to jump.
      *
      * @return entity jump state.
+     * @since 1.15.2
      */
     boolean isJumping();
 
@@ -1354,6 +1472,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Setting to false will unmark the entity to jump but will not stop a jump already in-progress.
      *
      * @param jumping entity jump state
+     * @since 1.15.2
      */
     void setJumping(boolean jumping);
     // Paper end - entity jump API
@@ -1367,6 +1486,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Quantity is inferred to be that of the {@link Item}.
      *
      * @param item item to pickup
+     * @since 1.16.2
      */
     default void playPickupItemAnimation(@NotNull Item item) {
         playPickupItemAnimation(item, item.getItemStack().getAmount());
@@ -1379,6 +1499,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param item item to pickup
      * @param quantity quantity of item
+     * @since 1.16.2
      */
     void playPickupItemAnimation(@NotNull Item item, int quantity);
     // Paper end - pickup animation API
@@ -1388,6 +1509,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets player hurt direction
      *
      * @return hurt direction
+     * @since 1.16.4
      */
     float getHurtDirection();
 
@@ -1396,6 +1518,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param hurtDirection hurt direction
      * @deprecated use {@link Player#setHurtDirection(float)}
+     * @since 1.16.4
      */
     @Deprecated
     void setHurtDirection(float hurtDirection);
@@ -1410,6 +1533,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param hand hand to be swung, either {@link org.bukkit.inventory.EquipmentSlot#HAND} or {@link org.bukkit.inventory.EquipmentSlot#OFF_HAND}
      * @throws IllegalArgumentException if invalid hand is passed
+     * @since 1.19.2
      */
     default void swingHand(@NotNull org.bukkit.inventory.EquipmentSlot hand) {
         com.google.common.base.Preconditions.checkArgument(hand != null && hand.isHand(), String.format("Expected a valid hand, got \"%s\" instead!", hand));
@@ -1431,6 +1555,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param strength The strength of the knockback. Must be greater than 0.
      * @param directionX The relative x position of the knockback source direction
      * @param directionZ The relative z position of the knockback source direction
+     * @since 1.19.2
      */
     void knockback(double strength, double directionX, double directionZ);
     // Paper end - knockback API
@@ -1443,6 +1568,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * NOTE: this does not mutate any entity state
      *
      * @param slot the slot
+     * @since 1.19.2
      */
     void broadcastSlotBreak(org.bukkit.inventory.@NotNull EquipmentSlot slot);
 
@@ -1454,6 +1580,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param slot the slot
      * @param players the players to notify
+     * @since 1.19.2
      */
     void broadcastSlotBreak(org.bukkit.inventory.@NotNull EquipmentSlot slot, @NotNull Collection<Player> players);
 
@@ -1468,6 +1595,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param amount the amount of damage to do
      * @return the damaged itemstack, or an empty stack if it broke. There are no
      * guarantees the returned itemstack is the same instance
+     * @since 1.19.2
      */
     @NotNull ItemStack damageItemStack(@NotNull ItemStack stack, int amount);
 
@@ -1480,6 +1608,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param slot the slot of the stack to damage
      * @param amount the amount of damage to do
+     * @since 1.19.2
      */
     void damageItemStack(org.bukkit.inventory.@NotNull EquipmentSlot slot, int amount);
     // Paper end - ItemStack damage API
@@ -1490,6 +1619,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @return entity body yaw
      * @see Location#getYaw()
+     * @since 1.19.3
      */
     float getBodyYaw();
 
@@ -1498,6 +1628,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param bodyYaw new entity body yaw
      * @see Location#setYaw(float)
+     * @since 1.19.3
      */
     void setBodyYaw(float bodyYaw);
     // Paper end - body yaw API
@@ -1509,6 +1640,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param slot equipment slot
      * @return whether this entity can use the equipment slot
+     * @since 1.20.6
      */
     boolean canUseEquipmentSlot(org.bukkit.inventory.@NotNull EquipmentSlot slot);
     // Paper end - Expose canUseSlot
@@ -1517,6 +1649,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * Gets the entity's combat tracker
      *
      * @return the entity's combat tracker
+     * @since 1.21.6
      */
     @NotNull CombatTracker getCombatTracker();
 
@@ -1527,6 +1660,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *
      * @param key the key representing the style, or {@code null} to use the default style
      * @see <a href="https://minecraft.wiki/w/Waypoint_style">https://minecraft.wiki/w/Waypoint_style</a>
+     * @since 1.21.11
      */
     void setWaypointStyle(@Nullable Key key);
 
@@ -1536,6 +1670,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @param color the new color to apply to the waypoint icon, or {@code null} to use the default color.
      *              While the color may contain alpha values, the client does not receive them.
      * @see <a href="https://minecraft.wiki/w/Locator_Bar#Usage">https://minecraft.wiki/w/Locator_Bar#Usage</a>
+     * @since 1.21.11
      */
     void setWaypointColor(@Nullable Color color);
 
@@ -1545,6 +1680,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      * @return the {@link Key} representing the icon's style
      * @see #setWaypointStyle(Key)
      * @see <a href="https://minecraft.wiki/w/Waypoint_style">https://minecraft.wiki/w/Waypoint_style</a>
+     * @since 1.21.11
      */
     @NotNull
     Key getWaypointStyle();
@@ -1556,6 +1692,7 @@ public interface LivingEntity extends Attributable, Damageable, ProjectileSource
      *         While the color may contain alpha values, the client does not receive them.
      * @see #setWaypointColor(Color)
      * @see <a href="https://minecraft.wiki/w/Locator_Bar#Usage">https://minecraft.wiki/w/Locator_Bar#Usage</a>
+     * @since 1.21.11
      */
     @Nullable
     Color getWaypointColor();

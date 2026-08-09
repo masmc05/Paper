@@ -10,16 +10,23 @@ import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.nodes.Node;
 import org.yaml.snakeyaml.representer.Representer;
 
+/**
+ * @since 1.1.0
+ */
 public class YamlRepresenter extends Representer {
 
     /**
      * @deprecated options required
+     * @since 1.1.0
      */
     @Deprecated(since = "1.19.4")
     public YamlRepresenter() {
         this(new DumperOptions());
     }
 
+    /**
+     * @since 1.19.4
+     */
     public YamlRepresenter(@NotNull DumperOptions options) {
         super(options);
         this.multiRepresenters.put(ConfigurationSection.class, new RepresentConfigurationSection());

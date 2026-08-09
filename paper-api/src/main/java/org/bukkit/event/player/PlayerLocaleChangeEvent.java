@@ -10,6 +10,8 @@ import java.util.Objects;
 
 /**
  * Called when a player changes their locale in the client settings.
+ *
+ * @since 1.12
  */
 public class PlayerLocaleChangeEvent extends PlayerEvent {
 
@@ -29,6 +31,7 @@ public class PlayerLocaleChangeEvent extends PlayerEvent {
      * @return the player's new locale
      * @see Player#getLocale()
      * @deprecated in favour of {@link #locale()}
+     * @since 1.12
      */
     @NotNull
     @Deprecated
@@ -39,17 +42,24 @@ public class PlayerLocaleChangeEvent extends PlayerEvent {
     /**
      * @see Player#locale()
      * @return the player's new locale
+     * @since 1.16.5
      */
     public @NotNull Locale locale() {
         return this.adventure$locale;
     }
 
+    /**
+     * @since 1.12
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

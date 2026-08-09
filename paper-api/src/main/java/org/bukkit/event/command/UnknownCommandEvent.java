@@ -13,6 +13,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Thrown when a player executes a command that is not defined
+ *
+ * @since 1.12
  */
 @NullMarked
 public class UnknownCommandEvent extends Event {
@@ -35,6 +37,7 @@ public class UnknownCommandEvent extends Event {
      * Gets the CommandSender
      *
      * @return sender of the command
+     * @since 1.12
      */
     public CommandSender getSender() {
         return this.commandSource.getSender();
@@ -44,6 +47,7 @@ public class UnknownCommandEvent extends Event {
      * Gets the command source associated with this event
      *
      * @return the {@link CommandSourceStack}
+     * @since 1.21.10
      */
     public CommandSourceStack getCommandSource() {
         return this.commandSource;
@@ -53,6 +57,7 @@ public class UnknownCommandEvent extends Event {
      * Gets the command that was sent
      *
      * @return command sent
+     * @since 1.12
      */
     public String getCommandLine() {
         return this.commandLine;
@@ -63,6 +68,7 @@ public class UnknownCommandEvent extends Event {
      *
      * @return unknown command message
      * @deprecated use {@link #message()}
+     * @since 1.12
      */
     @Deprecated
     public @Nullable String getMessage() {
@@ -76,6 +82,7 @@ public class UnknownCommandEvent extends Event {
      *
      * @param message the message to be returned, or {@code null}
      * @deprecated use {@link #message(Component)}
+     * @since 1.12
      */
     @Deprecated
     public void setMessage(@Nullable String message) {
@@ -86,6 +93,7 @@ public class UnknownCommandEvent extends Event {
      * Gets the message that will be returned
      *
      * @return unknown command message
+     * @since 1.16.5
      */
     @Contract(pure = true)
     public @Nullable Component message() {
@@ -98,16 +106,23 @@ public class UnknownCommandEvent extends Event {
      * Set to {@code null} to avoid any message being sent
      *
      * @param message the message to be returned, or {@code null}
+     * @since 1.16.5
      */
     public void message(@Nullable Component message) {
         this.message = message;
     }
 
+    /**
+     * @since 1.12
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

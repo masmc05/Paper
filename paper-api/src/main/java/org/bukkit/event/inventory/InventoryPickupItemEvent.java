@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a hopper or hopper minecart picks up a dropped item.
+ *
+ * @since 1.5.1
  */
 public class InventoryPickupItemEvent extends Event implements Cancellable {
 
@@ -28,6 +30,8 @@ public class InventoryPickupItemEvent extends Event implements Cancellable {
 
     /**
      * Gets the Inventory that picked up the item
+     *
+     * @since 1.5.1
      */
     @NotNull
     public Inventory getInventory() {
@@ -36,28 +40,42 @@ public class InventoryPickupItemEvent extends Event implements Cancellable {
 
     /**
      * Gets the Item entity that was picked up
+     *
+     * @since 1.5.1
      */
     @NotNull
     public Item getItem() {
         return this.item;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

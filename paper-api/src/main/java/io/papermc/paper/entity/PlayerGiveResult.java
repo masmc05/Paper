@@ -8,6 +8,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * A result type used by {@link org.bukkit.entity.Player#give(ItemStack...)} and its overloads.
+ *
+ * @since 1.21.4
  */
 @NullMarked
 public interface PlayerGiveResult {
@@ -22,6 +24,7 @@ public interface PlayerGiveResult {
      *
      * @return the unmodifiable collection of itemstacks that are leftover as they could not be added. Each element is a
      * copy of the input stack they are derived from.
+     * @since 1.21.4
      */
     @Unmodifiable
     Collection<ItemStack> leftovers();
@@ -32,6 +35,7 @@ public interface PlayerGiveResult {
      * spawning of item entities.
      *
      * @return the unmodifiable collection of dropped item entities.
+     * @since 1.21.4
      */
     @Unmodifiable
     Collection<Item> drops();

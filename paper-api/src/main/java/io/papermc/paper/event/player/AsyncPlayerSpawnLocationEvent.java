@@ -15,6 +15,8 @@ import org.jspecify.annotations.NullMarked;
  *
  * <p>The player will be kept in the configuration phase until all event handlers return and
  * the spawn location is loaded.</p>
+ *
+ * @since 1.21.10
  */
 @NullMarked
 public class AsyncPlayerSpawnLocationEvent extends Event {
@@ -37,6 +39,7 @@ public class AsyncPlayerSpawnLocationEvent extends Event {
      * Gets the spawning player's connection.
      *
      * @return the player connection
+     * @since 1.21.10
      */
     public PlayerConfigurationConnection getConnection() {
         return this.connection;
@@ -50,6 +53,7 @@ public class AsyncPlayerSpawnLocationEvent extends Event {
      * of the {@link Server#getRespawnWorld() respawn world}.</p>
      *
      * @return the spawn location
+     * @since 1.21.10
      */
     public Location getSpawnLocation() {
         return this.spawnLocation.clone();
@@ -59,6 +63,7 @@ public class AsyncPlayerSpawnLocationEvent extends Event {
      * Sets player's spawn location.
      *
      * @param location the spawn location
+     * @since 1.21.10
      */
     public void setSpawnLocation(final Location location) {
         Preconditions.checkArgument(location != null, "Location cannot be null");
@@ -70,16 +75,23 @@ public class AsyncPlayerSpawnLocationEvent extends Event {
      * Returns true if the player is joining the server for the first time.
      *
      * @return whether the player is new
+     * @since 1.21.10
      */
     public boolean isNewPlayer() {
         return this.newPlayer;
     }
 
+    /**
+     * @since 1.21.10
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.10
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

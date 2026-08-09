@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a Painting.
+ *
+ * @since 1.0.0
  */
 public interface Painting extends Hanging {
 
@@ -13,6 +15,7 @@ public interface Painting extends Hanging {
      * Get the art on this painting
      *
      * @return The art
+     * @since 1.0.0
      */
     @NotNull
     public Art getArt();
@@ -23,6 +26,7 @@ public interface Painting extends Hanging {
      * @param art The new art
      * @return False if the new art won't fit at the painting's current
      *     location
+     * @since 1.0.0
      */
     public boolean setArt(@NotNull Art art);
 
@@ -36,6 +40,7 @@ public interface Painting extends Hanging {
      *     catching the {@link HangingBreakEvent}.
      * @return False if force was false and the new art won't fit at the
      *     painting's current location
+     * @since 1.0.0
      */
     public boolean setArt(@NotNull Art art, boolean force);
 }

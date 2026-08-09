@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
  * <p>
  * These fields are the base color ranges. Each entry corresponds to four
  * colors of varying shades with values entry to entry + 3.
+ *
+ * @since 1.0.0
  */
 public final class MapPalette {
     // Internal mechanisms
@@ -291,71 +293,85 @@ public final class MapPalette {
     // Interface
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte TRANSPARENT = 0;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte LIGHT_GREEN = 4;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte LIGHT_BROWN = 8;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte GRAY_1 = 12;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte RED = 16;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte PALE_BLUE = 20;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte GRAY_2 = 24;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte DARK_GREEN = 28;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte WHITE = 32;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte LIGHT_GRAY = 36;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte BROWN = 40;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte DARK_GRAY = 44;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte BLUE = 48;
     /**
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     public static final byte DARK_BROWN = 52;
@@ -365,6 +381,7 @@ public final class MapPalette {
      *
      * @param image The image to resize.
      * @return The resized image.
+     * @since 1.0.0
      */
     @NotNull
     public static BufferedImage resizeImage(@Nullable Image image) {
@@ -465,6 +482,7 @@ public final class MapPalette {
      *
      * @param color to match against the map palette
      * @return the nearest {@link Color} from the map palette
+     * @since 1.21.10
      */
     @NotNull
     public static Color getNearestColor(@NotNull Color color) {
@@ -478,6 +496,7 @@ public final class MapPalette {
      * Sets the given MapColorCache.
      *
      * @param mapColorCache The map color cache to set
+     * @since 1.19
      */
     public static void setMapColorCache(@NotNull MapColorCache mapColorCache) {
         Preconditions.checkState(MapPalette.mapColorCache == null, "Map color cache already set");
@@ -487,6 +506,8 @@ public final class MapPalette {
 
     /**
      * Holds cached information for matching map colors of a given RBG color.
+     *
+     * @since 1.19
      */
     public interface MapColorCache {
 
@@ -496,6 +517,7 @@ public final class MapPalette {
          * A case where it might return false is when the cache is not build jet.
          *
          * @return true if this MapColorCache has values cached otherwise false
+         * @since 1.19
          */
         boolean isCached();
 

@@ -2,6 +2,8 @@ package org.bukkit.event;
 
 /**
  * A type characterizing events that may be cancelled by a plugin or the server.
+ *
+ * @since 1.0.0
  */
 public interface Cancellable {
 
@@ -10,6 +12,7 @@ public interface Cancellable {
      * be executed in the server, but will still pass to other plugins
      *
      * @return {@code true} if this event is cancelled
+     * @since 1.0.0
      */
     boolean isCancelled();
 
@@ -18,6 +21,7 @@ public interface Cancellable {
      * be executed in the server, but will still pass to other plugins.
      *
      * @param cancel {@code true} if you wish to cancel this event
+     * @since 1.0.0
      */
     void setCancelled(boolean cancel);
 }

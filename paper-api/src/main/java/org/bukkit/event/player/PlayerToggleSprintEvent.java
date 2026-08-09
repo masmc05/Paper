@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a player toggles their sprinting state
+ *
+ * @since 1.0.0
  */
 public class PlayerToggleSprintEvent extends PlayerEvent implements Cancellable {
 
@@ -26,27 +28,40 @@ public class PlayerToggleSprintEvent extends PlayerEvent implements Cancellable 
      * Gets whether the player is now sprinting or not.
      *
      * @return sprinting state
+     * @since 1.0.0
      */
     public boolean isSprinting() {
         return this.isSprinting;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

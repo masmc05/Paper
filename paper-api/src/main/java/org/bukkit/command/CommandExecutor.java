@@ -4,6 +4,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a class which contains a single method for executing commands
+ *
+ * @since 1.0.0
  */
 public interface CommandExecutor {
 
@@ -18,6 +20,7 @@ public interface CommandExecutor {
      * @param label Alias of the command which was used
      * @param args Passed command arguments
      * @return true if a valid command, otherwise false
+     * @since 1.0.0
      */
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String @NotNull [] args);
 }

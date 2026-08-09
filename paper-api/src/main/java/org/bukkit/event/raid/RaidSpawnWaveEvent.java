@@ -12,6 +12,8 @@ import org.jetbrains.annotations.Unmodifiable;
 
 /**
  * Called when a raid wave spawns.
+ *
+ * @since 1.14.4
  */
 public class RaidSpawnWaveEvent extends RaidEvent {
 
@@ -31,6 +33,7 @@ public class RaidSpawnWaveEvent extends RaidEvent {
      * Returns all {@link Raider} that spawned in this wave.
      *
      * @return an immutable list of raiders
+     * @since 1.14.4
      */
     @NotNull
     public @Unmodifiable List<Raider> getRaiders() {
@@ -41,18 +44,25 @@ public class RaidSpawnWaveEvent extends RaidEvent {
      * Returns the patrol leader.
      *
      * @return {@link Raider}
+     * @since 1.14.4
      */
     @NotNull
     public Raider getPatrolLeader() {
         return this.leader;
     }
 
+    /**
+     * @since 1.14.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.14.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

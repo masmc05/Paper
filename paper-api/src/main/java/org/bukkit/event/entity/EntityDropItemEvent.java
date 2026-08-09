@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Thrown when an entity creates an item drop.
+ *
+ * @since 1.13
  */
 public class EntityDropItemEvent extends EntityEvent implements Cancellable {
 
@@ -27,28 +29,41 @@ public class EntityDropItemEvent extends EntityEvent implements Cancellable {
      * Gets the Item created by the entity
      *
      * @return Item created by the entity
+     * @since 1.13
      */
     @NotNull
     public Item getItemDrop() {
         return this.drop;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

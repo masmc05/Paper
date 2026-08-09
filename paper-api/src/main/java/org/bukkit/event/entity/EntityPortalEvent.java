@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
  * contact with a portal.
  * <p>
  * For players see {@link org.bukkit.event.player.PlayerPortalEvent}
+ *
+ * @since 1.4.7
  */
 public class EntityPortalEvent extends EntityTeleportEvent {
 
@@ -58,6 +60,7 @@ public class EntityPortalEvent extends EntityTeleportEvent {
      * either, the world spawn for <i>end->any world</i> or end spawn for <i>any world->end</i>.
      *
      * @return starting point for search or exact destination
+     * @since 1.19.3
      */
     @Override
     public @Nullable Location getTo() {
@@ -68,6 +71,7 @@ public class EntityPortalEvent extends EntityTeleportEvent {
      * See the description of {@link #getTo()}.
      * @param to starting point for search or exact destination
      *           or {@code null} to cancel
+     * @since 1.19.3
      */
     @Override
     public void setTo(@Nullable final Location to) {
@@ -78,6 +82,7 @@ public class EntityPortalEvent extends EntityTeleportEvent {
      * Get the portal type relating to this event.
      *
      * @return the portal type
+     * @since 1.19.3
      */
     public @NotNull PortalType getPortalType() {
         return this.type;
@@ -88,6 +93,7 @@ public class EntityPortalEvent extends EntityTeleportEvent {
      *
      * @param searchRadius the radius in which to search for a portal from the
      * location
+     * @since 1.15.1
      */
     public void setSearchRadius(int searchRadius) {
         this.searchRadius = searchRadius;
@@ -97,6 +103,7 @@ public class EntityPortalEvent extends EntityTeleportEvent {
      * Gets the search radius value for finding an available portal.
      *
      * @return the currently set search radius
+     * @since 1.15.1
      */
     public int getSearchRadius() {
         return this.searchRadius;
@@ -107,6 +114,7 @@ public class EntityPortalEvent extends EntityTeleportEvent {
      * not.
      *
      * @return whether there should create be a destination portal created
+     * @since 1.21
      */
     public boolean getCanCreatePortal() {
         return this.canCreatePortal;
@@ -118,6 +126,7 @@ public class EntityPortalEvent extends EntityTeleportEvent {
      *
      * @param canCreatePortal Sets whether there should be a destination portal
      * created
+     * @since 1.21
      */
     public void setCanCreatePortal(boolean canCreatePortal) {
         this.canCreatePortal = canCreatePortal;
@@ -135,6 +144,7 @@ public class EntityPortalEvent extends EntityTeleportEvent {
      *
      * @param creationRadius the radius in which to create a portal from the
      * location
+     * @since 1.21
      */
     public void setCreationRadius(int creationRadius) {
         this.creationRadius = creationRadius;
@@ -151,17 +161,24 @@ public class EntityPortalEvent extends EntityTeleportEvent {
      * the target location.
      *
      * @return the currently set creation radius
+     * @since 1.21
      */
     public int getCreationRadius() {
         return this.creationRadius;
     }
 
+    /**
+     * @since 1.4.7
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.4.7
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

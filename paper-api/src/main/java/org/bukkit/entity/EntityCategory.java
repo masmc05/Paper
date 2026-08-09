@@ -6,12 +6,16 @@ import org.bukkit.potion.PotionEffectType;
 /**
  * A classification of entities which may behave differently than others or be
  * affected uniquely by enchantments and potion effects among other things.
+ *
+ * @since 1.16.2
  */
 public enum EntityCategory {
 
     /**
      * Any uncategorized entity. No additional effects are applied to these
      * entities relating to a categorization.
+     *
+     * @since 1.16.2
      */
     NONE,
     /**
@@ -26,6 +30,8 @@ public enum EntityCategory {
      *   <li>Take additional damage from {@link Enchantment#SMITE}.
      *   <li>Are ignored by {@link Wither Withers}.
      * </ul>
+     *
+     * @since 1.16.2
      */
     UNDEAD,
     /**
@@ -35,6 +41,8 @@ public enum EntityCategory {
      *   from {@link Enchantment#BANE_OF_ARTHROPODS}.
      *   <li>Are immune to {@link PotionEffectType#POISON} if they are spiders.
      * </ul>
+     *
+     * @since 1.16.2
      */
     ARTHROPOD,
     /**
@@ -46,6 +54,8 @@ public enum EntityCategory {
      *   {@link WanderingTrader wandering traders}, {@link IronGolem iron golems}
      *   and {@link Player players}.
      * </ul>
+     *
+     * @since 1.16.2
      */
     ILLAGER,
     /**
@@ -58,6 +68,8 @@ public enum EntityCategory {
      *   time (excluding {@link Guardian guardians} and {@link Turtle turtles}).
      *   <li>Are capable of swimming in water rather than floating or sinking.
      * </ul>
+     *
+     * @since 1.16.2
      */
     WATER;
 }

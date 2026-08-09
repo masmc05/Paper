@@ -15,6 +15,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * Adding or removing entities from the world at the point in time this event is called is completely
  * unsupported and should be avoided.
+ *
+ * @since 1.19.2
  */
 @NullMarked
 public class PlayerTrackEntityEvent extends PlayerEvent implements Cancellable {
@@ -34,25 +36,38 @@ public class PlayerTrackEntityEvent extends PlayerEvent implements Cancellable {
      * Gets the entity that will be tracked
      *
      * @return the entity tracked
+     * @since 1.19.2
      */
     public Entity getEntity() {
         return this.entity;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.19.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;

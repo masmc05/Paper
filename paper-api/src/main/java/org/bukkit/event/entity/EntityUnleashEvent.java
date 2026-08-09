@@ -16,6 +16,8 @@ import org.jetbrains.annotations.NotNull;
  *     <li>the client has disconnected the leash</li>
  * </ul>
  * will have no effect.
+ *
+ * @since 1.6.2
  */
 public class EntityUnleashEvent extends EntityEvent implements Cancellable {
 
@@ -43,6 +45,7 @@ public class EntityUnleashEvent extends EntityEvent implements Cancellable {
      * Returns the reason for the unleashing.
      *
      * @return The reason
+     * @since 1.6.2
      */
     @NotNull
     public UnleashReason getReason() {
@@ -53,6 +56,7 @@ public class EntityUnleashEvent extends EntityEvent implements Cancellable {
      * Returns whether a leash item will be dropped.
      *
      * @return Whether the leash item will be dropped
+     * @since 1.16.5
      */
     public boolean isDropLeash() {
         return this.dropLeash;
@@ -62,50 +66,77 @@ public class EntityUnleashEvent extends EntityEvent implements Cancellable {
      * Sets whether a leash item should be dropped.
      *
      * @param dropLeash Whether the leash item should be dropped
+     * @since 1.16.5
      */
     public void setDropLeash(boolean dropLeash) {
         this.dropLeash = dropLeash;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.6.2
+     */
     public enum UnleashReason {
         /**
          * When the entity's leashholder has died or logged out, and so is
          * unleashed
+         *
+         * @since 1.6.2
          */
         HOLDER_GONE,
         /**
          * When the entity's leashholder attempts to unleash it
+         *
+         * @since 1.6.2
          */
         PLAYER_UNLEASH,
         /**
          * When the entity's leashholder is more than 10 blocks away
+         *
+         * @since 1.6.2
          */
         DISTANCE,
         /**
          * When the leashed entity is removed from the game
+         *
+         * @since 26.2
          */
         LEASHED_GONE,
+        /**
+         * @since 1.6.2
+         */
         UNKNOWN;
     }
 }

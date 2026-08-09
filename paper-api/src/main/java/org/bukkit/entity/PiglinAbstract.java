@@ -2,6 +2,8 @@ package org.bukkit.entity;
 
 /**
  * Piglin / Piglin Brute.
+ *
+ * @since 1.16.2
  */
 public interface PiglinAbstract extends Monster, Ageable {
 
@@ -9,6 +11,7 @@ public interface PiglinAbstract extends Monster, Ageable {
      * Gets whether the piglin is immune to zombification.
      *
      * @return Whether the piglin is immune to zombification
+     * @since 1.16.2
      */
     public boolean isImmuneToZombification();
 
@@ -16,6 +19,7 @@ public interface PiglinAbstract extends Monster, Ageable {
      * Sets whether the piglin is immune to zombification.
      *
      * @param flag Whether the piglin is immune to zombification
+     * @since 1.16.2
      */
     public void setImmuneToZombification(boolean flag);
 
@@ -27,6 +31,7 @@ public interface PiglinAbstract extends Monster, Ageable {
      *
      * @return conversion time
      * @throws IllegalStateException if {@link #isConverting()} is false.
+     * @since 1.16.2
      */
     public int getConversionTime();
 
@@ -42,6 +47,7 @@ public interface PiglinAbstract extends Monster, Ageable {
      * conversion use {@link #setImmuneToZombification(boolean)}.
      *
      * @param time new conversion counter
+     * @since 1.16.2
      */
     public void setConversionTime(int time);
 
@@ -49,6 +55,7 @@ public interface PiglinAbstract extends Monster, Ageable {
      * Get if this entity is in the process of converting to a Zombified Piglin.
      *
      * @return conversion status
+     * @since 1.16.2
      */
     boolean isConverting();
 
@@ -57,6 +64,7 @@ public interface PiglinAbstract extends Monster, Ageable {
      *
      * @return Whether the piglin is a baby
      * @deprecated see {@link Ageable#isAdult()}
+     * @since 1.16.2
      */
     @Deprecated(since = "1.16.2")
     public boolean isBaby();
@@ -66,6 +74,7 @@ public interface PiglinAbstract extends Monster, Ageable {
      *
      * @param baby Whether the piglin is a baby
      * @deprecated see {@link Ageable#setBaby()} and {@link Ageable#setAdult()}
+     * @since 1.16.2
      */
     @Deprecated(since = "1.16.2")
     public void setBaby(boolean baby);

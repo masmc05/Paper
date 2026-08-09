@@ -9,11 +9,15 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Holds the trims applied to an item.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#TRIM
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface ItemArmorTrim  {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static ItemArmorTrim.Builder itemArmorTrim(final ArmorTrim armorTrim) {
         return ItemComponentTypesBridge.bridge().itemArmorTrim(armorTrim);
@@ -23,12 +27,15 @@ public interface ItemArmorTrim  {
      * Armor trim present on this item.
      *
      * @return trim
+     * @since 1.21.3
      */
     @Contract(pure = true)
     ArmorTrim armorTrim();
 
     /**
      * Builder for {@link ItemArmorTrim}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<ItemArmorTrim> {
@@ -39,6 +46,7 @@ public interface ItemArmorTrim  {
          * @param armorTrim trim
          * @return the builder for chaining
          * @see #armorTrim()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder armorTrim(ArmorTrim armorTrim);

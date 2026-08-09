@@ -13,6 +13,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * NOTE: default vanilla behaviour dictates that armor/tools picked up by
  * mobs do not take damage (except via Thorns).
+ *
+ * @since 1.17.1
  */
 @NullMarked
 public class EntityDamageItemEvent extends EntityEvent implements Cancellable {
@@ -35,6 +37,7 @@ public class EntityDamageItemEvent extends EntityEvent implements Cancellable {
      * Gets the item being damaged.
      *
      * @return the item
+     * @since 1.17.1
      */
     public ItemStack getItem() {
         return this.item;
@@ -44,6 +47,7 @@ public class EntityDamageItemEvent extends EntityEvent implements Cancellable {
      * Gets the amount of durability damage this item will be taking.
      *
      * @return durability change
+     * @since 1.17.1
      */
     public int getDamage() {
         return this.damage;
@@ -53,26 +57,39 @@ public class EntityDamageItemEvent extends EntityEvent implements Cancellable {
      * Sets the amount of durability damage this item will be taking.
      *
      * @param damage the damage amount to cause
+     * @since 1.17.1
      */
     public void setDamage(final int damage) {
         this.damage = damage;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.17.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

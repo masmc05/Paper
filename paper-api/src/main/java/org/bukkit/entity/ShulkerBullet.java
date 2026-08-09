@@ -2,12 +2,16 @@ package org.bukkit.entity;
 
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.9.4
+ */
 public interface ShulkerBullet extends Projectile {
 
     /**
      * Retrieve the target of this bullet.
      *
      * @return the targeted entity
+     * @since 1.9.4
      */
     @Nullable
     Entity getTarget();
@@ -16,6 +20,7 @@ public interface ShulkerBullet extends Projectile {
      * Sets the target of this bullet
      *
      * @param target the entity to target
+     * @since 1.9.4
      */
     void setTarget(@Nullable Entity target);
     // Paper start
@@ -24,6 +29,7 @@ public interface ShulkerBullet extends Projectile {
      * note that this will change each tick as the skulker bullet approaches the target.
      *
      * @return target delta offset
+     * @since 1.19.2
      */
     @org.jetbrains.annotations.NotNull
     org.bukkit.util.Vector getTargetDelta();
@@ -35,6 +41,7 @@ public interface ShulkerBullet extends Projectile {
      * This is usually relative towards their target.
      *
      * @param vector target
+     * @since 1.19.2
      */
     void setTargetDelta(@org.jetbrains.annotations.NotNull org.bukkit.util.Vector vector);
 
@@ -44,6 +51,7 @@ public interface ShulkerBullet extends Projectile {
      * that the bullet does not move in the same direction.
      *
      * @return null or their current direction
+     * @since 1.19.2
      */
     @Nullable
     org.bukkit.block.BlockFace getCurrentMovementDirection();
@@ -56,6 +64,7 @@ public interface ShulkerBullet extends Projectile {
      * Set to null to simply pick a random direction.
      *
      * @param movementDirection null or a direction
+     * @since 1.19.2
      */
     void setCurrentMovementDirection(@Nullable org.bukkit.block.BlockFace movementDirection);
 
@@ -64,6 +73,7 @@ public interface ShulkerBullet extends Projectile {
      * will attempt to move in its current direction.
      *
      * @return number of steps
+     * @since 1.19.2
      */
     int getFlightSteps();
 
@@ -72,6 +82,7 @@ public interface ShulkerBullet extends Projectile {
      * will attempt to move in its current direction.
      *
      * @param steps number of steps
+     * @since 1.19.2
      */
     void setFlightSteps(int steps);
     // Paper end

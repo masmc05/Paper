@@ -10,6 +10,8 @@ import org.jspecify.annotations.NullMarked;
 /**
  * A mutable builder that may be used to collect and register all {@link ClassPathLibrary} instances a
  * {@link PluginLoader} aims to provide to its plugin at runtime.
+ *
+ * @since 1.19.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
@@ -28,9 +30,13 @@ public interface PluginClasspathBuilder {
      * @return self
      * @see io.papermc.paper.plugin.loader.library.impl.JarLibrary
      * @see io.papermc.paper.plugin.loader.library.impl.MavenLibraryResolver
+     * @since 1.19.3
      */
     @Contract("_ -> this")
     PluginClasspathBuilder addLibrary(ClassPathLibrary classPathLibrary);
 
+    /**
+     * @since 1.19.3
+     */
     PluginProviderContext getContext();
 }

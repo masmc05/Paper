@@ -21,29 +21,45 @@ import org.jspecify.annotations.Nullable;
  * Holds player profile data that can be resolved to a {@link PlayerProfile}.
  *
  * @see io.papermc.paper.datacomponent.DataComponentTypes#PROFILE
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static ResolvableProfile resolvableProfile(final PlayerProfile profile) {
         return ItemComponentTypesBridge.bridge().resolvableProfile(profile);
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static ResolvableProfile.Builder resolvableProfile() {
         return ItemComponentTypesBridge.bridge().resolvableProfile();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(pure = true)
     @Nullable
     UUID uuid();
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(pure = true)
     @Nullable
     String name();
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(pure = true)
     @Unmodifiable
     Collection<ProfileProperty> properties();
@@ -56,6 +72,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
      * A dynamic profile will also not include any properties.
      *
      * @return {@code true} if this profile is marked as dynamic, {@code false} otherwise.
+     * @since 1.21.10
      */
     @Contract(pure = true)
     boolean dynamic();
@@ -98,6 +115,8 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
      *     // ...
      * }, runnable -> Bukkit.getScheduler().runTask(plugin, runnable));
      * </pre>
+     *
+     * @since 1.21.3
      */
     @Contract(pure = true)
     CompletableFuture<PlayerProfile> resolve();
@@ -107,12 +126,15 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
      * resolved from the profile.
      *
      * @return the skin patch
+     * @since 1.21.10
      */
     @Contract(pure = true)
     SkinPatch skinPatch();
 
     /**
      * Override rendering options for a {@link ResolvableProfile}.
+     *
+     * @since 1.21.10
      */
     @ApiStatus.NonExtendable
     interface SkinPatch {
@@ -121,6 +143,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * Returns the empty skin patch that does not override anything.
          *
          * @return the empty skin patch
+         * @since 1.21.10
          */
         static SkinPatch empty() {
             final class Holder {
@@ -133,6 +156,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * Creates a new builder for a skin patch.
          *
          * @return new skin patch builder
+         * @since 1.21.10
          */
         @Contract(value = "-> new", pure = true)
         static SkinPatchBuilder skinPatch() {
@@ -143,6 +167,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * Gets the body texture key.
          *
          * @return the body texture key, or {@code null} if not set
+         * @since 1.21.10
          */
         @Nullable Key body();
 
@@ -150,6 +175,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * Gets the cape texture key.
          *
          * @return the cape texture key, or {@code null} if not set
+         * @since 1.21.10
          */
         @Nullable Key cape();
 
@@ -157,6 +183,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * Gets the elytra texture key.
          *
          * @return the elytra texture key, or {@code null} if not set
+         * @since 1.21.10
          */
         @Nullable Key elytra();
 
@@ -164,6 +191,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * Gets the skin model.
          *
          * @return the skin model, or {@code null} if not set
+         * @since 1.21.10
          */
         PlayerTextures.@Nullable SkinModel model();
 
@@ -171,6 +199,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * Returns if this skin patch does not override any values.
          *
          * @return {@code true} if this skin patch is empty
+         * @since 1.21.10
          */
         default boolean isEmpty() {
             return this.body() == null && this.cape() == null && this.elytra() == null && this.model() == null;
@@ -179,6 +208,8 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
 
     /**
      * Builder for {@link SkinPatch}.
+     *
+     * @since 1.21.10
      */
     @ApiStatus.NonExtendable
     interface SkinPatchBuilder extends DataComponentBuilder<SkinPatch> {
@@ -187,6 +218,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          *
          * @param body the body texture key, or {@code null} to unset it
          * @return the builder for chaining
+         * @since 1.21.10
          */
         @Contract(value = "_ -> this", mutates = "this")
         SkinPatchBuilder body(@Nullable Key body);
@@ -196,6 +228,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          *
          * @param cape the cape texture key, or {@code null} to unset it
          * @return the builder for chaining
+         * @since 1.21.10
          */
         @Contract(value = "_ -> this", mutates = "this")
         SkinPatchBuilder cape(@Nullable Key cape);
@@ -205,6 +238,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          *
          * @param elytra the elytra texture key, or {@code null} to unset it
          * @return the builder for chaining
+         * @since 1.21.10
          */
         @Contract(value = "_ -> this", mutates = "this")
         SkinPatchBuilder elytra(@Nullable Key elytra);
@@ -214,6 +248,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          *
          * @param model the skin model, or {@code null} to unset it
          * @return the builder for chaining
+         * @since 1.21.10
          */
         @Contract(value = "_ -> this", mutates = "this")
         SkinPatchBuilder model(PlayerTextures.@Nullable SkinModel model);
@@ -221,6 +256,8 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
 
     /**
      * Builder for {@link ResolvableProfile}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<ResolvableProfile> {
@@ -232,6 +269,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * @param name the name
          * @return the builder for chaining
          * @see #name()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder name(@Pattern("^[!-~]{0,16}$") @Nullable String name);
@@ -242,6 +280,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * @param uuid the UUID
          * @return the builder for chaining
          * @see #uuid()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder uuid(@Nullable UUID uuid);
@@ -252,6 +291,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * @param property the property
          * @return the builder for chaining
          * @see #properties()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addProperty(ProfileProperty property);
@@ -262,6 +302,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * @param properties the properties
          * @return the builder for chaining
          * @see #properties()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addProperties(Collection<ProfileProperty> properties);
@@ -272,6 +313,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * @param patch the skin patch
          * @return the builder for chaining
          * @see #skinPatch()
+         * @since 1.21.10
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder skinPatch(SkinPatch patch);
@@ -282,6 +324,7 @@ public interface ResolvableProfile extends PlayerHeadObjectContents.SkinSource {
          * @param configure the configuration consumer
          * @return the builder for chaining
          * @see #skinPatch()
+         * @since 1.21.10
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder skinPatch(Consumer<SkinPatchBuilder> configure);

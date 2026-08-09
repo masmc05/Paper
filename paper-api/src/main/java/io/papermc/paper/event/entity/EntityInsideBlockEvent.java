@@ -41,6 +41,8 @@ import org.jspecify.annotations.NullMarked;
  *     <li>Web</li>
  *     <li>Wither rose</li>
  * </ul>
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public class EntityInsideBlockEvent extends EntityEvent implements Cancellable {
@@ -60,26 +62,39 @@ public class EntityInsideBlockEvent extends EntityEvent implements Cancellable {
      * Gets the block.
      *
      * @return the block
+     * @since 1.16.5
      */
     public Block getBlock() {
         return this.block;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

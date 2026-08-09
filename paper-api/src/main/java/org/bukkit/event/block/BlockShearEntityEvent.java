@@ -13,6 +13,8 @@ import java.util.List;
 
 /**
  * Event fired when a dispenser shears a nearby entity.
+ *
+ * @since 1.14
  */
 public class BlockShearEntityEvent extends BlockEvent implements Cancellable {
 
@@ -36,6 +38,7 @@ public class BlockShearEntityEvent extends BlockEvent implements Cancellable {
      * Gets the entity that was sheared.
      *
      * @return the entity that was sheared.
+     * @since 1.14
      */
     @NotNull
     public Entity getEntity() {
@@ -46,6 +49,7 @@ public class BlockShearEntityEvent extends BlockEvent implements Cancellable {
      * Gets the item used to shear this entity.
      *
      * @return the item used to shear this entity.
+     * @since 1.14
      */
     @NotNull
     public ItemStack getTool() {
@@ -57,6 +61,7 @@ public class BlockShearEntityEvent extends BlockEvent implements Cancellable {
      *
      * @return the shearing drops
      * @see #setDrops(List)
+     * @since 1.20.4
      */
     public @NotNull @Unmodifiable List<ItemStack> getDrops() {
         return Collections.unmodifiableList(this.drops);
@@ -66,27 +71,40 @@ public class BlockShearEntityEvent extends BlockEvent implements Cancellable {
      * Sets the drops for the shearing.
      *
      * @param drops the shear drops
+     * @since 1.20.4
      */
     public void setDrops(final @NotNull List<ItemStack> drops) {
         this.drops = List.copyOf(drops);
     }
 
+    /**
+     * @since 1.14
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.14
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

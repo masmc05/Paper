@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a player switches to another world.
+ *
+ * @since 1.0.0
  */
 public class PlayerChangedWorldEvent extends PlayerEvent {
 
@@ -25,18 +27,25 @@ public class PlayerChangedWorldEvent extends PlayerEvent {
      * Gets the world the player is switching from.
      *
      * @return player's previous world
+     * @since 1.0.0
      */
     @NotNull
     public World getFrom() {
         return this.from;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

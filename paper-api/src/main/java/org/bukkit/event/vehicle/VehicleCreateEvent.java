@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Raised when a vehicle is created.
+ *
+ * @since 1.0.0
  */
 public class VehicleCreateEvent extends VehicleEvent implements Cancellable {
 
@@ -20,22 +22,34 @@ public class VehicleCreateEvent extends VehicleEvent implements Cancellable {
         super(vehicle);
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.11.2
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

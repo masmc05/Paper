@@ -8,11 +8,15 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Holds the item absorbed by a sulfur cube.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#SULFUR_CUBE_CONTENT
+ * @since 26.2
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface SulfurCubeContent {
 
+    /**
+     * @since 26.2
+     */
     @Contract(value = "_ -> new", pure = true)
     static SulfurCubeContent sulfurCubeContent(final ItemStack absorbedItem) {
         return ItemComponentTypesBridge.bridge().sulfurCubeContent(absorbedItem);
@@ -22,6 +26,7 @@ public interface SulfurCubeContent {
      * Gets the item absorbed by the cube.
      *
      * @return the item absorbed
+     * @since 26.2
      */
     @Contract(pure = true)
     ItemStack absorbedItem();

@@ -14,6 +14,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * For example, this event may be called when an entity regenerates health
  * or takes poison damage as a result of a potion effect.
+ *
+ * @since 1.21.4
  */
 @NullMarked
 public class EntityEffectTickEvent extends EntityEvent implements Cancellable {
@@ -31,6 +33,9 @@ public class EntityEffectTickEvent extends EntityEvent implements Cancellable {
         this.amplifier = amplifier;
     }
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     public LivingEntity getEntity() {
         return (LivingEntity) super.getEntity();
@@ -40,6 +45,7 @@ public class EntityEffectTickEvent extends EntityEvent implements Cancellable {
      * Gets the type of the potion effect associated with this event.
      *
      * @return the {@link PotionEffectType} of the effect
+     * @since 1.21.4
      */
     public PotionEffectType getType() {
         return type;
@@ -49,26 +55,39 @@ public class EntityEffectTickEvent extends EntityEvent implements Cancellable {
      * Gets the amplifier level of the potion effect associated with this event.
      *
      * @return the amplifier level of the potion effect
+     * @since 1.21.4
      */
     public int getAmplifier() {
         return amplifier;
     }
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

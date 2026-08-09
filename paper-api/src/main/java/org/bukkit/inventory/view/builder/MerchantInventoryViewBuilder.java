@@ -10,12 +10,19 @@ import org.jspecify.annotations.Nullable;
  * An InventoryViewBuilder for creating merchant views
  *
  * @param <V> the type of InventoryView created by this builder
+ * @since 1.21.4
  */
 public interface MerchantInventoryViewBuilder<V extends InventoryView> extends InventoryViewBuilder<V> {
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     MerchantInventoryViewBuilder<V> copy();
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     MerchantInventoryViewBuilder<V> title(final @Nullable Component title);
 
@@ -25,6 +32,7 @@ public interface MerchantInventoryViewBuilder<V extends InventoryView> extends I
      * @param merchant the merchant
      * @return this builder
      * @see Server#createMerchant()
+     * @since 1.21.4
      */
     MerchantInventoryViewBuilder<V> merchant(final Merchant merchant);
 
@@ -38,6 +46,7 @@ public interface MerchantInventoryViewBuilder<V extends InventoryView> extends I
      *
      * @param checkReachable whether or not to check if the view is "reachable"
      * @return this builder
+     * @since 1.21.4
      */
     MerchantInventoryViewBuilder<V> checkReachable(final boolean checkReachable);
 }

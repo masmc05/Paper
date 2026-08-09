@@ -8,6 +8,8 @@ import org.jspecify.annotations.Nullable;
  * Represents a problem that prevents a player from continuing
  * the sleeping process, preventing it from sleeping and from setting
  * its spawn point
+ *
+ * @since 1.21.11
  */
 @ApiStatus.NonExtendable
 public interface BedEnterProblem {
@@ -17,6 +19,7 @@ public interface BedEnterProblem {
      * Makes no explosion and has an error message
      *
      * @see #errorMessage()
+     * @since 1.21.11
      */
     BedEnterProblem TOO_FAR_AWAY = BedEnterActionBridge.instance().createTooFarAwayProblem();
 
@@ -25,6 +28,7 @@ public interface BedEnterProblem {
      * Makes no explosion and has an error message
      *
      * @see #errorMessage()
+     * @since 1.21.11
      */
     BedEnterProblem OBSTRUCTED = BedEnterActionBridge.instance().createObstructedProblem();
 
@@ -33,12 +37,15 @@ public interface BedEnterProblem {
      * and the player is not in creative mode. Makes no explosion and has an error message
      *
      * @see #errorMessage()
+     * @since 1.21.11
      */
     BedEnterProblem NOT_SAFE = BedEnterActionBridge.instance().createNotSafeProblem();
 
     /**
      * Happens when the bed is set to explode. This is defined in the environment attributes of the world.
      * This doesn't have a fixed error message, see {@link BedEnterAction#errorMessage()}
+     *
+     * @since 1.21.11
      */
     BedEnterProblem EXPLOSION = BedEnterActionBridge.instance().createExplosionProblem();
 
@@ -46,6 +53,8 @@ public interface BedEnterProblem {
      * Happens when a player tries to sleep when an invalid state, for example when a player tries
      * to sleep but is already sleeping or is dead.
      * This doesn't have an error message at all, the interaction is simply discarded
+     *
+     * @since 1.21.11
      */
     BedEnterProblem OTHER = BedEnterActionBridge.instance().createOtherProblem();
 
@@ -55,6 +64,7 @@ public interface BedEnterProblem {
      * when this problem occur
      *
      * @return the error message
+     * @since 1.21.11
      */
     @Nullable
     Component errorMessage();

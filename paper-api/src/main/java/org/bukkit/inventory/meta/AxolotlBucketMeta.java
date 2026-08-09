@@ -5,6 +5,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents a bucket of axolotl.
+ *
+ * @since 1.17.1
  */
 @NullMarked
 public interface AxolotlBucketMeta extends ItemMeta {
@@ -17,6 +19,7 @@ public interface AxolotlBucketMeta extends ItemMeta {
      *
      * @return axolotl variant
      * @throws IllegalStateException if hasVariant() returns {@code false}
+     * @since 1.17.1
      */
     Axolotl.Variant getVariant();
 
@@ -24,6 +27,7 @@ public interface AxolotlBucketMeta extends ItemMeta {
      * Set the variant of this axolotl in the bucket.
      *
      * @param variant axolotl variant
+     * @since 1.17.1
      */
     void setVariant(Axolotl.Variant variant);
 
@@ -32,6 +36,7 @@ public interface AxolotlBucketMeta extends ItemMeta {
      * spawned.
      *
      * @return if there is a variant
+     * @since 1.17.1
      */
     boolean hasVariant();
 

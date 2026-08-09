@@ -7,11 +7,15 @@ import org.jspecify.annotations.NullMarked;
 /**
  * References the shared map state holding map contents and markers for a Filled Map.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#MAP_ID
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface MapId {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static MapId mapId(final int id) {
         return ItemComponentTypesBridge.bridge().mapId(id);
@@ -21,6 +25,7 @@ public interface MapId {
      * The map id.
      *
      * @return id
+     * @since 1.21.3
      */
     @Contract(pure = true)
     int id();

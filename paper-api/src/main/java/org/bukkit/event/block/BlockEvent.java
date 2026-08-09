@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a block related event.
+ *
+ * @since 1.0.0
  */
 public abstract class BlockEvent extends Event {
 
@@ -19,6 +21,7 @@ public abstract class BlockEvent extends Event {
      * Gets the block involved in this event.
      *
      * @return The Block which block is involved in this event
+     * @since 1.0.0
      */
     @NotNull
     public final Block getBlock() {

@@ -7,9 +7,13 @@ import io.papermc.paper.plugin.lifecycle.event.LifecycleEvent;
  * in a concrete class or as a lambda.
  *
  * @param <E> the event
+ * @since 1.20.4
  */
 @FunctionalInterface
 public interface LifecycleEventHandler<E extends LifecycleEvent> {
 
+    /**
+     * @since 1.20.4
+     */
     void run(E event);
 }

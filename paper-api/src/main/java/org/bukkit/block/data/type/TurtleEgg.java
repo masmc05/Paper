@@ -4,6 +4,8 @@ import org.bukkit.block.data.Hatchable;
 
 /**
  * 'eggs' is the number of eggs which appear in this block.
+ *
+ * @since 1.13
  */
 public interface TurtleEgg extends Hatchable {
 
@@ -11,6 +13,7 @@ public interface TurtleEgg extends Hatchable {
      * Gets the value of the 'eggs' property.
      *
      * @return the 'eggs' value
+     * @since 1.13
      */
     int getEggs();
 
@@ -18,6 +21,7 @@ public interface TurtleEgg extends Hatchable {
      * Sets the value of the 'eggs' property.
      *
      * @param eggs the new 'eggs' value
+     * @since 1.13
      */
     void setEggs(int eggs);
 
@@ -25,6 +29,7 @@ public interface TurtleEgg extends Hatchable {
      * Gets the minimum allowed value of the 'eggs' property.
      *
      * @return the minimum 'eggs' value
+     * @since 1.13
      */
     int getMinimumEggs();
 
@@ -32,6 +37,7 @@ public interface TurtleEgg extends Hatchable {
      * Gets the maximum allowed value of the 'eggs' property.
      *
      * @return the maximum 'eggs' value
+     * @since 1.13
      */
     int getMaximumEggs();
 }

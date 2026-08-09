@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Called when an item is about to be composted by a hopper.
  * To prevent hoppers from moving items into composters, cancel the {@link InventoryMoveItemEvent}.
+ *
+ * @since 1.19.3
  */
 @NullMarked
 public class CompostItemEvent extends BlockEvent {
@@ -31,6 +33,7 @@ public class CompostItemEvent extends BlockEvent {
      * Gets the item that was used on the composter.
      *
      * @return the item
+     * @since 1.19.3
      */
     public ItemStack getItem() {
         return this.item;
@@ -40,6 +43,7 @@ public class CompostItemEvent extends BlockEvent {
      * Gets whether the composter will rise a level.
      *
      * @return {@code true} if successful
+     * @since 1.19.3
      */
     public boolean willRaiseLevel() {
         return this.willRaiseLevel;
@@ -49,16 +53,23 @@ public class CompostItemEvent extends BlockEvent {
      * Sets whether the composter will rise a level.
      *
      * @param willRaiseLevel {@code true} if the composter should rise a level
+     * @since 1.19.3
      */
     public void setWillRaiseLevel(final boolean willRaiseLevel) {
         this.willRaiseLevel = willRaiseLevel;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.3
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

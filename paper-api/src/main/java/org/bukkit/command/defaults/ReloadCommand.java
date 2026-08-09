@@ -11,7 +11,13 @@ import org.jetbrains.annotations.NotNull;
 
 import static net.kyori.adventure.text.Component.text;
 
+/**
+ * @since 1.0.0
+ */
 public class ReloadCommand extends BukkitCommand {
+    /**
+     * @since 1.0.0
+     */
     public ReloadCommand(@NotNull String name) {
         super(name);
         this.description = "Reloads the server configuration and plugins";
@@ -23,6 +29,9 @@ public class ReloadCommand extends BukkitCommand {
     @org.jetbrains.annotations.ApiStatus.Internal // Paper
     public static final String RELOADING_DISABLED_MESSAGE = "A lifecycle event handler has been registered which makes reloading plugins not possible"; // Paper
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull String currentAlias, @NotNull String[] args) { // Paper
         if (!testPermission(sender)) return true;
@@ -69,6 +78,9 @@ public class ReloadCommand extends BukkitCommand {
         return true;
     }
 
+    /**
+     * @since 1.7.2
+     */
     @NotNull
     @Override
     public List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String[] args) throws IllegalArgumentException {

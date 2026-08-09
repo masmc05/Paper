@@ -6,28 +6,40 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a Llama.
+ *
+ * @since 1.11
  */
 public interface Llama extends ChestedHorse, RangedEntity { // Paper
 
     /**
      * Represents the base color that the llama has.
+     *
+     * @since 1.11
      */
     public enum Color {
 
         /**
          * A cream-colored llama.
+         *
+         * @since 1.11
          */
         CREAMY,
         /**
          * A white llama.
+         *
+         * @since 1.11
          */
         WHITE,
         /**
          * A brown llama.
+         *
+         * @since 1.11
          */
         BROWN,
         /**
          * A gray llama.
+         *
+         * @since 1.11
          */
         GRAY;
     }
@@ -36,6 +48,7 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
      * Gets the llama's color.
      *
      * @return a {@link Color} representing the llama's color
+     * @since 1.11
      */
     @NotNull
     Color getColor();
@@ -44,6 +57,7 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
      * Sets the llama's color.
      *
      * @param color a {@link Color} for this llama
+     * @since 1.11
      */
     void setColor(@NotNull Color color);
 
@@ -52,6 +66,7 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
      * inventory slots and be more threatening to entities.
      *
      * @return llama strength [1,5]
+     * @since 1.11
      */
     int getStrength();
 
@@ -61,9 +76,13 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
      * equal to strength * 3.
      *
      * @param strength llama strength [1,5]
+     * @since 1.11
      */
     void setStrength(int strength);
 
+    /**
+     * @since 1.11
+     */
     @NotNull
     @Override
     LlamaInventory getInventory();
@@ -75,6 +94,7 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
      * another llama.
      *
      * @return is in caravan
+     * @since 1.19.2
      */
     boolean inCaravan();
 
@@ -84,11 +104,14 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
      * This llama will then follow the provided llama.
      *
      * @param llama head of caravan to join
+     * @since 1.19.2
      */
     void joinCaravan(@NotNull Llama llama);
 
     /**
      * Leaves the current caravan that they are in.
+     *
+     * @since 1.19.2
      */
     void leaveCaravan();
 
@@ -98,6 +121,7 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
      * Does not necessarily mean the leader of the entire caravan.
      *
      * @return the llama currently being followed
+     * @since 1.19.2
      */
     @org.jetbrains.annotations.Nullable
     Llama getCaravanHead();
@@ -107,6 +131,7 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
      * this llama.
      *
      * @return true if being followed in the caravan
+     * @since 1.19.2
      */
     boolean hasCaravanTail();
 
@@ -115,6 +140,7 @@ public interface Llama extends ChestedHorse, RangedEntity { // Paper
      * this llama.
      *
      * @return the llama following this llama, or null if none is following them
+     * @since 1.19.2
      */
     @org.jetbrains.annotations.Nullable
     Llama getCaravanTail();

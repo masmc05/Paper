@@ -5,6 +5,9 @@ import java.net.SocketAddress;
 import net.kyori.adventure.text.Component;
 import org.jspecify.annotations.Nullable;
 
+/**
+ * @since 1.21.7
+ */
 public interface PlayerConnection {
 
     /**
@@ -13,11 +16,14 @@ public interface PlayerConnection {
      * Note that calling this during connection related events may cause undefined behavior.
      *
      * @param component disconnect reason
+     * @since 1.21.7
      */
     void disconnect(Component component);
 
     /**
      * {@return whether this connection is currently open and active}
+     *
+     * @since 1.21.10
      */
     boolean isConnected();
 
@@ -27,6 +33,7 @@ public interface PlayerConnection {
      * Do note that this is sent and stored on the client.
      *
      * @return is transferred
+     * @since 1.21.7
      */
     boolean isTransferred();
 
@@ -35,6 +42,7 @@ public interface PlayerConnection {
      * or a Unix domain socket address, depending on how the channel was established.
      *
      * @return the remote {@link SocketAddress} of the channel
+     * @since 1.21.7
      */
     SocketAddress getAddress();
 
@@ -43,6 +51,7 @@ public interface PlayerConnection {
      * this will be the actual player’s IP address extracted from the proxy handshake.
      *
      * @return the client {@link InetSocketAddress}
+     * @since 1.21.7
      */
     InetSocketAddress getClientAddress();
 
@@ -53,6 +62,7 @@ public interface PlayerConnection {
      * connect to the server.</p>
      *
      * @return The client's virtual host, or {@code null} if unknown
+     * @since 1.21.7
      */
     @Nullable InetSocketAddress getVirtualHost();
 
@@ -60,6 +70,7 @@ public interface PlayerConnection {
      * Gets the socket address of this player's proxy
      *
      * @return the player's proxy address, null if the server doesn't have Proxy Protocol enabled, or the player didn't connect to an HAProxy instance
+     * @since 1.21.7
      */
     @Nullable InetSocketAddress getHAProxyAddress();
 }

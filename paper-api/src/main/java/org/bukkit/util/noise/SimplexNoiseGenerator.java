@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
  * Stefan Gustavson at
  * <a href="http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf">
  * http://staffwww.itn.liu.se/~stegu/simplexnoise/simplexnoise.pdf</a>
+ *
+ * @since 1.0.0
  */
 public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
     protected static final double SQRT_3 = Math.sqrt(3);
@@ -54,6 +56,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * Creates a seeded simplex noise generator for the given world
      *
      * @param world World to construct this generator for
+     * @since 1.0.0
      */
     public SimplexNoiseGenerator(@NotNull World world) {
         this(new Random(world.getSeed()));
@@ -63,6 +66,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * Creates a seeded simplex noise generator for the given seed
      *
      * @param seed Seed to construct this generator for
+     * @since 1.0.0
      */
     public SimplexNoiseGenerator(long seed) {
         this(new Random(seed));
@@ -72,6 +76,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * Creates a seeded simplex noise generator with the given Random
      *
      * @param rand Random to construct with
+     * @since 1.0.0
      */
     public SimplexNoiseGenerator(@NotNull Random rand) {
         super(rand);
@@ -96,6 +101,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      *
      * @param xin X coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public static double getNoise(double xin) {
         return instance.noise(xin);
@@ -108,6 +114,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * @param xin X coordinate
      * @param yin Y coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public static double getNoise(double xin, double yin) {
         return instance.noise(xin, yin);
@@ -121,6 +128,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * @param yin Y coordinate
      * @param zin Z coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public static double getNoise(double xin, double yin, double zin) {
         return instance.noise(xin, yin, zin);
@@ -135,11 +143,15 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * @param z Z coordinate
      * @param w W coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public static double getNoise(double x, double y, double z, double w) {
         return instance.noise(x, y, z, w);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public double noise(double xin, double yin, double zin) {
         xin += offsetX;
@@ -279,6 +291,9 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
         return 32.0 * (n0 + n1 + n2 + n3);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public double noise(double xin, double yin) {
         xin += offsetX;
@@ -364,6 +379,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * @param z Z coordinate
      * @param w W coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public double noise(double x, double y, double z, double w) {
         x += offsetX;
@@ -515,6 +531,7 @@ public class SimplexNoiseGenerator extends PerlinNoiseGenerator {
      * Gets the singleton unseeded instance of this generator
      *
      * @return Singleton
+     * @since 1.0.0
      */
     @NotNull
     public static SimplexNoiseGenerator getInstance() {

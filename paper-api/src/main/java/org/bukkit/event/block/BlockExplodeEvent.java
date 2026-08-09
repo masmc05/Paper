@@ -18,6 +18,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * The event isn't called if the {@link org.bukkit.GameRules#MOB_GRIEFING}
  * is disabled as no block interaction will occur.
+ *
+ * @since 1.8.8
  */
 public class BlockExplodeEvent extends BlockEvent implements Cancellable {
 
@@ -43,6 +45,7 @@ public class BlockExplodeEvent extends BlockEvent implements Cancellable {
      * Returns the result of the explosion if it is not cancelled.
      *
      * @return the result of the explosion
+     * @since 1.21
      */
     @NotNull
     public ExplosionResult getExplosionResult() {
@@ -53,6 +56,7 @@ public class BlockExplodeEvent extends BlockEvent implements Cancellable {
      * Returns the captured BlockState of the block that exploded.
      *
      * @return the block state
+     * @since 1.19.3
      */
     @NotNull
     public BlockState getExplodedBlockState() {
@@ -64,6 +68,7 @@ public class BlockExplodeEvent extends BlockEvent implements Cancellable {
      * from the explosion event.
      *
      * @return All blown-up blocks
+     * @since 1.8.8
      */
     @NotNull
     public List<Block> blockList() {
@@ -74,6 +79,7 @@ public class BlockExplodeEvent extends BlockEvent implements Cancellable {
      * Returns the percentage of blocks to drop from this explosion
      *
      * @return The yield.
+     * @since 1.8.8
      */
     public float getYield() {
         return this.yield;
@@ -83,27 +89,40 @@ public class BlockExplodeEvent extends BlockEvent implements Cancellable {
      * Sets the percentage of blocks to drop from this explosion
      *
      * @param yield The new yield percentage
+     * @since 1.8.8
      */
     public void setYield(float yield) {
         this.yield = yield;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

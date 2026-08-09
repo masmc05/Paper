@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when any Entity changes a block and a more specific event is not available.
+ *
+ * @since 1.1.0
  */
 public class EntityChangeBlockEvent extends EntityEvent implements Cancellable {
 
@@ -32,6 +34,7 @@ public class EntityChangeBlockEvent extends EntityEvent implements Cancellable {
      * Gets the block the entity is changing
      *
      * @return the block that is changing
+     * @since 1.1.0
      */
     @NotNull
     public Block getBlock() {
@@ -42,6 +45,7 @@ public class EntityChangeBlockEvent extends EntityEvent implements Cancellable {
      * Gets the Material that the block is changing into
      *
      * @return the material that the block is changing into
+     * @since 1.1.0
      */
     @NotNull
     public Material getTo() {
@@ -52,28 +56,41 @@ public class EntityChangeBlockEvent extends EntityEvent implements Cancellable {
      * Gets the data for the block that would be changed into
      *
      * @return the data for the block that would be changed into
+     * @since 1.13
      */
     @NotNull
     public BlockData getBlockData() {
         return this.to.clone();
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

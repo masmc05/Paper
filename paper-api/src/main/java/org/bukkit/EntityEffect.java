@@ -44,24 +44,34 @@ import java.util.Set;
 
 /**
  * A list of all effects that can happen to entities.
+ *
+ * @since 1.1.0
  */
 public enum EntityEffect {
 
     /**
      * Colored particles from an arrow.
+     *
+     * @since 1.12.2
      */
     ARROW_PARTICLES(0, Arrow.class),
     /**
      * Rabbit jumping.
+     *
+     * @since 1.12.2
      */
     RABBIT_JUMP(1, Rabbit.class),
     /**
      * Resets a spawner minecart's delay to 200. Does not affect actual spawning
      * delay, only the speed at which the entity in the spawner spins.
+     *
+     * @since 1.20.2
      */
     RESET_SPAWNER_MINECART_DELAY(1, SpawnerMinecart.class),
     /**
      * When a kinetic weapon hits an entity.
+     *
+     * @since 1.21.11
      */
     HIT(2, LivingEntity.class),
     /**
@@ -99,12 +109,16 @@ public enum EntityEffect {
     /**
      * Shows the crack particles when a projectile
      * hits something.
+     *
+     * @since 1.21.4
      */
     PROJECTILE_CRACK(3, Egg.class, Snowball.class),
     /**
      * Plays the entity death sound and animation.
      * <p>
      * <b>This will cause client-glitches!</b>
+     *
+     * @since 1.20.2
      */
     ENTITY_DEATH(3, LivingEntity.class),
     /**
@@ -151,6 +165,8 @@ public enum EntityEffect {
     ZOGLIN_ATTACK(4, Zoglin.class),
     /**
      * Plays an attack animation for the respective entities.
+     *
+     * @since 1.21.4
      */
     ENTITY_ATTACK(4, EvokerFangs.class, Hoglin.class, IronGolem.class, Ravager.class, Warden.class, Zoglin.class, Creaking.class),
     // 5 - unused
@@ -170,16 +186,21 @@ public enum EntityEffect {
     WOLF_HEARTS(7, Tameable.class),
     /**
      * The smoke when taming an entity fails.
+     *
+     * @since 1.21.1
      */
     TAMING_FAILED(6, Tameable.class),
     /**
      * The hearts when taming an entity succeeds.
+     *
+     * @since 1.21.1
      */
     TAMING_SUCCEEDED(7, Tameable.class),
     /**
      * When a wolf shakes (after being wet).
      *
      * @see EntityEffect#WOLF_SHAKE_STOP
+     * @since 1.1.0
      */
     WOLF_SHAKE(8, Wolf.class),
     // 9 - internal
@@ -194,58 +215,84 @@ public enum EntityEffect {
     SHEEP_EAT(10, Entity.class),
     /**
      * Plays the sheep eating grass animation.
+     *
+     * @since 1.20.2
      */
     SHEEP_EAT_GRASS(10, Sheep.class),
     /**
      * Causes the TNT minecart to ignite, does not play the ignition sound
      * <p>
      * <b>This will cause client-glitches!</b>
+     *
+     * @since 1.20.2
      */
     TNT_MINECART_IGNITE(70, ExplosiveMinecart.class),
     /**
      * When an Iron Golem gives a rose.
+     *
+     * @since 1.7.10
      */
     IRON_GOLEM_ROSE(11, IronGolem.class),
     /**
      * Hearts from a villager.
+     *
+     * @since 1.7.10
      */
     VILLAGER_HEART(12, Villager.class),
     /**
      * When a villager is angry.
+     *
+     * @since 1.7.10
      */
     VILLAGER_ANGRY(13, Villager.class),
     /**
      * Happy particles from a villager.
+     *
+     * @since 1.7.10
      */
     VILLAGER_HAPPY(14, Villager.class),
     /**
      * Magic particles from a witch.
+     *
+     * @since 1.7.10
      */
     WITCH_MAGIC(15, Witch.class),
     /**
      * Plays the sound when a zombie villager is
      * cured.
+     *
+     * @since 1.7.10
      */
     ZOMBIE_TRANSFORM(16, ZombieVillager.class),
     /**
      * When a firework explodes.
+     *
+     * @since 1.7.10
      */
     FIREWORK_EXPLODE(17, Firework.class),
     /**
      * Hearts from a breeding entity
      * or when an Allay duplicates.
+     *
+     * @since 1.12.2
      */
     LOVE_HEARTS(18, Animals.class, Allay.class),
     /**
      * Resets squid rotation.
+     *
+     * @since 1.12.2
      */
     SQUID_ROTATE(19, Squid.class),
     /**
      * Silverfish entering block, spawner spawning.
+     *
+     * @since 1.12.2
      */
     ENTITY_POOF(20, Mob.class),
     /**
      * Guardian plays the attack sound effect.
+     *
+     * @since 1.12.2
      */
     GUARDIAN_TARGET(21, Guardian.class),
     // 22-28 player internal flags
@@ -266,6 +313,8 @@ public enum EntityEffect {
     // 31 - unused
     /**
      * Armor stand is hit.
+     *
+     * @since 1.12.2
      */
     ARMOR_STAND_HIT(32, ArmorStand.class),
     /**
@@ -277,6 +326,8 @@ public enum EntityEffect {
     THORNS_HURT(33, LivingEntity.class),
     /**
      * Iron golem puts away rose.
+     *
+     * @since 1.12.2
      */
     IRON_GOLEM_SHEATH(34, IronGolem.class),
     /**
@@ -290,6 +341,8 @@ public enum EntityEffect {
      * Item with {@link DataComponentTypes#DEATH_PROTECTION} prevents entity death.
      * For player, the item selected will be shown for a moment on the screen, if the
      * item is not found a totem will appear.
+     *
+     * @since 1.21.4
      */
     PROTECTED_FROM_DEATH(35, Entity.class),
     /**
@@ -308,10 +361,14 @@ public enum EntityEffect {
     HURT_EXPLOSION(37, LivingEntity.class),
     /**
      * Dolphin has been fed and is locating a structure.
+     *
+     * @since 1.16.1
      */
     DOLPHIN_FED(38, Dolphin.class),
     /**
      * Ravager has been stunned for 40 ticks.
+     *
+     * @since 1.16.1
      */
     RAVAGER_STUNNED(39, Ravager.class),
     /**
@@ -330,14 +387,20 @@ public enum EntityEffect {
     CAT_TAME_SUCCESS(41, Cat.class),
     /**
      * Ocelot trusting failed.
+     *
+     * @since 1.21.4
      */
     TRUSTING_FAILED(40, Ocelot.class),
     /**
      * Ocelot trusting succeeded.
+     *
+     * @since 1.21.4
      */
     TRUSTING_SUCCEEDED(41, Ocelot.class),
     /**
      * Villager splashes particles during a raid.
+     *
+     * @since 1.16.1
      */
     VILLAGER_SPLASH(42, Villager.class),
     /**
@@ -356,64 +419,81 @@ public enum EntityEffect {
     HURT_BERRY_BUSH(44, LivingEntity.class),
     /**
      * Fox chews the food in its mouth.
+     *
+     * @since 1.16.1
      */
     FOX_CHEW(45, Fox.class),
     /**
      * Entity teleported as a result of chorus fruit or as an enderman.
+     *
+     * @since 1.16.1
      */
     TELEPORT_ENDER(46, LivingEntity.class),
     /**
      * Entity breaks item in main hand.
      *
      * @see org.bukkit.inventory.EquipmentSlot#HAND
+     * @since 1.16.1
      */
     BREAK_EQUIPMENT_MAIN_HAND(47, LivingEntity.class),
     /**
      * Entity breaks item in off-hand.
      *
      * @see org.bukkit.inventory.EquipmentSlot#OFF_HAND
+     * @since 1.16.1
      */
     BREAK_EQUIPMENT_OFF_HAND(48, LivingEntity.class),
     /**
      * Entity breaks item in helmet slot.
      *
      * @see org.bukkit.inventory.EquipmentSlot#HEAD
+     * @since 1.16.1
      */
     BREAK_EQUIPMENT_HELMET(49, LivingEntity.class),
     /**
      * Entity breaks item in chestplate slot.
      *
      * @see org.bukkit.inventory.EquipmentSlot#CHEST
+     * @since 1.16.1
      */
     BREAK_EQUIPMENT_CHESTPLATE(50, LivingEntity.class),
     /**
      * Entity breaks item in legging slot.
      *
      * @see org.bukkit.inventory.EquipmentSlot#LEGS
+     * @since 1.16.1
      */
     BREAK_EQUIPMENT_LEGGINGS(51, LivingEntity.class),
     /**
      * Entity breaks item in boot slot.
      *
      * @see org.bukkit.inventory.EquipmentSlot#FEET
+     * @since 1.16.1
      */
     BREAK_EQUIPMENT_BOOTS(52, LivingEntity.class),
     /**
      * Spawns honey block slide particles at the entity's feet.
+     *
+     * @since 1.20.2
      */
     HONEY_BLOCK_SLIDE_PARTICLES(53, Entity.class),
     /**
      * Spawns honey block fall particles at the entity's feet.
+     *
+     * @since 1.20.2
      */
     HONEY_BLOCK_FALL_PARTICLES(54, LivingEntity.class),
     /**
      * Entity swaps the items in their hand and offhand
+     *
+     * @since 1.20.2
      */
     SWAP_HAND_ITEMS(55, LivingEntity.class),
     /**
      * Stops a wolf that is currently shaking.
      *
      * @see EntityEffect#WOLF_SHAKE
+     * @since 1.20.2
      */
     WOLF_SHAKE_STOP(56, Wolf.class),
     // 57 - unused
@@ -421,26 +501,34 @@ public enum EntityEffect {
      * Goat lowers its head for ramming.
      *
      * @see #GOAT_RAISE_HEAD
+     * @since 1.20.2
      */
     GOAT_LOWER_HEAD(58, Goat.class),
     /**
      * Goat raises its head.
      *
      * @see #GOAT_LOWER_HEAD
+     * @since 1.20.2
      */
     GOAT_RAISE_HEAD(59, Goat.class),
     /**
      * Spawns death smoke particles.
+     *
+     * @since 1.20.2
      */
     SPAWN_DEATH_SMOKE(60, LivingEntity.class),
     /**
      * Warden shakes its tendrils.
+     *
+     * @since 1.20.2
      */
     WARDEN_TENDRIL_SHAKE(61, Warden.class),
     /**
      * Warden performs sonic attack animation.
      * <br>
      * Does not play the sound or fire the beam.
+     *
+     * @since 1.20.2
      */
     WARDEN_SONIC_ATTACK(62, Warden.class),
     /**
@@ -448,10 +536,14 @@ public enum EntityEffect {
      * <br>
      * Sniffer must have a target and be in {@link Sniffer.State#SEARCHING} or
      * {@link Sniffer.State#DIGGING}.
+     *
+     * @since 1.20.2
      */
     SNIFFER_DIG(63, Sniffer.class),
     /**
      * Armadillo peeks out of its shell
+     *
+     * @since 1.21.1
      */
     ARMADILLO_PEEK(64, Armadillo.class),
     /**
@@ -465,24 +557,32 @@ public enum EntityEffect {
      * Entity breaks item in body slot.
      *
      * @see org.bukkit.inventory.EquipmentSlot#BODY
+     * @since 1.21.4
      */
     BREAK_EQUIPMENT_BODY(65, LivingEntity.class),
     /**
      * A creaking shaking when being hit.
+     *
+     * @since 1.21.3
      */
     SHAKE(66, Creaking.class),
     /**
      * Drown particles for entities.
+     *
+     * @since 1.21.6
      */
     DROWN_PARTICLES(67, LivingEntity.class),
     /**
      * Entity breaks item in saddle slot.
      *
      * @see org.bukkit.inventory.EquipmentSlot#SADDLE
+     * @since 1.21.6
      */
     BREAK_EQUIPMENT_SADDLE(68, LivingEntity.class),
     /**
      * Ravager roars.
+     *
+     * @since 1.21.6
      */
     RAVAGER_ROARED(69, Ravager.class),
     ;
@@ -511,6 +611,7 @@ public enum EntityEffect {
      *
      * @return applicable class
      * @deprecated an entity effect can apply to multiple superclasses, see {@link #getApplicableClasses()}
+     * @since 1.12.2
      */
     @NotNull
     @Deprecated(since = "1.21.4")
@@ -522,6 +623,7 @@ public enum EntityEffect {
      * Gets the entity superclasses which this entity effect is applicable to.
      *
      * @return the applicable classes
+     * @since 1.21.4
      */
     @NotNull
     public Set<Class<? extends Entity>> getApplicableClasses() {
@@ -533,6 +635,7 @@ public enum EntityEffect {
      *
      * @param entity the entity to check
      * @return {@code true} if applicable
+     * @since 1.20.2
      */
     public boolean isApplicableTo(@NotNull Entity entity) {
         Preconditions.checkArgument(entity != null, "Entity cannot be null");
@@ -545,6 +648,7 @@ public enum EntityEffect {
      *
      * @param clazz the entity class to check
      * @return {@code true} if applicable
+     * @since 1.20.2
      */
     public boolean isApplicableTo(@NotNull Class<? extends Entity> clazz) {
         Preconditions.checkArgument(clazz != null, "Class cannot be null");

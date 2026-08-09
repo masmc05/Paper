@@ -11,6 +11,7 @@ import org.jspecify.annotations.Nullable;
  * Used to identify a Goal. Consists of a {@link NamespacedKey} and the type of mob the goal can be applied to
  *
  * @param <T> the type of mob the goal can be applied to
+ * @since 1.15.2
  */
 @NullMarked
 public final class GoalKey<T extends Mob> {
@@ -23,10 +24,16 @@ public final class GoalKey<T extends Mob> {
         this.key = key;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public Class<T> getEntityClass() {
         return this.type;
     }
 
+    /**
+     * @since 1.15.2
+     */
     public NamespacedKey getNamespacedKey() {
         return this.key;
     }
@@ -54,6 +61,9 @@ public final class GoalKey<T extends Mob> {
             .toString();
     }
 
+    /**
+     * @since 1.15.2
+     */
     public static <A extends Mob> GoalKey<A> of(Class<A> type, NamespacedKey key) {
         return new GoalKey<>(type, key);
     }

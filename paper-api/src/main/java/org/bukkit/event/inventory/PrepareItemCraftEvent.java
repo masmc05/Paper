@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.1.0
+ */
 public class PrepareItemCraftEvent extends InventoryEvent {
 
     private static final HandlerList HANDLER_LIST = new HandlerList();
@@ -28,6 +31,7 @@ public class PrepareItemCraftEvent extends InventoryEvent {
      * repair.
      *
      * @return The recipe being crafted.
+     * @since 1.1.0
      */
     @Nullable
     public Recipe getRecipe() {
@@ -36,6 +40,7 @@ public class PrepareItemCraftEvent extends InventoryEvent {
 
     /**
      * @return The crafting inventory on which the recipe was formed.
+     * @since 1.1.0
      */
     @NotNull
     @Override
@@ -48,17 +53,24 @@ public class PrepareItemCraftEvent extends InventoryEvent {
      * than a crafting recipe.
      *
      * @return {@code true} if this is a repair.
+     * @since 1.1.0
      */
     public boolean isRepair() {
         return this.repair;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

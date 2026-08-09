@@ -47,17 +47,36 @@ import org.jetbrains.annotations.NotNull;
  *
  * @param <P> the primary object type that is stored in the given tag
  * @param <C> the retrieved object type when applying this tag type
+ * @since 1.14
  */
 public interface PersistentDataType<P, C> {
 
+    /**
+     * @since 1.14
+     */
     /*
         The primitive one value types.
      */
     PersistentDataType<Byte, Byte> BYTE = new PrimitivePersistentDataType<>(Byte.class);
+    /**
+     * @since 1.14
+     */
     PersistentDataType<Short, Short> SHORT = new PrimitivePersistentDataType<>(Short.class);
+    /**
+     * @since 1.14
+     */
     PersistentDataType<Integer, Integer> INTEGER = new PrimitivePersistentDataType<>(Integer.class);
+    /**
+     * @since 1.14
+     */
     PersistentDataType<Long, Long> LONG = new PrimitivePersistentDataType<>(Long.class);
+    /**
+     * @since 1.14
+     */
     PersistentDataType<Float, Float> FLOAT = new PrimitivePersistentDataType<>(Float.class);
+    /**
+     * @since 1.14
+     */
     PersistentDataType<Double, Double> DOUBLE = new PrimitivePersistentDataType<>(Double.class);
 
     /*
@@ -67,19 +86,33 @@ public interface PersistentDataType<P, C> {
      * A convenience implementation to convert between Byte and Boolean as there is
      * no native implementation for booleans. <br>
      * Any byte value not equal to 0 is considered to be true.
+     *
+     * @since 1.19.4
      */
     PersistentDataType<Byte, Boolean> BOOLEAN = new BooleanPersistentDataType();
 
+    /**
+     * @since 1.14
+     */
     /*
         String.
      */
     PersistentDataType<String, String> STRING = new PrimitivePersistentDataType<>(String.class);
 
+    /**
+     * @since 1.14
+     */
     /*
         Primitive Arrays.
      */
     PersistentDataType<byte[], byte[]> BYTE_ARRAY = new PrimitivePersistentDataType<>(byte[].class);
+    /**
+     * @since 1.14
+     */
     PersistentDataType<int[], int[]> INTEGER_ARRAY = new PrimitivePersistentDataType<>(int[].class);
+    /**
+     * @since 1.14
+     */
     PersistentDataType<long[], long[]> LONG_ARRAY = new PrimitivePersistentDataType<>(long[].class);
 
     /*
@@ -89,10 +122,14 @@ public interface PersistentDataType<P, C> {
      * @deprecated Use {@link #LIST}'s {@link ListPersistentDataTypeProvider#dataContainers()} instead as
      * {@link ListPersistentDataType}s offer full support for primitive types, such as the
      * {@link PersistentDataContainer}.
+     * @since 1.16.1
      */
     @Deprecated(since = "1.20.4")
     PersistentDataType<PersistentDataContainer[], PersistentDataContainer[]> TAG_CONTAINER_ARRAY = new PrimitivePersistentDataType<>(PersistentDataContainer[].class);
 
+    /**
+     * @since 1.14
+     */
     /*
         Nested PersistentDataContainer.
      */
@@ -111,6 +148,7 @@ public interface PersistentDataType<P, C> {
      * primitive types when used via a {@link ListPersistentDataType}.
      *
      * @see ListPersistentDataTypeProvider
+     * @since 1.20.4
      */
     ListPersistentDataTypeProvider LIST = new ListPersistentDataTypeProvider();
 
@@ -118,6 +156,7 @@ public interface PersistentDataType<P, C> {
      * Returns the primitive data type of this tag.
      *
      * @return the class
+     * @since 1.14
      */
     @NotNull
     Class<P> getPrimitiveType();
@@ -126,6 +165,7 @@ public interface PersistentDataType<P, C> {
      * Returns the complex object type the primitive value resembles.
      *
      * @return the class type
+     * @since 1.14
      */
     @NotNull
     Class<C> getComplexType();
@@ -137,6 +177,7 @@ public interface PersistentDataType<P, C> {
      * @param complex the complex object instance
      * @param context the context this operation is running in
      * @return the primitive value
+     * @since 1.14
      */
     @NotNull
     P toPrimitive(@NotNull C complex, @NotNull PersistentDataAdapterContext context);
@@ -147,6 +188,7 @@ public interface PersistentDataType<P, C> {
      * @param primitive the primitive value
      * @param context the context this operation is running in
      * @return the complex object instance
+     * @since 1.14
      */
     @NotNull
     C fromPrimitive(@NotNull P primitive, @NotNull PersistentDataAdapterContext context);
@@ -159,6 +201,7 @@ public interface PersistentDataType<P, C> {
      * provide default implementations for the primitive types.
      *
      * @param <P> the generic type of the primitive objects
+     * @since 1.14
      */
     class PrimitivePersistentDataType<P> implements PersistentDataType<P, P> {
 
@@ -168,24 +211,40 @@ public interface PersistentDataType<P, C> {
             this.primitiveType = primitiveType;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.14
+         */
         @NotNull
         @Override
         public Class<P> getPrimitiveType() {
             return primitiveType;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.14
+         */
         @NotNull
         @Override
         public Class<P> getComplexType() {
             return primitiveType;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.14
+         */
         @NotNull
         @Override
         public P toPrimitive(@NotNull P complex, @NotNull PersistentDataAdapterContext context) {
             return complex;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.14
+         */
         @NotNull
         @Override
         public P fromPrimitive(@NotNull P primitive, @NotNull PersistentDataAdapterContext context) {
@@ -197,27 +256,45 @@ public interface PersistentDataType<P, C> {
      * A convenience implementation to convert between Byte and Boolean as there is
      * no native implementation for booleans. <br>
      * Any byte value not equal to 0 is considered to be true.
+     *
+     * @since 1.19.4
      */
     class BooleanPersistentDataType implements PersistentDataType<Byte, Boolean> {
 
+        /**
+         * {@inheritDoc}
+         * @since 1.19.4
+         */
         @NotNull
         @Override
         public Class<Byte> getPrimitiveType() {
             return Byte.class;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.19.4
+         */
         @NotNull
         @Override
         public Class<Boolean> getComplexType() {
             return Boolean.class;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.19.4
+         */
         @NotNull
         @Override
         public Byte toPrimitive(@NotNull Boolean complex, @NotNull PersistentDataAdapterContext context) {
             return (byte) (complex ? 1 : 0);
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.19.4
+         */
         @NotNull
         @Override
         public Boolean fromPrimitive(@NotNull Byte primitive, @NotNull PersistentDataAdapterContext context) {

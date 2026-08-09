@@ -5,24 +5,63 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * An Enum of categories for sounds.
+ *
+ * @since 1.11
  */
 @NullMarked
 public enum SoundCategory implements Sound.Source.Provider {
 
+    /**
+     * @since 1.11
+     */
     // Start generate - SoundCategory
     MASTER,
+    /**
+     * @since 1.11
+     */
     MUSIC,
+    /**
+     * @since 1.11
+     */
     RECORDS,
+    /**
+     * @since 1.11
+     */
     WEATHER,
+    /**
+     * @since 1.11
+     */
     BLOCKS,
+    /**
+     * @since 1.11
+     */
     HOSTILE,
+    /**
+     * @since 1.11
+     */
     NEUTRAL,
+    /**
+     * @since 1.11
+     */
     PLAYERS,
+    /**
+     * @since 1.11
+     */
     AMBIENT,
+    /**
+     * @since 1.11
+     */
     VOICE,
+    /**
+     * @since 1.21.6
+     */
     UI;
     // End generate - SoundCategory
 
+    /**
+     * {@inheritDoc}
+     * @since 1.17
+     */
     @Override
     public Sound.Source soundSource() {
         return switch (this) {

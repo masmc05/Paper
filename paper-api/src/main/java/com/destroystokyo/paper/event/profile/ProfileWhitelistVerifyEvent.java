@@ -38,6 +38,8 @@ import org.jspecify.annotations.Nullable;
  * <p>
  * Plugins may override/control the servers whitelist with this event,
  * and dynamically change the kick message.
+ *
+ * @since 1.12
  */
 @NullMarked
 public class ProfileWhitelistVerifyEvent extends Event {
@@ -62,6 +64,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
     /**
      * @return the currently planned message to send to the user if they are not whitelisted
      * @deprecated use {@link #kickMessage()}
+     * @since 1.12
      */
     @Deprecated
     public @Nullable String getKickMessage() {
@@ -71,6 +74,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
     /**
      * @param kickMessage The message to send to the player on kick if not whitelisted. May set to {@code null} to use the server configured default
      * @deprecated Use {@link #kickMessage(Component)}
+     * @since 1.12
      */
     @Deprecated
     public void setKickMessage(final @Nullable String kickMessage) {
@@ -79,6 +83,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
 
     /**
      * @return the currently planned message to send to the user if they are not whitelisted
+     * @since 1.16.5
      */
     @Contract(pure = true)
     public @Nullable Component kickMessage() {
@@ -87,6 +92,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
 
     /**
      * @param kickMessage The message to send to the player on kick if not whitelisted. May set to {@code null} to use the server configured default
+     * @since 1.16.5
      */
     public void kickMessage(final @Nullable Component kickMessage) {
         this.kickMessage = kickMessage;
@@ -94,6 +100,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
 
     /**
      * @return The profile of the player trying to connect
+     * @since 1.12.2
      */
     public PlayerProfile getPlayerProfile() {
         return this.profile;
@@ -101,6 +108,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
 
     /**
      * @return Whether the player is whitelisted to play on this server (whitelist may be off is why it's true)
+     * @since 1.12
      */
     public boolean isWhitelisted() {
         return this.whitelisted;
@@ -110,6 +118,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
      * Changes the players whitelisted state. {@code false} will deny the login
      *
      * @param whitelisted The new whitelisted state
+     * @since 1.12
      */
     public void setWhitelisted(final boolean whitelisted) {
         this.whitelisted = whitelisted;
@@ -117,6 +126,7 @@ public class ProfileWhitelistVerifyEvent extends Event {
 
     /**
      * @return if the player obtained whitelist status by having op
+     * @since 1.12
      */
     public boolean isOp() {
         return this.isOp;
@@ -124,16 +134,23 @@ public class ProfileWhitelistVerifyEvent extends Event {
 
     /**
      * @return if the server even has whitelist on
+     * @since 1.12
      */
     public boolean isWhitelistEnabled() {
         return this.whitelistEnabled;
     }
 
+    /**
+     * @since 1.12
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

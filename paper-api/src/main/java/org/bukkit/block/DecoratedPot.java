@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a captured state of a decorated pot.
+ *
+ * @since 1.19.4
  */
 public interface DecoratedPot extends io.papermc.paper.block.TileStateInventoryHolder, org.bukkit.loot.Lootable { // Paper - expose loot table & TileStateInventoryHolder
 
@@ -22,6 +24,7 @@ public interface DecoratedPot extends io.papermc.paper.block.TileStateInventoryH
      * @throws IllegalArgumentException if the sherd is not either
      * tagged by {@link Tag#ITEMS_DECORATED_POT_SHERDS}, {@link Material#BRICK},
      * or {@code null}
+     * @since 1.20.1
      */
     public void setSherd(@NotNull Side side, @Nullable Material sherd);
 
@@ -30,6 +33,7 @@ public interface DecoratedPot extends io.papermc.paper.block.TileStateInventoryH
      *
      * @param side the side to get
      * @return the sherd on the side or {@link Material#BRICK} if it's blank
+     * @since 1.20.1
      */
     @NotNull
     public Material getSherd(@NotNull Side side);
@@ -40,6 +44,7 @@ public interface DecoratedPot extends io.papermc.paper.block.TileStateInventoryH
      * will be the value of that side.
      *
      * @return the sherds
+     * @since 1.20.1
      */
     @NotNull
     public Map<Side, Material> getSherds();
@@ -50,16 +55,23 @@ public interface DecoratedPot extends io.papermc.paper.block.TileStateInventoryH
      *
      * @return the sherds
      * @deprecated in favor of {@link #getSherds()}
+     * @since 1.19.4
      */
     @Deprecated(since = "1.20.1")
     @NotNull
     public List<Material> getShards();
 
+    /**
+     * @since 1.20.4
+     */
     // Paper - move docs to TileStateInventoryHolder
     @NotNull
     @Override
     public DecoratedPotInventory getInventory();
 
+    /**
+     * @since 1.20.4
+     */
     @Override // Paper - move docs to TileStateInventoryHolder
     @NotNull
     public DecoratedPotInventory getSnapshotInventory();
@@ -69,25 +81,48 @@ public interface DecoratedPot extends io.papermc.paper.block.TileStateInventoryH
      *
      * @param style the animation style
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.21.11
      */
     public void startWobble(@NotNull WobbleStyle style);
 
     /**
      * A side on a decorated pot. Sides are relative to the facing state of a
      * {@link org.bukkit.block.data.type.DecoratedPot}.
+     *
+     * @since 1.20.1
      */
     public static enum Side {
+        /**
+         * @since 1.20.1
+         */
         BACK,
+        /**
+         * @since 1.20.1
+         */
         LEFT,
+        /**
+         * @since 1.20.1
+         */
         RIGHT,
+        /**
+         * @since 1.20.1
+         */
         FRONT
     }
 
     /**
      * Style a DecoratedPot can wobble in.
+     *
+     * @since 1.21.11
      */
     public static enum WobbleStyle {
+        /**
+         * @since 1.21.11
+         */
         POSITIVE,
+        /**
+         * @since 1.21.11
+         */
         NEGATIVE
     }
 }

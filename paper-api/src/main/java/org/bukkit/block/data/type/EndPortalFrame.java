@@ -5,6 +5,8 @@ import org.bukkit.block.data.Directional;
 /**
  * 'eye' denotes whether this end portal frame has been activated by having an
  * eye of ender placed in it.
+ *
+ * @since 1.13
  */
 public interface EndPortalFrame extends Directional {
 
@@ -12,6 +14,7 @@ public interface EndPortalFrame extends Directional {
      * Gets the value of the 'eye' property.
      *
      * @return the 'eye' value
+     * @since 1.13
      */
     boolean hasEye();
 
@@ -19,6 +22,7 @@ public interface EndPortalFrame extends Directional {
      * Sets the value of the 'eye' property.
      *
      * @param eye the new 'eye' value
+     * @since 1.13
      */
     void setEye(boolean eye);
 }

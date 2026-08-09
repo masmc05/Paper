@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * A listener for a specific Plugin Channel, which will receive notifications
  * of messages sent from a client.
+ *
+ * @since 1.1.0
  */
 @FunctionalInterface
 public interface PluginMessageListener {
@@ -21,6 +23,7 @@ public interface PluginMessageListener {
      * @param player Source of the message.
      * @param message The raw message that was sent.
      * @see #onPluginMessageReceived(String, PlayerConnection, byte[]) for a method that is called for both joined and configuring players
+     * @since 1.1.0
      */
     void onPluginMessageReceived(@NotNull String channel, @NotNull Player player, byte @NotNull [] message);
 
@@ -33,6 +36,7 @@ public interface PluginMessageListener {
      * @param channel Channel that the message was sent through.
      * @param connection Source of the message.
      * @param message The raw message that was sent.
+     * @since 1.21.7
      */
     default void onPluginMessageReceived(@NotNull String channel, @NotNull PlayerConnection connection, byte @NotNull [] message) {
     }

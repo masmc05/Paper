@@ -7,6 +7,7 @@ import com.destroystokyo.paper.event.server.PaperServerListPingEvent;
  * the server list).
  *
  * @see PaperServerListPingEvent
+ * @since 1.12.2
  */
 public interface StatusClient extends NetworkClient {
 
@@ -17,6 +18,7 @@ public interface StatusClient extends NetworkClient {
      * <p>For Vanilla, this returns {@code true} for all clients older than 1.7.</p>
      *
      * @return {@code true} if the client is using legacy ping
+     * @since 1.12.2
      */
     default boolean isLegacy() {
         return false;

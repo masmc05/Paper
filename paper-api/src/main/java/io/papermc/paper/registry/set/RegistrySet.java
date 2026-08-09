@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Contract;
  * </ul>
  *
  * @param <T> registry value type
+ * @since 1.21
  */
 public sealed interface RegistrySet<T> permits RegistryKeySet, RegistryValueSet {
 
@@ -32,6 +33,7 @@ public sealed interface RegistrySet<T> permits RegistryKeySet, RegistryValueSet 
      * @param values the values
      * @return a new registry set
      * @param <T> the type of the values
+     * @since 1.21.7
      */
     @Contract(value = "_, _ -> new", pure = true)
     static <T> RegistryValueSet<T> valueSet(final RegistryKey<T> registryKey, final Iterable<? extends T> values) {
@@ -50,6 +52,7 @@ public sealed interface RegistrySet<T> permits RegistryKeySet, RegistryValueSet 
      * @return a new registry set
      * @param <T> the type of the values
      * @throws IllegalArgumentException if the registry isn't available yet or if any value doesn't have a key in that registry
+     * @since 1.21
      */
     @Contract(value = "_, _ -> new", pure = true)
     static <T extends Keyed> RegistryKeySet<T> keySetFromValues(final RegistryKey<T> registryKey, final Iterable<? extends T> values) { // TODO remove Keyed
@@ -63,6 +66,7 @@ public sealed interface RegistrySet<T> permits RegistryKeySet, RegistryValueSet 
      * @param keys the keys for the values
      * @return a new registry set
      * @param <T> the type of the values
+     * @since 1.21
      */
     @SafeVarargs
     static <T extends Keyed> RegistryKeySet<T> keySet(final RegistryKey<T> registryKey, final TypedKey<T>... keys) { // TODO remove Keyed
@@ -76,6 +80,7 @@ public sealed interface RegistrySet<T> permits RegistryKeySet, RegistryValueSet 
      * @param keys the keys for the values
      * @return a new registry set
      * @param <T> the type of the values
+     * @since 1.21
      */
     @SuppressWarnings("BoundedWildcard")
     @Contract(value = "_, _ -> new", pure = true)
@@ -87,6 +92,7 @@ public sealed interface RegistrySet<T> permits RegistryKeySet, RegistryValueSet 
      * Get the registry key for this set.
      *
      * @return the registry key
+     * @since 1.21
      */
     RegistryKey<T> registryKey();
 
@@ -94,6 +100,7 @@ public sealed interface RegistrySet<T> permits RegistryKeySet, RegistryValueSet 
      * Get the size of this set.
      *
      * @return the size
+     * @since 1.21
      */
     int size();
 
@@ -101,6 +108,7 @@ public sealed interface RegistrySet<T> permits RegistryKeySet, RegistryValueSet 
      * Checks if the registry set is empty.
      *
      * @return true, if empty
+     * @since 1.21
      */
     default boolean isEmpty() {
         return this.size() == 0;

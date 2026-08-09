@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Raised when a living entity exits a vehicle.
+ *
+ * @since 1.0.0
  */
 public class VehicleExitEvent extends VehicleEvent implements Cancellable {
 
@@ -35,17 +37,24 @@ public class VehicleExitEvent extends VehicleEvent implements Cancellable {
      * Get the living entity that exited the vehicle.
      *
      * @return The entity.
+     * @since 1.0.0
      */
     @NotNull
     public LivingEntity getExited() {
         return this.exited;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         if (cancel && !this.isCancellable) {
@@ -54,16 +63,25 @@ public class VehicleExitEvent extends VehicleEvent implements Cancellable {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.2
+     */
     public boolean isCancellable() {
         return this.isCancellable;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

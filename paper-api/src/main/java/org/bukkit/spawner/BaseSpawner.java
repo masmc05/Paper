@@ -14,6 +14,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Represents a basic entity spawner. <br>
  * May be a {@link SpawnerMinecart}, {@link CreatureSpawner} or {@link TrialSpawnerConfiguration}.
+ *
+ * @since 1.21
  */
 @NullMarked
 public interface BaseSpawner {
@@ -22,6 +24,7 @@ public interface BaseSpawner {
      * Get the spawner's creature type.
      *
      * @return The creature type or null if it not set.
+     * @since 1.21
      */
     @Nullable
     EntityType getSpawnedType();
@@ -31,6 +34,7 @@ public interface BaseSpawner {
      * This will override any entities that have been added with {@link #addPotentialSpawn}
      *
      * @param creatureType The creature type or null to clear.
+     * @since 1.21
      */
     void setSpawnedType(@Nullable EntityType creatureType);
 
@@ -40,6 +44,7 @@ public interface BaseSpawner {
      * This is the delay, in ticks, until the spawner will spawn its next mob.
      *
      * @return The delay.
+     * @since 1.21
      */
     int getDelay();
 
@@ -47,6 +52,7 @@ public interface BaseSpawner {
      * Set the spawner's delay.
      *
      * @param delay The delay.
+     * @since 1.21
      */
     void setDelay(int delay);
 
@@ -61,6 +67,7 @@ public interface BaseSpawner {
      *
      * @return the maximum distance(squared) a player can be in order for this
      * spawner to be active.
+     * @since 1.21
      */
     int getRequiredPlayerRange();
 
@@ -73,6 +80,7 @@ public interface BaseSpawner {
      *
      * @param requiredPlayerRange the maximum distance (squared) a player can be
      * in order for this spawner to be active.
+     * @since 1.21
      */
     void setRequiredPlayerRange(int requiredPlayerRange);
 
@@ -89,6 +97,7 @@ public interface BaseSpawner {
      * Default value is 4.
      *
      * @return the spawn range
+     * @since 1.21
      */
     int getSpawnRange();
 
@@ -98,6 +107,7 @@ public interface BaseSpawner {
      *
      * @param spawnRange the new spawn range
      * @see #getSpawnRange()
+     * @since 1.21
      */
     void setSpawnRange(int spawnRange);
 
@@ -110,6 +120,7 @@ public interface BaseSpawner {
      *
      * @return the entity snapshot or null if no entities have been assigned to this
      *         spawner.
+     * @since 1.21
      */
     @Nullable
     EntitySnapshot getSpawnedEntity();
@@ -123,6 +134,7 @@ public interface BaseSpawner {
      * health, and velocity. <br>
      *
      * @param snapshot the entity snapshot or null to clear
+     * @since 1.21
      */
     void setSpawnedEntity(@Nullable EntitySnapshot snapshot);
 
@@ -132,6 +144,7 @@ public interface BaseSpawner {
      * {@link #addPotentialSpawn}
      *
      * @param spawnerEntry the spawner entry to use
+     * @since 1.21
      */
     void setSpawnedEntity(SpawnerEntry spawnerEntry);
 
@@ -147,6 +160,7 @@ public interface BaseSpawner {
      * @param snapshot  the snapshot that will be spawned
      * @param weight    the weight
      * @param spawnRule the spawn rule for this entity, or null
+     * @since 1.21
      */
     void addPotentialSpawn(EntitySnapshot snapshot, int weight, @Nullable SpawnRule spawnRule);
 
@@ -156,6 +170,7 @@ public interface BaseSpawner {
      *
      * @param spawnerEntry the spawner entry to use
      * @see #addPotentialSpawn(EntitySnapshot, int, SpawnRule)
+     * @since 1.21
      */
     void addPotentialSpawn(final SpawnerEntry spawnerEntry);
 
@@ -165,6 +180,7 @@ public interface BaseSpawner {
      * {@link #addPotentialSpawn}
      *
      * @param entries the list of entries
+     * @since 1.21
      */
     void setPotentialSpawns(final Collection<SpawnerEntry> entries);
 
@@ -177,6 +193,7 @@ public interface BaseSpawner {
      * @return a list of potential spawns from this spawner, or an empty list if no
      *         entities have been assigned to this spawner
      * @see #getSpawnedType()
+     * @since 1.21
      */
     List<SpawnerEntry> getPotentialSpawns();
 }

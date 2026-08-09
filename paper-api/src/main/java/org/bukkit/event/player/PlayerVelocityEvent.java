@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when the velocity of a player changes.
+ *
+ * @since 1.0.0
  */
 public class PlayerVelocityEvent extends PlayerEvent implements Cancellable {
 
@@ -27,6 +29,7 @@ public class PlayerVelocityEvent extends PlayerEvent implements Cancellable {
      * Gets the velocity vector that will be sent to the player
      *
      * @return Vector the player will get
+     * @since 1.0.0
      */
     @NotNull
     public Vector getVelocity() {
@@ -37,27 +40,40 @@ public class PlayerVelocityEvent extends PlayerEvent implements Cancellable {
      * Sets the velocity vector in meters per tick that will be sent to the player
      *
      * @param velocity The velocity vector that will be sent to the player
+     * @since 1.0.0
      */
     public void setVelocity(@NotNull Vector velocity) {
         this.velocity = velocity.clone();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

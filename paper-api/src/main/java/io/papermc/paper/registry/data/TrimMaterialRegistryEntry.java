@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Unmodifiable;
 
 /**
  * A data-centric version-specific registry entry for the {@link org.bukkit.inventory.meta.trim.TrimMaterial} type.
+ *
+ * @since 26.2
  */
 @ApiStatus.NonExtendable
 public interface TrimMaterialRegistryEntry {
@@ -21,6 +23,7 @@ public interface TrimMaterialRegistryEntry {
      * Provides the base asset path for the trim material.
      *
      * @return the base asset path
+     * @since 26.2
      */
     @Contract(pure = true)
     @KeyPattern.Value String baseAssetPath();
@@ -32,6 +35,7 @@ public interface TrimMaterialRegistryEntry {
      *
      * @return the asset path overrides
      * @see Equippable#assetId()
+     * @since 26.2
      */
     @Contract(pure = true)
     @Unmodifiable Map<Key, String> assetPathOverrides();
@@ -40,6 +44,7 @@ public interface TrimMaterialRegistryEntry {
      * Provides the description of the trim material.
      *
      * @return the description
+     * @since 26.2
      */
     @Contract(pure = true)
     Component description();
@@ -52,6 +57,8 @@ public interface TrimMaterialRegistryEntry {
      *     <li>{@link #baseAssetPath(String)}</li>
      *     <li>{@link #description(Component)}</li>
      * </ul>
+     *
+     * @since 26.2
      */
     @ApiStatus.NonExtendable
     interface Builder extends TrimMaterialRegistryEntry, RegistryBuilder<TrimMaterial> {
@@ -62,6 +69,7 @@ public interface TrimMaterialRegistryEntry {
          * @param baseAssetPath the base asset path
          * @return this builder instance
          * @see #baseAssetPath()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder baseAssetPath(@KeyPattern.Value String baseAssetPath);
@@ -72,6 +80,7 @@ public interface TrimMaterialRegistryEntry {
          * @param assetPathOverrides the asset path overrides
          * @return this builder instance
          * @see #assetPathOverrides()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder assetPathOverrides(Map<Key, String> assetPathOverrides);
@@ -82,6 +91,7 @@ public interface TrimMaterialRegistryEntry {
          * @param description the description
          * @return this builder instance
          * @see #description()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder description(Component description);

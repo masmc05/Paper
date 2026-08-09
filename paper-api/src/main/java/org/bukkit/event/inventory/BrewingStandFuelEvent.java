@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Called when an ItemStack is about to increase the fuel level of a brewing
  * stand.
+ *
+ * @since 1.11
  */
 public class BrewingStandFuelEvent extends BlockEvent implements Cancellable {
 
@@ -33,6 +35,7 @@ public class BrewingStandFuelEvent extends BlockEvent implements Cancellable {
      * Gets the ItemStack of the fuel before the amount was subtracted.
      *
      * @return the fuel ItemStack
+     * @since 1.11
      */
     @NotNull
     public ItemStack getFuel() {
@@ -44,6 +47,7 @@ public class BrewingStandFuelEvent extends BlockEvent implements Cancellable {
      * brewing operation.
      *
      * @return the fuel power for this fuel
+     * @since 1.11
      */
     public int getFuelPower() {
         return this.fuelPower;
@@ -54,6 +58,7 @@ public class BrewingStandFuelEvent extends BlockEvent implements Cancellable {
      * brewing operation.
      *
      * @param fuelPower the fuel power for this fuel
+     * @since 1.11
      */
     public void setFuelPower(int fuelPower) {
         this.fuelPower = fuelPower;
@@ -63,6 +68,7 @@ public class BrewingStandFuelEvent extends BlockEvent implements Cancellable {
      * Gets whether the brewing stand's fuel will be reduced / consumed or not.
      *
      * @return whether the fuel will be reduced or not
+     * @since 1.11
      */
     public boolean isConsuming() {
         return this.consuming;
@@ -72,27 +78,40 @@ public class BrewingStandFuelEvent extends BlockEvent implements Cancellable {
      * Sets whether the brewing stand's fuel will be reduced / consumed or not.
      *
      * @param consuming whether the fuel will be reduced or not
+     * @since 1.11
      */
     public void setConsuming(boolean consuming) {
         this.consuming = consuming;
     }
 
+    /**
+     * @since 1.11
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.11
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.11
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.11
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

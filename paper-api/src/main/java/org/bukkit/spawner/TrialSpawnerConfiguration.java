@@ -7,6 +7,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents one of the configurations of a trial spawner.
+ *
+ * @since 1.21
  */
 @NullMarked
 @ApiStatus.Experimental
@@ -17,6 +19,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * cooldown.
      *
      * @return the number of entities
+     * @since 1.21
      */
     float getBaseSpawnsBeforeCooldown();
 
@@ -25,6 +28,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * cooldown.
      *
      * @param amount the number of entities
+     * @since 1.21
      */
     void setBaseSpawnsBeforeCooldown(float amount);
 
@@ -34,6 +38,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * entities until the existing entities are killed or move too far away.
      *
      * @return the number of entities
+     * @since 1.21
      */
     float getBaseSimultaneousEntities();
 
@@ -43,6 +48,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * entities until the existing entities are killed or move too far away.
      *
      * @param amount the number of entities
+     * @since 1.21
      */
     void setBaseSimultaneousEntities(float amount);
 
@@ -51,6 +57,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * before going into cooldown.
      *
      * @return the number of entities
+     * @since 1.21
      */
     float getAdditionalSpawnsBeforeCooldown();
 
@@ -59,6 +66,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * before going into cooldown.
      *
      * @param amount the number of entities
+     * @since 1.21
      */
     void setAdditionalSpawnsBeforeCooldown(float amount);
 
@@ -69,6 +77,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * entities until the existing entities are killed or move too far away.
      *
      * @return the number of entities
+     * @since 1.21
      */
     float getAdditionalSimultaneousEntities();
 
@@ -79,6 +88,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * entities until the existing entities are killed or move too far away.
      *
      * @param amount the number of entities
+     * @since 1.21
      */
     void setAdditionalSimultaneousEntities(float amount);
 
@@ -88,6 +98,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      *
      * @return a map of loot tables and their associated weight, or an empty
      *     map if there are none
+     * @since 1.21
      */
     Map<LootTable, Integer> getPossibleRewards();
 
@@ -97,6 +108,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      *
      * @param table the loot table
      * @param weight the weight, must be at least 1
+     * @since 1.21
      */
     void addPossibleReward(LootTable table, int weight);
 
@@ -105,6 +117,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      * can pick a reward from.
      *
      * @param table the loot table
+     * @since 1.21
      */
     void removePossibleReward(LootTable table);
 
@@ -116,6 +129,7 @@ public interface TrialSpawnerConfiguration extends BaseSpawner {
      *
      * @param rewards a map of loot tables and their weights, or null to clear all
      *     possible tables
+     * @since 1.21
      */
     void setPossibleRewards(Map<LootTable, Integer> rewards);
 }

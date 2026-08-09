@@ -10,6 +10,7 @@ import org.jetbrains.annotations.ApiStatus;
  *
  * @param <API> the registry's type
  * @param <ENTRY> the type of the registry entry (for inlined values)
+ * @since 1.21.6
  */
 @ApiStatus.Experimental
 public sealed interface RegistryHolder<API, ENTRY> permits RegistryHolder.Reference, RegistryHolder.Inlined {
@@ -20,6 +21,7 @@ public sealed interface RegistryHolder<API, ENTRY> permits RegistryHolder.Refere
      *
      * @param <API> the registry's type
      * @param <ENTRY> the type of the registry entry
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     non-sealed interface Reference<API, ENTRY> extends RegistryHolder<API, ENTRY> {
@@ -28,6 +30,7 @@ public sealed interface RegistryHolder<API, ENTRY> permits RegistryHolder.Refere
          * The key of the referenced value.
          *
          * @return the key of the value
+         * @since 1.21.6
          */
         TypedKey<API> key();
     }
@@ -37,6 +40,7 @@ public sealed interface RegistryHolder<API, ENTRY> permits RegistryHolder.Refere
      *
      * @param <API> the registry's type
      * @param <ENTRY> the type of the registry entry
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     non-sealed interface Inlined<API, ENTRY> extends RegistryHolder<API, ENTRY> {
@@ -45,6 +49,7 @@ public sealed interface RegistryHolder<API, ENTRY> permits RegistryHolder.Refere
          * The inlined entry.
          *
          * @return the inlined entry
+         * @since 1.21.6
          */
         ENTRY entry();
     }

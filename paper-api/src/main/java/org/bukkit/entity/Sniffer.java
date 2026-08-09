@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a Sniffer.
+ *
+ * @since 1.19.4
  */
 public interface Sniffer extends Animals {
 
@@ -14,6 +16,7 @@ public interface Sniffer extends Animals {
      * Gets the locations explored by the sniffer.
      *
      * @return a collection of locations
+     * @since 1.19.4
      */
     @NotNull
     public Collection<Location> getExploredLocations();
@@ -23,6 +26,7 @@ public interface Sniffer extends Animals {
      *
      * @param location the location to remove
      * @see #getExploredLocations()
+     * @since 1.19.4
      */
     public void removeExploredLocation(@NotNull Location location);
 
@@ -34,6 +38,7 @@ public interface Sniffer extends Animals {
      *
      * @param location the location to add
      * @see #getExploredLocations()
+     * @since 1.19.4
      */
     public void addExploredLocation(@NotNull Location location);
 
@@ -41,6 +46,7 @@ public interface Sniffer extends Animals {
      * Get the current state of the sniffer.
      *
      * @return the state of the sniffer
+     * @since 1.19.4
      */
     @NotNull
     public Sniffer.State getState();
@@ -51,6 +57,7 @@ public interface Sniffer extends Animals {
      * This will also make the sniffer make the transition to the new state.
      *
      * @param state the new state
+     * @since 1.19.4
      */
     public void setState(@NotNull Sniffer.State state);
 
@@ -58,6 +65,7 @@ public interface Sniffer extends Animals {
      * Try to get a possible location where the sniffer can dig.
      *
      * @return a {@link Location} if found or null
+     * @since 1.19.4
      */
     @Nullable
     public Location findPossibleDigLocation();
@@ -67,20 +75,44 @@ public interface Sniffer extends Animals {
      * its head.
      *
      * @return {@code true} if can dig or {@code false} otherwise
+     * @since 1.19.4
      */
     public boolean canDig();
 
     /**
      * Represents the current state of the Sniffer.
+     *
+     * @since 1.19.4
      */
     public enum State {
+        /**
+         * @since 1.19.4
+         */
         // Start generate - SnifferState
         IDLING,
+        /**
+         * @since 1.19.4
+         */
         FEELING_HAPPY,
+        /**
+         * @since 1.19.4
+         */
         SCENTING,
+        /**
+         * @since 1.19.4
+         */
         SNIFFING,
+        /**
+         * @since 1.19.4
+         */
         SEARCHING,
+        /**
+         * @since 1.19.4
+         */
         DIGGING,
+        /**
+         * @since 1.19.4
+         */
         RISING;
         // End generate - SnifferState
     }

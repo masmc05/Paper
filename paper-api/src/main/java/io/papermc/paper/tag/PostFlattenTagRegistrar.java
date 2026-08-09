@@ -41,6 +41,7 @@ import org.jspecify.annotations.NullMarked;
  *
  * @param <T> the type of value in the tag
  * @see PreFlattenTagRegistrar
+ * @since 1.21.1
  */
 @ApiStatus.Experimental
 @NullMarked
@@ -51,6 +52,7 @@ public interface PostFlattenTagRegistrar<T> extends Registrar {
      * Get the registry key for this tag registrar.
      *
      * @return the registry key
+     * @since 1.21.1
      */
     RegistryKey<T> registryKey();
 
@@ -58,6 +60,7 @@ public interface PostFlattenTagRegistrar<T> extends Registrar {
      * Get a copy of all tags currently held in this registrar.
      *
      * @return an immutable map of all tags
+     * @since 1.21.1
      */
     @Contract(value = "-> new", pure = true)
     @Unmodifiable Map<TagKey<T>, Collection<TypedKey<T>>> getAllTags();
@@ -67,6 +70,7 @@ public interface PostFlattenTagRegistrar<T> extends Registrar {
      *
      * @param tagKey the key to check for
      * @return true if the tag exists, false otherwise
+     * @since 1.21.1
      */
     @Contract(pure = true)
     boolean hasTag(TagKey<T> tagKey);
@@ -79,6 +83,7 @@ public interface PostFlattenTagRegistrar<T> extends Registrar {
      * @return an immutable list of tag entries
      * @throws java.util.NoSuchElementException if the tag does not exist
      * @see #hasTag(TagKey)
+     * @since 1.21.1
      */
     @Contract(value = "_ -> new", pure = true)
     @Unmodifiable Collection<TypedKey<T>> getTag(TagKey<T> tagKey);
@@ -89,6 +94,7 @@ public interface PostFlattenTagRegistrar<T> extends Registrar {
      * @param tagKey the key of the tag to add to
      * @param values the values to add
      * @see #setTag(TagKey, Collection)
+     * @since 1.21.1
      */
     @Contract(mutates = "this")
     void addToTag(TagKey<T> tagKey, Collection<TypedKey<T>> values);
@@ -100,6 +106,7 @@ public interface PostFlattenTagRegistrar<T> extends Registrar {
      * @param tagKey the key of the tag to set
      * @param values the values to set
      * @see #addToTag(TagKey, Collection)
+     * @since 1.21.1
      */
     @Contract(mutates = "this")
     void setTag(TagKey<T> tagKey, Collection<TypedKey<T>> values);

@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
  * <li>A Brewing-Stand starts brewing {@link BrewingStartEvent}</li>
  * <li>A Campfire starts cooking {@link CampfireStartEvent}</li>
  * </ul>
+ *
+ * @since 1.19.3
  */
 public class InventoryBlockStartEvent extends BlockEvent {
 
@@ -31,18 +33,25 @@ public class InventoryBlockStartEvent extends BlockEvent {
      * Gets the source ItemStack for this event.
      *
      * @return the source ItemStack
+     * @since 1.19.3
      */
     @NotNull
     public ItemStack getSource() {
         return this.source;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

@@ -6,6 +6,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A wild tameable cat
+ *
+ * @since 1.2.2
  */
 public interface Ocelot extends Animals {
 
@@ -13,6 +15,7 @@ public interface Ocelot extends Animals {
      * Checks if this ocelot trusts players.
      *
      * @return true if it trusts players
+     * @since 1.17
      */
     public boolean isTrusting();
 
@@ -20,6 +23,7 @@ public interface Ocelot extends Animals {
      * Sets if this ocelot trusts players.
      *
      * @param trust true if it trusts players
+     * @since 1.17
      */
     public void setTrusting(boolean trust);
 
@@ -28,6 +32,7 @@ public interface Ocelot extends Animals {
      *
      * @return Type of the cat.
      * @deprecated Cats are now a separate entity.
+     * @since 1.2.2
      */
     @NotNull
     @Deprecated(since = "1.19.4")
@@ -38,6 +43,7 @@ public interface Ocelot extends Animals {
      *
      * @param type New type of this cat.
      * @deprecated Cats are now a separate entity.
+     * @since 1.2.2
      */
     @Deprecated(since = "1.19.4")
     public void setCatType(@NotNull Type type);
@@ -46,12 +52,25 @@ public interface Ocelot extends Animals {
      * Represents the various different cat types there are.
      *
      * @deprecated Cats are now a separate entity.
+     * @since 1.2.2
      */
     @Deprecated(since = "1.14")
     public enum Type {
+        /**
+         * @since 1.2.2
+         */
         WILD_OCELOT(0),
+        /**
+         * @since 1.2.2
+         */
         BLACK_CAT(1),
+        /**
+         * @since 1.2.2
+         */
         RED_CAT(2),
+        /**
+         * @since 1.2.2
+         */
         SIAMESE_CAT(3);
 
         private static final Type[] types = new Type[Type.values().length];

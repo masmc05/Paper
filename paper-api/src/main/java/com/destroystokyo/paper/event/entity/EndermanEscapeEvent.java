@@ -7,6 +7,9 @@ import org.bukkit.event.entity.EntityEvent;
 import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
+/**
+ * @since 1.12.2
+ */
 @NullMarked
 public class EndermanEscapeEvent extends EntityEvent implements Cancellable {
 
@@ -21,6 +24,9 @@ public class EndermanEscapeEvent extends EntityEvent implements Cancellable {
         this.reason = reason;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public Enderman getEntity() {
         return (Enderman) super.getEntity();
@@ -30,11 +36,15 @@ public class EndermanEscapeEvent extends EntityEvent implements Cancellable {
      * Gets the reason the enderman is trying to escape.
      *
      * @return The reason
+     * @since 1.12.2
      */
     public Reason getReason() {
         return this.reason;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -46,40 +56,61 @@ public class EndermanEscapeEvent extends EntityEvent implements Cancellable {
      * If this escape normally had resulted in damage avoidance such as indirect,
      * the enderman will now take damage. However, this does not change the Enderman's
      * innate immunities or damage behavior like arrows where the damage never happens.
+     *
+     * @since 1.12.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public enum Reason {
         /**
          * The enderman has stopped attacking and ran away
+         *
+         * @since 1.12.2
          */
         RUNAWAY,
         /**
          * The enderman has teleported away due to indirect damage (ranged)
+         *
+         * @since 1.12.2
          */
         INDIRECT,
         /**
          * The enderman has teleported away due to a critical hit
+         *
+         * @since 1.12.2
          */
         CRITICAL_HIT,
         /**
          * The enderman has teleported away due to the player staring at it during combat
+         *
+         * @since 1.12.2
          */
         STARE,
         /**
          * Specific case for {@link #CRITICAL_HIT} where the enderman is taking damage by drowning (ex: rain)
+         *
+         * @since 1.12.2
          */
         DROWN
     }

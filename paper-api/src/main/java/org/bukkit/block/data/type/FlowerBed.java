@@ -4,6 +4,8 @@ import org.bukkit.block.data.Directional;
 
 /**
  * 'flower_amount' represents the number of flowers.
+ *
+ * @since 1.21.6
  */
 public interface FlowerBed extends Directional {
 
@@ -11,6 +13,7 @@ public interface FlowerBed extends Directional {
      * Gets the value of the 'flower_amount' property.
      *
      * @return the 'flower_amount' value
+     * @since 1.21.6
      */
     int getFlowerAmount();
 
@@ -18,6 +21,7 @@ public interface FlowerBed extends Directional {
      * Sets the value of the 'flower_amount' property.
      *
      * @param flowerAmount the new 'flower_amount' value
+     * @since 1.21.6
      */
     void setFlowerAmount(int flowerAmount);
 
@@ -26,6 +30,7 @@ public interface FlowerBed extends Directional {
      * Gets the minimum allowed value of the 'flower_amount' property.
      *
      * @return the minimum 'flower_amount' value
+     * @since 1.21.6
      */
     int getMinimumFlowerAmount();
     // Paper end
@@ -34,6 +39,7 @@ public interface FlowerBed extends Directional {
      * Gets the maximum allowed value of the 'flower_amount' property.
      *
      * @return the maximum 'flower_amount' value
+     * @since 1.21.6
      */
     int getMaximumFlowerAmount();
 }

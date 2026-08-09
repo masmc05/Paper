@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a chunk is loaded
+ *
+ * @since 1.0.0
  */
 public class ChunkLoadEvent extends ChunkEvent {
 
@@ -28,17 +30,24 @@ public class ChunkLoadEvent extends ChunkEvent {
      * Use a {@link BlockPopulator} instead.
      *
      * @return {@code true} if the chunk is new, otherwise {@code false}
+     * @since 1.0.0
      */
     public boolean isNewChunk() {
         return this.newChunk;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

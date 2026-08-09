@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Called when a player edits or signs a book and quill item. If the event is
  * cancelled, no changes are made to the BookMeta
+ *
+ * @since 1.6.1
  */
 public class PlayerEditBookEvent extends PlayerEvent implements Cancellable {
 
@@ -41,6 +43,7 @@ public class PlayerEditBookEvent extends PlayerEvent implements Cancellable {
      * change the existing book meta.
      *
      * @return the book meta currently on the book
+     * @since 1.6.1
      */
     @NotNull
     public BookMeta getPreviousBookMeta() {
@@ -55,6 +58,7 @@ public class PlayerEditBookEvent extends PlayerEvent implements Cancellable {
      * book.
      *
      * @return the book meta that the player is attempting to add
+     * @since 1.6.1
      */
     @NotNull
     public BookMeta getNewBookMeta() {
@@ -81,6 +85,7 @@ public class PlayerEditBookEvent extends PlayerEvent implements Cancellable {
      *
      * @param newBookMeta new book meta
      * @throws IllegalArgumentException if the new book meta is null
+     * @since 1.6.1
      */
     public void setNewBookMeta(@NotNull BookMeta newBookMeta) throws IllegalArgumentException {
         Preconditions.checkArgument(newBookMeta != null, "New book meta must not be null");
@@ -93,6 +98,7 @@ public class PlayerEditBookEvent extends PlayerEvent implements Cancellable {
      * Material changes from BOOK_AND_QUILL to WRITTEN_BOOK.
      *
      * @return {@code true} if the book is being signed
+     * @since 1.6.1
      */
     public boolean isSigning() {
         return this.isSigning;
@@ -103,27 +109,40 @@ public class PlayerEditBookEvent extends PlayerEvent implements Cancellable {
      * Material changes from BOOK_AND_QUILL to WRITTEN_BOOK.
      *
      * @param signing whether the book is being signed.
+     * @since 1.6.1
      */
     public void setSigning(boolean signing) {
         this.isSigning = signing;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.6.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

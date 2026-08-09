@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
  * Called when an entity changes its pose.
  *
  * @see Entity#getPose()
+ * @since 1.14
  */
 public class EntityPoseChangeEvent extends EntityEvent {
 
@@ -27,18 +28,25 @@ public class EntityPoseChangeEvent extends EntityEvent {
      * Gets the entity's new pose.
      *
      * @return the new pose
+     * @since 1.14
      */
     @NotNull
     public Pose getPose() {
         return this.pose;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

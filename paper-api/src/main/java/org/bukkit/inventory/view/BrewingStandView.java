@@ -7,9 +7,14 @@ import org.jetbrains.annotations.NotNull;
 /**
  * An instance of {@link InventoryView} which provides extra methods related to
  * brewing stand view data.
+ *
+ * @since 1.21
  */
 public interface BrewingStandView extends InventoryView {
 
+    /**
+     * @since 1.21.1
+     */
     @NotNull
     @Override
     BrewerInventory getTopInventory();
@@ -20,6 +25,7 @@ public interface BrewingStandView extends InventoryView {
      * The default maximum fuel level in minecraft is 20.
      *
      * @return The amount of fuel level left
+     * @since 1.21
      */
     int getFuelLevel();
 
@@ -27,6 +33,7 @@ public interface BrewingStandView extends InventoryView {
      * Gets the amount of brewing ticks left.
      *
      * @return The amount of ticks left for the brewing task
+     * @since 1.21
      */
     int getBrewingTicks();
 
@@ -35,6 +42,7 @@ public interface BrewingStandView extends InventoryView {
      *
      * @param level the level of the fuel, which is no less than 0
      * @throws IllegalArgumentException if the level is less than 0
+     * @since 1.21
      */
     void setFuelLevel(final int level) throws IllegalArgumentException;
 
@@ -43,6 +51,7 @@ public interface BrewingStandView extends InventoryView {
      *
      * @param ticks the ticks left, which is no less than 0
      * @throws IllegalArgumentException if the ticks are less than 0
+     * @since 1.21
      */
     void setBrewingTicks(final int ticks) throws IllegalArgumentException;
 
@@ -54,6 +63,7 @@ public interface BrewingStandView extends InventoryView {
      *
      * @param recipeBrewTime recipe brew time (in ticks)
      * @throws IllegalArgumentException if the recipe brew time is non-positive
+     * @since 1.21.1
      */
     void setRecipeBrewTime(@org.jetbrains.annotations.Range(from = 1, to = Integer.MAX_VALUE) int recipeBrewTime);
 
@@ -63,6 +73,7 @@ public interface BrewingStandView extends InventoryView {
      * {@link #getBrewingTicks()}.
      *
      * @return recipe brew time (in ticks)
+     * @since 1.21.1
      */
     @org.jetbrains.annotations.Range(from = 1, to = Integer.MAX_VALUE) int getRecipeBrewTime();
     // Paper end - Add recipeBrewTime

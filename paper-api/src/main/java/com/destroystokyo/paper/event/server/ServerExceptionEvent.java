@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called whenever an exception is thrown in a recoverable section of the server.
+ *
+ * @since 1.9.4
  */
 @NullMarked
 public class ServerExceptionEvent extends Event {
@@ -27,16 +29,23 @@ public class ServerExceptionEvent extends Event {
      * Gets the wrapped exception that was thrown.
      *
      * @return Exception thrown
+     * @since 1.9.4
      */
     public ServerException getException() {
         return this.exception;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * Called when a {@link Raider} is revealed by a bell.
  *
  * @deprecated use {@link org.bukkit.event.block.BellResonateEvent}
+ * @since 1.16.5
  */
 @Deprecated(since = "1.19.4")
 public class BellRevealRaiderEvent extends BlockEvent implements Cancellable {
@@ -31,12 +32,16 @@ public class BellRevealRaiderEvent extends BlockEvent implements Cancellable {
      * Gets the raider that the bell revealed.
      *
      * @return The raider
+     * @since 1.16.5
      */
     @NotNull
     public Raider getEntity() {
         return this.raider;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -46,17 +51,25 @@ public class BellRevealRaiderEvent extends BlockEvent implements Cancellable {
      * {@inheritDoc}
      * <p>
      * This does not cancel the particle effects shown on the bell, only the entity.
+     *
+     * @since 1.16.5
      */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public @NotNull HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static @NotNull HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

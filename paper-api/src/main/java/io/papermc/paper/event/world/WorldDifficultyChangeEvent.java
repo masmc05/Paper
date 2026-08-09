@@ -14,6 +14,8 @@ import org.jspecify.annotations.Nullable;
  * <p>
  * If the world is in {@link World#isHardcore() hardcore}
  * the resulting difficulty will always be {@link Difficulty#HARD}
+ *
+ * @since 1.21.8
  */
 @NullMarked
 public class WorldDifficultyChangeEvent extends WorldEvent {
@@ -34,6 +36,7 @@ public class WorldDifficultyChangeEvent extends WorldEvent {
      * Gets the command source associated with this event.
      *
      * @return {@code null} if the difficulty was changed via api, otherwise the {@link CommandSourceStack}.
+     * @since 1.21.8
      */
     public @Nullable CommandSourceStack getCommandSource() {
         return this.commandSource;
@@ -43,16 +46,23 @@ public class WorldDifficultyChangeEvent extends WorldEvent {
      * Gets the new difficulty of the world.
      *
      * @return the new difficulty.
+     * @since 1.21.8
      */
     public Difficulty getDifficulty() {
         return this.difficulty;
     }
 
+    /**
+     * @since 1.21.8
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.8
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

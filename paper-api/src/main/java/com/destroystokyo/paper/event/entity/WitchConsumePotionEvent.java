@@ -11,6 +11,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Fired when a witch consumes the potion in their hand to buff themselves.
+ *
+ * @since 1.12.2
  */
 @NullMarked
 public class WitchConsumePotionEvent extends EntityEvent implements Cancellable {
@@ -26,6 +28,9 @@ public class WitchConsumePotionEvent extends EntityEvent implements Cancellable 
         this.potion = potion;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public Witch getEntity() {
         return (Witch) super.getEntity();
@@ -33,6 +38,7 @@ public class WitchConsumePotionEvent extends EntityEvent implements Cancellable 
 
     /**
      * @return the potion the witch will consume and have the effects applied.
+     * @since 1.12.2
      */
     public @Nullable ItemStack getPotion() {
         return this.potion;
@@ -42,6 +48,7 @@ public class WitchConsumePotionEvent extends EntityEvent implements Cancellable 
      * Sets the potion to be consumed and applied to the witch.
      *
      * @param potion The potion
+     * @since 1.12.2
      */
     public void setPotion(final @Nullable ItemStack potion) {
         this.potion = potion != null ? potion.clone() : null;
@@ -49,22 +56,32 @@ public class WitchConsumePotionEvent extends EntityEvent implements Cancellable 
 
     /**
      * @return Event was cancelled or potion was {@code null}
+     * @since 1.12.2
      */
     @Override
     public boolean isCancelled() {
         return this.cancelled || this.potion == null;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

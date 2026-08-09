@@ -16,8 +16,13 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Represents a unique permission that may be attached to a {@link
  * Permissible}
+ *
+ * @since 1.0.0
  */
 public class Permission {
+    /**
+     * @since 1.0.0
+     */
     public static final PermissionDefault DEFAULT_PERMISSION = PermissionDefault.OP;
 
     private final String name;
@@ -25,34 +30,58 @@ public class Permission {
     private PermissionDefault defaultValue = DEFAULT_PERMISSION;
     private String description;
 
+    /**
+     * @since 1.0.0
+     */
     public Permission(@NotNull String name) {
         this(name, null, null, null);
     }
 
+    /**
+     * @since 1.0.0
+     */
     public Permission(@NotNull String name, @Nullable String description) {
         this(name, description, null, null);
     }
 
+    /**
+     * @since 1.0.0
+     */
     public Permission(@NotNull String name, @Nullable PermissionDefault defaultValue) {
         this(name, null, defaultValue, null);
     }
 
+    /**
+     * @since 1.0.0
+     */
     public Permission(@NotNull String name, @Nullable String description, @Nullable PermissionDefault defaultValue) {
         this(name, description, defaultValue, null);
     }
 
+    /**
+     * @since 1.0.0
+     */
     public Permission(@NotNull String name, @Nullable Map<String, Boolean> children) {
         this(name, null, null, children);
     }
 
+    /**
+     * @since 1.0.0
+     */
     public Permission(@NotNull String name, @Nullable String description, @Nullable Map<String, Boolean> children) {
         this(name, description, null, children);
     }
 
+    /**
+     * @since 1.0.0
+     */
     public Permission(@NotNull String name, @Nullable PermissionDefault defaultValue, @Nullable Map<String, Boolean> children) {
         this(name, null, defaultValue, children);
     }
 
+    /**
+     * @since 1.0.0
+     */
     public Permission(@NotNull String name, @Nullable String description, @Nullable PermissionDefault defaultValue, @Nullable Map<String, Boolean> children) {
         Preconditions.checkArgument(name != null, "Name cannot be null");
         this.name = name;
@@ -71,6 +100,7 @@ public class Permission {
      * Returns the unique fully qualified name of this Permission
      *
      * @return Fully qualified name
+     * @since 1.0.0
      */
     @NotNull
     public String getName() {
@@ -84,6 +114,7 @@ public class Permission {
      * #recalculatePermissibles()} to recalculate all {@link Permissible}s
      *
      * @return Permission children
+     * @since 1.0.0
      */
     @NotNull
     public Map<String, Boolean> getChildren() {
@@ -94,6 +125,7 @@ public class Permission {
      * Gets the default value of this permission.
      *
      * @return Default value of this permission.
+     * @since 1.0.0
      */
     @NotNull
     public PermissionDefault getDefault() {
@@ -109,6 +141,7 @@ public class Permission {
      * permissions
      *
      * @param value The new default to set
+     * @since 1.0.0
      */
     public void setDefault(@NotNull PermissionDefault value) {
         if (defaultValue == null) {
@@ -123,6 +156,7 @@ public class Permission {
      * Gets a brief description of this permission, may be empty
      *
      * @return Brief description of this permission
+     * @since 1.0.0
      */
     @NotNull
     public String getDescription() {
@@ -136,6 +170,7 @@ public class Permission {
      * server reloads permissions.
      *
      * @param value The new description to set
+     * @since 1.0.0
      */
     public void setDescription(@Nullable String value) {
         if (value == null) {
@@ -152,6 +187,7 @@ public class Permission {
      * This set cannot be modified.
      *
      * @return Set containing permissibles with this permission
+     * @since 1.0.0
      */
     @NotNull
     public Set<Permissible> getPermissibles() {
@@ -163,6 +199,8 @@ public class Permission {
      * <p>
      * This should be called after modifying the children, and is
      * automatically called after modifying the default value
+     *
+     * @since 1.0.0
      */
     public void recalculatePermissibles() {
         Set<Permissible> perms = getPermissibles();
@@ -183,6 +221,7 @@ public class Permission {
      * @param name Name of the parent permission
      * @param value The value to set this permission to
      * @return Parent permission it created or loaded
+     * @since 1.0.0
      */
     @NotNull
     public Permission addParent(@NotNull String name, boolean value) {
@@ -206,6 +245,7 @@ public class Permission {
      *
      * @param perm Parent permission to register with
      * @param value The value to set this permission to
+     * @since 1.0.0
      */
     public void addParent(@NotNull Permission perm, boolean value) {
         perm.getChildren().put(getName(), value);
@@ -230,6 +270,7 @@ public class Permission {
      * @param error An error message to show if a permission is invalid. May contain "%s" format tag, which will be replaced with the name of invalid permission.
      * @param def Default permission value to use if missing
      * @return Permission object
+     * @since 1.0.0
      */
     @NotNull
     public static List<Permission> loadPermissions(@NotNull Map<?, ?> data, @NotNull String error, @Nullable PermissionDefault def) {
@@ -262,6 +303,7 @@ public class Permission {
      * @param name Name of the permission
      * @param data Map of keys
      * @return Permission object
+     * @since 1.0.0
      */
     @NotNull
     public static Permission loadPermission(@NotNull String name, @NotNull Map<String, Object> data) {
@@ -286,6 +328,7 @@ public class Permission {
      * @param def Default permission value to use if not set
      * @param output A list to append any created child-Permissions to, may be null
      * @return Permission object
+     * @since 1.0.0
      */
     @NotNull
     public static Permission loadPermission(@NotNull String name, @NotNull Map<?, ?> data, @Nullable PermissionDefault def, @Nullable List<Permission> output) {

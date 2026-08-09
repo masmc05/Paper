@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
  * This event is called regardless of if the entity was within tracking range.
  *
  * @see Player#hideEntity(org.bukkit.plugin.Plugin, org.bukkit.entity.Entity)
+ * @since 1.18.1
  */
 public class PlayerHideEntityEvent extends PlayerEvent {
 
@@ -32,18 +33,25 @@ public class PlayerHideEntityEvent extends PlayerEvent {
      * Gets the entity which has been hidden from the player.
      *
      * @return the hidden entity
+     * @since 1.18.1
      */
     @NotNull
     public Entity getEntity() {
         return this.entity;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

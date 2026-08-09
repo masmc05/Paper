@@ -8,8 +8,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.0.0
+ */
 public class PluginCommandYamlParser {
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static List<Command> parse(@NotNull Plugin plugin) {
         List<Command> pluginCmds = new ArrayList<Command>();

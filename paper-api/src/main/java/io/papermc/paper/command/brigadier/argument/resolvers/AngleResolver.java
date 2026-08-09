@@ -11,6 +11,7 @@ import org.jspecify.annotations.NullMarked;
  * an angle value using a {@link CommandSourceStack}.
  *
  * @see ArgumentTypes#angle()
+ * @since 1.21.8
  */
 @ApiStatus.Experimental
 @NullMarked
@@ -23,6 +24,7 @@ public interface AngleResolver {
      *
      * @param sourceStack source stack
      * @return the resolved angle in degrees.
+     * @since 1.21.8
      */
     float resolve(CommandSourceStack sourceStack) throws CommandSyntaxException;
 }

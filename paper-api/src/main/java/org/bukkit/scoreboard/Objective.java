@@ -8,6 +8,8 @@ import org.jetbrains.annotations.Nullable;
  * An objective on a scoreboard that can show scores specific to entries. This
  * objective is only relevant to the display of the associated {@link
  * #getScoreboard() scoreboard}.
+ *
+ * @since 1.5.1
  */
 public interface Objective {
 
@@ -16,6 +18,7 @@ public interface Objective {
      *
      * @return this objective's name
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.5.1
      */
     @NotNull
     String getName();
@@ -26,6 +29,7 @@ public interface Objective {
      *
      * @return this objective's display name
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.16.5
      */
     net.kyori.adventure.text.@NotNull Component displayName();
     /**
@@ -36,6 +40,7 @@ public interface Objective {
      * @throws IllegalArgumentException if displayName is null
      * @throws IllegalArgumentException if displayName is longer than 128
      *     characters.
+     * @since 1.16.5
      */
     void displayName(net.kyori.adventure.text.@Nullable Component displayName);
     // Paper end - Adventure
@@ -46,6 +51,7 @@ public interface Objective {
      * @return this objective's display name
      * @throws IllegalStateException if this objective has been unregistered
      * @deprecated in favour of {@link #displayName()}
+     * @since 1.5.1
      */
     @NotNull
     @Deprecated // Paper
@@ -57,6 +63,7 @@ public interface Objective {
      * @param displayName Display name to set
      * @throws IllegalStateException if this objective has been unregistered
      * @deprecated in favour of {@link #displayName(net.kyori.adventure.text.Component)}
+     * @since 1.5.1
      */
     @Deprecated // Paper
     void setDisplayName(@NotNull String displayName);
@@ -67,6 +74,7 @@ public interface Objective {
      * @return this objective's criteria
      * @throws IllegalStateException if this objective has been unregistered
      * @deprecated use {@link #getTrackedCriteria()}
+     * @since 1.5.1
      */
     @Deprecated(since = "1.19.2")
     @NotNull
@@ -77,6 +85,7 @@ public interface Objective {
      *
      * @return this objective's criteria
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.19.2
      */
     @NotNull
     Criteria getTrackedCriteria();
@@ -87,6 +96,7 @@ public interface Objective {
      * @return true if scores are modifiable
      * @throws IllegalStateException if this objective has been unregistered
      * @see Criteria#HEALTH
+     * @since 1.5.1
      */
     boolean isModifiable();
 
@@ -95,6 +105,7 @@ public interface Objective {
      *
      * @return Owning scoreboard, or null if it has been {@link #unregister()
      *     unregistered}
+     * @since 1.5.1
      */
     @Nullable
     Scoreboard getScoreboard();
@@ -103,6 +114,7 @@ public interface Objective {
      * Unregisters this objective from the {@link Scoreboard scoreboard.}
      *
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.5.1
      */
     void unregister();
 
@@ -112,6 +124,7 @@ public interface Objective {
      *
      * @param slot display slot to change, or null to not display
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.5.1
      */
     void setDisplaySlot(@Nullable DisplaySlot slot);
 
@@ -120,6 +133,7 @@ public interface Objective {
      *
      * @return the display slot for this objective, or null if not displayed
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.5.1
      */
     @Nullable
     DisplaySlot getDisplaySlot();
@@ -129,6 +143,7 @@ public interface Objective {
      *
      * @param renderType new render type
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.13.2
      */
     void setRenderType(@NotNull RenderType renderType);
 
@@ -137,6 +152,7 @@ public interface Objective {
      *
      * @return the render type
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.13.2
      */
     @NotNull
     RenderType getRenderType();
@@ -148,6 +164,7 @@ public interface Objective {
      * @return Score tracking the Objective and player specified
      * @throws IllegalStateException if this objective has been unregistered
      * @see #getScore(String)
+     * @since 1.5.1
      */
     // @Deprecated(since = "1.7.8") // Paper
     @NotNull
@@ -160,6 +177,7 @@ public interface Objective {
      * @return Score tracking the Objective and entry specified
      * @throws IllegalStateException if this objective has been unregistered
      * @throws IllegalArgumentException if entry is longer than 32767 characters.
+     * @since 1.7.10
      */
     @NotNull
     Score getScore(@NotNull String entry);
@@ -172,6 +190,7 @@ public interface Objective {
      * @return Score tracking the Objective and entity specified
      * @throws IllegalArgumentException if entity is null
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.18.1
      */
     @NotNull Score getScoreFor(@NotNull org.bukkit.entity.Entity entity) throws IllegalArgumentException, IllegalStateException;
     // Paper end - improve scoreboard entries
@@ -183,6 +202,7 @@ public interface Objective {
      *
      * @return true if auto updating
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.20.4
      */
     boolean willAutoUpdateDisplay();
 
@@ -192,6 +212,7 @@ public interface Objective {
      *
      * @param autoUpdateDisplay true to auto update
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.20.4
      */
     void setAutoUpdateDisplay(boolean autoUpdateDisplay);
     // Paper end - add more score API
@@ -202,6 +223,7 @@ public interface Objective {
      *
      * @return this objective's number format, or null if the client default is used
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.20.4
      */
     @Nullable io.papermc.paper.scoreboard.numbers.NumberFormat numberFormat();
 
@@ -210,6 +232,7 @@ public interface Objective {
      *
      * @param format the number format to set, pass null to reset format to default
      * @throws IllegalStateException if this objective has been unregistered
+     * @since 1.20.4
      */
     void numberFormat(@Nullable io.papermc.paper.scoreboard.numbers.NumberFormat format);
     // Paper end - number format api

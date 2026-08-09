@@ -14,93 +14,225 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.8
+ */
 public interface PatternType extends OldEnum<PatternType>, Keyed {
 
+    /**
+     * @since 1.8
+     */
     // Start generate - PatternType
     PatternType BASE = getType("base");
 
+    /**
+     * @since 1.8
+     */
     PatternType BORDER = getType("border");
 
+    /**
+     * @since 1.8
+     */
     PatternType BRICKS = getType("bricks");
 
+    /**
+     * @since 1.20.6
+     */
     PatternType CIRCLE = getType("circle");
 
+    /**
+     * @since 1.8
+     */
     PatternType CREEPER = getType("creeper");
 
+    /**
+     * @since 1.8
+     */
     PatternType CROSS = getType("cross");
 
+    /**
+     * @since 1.8
+     */
     PatternType CURLY_BORDER = getType("curly_border");
 
+    /**
+     * @since 1.8
+     */
     PatternType DIAGONAL_LEFT = getType("diagonal_left");
 
+    /**
+     * @since 1.8
+     */
     PatternType DIAGONAL_RIGHT = getType("diagonal_right");
 
+    /**
+     * @since 1.20.6
+     */
     PatternType DIAGONAL_UP_LEFT = getType("diagonal_up_left");
 
+    /**
+     * @since 1.20.6
+     */
     PatternType DIAGONAL_UP_RIGHT = getType("diagonal_up_right");
 
+    /**
+     * @since 1.20.6
+     */
     PatternType FLOW = getType("flow");
 
+    /**
+     * @since 1.8
+     */
     PatternType FLOWER = getType("flower");
 
+    /**
+     * @since 1.14
+     */
     PatternType GLOBE = getType("globe");
 
+    /**
+     * @since 1.8
+     */
     PatternType GRADIENT = getType("gradient");
 
+    /**
+     * @since 1.8
+     */
     PatternType GRADIENT_UP = getType("gradient_up");
 
+    /**
+     * @since 1.20.6
+     */
     PatternType GUSTER = getType("guster");
 
+    /**
+     * @since 1.8
+     */
     PatternType HALF_HORIZONTAL = getType("half_horizontal");
 
+    /**
+     * @since 1.20.6
+     */
     PatternType HALF_HORIZONTAL_BOTTOM = getType("half_horizontal_bottom");
 
+    /**
+     * @since 1.8
+     */
     PatternType HALF_VERTICAL = getType("half_vertical");
 
+    /**
+     * @since 1.20.6
+     */
     PatternType HALF_VERTICAL_RIGHT = getType("half_vertical_right");
 
+    /**
+     * @since 1.8
+     */
     PatternType MOJANG = getType("mojang");
 
+    /**
+     * @since 1.16.1
+     */
     PatternType PIGLIN = getType("piglin");
 
+    /**
+     * @since 1.20.6
+     */
     PatternType RHOMBUS = getType("rhombus");
 
+    /**
+     * @since 1.8
+     */
     PatternType SKULL = getType("skull");
 
+    /**
+     * @since 1.20.6
+     */
     PatternType SMALL_STRIPES = getType("small_stripes");
 
+    /**
+     * @since 1.8
+     */
     PatternType SQUARE_BOTTOM_LEFT = getType("square_bottom_left");
 
+    /**
+     * @since 1.8
+     */
     PatternType SQUARE_BOTTOM_RIGHT = getType("square_bottom_right");
 
+    /**
+     * @since 1.8
+     */
     PatternType SQUARE_TOP_LEFT = getType("square_top_left");
 
+    /**
+     * @since 1.8
+     */
     PatternType SQUARE_TOP_RIGHT = getType("square_top_right");
 
+    /**
+     * @since 1.8
+     */
     PatternType STRAIGHT_CROSS = getType("straight_cross");
 
+    /**
+     * @since 1.8
+     */
     PatternType STRIPE_BOTTOM = getType("stripe_bottom");
 
+    /**
+     * @since 1.8
+     */
     PatternType STRIPE_CENTER = getType("stripe_center");
 
+    /**
+     * @since 1.8
+     */
     PatternType STRIPE_DOWNLEFT = getType("stripe_downleft");
 
+    /**
+     * @since 1.8
+     */
     PatternType STRIPE_DOWNRIGHT = getType("stripe_downright");
 
+    /**
+     * @since 1.8
+     */
     PatternType STRIPE_LEFT = getType("stripe_left");
 
+    /**
+     * @since 1.8
+     */
     PatternType STRIPE_MIDDLE = getType("stripe_middle");
 
+    /**
+     * @since 1.8
+     */
     PatternType STRIPE_RIGHT = getType("stripe_right");
 
+    /**
+     * @since 1.8
+     */
     PatternType STRIPE_TOP = getType("stripe_top");
 
+    /**
+     * @since 1.8
+     */
     PatternType TRIANGLE_BOTTOM = getType("triangle_bottom");
 
+    /**
+     * @since 1.8
+     */
     PatternType TRIANGLE_TOP = getType("triangle_top");
 
+    /**
+     * @since 1.8
+     */
     PatternType TRIANGLES_BOTTOM = getType("triangles_bottom");
 
+    /**
+     * @since 1.8
+     */
     PatternType TRIANGLES_TOP = getType("triangles_top");
     // End generate - PatternType
 

@@ -5,26 +5,85 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents the face of a block
+ *
+ * @since 1.0.0
  */
 public enum BlockFace {
+    /**
+     * @since 1.0.0
+     */
     NORTH(0, 0, -1),
+    /**
+     * @since 1.0.0
+     */
     EAST(1, 0, 0),
+    /**
+     * @since 1.0.0
+     */
     SOUTH(0, 0, 1),
+    /**
+     * @since 1.0.0
+     */
     WEST(-1, 0, 0),
+    /**
+     * @since 1.0.0
+     */
     UP(0, 1, 0),
+    /**
+     * @since 1.0.0
+     */
     DOWN(0, -1, 0),
+    /**
+     * @since 1.0.0
+     */
     NORTH_EAST(NORTH, EAST),
+    /**
+     * @since 1.0.0
+     */
     NORTH_WEST(NORTH, WEST),
+    /**
+     * @since 1.0.0
+     */
     SOUTH_EAST(SOUTH, EAST),
+    /**
+     * @since 1.0.0
+     */
     SOUTH_WEST(SOUTH, WEST),
+    /**
+     * @since 1.0.0
+     */
     WEST_NORTH_WEST(WEST, NORTH_WEST),
+    /**
+     * @since 1.0.0
+     */
     NORTH_NORTH_WEST(NORTH, NORTH_WEST),
+    /**
+     * @since 1.0.0
+     */
     NORTH_NORTH_EAST(NORTH, NORTH_EAST),
+    /**
+     * @since 1.0.0
+     */
     EAST_NORTH_EAST(EAST, NORTH_EAST),
+    /**
+     * @since 1.0.0
+     */
     EAST_SOUTH_EAST(EAST, SOUTH_EAST),
+    /**
+     * @since 1.0.0
+     */
     SOUTH_SOUTH_EAST(SOUTH, SOUTH_EAST),
+    /**
+     * @since 1.0.0
+     */
     SOUTH_SOUTH_WEST(SOUTH, SOUTH_WEST),
+    /**
+     * @since 1.0.0
+     */
     WEST_SOUTH_WEST(WEST, SOUTH_WEST),
+    /**
+     * @since 1.0.0
+     */
     SELF(0, 0, 0);
 
     private final int modX;
@@ -47,6 +106,7 @@ public enum BlockFace {
      * Get the amount of X-coordinates to modify to get the represented block
      *
      * @return Amount of X-coordinates to modify
+     * @since 1.0.0
      */
     public int getModX() {
         return modX;
@@ -56,6 +116,7 @@ public enum BlockFace {
      * Get the amount of Y-coordinates to modify to get the represented block
      *
      * @return Amount of Y-coordinates to modify
+     * @since 1.0.0
      */
     public int getModY() {
         return modY;
@@ -65,6 +126,7 @@ public enum BlockFace {
      * Get the amount of Z-coordinates to modify to get the represented block
      *
      * @return Amount of Z-coordinates to modify
+     * @since 1.0.0
      */
     public int getModZ() {
         return modZ;
@@ -74,6 +136,7 @@ public enum BlockFace {
      * Gets the normal vector corresponding to this block face.
      *
      * @return the normal vector
+     * @since 1.13.2
      */
     @NotNull
     public Vector getDirection() {
@@ -89,6 +152,7 @@ public enum BlockFace {
      * Cartesian space (ie NORTH, SOUTH, EAST, WEST, UP, DOWN).
      *
      * @return Cartesian status
+     * @since 1.16.5
      */
     public boolean isCartesian() {
         switch (this) {
@@ -104,6 +168,9 @@ public enum BlockFace {
         }
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public BlockFace getOppositeFace() {
         switch (this) {

@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents a group of sounds for blocks that are played when various actions
  * happen (ie stepping, breaking, hitting, etc).
+ *
+ * @since 1.16.4
  */
 public interface SoundGroup {
 
@@ -15,6 +17,7 @@ public interface SoundGroup {
      * received by the client.
      *
      * @return volume
+     * @since 1.16.4
      */
     public float getVolume();
 
@@ -25,6 +28,7 @@ public interface SoundGroup {
      * by the client.
      *
      * @return pitch
+     * @since 1.16.4
      */
     public float getPitch();
 
@@ -32,6 +36,7 @@ public interface SoundGroup {
      * Gets the corresponding breaking sound for this group.
      *
      * @return the break sound
+     * @since 1.16.4
      */
     @NotNull
     public Sound getBreakSound();
@@ -40,6 +45,7 @@ public interface SoundGroup {
      * Gets the corresponding step sound for this group.
      *
      * @return the step sound
+     * @since 1.16.4
      */
     @NotNull
     public Sound getStepSound();
@@ -48,6 +54,7 @@ public interface SoundGroup {
      * Gets the corresponding place sound for this group.
      *
      * @return the place sound
+     * @since 1.16.4
      */
     @NotNull
     public Sound getPlaceSound();
@@ -56,6 +63,7 @@ public interface SoundGroup {
      * Gets the corresponding hit sound for this group.
      *
      * @return the hit sound
+     * @since 1.16.4
      */
     @NotNull
     public Sound getHitSound();
@@ -64,6 +72,7 @@ public interface SoundGroup {
      * Gets the corresponding fall sound for this group.
      *
      * @return the fall sound
+     * @since 1.16.4
      */
     @NotNull
     public Sound getFallSound();

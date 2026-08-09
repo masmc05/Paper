@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * To get every world it is recommended to add following to the plugin.yml.
  * <pre>load: STARTUP</pre>
+ *
+ * @since 1.0.0
  */
 public class WorldInitEvent extends WorldEvent {
 
@@ -20,12 +22,18 @@ public class WorldInitEvent extends WorldEvent {
         super(world);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

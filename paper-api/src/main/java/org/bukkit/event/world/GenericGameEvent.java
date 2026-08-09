@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
  * <br>
  * Specific Bukkit events should be used where possible, this event is mainly
  * used internally by Sculk sensors.
+ *
+ * @since 1.17
  */
 public class GenericGameEvent extends WorldEvent implements Cancellable {
 
@@ -40,6 +42,7 @@ public class GenericGameEvent extends WorldEvent implements Cancellable {
      * Get the underlying event.
      *
      * @return the event
+     * @since 1.17
      */
     @NotNull
     public GameEvent getEvent() {
@@ -50,6 +53,7 @@ public class GenericGameEvent extends WorldEvent implements Cancellable {
      * Get the location where the event occurred.
      *
      * @return event location
+     * @since 1.17
      */
     @NotNull
     public Location getLocation() {
@@ -60,6 +64,7 @@ public class GenericGameEvent extends WorldEvent implements Cancellable {
      * Get the entity which triggered this event, if present.
      *
      * @return triggering entity or {@code null}
+     * @since 1.17
      */
     @Nullable
     public Entity getEntity() {
@@ -70,6 +75,7 @@ public class GenericGameEvent extends WorldEvent implements Cancellable {
      * Get the block radius to which this event will be broadcast.
      *
      * @return broadcast radius
+     * @since 1.17
      */
     public int getRadius() {
         return this.radius;
@@ -79,28 +85,41 @@ public class GenericGameEvent extends WorldEvent implements Cancellable {
      * Set the radius to which the event should be broadcast.
      *
      * @param radius radius, must be greater than or equal to 0
+     * @since 1.17
      */
     public void setRadius(int radius) {
         Preconditions.checkArgument(radius >= 0, "Radius must be >= 0");
         this.radius = radius;
     }
 
+    /**
+     * @since 1.17
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.17
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.17
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.17
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

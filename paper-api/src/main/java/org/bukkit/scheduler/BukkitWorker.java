@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
  * the Thread object for the task, owner of the task and the taskId.
  * <p>
  * Workers are used to execute async tasks.
+ *
+ * @since 1.0.0
  */
 public interface BukkitWorker {
 
@@ -15,6 +17,7 @@ public interface BukkitWorker {
      * Returns the taskId for the task being executed by this worker.
      *
      * @return Task id number
+     * @since 1.0.0
      */
     public int getTaskId();
 
@@ -22,6 +25,7 @@ public interface BukkitWorker {
      * Returns the Plugin that owns this task.
      *
      * @return The Plugin that owns the task
+     * @since 1.0.0
      */
     @NotNull
     public Plugin getOwner();
@@ -30,6 +34,7 @@ public interface BukkitWorker {
      * Returns the thread for the worker.
      *
      * @return The Thread object for the worker
+     * @since 1.0.0
      */
     @NotNull
     public Thread getThread();

@@ -9,6 +9,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * An item body for a dialog.
  * <p>Created via {@link DialogBody#item(ItemStack, PlainMessageDialogBody, boolean, boolean, int, int)}</p>
+ *
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public non-sealed interface ItemDialogBody extends DialogBody {
@@ -17,6 +19,7 @@ public non-sealed interface ItemDialogBody extends DialogBody {
      * The item to display in the dialog.
      *
      * @return the item stack
+     * @since 1.21.7
      */
     @Contract(pure = true)
     ItemStack item();
@@ -25,6 +28,7 @@ public non-sealed interface ItemDialogBody extends DialogBody {
      * The description of the body, or null if not set.
      *
      * @return the description body
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Nullable PlainMessageDialogBody description();
@@ -34,6 +38,7 @@ public non-sealed interface ItemDialogBody extends DialogBody {
      * <p>Decorations include damage, itemstack count, etc.</p>
      *
      * @return true if decorations should be shown
+     * @since 1.21.7
      */
     @Contract(pure = true)
     boolean showDecorations();
@@ -42,6 +47,7 @@ public non-sealed interface ItemDialogBody extends DialogBody {
      * Whether to show a tooltip for the item.
      *
      * @return true if a tooltip should be shown
+     * @since 1.21.7
      */
     @Contract(pure = true)
     boolean showTooltip();
@@ -50,6 +56,7 @@ public non-sealed interface ItemDialogBody extends DialogBody {
      * The width of the item body.
      *
      * @return the width
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Range(from = 1, to = 256) int width();
@@ -58,12 +65,15 @@ public non-sealed interface ItemDialogBody extends DialogBody {
      * The height of the item body.
      *
      * @return the height
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Range(from = 1, to = 256) int height();
 
     /**
      * A builder for an item dialog body.
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     interface Builder {
@@ -73,6 +83,7 @@ public non-sealed interface ItemDialogBody extends DialogBody {
          *
          * @param description the description of the body, or null
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder description(@Nullable PlainMessageDialogBody description);
@@ -82,6 +93,7 @@ public non-sealed interface ItemDialogBody extends DialogBody {
          *
          * @param showDecorations true to show decorations, false otherwise
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder showDecorations(boolean showDecorations);
@@ -91,6 +103,7 @@ public non-sealed interface ItemDialogBody extends DialogBody {
          *
          * @param showTooltip true to show a tooltip, false otherwise
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder showTooltip(boolean showTooltip);
@@ -100,6 +113,7 @@ public non-sealed interface ItemDialogBody extends DialogBody {
          *
          * @param width the width, must be between 1 and 256
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder width(@Range(from = 1, to = 256) int width);
@@ -109,6 +123,7 @@ public non-sealed interface ItemDialogBody extends DialogBody {
          *
          * @param height the height, must be between 1 and 256
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder height(@Range(from = 1, to = 256) int height);
@@ -117,6 +132,7 @@ public non-sealed interface ItemDialogBody extends DialogBody {
          * Builds a new instance of {@link ItemDialogBody}.
          *
          * @return a new item dialog body instance
+         * @since 1.21.7
          */
         @Contract(value = "-> new", pure = true)
         ItemDialogBody build();

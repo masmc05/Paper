@@ -6,6 +6,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a captured state of a bee hive.
+ *
+ * @since 1.15
  */
 public interface Beehive extends EntityBlockStorage<Bee> {
 
@@ -13,6 +15,7 @@ public interface Beehive extends EntityBlockStorage<Bee> {
      * Get the hive's flower location.
      *
      * @return flower location or null
+     * @since 1.15
      */
     @Nullable
     Location getFlower();
@@ -21,6 +24,7 @@ public interface Beehive extends EntityBlockStorage<Bee> {
      * Set the hive's flower location.
      *
      * @param location or null
+     * @since 1.15
      */
     void setFlower(@Nullable Location location);
 
@@ -28,6 +32,7 @@ public interface Beehive extends EntityBlockStorage<Bee> {
      * Check if the hive is sedated due to smoke from a nearby campfire.
      *
      * @return True if hive is sedated
+     * @since 1.15.2
      */
     boolean isSedated();
 }

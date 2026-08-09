@@ -10,6 +10,8 @@ import org.jspecify.annotations.NullMarked;
  * Called when the time skips for a world clock.
  * <p>
  * If the event is cancelled the time will not change.
+ *
+ * @since 26.2
  */
 // TODO - snapshot - 26.1 clock
 @ApiStatus.Experimental
@@ -33,6 +35,7 @@ public class ClockTimeSkipEvent extends Event implements Cancellable {
      * Gets the reason why the time has skipped.
      *
      * @return a SkipReason value detailing why the time has skipped
+     * @since 26.2
      */
     public SkipReason getSkipReason() {
         return this.skipReason;
@@ -42,6 +45,7 @@ public class ClockTimeSkipEvent extends Event implements Cancellable {
      * Gets the amount of time that was skipped.
      *
      * @return Amount of time skipped
+     * @since 26.2
      */
     public long getSkipAmount() {
         return this.skipAmount;
@@ -51,46 +55,67 @@ public class ClockTimeSkipEvent extends Event implements Cancellable {
      * Sets the amount of time to skip.
      *
      * @param skipAmount Amount of time to skip
+     * @since 26.2
      */
     public void setSkipAmount(long skipAmount) {
         this.skipAmount = skipAmount;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 26.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
     /**
      * An enum specifying the reason the time skipped.
+     *
+     * @since 26.2
      */
     public enum SkipReason {
 
         /**
          * When time is changed using the vanilla /time command.
+         *
+         * @since 26.2
          */
         COMMAND,
         /**
          * When time is changed by a plugin.
+         *
+         * @since 26.2
          */
         CUSTOM,
         /**
          * When time is changed by all players sleeping in their beds and the
          * night skips.
+         *
+         * @since 26.2
          */
         NIGHT_SKIP
     }

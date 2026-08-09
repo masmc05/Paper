@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see PluginManager#callEvent(Event)
  * @see PluginManager#registerEvents(Listener,Plugin)
+ * @since 1.0.0
  */
 public abstract class Event {
 
@@ -21,6 +22,8 @@ public abstract class Event {
     /**
      * The default constructor is defined for cleaner code. This constructor
      * assumes the event is synchronous.
+     *
+     * @since 1.1.0
      */
     public Event() {
         this(false);
@@ -32,6 +35,7 @@ public abstract class Event {
      *
      * @param isAsync {@code true} indicates the event will fire asynchronously, {@code false}
      *     by default from default constructor
+     * @since 1.3.1
      */
     public Event(boolean isAsync) {
         this.isAsync = isAsync;
@@ -41,6 +45,7 @@ public abstract class Event {
      * Calls the event and tests if cancelled.
      *
      * @return {@code false} if event was cancelled, if cancellable. otherwise {@code true}.
+     * @since 1.9.4
      */
     public boolean callEvent() {
         Bukkit.getPluginManager().callEvent(this);
@@ -57,6 +62,7 @@ public abstract class Event {
      * simple name}.
      *
      * @return name of this event
+     * @since 1.0.0
      */
     @NotNull
     public String getEventName() {
@@ -66,6 +72,9 @@ public abstract class Event {
         return this.name;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public abstract HandlerList getHandlers();
 
@@ -89,28 +98,38 @@ public abstract class Event {
      * </ul>
      *
      * @return {@code false} by default, {@code true} if the event fires asynchronously
+     * @since 1.3.1
      */
     public final boolean isAsynchronous() {
         return this.isAsync;
     }
 
+    /**
+     * @since 1.0.0
+     */
     public enum Result {
 
         /**
          * Deny the event. Depending on the event, the action indicated by the
          * event will either not take place or will be reverted. Some actions
          * may not be denied.
+         *
+         * @since 1.0.0
          */
         DENY,
         /**
          * Neither deny nor allow the event. The server will proceed with its
          * normal handling.
+         *
+         * @since 1.0.0
          */
         DEFAULT,
         /**
          * Allow / Force the event. The action indicated by the event will
          * take place if possible, even if the server would not normally allow
          * the action. Some actions may not be allowed.
+         *
+         * @since 1.0.0
          */
         ALLOW
     }

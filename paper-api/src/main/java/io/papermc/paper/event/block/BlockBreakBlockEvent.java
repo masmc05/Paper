@@ -12,6 +12,8 @@ import org.jspecify.annotations.NullMarked;
  * Called when a block forces another block to break and drop items.
  * <p>
  * Currently called for piston's and liquid flows.
+ *
+ * @since 1.17.1
  */
 @NullMarked
 public class BlockBreakBlockEvent extends BlockExpEvent {
@@ -32,6 +34,7 @@ public class BlockBreakBlockEvent extends BlockExpEvent {
      * Gets a mutable list of drops for this event
      *
      * @return the drops
+     * @since 1.17.1
      */
     public List<ItemStack> getDrops() {
         return this.drops;
@@ -41,16 +44,23 @@ public class BlockBreakBlockEvent extends BlockExpEvent {
      * Gets the block that cause this (e.g. a piston, or adjacent liquid)
      *
      * @return the source
+     * @since 1.17.1
      */
     public Block getSource() {
         return this.source;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.17.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

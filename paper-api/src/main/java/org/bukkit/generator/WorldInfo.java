@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Holds various information of a World
+ *
+ * @since 1.17.1
  */
 public interface WorldInfo extends FeatureFlagSetHolder, Keyed {
 
@@ -19,6 +21,7 @@ public interface WorldInfo extends FeatureFlagSetHolder, Keyed {
      * Prefer using {@link #getKey()} as the world identity.</p>
      *
      * @return Bukkit name of this world
+     * @since 1.17.1
      */
     @ApiStatus.Obsolete
     @NotNull
@@ -28,6 +31,7 @@ public interface WorldInfo extends FeatureFlagSetHolder, Keyed {
      * Gets the Unique ID of this world
      *
      * @return Unique ID of this world.
+     * @since 1.17.1
      */
     @NotNull
     UUID getUID();
@@ -36,6 +40,7 @@ public interface WorldInfo extends FeatureFlagSetHolder, Keyed {
      * Gets the {@link World.Environment} type of this world
      *
      * @return This worlds Environment type
+     * @since 1.17.1
      */
     @NotNull
     World.Environment getEnvironment();
@@ -44,6 +49,7 @@ public interface WorldInfo extends FeatureFlagSetHolder, Keyed {
      * Gets the Seed for this world.
      *
      * @return This worlds Seed
+     * @since 1.17.1
      */
     long getSeed();
 
@@ -53,6 +59,7 @@ public interface WorldInfo extends FeatureFlagSetHolder, Keyed {
      * If the min height is 0, there are only blocks from y=0.
      *
      * @return Minimum height of the world
+     * @since 1.17.1
      */
     int getMinHeight();
 
@@ -62,6 +69,7 @@ public interface WorldInfo extends FeatureFlagSetHolder, Keyed {
      * If the max height is 100, there are only blocks from y=0 to y=99.
      *
      * @return Maximum height of the world
+     * @since 1.17.1
      */
     int getMaxHeight();
 
@@ -70,6 +78,7 @@ public interface WorldInfo extends FeatureFlagSetHolder, Keyed {
      * Get the vanilla {@link BiomeProvider} for this world.
      *
      * @return vanilla biome provider
+     * @since 1.18.1
      */
     @NotNull BiomeProvider vanillaBiomeProvider();
     // Paper end

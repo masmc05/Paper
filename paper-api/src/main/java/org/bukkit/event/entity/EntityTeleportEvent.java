@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
  * <br>
  * This may be as a result of natural causes (Enderman, Shulker), pathfinding
  * (Wolf), or commands (/teleport).
+ *
+ * @since 1.1.0
  */
 public class EntityTeleportEvent extends EntityEvent implements Cancellable {
 
@@ -34,6 +36,7 @@ public class EntityTeleportEvent extends EntityEvent implements Cancellable {
      * Gets the location that this entity moved from
      *
      * @return Location this entity moved from
+     * @since 1.1.0
      */
     @NotNull
     public Location getFrom() {
@@ -44,6 +47,7 @@ public class EntityTeleportEvent extends EntityEvent implements Cancellable {
      * Sets the location that this entity moved from
      *
      * @param from New location this entity moved from
+     * @since 1.1.0
      */
     public void setFrom(@NotNull Location from) {
         this.from = from.clone();
@@ -53,6 +57,7 @@ public class EntityTeleportEvent extends EntityEvent implements Cancellable {
      * Gets the location that this entity moved to
      *
      * @return Location the entity moved to
+     * @since 1.1.0
      */
     @Nullable
     public Location getTo() {
@@ -63,27 +68,40 @@ public class EntityTeleportEvent extends EntityEvent implements Cancellable {
      * Sets the location that this entity moved to
      *
      * @param to New Location this entity moved to
+     * @since 1.1.0
      */
     public void setTo(@Nullable Location to) {
         this.to = to != null ? to.clone() : null;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

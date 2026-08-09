@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a vehicle updates
+ *
+ * @since 1.0.0
  */
 public class VehicleUpdateEvent extends VehicleEvent {
 
@@ -17,12 +19,18 @@ public class VehicleUpdateEvent extends VehicleEvent {
         super(vehicle);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

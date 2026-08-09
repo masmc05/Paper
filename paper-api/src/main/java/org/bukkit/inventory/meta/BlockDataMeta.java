@@ -4,12 +4,16 @@ import org.bukkit.Material;
 import org.bukkit.block.data.BlockData;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.14
+ */
 public interface BlockDataMeta extends ItemMeta {
 
     /**
      * Returns whether the item has block data currently attached to it.
      *
      * @return whether block data is already attached
+     * @since 1.14
      */
     boolean hasBlockData();
 
@@ -22,6 +26,7 @@ public interface BlockDataMeta extends ItemMeta {
      *
      * @param material the material we wish to get this data in the context of
      * @return the attached data or new data
+     * @since 1.14
      */
     @NotNull
     BlockData getBlockData(@NotNull Material material);
@@ -32,6 +37,7 @@ public interface BlockDataMeta extends ItemMeta {
      * @param blockData the block data to attach to the block.
      * @throws IllegalArgumentException if the blockData is null or invalid for
      * this item.
+     * @since 1.14
      */
     void setBlockData(@NotNull BlockData blockData);
 }

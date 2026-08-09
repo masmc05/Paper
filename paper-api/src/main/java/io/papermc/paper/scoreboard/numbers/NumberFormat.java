@@ -7,6 +7,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Describes a scoreboard number format that applies custom formatting to scoreboard scores.
+ *
+ * @since 1.20.4
  */
 @NullMarked
 public interface NumberFormat {
@@ -15,6 +17,7 @@ public interface NumberFormat {
      * Creates a blank scoreboard number format that removes the score number entirely.
      *
      * @return a blank number format
+     * @since 1.20.4
      */
     static NumberFormat blank() {
         return BlankFormatImpl.INSTANCE;
@@ -24,6 +27,7 @@ public interface NumberFormat {
      * Gets an un-styled number format.
      *
      * @return an un-styled number format
+     * @since 1.20.4
      */
     static StyledFormat noStyle() {
         return StyledFormatImpl.NO_STYLE;
@@ -34,6 +38,7 @@ public interface NumberFormat {
      *
      * @param style the style to apply on the number
      * @return a styled number format
+     * @since 1.20.4
      */
     static StyledFormat styled(final Style style) {
         return new StyledFormatImpl(style);
@@ -44,6 +49,7 @@ public interface NumberFormat {
      *
      * @param styleBuilderApplicables the style to apply on the number
      * @return a styled number format
+     * @since 1.20.4
      */
     static StyledFormat styled(final StyleBuilderApplicable... styleBuilderApplicables) {
         return styled(Style.style(styleBuilderApplicables));
@@ -54,6 +60,7 @@ public interface NumberFormat {
      *
      * @param component the component to replace the number with
      * @return a fixed number format
+     * @since 1.20.4
      */
     static FixedFormat fixed(final ComponentLike component) {
         return new FixedFormatImpl(component.asComponent());

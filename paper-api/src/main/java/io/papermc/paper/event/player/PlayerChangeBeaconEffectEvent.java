@@ -12,6 +12,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Called when a player sets the effect for a beacon
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public class PlayerChangeBeaconEffectEvent extends PlayerEvent implements Cancellable {
@@ -35,6 +37,7 @@ public class PlayerChangeBeaconEffectEvent extends PlayerEvent implements Cancel
 
     /**
      * @return the primary effect
+     * @since 1.16.5
      */
     public @Nullable PotionEffectType getPrimary() {
         return this.primary;
@@ -46,6 +49,7 @@ public class PlayerChangeBeaconEffectEvent extends PlayerEvent implements Cancel
      * NOTE: The primary effect still has to be one of the valid effects for a beacon.
      *
      * @param primary the primary effect
+     * @since 1.16.5
      */
     public void setPrimary(final @Nullable PotionEffectType primary) {
         this.primary = primary;
@@ -53,6 +57,7 @@ public class PlayerChangeBeaconEffectEvent extends PlayerEvent implements Cancel
 
     /**
      * @return the secondary effect
+     * @since 1.16.5
      */
     public @Nullable PotionEffectType getSecondary() {
         return this.secondary;
@@ -65,6 +70,7 @@ public class PlayerChangeBeaconEffectEvent extends PlayerEvent implements Cancel
      * NOTE: The secondary effect still has to be a valid effect for a beacon.
      *
      * @param secondary the secondary effect
+     * @since 1.16.5
      */
     public void setSecondary(final @Nullable PotionEffectType secondary) {
         this.secondary = secondary;
@@ -72,6 +78,7 @@ public class PlayerChangeBeaconEffectEvent extends PlayerEvent implements Cancel
 
     /**
      * @return the beacon block associated with this event
+     * @since 1.16.5
      */
     public Block getBeacon() {
         return this.beacon;
@@ -84,6 +91,7 @@ public class PlayerChangeBeaconEffectEvent extends PlayerEvent implements Cancel
      * the item will <b>NOT</b> be consumed.
      *
      * @return {@code true} if item will be consumed
+     * @since 1.16.5
      */
     public boolean willConsumeItem() {
         return this.consumeItem;
@@ -96,6 +104,7 @@ public class PlayerChangeBeaconEffectEvent extends PlayerEvent implements Cancel
      * the item will <b>NOT</b> be consumed.
      *
      * @param consumeItem {@code true} if item should be consumed
+     * @since 1.16.5
      */
     public void setConsumeItem(final boolean consumeItem) {
         this.consumeItem = consumeItem;
@@ -106,6 +115,8 @@ public class PlayerChangeBeaconEffectEvent extends PlayerEvent implements Cancel
      * <p>
      * If a {@link PlayerChangeBeaconEffectEvent} is cancelled, the changes will
      * not take effect
+     *
+     * @since 1.16.5
      */
     @Override
     public boolean isCancelled() {
@@ -119,17 +130,25 @@ public class PlayerChangeBeaconEffectEvent extends PlayerEvent implements Cancel
      * <p>
      * If a {@link PlayerChangeBeaconEffectEvent} is cancelled, the changes will not be applied
      * or saved.
+     *
+     * @since 1.16.5
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

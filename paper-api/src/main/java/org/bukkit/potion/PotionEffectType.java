@@ -17,212 +17,294 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a type of potion and its effect on an entity.
+ *
+ * @since 1.1.0
  */
 public abstract class PotionEffectType implements Keyed, Translatable, net.kyori.adventure.translation.Translatable, io.papermc.paper.world.flag.FeatureDependant { // Paper - implement Translatable & feature flag API
     private static final BiMap<Integer, PotionEffectType> ID_MAP = HashBiMap.create();
 
     /**
      * Increases movement speed.
+     *
+     * @since 1.1.0
      */
     public static final PotionEffectType SPEED = getPotionEffectType(1, "speed");
 
     /**
      * Decreases movement speed.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType SLOWNESS = getPotionEffectType(2, "slowness");
 
     /**
      * Increases dig speed.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType HASTE = getPotionEffectType(3, "haste");
 
     /**
      * Decreases dig speed.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType MINING_FATIGUE = getPotionEffectType(4, "mining_fatigue");
 
     /**
      * Increases damage dealt.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType STRENGTH = getPotionEffectType(5, "strength");
 
     /**
      * Heals an entity.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType INSTANT_HEALTH = getPotionEffectType(6, "instant_health");
 
     /**
      * Hurts an entity.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType INSTANT_DAMAGE = getPotionEffectType(7, "instant_damage");
 
     /**
      * Increases jump height.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType JUMP_BOOST = getPotionEffectType(8, "jump_boost");
 
     /**
      * Warps vision on the client.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType NAUSEA = getPotionEffectType(9, "nausea");
 
     /**
      * Regenerates health.
+     *
+     * @since 1.1.0
      */
     public static final PotionEffectType REGENERATION = getPotionEffectType(10, "regeneration");
 
     /**
      * Decreases damage dealt to an entity.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType RESISTANCE = getPotionEffectType(11, "resistance");
 
     /**
      * Stops fire damage.
+     *
+     * @since 1.1.0
      */
     public static final PotionEffectType FIRE_RESISTANCE = getPotionEffectType(12, "fire_resistance");
 
     /**
      * Allows breathing underwater.
+     *
+     * @since 1.1.0
      */
     public static final PotionEffectType WATER_BREATHING = getPotionEffectType(13, "water_breathing");
 
     /**
      * Grants invisibility.
+     *
+     * @since 1.1.0
      */
     public static final PotionEffectType INVISIBILITY = getPotionEffectType(14, "invisibility");
 
     /**
      * Blinds an entity.
+     *
+     * @since 1.1.0
      */
     public static final PotionEffectType BLINDNESS = getPotionEffectType(15, "blindness");
 
     /**
      * Allows an entity to see in the dark.
+     *
+     * @since 1.1.0
      */
     public static final PotionEffectType NIGHT_VISION = getPotionEffectType(16, "night_vision");
 
     /**
      * Increases hunger.
+     *
+     * @since 1.1.0
      */
     public static final PotionEffectType HUNGER = getPotionEffectType(17, "hunger");
 
     /**
      * Decreases damage dealt by an entity.
+     *
+     * @since 1.1.0
      */
     public static final PotionEffectType WEAKNESS = getPotionEffectType(18, "weakness");
 
     /**
      * Deals damage to an entity over time.
+     *
+     * @since 1.1.0
      */
     public static final PotionEffectType POISON = getPotionEffectType(19, "poison");
 
     /**
      * Deals damage to an entity over time and gives the health to the
      * shooter.
+     *
+     * @since 1.4.5
      */
     public static final PotionEffectType WITHER = getPotionEffectType(20, "wither");
 
     /**
      * Increases the maximum health of an entity.
+     *
+     * @since 1.6.2
      */
     public static final PotionEffectType HEALTH_BOOST = getPotionEffectType(21, "health_boost");
 
     /**
      * Increases the maximum health of an entity with health that cannot be
      * regenerated, but is refilled every 30 seconds.
+     *
+     * @since 1.6.2
      */
     public static final PotionEffectType ABSORPTION = getPotionEffectType(22, "absorption");
 
     /**
      * Increases the food level of an entity each tick.
+     *
+     * @since 1.6.2
      */
     public static final PotionEffectType SATURATION = getPotionEffectType(23, "saturation");
 
     /**
      * Outlines the entity so that it can be seen from afar.
+     *
+     * @since 1.9.4
      */
     public static final PotionEffectType GLOWING = getPotionEffectType(24, "glowing");
 
     /**
      * Causes the entity to float into the air.
+     *
+     * @since 1.9.4
      */
     public static final PotionEffectType LEVITATION = getPotionEffectType(25, "levitation");
 
     /**
      * Loot table luck.
+     *
+     * @since 1.9.4
      */
     public static final PotionEffectType LUCK = getPotionEffectType(26, "luck");
 
     /**
      * Loot table unluck.
+     *
+     * @since 1.9.4
      */
     public static final PotionEffectType UNLUCK = getPotionEffectType(27, "unluck");
 
     /**
      * Slows entity fall rate.
+     *
+     * @since 1.13
      */
     public static final PotionEffectType SLOW_FALLING = getPotionEffectType(28, "slow_falling");
 
     /**
      * Effects granted by a nearby conduit. Includes enhanced underwater abilities.
+     *
+     * @since 1.13
      */
     public static final PotionEffectType CONDUIT_POWER = getPotionEffectType(29, "conduit_power");
 
     /**
      * Increases underwater movement speed.<br>
      * Squee'ek uh'k kk'kkkk squeek eee'eek.
+     *
+     * @since 1.13
      */
     public static final PotionEffectType DOLPHINS_GRACE = getPotionEffectType(30, "dolphins_grace");
 
     /**
      * Triggers an ominous event when the player enters a village or trial chambers.<br>
      * oof.
+     *
+     * @since 1.14
      */
     public static final PotionEffectType BAD_OMEN = getPotionEffectType(31, "bad_omen");
 
     /**
      * Reduces the cost of villager trades.<br>
      * \o/.
+     *
+     * @since 1.14
      */
     public static final PotionEffectType HERO_OF_THE_VILLAGE = getPotionEffectType(32, "hero_of_the_village");
 
     /**
      * Causes the player's vision to dim occasionally.
+     *
+     * @since 1.19
      */
     public static final PotionEffectType DARKNESS = getPotionEffectType(33, "darkness");
 
     /**
      * Causes trial spawners to become ominous.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType TRIAL_OMEN = getPotionEffectType(34, "trial_omen");
 
     /**
      * Triggers a raid when a player enters a village.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType RAID_OMEN = getPotionEffectType(35, "raid_omen");
 
     /**
      * Emits a wind burst upon death.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType WIND_CHARGED = getPotionEffectType(36, "wind_charged");
 
     /**
      * Creates cobwebs upon death.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType WEAVING = getPotionEffectType(37, "weaving");
 
     /**
      * Causes slimes to spawn upon death.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType OOZING = getPotionEffectType(38, "oozing");
 
     /**
      * Chance of spawning silverfish when hurt.
+     *
+     * @since 1.20.6
      */
     public static final PotionEffectType INFESTED = getPotionEffectType(39, "infested");
 
     /**
      * Prevent the oxygen bar from depleting underwater.
+     *
+     * @since 1.21.11
      */
     public static final PotionEffectType BREATH_OF_THE_NAUTILUS = getPotionEffectType(40, "breath_of_the_nautilus");
 
@@ -243,6 +325,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      * @param duration time in ticks
      * @param amplifier the effect's amplifier
      * @return a resulting potion effect
+     * @since 1.1.0
      */
     @NotNull
     public abstract PotionEffect createEffect(int duration, int amplifier);
@@ -251,6 +334,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      * Returns whether the effect of this type happens once, immediately.
      *
      * @return whether this type is normally instant
+     * @since 1.1.0
      */
     public abstract boolean isInstant();
 
@@ -258,6 +342,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      * Returns the {@link PotionEffectTypeCategory category} of this effect type.
      *
      * @return the category
+     * @since 1.20.6
      */
     @NotNull
     public abstract PotionEffectTypeCategory getCategory();
@@ -266,6 +351,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      * Returns the color of this effect type.
      *
      * @return the color
+     * @since 1.11
      */
     @NotNull
     public abstract Color getColor();
@@ -293,6 +379,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      *
      * @return The name of this effect type
      * @deprecated only for backwards compatibility, use {@link #getKey()} instead.
+     * @since 1.1.0
      */
     @NotNull
     @Deprecated(since = "1.20.3")
@@ -304,6 +391,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      * @param key key to fetch
      * @return Resulting PotionEffectType, or null if not found
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * @since 1.18.1
      */
     @Contract("null -> null")
     @Nullable
@@ -348,6 +436,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      * @param name Name of PotionEffectType to fetch
      * @return Resulting PotionEffectType, or null if not found.
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * @since 1.1.0
      */
     @Nullable
     @Deprecated(since = "1.20.3")
@@ -363,6 +452,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
     /**
      * @return an array of all known PotionEffectTypes.
      * @deprecated use {@link Registry#stream()}.
+     * @since 1.1.0
      */
     @NotNull
     @Deprecated(since = "1.20.3")
@@ -375,6 +465,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      * Gets the effect attributes in an immutable map.
      *
      * @return the attribute map
+     * @since 1.18.1
      */
     public abstract @NotNull java.util.Map<org.bukkit.attribute.Attribute, org.bukkit.attribute.AttributeModifier> getEffectAttributes();
 
@@ -385,6 +476,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      * @param effectAmplifier the effect amplifier (0 indexed)
      * @return the modifier amount
      * @throws IllegalArgumentException if the supplied attribute is not present in the map from {@link #getEffectAttributes()}
+     * @since 1.18.1
      */
     public abstract double getAttributeModifierAmount(@NotNull org.bukkit.attribute.Attribute attribute, int effectAmplifier);
 
@@ -392,16 +484,28 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
      * Gets the category of this effect
      *
      * @return the category
+     * @since 1.18.1
      */
     public abstract @NotNull PotionEffectType.Category getEffectCategory();
 
     /**
      * Category of {@link PotionEffectType}s
+     *
+     * @since 1.18.1
      */
     public enum Category {
 
+        /**
+         * @since 1.18.1
+         */
         BENEFICIAL(net.kyori.adventure.text.format.NamedTextColor.BLUE),
+        /**
+         * @since 1.18.1
+         */
         HARMFUL(net.kyori.adventure.text.format.NamedTextColor.RED),
+        /**
+         * @since 1.18.1
+         */
         NEUTRAL(net.kyori.adventure.text.format.NamedTextColor.BLUE);
 
         private final net.kyori.adventure.text.format.TextColor color;
@@ -415,6 +519,7 @@ public abstract class PotionEffectType implements Keyed, Translatable, net.kyori
          * of this category.
          *
          * @return the text color
+         * @since 1.18.1
          */
         @NotNull
         public net.kyori.adventure.text.format.TextColor getColor() {

@@ -5,6 +5,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a captured state of an end gateway.
+ *
+ * @since 1.9.4
  */
 public interface EndGateway extends TileState {
 
@@ -15,6 +17,7 @@ public interface EndGateway extends TileState {
      * If this block state is not placed the location's world will be null.
      *
      * @return the gateway exit location
+     * @since 1.9.4
      */
     @Nullable
     Location getExitLocation();
@@ -27,6 +30,7 @@ public interface EndGateway extends TileState {
      *
      * @param location the new exit location
      * @throws IllegalArgumentException for differing worlds
+     * @since 1.9.4
      */
     void setExitLocation(@Nullable Location location);
 
@@ -35,6 +39,7 @@ public interface EndGateway extends TileState {
      * the exit location instead of finding a nearby location.
      *
      * @return true if the gateway is teleporting to the exact location
+     * @since 1.9.4
      */
     boolean isExactTeleport();
 
@@ -43,6 +48,7 @@ public interface EndGateway extends TileState {
      * the exit location instead of finding a nearby location.
      *
      * @param exact whether to teleport to the exact location
+     * @since 1.9.4
      */
     void setExactTeleport(boolean exact);
 
@@ -53,6 +59,7 @@ public interface EndGateway extends TileState {
      * if it is a multiple of 2400 ticks a purple beam will be emitted.
      *
      * @return age in ticks
+     * @since 1.13.2
      */
     long getAge();
 
@@ -63,6 +70,7 @@ public interface EndGateway extends TileState {
      * if it is a multiple of 2400 ticks a purple beam will be emitted.
      *
      * @param age new age in ticks
+     * @since 1.13.2
      */
     void setAge(long age);
 }

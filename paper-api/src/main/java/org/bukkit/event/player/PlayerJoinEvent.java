@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
  *
  * <p>Teleporting the player during this event will result in undefined behavior.
  * Use {@link io.papermc.paper.event.player.AsyncPlayerSpawnLocationEvent} to change the spawn location.</p>
+ *
+ * @since 1.0.0
  */
 public class PlayerJoinEvent extends PlayerEvent {
 
@@ -37,6 +39,7 @@ public class PlayerJoinEvent extends PlayerEvent {
      * Gets the join message to send to all online players
      *
      * @return string join message. Can be {@code null}
+     * @since 1.16.5
      */
     public @Nullable Component joinMessage() {
         return this.joinMessage;
@@ -46,6 +49,7 @@ public class PlayerJoinEvent extends PlayerEvent {
      * Sets the join message to send to all online players
      *
      * @param joinMessage join message. If {@code null}, no message will be sent
+     * @since 1.16.5
      */
     public void joinMessage(@Nullable Component joinMessage) {
         this.joinMessage = joinMessage;
@@ -56,6 +60,7 @@ public class PlayerJoinEvent extends PlayerEvent {
      *
      * @return string join message. Can be {@code null}
      * @deprecated in favour of {@link #joinMessage()}
+     * @since 1.0.0
      */
     @Nullable
     @Deprecated
@@ -68,18 +73,25 @@ public class PlayerJoinEvent extends PlayerEvent {
      *
      * @param joinMessage join message. If {@code null}, no message will be sent
      * @deprecated in favour of {@link #joinMessage(Component)}
+     * @since 1.0.0
      */
     @Deprecated
     public void setJoinMessage(@Nullable String joinMessage) {
         this.joinMessage = joinMessage != null ? LegacyComponentSerializer.legacySection().deserialize(joinMessage) : null;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

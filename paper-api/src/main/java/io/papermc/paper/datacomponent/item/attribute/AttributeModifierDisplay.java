@@ -11,6 +11,7 @@ import org.jspecify.annotations.NullMarked;
  *
  * @see io.papermc.paper.datacomponent.DataComponentTypes#ATTRIBUTE_MODIFIERS
  * @see io.papermc.paper.datacomponent.item.ItemAttributeModifiers#itemAttributes()
+ * @since 1.21.6
  */
 @NullMarked
 @ApiStatus.NonExtendable
@@ -21,6 +22,7 @@ public interface AttributeModifierDisplay {
      * to its default behavior displaying the statistics.
      *
      * @return the new display behavior instance
+     * @since 1.21.6
      */
     @Contract(value = "-> new", pure = true)
     static Default reset() {
@@ -31,6 +33,7 @@ public interface AttributeModifierDisplay {
      * Hides the statistics displayed by the attribute modifier.
      *
      * @return the new display behavior instance
+     * @since 1.21.6
      */
     @Contract(value = "-> new", pure = true)
     static Hidden hidden() {
@@ -43,6 +46,7 @@ public interface AttributeModifierDisplay {
      *
      * @param text the overridden text
      * @return the new display behavior instance
+     * @since 1.21.6
      */
     @Contract(value = "_ -> new", pure = true)
     static OverrideText override(final ComponentLike text) {
@@ -51,6 +55,8 @@ public interface AttributeModifierDisplay {
 
     /**
      * Hidden statistics display for the attribute modifier.
+     *
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     interface Hidden extends AttributeModifierDisplay {
@@ -59,6 +65,8 @@ public interface AttributeModifierDisplay {
     /**
      * Default display for the attribute modifier, showing
      * the statistic of its effect.
+     *
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     interface Default extends AttributeModifierDisplay {
@@ -67,6 +75,8 @@ public interface AttributeModifierDisplay {
     /**
      * Specifies an overridden text to show instead of
      * the default behavior for the attribute modifier.
+     *
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     interface OverrideText extends AttributeModifierDisplay {
@@ -75,6 +85,7 @@ public interface AttributeModifierDisplay {
          * Overridden text
          *
          * @return the overridden text
+         * @since 1.21.6
          */
         Component text();
     }

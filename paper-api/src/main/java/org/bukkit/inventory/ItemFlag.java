@@ -6,27 +6,38 @@ import io.papermc.paper.datacomponent.DataComponentType;
  * A ItemFlag can hide some Attributes from ItemStacks
  * @apiNote Setting these without also setting the data they are hiding
  * may not result in the item flag being persisted in the ItemMeta/ItemStack.
+ * @since 1.8
  */
 public enum ItemFlag {
 
     /**
      * Setting to show/hide enchants
+     *
+     * @since 1.8
      */
     HIDE_ENCHANTS,
     /**
      * Setting to show/hide Attributes like Damage
+     *
+     * @since 1.8
      */
     HIDE_ATTRIBUTES,
     /**
      * Setting to show/hide the unbreakable State
+     *
+     * @since 1.8
      */
     HIDE_UNBREAKABLE,
     /**
      * Setting to show/hide what the ItemStack can break/destroy
+     *
+     * @since 1.8
      */
     HIDE_DESTROYS,
     /**
      * Setting to show/hide where this ItemStack can be build/placed on
+     *
+     * @since 1.8
      */
     HIDE_PLACED_ON,
     /**
@@ -49,20 +60,27 @@ public enum ItemFlag {
      *
      * @see #HIDE_STORED_ENCHANTS HIDE_STORED_ENCHANTS for hiding stored enchants (like on enchanted books)
      * @deprecated does not exist anymore and will not properly work with individually hidden data components; see {@link io.papermc.paper.datacomponent.item.TooltipDisplay} and {@link ItemStack#setData(DataComponentType.Valued, Object)}
+     * @since 1.20.6
      */
     @Deprecated
     HIDE_ADDITIONAL_TOOLTIP,
     /**
      * Setting to show/hide dyes from colored leather armor.
+     *
+     * @since 1.16.2
      */
     HIDE_DYE,
     /**
      * Setting to show/hide armor trim from armor.
+     *
+     * @since 1.19.4
      */
     HIDE_ARMOR_TRIM,
     /**
      * Setting to show/hide stored enchants on an item, such as enchantments
      * on an enchanted book.
+     *
+     * @since 1.20.6
      */
     HIDE_STORED_ENCHANTS,
     ;

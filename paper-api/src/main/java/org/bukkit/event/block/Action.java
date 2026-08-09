@@ -1,21 +1,32 @@
 package org.bukkit.event.block;
 
+/**
+ * @since 1.0.0
+ */
 public enum Action {
 
     /**
      * Left-clicking a block
+     *
+     * @since 1.0.0
      */
     LEFT_CLICK_BLOCK,
     /**
      * Right-clicking a block
+     *
+     * @since 1.0.0
      */
     RIGHT_CLICK_BLOCK,
     /**
      * Left-clicking the air
+     *
+     * @since 1.0.0
      */
     LEFT_CLICK_AIR,
     /**
      * Right-clicking the air
+     *
+     * @since 1.0.0
      */
     RIGHT_CLICK_AIR,
     /**
@@ -28,6 +39,8 @@ public enum Action {
      * <li>Triggering redstone ore
      * <li>Triggering tripwire
      * </ul>
+     *
+     * @since 1.0.0
      */
     // Paper start
     PHYSICAL;
@@ -36,6 +49,7 @@ public enum Action {
      * Gets whether this action is a result of a left click.
      *
      * @return Whether it's a left click
+     * @since 1.17.1
      */
     public boolean isLeftClick() {
         return this == LEFT_CLICK_AIR || this == LEFT_CLICK_BLOCK;
@@ -45,6 +59,7 @@ public enum Action {
      * Gets whether this action is a result of a right click.
      *
      * @return Whether it's a right click
+     * @since 1.17.1
      */
     public boolean isRightClick() {
         return this == RIGHT_CLICK_AIR || this == RIGHT_CLICK_BLOCK;

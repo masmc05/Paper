@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
  * <br>
  * 'occupied' property is a quick flag to check if a player is currently
  * sleeping in this bed block.
+ *
+ * @since 1.13
  */
 public interface Bed extends Directional {
 
@@ -17,6 +19,7 @@ public interface Bed extends Directional {
      * Gets the value of the 'part' property.
      *
      * @return the 'part' value
+     * @since 1.13
      */
     @NotNull
     Part getPart();
@@ -25,6 +28,7 @@ public interface Bed extends Directional {
      * Sets the value of the 'part' property.
      *
      * @param part the new 'part' value
+     * @since 1.13
      */
     void setPart(@NotNull Part part);
 
@@ -32,6 +36,7 @@ public interface Bed extends Directional {
      * Gets the value of the 'occupied' property.
      *
      * @return the 'occupied' value
+     * @since 1.13
      */
     boolean isOccupied();
 
@@ -40,21 +45,28 @@ public interface Bed extends Directional {
      * Sets the value of the 'occupied' property.
      *
      * @param occupied the new 'occupied' value
+     * @since 1.19.2
      */
     void setOccupied(boolean occupied);
     // Paper end
 
     /**
      * Horizontal half of a bed.
+     *
+     * @since 1.13
      */
     public enum Part {
 
         /**
          * The head is the upper part of the bed containing the pillow.
+         *
+         * @since 1.13
          */
         HEAD,
         /**
          * The foot is the lower half of the bed.
+         *
+         * @since 1.13
          */
         FOOT;
     }

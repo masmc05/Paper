@@ -5,6 +5,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents an item that has durability and can take damage.
+ *
+ * @since 1.13
  */
 public interface Damageable extends ItemMeta {
 
@@ -12,6 +14,7 @@ public interface Damageable extends ItemMeta {
      * Checks to see if this item has damage greater than 0.
      *
      * @return true if this has damage > 0
+     * @since 1.13
      */
     boolean hasDamage();
 
@@ -22,6 +25,7 @@ public interface Damageable extends ItemMeta {
      * a damage value is set.
      *
      * @return the damage
+     * @since 1.13
      */
     int getDamage();
 
@@ -30,6 +34,7 @@ public interface Damageable extends ItemMeta {
      *
      * @param damage item damage
      * @see #resetDamage() to reset and clear the damage data component
+     * @since 1.13
      */
     void setDamage(int damage);
 
@@ -39,6 +44,7 @@ public interface Damageable extends ItemMeta {
      * is set on this meta.
      *
      * @return true if any value is set
+     * @since 1.21
      */
     boolean hasDamageValue();
 
@@ -46,6 +52,8 @@ public interface Damageable extends ItemMeta {
      * Clears the damage component from the meta. Differs
      * from {@code setDamage(0)} in that it removes the component
      * instead of adding the component with a value of 0.
+     *
+     * @since 1.21
      */
     void resetDamage();
     // Paper end
@@ -54,6 +62,7 @@ public interface Damageable extends ItemMeta {
      * Checks to see if this item has a maximum amount of damage.
      *
      * @return true if this has maximum amount of damage
+     * @since 1.20.6
      */
     boolean hasMaxDamage();
 
@@ -63,6 +72,7 @@ public interface Damageable extends ItemMeta {
      * Plugins should check {@link #hasMaxDamage()} before calling this method.
      *
      * @return the maximum amount of damage
+     * @since 1.20.6
      */
     int getMaxDamage();
 
@@ -70,6 +80,7 @@ public interface Damageable extends ItemMeta {
      * Sets the maximum amount of damage.
      *
      * @param maxDamage maximum amount of damage
+     * @since 1.20.6
      */
     void setMaxDamage(@Nullable Integer maxDamage);
 

@@ -10,6 +10,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents a raid event.
+ *
+ * @since 1.14.4
  */
 @NullMarked
 public interface Raid extends PersistentDataHolder {
@@ -18,6 +20,7 @@ public interface Raid extends PersistentDataHolder {
      * Get whether this raid started.
      *
      * @return whether raid is started
+     * @since 1.14.4
      */
     boolean isStarted();
 
@@ -25,6 +28,7 @@ public interface Raid extends PersistentDataHolder {
      * Gets the amount of ticks this raid has existed.
      *
      * @return active ticks
+     * @since 1.14.4
      */
     long getActiveTicks();
 
@@ -32,6 +36,7 @@ public interface Raid extends PersistentDataHolder {
      * Gets the Bad Omen level of this raid.
      *
      * @return Bad Omen level (between 0 and 5)
+     * @since 1.14.4
      */
     int getBadOmenLevel();
 
@@ -43,6 +48,7 @@ public interface Raid extends PersistentDataHolder {
      *
      * @param badOmenLevel new Bad Omen level (from 0-5)
      * @throws IllegalArgumentException if invalid Bad Omen level
+     * @since 1.14.4
      */
     void setBadOmenLevel(int badOmenLevel);
 
@@ -50,6 +56,7 @@ public interface Raid extends PersistentDataHolder {
      * Gets the center location where the raid occurs.
      *
      * @return location
+     * @since 1.14.4
      */
     Location getLocation();
 
@@ -60,6 +67,7 @@ public interface Raid extends PersistentDataHolder {
      * {@link #isStarted()} instead.
      *
      * @return Raids status
+     * @since 1.14.4
      */
     RaidStatus getStatus();
 
@@ -67,6 +75,7 @@ public interface Raid extends PersistentDataHolder {
      * Gets the number of raider groups which have spawned.
      *
      * @return total spawned groups
+     * @since 1.14.4
      */
     int getSpawnedGroups();
 
@@ -77,6 +86,7 @@ public interface Raid extends PersistentDataHolder {
      * present).
      *
      * @return total groups
+     * @since 1.14.4
      */
     int getTotalGroups();
 
@@ -84,6 +94,7 @@ public interface Raid extends PersistentDataHolder {
      * Gets the number of waves in this raid (exclude the additional wave).
      *
      * @return number of waves
+     * @since 1.14.4
      */
     int getTotalWaves();
 
@@ -94,6 +105,7 @@ public interface Raid extends PersistentDataHolder {
      * @throws IllegalArgumentException if totalWaves is negative or zero
      * @throws IllegalArgumentException if totalWaves is larger than 7, which is the most waves a vanilla raid can have.
      * @throws IllegalArgumentException if the totalWaves is less than {@link #getSpawnedGroups()}
+     * @since 1.21.11
      */
     void setTotalWaves(int totalWaves);
 
@@ -101,6 +113,7 @@ public interface Raid extends PersistentDataHolder {
      * Gets the sum of all raider's health.
      *
      * @return total raiders health
+     * @since 1.14.4
      */
     float getTotalHealth();
 
@@ -108,6 +121,7 @@ public interface Raid extends PersistentDataHolder {
      * Get the UUID of all heroes in this raid.
      *
      * @return a set of unique ids
+     * @since 1.14.4
      */
     Set<UUID> getHeroes();
 
@@ -115,6 +129,7 @@ public interface Raid extends PersistentDataHolder {
      * Gets all remaining {@link Raider} in the present wave.
      *
      * @return a list of current raiders
+     * @since 1.14.4
      */
     List<Raider> getRaiders();
 
@@ -132,28 +147,39 @@ public interface Raid extends PersistentDataHolder {
      * Get the boss bar to be displayed for this raid.
      *
      * @return the boss bar
+     * @since 1.20.4
      */
     BossBar getBossBar();
 
     /**
      * Represents the status of a {@link Raid}.
+     *
+     * @since 1.14.4
      */
     enum RaidStatus {
 
         /**
          * The raid is in progress.
+         *
+         * @since 1.14.4
          */
         ONGOING,
         /**
          * The raid was beaten by heroes.
+         *
+         * @since 1.14.4
          */
         VICTORY,
         /**
          * The village has fallen (i.e. all villagers died).
+         *
+         * @since 1.14.4
          */
         LOSS,
         /**
          * The raid was terminated.
+         *
+         * @since 1.14.4
          */
         STOPPED;
     }

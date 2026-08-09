@@ -26,6 +26,8 @@ import org.jspecify.annotations.NullMarked;
  *     <li>A player changing their equipped armor.</li>
  *     <li>A player changes their currently held item.</li>
  * </ul>
+ *
+ * @since 1.21.4
  */
 @NullMarked
 public class EntityEquipmentChangedEvent extends EntityEvent {
@@ -41,6 +43,9 @@ public class EntityEquipmentChangedEvent extends EntityEvent {
         this.equipmentChanges = equipmentChanges;
     }
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     public LivingEntity getEntity() {
         return (LivingEntity) this.entity;
@@ -50,22 +55,31 @@ public class EntityEquipmentChangedEvent extends EntityEvent {
      * Gets a map of changed slots to their respective equipment changes.
      *
      * @return the equipment changes map
+     * @since 1.21.4
      */
     public @Unmodifiable Map<EquipmentSlot, EquipmentChange> getEquipmentChanges() {
         return Collections.unmodifiableMap(this.equipmentChanges);
     }
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
     /**
      * Represents a change in equipment for a single equipment slot.
+     *
+     * @since 1.21.4
      */
     @ApiStatus.NonExtendable
     public interface EquipmentChange {
@@ -74,6 +88,7 @@ public class EntityEquipmentChangedEvent extends EntityEvent {
          * Gets the existing item that is being replaced.
          *
          * @return the existing item
+         * @since 1.21.4
          */
         @Contract(pure = true, value = "-> new")
         ItemStack oldItem();
@@ -82,6 +97,7 @@ public class EntityEquipmentChangedEvent extends EntityEvent {
          * Gets the new item that is replacing the existing item.
          *
          * @return the new item
+         * @since 1.21.4
          */
         @Contract(pure = true, value = "-> new")
         ItemStack newItem();

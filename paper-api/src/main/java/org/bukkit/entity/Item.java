@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a dropped item.
+ *
+ * @since 1.0.0
  */
 public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Paper
 
@@ -14,6 +16,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Gets the item stack associated with this item drop.
      *
      * @return An item stack.
+     * @since 1.0.0
      */
     @NotNull
     public ItemStack getItemStack();
@@ -22,6 +25,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Sets the item stack associated with this item drop.
      *
      * @param stack An item stack.
+     * @since 1.0.0
      */
     public void setItemStack(@NotNull ItemStack stack);
 
@@ -29,6 +33,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Gets the delay before this Item is available to be picked up by players
      *
      * @return Remaining delay
+     * @since 1.0.0
      */
     public int getPickupDelay();
 
@@ -36,6 +41,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Sets the delay before this Item is available to be picked up by players
      *
      * @param delay New delay
+     * @since 1.0.0
      */
     public void setPickupDelay(int delay);
 
@@ -43,6 +49,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Sets if this Item should live forever
      *
      * @param unlimited true if the lifetime is unlimited
+     * @since 1.18.2
      */
     public void setUnlimitedLifetime(boolean unlimited);
 
@@ -50,6 +57,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Gets if this Item lives forever
      *
      * @return true if the lifetime is unlimited
+     * @since 1.18.2
      */
     public boolean isUnlimitedLifetime();
 
@@ -59,6 +67,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Other entities will not be able to pickup this item when an owner is set.
      *
      * @param owner UUID of new owner
+     * @since 1.13.1
      */
     public void setOwner(@Nullable UUID owner);
 
@@ -66,6 +75,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Get the owner of this item.
      *
      * @return UUID of owner
+     * @since 1.13.1
      */
     @Nullable
     public UUID getOwner();
@@ -77,6 +87,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * trigger criteria for item pickups, for things such as advancements.
      *
      * @param uuid UUID of thrower
+     * @since 1.13.1
      */
     public void setThrower(@Nullable UUID uuid);
 
@@ -86,6 +97,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * The thrower is the entity which dropped the item.
      *
      * @return UUID of thrower
+     * @since 1.13.1
      */
     @Nullable
     public UUID getThrower();
@@ -95,6 +107,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Gets if non-player entities can pick this Item up
      *
      * @return True if non-player entities can pickup
+     * @since 1.12
      */
      public boolean canMobPickup();
 
@@ -102,6 +115,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Sets if non-player entities can pick this Item up
      *
      * @param canMobPickup True to allow non-player entity pickup
+     * @since 1.12
      */
     public void setCanMobPickup(boolean canMobPickup);
 
@@ -109,6 +123,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Gets whether the player can pickup the item or not
      *
      * @return True if a player can pickup the item
+     * @since 1.16.4
      */
     public boolean canPlayerPickup();
 
@@ -116,6 +131,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Sets whether the item can be picked up or not. Modifies the pickup delay value to do so.
      *
      * @param canPlayerPickup True if the player can pickup the item
+     * @since 1.16.4
      */
     public void setCanPlayerPickup(boolean canPlayerPickup);
 
@@ -123,6 +139,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Gets whether the item will age and despawn from being on the ground too long
      *
      * @return True if the item will age
+     * @since 1.16.4
      */
     public boolean willAge();
 
@@ -131,6 +148,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * by being on the ground for too long.
      *
      * @param willAge True if the item should age
+     * @since 1.16.4
      */
     public void setWillAge(boolean willAge);
 
@@ -140,6 +158,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Currently the default max health is 5.
      *
      * @return the health
+     * @since 1.18.1
      */
     public int getHealth();
 
@@ -150,6 +169,7 @@ public interface Item extends Entity, io.papermc.paper.entity.Frictional { // Pa
      * Currently, the default max health is 5.
      *
      * @param health the health, a non-positive value will destroy the entity
+     * @since 1.18.1
      */
     public void setHealth(int health);
     // Paper end

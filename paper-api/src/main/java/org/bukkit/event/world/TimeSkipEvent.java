@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * If the event is cancelled the time will not change.
  *
  * @see ClockTimeSkipEvent for changing of clocks that affect all worlds
+ * @since 1.15.1
  */
 public class TimeSkipEvent extends ClockTimeSkipEvent {
 
@@ -28,18 +29,25 @@ public class TimeSkipEvent extends ClockTimeSkipEvent {
      * Returns the world that time is skipped in.
      *
      * @return world that time is skipped in
+     * @since 26.2
      */
     @NotNull
     public World getWorld() {
         return world;
     }
 
+    /**
+     * @since 1.15.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.15.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

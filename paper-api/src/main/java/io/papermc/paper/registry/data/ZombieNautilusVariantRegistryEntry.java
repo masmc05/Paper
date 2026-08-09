@@ -8,21 +8,29 @@ import org.jetbrains.annotations.Contract;
 
 /**
  * A data-centric version-specific registry entry for the {@link org.bukkit.entity.ZombieNautilus.Variant} type.
+ *
+ * @since 1.21.11
  */
 @ApiStatus.NonExtendable
 public interface ZombieNautilusVariantRegistryEntry {
 
     /**
      * The model of the variant to render the configured texture on.
+     *
+     * @since 1.21.11
      */
     enum Model {
         /**
          * The normal model.
+         *
+         * @since 1.21.11
          */
         NORMAL,
 
         /**
          * The warm model.
+         *
+         * @since 1.21.11
          */
         WARM,
     }
@@ -31,6 +39,7 @@ public interface ZombieNautilusVariantRegistryEntry {
      * Provides the client texture asset of the variant, which represents the texture to use.
      *
      * @return the client texture asset
+     * @since 1.21.11
      */
     ClientTextureAsset clientTextureAsset();
 
@@ -38,6 +47,7 @@ public interface ZombieNautilusVariantRegistryEntry {
      * Provides the model of the variant.
      *
      * @return the model
+     * @since 1.21.11
      */
     Model model();
 
@@ -49,6 +59,8 @@ public interface ZombieNautilusVariantRegistryEntry {
      *     <li>{@link #clientTextureAsset(ClientTextureAsset)}</li>
      *     <li>{@link #model(Model)}</li>
      * </ul>
+     *
+     * @since 1.21.11
      */
     @ApiStatus.NonExtendable
     interface Builder extends ZombieNautilusVariantRegistryEntry, RegistryBuilder<ZombieNautilus.Variant> {
@@ -59,6 +71,7 @@ public interface ZombieNautilusVariantRegistryEntry {
          * @param clientTextureAsset the client texture asset
          * @return this builder instance
          * @see ZombieNautilusVariantRegistryEntry#clientTextureAsset()
+         * @since 1.21.11
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder clientTextureAsset(ClientTextureAsset clientTextureAsset);
@@ -69,6 +82,7 @@ public interface ZombieNautilusVariantRegistryEntry {
          * @param model the model
          * @return this builder instance
          * @see ZombieNautilusVariantRegistryEntry#model()
+         * @since 1.21.11
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder model(Model model);

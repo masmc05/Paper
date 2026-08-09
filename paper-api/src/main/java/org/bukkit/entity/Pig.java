@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents a Pig.
+ *
+ * @since 1.0.0
  */
 @NullMarked
 public interface Pig extends Steerable, Vehicle {
@@ -17,6 +19,7 @@ public interface Pig extends Steerable, Vehicle {
      * Gets the variant of this pig.
      *
      * @return the pig variant
+     * @since 1.21.6
      */
     Variant getVariant();
 
@@ -24,6 +27,7 @@ public interface Pig extends Steerable, Vehicle {
      * Sets the variant of this pig.
      *
      * @param variant the pig variant
+     * @since 1.21.6
      */
     void setVariant(Variant variant);
 
@@ -31,6 +35,7 @@ public interface Pig extends Steerable, Vehicle {
      * Get the sound variant of this pig.
      *
      * @return pig sound variant
+     * @since 26.2
      */
     SoundVariant getSoundVariant();
 
@@ -38,19 +43,31 @@ public interface Pig extends Steerable, Vehicle {
      * Set the sound variant of this pig.
      *
      * @param variant pig sound variant
+     * @since 26.2
      */
     void setSoundVariant(SoundVariant variant);
 
     /**
      * Represents the variant of a pig.
+     *
+     * @since 1.21.6
      */
     interface Variant extends Keyed {
 
+        /**
+         * @since 1.21.6
+         */
         // Start generate - PigVariant
         Variant COLD = getVariant("cold");
 
+        /**
+         * @since 1.21.6
+         */
         Variant TEMPERATE = getVariant("temperate");
 
+        /**
+         * @since 1.21.6
+         */
         Variant WARM = getVariant("warm");
         // End generate - PigVariant
 
@@ -61,14 +78,25 @@ public interface Pig extends Steerable, Vehicle {
 
     /**
      * Represents the sound variant of a pig.
+     *
+     * @since 26.2
      */
     interface SoundVariant extends Keyed {
 
+        /**
+         * @since 26.2
+         */
         // Start generate - PigSoundVariant
         SoundVariant BIG = getSoundVariant("big");
 
+        /**
+         * @since 26.2
+         */
         SoundVariant CLASSIC = getSoundVariant("classic");
 
+        /**
+         * @since 26.2
+         */
         SoundVariant MINI = getSoundVariant("mini");
         // End generate - PigSoundVariant
 

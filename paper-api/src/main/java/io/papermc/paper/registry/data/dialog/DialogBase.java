@@ -12,6 +12,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Represents the base of all dialogs.
+ *
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public interface DialogBase {
@@ -27,6 +29,7 @@ public interface DialogBase {
      * @param body the body of the dialog
      * @param inputs the inputs of the dialog
      * @return a new dialog base instance
+     * @since 1.21.7
      */
     @Contract(value = "_, _, _, _, _, _, _ -> new", pure = true)
     static DialogBase create(
@@ -46,6 +49,7 @@ public interface DialogBase {
      *
      * @param title the title of the dialog
      * @return a new dialog base builder
+     * @since 1.21.7
      */
     @Contract(value = "_ -> new", pure = true)
     static Builder builder(final Component title) {
@@ -56,6 +60,7 @@ public interface DialogBase {
      * The title of the dialog.
      *
      * @return the title
+     * @since 1.21.7
      */
     @Contract(pure = true)
     Component title();
@@ -65,6 +70,7 @@ public interface DialogBase {
      * is used on buttons that open this dialog.
      *
      * @return the external title or null
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Nullable Component externalTitle();
@@ -73,6 +79,7 @@ public interface DialogBase {
      * Returns if this dialog can be closed with the "escape" keybind.
      *
      * @return if the dialog can be closed with "escape"
+     * @since 1.21.7
      */
     @Contract(pure = true)
     boolean canCloseWithEscape();
@@ -81,6 +88,7 @@ public interface DialogBase {
      * Returns if this dialog should pause the game when opened (single-player only).
      *
      * @return if the dialog pauses the game
+     * @since 1.21.7
      */
     @Contract(pure = true)
     boolean pause();
@@ -89,6 +97,7 @@ public interface DialogBase {
      * The action to take after the dialog is closed.
      *
      * @return the action to take after the dialog is closed
+     * @since 1.21.7
      */
     @Contract(pure = true)
     DialogAfterAction afterAction();
@@ -99,6 +108,7 @@ public interface DialogBase {
      * The body is a list of {@link DialogBody} elements that will be displayed in the dialog.
      *
      * @return the body of the dialog
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Unmodifiable List<DialogBody> body();
@@ -109,27 +119,39 @@ public interface DialogBase {
      * The inputs are a list of {@link DialogInput} elements that will be displayed in the dialog.
      *
      * @return the inputs of the dialog
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Unmodifiable List<DialogInput> inputs();
 
     /**
      * Actions to take after the dialog is closed.
+     *
+     * @since 1.21.7
      */
     enum DialogAfterAction {
         /**
          * Closes the dialog and returns to the previous non-dialog screen (if any).
+         *
+         * @since 1.21.7
          */
         CLOSE("close"),
         /**
          * Does nothing (keeps the current screen open).
+         *
+         * @since 1.21.7
          */
         NONE("none"),
         /**
          * Replaces dialog with a "waiting for response" screen.
+         *
+         * @since 1.21.7
          */
         WAIT_FOR_RESPONSE("wait_for_response");
 
+        /**
+         * @since 1.21.7
+         */
         public static final Index<String, DialogAfterAction> NAMES = Index.create(DialogAfterAction.class, e -> e.name);
 
         private final String name;
@@ -141,6 +163,8 @@ public interface DialogBase {
 
     /**
      * Builder interface for creating dialog bases.
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     interface Builder {
@@ -151,6 +175,7 @@ public interface DialogBase {
          *
          * @param externalTitle the external title of the dialog, or null if not set
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder externalTitle(@Nullable Component externalTitle);
@@ -160,6 +185,7 @@ public interface DialogBase {
          *
          * @param canCloseWithEscape if the dialog can be closed with "escape"
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder canCloseWithEscape(boolean canCloseWithEscape);
@@ -169,6 +195,7 @@ public interface DialogBase {
          *
          * @param pause if the dialog should pause the game
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder pause(boolean pause);
@@ -178,6 +205,7 @@ public interface DialogBase {
          *
          * @param afterAction the action to take after the dialog is closed
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder afterAction(DialogAfterAction afterAction);
@@ -187,6 +215,7 @@ public interface DialogBase {
          *
          * @param body the body of the dialog
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder body(List<? extends DialogBody> body);
@@ -196,6 +225,7 @@ public interface DialogBase {
          *
          * @param inputs the inputs of the dialog
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder inputs(List<? extends DialogInput> inputs);
@@ -204,6 +234,7 @@ public interface DialogBase {
          * Builds the dialog base.
          *
          * @return the built dialog base
+         * @since 1.21.7
          */
         @Contract(pure = true, value = "-> new")
         DialogBase build();

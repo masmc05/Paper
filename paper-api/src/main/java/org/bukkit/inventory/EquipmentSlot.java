@@ -4,20 +4,45 @@ import java.util.function.Supplier;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.8
+ */
 public enum EquipmentSlot {
 
+    /**
+     * @since 1.8
+     */
     HAND(() -> EquipmentSlotGroup.MAINHAND),
+    /**
+     * @since 1.9.4
+     */
     OFF_HAND(() -> EquipmentSlotGroup.OFFHAND),
+    /**
+     * @since 1.8
+     */
     FEET(() -> EquipmentSlotGroup.FEET),
+    /**
+     * @since 1.8
+     */
     LEGS(() -> EquipmentSlotGroup.LEGS),
+    /**
+     * @since 1.8
+     */
     CHEST(() -> EquipmentSlotGroup.CHEST),
+    /**
+     * @since 1.8
+     */
     HEAD(() -> EquipmentSlotGroup.HEAD),
     /**
      * Only for certain entities such as horses, wolves, happy ghasts, nautiluses and sulfur cubes.
+     *
+     * @since 1.20.6
      */
     BODY(() -> EquipmentSlotGroup.BODY),
     /**
      * Only for certain entities such as pigs, horses, striders, copper golems and nautiluses.
+     *
+     * @since 1.21.6
      */
     SADDLE(() -> EquipmentSlotGroup.SADDLE);
 
@@ -43,6 +68,7 @@ public enum EquipmentSlot {
      * either {@link #HAND} or {@link #OFF_HAND}
      *
      * @return whether this is a hand slot
+     * @since 1.19.2
      */
     public boolean isHand() {
         return this == HAND || this == OFF_HAND;
@@ -54,6 +80,7 @@ public enum EquipmentSlot {
      * @return the opposite hand
      * @throws IllegalArgumentException if this equipment slot is not a hand
      * @see #isHand()
+     * @since 1.20.6
      */
     public @NotNull EquipmentSlot getOppositeHand() {
         return switch (this) {
@@ -70,6 +97,7 @@ public enum EquipmentSlot {
      * {@link #LEGS}, {@link #FEET}, or {@link #BODY}
      *
      * @return whether this is an armor slot
+     * @since 1.19.2
      */
     public boolean isArmor() {
         return this == HEAD || this == CHEST || this == LEGS || this == FEET || this == BODY;

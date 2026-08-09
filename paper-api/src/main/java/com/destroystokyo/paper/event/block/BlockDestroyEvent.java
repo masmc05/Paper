@@ -17,6 +17,8 @@ import org.jspecify.annotations.NullMarked;
  * something can be described as "intend to destroy what is there",
  * <p>
  * Events such as leaves decaying, pistons retracting (where the block is moving), does NOT fire this event.
+ *
+ * @since 1.13.2
  */
 @NullMarked
 public class BlockDestroyEvent extends BlockExpEvent implements Cancellable {
@@ -42,6 +44,7 @@ public class BlockDestroyEvent extends BlockExpEvent implements Cancellable {
      * Gets the effect that will be played when the block is broken.
      *
      * @return block break effect
+     * @since 1.20.4
      */
     public BlockData getEffectBlock() {
         return this.effectBlock;
@@ -53,6 +56,7 @@ public class BlockDestroyEvent extends BlockExpEvent implements Cancellable {
      * played.
      *
      * @param effectBlock block effect
+     * @since 1.20.4
      */
     public void setEffectBlock(final BlockData effectBlock) {
         this.effectBlock = effectBlock.clone();
@@ -60,6 +64,7 @@ public class BlockDestroyEvent extends BlockExpEvent implements Cancellable {
 
     /**
      * @return The new state of this block (Air, or a Fluid type)
+     * @since 1.13.2
      */
     public BlockData getNewState() {
         return this.newState.clone();
@@ -67,6 +72,7 @@ public class BlockDestroyEvent extends BlockExpEvent implements Cancellable {
 
     /**
      * @return If the server is going to drop the block in question with this destroy event
+     * @since 1.13.2
      */
     public boolean willDrop() {
         return this.willDrop;
@@ -74,6 +80,7 @@ public class BlockDestroyEvent extends BlockExpEvent implements Cancellable {
 
     /**
      * @param willDrop If the server is going to drop the block in question with this destroy event
+     * @since 1.19.2
      */
     public void setWillDrop(final boolean willDrop) {
         this.willDrop = willDrop;
@@ -81,6 +88,7 @@ public class BlockDestroyEvent extends BlockExpEvent implements Cancellable {
 
     /**
      * @return If the server is going to play the sound effect for this destruction
+     * @since 1.13.2
      */
     public boolean playEffect() {
         return this.playEffect;
@@ -88,6 +96,7 @@ public class BlockDestroyEvent extends BlockExpEvent implements Cancellable {
 
     /**
      * @param playEffect If the server should play the sound effect for this destruction
+     * @since 1.13.2
      */
     public void setPlayEffect(final boolean playEffect) {
         this.playEffect = playEffect;
@@ -95,6 +104,7 @@ public class BlockDestroyEvent extends BlockExpEvent implements Cancellable {
 
     /**
      * @return If the event is cancelled, meaning the block will not be destroyed
+     * @since 1.13.2
      */
     @Override
     public boolean isCancelled() {
@@ -103,17 +113,25 @@ public class BlockDestroyEvent extends BlockExpEvent implements Cancellable {
 
     /**
      * If the event is cancelled, the block will remain in its previous state.
+     *
+     * @since 1.13.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

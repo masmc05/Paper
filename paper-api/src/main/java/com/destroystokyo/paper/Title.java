@@ -23,20 +23,27 @@ import static com.google.common.base.Preconditions.checkState;
  * <p>A title can be sent without subtitle text.</p>
  *
  * @deprecated use {@link net.kyori.adventure.title.Title}
+ * @since 1.9.4
  */
 @Deprecated(since = "1.16.5")
 public final class Title {
 
     /**
      * The default number of ticks for the title to fade in.
+     *
+     * @since 1.9.4
      */
     public static final int DEFAULT_FADE_IN = 20;
     /**
      * The default number of ticks for the title to stay.
+     *
+     * @since 1.9.4
      */
     public static final int DEFAULT_STAY = 200;
     /**
      * The default number of ticks for the title to fade out.
+     *
+     * @since 1.9.4
      */
     public static final int DEFAULT_FADE_OUT = 20;
 
@@ -53,6 +60,7 @@ public final class Title {
      *
      * @param title the main text of the title
      * @throws NullPointerException if the title is null
+     * @since 1.9.4
      */
     public Title(@NotNull BaseComponent title) {
         this(title, null);
@@ -65,6 +73,7 @@ public final class Title {
      *
      * @param title the main text of the title
      * @throws NullPointerException if the title is null
+     * @since 1.9.4
      */
     public Title(@NotNull BaseComponent[] title) {
         this(title, null);
@@ -77,6 +86,7 @@ public final class Title {
      *
      * @param title the main text of the title
      * @throws NullPointerException if the title is null
+     * @since 1.9.4
      */
     public Title(@NotNull String title) {
         this(title, null);
@@ -89,6 +99,7 @@ public final class Title {
      *
      * @param title    the main text of the title
      * @param subtitle the secondary text of the title
+     * @since 1.9.4
      */
     public Title(@NotNull BaseComponent title, @Nullable BaseComponent subtitle) {
         this(title, subtitle, DEFAULT_FADE_IN, DEFAULT_STAY, DEFAULT_FADE_OUT);
@@ -101,6 +112,7 @@ public final class Title {
      *
      * @param title    the main text of the title
      * @param subtitle the secondary text of the title
+     * @since 1.9.4
      */
     public Title(@NotNull BaseComponent[] title, @Nullable BaseComponent[] subtitle) {
         this(title, subtitle, DEFAULT_FADE_IN, DEFAULT_STAY, DEFAULT_FADE_OUT);
@@ -113,6 +125,7 @@ public final class Title {
      *
      * @param title    the main text of the title
      * @param subtitle the secondary text of the title
+     * @since 1.9.4
      */
     public Title(@NotNull String title, @Nullable String subtitle) {
         this(title, subtitle, DEFAULT_FADE_IN, DEFAULT_STAY, DEFAULT_FADE_OUT);
@@ -127,6 +140,7 @@ public final class Title {
      * @param stay     the number of ticks for the title to stay on screen
      * @param fadeOut  the number of ticks for the title to fade out
      * @throws IllegalArgumentException if any of the times are negative
+     * @since 1.9.4
      */
     public Title(@NotNull BaseComponent title, @Nullable BaseComponent subtitle, int fadeIn, int stay, int fadeOut) {
         this(
@@ -147,6 +161,7 @@ public final class Title {
      * @param stay     the number of ticks for the title to stay on screen
      * @param fadeOut  the number of ticks for the title to fade out
      * @throws IllegalArgumentException if any of the times are negative
+     * @since 1.9.4
      */
     public Title(@Nullable BaseComponent[] title, @NotNull BaseComponent[] subtitle, int fadeIn, int stay, int fadeOut) {
         checkArgument(fadeIn >= 0, "Negative fadeIn: %s", fadeIn);
@@ -169,6 +184,7 @@ public final class Title {
      * @param fadeIn   the number of ticks for the title to fade in
      * @param stay     the number of ticks for the title to stay on screen
      * @param fadeOut  the number of ticks for the title to fade out
+     * @since 1.9.4
      */
     public Title(@NotNull String title, @Nullable String subtitle, int fadeIn, int stay, int fadeOut) {
         this(
@@ -184,6 +200,7 @@ public final class Title {
      * Gets the text of this title
      *
      * @return the text
+     * @since 1.9.4
      */
     @NotNull
     public BaseComponent[] getTitle() {
@@ -194,6 +211,7 @@ public final class Title {
      * Gets the text of this title's subtitle
      *
      * @return the text
+     * @since 1.9.4
      */
     @Nullable
     public BaseComponent[] getSubtitle() {
@@ -206,6 +224,7 @@ public final class Title {
      * <p>The returned value is never negative.</p>
      *
      * @return the number of ticks to fade in
+     * @since 1.9.4
      */
     public int getFadeIn() {
         return this.fadeIn;
@@ -217,6 +236,7 @@ public final class Title {
      * <p>The returned value is never negative.</p>
      *
      * @return the number of ticks to stay
+     * @since 1.9.4
      */
     public int getStay() {
         return this.stay;
@@ -228,6 +248,7 @@ public final class Title {
      * <p>The returned value is never negative.</p>
      *
      * @return the number of ticks to fade out
+     * @since 1.9.4
      */
     public int getFadeOut() {
         return this.fadeOut;
@@ -237,6 +258,7 @@ public final class Title {
      * Sends the title directly to a player
      *
      * @param player the receiver of the title
+     * @since 1.16.4
      */
     public void send(@NotNull Player player) {
         player.sendTitle(this);
@@ -246,6 +268,7 @@ public final class Title {
      * Sends the title directly to the defined players
      *
      * @param players the receivers of the title
+     * @since 1.16.4
      */
     public void send(@NotNull Collection<? extends Player> players) {
         for (Player player : players) {
@@ -257,6 +280,7 @@ public final class Title {
      * Sends the title directly to the defined players
      *
      * @param players the receivers of the title
+     * @since 1.16.4
      */
     public void send(@NotNull Player[] players) {
         for (Player player : players) {
@@ -266,11 +290,16 @@ public final class Title {
 
     /**
      * Sends the title directly to all online players
+     *
+     * @since 1.16.4
      */
     public void broadcast() {
         send(Bukkit.getOnlinePlayers());
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static Builder builder() {
         return new Builder();
@@ -278,6 +307,8 @@ public final class Title {
 
     /**
      * A builder for creating titles
+     *
+     * @since 1.9.4
      */
     public static final class Builder {
 
@@ -293,6 +324,7 @@ public final class Title {
          * @param title the title text
          * @return this builder instance
          * @throws NullPointerException if the title is null
+         * @since 1.9.4
          */
         @NotNull
         public Builder title(@NotNull BaseComponent title) {
@@ -305,6 +337,7 @@ public final class Title {
          * @param title the title text
          * @return this builder instance
          * @throws NullPointerException if the title is null
+         * @since 1.9.4
          */
         @NotNull
         public Builder title(@NotNull BaseComponent[] title) {
@@ -320,6 +353,7 @@ public final class Title {
          * @param title the title text
          * @return this builder instance
          * @throws NullPointerException if the title is null
+         * @since 1.9.4
          */
         @NotNull
         public Builder title(@NotNull String title) {
@@ -331,6 +365,7 @@ public final class Title {
          *
          * @param subtitle the title text
          * @return this builder instance
+         * @since 1.9.4
          */
         @NotNull
         public Builder subtitle(@Nullable BaseComponent subtitle) {
@@ -342,6 +377,7 @@ public final class Title {
          *
          * @param subtitle the title text
          * @return this builder instance
+         * @since 1.9.4
          */
         @NotNull
         public Builder subtitle(@Nullable BaseComponent[] subtitle) {
@@ -356,6 +392,7 @@ public final class Title {
          *
          * @param subtitle the title text
          * @return this builder instance
+         * @since 1.9.4
          */
         @NotNull
         public Builder subtitle(@Nullable String subtitle) {
@@ -368,6 +405,7 @@ public final class Title {
          * @param fadeIn the number of ticks to fade in
          * @return this builder instance
          * @throws IllegalArgumentException if it is negative
+         * @since 1.9.4
          */
         @NotNull
         public Builder fadeIn(int fadeIn) {
@@ -383,6 +421,7 @@ public final class Title {
          * @param stay the number of ticks to stay
          * @return this builder instance
          * @throws IllegalArgumentException if it is negative
+         * @since 1.9.4
          */
         @NotNull
         public Builder stay(int stay) {
@@ -397,6 +436,7 @@ public final class Title {
          * @param fadeOut the number of ticks to fade out
          * @return this builder instance
          * @throws IllegalArgumentException if it is negative
+         * @since 1.9.4
          */
         @NotNull
         public Builder fadeOut(int fadeOut) {
@@ -410,6 +450,7 @@ public final class Title {
          *
          * @return a title from the values in this builder
          * @throws IllegalStateException if title isn't specified
+         * @since 1.9.4
          */
         @NotNull
         public Title build() {

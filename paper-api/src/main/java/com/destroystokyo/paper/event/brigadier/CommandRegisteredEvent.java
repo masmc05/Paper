@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
  * run at a later point in the server lifetime due to plugins, a server reload, etc.</p>
  *
  * @deprecated For removal, use the new brigadier api.
+ * @since 1.20.6
  */
 @Deprecated(since = "1.20.6")
 @Warning(reason = "This event has been superseded by the Commands API and will be removed in a future release. Listen to LifecycleEvents.COMMANDS instead.", value = true)
@@ -36,6 +37,9 @@ public class CommandRegisteredEvent<S extends com.destroystokyo.paper.brigadier.
 
     private boolean cancelled;
 
+    /**
+     * @since 1.20.6
+     */
     public CommandRegisteredEvent(String commandLabel, com.destroystokyo.paper.brigadier.BukkitBrigadierCommand<S> brigadierCommand, Command command, RootCommandNode<S> root, LiteralCommandNode<S> literal, ArgumentCommandNode<S, String> defaultArgs) {
         this.commandLabel = commandLabel;
         this.brigadierCommand = brigadierCommand;
@@ -49,6 +53,7 @@ public class CommandRegisteredEvent<S extends com.destroystokyo.paper.brigadier.
      * Gets the command label of the {@link Command} being registered.
      *
      * @return the command label
+     * @since 1.20.6
      */
     public String getCommandLabel() {
         return this.commandLabel;
@@ -61,6 +66,7 @@ public class CommandRegisteredEvent<S extends com.destroystokyo.paper.brigadier.
      * to delegate to the {@link Command} being registered.
      *
      * @return the {@link BukkitBrigadierCommand}
+     * @since 1.20.6
      */
     public BukkitBrigadierCommand<S> getBrigadierCommand() {
         return this.brigadierCommand;
@@ -70,6 +76,7 @@ public class CommandRegisteredEvent<S extends com.destroystokyo.paper.brigadier.
      * Gets the {@link Command} being registered.
      *
      * @return the {@link Command}
+     * @since 1.20.6
      */
     public Command getCommand() {
         return this.command;
@@ -79,6 +86,7 @@ public class CommandRegisteredEvent<S extends com.destroystokyo.paper.brigadier.
      * Gets the {@link RootCommandNode} which is being registered to.
      *
      * @return the {@link RootCommandNode}
+     * @since 1.20.6
      */
     public RootCommandNode<S> getRoot() {
         return this.root;
@@ -89,6 +97,7 @@ public class CommandRegisteredEvent<S extends com.destroystokyo.paper.brigadier.
      * you wish to reuse it.
      *
      * @return default arguments node
+     * @since 1.20.6
      */
     public ArgumentCommandNode<S, String> getDefaultArgs() {
         return this.defaultArgs;
@@ -98,6 +107,7 @@ public class CommandRegisteredEvent<S extends com.destroystokyo.paper.brigadier.
      * Gets the {@link LiteralCommandNode} to be registered for the {@link Command}.
      *
      * @return the {@link LiteralCommandNode}
+     * @since 1.20.6
      */
     public LiteralCommandNode<S> getLiteral() {
         return this.literal;
@@ -108,6 +118,7 @@ public class CommandRegisteredEvent<S extends com.destroystokyo.paper.brigadier.
      * this is primarily if you want to completely replace the object.
      *
      * @param literal new node
+     * @since 1.20.6
      */
     public void setLiteral(LiteralCommandNode<S> literal) {
         this.literal = literal;
@@ -118,6 +129,7 @@ public class CommandRegisteredEvent<S extends com.destroystokyo.paper.brigadier.
      *
      * @see #setRawCommand(boolean)
      * @return whether this command is treated as "raw"
+     * @since 1.20.6
      */
     public boolean isRawCommand() {
         return this.rawCommand;
@@ -134,11 +146,15 @@ public class CommandRegisteredEvent<S extends com.destroystokyo.paper.brigadier.
      * event.</p>
      *
      * @param rawCommand whether this command should be treated as "raw"
+     * @since 1.20.6
      */
     public void setRawCommand(final boolean rawCommand) {
         this.rawCommand = rawCommand;
     }
 
+    /**
+     * @since 1.20.6
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -149,17 +165,25 @@ public class CommandRegisteredEvent<S extends com.destroystokyo.paper.brigadier.
      * command from all players.
      * <p>
      * {@inheritDoc}
+     *
+     * @since 1.20.6
      */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.6
+     */
     @NotNull
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.6
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

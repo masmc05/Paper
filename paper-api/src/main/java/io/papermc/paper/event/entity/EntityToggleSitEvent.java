@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Is called when an entity sits down or stands up.
+ *
+ * @since 1.19.2
  */
 @NullMarked
 public class EntityToggleSitEvent extends EntityEvent implements Cancellable {
@@ -28,26 +30,39 @@ public class EntityToggleSitEvent extends EntityEvent implements Cancellable {
      * Gets the new sitting state that the entity will change to.
      *
      * @return If it's going to sit or not.
+     * @since 1.19.2
      */
     public boolean getSittingState() {
         return this.isSitting;
     }
 
+    /**
+     * @since 1.19.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.19.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.19.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

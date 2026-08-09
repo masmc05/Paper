@@ -36,6 +36,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * Starts off cancelled if the player is wearing a pumpkin head or is not looking
  * at the Enderman, according to Vanilla rules.
+ *
+ * @since 1.12.2
  */
 @NullMarked
 public class EndermanAttackPlayerEvent extends EntityEvent implements Cancellable {
@@ -55,6 +57,7 @@ public class EndermanAttackPlayerEvent extends EntityEvent implements Cancellabl
      * The enderman considering attacking
      *
      * @return The enderman considering attacking
+     * @since 1.12.2
      */
     @Override
     public Enderman getEntity() {
@@ -65,6 +68,7 @@ public class EndermanAttackPlayerEvent extends EntityEvent implements Cancellabl
      * The player the Enderman is considering attacking
      *
      * @return The player the Enderman is considering attacking
+     * @since 1.12.2
      */
     public Player getPlayer() {
         return this.player;
@@ -72,6 +76,7 @@ public class EndermanAttackPlayerEvent extends EntityEvent implements Cancellabl
 
     /**
      * @return If cancelled, the enderman will not attack
+     * @since 1.12.2
      */
     @Override
     public boolean isCancelled() {
@@ -82,17 +87,25 @@ public class EndermanAttackPlayerEvent extends EntityEvent implements Cancellabl
      * {@inheritDoc}
      * <br>
      * Cancels if the Enderman will attack this player
+     *
+     * @since 1.12.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

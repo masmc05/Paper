@@ -16,6 +16,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Paper API-specific methods for working with {@link Component}s and related.
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public final class PaperComponents {
@@ -48,6 +50,7 @@ public final class PaperComponents {
      * @param scoreboardSubject the scoreboard subject to use (for use with {@link net.kyori.adventure.text.ScoreComponent}s)
      * @return the resolved component
      * @throws IOException if a syntax error tripped during resolving
+     * @since 1.19.2
      */
     public static Component resolveWithContext(final Component input, final @Nullable CommandSender context, final @Nullable Entity scoreboardSubject) throws IOException {
         return resolveWithContext(input, context, scoreboardSubject, true);
@@ -79,6 +82,7 @@ public final class PaperComponents {
      * @param bypassPermissions true to bypass permissions checks for resolving components
      * @return the resolved component
      * @throws IOException if a syntax error tripped during resolving
+     * @since 1.19.2
      */
     public static Component resolveWithContext(final Component input, final @Nullable CommandSender context, final @Nullable Entity scoreboardSubject, final boolean bypassPermissions) throws IOException {
         return InternalAPIBridge.get().resolveWithContext(input, context, scoreboardSubject, bypassPermissions);
@@ -88,6 +92,7 @@ public final class PaperComponents {
      * Return a component flattener that can use game data to resolve extra information about components.
      *
      * @return a component flattener
+     * @since 1.16.5
      */
     public static ComponentFlattener flattener() {
         return InternalAPIBridge.get().componentFlattener();

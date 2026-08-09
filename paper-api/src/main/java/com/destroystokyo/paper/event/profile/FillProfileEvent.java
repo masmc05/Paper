@@ -33,6 +33,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Fired once a profiles additional properties (such as textures) has been filled
+ *
+ * @since 1.12.2
  */
 @NullMarked
 public class FillProfileEvent extends Event {
@@ -49,6 +51,7 @@ public class FillProfileEvent extends Event {
 
     /**
      * @return The Profile that had properties filled
+     * @since 1.12.2
      */
     public PlayerProfile getPlayerProfile() {
         return this.profile;
@@ -59,16 +62,23 @@ public class FillProfileEvent extends Event {
      *
      * @return The new properties on the profile.
      * @see PlayerProfile#getProperties()
+     * @since 1.12.2
      */
     public Set<ProfileProperty> getProperties() {
         return this.profile.getProperties();
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

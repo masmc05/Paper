@@ -12,11 +12,16 @@ import org.jetbrains.annotations.NotNull;
  * GenericCommandHelpTopic for each command in the server's CommandMap. You
  * can use this class as a base class for custom help topics, or as an example
  * for how to write your own.
+ *
+ * @since 1.3.1
  */
 public class GenericCommandHelpTopic extends HelpTopic {
 
     protected Command command;
 
+    /**
+     * @since 1.3.1
+     */
     public GenericCommandHelpTopic(@NotNull Command command) {
         this.command = command;
 
@@ -59,6 +64,9 @@ public class GenericCommandHelpTopic extends HelpTopic {
         fullText = sb.toString();
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean canSee(@NotNull CommandSender sender) {
         if (!command.isRegistered()) {

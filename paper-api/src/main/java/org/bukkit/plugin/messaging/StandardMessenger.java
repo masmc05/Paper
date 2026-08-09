@@ -16,6 +16,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Standard implementation to {@link Messenger}
+ *
+ * @since 1.1.0
  */
 public class StandardMessenger implements Messenger {
     private final Map<String, Set<PluginMessageListenerRegistration>> incomingByChannel = new HashMap<String, Set<PluginMessageListenerRegistration>>();
@@ -170,6 +172,9 @@ public class StandardMessenger implements Messenger {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isReservedChannel(@NotNull String channel) {
         channel = validateAndCorrectChannel(channel);
@@ -177,6 +182,9 @@ public class StandardMessenger implements Messenger {
         return channel.equals("minecraft:register") || channel.equals("minecraft:unregister"); // Paper
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void registerOutgoingPluginChannel(@NotNull Plugin plugin, @NotNull String channel) {
         if (plugin == null) {
@@ -190,6 +198,9 @@ public class StandardMessenger implements Messenger {
         addToOutgoing(plugin, channel);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void unregisterOutgoingPluginChannel(@NotNull Plugin plugin, @NotNull String channel) {
         if (plugin == null) {
@@ -200,6 +211,9 @@ public class StandardMessenger implements Messenger {
         removeFromOutgoing(plugin, channel);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void unregisterOutgoingPluginChannel(@NotNull Plugin plugin) {
         if (plugin == null) {
@@ -209,6 +223,9 @@ public class StandardMessenger implements Messenger {
         removeFromOutgoing(plugin);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @NotNull
     public PluginMessageListenerRegistration registerIncomingPluginChannel(@NotNull Plugin plugin, @NotNull String channel, @NotNull PluginMessageListener listener) {
@@ -230,6 +247,9 @@ public class StandardMessenger implements Messenger {
         return result;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void unregisterIncomingPluginChannel(@NotNull Plugin plugin, @NotNull String channel, @NotNull PluginMessageListener listener) {
         if (plugin == null) {
@@ -243,6 +263,9 @@ public class StandardMessenger implements Messenger {
         removeFromIncoming(new PluginMessageListenerRegistration(this, plugin, channel, listener));
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void unregisterIncomingPluginChannel(@NotNull Plugin plugin, @NotNull String channel) {
         if (plugin == null) {
@@ -253,6 +276,9 @@ public class StandardMessenger implements Messenger {
         removeFromIncoming(plugin, channel);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void unregisterIncomingPluginChannel(@NotNull Plugin plugin) {
         if (plugin == null) {
@@ -262,6 +288,9 @@ public class StandardMessenger implements Messenger {
         removeFromIncoming(plugin);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @NotNull
     public Set<String> getOutgoingChannels() {
@@ -271,6 +300,9 @@ public class StandardMessenger implements Messenger {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @NotNull
     public Set<String> getOutgoingChannels(@NotNull Plugin plugin) {
@@ -289,6 +321,9 @@ public class StandardMessenger implements Messenger {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @NotNull
     public Set<String> getIncomingChannels() {
@@ -298,6 +333,9 @@ public class StandardMessenger implements Messenger {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @NotNull
     public Set<String> getIncomingChannels(@NotNull Plugin plugin) {
@@ -322,6 +360,9 @@ public class StandardMessenger implements Messenger {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @NotNull
     public Set<PluginMessageListenerRegistration> getIncomingChannelRegistrations(@NotNull Plugin plugin) {
@@ -340,6 +381,9 @@ public class StandardMessenger implements Messenger {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @NotNull
     public Set<PluginMessageListenerRegistration> getIncomingChannelRegistrations(@NotNull String channel) {
@@ -356,6 +400,9 @@ public class StandardMessenger implements Messenger {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @NotNull
     public Set<PluginMessageListenerRegistration> getIncomingChannelRegistrations(@NotNull Plugin plugin, @NotNull String channel) {
@@ -383,6 +430,9 @@ public class StandardMessenger implements Messenger {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isRegistrationValid(@NotNull PluginMessageListenerRegistration registration) {
         if (registration == null) {
@@ -400,6 +450,9 @@ public class StandardMessenger implements Messenger {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isIncomingChannelRegistered(@NotNull Plugin plugin, @NotNull String channel) {
         if (plugin == null) {
@@ -422,6 +475,9 @@ public class StandardMessenger implements Messenger {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isOutgoingChannelRegistered(@NotNull Plugin plugin, @NotNull String channel) {
         if (plugin == null) {
@@ -440,6 +496,9 @@ public class StandardMessenger implements Messenger {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @Deprecated
     public void dispatchIncomingMessage(@NotNull Player source, @NotNull String channel, byte @NotNull [] message) {
@@ -465,6 +524,9 @@ public class StandardMessenger implements Messenger {
         }
     }
 
+    /**
+     * @since 1.21.7
+     */
     @Override
     public void dispatchIncomingMessage(@NotNull PlayerConnection source, @NotNull String channel, byte @NotNull [] message) {
         if (source == null) {
@@ -497,6 +559,7 @@ public class StandardMessenger implements Messenger {
      *
      * @param channel Channel name to validate.
      * @deprecated not an API method
+     * @since 1.1.0
      */
     @Deprecated(since = "1.13")
     public static void validateChannel(@NotNull String channel) {
@@ -509,6 +572,7 @@ public class StandardMessenger implements Messenger {
      * @param channel Channel name to validate.
      * @return corrected channel name
      * @deprecated not an API method
+     * @since 1.13
      */
     @Deprecated(since = "1.13")
     @NotNull
@@ -563,6 +627,7 @@ public class StandardMessenger implements Messenger {
      *     long.
      * @throws ChannelNotRegisteredException Thrown if the channel is not
      *     registered for this plugin.
+     * @since 1.1.0
      */
     public static void validatePluginMessage(@NotNull Messenger messenger, @NotNull Plugin source, @NotNull String channel, byte @NotNull [] message) {
         if (messenger == null) {

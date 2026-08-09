@@ -2,6 +2,8 @@ package org.bukkit.entity;
 
 /**
  * A Glow Squid.
+ *
+ * @since 1.17
  */
 public interface GlowSquid extends Squid {
 
@@ -11,6 +13,7 @@ public interface GlowSquid extends Squid {
      * Bravo Six will go dark for 100 ticks (5 seconds) if damaged.
      *
      * @return dark ticks remaining
+     * @since 1.17
      */
     int getDarkTicksRemaining();
 
@@ -20,6 +23,7 @@ public interface GlowSquid extends Squid {
      * Bravo Six will go dark for 100 ticks (5 seconds) if damaged.
      *
      * @param darkTicksRemaining dark ticks remaining
+     * @since 1.17
      */
     void setDarkTicksRemaining(int darkTicksRemaining);
 }

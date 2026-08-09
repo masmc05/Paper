@@ -10,6 +10,7 @@ import org.jetbrains.annotations.ApiStatus;
  * a column block position argument value using a {@link CommandSourceStack}.
  *
  * @see ArgumentTypes#columnBlockPosition()
+ * @since 1.21.8
  */
 @ApiStatus.Experimental
 @ApiStatus.NonExtendable

@@ -10,6 +10,7 @@ import org.bukkit.event.player.PlayerTeleportEvent;
  * slightly modify the behavior.
  *
  * @see Relative
+ * @since 1.19.3
  */
 public sealed interface TeleportFlag permits TeleportFlag.EntityState, TeleportFlag.Relative {
 
@@ -20,22 +21,31 @@ public sealed interface TeleportFlag permits TeleportFlag.EntityState, TeleportF
      * the position are non-applicable given teleports always expect an absolute location.
      * @see Player#teleport(Location, PlayerTeleportEvent.TeleportCause, TeleportFlag...)
      * @see Entity#teleport(Location, PlayerTeleportEvent.TeleportCause, TeleportFlag...)
+     * @since 1.19.3
      */
     enum Relative implements TeleportFlag {
         /**
          * Configures the player to not lose velocity in their x axis during the teleport.
+         *
+         * @since 1.21.3
          */
         VELOCITY_X,
         /**
          * Configures the player to not lose velocity in their y axis during the teleport.
+         *
+         * @since 1.21.3
          */
         VELOCITY_Y,
         /**
          * Configures the player to not lose velocity in their z axis during the teleport.
+         *
+         * @since 1.21.3
          */
         VELOCITY_Z,
         /**
          * Configures the player to not lose velocity in their current rotation during the teleport.
+         *
+         * @since 1.21.3
          */
         VELOCITY_ROTATION;
         /**

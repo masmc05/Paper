@@ -19,6 +19,8 @@ import org.jspecify.annotations.Nullable;
  * Called when the server tries to check the lock on a lockable block entity.
  * <br>
  * See {@link #setResult(Result)} to change behavior
+ *
+ * @since 1.19.3
  */
 @NullMarked
 public class BlockLockCheckEvent extends BlockEvent {
@@ -44,6 +46,7 @@ public class BlockLockCheckEvent extends BlockEvent {
      * whose lock is being checked.
      *
      * @return the snapshot block state.
+     * @since 1.19.3
      */
     public LockableTileState getBlockState() {
         final BlockState blockState = this.getBlock().getState();
@@ -55,6 +58,7 @@ public class BlockLockCheckEvent extends BlockEvent {
      * Get the player involved this lock check.
      *
      * @return the player
+     * @since 1.19.3
      */
     public Player getPlayer() {
         return this.player;
@@ -68,6 +72,7 @@ public class BlockLockCheckEvent extends BlockEvent {
      *
      * @return the item being used as the key item
      * @see #isUsingCustomKeyItemStack()
+     * @since 1.19.3
      */
     public ItemStack getKeyItem() {
         return Objects.requireNonNullElseGet(this.itemStack, this.player.getInventory()::getItemInMainHand);
@@ -78,6 +83,7 @@ public class BlockLockCheckEvent extends BlockEvent {
      *
      * @param stack the stack to use as a key
      * @see #resetKeyItem() to clear a custom key item
+     * @since 1.19.3
      */
     public void setKeyItem(final ItemStack stack) {
         Preconditions.checkArgument(stack != null, "stack cannot be null");
@@ -86,6 +92,8 @@ public class BlockLockCheckEvent extends BlockEvent {
 
     /**
      * Reset the key stack to the default (the player's main hand).
+     *
+     * @since 1.19.3
      */
     public void resetKeyItem() {
         this.itemStack = null;
@@ -95,6 +103,7 @@ public class BlockLockCheckEvent extends BlockEvent {
      * Checks if a custom key stack has been set.
      *
      * @return {@code true} if a custom key itemstack has been set
+     * @since 1.19.3
      */
     public boolean isUsingCustomKeyItemStack() {
         return this.itemStack != null;
@@ -105,6 +114,7 @@ public class BlockLockCheckEvent extends BlockEvent {
      *
      * @return the result
      * @see #setResult(Result)
+     * @since 1.19.3
      */
     public Result getResult() {
         return this.result;
@@ -118,6 +128,7 @@ public class BlockLockCheckEvent extends BlockEvent {
      * Setting this to {@link Result#ALLOW} bypasses the spectator check.
      *
      * @param result the result of this event
+     * @since 1.19.3
      */
     public void setResult(final Result result) {
         this.result = result;
@@ -129,6 +140,7 @@ public class BlockLockCheckEvent extends BlockEvent {
      *
      * @param lockedMessage the message to show if locked (or {@code null} for none)
      * @param lockedSound   the sound to play if locked (or {@code null} for none)
+     * @since 1.19.3
      */
     public void denyWithMessageAndSound(final @Nullable Component lockedMessage, final @Nullable Sound lockedSound) {
         this.result = Result.DENY;
@@ -141,6 +153,7 @@ public class BlockLockCheckEvent extends BlockEvent {
      * player cannot open the block.
      *
      * @return the locked message (or {@code null} if none)
+     * @since 1.19.3
      */
     public @Nullable Component getLockedMessage() {
         return this.lockedMessage;
@@ -151,6 +164,7 @@ public class BlockLockCheckEvent extends BlockEvent {
      * player cannot open the block.
      *
      * @param lockedMessage the locked message (or {@code null} for none)
+     * @since 1.19.3
      */
     public void setLockedMessage(final @Nullable Component lockedMessage) {
         this.lockedMessage = lockedMessage;
@@ -161,6 +175,7 @@ public class BlockLockCheckEvent extends BlockEvent {
      * player cannot open the block.
      *
      * @return the locked sound (or {@code null} if none)
+     * @since 1.19.3
      */
     public @Nullable Sound getLockedSound() {
         return this.lockedSound;
@@ -171,16 +186,23 @@ public class BlockLockCheckEvent extends BlockEvent {
      * player cannot open the block.
      *
      * @param lockedSound the locked sound (or {@code null} for none)
+     * @since 1.19.3
      */
     public void setLockedSound(final @Nullable Sound lockedSound) {
         this.lockedSound = lockedSound;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.3
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

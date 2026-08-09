@@ -10,13 +10,20 @@ import org.jspecify.annotations.Nullable;
  * An InventoryViewBuilder that can be bound by location within the world
  *
  * @param <V> the type of InventoryView created from this builder
+ * @since 1.21.4
  */
 @ApiStatus.Experimental
 public interface LocationInventoryViewBuilder<V extends InventoryView> extends InventoryViewBuilder<V> {
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     LocationInventoryViewBuilder<V> copy();
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     LocationInventoryViewBuilder<V> title(final @Nullable Component title);
 
@@ -34,6 +41,7 @@ public interface LocationInventoryViewBuilder<V extends InventoryView> extends I
      *
      * @param checkReachable whether or not to check if the view is "reachable"
      * @return this builder
+     * @since 1.21.4
      */
     LocationInventoryViewBuilder<V> checkReachable(final boolean checkReachable);
 
@@ -50,6 +58,7 @@ public interface LocationInventoryViewBuilder<V extends InventoryView> extends I
      *
      * @param location the location to bind to this view
      * @return this builder
+     * @since 1.21.4
      */
     LocationInventoryViewBuilder<V> location(final Location location);
 }

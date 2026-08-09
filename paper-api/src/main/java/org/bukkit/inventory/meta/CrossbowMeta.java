@@ -5,12 +5,16 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.14
+ */
 public interface CrossbowMeta extends ItemMeta {
 
     /**
      * Returns whether the item has any charged projectiles.
      *
      * @return whether charged projectiles are present
+     * @since 1.14
      */
     boolean hasChargedProjectiles();
 
@@ -18,6 +22,7 @@ public interface CrossbowMeta extends ItemMeta {
      * Returns an immutable list of the projectiles charged on this item.
      *
      * @return charged projectiles
+     * @since 1.14
      */
     @NotNull
     List<ItemStack> getChargedProjectiles();
@@ -29,6 +34,7 @@ public interface CrossbowMeta extends ItemMeta {
      *
      * @param projectiles the projectiles to set
      * @throws IllegalArgumentException if one of the projectiles is empty
+     * @since 1.14
      */
     void setChargedProjectiles(@Nullable List<ItemStack> projectiles);
 
@@ -37,6 +43,7 @@ public interface CrossbowMeta extends ItemMeta {
      *
      * @param item projectile
      * @throws IllegalArgumentException if the projectile is empty
+     * @since 1.14
      */
     void addChargedProjectile(@NotNull ItemStack item);
 }

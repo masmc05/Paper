@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
  * Thrown when a player is fishing
  *
  * <p>If you want to monitor a fishhooks state transition, you can use {@link FishHookStateChangeEvent}.</p>
+ *
+ * @since 1.0.0
  */
 public class PlayerFishEvent extends PlayerEvent implements Cancellable {
 
@@ -50,6 +52,7 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
      *
      * @return Entity caught by the player, Entity if fishing, and {@code null} if
      *     bobber has gotten stuck in the ground or nothing has been caught
+     * @since 1.0.0
      */
     @Nullable
     public Entity getCaught() {
@@ -60,6 +63,7 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
      * Gets the fishing hook.
      *
      * @return the entity representing the fishing hook/bobber.
+     * @since 1.5.1
      */
     @NotNull
     public FishHook getHook() {
@@ -74,6 +78,7 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
      * to {@link State#BITE} or {@link State#FAILED_ATTEMPT}.
      *
      * @return the hand
+     * @since 1.19.2
      */
     @Nullable
     public EquipmentSlot getHand() {
@@ -84,6 +89,7 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
      * Gets the state of the fishing
      *
      * @return A State detailing the state of the fishing
+     * @since 1.0.0
      */
     @NotNull
     public State getState() {
@@ -97,6 +103,7 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
      * State#CAUGHT_FISH}.
      *
      * @return the amount of experience to drop
+     * @since 1.4.6
      */
     public int getExpToDrop() {
         return this.exp;
@@ -109,27 +116,40 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
      * State#CAUGHT_FISH}.
      *
      * @param amount the amount of experience to drop
+     * @since 1.4.6
      */
     public void setExpToDrop(int amount) {
         this.exp = amount;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
@@ -137,46 +157,64 @@ public class PlayerFishEvent extends PlayerEvent implements Cancellable {
 
     /**
      * An enum to specify the state of the fishing
+     *
+     * @since 1.0.0
      */
     public enum State {
 
         /**
          * When a player is fishing, ie casting the line out.
+         *
+         * @since 1.0.0
          */
         FISHING,
         /**
          * When a player has successfully caught a fish and is reeling it in. In
          * this instance, a "fish" is any item retrieved from water as a result
          * of fishing, ie an item, but not necessarily a fish.
+         *
+         * @since 1.0.0
          */
         CAUGHT_FISH,
         /**
          * When a player has successfully caught an entity. This refers to any
          * already spawned entity in the world that has been hooked directly by
          * the rod.
+         *
+         * @since 1.0.0
          */
         CAUGHT_ENTITY,
         /**
          * When a bobber is stuck in the ground.
+         *
+         * @since 1.0.0
          */
         IN_GROUND,
         /**
          * When a player fails to catch a bite while fishing usually due to
          * poor timing.
+         *
+         * @since 1.0.0
          */
         FAILED_ATTEMPT,
         /**
          * When a player reels in their hook without receiving any bites.
+         *
+         * @since 1.13.2
          */
         REEL_IN,
         /**
          * Called when there is a bite on the hook and it is ready to be reeled
          * in.
+         *
+         * @since 1.9.4
          */
         BITE,
         /**
          * Called when a bobber was lured, and is now waiting to be hooked
          * (when a "fish" starts to swim toward the bobber to bite it).
+         *
+         * @since 1.20.6
          */
         LURED,
     }

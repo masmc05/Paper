@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a LivingEntity shoots a bow firing an arrow
+ *
+ * @since 1.1.0
  */
 public class EntityShootBowEvent extends EntityEvent implements Cancellable {
 
@@ -50,6 +52,9 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
         this.consumeItem = consumeItem;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public LivingEntity getEntity() {
@@ -60,6 +65,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      * Gets the bow ItemStack used to fire the arrow.
      *
      * @return the bow involved in this event
+     * @since 1.1.0
      */
     @Nullable
     public ItemStack getBow() {
@@ -73,6 +79,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      * inventory.
      *
      * @return the consumable item
+     * @since 1.16.2
      */
     @Nullable
     public ItemStack getConsumable() {
@@ -83,6 +90,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      * Gets the projectile which will be launched by this event
      *
      * @return the launched projectile
+     * @since 1.1.0
      */
     @NotNull
     public Entity getProjectile() {
@@ -93,6 +101,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      * Replaces the projectile which will be launched
      *
      * @param projectile the new projectile
+     * @since 1.1.0
      */
     public void setProjectile(@NotNull Entity projectile) {
         this.projectile = projectile;
@@ -102,6 +111,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      * Get the hand from which the bow was shot.
      *
      * @return the hand
+     * @since 1.16.2
      */
     @NotNull
     public EquipmentSlot getHand() {
@@ -112,6 +122,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      * Gets the force the arrow was launched with
      *
      * @return bow shooting force, up to 1.0
+     * @since 1.1.0
      */
     public float getForce() {
         return this.force;
@@ -130,6 +141,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      *
      * @param consumeItem whether to consume the item
      * @deprecated not currently functional
+     * @since 1.16.2
      */
     @Deprecated(since = "1.20.5")
     public void setConsumeItem(boolean consumeItem) {
@@ -140,6 +152,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
      * Get whether the consumable item should be consumed in this event.
      *
      * @return {@code true} if consumed, {@code false} otherwise
+     * @since 1.16.2
      */
     public boolean shouldConsumeItem() {
         return this.consumeItem;
@@ -147,6 +160,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
 
     /**
      * @deprecated use {@link #getConsumable()}
+     * @since 1.12.2
      */
     @Nullable @Deprecated
     public ItemStack getArrowItem() {
@@ -155,6 +169,7 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
 
     /**
      * @deprecated not currently functional
+     * @since 1.12.2
      */
     @Deprecated
     public void setConsumeArrow(boolean consumeArrow) {
@@ -163,28 +178,41 @@ public class EntityShootBowEvent extends EntityEvent implements Cancellable {
 
     /**
      * @deprecated use {@link #shouldConsumeItem()}
+     * @since 1.12.2
      */
     @Deprecated
     public boolean getConsumeArrow() {
         return this.shouldConsumeItem();
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

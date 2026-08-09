@@ -7,6 +7,8 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Context for computing itemstack tooltips via
  * {@link org.bukkit.inventory.ItemStack#computeTooltipLines(TooltipContext, Player)}
+ *
+ * @since 1.20.4
  */
 @NullMarked
 public interface TooltipContext {
@@ -18,6 +20,7 @@ public interface TooltipContext {
      * @param advanced whether the context is for advanced tooltips
      * @param creative whether the context is for the creative inventory
      * @return a new context
+     * @since 1.20.4
      */
     @Contract("_, _ -> new")
     static TooltipContext create(final boolean advanced, final boolean creative) {
@@ -28,6 +31,7 @@ public interface TooltipContext {
      * Creates a new context that is neither advanced nor creative.
      *
      * @return a new context
+     * @since 1.20.4
      */
     @Contract("-> new")
     static TooltipContext create() {
@@ -42,6 +46,7 @@ public interface TooltipContext {
      * when a player has {@code F3+H} enabled.
      *
      * @return true if for advanced tooltips
+     * @since 1.20.4
      */
     boolean isAdvanced();
 
@@ -53,6 +58,7 @@ public interface TooltipContext {
      * in the creative inventory.
      *
      * @return true if for creative mode inventory
+     * @since 1.20.4
      */
     boolean isCreative();
 
@@ -61,6 +67,7 @@ public interface TooltipContext {
      * set to true.
      *
      * @return a new context
+     * @since 1.20.4
      */
     @Contract("-> new")
     TooltipContext asAdvanced();
@@ -70,6 +77,7 @@ public interface TooltipContext {
      * set to true.
      *
      * @return a new context
+     * @since 1.20.4
      */
     @Contract("-> new")
     TooltipContext asCreative();

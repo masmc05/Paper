@@ -19,6 +19,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Concrete implementation of an attribute modifier.
+ *
+ * @since 1.9.4
  */
 public class AttributeModifier implements ConfigurationSerializable, Keyed {
 
@@ -48,12 +50,18 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
         this(NamespacedKey.fromString(uuid.toString()), amount, operation, slot);
     }
 
+    /**
+     * @since 1.21
+     */
     // Paper start - Add constructor without EquipmentSlotGroup
     public AttributeModifier(@NotNull NamespacedKey key, double amount, @NotNull Operation operation) {
         this(key, amount, operation, EquipmentSlotGroup.ANY);
     }
     // Paper end
 
+    /**
+     * @since 1.21
+     */
     public AttributeModifier(@NotNull NamespacedKey key, double amount, @NotNull Operation operation, @NotNull EquipmentSlotGroup slot) {
         Preconditions.checkArgument(key != null, "Key cannot be null");
         Preconditions.checkArgument(operation != null, "Operation cannot be null");
@@ -86,6 +94,9 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
         return UUID.nameUUIDFromBytes(namespacedKey.toString().getBytes(StandardCharsets.UTF_8));
     }
 
+    /**
+     * @since 1.21
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -96,6 +107,7 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
      * Get the name of this modifier.
      *
      * @return name
+     * @since 1.9.4
      */
     @NotNull
     public String getName() {
@@ -106,6 +118,7 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
      * Get the amount by which this modifier will apply its {@link Operation}.
      *
      * @return modification amount
+     * @since 1.9.4
      */
     public double getAmount() {
         return amount;
@@ -115,6 +128,7 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
      * Get the operation this modifier will apply.
      *
      * @return operation
+     * @since 1.9.4
      */
     @NotNull
     public Operation getOperation() {
@@ -127,6 +141,7 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
      *
      * @return the slot
      * @deprecated use {@link #getSlotGroup()}
+     * @since 1.13.1
      */
     @Nullable
     @Deprecated(since = "1.20.5")
@@ -138,12 +153,16 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
      * Get the {@link EquipmentSlotGroup} this AttributeModifier is active on.
      *
      * @return the slot
+     * @since 1.20.6
      */
     @NotNull
     public EquipmentSlotGroup getSlotGroup() {
         return slot;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public Map<String, Object> serialize() {
@@ -187,6 +206,9 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
                 + "}";
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static AttributeModifier deserialize(@NotNull Map<String, Object> args) {
         NamespacedKey key;
@@ -213,19 +235,27 @@ public class AttributeModifier implements ConfigurationSerializable, Keyed {
 
     /**
      * Enumerable operation to be applied.
+     *
+     * @since 1.9.4
      */
     public enum Operation {
 
         /**
          * Adds (or subtracts) the specified amount to the base value.
+         *
+         * @since 1.9.4
          */
         ADD_NUMBER,
         /**
          * Adds this scalar of amount to the base value.
+         *
+         * @since 1.9.4
          */
         ADD_SCALAR,
         /**
          * Multiply amount by this value, after adding 1 to it.
+         *
+         * @since 1.9.4
          */
         MULTIPLY_SCALAR_1;
     }

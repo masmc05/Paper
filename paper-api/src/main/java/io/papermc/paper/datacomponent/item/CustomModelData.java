@@ -12,11 +12,15 @@ import org.jspecify.annotations.NullMarked;
  * Holds the custom model data.
  *
  * @see io.papermc.paper.datacomponent.DataComponentTypes#CUSTOM_MODEL_DATA
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface CustomModelData {
 
+    /**
+     * @since 1.21.4
+     */
     @Contract(value = "-> new", pure = true)
     static CustomModelData.Builder customModelData() {
         return ItemComponentTypesBridge.bridge().customModelData();
@@ -26,6 +30,7 @@ public interface CustomModelData {
      * Gets the custom model data float values.
      *
      * @return the float values
+     * @since 1.21.4
      */
     @Contract(pure = true)
     @Unmodifiable List<Float> floats();
@@ -34,6 +39,7 @@ public interface CustomModelData {
      * Gets the custom model data boolean values.
      *
      * @return the boolean values
+     * @since 1.21.4
      */
     @Contract(pure = true)
     @Unmodifiable List<Boolean> flags();
@@ -42,6 +48,7 @@ public interface CustomModelData {
      * Gets the custom model data string values.
      *
      * @return the string values
+     * @since 1.21.4
      */
     @Contract(pure = true)
     @Unmodifiable List<String> strings();
@@ -50,12 +57,15 @@ public interface CustomModelData {
      * Gets the custom model data color values.
      *
      * @return the color values
+     * @since 1.21.4
      */
     @Contract(pure = true)
     @Unmodifiable List<Color> colors();
 
     /**
      * Builder for {@link CustomModelData}.
+     *
+     * @since 1.21.4
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<CustomModelData> {
@@ -66,6 +76,7 @@ public interface CustomModelData {
          * @param f the float
          * @return the builder for chaining
          * @see #floats()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addFloat(float f);
@@ -76,6 +87,7 @@ public interface CustomModelData {
          * @param floats the floats
          * @return the builder for chaining
          * @see #floats()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addFloats(List<Float> floats);
@@ -86,6 +98,7 @@ public interface CustomModelData {
          * @param flag the flag
          * @return the builder for chaining
          * @see #flags()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addFlag(boolean flag);
@@ -96,6 +109,7 @@ public interface CustomModelData {
          * @param flags the flags
          * @return the builder for chaining
          * @see #flags()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addFlags(List<Boolean> flags);
@@ -106,6 +120,7 @@ public interface CustomModelData {
          * @param string the string
          * @return the builder for chaining
          * @see #strings()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addString(String string);
@@ -116,6 +131,7 @@ public interface CustomModelData {
          * @param strings the strings
          * @return the builder for chaining
          * @see #strings()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addStrings(List<String> strings);
@@ -126,6 +142,7 @@ public interface CustomModelData {
          * @param color the color
          * @return the builder for chaining
          * @see #colors()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addColor(Color color);
@@ -136,6 +153,7 @@ public interface CustomModelData {
          * @param colors the colors
          * @return the builder for chaining
          * @see #colors()
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         CustomModelData.Builder addColors(List<Color> colors);

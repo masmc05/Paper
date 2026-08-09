@@ -37,6 +37,8 @@ import org.yaml.snakeyaml.reader.UnicodeReader;
 /**
  * An implementation of {@link Configuration} which saves all files in Yaml.
  * Note that this implementation is not synchronized.
+ *
+ * @since 1.0.0
  */
 public class YamlConfiguration extends FileConfiguration {
     /**
@@ -55,6 +57,9 @@ public class YamlConfiguration extends FileConfiguration {
     private final YamlRepresenter representer;
     private final Yaml yaml;
 
+    /**
+     * @since 1.0.0
+     */
     public YamlConfiguration() {
         yamlDumperOptions = new DumperOptions();
         yamlDumperOptions.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
@@ -70,6 +75,9 @@ public class YamlConfiguration extends FileConfiguration {
         yaml = new Yaml(constructor, representer, yamlDumperOptions, yamlLoaderOptions);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public String saveToString() {
@@ -94,6 +102,9 @@ public class YamlConfiguration extends FileConfiguration {
         return writer.toString();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void loadFromString(@NotNull String contents) throws InvalidConfigurationException {
         Preconditions.checkArgument(contents != null, "Contents cannot be null");
@@ -277,6 +288,9 @@ public class YamlConfiguration extends FileConfiguration {
         return list;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public YamlConfigurationOptions options() {
@@ -299,6 +313,7 @@ public class YamlConfiguration extends FileConfiguration {
      * @param file Input file
      * @return Resulting configuration
      * @throws IllegalArgumentException Thrown if file is null
+     * @since 1.0.0
      */
     @NotNull
     public static YamlConfiguration loadConfiguration(@NotNull File file) {
@@ -328,6 +343,7 @@ public class YamlConfiguration extends FileConfiguration {
      * @param reader input
      * @return resulting configuration
      * @throws IllegalArgumentException Thrown if stream is null
+     * @since 1.7.10
      */
     @NotNull
     public static YamlConfiguration loadConfiguration(@NotNull Reader reader) {

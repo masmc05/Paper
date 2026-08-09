@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when an item is put in a slot for repair by an anvil.
+ *
+ * @since 1.9.4
  */
 public class PrepareAnvilEvent extends com.destroystokyo.paper.event.inventory.PrepareResultEvent {
 
@@ -17,6 +19,9 @@ public class PrepareAnvilEvent extends com.destroystokyo.paper.event.inventory.P
         super(inventory, result);
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public AnvilInventory getInventory() {
@@ -29,11 +34,16 @@ public class PrepareAnvilEvent extends com.destroystokyo.paper.event.inventory.P
      * Note: by default custom recipes in anvil are disabled
      * you should define a repair cost on the anvil inventory
      * greater or equals to zero in order to allow that.
+     *
+     * @since 1.9.4
      */
     public void setResult(@Nullable ItemStack result) {
         super.setResult(result);
     }
 
+    /**
+     * @since 1.21
+     */
     @NotNull
     @Override
     public AnvilView getView() {

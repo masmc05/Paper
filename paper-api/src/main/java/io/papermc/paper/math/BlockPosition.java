@@ -11,45 +11,70 @@ import org.jetbrains.annotations.Contract;
  * <b>May see breaking changes until Experimental annotation is removed.</b>
  *
  * @see FinePosition
+ * @since 1.19.3
  */
 @ApiStatus.Experimental
 public interface BlockPosition extends Position {
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     default double x() {
         return this.blockX();
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     default double y() {
         return this.blockY();
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     default double z() {
         return this.blockZ();
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     default boolean isBlock() {
         return true;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     default boolean isFine() {
         return false;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     default BlockPosition toBlock() {
         return this;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     default BlockPosition offset(final int x, final int y, final int z) {
         return x == 0 && y == 0 && z == 0 ? this : new BlockPositionImpl(this.blockX() + x, this.blockY() + y, this.blockZ() + z);
     }
 
+    /**
+     * @since 1.19.3
+     */
     @Override
     default FinePosition offset(final double x, final double y, final double z) {
         return new FinePositionImpl(this.blockX() + x, this.blockY() + y, this.blockZ() + z);
@@ -60,6 +85,7 @@ public interface BlockPosition extends Position {
      *
      * @param blockFace the block face to offset towards
      * @return the offset block position
+     * @since 1.19.3
      */
     @Contract(value = "_ -> new", pure = true)
     default BlockPosition offset(final BlockFace blockFace) {
@@ -73,6 +99,7 @@ public interface BlockPosition extends Position {
      * @param blockFace the block face to offset towards
      * @param amount    the number of times to move in that direction
      * @return the offset block position
+     * @since 1.19.3
      */
     @Contract(pure = true)
     default BlockPosition offset(final BlockFace blockFace, final int amount) {
@@ -86,6 +113,7 @@ public interface BlockPosition extends Position {
      * @param axis   the axis to offset along
      * @param amount the amount to offset along that axis
      * @return the offset block position
+     * @since 1.19.3
      */
     @Contract(pure = true)
     default BlockPosition offset(final Axis axis, final int amount) {

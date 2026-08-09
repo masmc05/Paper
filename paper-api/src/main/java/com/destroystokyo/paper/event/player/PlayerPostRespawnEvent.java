@@ -10,6 +10,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Fired after a player has respawned
+ *
+ * @since 1.13.2
  */
 @NullMarked
 public class PlayerPostRespawnEvent extends AbstractRespawnEvent {
@@ -33,17 +35,24 @@ public class PlayerPostRespawnEvent extends AbstractRespawnEvent {
      *
      * @return location of the respawned player
      * @see #getRespawnLocation()
+     * @since 1.13.2
      */
     @ApiStatus.Obsolete
     public Location getRespawnedLocation() {
         return super.getRespawnLocation();
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -14,6 +14,8 @@ import org.jspecify.annotations.Nullable;
  * <p>
  * This event does not fire for the entities actual movement. Only when it
  * is choosing to start moving to a location.
+ *
+ * @since 1.9.4
  */
 @NullMarked
 public class EntityPathfindEvent extends EntityEvent implements Cancellable {
@@ -35,6 +37,7 @@ public class EntityPathfindEvent extends EntityEvent implements Cancellable {
      * The Entity that is pathfinding.
      *
      * @return The Entity that is pathfinding.
+     * @since 1.9.4
      */
     @Override
     public Entity getEntity() {
@@ -47,6 +50,7 @@ public class EntityPathfindEvent extends EntityEvent implements Cancellable {
      * Otherwise, this will return {@code null}.
      *
      * @return The entity target or {@code null}
+     * @since 1.9.4
      */
     public @Nullable Entity getTargetEntity() {
         return this.targetEntity;
@@ -58,26 +62,39 @@ public class EntityPathfindEvent extends EntityEvent implements Cancellable {
      * Note that if the target happened to of been an entity
      *
      * @return Location of where the entity is trying to pathfind to.
+     * @since 1.9.4
      */
     public Location getLoc() {
         return this.location.clone();
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

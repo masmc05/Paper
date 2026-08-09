@@ -7,6 +7,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * A fine position, which does not hold a y value.
+ *
+ * @since 1.21.8
  */
 @ApiStatus.Experimental
 @NullMarked
@@ -16,6 +18,7 @@ public interface ColumnFinePosition {
      * Gets the X-coordinate of this position.
      *
      * @return the X-coordinate as a double
+     * @since 1.21.8
      */
     double x();
 
@@ -23,6 +26,7 @@ public interface ColumnFinePosition {
      * Gets the Z-coordinate of this position.
      *
      * @return the Z-coordinate as a double
+     * @since 1.21.8
      */
     double z();
 
@@ -32,6 +36,7 @@ public interface ColumnFinePosition {
      *
      * @param y the Y-coordinate to include in the new position
      * @return a {@link FinePosition} representing the full 3D position
+     * @since 1.21.8
      */
     default FinePosition toPosition(final double y) {
         return Position.fine(this.x(), y, this.z());

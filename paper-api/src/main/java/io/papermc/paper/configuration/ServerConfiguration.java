@@ -5,6 +5,8 @@ package io.papermc.paper.configuration;
  * <p>
  * This interface doesn't aim to cover every possible server configuration
  * option but focuses on selected critical settings and behaviors.
+ *
+ * @since 1.21.6
  */
 public interface ServerConfiguration {
 
@@ -19,6 +21,7 @@ public interface ServerConfiguration {
      * </ul>
      *
      * @return whether the server is in online mode or behind a proxy configured for online mode
+     * @since 1.21.6
      */
     boolean isProxyOnlineMode();
 
@@ -28,6 +31,7 @@ public interface ServerConfiguration {
      * This returns true if either Velocity or BungeeCord is enabled.
      *
      * @return whether the server is configured to work behind a proxy
+     * @since 1.21.6
      */
     boolean isProxyEnabled();
 }

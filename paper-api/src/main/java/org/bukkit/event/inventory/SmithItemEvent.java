@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when the recipe of an Item is completed inside a smithing table.
+ *
+ * @since 1.16.5
  */
 public class SmithItemEvent extends InventoryClickEvent {
 
@@ -20,6 +22,9 @@ public class SmithItemEvent extends InventoryClickEvent {
         super(view, type, slot, click, action, key);
     }
 
+    /**
+     * @since 1.16.5
+     */
     @NotNull
     @Override
     public SmithingInventory getInventory() {

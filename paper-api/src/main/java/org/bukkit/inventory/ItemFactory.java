@@ -19,6 +19,8 @@ import org.jetbrains.annotations.Nullable;
  * <p>
  * The ItemFactory is solely responsible for creating item meta containers to
  * apply on item stacks.
+ *
+ * @since 1.4.5
  */
 public interface ItemFactory {
 
@@ -28,6 +30,7 @@ public interface ItemFactory {
      * @param material The material to consider as base for the meta
      * @return a new ItemMeta that could be applied to an item stack of the
      *     specified material
+     * @since 1.4.5
      */
     @org.bukkit.UndefinedNullability // Paper
     ItemMeta getItemMeta(@NotNull final Material material);
@@ -45,6 +48,7 @@ public interface ItemFactory {
      *     otherwise
      * @throws IllegalArgumentException if the meta was not created by this
      *     factory
+     * @since 1.4.5
      */
     boolean isApplicable(@Nullable final ItemMeta meta, @Nullable final ItemStack stack) throws IllegalArgumentException;
 
@@ -61,6 +65,7 @@ public interface ItemFactory {
      *     otherwise
      * @throws IllegalArgumentException if the meta was not created by this
      *     factory
+     * @since 1.4.5
      */
     boolean isApplicable(@Nullable final ItemMeta meta, @Nullable final Material material) throws IllegalArgumentException;
 
@@ -97,6 +102,7 @@ public interface ItemFactory {
      *     for a stack of air.
      * @throws IllegalArgumentException if the specified meta was not created
      *     by this factory
+     * @since 1.4.5
      */
     @Nullable
     ItemMeta asMetaFor(@NotNull final ItemMeta meta, @NotNull final ItemStack stack) throws IllegalArgumentException;
@@ -120,6 +126,7 @@ public interface ItemFactory {
      *     guarantees are made as to if a copy is returned. This will be null for air.
      * @throws IllegalArgumentException if the specified meta was not created
      *     by this factory
+     * @since 1.4.5
      */
     @Nullable
     ItemMeta asMetaFor(@NotNull final ItemMeta meta, @NotNull final Material material) throws IllegalArgumentException;
@@ -128,6 +135,7 @@ public interface ItemFactory {
      * Returns the default color for all leather armor.
      *
      * @return the default color for leather armor
+     * @since 1.4.6
      */
     @NotNull
     Color getDefaultLeatherColor();
@@ -145,6 +153,7 @@ public interface ItemFactory {
      * @return the created ItemStack
      * @throws IllegalArgumentException if the input string was provided in an
      * invalid or unsupported format
+     * @since 1.18.2
      */
     @NotNull
     ItemStack createItemStack(@NotNull String input) throws IllegalArgumentException;
@@ -156,6 +165,7 @@ public interface ItemFactory {
      *
      * @param type the entity type
      * @return the Material of this EntityTypes spawn egg or null
+     * @since 1.17.1
      */
     @Nullable
     Material getSpawnEgg(@NotNull EntityType type);
@@ -172,6 +182,7 @@ public interface ItemFactory {
      * @return a new ItemStack containing the result of the Enchantment
      * @deprecated use {@link #enchantWithLevels(ItemStack, int, boolean, java.util.Random)}. This method's implementation is poorly
      * designed and was originally broken.
+     * @since 1.20.2
      */
     @NotNull
     @Deprecated(since = "1.19.3") // Paper
@@ -189,6 +200,7 @@ public interface ItemFactory {
      * @return a new ItemStack containing the result of the Enchantment
      * @deprecated use {@link #enchantWithLevels(ItemStack, int, boolean, java.util.Random)}. This method's implementation is poorly
      * designed and was originally broken.
+     * @since 1.20.2
      */
     @NotNull
     @Deprecated(since = "1.19.3") // Paper
@@ -205,6 +217,7 @@ public interface ItemFactory {
      * @return a new ItemStack containing the result of the Enchantment
      * @deprecated use {@link #enchantWithLevels(ItemStack, int, boolean, java.util.Random)}. This method's implementation is poorly
      * designed and was originally broken.
+     * @since 1.20.2
      */
     @NotNull
     @Deprecated(since = "1.19.3") // Paper
@@ -216,6 +229,7 @@ public interface ItemFactory {
      * @param item The item
      * @return A hover event
      * @throws IllegalArgumentException if the {@link ItemStack#getAmount()} is not between 1 and 99
+     * @since 1.16.5
      */
     @NotNull
     net.kyori.adventure.text.event.HoverEvent<net.kyori.adventure.text.event.HoverEvent.ShowItem> asHoverEvent(final @NotNull ItemStack item, final @NotNull java.util.function.UnaryOperator<net.kyori.adventure.text.event.HoverEvent.ShowItem> op);
@@ -227,6 +241,7 @@ public interface ItemFactory {
      * When used in chat, make sure to follow the ItemStack rules regarding amount, type, and other properties.
      * @param itemStack the {@link ItemStack}
      * @return display name of the {@link ItemStack}
+     * @since 1.16.5
      */
     @NotNull
     net.kyori.adventure.text.Component displayName(@NotNull ItemStack itemStack);
@@ -256,6 +271,7 @@ public interface ItemFactory {
      *
      * @param item The item to process conversions on
      * @return A potentially Data-Converted-ItemStack
+     * @since 1.12
      */
     @NotNull
     ItemStack ensureServerConversions(@NotNull ItemStack item);
@@ -268,6 +284,7 @@ public interface ItemFactory {
      * @param itemStack the itemstack
      * @return the {@link net.md_5.bungee.api.chat.hover.content.Content} of that ItemStack
      * @deprecated use {@link ItemStack#asHoverEvent()}
+     * @since 1.16.2
      */
     @NotNull
     @Deprecated // Paper
@@ -280,6 +297,7 @@ public interface ItemFactory {
      * @param entity Entity to create the HoverEvent for
      * @return the {@link net.md_5.bungee.api.chat.hover.content.Content} of that {@link org.bukkit.entity.Entity}
      * @deprecated use {@link org.bukkit.entity.Entity#asHoverEvent()}
+     * @since 1.16.2
      */
     @NotNull
     @Deprecated
@@ -292,6 +310,7 @@ public interface ItemFactory {
      * @param customName a custom name that should be displayed, if not passed entity name will be displayed
      * @return the {@link net.md_5.bungee.api.chat.hover.content.Content} of that {@link org.bukkit.entity.Entity}
      * @deprecated use {@link org.bukkit.entity.Entity#asHoverEvent(java.util.function.UnaryOperator)}
+     * @since 1.16.2
      */
     @NotNull
     @Deprecated
@@ -304,6 +323,7 @@ public interface ItemFactory {
      * @param customName a custom name that should be displayed, if not passed entity name will be displayed
      * @return the {@link net.md_5.bungee.api.chat.hover.content.Content} of that {@link org.bukkit.entity.Entity}
      * @deprecated use {@link org.bukkit.entity.Entity#asHoverEvent(java.util.function.UnaryOperator)}
+     * @since 1.16.2
      */
     @NotNull
     @Deprecated
@@ -316,6 +336,7 @@ public interface ItemFactory {
      * @param customName a custom name that should be displayed, if not passed entity name will be displayed
      * @return the {@link net.md_5.bungee.api.chat.hover.content.Content} of that {@link org.bukkit.entity.Entity}
      * @deprecated use {@link org.bukkit.entity.Entity#asHoverEvent(java.util.function.UnaryOperator)}
+     * @since 1.16.2
      */
     @NotNull
     @Deprecated
@@ -336,6 +357,7 @@ public interface ItemFactory {
      * @param random {@link java.util.Random} instance to use for enchanting
      * @return enchanted copy of the provided ItemStack
      * @throws IllegalArgumentException on bad arguments
+     * @since 1.18.2
      */
     @NotNull ItemStack enchantWithLevels(@NotNull ItemStack itemStack, int levels, boolean allowTreasure, @NotNull java.util.Random random);
     // Paper end - enchantWithLevels API
@@ -353,6 +375,7 @@ public interface ItemFactory {
      * @param random {@link java.util.Random} instance to use for enchanting
      * @return enchanted copy of the provided ItemStack
      * @throws IllegalArgumentException on bad arguments
+     * @since 1.21.1
      */
     @NotNull ItemStack enchantWithLevels(@NotNull ItemStack itemStack, int levels, @NotNull io.papermc.paper.registry.set.RegistryKeySet<@NotNull Enchantment> keySet, @NotNull java.util.Random random);
     // Paper end - enchantWithLevels with tag specification

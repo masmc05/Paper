@@ -14,6 +14,7 @@ import org.jspecify.annotations.NullMarked;
  * guaranteed to be available. This object won't be
  * updated as datapacks are updated.
  * @see DatapackRegistrar
+ * @since 1.21.4
  */
 @NullMarked
 @ApiStatus.NonExtendable
@@ -23,6 +24,7 @@ public interface DiscoveredDatapack {
      * Gets the name/id of this datapack.
      *
      * @return the name of the pack
+     * @since 1.21.4
      */
     @Contract(pure = true)
     String getName();
@@ -31,6 +33,7 @@ public interface DiscoveredDatapack {
      * Gets the title component of this datapack.
      *
      * @return the title
+     * @since 1.21.4
      */
     Component getTitle();
 
@@ -38,6 +41,7 @@ public interface DiscoveredDatapack {
      * Gets the description component of this datapack.
      *
      * @return the description
+     * @since 1.21.4
      */
     Component getDescription();
 
@@ -47,6 +51,7 @@ public interface DiscoveredDatapack {
      * A "required" datapack will always be enabled on server startup, even if previously disabled.
      *
      * @return true if the pack is required
+     * @since 1.21.4
      */
     boolean isRequired();
 
@@ -54,6 +59,7 @@ public interface DiscoveredDatapack {
      * Gets the compatibility status of this pack.
      *
      * @return the compatibility of the pack
+     * @since 1.21.4
      */
     Datapack.Compatibility getCompatibility();
 
@@ -61,6 +67,7 @@ public interface DiscoveredDatapack {
      * Gets the set of required features for this datapack.
      *
      * @return the set of required features
+     * @since 1.21.4
      */
     @Unmodifiable
     Set<FeatureFlag> getRequiredFeatures();
@@ -69,6 +76,7 @@ public interface DiscoveredDatapack {
      * Gets the source for this datapack.
      *
      * @return the pack source
+     * @since 1.21.4
      */
     DatapackSource getSource();
 }

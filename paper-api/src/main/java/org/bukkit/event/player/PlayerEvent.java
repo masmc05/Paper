@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a player related event
+ *
+ * @since 1.0.0
  */
 public abstract class PlayerEvent extends Event {
 
@@ -24,6 +26,7 @@ public abstract class PlayerEvent extends Event {
      * Returns the player involved in this event
      *
      * @return Player who is involved in this event
+     * @since 1.0.0
      */
     @NotNull
     public final Player getPlayer() {

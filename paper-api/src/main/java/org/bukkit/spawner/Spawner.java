@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Represents an entity spawner. <br>
  * May be a {@link SpawnerMinecart} or a {@link CreatureSpawner}.
+ *
+ * @since 1.21
  */
 @NullMarked
 public interface Spawner extends BaseSpawner {
@@ -20,6 +22,7 @@ public interface Spawner extends BaseSpawner {
      * {@link #getMinSpawnDelay} and {@link #getMaxSpawnDelay()}.
      *
      * @param delay The delay.
+     * @since 1.21
      */
     @Override
     void setDelay(int delay);
@@ -34,6 +37,7 @@ public interface Spawner extends BaseSpawner {
      * Default value is 200 ticks.
      *
      * @return the minimum spawn delay amount
+     * @since 1.21
      */
     int getMinSpawnDelay();
 
@@ -42,6 +46,7 @@ public interface Spawner extends BaseSpawner {
      *
      * @param delay the minimum spawn delay amount
      * @see #getMinSpawnDelay()
+     * @since 1.21
      */
     void setMinSpawnDelay(int delay);
 
@@ -58,6 +63,7 @@ public interface Spawner extends BaseSpawner {
      * Default value is 800 ticks.
      *
      * @return the maximum spawn delay amount
+     * @since 1.21
      */
     int getMaxSpawnDelay();
 
@@ -69,6 +75,7 @@ public interface Spawner extends BaseSpawner {
      *
      * @param delay the new maximum spawn delay amount
      * @see #getMaxSpawnDelay()
+     * @since 1.21
      */
     void setMaxSpawnDelay(int delay);
 
@@ -78,6 +85,7 @@ public interface Spawner extends BaseSpawner {
      * Default value is 4.
      *
      * @return the current spawn count
+     * @since 1.21
      */
     int getSpawnCount();
 
@@ -85,6 +93,7 @@ public interface Spawner extends BaseSpawner {
      * Set how many mobs attempt to spawn.
      *
      * @param spawnCount the new spawn count
+     * @since 1.21
      */
     void setSpawnCount(int spawnCount);
 
@@ -98,6 +107,7 @@ public interface Spawner extends BaseSpawner {
      * Default value is 6.
      *
      * @return the maximum number of nearby, similar, entities
+     * @since 1.21
      */
     int getMaxNearbyEntities();
 
@@ -108,6 +118,7 @@ public interface Spawner extends BaseSpawner {
      * Similar entities are entities that are of the same {@link EntityType}
      *
      * @param maxNearbyEntities the maximum number of nearby, similar, entities
+     * @since 1.21
      */
     void setMaxNearbyEntities(int maxNearbyEntities);
 
@@ -115,11 +126,14 @@ public interface Spawner extends BaseSpawner {
      * Check if spawner is activated (a player is close enough)
      *
      * @return True if a player is close enough to activate it
+     * @since 1.21
      */
     boolean isActivated();
 
     /**
      * Resets the spawn delay timer within the min/max range
+     *
+     * @since 1.21
      */
     void resetTimer();
 
@@ -132,6 +146,7 @@ public interface Spawner extends BaseSpawner {
      *
      * @param itemStack The item to spawn. Must not {@link ItemStack#isEmpty() be empty}.
      * @see #setSpawnedType(EntityType)
+     * @since 1.21
      */
     void setSpawnedItem(ItemStack itemStack);
 }

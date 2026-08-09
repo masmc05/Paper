@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see World#locateNearestBiome(Location, int, Biome...)
  * @see World#locateNearestBiome(Location, int, int, int, Biome...)
+ * @since 1.20.2
  */
 public interface BiomeSearchResult {
 
@@ -17,6 +18,7 @@ public interface BiomeSearchResult {
      * Return the biome which was found.
      *
      * @return the found biome.
+     * @since 1.20.2
      */
     @NotNull
     Biome getBiome();
@@ -25,6 +27,7 @@ public interface BiomeSearchResult {
      * Return the location of the biome.
      *
      * @return the location the biome was found.
+     * @since 1.20.2
      */
     @NotNull
     Location getLocation();

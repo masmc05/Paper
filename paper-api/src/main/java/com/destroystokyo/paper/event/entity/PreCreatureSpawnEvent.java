@@ -18,6 +18,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * Currently: NATURAL and SPAWNER based reasons. <!-- Please submit a Pull Request for future additions. -->
  * Also, Plugins that replace Entity Registrations with their own custom entities might not fire this event.
+ *
+ * @since 1.12.2
  */
 @NullMarked
 public class PreCreatureSpawnEvent extends Event implements Cancellable {
@@ -40,6 +42,7 @@ public class PreCreatureSpawnEvent extends Event implements Cancellable {
 
     /**
      * @return The location this creature is being spawned at
+     * @since 1.12.2
      */
     public Location getSpawnLocation() {
         return this.location.clone();
@@ -47,6 +50,7 @@ public class PreCreatureSpawnEvent extends Event implements Cancellable {
 
     /**
      * @return The type of creature being spawned
+     * @since 1.12.2
      */
     public EntityType getType() {
         return this.type;
@@ -54,6 +58,7 @@ public class PreCreatureSpawnEvent extends Event implements Cancellable {
 
     /**
      * @return Reason this creature is spawning (ie, NATURAL vs SPAWNER)
+     * @since 1.12.2
      */
     public CreatureSpawnEvent.SpawnReason getReason() {
         return this.reason;
@@ -61,6 +66,7 @@ public class PreCreatureSpawnEvent extends Event implements Cancellable {
 
     /**
      * @return If the spawn process should be aborted vs trying more attempts
+     * @since 1.12.2
      */
     public boolean shouldAbortSpawn() {
         return this.shouldAbortSpawn;
@@ -71,6 +77,7 @@ public class PreCreatureSpawnEvent extends Event implements Cancellable {
      * trying more attempts after this cancellation.
      *
      * @param shouldAbortSpawn Set if the spawn process should be aborted vs trying more attempts
+     * @since 1.12.2
      */
     public void setShouldAbortSpawn(final boolean shouldAbortSpawn) {
         this.shouldAbortSpawn = shouldAbortSpawn;
@@ -78,6 +85,7 @@ public class PreCreatureSpawnEvent extends Event implements Cancellable {
 
     /**
      * @return If the spawn of this creature is cancelled or not
+     * @since 1.12.2
      */
     @Override
     public boolean isCancelled() {
@@ -88,17 +96,24 @@ public class PreCreatureSpawnEvent extends Event implements Cancellable {
      * Cancelling this event is more efficient than cancelling {@link CreatureSpawnEvent}
      *
      * @param cancel {@code true} if you wish to cancel this event, and abort the spawn of this creature
+     * @since 1.12.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

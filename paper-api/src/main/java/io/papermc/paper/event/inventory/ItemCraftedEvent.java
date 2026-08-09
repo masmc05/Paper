@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when a player picks up a crafted item from the result slot of a crafting grid.
+ *
+ * @since 1.21.11
  */
 @NullMarked
 public class ItemCraftedEvent extends Event {
@@ -28,6 +30,7 @@ public class ItemCraftedEvent extends Event {
      * Gets the player who triggered the event by picking up the crafted item.
      *
      * @return the player
+     * @since 1.21.11
      */
     public Player getPlayer() {
         return this.player;
@@ -37,16 +40,23 @@ public class ItemCraftedEvent extends Event {
      * Gets the item that was crafted and picked up by the player.
      *
      * @return the crafted item
+     * @since 1.21.11
      */
     public ItemStack getCraftedItem() {
         return this.craftedItem.clone();
     }
 
+    /**
+     * @since 1.21.11
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.11
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

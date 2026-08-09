@@ -9,6 +9,8 @@ import org.joml.Vector3f;
 
 /**
  * Represents an arbitrary affine transformation.
+ *
+ * @since 1.19.4
  */
 public class Transformation {
 
@@ -21,6 +23,9 @@ public class Transformation {
     @NotNull
     private final Quaternionf rightRotation;
 
+    /**
+     * @since 1.19.4
+     */
     public Transformation(@NotNull Vector3f translation, @NotNull AxisAngle4f leftRotation, @NotNull Vector3f scale, @NotNull AxisAngle4f rightRotation) {
         Preconditions.checkArgument(translation != null, "translation cannot be null");
         Preconditions.checkArgument(leftRotation != null, "leftRotation cannot be null");
@@ -33,6 +38,9 @@ public class Transformation {
         this.rightRotation = new Quaternionf(rightRotation);
     }
 
+    /**
+     * @since 1.19.4
+     */
     public Transformation(@NotNull Vector3f translation, @NotNull Quaternionf leftRotation, @NotNull Vector3f scale, @NotNull Quaternionf rightRotation) {
         Preconditions.checkArgument(translation != null, "translation cannot be null");
         Preconditions.checkArgument(leftRotation != null, "leftRotation cannot be null");
@@ -49,6 +57,7 @@ public class Transformation {
      * Gets the translation component of this transformation.
      *
      * @return translation component
+     * @since 1.19.4
      */
     @NotNull
     public Vector3f getTranslation() {
@@ -59,6 +68,7 @@ public class Transformation {
      * Gets the left rotation component of this transformation.
      *
      * @return left rotation component
+     * @since 1.19.4
      */
     @NotNull
     public Quaternionf getLeftRotation() {
@@ -69,6 +79,7 @@ public class Transformation {
      * Gets the scale component of this transformation.
      *
      * @return scale component
+     * @since 1.19.4
      */
     @NotNull
     public Vector3f getScale() {
@@ -79,6 +90,7 @@ public class Transformation {
      * Gets the right rotation component of this transformation.
      *
      * @return right rotation component
+     * @since 1.19.4
      */
     @NotNull
     public Quaternionf getRightRotation() {

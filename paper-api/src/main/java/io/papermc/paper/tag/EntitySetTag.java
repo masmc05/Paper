@@ -9,20 +9,35 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.entity.EntityType;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.16.4
+ */
 public class EntitySetTag extends BaseTag<EntityType, EntitySetTag> {
 
+    /**
+     * @since 1.16.4
+     */
     public EntitySetTag(@NotNull NamespacedKey key, @NotNull Predicate<EntityType> filter) {
         super(EntityType.class, key, filter);
     }
 
+    /**
+     * @since 1.16.4
+     */
     public EntitySetTag(@NotNull NamespacedKey key, @NotNull EntityType... values) {
         super(EntityType.class, key, values);
     }
 
+    /**
+     * @since 1.16.4
+     */
     public EntitySetTag(@NotNull NamespacedKey key, @NotNull Collection<EntityType> values) {
         super(EntityType.class, key, values);
     }
 
+    /**
+     * @since 1.16.4
+     */
     public EntitySetTag(@NotNull NamespacedKey key, @NotNull Collection<EntityType> values, @NotNull Predicate<EntityType>... globalPredicates) {
         super(EntityType.class, key, values, globalPredicates);
     }

@@ -15,6 +15,8 @@ import org.jetbrains.annotations.NotNull;
  * <br>
  * This event is fired directly before the {@link PlayerExpChangeEvent}, and the
  * results of this event directly affect the {@link PlayerExpChangeEvent}.
+ *
+ * @since 1.12.2
  */
 public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
 
@@ -55,6 +57,7 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
      * This is not necessarily the item the player is holding.
      *
      * @return the item to be repaired
+     * @since 1.12.2
      */
     @NotNull
     public ItemStack getItem() {
@@ -66,6 +69,7 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
      * may be found.
      *
      * @return the repaired slot
+     * @since 1.19.2
      */
     @NotNull
     public EquipmentSlot getSlot() {
@@ -76,6 +80,7 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
      * Get the experience orb triggering the event.
      *
      * @return the experience orb
+     * @since 1.12.2
      */
     @NotNull
     public ExperienceOrb getExperienceOrb() {
@@ -89,6 +94,7 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
      * or the remaining damage left on the item, whichever is smaller.
      *
      * @return how much damage will be repaired by the experience orb
+     * @since 1.12.2
      */
     public int getRepairAmount() {
         return this.repairAmount;
@@ -100,6 +106,7 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
      * Half of this value will be subtracted from the experience orb which initiated this event.
      *
      * @param amount how much damage will be repaired on the item
+     * @since 1.12.2
      */
     public void setRepairAmount(int amount) {
         this.repairAmount = amount;
@@ -111,6 +118,7 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
      * into the function {@link #getDurabilityToXpOperation()}.
      *
      * @return the amount of xp that will be consumed
+     * @since 1.19.4
      */
     public int getConsumedExperience() {
         return this.consumedExperience;
@@ -146,22 +154,34 @@ public class PlayerItemMendEvent extends PlayerEvent implements Cancellable {
         throw new UnsupportedOperationException("Enchantments use effects to compute xp to durability since 1.21.");
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public void setCancelled(boolean cancelled) {
         this.cancelled = cancelled;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

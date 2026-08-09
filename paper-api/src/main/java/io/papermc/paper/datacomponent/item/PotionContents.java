@@ -14,11 +14,15 @@ import org.jspecify.annotations.Nullable;
 /**
  * Holds the contents of a potion (Potion, Splash Potion, Lingering Potion), or potion applied to a Tipped Arrow.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#POTION_CONTENTS
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface PotionContents {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static PotionContents.Builder potionContents() {
         return ItemComponentTypesBridge.bridge().potionContents();
@@ -28,6 +32,7 @@ public interface PotionContents {
      * The potion type in this item: the item will inherit all effects from this.
      *
      * @return potion type, or {@code null} if not present
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable PotionType potion();
@@ -38,6 +43,7 @@ public interface PotionContents {
      * @return color override, or {@code null} if not present
      * @apiNote alpha channel of the color is only relevant
      * for Tipped Arrow
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable Color customColor();
@@ -46,6 +52,7 @@ public interface PotionContents {
      * Additional list of effect instances that this item should apply.
      *
      * @return effects
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<PotionEffect> customEffects();
@@ -55,6 +62,7 @@ public interface PotionContents {
      *
      * @return translation key suffix, or {@code null} if not present
      * @apiNote This is used in the display of tipped arrow and potion items.
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable String customName();
@@ -65,6 +73,7 @@ public interface PotionContents {
      * This is a combination of the base potion type and any custom effects.
      *
      * @return an unmodifiable list of all effects.
+     * @since 1.21.6
      */
     @Contract(pure = true)
     @Unmodifiable List<PotionEffect> allEffects();
@@ -76,10 +85,14 @@ public interface PotionContents {
      * It may or may not have an alpha channel, used for tipped arrows.
      *
      * @return the effective colour this component would display with.
+     * @since 1.21.6
      */
     @Contract(pure = true)
     Color computeEffectiveColor();
 
+    /**
+     * @since 1.21.3
+     */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<PotionContents> {
 
@@ -89,6 +102,7 @@ public interface PotionContents {
          * @param type builder
          * @return the builder for chaining
          * @see #potion()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder potion(@Nullable PotionType type);
@@ -100,6 +114,7 @@ public interface PotionContents {
          * @return the builder for chaining
          * @apiNote alpha channel of the color is supported only for Tipped Arrow
          * @see #customColor()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder customColor(@Nullable Color color);
@@ -110,6 +125,7 @@ public interface PotionContents {
          * @param name name
          * @return the builder for chaining
          * @see #customName()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder customName(@Nullable String name);
@@ -120,6 +136,7 @@ public interface PotionContents {
          * @param effect effect
          * @return the builder for chaining
          * @see #customEffects()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addCustomEffect(PotionEffect effect);
@@ -130,6 +147,7 @@ public interface PotionContents {
          * @param effects effects
          * @return the builder for chaining
          * @see #customEffects()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addCustomEffects(List<PotionEffect> effects);

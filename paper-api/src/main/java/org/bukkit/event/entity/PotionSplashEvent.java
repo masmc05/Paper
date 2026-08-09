@@ -17,6 +17,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a splash potion hits an area
+ *
+ * @since 1.1.0
  */
 public class PotionSplashEvent extends ProjectileHitEvent implements Cancellable {
 
@@ -37,6 +39,9 @@ public class PotionSplashEvent extends ProjectileHitEvent implements Cancellable
         this.affectedEntities = affectedEntities;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public ThrownPotion getEntity() {
@@ -47,6 +52,7 @@ public class PotionSplashEvent extends ProjectileHitEvent implements Cancellable
      * Gets the potion which caused this event
      *
      * @return The thrown potion entity
+     * @since 1.1.0
      */
     @NotNull
     public ThrownPotion getPotion() {
@@ -57,6 +63,7 @@ public class PotionSplashEvent extends ProjectileHitEvent implements Cancellable
      * Retrieves a list of all effected entities
      *
      * @return A fresh copy of the affected entity list
+     * @since 1.1.0
      */
     @NotNull
     public Collection<LivingEntity> getAffectedEntities() {
@@ -70,6 +77,7 @@ public class PotionSplashEvent extends ProjectileHitEvent implements Cancellable
      * @param entity Which entity to get intensity for
      * @return intensity relative to maximum effect; 0.0: not affected; 1.0:
      *     fully hit by potion effects
+     * @since 1.1.0
      */
     public double getIntensity(@NotNull LivingEntity entity) {
         Double intensity = this.affectedEntities.get(entity);
@@ -81,6 +89,7 @@ public class PotionSplashEvent extends ProjectileHitEvent implements Cancellable
      *
      * @param entity For which entity to define a new intensity
      * @param intensity relative to maximum effect
+     * @since 1.1.0
      */
     public void setIntensity(@NotNull LivingEntity entity, double intensity) {
         Preconditions.checkArgument(entity != null, "You must specify a valid entity.");
@@ -91,22 +100,34 @@ public class PotionSplashEvent extends ProjectileHitEvent implements Cancellable
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

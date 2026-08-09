@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * This event gets called when the whitelist status of a player is changed
+ *
+ * @since 1.20.1
  */
 @NullMarked
 public class WhitelistStateUpdateEvent extends Event implements Cancellable {
@@ -32,6 +34,7 @@ public class WhitelistStateUpdateEvent extends Event implements Cancellable {
      * Gets the player whose whitelist status is being changed
      *
      * @return the player whose status is being changed
+     * @since 1.20.1
      */
     public OfflinePlayer getPlayer() {
         return Bukkit.getOfflinePlayer(this.playerProfile.getId());
@@ -41,6 +44,7 @@ public class WhitelistStateUpdateEvent extends Event implements Cancellable {
      * Gets the player profile whose whitelist status is being changed
      *
      * @return the player profile whose status is being changed
+     * @since 1.20.1
      */
     public PlayerProfile getPlayerProfile() {
         return this.playerProfile;
@@ -50,34 +54,55 @@ public class WhitelistStateUpdateEvent extends Event implements Cancellable {
      * Gets the status change of the player profile
      *
      * @return the whitelist status
+     * @since 1.20.1
      */
     public WhitelistStatus getStatus() {
         return this.status;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
     /**
      * Enum for the whitelist status changes
+     *
+     * @since 1.20.1
      */
     public enum WhitelistStatus {
-        ADDED, REMOVED
+        /**
+         * @since 1.20.1
+         */
+        ADDED, /**
+         * @since 1.20.1
+         */
+        REMOVED
     }
 }

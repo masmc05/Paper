@@ -4,6 +4,9 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Mob;
 import org.jspecify.annotations.NullMarked;
 
+/**
+ * @since 1.12.2
+ */
 @NullMarked
 public interface RangedEntity extends Mob {
     /**
@@ -12,6 +15,7 @@ public interface RangedEntity extends Mob {
      * @param target the entity to target
      * @param charge How "charged" the attack is (how far back the bow was pulled for Bow attacks).
      *               This should be a value between 0 and 1, represented as targetDistance/maxDistance.
+     * @since 1.12.2
      */
     void rangedAttack(LivingEntity target, float charge);
 
@@ -20,6 +24,7 @@ public interface RangedEntity extends Mob {
      *
      * @param raiseHands Whether the entities hands are raised to charge attack
      * @deprecated use {@link #setAggressive(boolean)}
+     * @since 1.12.2
      */
     @Deprecated(since = "1.19.2")
     void setChargingAttack(boolean raiseHands);
@@ -28,6 +33,7 @@ public interface RangedEntity extends Mob {
      * Alias to {@link LivingEntity#isHandRaised()}, if the entity is charging an attack
      * @return If entities hands are raised
      * @deprecated use {@link #isHandRaised()}
+     * @since 1.12.2
      */
     @Deprecated(since = "1.19.2")
     default boolean isChargingAttack() {

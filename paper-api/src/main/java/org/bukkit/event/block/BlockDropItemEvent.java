@@ -29,6 +29,8 @@ import org.jetbrains.annotations.NotNull;
  * The Block is already broken as this event is called, so {@link #getBlock()} will be
  * AIR in most cases. Use {@link #getBlockState()} for more Information about the broken
  * block.
+ *
+ * @since 1.13.2
  */
 public class BlockDropItemEvent extends BlockEvent implements Cancellable {
 
@@ -53,6 +55,7 @@ public class BlockDropItemEvent extends BlockEvent implements Cancellable {
      * broken.
      *
      * @return The BlockState of the block involved in this event
+     * @since 1.13.2
      */
     @NotNull
     public BlockState getBlockState() {
@@ -63,6 +66,7 @@ public class BlockDropItemEvent extends BlockEvent implements Cancellable {
      * Gets the Player that is breaking the block involved in this event.
      *
      * @return The Player that is breaking the block involved in this event
+     * @since 1.13.2
      */
     @NotNull
     public Player getPlayer() {
@@ -76,28 +80,41 @@ public class BlockDropItemEvent extends BlockEvent implements Cancellable {
      * drop. Adding to the list is allowed.
      *
      * @return The Item the block caused to drop
+     * @since 1.13.2
      */
     @NotNull
     public List<Item> getItems() {
         return this.items;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

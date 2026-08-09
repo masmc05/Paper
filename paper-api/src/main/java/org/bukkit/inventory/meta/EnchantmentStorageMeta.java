@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
  * EnchantmentMeta is specific to items that can <i>store</i> enchantments, as
  * opposed to being enchanted. {@link Material#ENCHANTED_BOOK} is an example
  * of an item with enchantment storage.
+ *
+ * @since 1.4.6
  */
 public interface EnchantmentStorageMeta extends ItemMeta {
 
@@ -16,6 +18,7 @@ public interface EnchantmentStorageMeta extends ItemMeta {
      * Checks for the existence of any stored enchantments.
      *
      * @return true if an enchantment exists on this meta
+     * @since 1.4.6
      */
     boolean hasStoredEnchants();
 
@@ -24,6 +27,7 @@ public interface EnchantmentStorageMeta extends ItemMeta {
      *
      * @param enchant enchantment to check
      * @return true if this enchantment is stored in this meta
+     * @since 1.4.6
      */
     boolean hasStoredEnchant(@NotNull Enchantment enchant);
 
@@ -33,6 +37,7 @@ public interface EnchantmentStorageMeta extends ItemMeta {
      * @param enchant enchantment to check
      * @return The level that the specified stored enchantment has, or 0 if
      *     none
+     * @since 1.4.6
      */
     int getStoredEnchantLevel(@NotNull Enchantment enchant);
 
@@ -40,6 +45,7 @@ public interface EnchantmentStorageMeta extends ItemMeta {
      * Gets a copy the stored enchantments in this ItemMeta.
      *
      * @return An immutable copy of the stored enchantments
+     * @since 1.4.6
      */
     @NotNull
     Map<Enchantment, Integer> getStoredEnchants();
@@ -54,6 +60,7 @@ public interface EnchantmentStorageMeta extends ItemMeta {
      * @return true if the item meta changed as a result of this call, false
      *     otherwise
      * @throws IllegalArgumentException if enchantment is null
+     * @since 1.4.6
      */
     boolean addStoredEnchant(@NotNull Enchantment enchant, int level, boolean ignoreLevelRestriction);
 
@@ -64,6 +71,7 @@ public interface EnchantmentStorageMeta extends ItemMeta {
      * @return true if the item meta changed as a result of this call, false
      *     otherwise
      * @throws IllegalArgumentException if enchantment is null
+     * @since 1.4.6
      */
     boolean removeStoredEnchant(@NotNull Enchantment enchant) throws IllegalArgumentException;
 
@@ -73,6 +81,7 @@ public interface EnchantmentStorageMeta extends ItemMeta {
      *
      * @param enchant enchantment to test
      * @return true if the enchantment conflicts, false otherwise
+     * @since 1.5.1
      */
     boolean hasConflictingStoredEnchant(@NotNull Enchantment enchant);
 

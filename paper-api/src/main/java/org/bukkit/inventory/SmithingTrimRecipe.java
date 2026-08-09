@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a smithing trim recipe.
+ *
+ * @since 1.19.4
  */
 public class SmithingTrimRecipe extends SmithingRecipe implements ComplexRecipe {
 
@@ -21,6 +23,7 @@ public class SmithingTrimRecipe extends SmithingRecipe implements ComplexRecipe 
      * @param base The base ingredient ({@link RecipeChoice#empty()} can be used)
      * @param addition The addition ingredient ({@link RecipeChoice#empty()} can be used)
      * @param pattern The trim pattern
+     * @since 1.21.6
      */
     public SmithingTrimRecipe(@NotNull NamespacedKey key, @NotNull RecipeChoice template, @NotNull RecipeChoice base, @NotNull RecipeChoice addition, @NotNull TrimPattern pattern) {
         super(key, new ItemStack(Material.AIR), base, addition);
@@ -37,6 +40,7 @@ public class SmithingTrimRecipe extends SmithingRecipe implements ComplexRecipe 
      * @param addition The addition ingredient ({@link RecipeChoice#empty()} can be used)
      * @param pattern The trim pattern
      * @param copyDataComponents whether to copy the data components from the input base item to the output
+     * @since 1.21.6
      */
     public SmithingTrimRecipe(@NotNull NamespacedKey key, @NotNull RecipeChoice template, @NotNull RecipeChoice base, @NotNull RecipeChoice addition, @NotNull TrimPattern pattern, boolean copyDataComponents) {
         super(key, new ItemStack(Material.AIR), base, addition, copyDataComponents);
@@ -77,6 +81,7 @@ public class SmithingTrimRecipe extends SmithingRecipe implements ComplexRecipe 
      * Get the template recipe item.
      *
      * @return template choice
+     * @since 1.19.4
      */
     @NotNull
     public RecipeChoice getTemplate() {
@@ -87,6 +92,7 @@ public class SmithingTrimRecipe extends SmithingRecipe implements ComplexRecipe 
      * Get the trim pattern.
      *
      * @return trim pattern
+     * @since 1.21.6
      */
     @NotNull
     public TrimPattern getTrimPattern() {

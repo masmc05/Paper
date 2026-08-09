@@ -4,6 +4,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a single part of a {@link ComplexLivingEntity}
+ *
+ * @since 1.0.0
  */
 public interface ComplexEntityPart extends Entity {
 
@@ -11,6 +13,7 @@ public interface ComplexEntityPart extends Entity {
      * Gets the parent {@link ComplexLivingEntity} of this part.
      *
      * @return Parent complex entity
+     * @since 1.0.0
      */
     @NotNull
     public ComplexLivingEntity getParent();

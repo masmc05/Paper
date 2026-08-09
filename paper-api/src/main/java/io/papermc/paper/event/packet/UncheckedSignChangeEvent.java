@@ -22,6 +22,7 @@ import org.jspecify.annotations.NullMarked;
  * by the plugin as the client's local world might be in an inconsistent state.
  *
  * @see Player#openVirtualSign(Position, Side)
+ * @since 1.21.6
  */
 @NullMarked
 public class UncheckedSignChangeEvent extends PlayerEvent implements Cancellable {
@@ -51,6 +52,7 @@ public class UncheckedSignChangeEvent extends PlayerEvent implements Cancellable
      * Gets the location at which a potential sign was edited.
      *
      * @return location where the change happened
+     * @since 1.21.6
      */
     public BlockPosition getEditedBlockPosition() {
         return this.editedBlockPosition;
@@ -60,6 +62,7 @@ public class UncheckedSignChangeEvent extends PlayerEvent implements Cancellable
      * Gets which side of the sign was edited.
      *
      * @return {@link Side} that was edited
+     * @since 1.21.6
      */
     public Side getSide() {
         return this.side;
@@ -69,26 +72,39 @@ public class UncheckedSignChangeEvent extends PlayerEvent implements Cancellable
      * Gets the lines that the player has entered.
      *
      * @return the lines
+     * @since 1.21.6
      */
     public @Unmodifiable List<Component> lines() {
         return Collections.unmodifiableList(this.lines);
     }
 
+    /**
+     * @since 1.21.6
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.21.6
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.21.6
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.6
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

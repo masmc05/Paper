@@ -13,10 +13,15 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Represents a shapeless recipe, where the arrangement of the ingredients on
  * the crafting grid does not matter.
+ *
+ * @since 1.0.0
  */
 public class ShapelessRecipe extends CraftingRecipe {
     private final List<RecipeChoice> ingredients = new ArrayList<>();
 
+    /**
+     * @since 1.0.0
+     */
     @Deprecated(since = "1.12")
     public ShapelessRecipe(@NotNull ItemStack result) {
         this(NamespacedKey.randomKey(), result);
@@ -34,6 +39,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @see ShapelessRecipe#addIngredient(Material)
      * @see ShapelessRecipe#addIngredient(int,Material)
      * @see ShapelessRecipe#addIngredient(RecipeChoice)
+     * @since 1.12
      */
     public ShapelessRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result) {
         super(key, checkResult(result));
@@ -45,6 +51,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param ingredient The ingredient to add.
      * @return The changed recipe, so you can chain calls.
      * @deprecated use {@link #addIngredient(RecipeChoice)}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated
@@ -57,6 +64,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      *
      * @param ingredient The ingredient to add.
      * @return The changed recipe, so you can chain calls.
+     * @since 1.0.0
      */
     @NotNull
     public ShapelessRecipe addIngredient(@NotNull Material ingredient) {
@@ -70,6 +78,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param rawdata The data value, or -1 to allow any data value.
      * @return The changed recipe, so you can chain calls.
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -84,6 +93,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param ingredient The ingredient to add.
      * @return The changed recipe, so you can chain calls.
      * @deprecated use {@link #addIngredient(int, Material)}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -97,6 +107,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param count How many to add (can't be more than 9!)
      * @param ingredient The ingredient to add.
      * @return The changed recipe, so you can chain calls.
+     * @since 1.0.0
      */
     @NotNull
     public ShapelessRecipe addIngredient(int count, @NotNull Material ingredient) {
@@ -116,6 +127,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param rawdata The data value, or -1 to allow any data value.
      * @return The changed recipe, so you can chain calls.
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -123,6 +135,9 @@ public class ShapelessRecipe extends CraftingRecipe {
         return this.addIngredient(count, ingredient);
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     public ShapelessRecipe addIngredient(@NotNull RecipeChoice ingredient) {
         Preconditions.checkArgument(this.ingredients.size() + 1 <= 9, "Shapeless recipes cannot have more than 9 ingredients");
@@ -131,12 +146,18 @@ public class ShapelessRecipe extends CraftingRecipe {
         return this;
     }
 
+    /**
+     * @since 1.13.2
+     */
     // Paper start
     @NotNull
     public ShapelessRecipe addIngredient(@NotNull ItemStack item) {
         return addIngredient(item.getAmount(), item);
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     public ShapelessRecipe addIngredient(int count, @NotNull ItemStack item) {
         Preconditions.checkArgument(this.ingredients.size() + count <= 9, "Shapeless recipes cannot have more than 9 ingredients");
@@ -148,11 +169,17 @@ public class ShapelessRecipe extends CraftingRecipe {
         return this;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     public ShapelessRecipe removeIngredient(@NotNull ItemStack item) {
         return removeIngredient(1, item);
     }
 
+    /**
+     * @since 1.13.2
+     */
     @NotNull
     public ShapelessRecipe removeIngredient(int count, @NotNull ItemStack item) {
         Iterator<RecipeChoice> iterator = this.ingredients.iterator();
@@ -172,6 +199,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      *
      * @param ingredient The ingredient to remove
      * @return The changed recipe.
+     * @since 1.13.1
      */
     @NotNull
     public ShapelessRecipe removeIngredient(@NotNull RecipeChoice ingredient) {
@@ -187,6 +215,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      *
      * @param ingredient The ingredient to remove
      * @return The changed recipe.
+     * @since 1.1.0
      */
     @NotNull
     public ShapelessRecipe removeIngredient(@NotNull Material ingredient) {
@@ -201,6 +230,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param ingredient The ingredient to remove
      * @return The changed recipe.
      * @deprecated use {@link #removeIngredient(Material)}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -216,6 +246,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param count The number of copies to remove.
      * @param ingredient The ingredient to remove
      * @return The changed recipe.
+     * @since 1.1.0
      */
     @NotNull
     public ShapelessRecipe removeIngredient(int count, @NotNull Material ingredient) {
@@ -231,6 +262,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param ingredient The ingredient to remove.
      * @return The changed recipe.
      * @deprecated use {@link #removeIngredient(int, Material)}
+     * @since 1.1.0
      */
     @NotNull
     @Deprecated // Paper
@@ -247,6 +279,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param rawdata The data value;
      * @return The changed recipe.
      * @deprecated Magic value
+     * @since 1.1.0
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -264,6 +297,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      * @param rawdata The data value.
      * @return The changed recipe.
      * @deprecated Magic value
+     * @since 1.1.0
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -284,6 +318,7 @@ public class ShapelessRecipe extends CraftingRecipe {
      *
      * @return The input list
      * @deprecated Use {@link #getChoiceList()} instead for more complete data.
+     * @since 1.0.0
      */
     @Deprecated // Paper
     @NotNull
@@ -295,6 +330,9 @@ public class ShapelessRecipe extends CraftingRecipe {
         return result;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @NotNull
     public List<RecipeChoice> getChoiceList() {
         List<RecipeChoice> result = new ArrayList<>(this.ingredients.size());

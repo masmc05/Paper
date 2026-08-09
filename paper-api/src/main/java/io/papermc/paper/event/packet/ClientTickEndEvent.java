@@ -8,6 +8,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when a {@code minecraft:client_tick_end} packet is received by the server.
+ *
+ * @since 1.21.4
  */
 @NullMarked
 public class ClientTickEndEvent extends PlayerEvent {
@@ -18,11 +20,17 @@ public class ClientTickEndEvent extends PlayerEvent {
         super(player);
     }
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

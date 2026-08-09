@@ -26,6 +26,8 @@ import org.jspecify.annotations.NullMarked;
  * null or air.
  *
  * <b>This class is not legal for implementation by plugins!</b>
+ *
+ * @since 1.13.1
  */
 @NullMarked
 @ApiStatus.NonExtendable
@@ -37,6 +39,7 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
      * to be sure it's valid for that recipe and ingredient type.
      *
      * @return the empty recipe choice
+     * @since 1.20.6
      */
     static RecipeChoice empty() {
         return EmptyRecipeChoice.INSTANCE;
@@ -48,6 +51,7 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
      * @param itemType the first item type to match
      * @param itemTypes other item types to match.
      * @return a new recipe choice
+     * @since 1.21.11
      */
     @Contract(pure = true, value = "_, _ -> new")
     static ItemTypeChoice itemType(final ItemType itemType, final ItemType ... itemTypes) {
@@ -64,6 +68,7 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
      *
      * @param itemTypes the item types to match
      * @return a new recipe choice
+     * @since 1.21.11
      */
     @Contract(pure = true, value = "_ -> new")
     static ItemTypeChoice itemType(final RegistryKeySet<ItemType> itemTypes) {
@@ -75,12 +80,17 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
      *
      * @return a single representative item
      * @deprecated for compatibility only
+     * @since 1.13.1
      */
     @Deprecated(since = "1.13.1")
     ItemStack getItemStack();
 
     RecipeChoice clone();
 
+    /**
+     * {@inheritDoc}
+     * @since 1.13.2
+     */
     @Override
     boolean test(ItemStack itemStack);
 
@@ -94,6 +104,7 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
     /**
      * Represents a choice of multiple matching Materials.
      * @apiNote recommended to use {@link ItemTypeChoice}
+     * @since 1.13.1
      */
     @ApiStatus.Obsolete(since = "1.21.11")
     sealed class MaterialChoice implements RecipeChoice permits ItemTypeRecipeChoiceImpl {
@@ -103,10 +114,16 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
 
         private List<Material> choices;
 
+        /**
+         * @since 1.13.2
+         */
         public MaterialChoice(Material choice) {
             this(Arrays.asList(choice));
         }
 
+        /**
+         * @since 1.13.2
+         */
         public MaterialChoice(Material... choices) {
             this(Arrays.asList(choices));
         }
@@ -116,11 +133,15 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
          * tag.
          *
          * @param choices the tag
+         * @since 1.14
          */
         public MaterialChoice(Tag<Material> choices) {
             this(new ArrayList<>(java.util.Objects.requireNonNull(choices, "Cannot create a material choice with null tag").getValues())); // Paper - delegate to list ctor to make sure all checks are called
         }
 
+        /**
+         * @since 1.13.1
+         */
         public MaterialChoice(List<Material> choices) {
             Preconditions.checkArgument(choices != null, "choices");
             Preconditions.checkArgument(!choices.isEmpty(), "Must have at least one choice");
@@ -140,6 +161,10 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
             }
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.13.1
+         */
         @Override
         public boolean test(ItemStack t) {
             for (Material match : choices) {
@@ -151,6 +176,10 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
             return false;
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.13.1
+         */
         @Override
         @Deprecated(since = "1.13.1")
         public ItemStack getItemStack() {
@@ -164,6 +193,9 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
             return stack;
         }
 
+        /**
+         * @since 1.13.1
+         */
         public List<Material> getChoices() {
             return Collections.unmodifiableList(choices);
         }
@@ -209,6 +241,10 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
             return "MaterialChoice{" + "choices=" + choices + '}';
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.20.6
+         */
         // Paper start - check valid ingredients
         @Override
         public RecipeChoice validate(final boolean allowEmptyRecipes) {
@@ -223,19 +259,30 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
     /**
      * Represents a choice that will be valid only if one of the stacks is
      * exactly matched (aside from stack size).
+     *
+     * @since 1.13.2
      */
     final class ExactChoice implements RecipeChoice {
 
         private List<ItemStack> choices;
 
+        /**
+         * @since 1.13.2
+         */
         public ExactChoice(ItemStack stack) {
             this(Arrays.asList(stack));
         }
 
+        /**
+         * @since 1.13.2
+         */
         public ExactChoice(ItemStack... stacks) {
             this(Arrays.asList(stacks));
         }
 
+        /**
+         * @since 1.13.2
+         */
         public ExactChoice(List<ItemStack> choices) {
             Preconditions.checkArgument(choices != null, "choices");
             Preconditions.checkArgument(!choices.isEmpty(), "Must have at least one choice");
@@ -247,12 +294,19 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
             this.choices = new ArrayList<>(choices);
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.13.2
+         */
         @Override
         @Deprecated(since = "1.13.1")
         public ItemStack getItemStack() {
             return choices.get(0).clone();
         }
 
+        /**
+         * @since 1.13.2
+         */
         public List<ItemStack> getChoices() {
             return Collections.unmodifiableList(choices);
         }
@@ -273,6 +327,10 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
             }
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.13.2
+         */
         @Override
         public boolean test(ItemStack t) {
             for (ItemStack match : choices) {
@@ -314,6 +372,10 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
             return "ExactChoice{" + "choices=" + choices + '}';
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.20.6
+         */
         // Paper start - check valid ingredients
         @Override
         public RecipeChoice validate(final boolean allowEmptyRecipes) {
@@ -331,6 +393,7 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
      *
      * @see #itemType(RegistryKeySet)
      * @see #itemType(ItemType, ItemType...)
+     * @since 1.21.11
      */
     sealed interface ItemTypeChoice extends RecipeChoice permits ItemTypeRecipeChoiceImpl {
 
@@ -338,6 +401,7 @@ public interface RecipeChoice extends Predicate<ItemStack>, Cloneable {
          * Gets the set of item types that this choice will match.
          *
          * @return the set of item types
+         * @since 1.21.11
          */
         RegistryKeySet<ItemType> itemTypes();
     }

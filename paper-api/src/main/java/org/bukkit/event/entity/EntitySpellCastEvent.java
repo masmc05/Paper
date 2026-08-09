@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a {@link Spellcaster} casts a spell.
+ *
+ * @since 1.16.2
  */
 public class EntitySpellCastEvent extends EntityEvent implements Cancellable {
 
@@ -23,6 +25,9 @@ public class EntitySpellCastEvent extends EntityEvent implements Cancellable {
         this.spell = spell;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @Override
     @NotNull
     public Spellcaster getEntity() {
@@ -36,28 +41,41 @@ public class EntitySpellCastEvent extends EntityEvent implements Cancellable {
      * {@link Spellcaster#getSpell()}.
      *
      * @return the spell to cast
+     * @since 1.16.2
      */
     @NotNull
     public Spellcaster.Spell getSpell() {
         return this.spell;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @Override
     @NotNull
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

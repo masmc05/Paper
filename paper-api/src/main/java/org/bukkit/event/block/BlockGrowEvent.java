@@ -21,6 +21,8 @@ import org.jetbrains.annotations.NotNull;
  * </ul>
  * <p>
  * If this event is cancelled, the block will not grow.
+ *
+ * @since 1.1.0
  */
 public class BlockGrowEvent extends BlockEvent implements Cancellable {
 
@@ -39,28 +41,41 @@ public class BlockGrowEvent extends BlockEvent implements Cancellable {
      * Gets the state of the block where it will form or spread to.
      *
      * @return The block state for this events block
+     * @since 1.1.0
      */
     @NotNull
     public BlockState getNewState() {
         return this.newState;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @NotNull
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

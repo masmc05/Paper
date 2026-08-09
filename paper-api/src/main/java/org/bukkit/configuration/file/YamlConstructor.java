@@ -12,26 +12,40 @@ import org.yaml.snakeyaml.nodes.MappingNode;
 import org.yaml.snakeyaml.nodes.Node;
 import org.yaml.snakeyaml.nodes.Tag;
 
+/**
+ * @since 1.1.0
+ */
 public class YamlConstructor extends SafeConstructor {
 
     /**
      * @deprecated options required
+     * @since 1.1.0
      */
     @Deprecated(since = "1.19.4")
     public YamlConstructor() {
         this(new LoaderOptions());
     }
 
+    /**
+     * @since 1.19.4
+     */
     public YamlConstructor(@NotNull LoaderOptions loaderOptions) {
         super(loaderOptions);
         this.yamlConstructors.put(Tag.MAP, new ConstructCustomObject());
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.18.1
+     */
     @Override
     public void flattenMapping(@NotNull final MappingNode node) {
         super.flattenMapping(node);
     }
 
+    /**
+     * @since 1.18.1
+     */
     @Nullable
     public Object construct(@NotNull Node node) {
         return constructObject(node);

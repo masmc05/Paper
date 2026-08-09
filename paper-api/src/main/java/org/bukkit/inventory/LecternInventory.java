@@ -5,9 +5,14 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Interface to the inventory of a Lectern.
+ *
+ * @since 1.14
  */
 public interface LecternInventory extends Inventory {
 
+    /**
+     * @since 1.14
+     */
     @Nullable
     @Override
     public Lectern getHolder();
@@ -17,6 +22,7 @@ public interface LecternInventory extends Inventory {
      * Gets the lectern's held book.
      *
      * @return book set in the lectern
+     * @since 1.15.2
      */
     @Nullable
     default ItemStack getBook() {
@@ -27,6 +33,7 @@ public interface LecternInventory extends Inventory {
      * Sets the lectern's held book.
      *
      * @param book the new book
+     * @since 1.15.2
      */
     default void setBook(@Nullable ItemStack book) {
         setItem(0, book);

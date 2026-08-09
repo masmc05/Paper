@@ -9,16 +9,23 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Represents a color applied to a dyeable item.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#DYED_COLOR
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface DyedItemColor {
 
+    /**
+     * @since 1.21.6
+     */
     @Contract(value = "_ -> new", pure = true)
     static DyedItemColor dyedItemColor(final Color color) {
         return dyedItemColor().color(color).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static DyedItemColor.Builder dyedItemColor() {
         return ItemComponentTypesBridge.bridge().dyedItemColor();
@@ -28,12 +35,15 @@ public interface DyedItemColor {
      * Color of the item.
      *
      * @return color
+     * @since 1.21.3
      */
     @Contract(value = "-> new", pure = true)
     Color color();
 
     /**
      * Builder for {@link DyedItemColor}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<DyedItemColor> {
@@ -44,6 +54,7 @@ public interface DyedItemColor {
          * @param color color
          * @return the builder for chaining
          * @see #color()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder color(Color color);

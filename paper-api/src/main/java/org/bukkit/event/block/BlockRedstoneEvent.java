@@ -15,6 +15,8 @@ import org.jspecify.annotations.NullMarked;
  * For the {@code powered} property, a high state will be considered as
  * a current of 15 and a low state as 0. Setting the new current to a different
  * value will prevent most action in this case.
+ *
+ * @since 1.0.0
  */
 @NullMarked
 public class BlockRedstoneEvent extends BlockEvent {
@@ -35,6 +37,7 @@ public class BlockRedstoneEvent extends BlockEvent {
      * Gets the old current of this block.
      *
      * @return the previous current
+     * @since 1.0.0
      */
     public @IntRange(from = 0, to = 15) int getOldCurrent() {
         return this.oldCurrent;
@@ -44,6 +47,7 @@ public class BlockRedstoneEvent extends BlockEvent {
      * Gets the new current of this block.
      *
      * @return the new current
+     * @since 1.0.0
      */
     public @IntRange(from = 0, to = 15) int getNewCurrent() {
         return this.newCurrent;
@@ -53,17 +57,24 @@ public class BlockRedstoneEvent extends BlockEvent {
      * Sets the new current of this block.
      *
      * @param newCurrent the new current to set
+     * @since 1.0.0
      */
     public void setNewCurrent(@IntRange(from = 0, to = 15) int newCurrent) {
         Preconditions.checkArgument(newCurrent >= 0 && newCurrent <= 15, "New current must be a redstone signal between 0 and 15 (was %s)", newCurrent);
         this.newCurrent = newCurrent;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

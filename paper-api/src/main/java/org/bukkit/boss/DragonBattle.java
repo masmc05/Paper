@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a dragon battle state for a world with an end environment.
+ *
+ * @since 1.15.2
  */
 public interface DragonBattle {
 
@@ -18,6 +20,7 @@ public interface DragonBattle {
      * Will return null if the dragon has been slain.
      *
      * @return the ender dragon. null if dead
+     * @since 1.15.2
      */
     @Nullable
     public EnderDragon getEnderDragon();
@@ -26,6 +29,7 @@ public interface DragonBattle {
      * Get the boss bar to be displayed for this dragon battle.
      *
      * @return the boss bar
+     * @since 1.15.2
      */
     @NotNull
     public BossBar getBossBar();
@@ -36,6 +40,7 @@ public interface DragonBattle {
      * This location will be at the center of the base (bottom) of the portal.
      *
      * @return the end portal location or null if not generated
+     * @since 1.15.2
      */
     @Nullable
     public Location getEndPortalLocation();
@@ -46,6 +51,7 @@ public interface DragonBattle {
      * @param withPortals whether end portal blocks should be generated
      *
      * @return true if generated, false if already present
+     * @since 1.16.1
      */
     public boolean generateEndPortal(boolean withPortals);
 
@@ -53,6 +59,7 @@ public interface DragonBattle {
      * Check whether the first dragon has been killed already.
      *
      * @return true if killed before, false otherwise
+     * @since 1.15.2
      */
     public boolean hasBeenPreviouslyKilled();
 
@@ -64,12 +71,15 @@ public interface DragonBattle {
      *
      * @param previouslyKilled true if the dragon has been killed before, false
      * otherwise
+     * @since 1.20.4
      */
     public void setPreviouslyKilled(boolean previouslyKilled);
 
     /**
      * Try to initiate a respawn sequence to summon the dragon as though a player has
      * placed 4 end crystals on the portal.
+     *
+     * @since 1.15.2
      */
     public void initiateRespawn();
 
@@ -82,6 +92,7 @@ public interface DragonBattle {
      * world as this dragon battle will be ignored.
      *
      * @return true if the respawn was initiated, false otherwise.
+     * @since 1.20.1
      */
     public boolean initiateRespawn(@Nullable Collection<EnderCrystal> crystals);
 
@@ -89,6 +100,7 @@ public interface DragonBattle {
      * Get this battle's current respawn phase.
      *
      * @return the current respawn phase.
+     * @since 1.15.2
      */
     @NotNull
     public RespawnPhase getRespawnPhase();
@@ -103,45 +115,62 @@ public interface DragonBattle {
      * @return true if successful, false otherwise
      *
      * @see #initiateRespawn()
+     * @since 1.15.2
      */
     public boolean setRespawnPhase(@NotNull RespawnPhase phase);
 
     /**
      * Reset the crystals located on the obsidian pillars (remove their beam
      * targets and invulnerability).
+     *
+     * @since 1.15.2
      */
     public void resetCrystals();
 
     /**
      * Represents a phase in the dragon respawn process.
+     *
+     * @since 1.15.2
      */
     public enum RespawnPhase {
 
         /**
          * The crystal beams are directed upwards into the sky.
+         *
+         * @since 1.15.2
          */
         START,
         /**
          * The crystal beams remain directed upwards.
+         *
+         * @since 1.15.2
          */
         PREPARING_TO_SUMMON_PILLARS,
         /**
          * The crystal beams are directed from pillar to pillar, regenerating
          * their crystals if necessary.
+         *
+         * @since 1.15.2
          */
         SUMMONING_PILLARS,
         /**
          * All crystals (including those from the pillars) are aimed towards the
          * sky. Shortly thereafter summoning the dragon and destroying the
          * crystals used to initiate the dragon's respawn.
+         *
+         * @since 1.15.2
          */
         SUMMONING_DRAGON,
         /**
          * The end of the respawn sequence. The dragon is actually summoned.
+         *
+         * @since 1.15.2
          */
         END,
         /**
          * No respawn is in progress.
+         *
+         * @since 1.15.2
          */
         NONE;
     }
@@ -152,6 +181,7 @@ public interface DragonBattle {
      * kill of the {@link EnderDragon}.
      *
      * @return the number of gateways around the end island tracked by this
+     * @since 1.20.1
      */
     int getGatewayCount();
 
@@ -159,6 +189,7 @@ public interface DragonBattle {
      * Tries to spawn a new end gateway using default game mechanics.
      *
      * @return true if successful, false if there is already the maximum.
+     * @since 1.20.1
      */
     boolean spawnNewGateway();
 
@@ -167,6 +198,7 @@ public interface DragonBattle {
      * spawn regardless of the number of gateways already present.
      *
      * @param position position for the new gateway
+     * @since 1.20.1
      */
     void spawnNewGateway(@NotNull io.papermc.paper.math.Position position);
 
@@ -175,6 +207,7 @@ public interface DragonBattle {
      * is ongoing, the list will be empty.
      *
      * @return the respawn crystals
+     * @since 1.20.1
      */
     java.util.@NotNull @org.jetbrains.annotations.Unmodifiable List<org.bukkit.entity.EnderCrystal> getRespawnCrystals();
 
@@ -182,6 +215,7 @@ public interface DragonBattle {
      * Gets the {@link org.bukkit.entity.EnderCrystal}s on top of the pillars that heal the dragon.
      *
      * @return the healing crystals
+     * @since 1.20.1
      */
     java.util.@NotNull @org.jetbrains.annotations.Unmodifiable List<org.bukkit.entity.EnderCrystal> getHealingCrystals();
     // Paper end

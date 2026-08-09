@@ -11,6 +11,7 @@ import org.jspecify.annotations.NullMarked;
  *
  * @param <T> The type of the registry
  * @param <B> The type of the registry builder
+ * @since 1.21.4
  */
 @NullMarked
 @ApiStatus.NonExtendable
@@ -21,6 +22,7 @@ public interface RegistryBuilderFactory<T, B extends RegistryBuilder<T>> {
      *
      * @return A new empty {@link RegistryBuilder}
      * @throws IllegalStateException if this method or {@link #copyFrom(TypedKey)}) has already been called once
+     * @since 1.21.4
      */
     @Contract("-> new")
     B empty();
@@ -32,6 +34,7 @@ public interface RegistryBuilderFactory<T, B extends RegistryBuilder<T>> {
      * @return A new {@link RegistryBuilder} with the same properties as the given key
      * @throws IllegalStateException if this method or {@link #empty()} has already been called once
      * @throws IllegalArgumentException if key doesn't exist
+     * @since 1.21.4
      */
     @Contract("_ -> new")
     B copyFrom(TypedKey<T> key);

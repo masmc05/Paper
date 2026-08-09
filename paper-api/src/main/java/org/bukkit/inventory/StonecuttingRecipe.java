@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a Stonecutting recipe.
+ *
+ * @since 1.14
  */
 public class StonecuttingRecipe implements Recipe, Keyed {
     private final NamespacedKey key;
@@ -21,6 +23,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      * @param key The unique recipe key
      * @param result The item you want the recipe to create.
      * @param source The input material.
+     * @since 1.14
      */
     public StonecuttingRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @NotNull Material source) {
         this(key, result, new RecipeChoice.MaterialChoice(Collections.singletonList(source)));
@@ -32,6 +35,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      * @param key The unique recipe key
      * @param result The item you want the recipe to create.
      * @param input The input choices.
+     * @since 1.14
      */
     public StonecuttingRecipe(@NotNull NamespacedKey key, @NotNull ItemStack result, @NotNull RecipeChoice input) {
         Preconditions.checkArgument(!result.isEmpty(), "Recipe cannot have an empty result."); // Paper
@@ -45,6 +49,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      *
      * @param input The input material.
      * @return The changed recipe, so you can chain calls.
+     * @since 1.14
      */
     @NotNull
     public StonecuttingRecipe setInput(@NotNull Material input) {
@@ -57,6 +62,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      *
      * @return The input material.
      * @deprecated Use {@link #getInputChoice()} instead for more complete data.
+     * @since 1.14
      */
     @Deprecated // Paper
     @NotNull
@@ -69,6 +75,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      *
      * @param input The input choice.
      * @return The changed recipe, so you can chain calls.
+     * @since 1.14
      */
     @NotNull
     public StonecuttingRecipe setInputChoice(@NotNull RecipeChoice input) {
@@ -80,6 +87,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      * Get the input choice.
      *
      * @return The input choice.
+     * @since 1.14
      */
     @NotNull
     public RecipeChoice getInputChoice() {
@@ -90,6 +98,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      * Get the result of this recipe.
      *
      * @return The resulting stack.
+     * @since 1.14
      */
     @NotNull
     @Override
@@ -97,6 +106,9 @@ public class StonecuttingRecipe implements Recipe, Keyed {
         return output.clone();
     }
 
+    /**
+     * @since 1.14
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -109,6 +121,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      *
      * @return recipe group. An empty string denotes no group. May not be null.
      * @deprecated no longer used for this recipe
+     * @since 1.14
      */
     @NotNull
     @Deprecated(since = "26.1")
@@ -123,6 +136,7 @@ public class StonecuttingRecipe implements Recipe, Keyed {
      * @param group recipe group. An empty string denotes no group. May not be
      * null.
      * @deprecated no longer used for this recipe
+     * @since 1.14
      */
     @Deprecated(since = "26.1")
     public void setGroup(@NotNull String group) {

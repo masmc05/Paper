@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * 'north', 'east', 'south', 'west' represent the types of connections this
  * redstone wire has to adjacent blocks.
+ *
+ * @since 1.13
  */
 public interface RedstoneWire extends AnaloguePowerable {
 
@@ -16,6 +18,7 @@ public interface RedstoneWire extends AnaloguePowerable {
      *
      * @param face to check
      * @return connection type
+     * @since 1.13
      */
     @NotNull
     Connection getFace(@NotNull BlockFace face);
@@ -25,6 +28,7 @@ public interface RedstoneWire extends AnaloguePowerable {
      *
      * @param face to set
      * @param connection the connection type
+     * @since 1.13
      */
     void setFace(@NotNull BlockFace face, @NotNull Connection connection);
 
@@ -32,24 +36,33 @@ public interface RedstoneWire extends AnaloguePowerable {
      * Gets all of this faces which may be set on this block.
      *
      * @return all allowed faces
+     * @since 1.13
      */
     @NotNull
     Set<BlockFace> getAllowedFaces();
 
     /**
      * The way in which a redstone wire can connect to an adjacent block face.
+     *
+     * @since 1.13
      */
     public enum Connection {
         /**
          * The wire travels up the side of the block adjacent to this face.
+         *
+         * @since 1.13
          */
         UP,
         /**
          * The wire travels flat from this face and into the adjacent block.
+         *
+         * @since 1.13
          */
         SIDE,
         /**
          * The wire does not connect in this direction.
+         *
+         * @since 1.13
          */
         NONE;
     }

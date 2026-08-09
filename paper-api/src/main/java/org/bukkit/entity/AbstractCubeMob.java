@@ -2,11 +2,14 @@ package org.bukkit.entity;
 
 /**
  * Represents an abstract cube mob.
+ *
+ * @since 26.2
  */
 public interface AbstractCubeMob extends Creature {
 
     /**
      * @return the size of the cube mob
+     * @since 26.2
      */
     int getSize();
 
@@ -21,6 +24,7 @@ public interface AbstractCubeMob extends Creature {
      * cube mob to its max health (assuming it's alive).
      *
      * @param size the new size of the cube mob.
+     * @since 26.2
      */
     void setSize(int size);
 
@@ -28,6 +32,7 @@ public interface AbstractCubeMob extends Creature {
      * Get whether this cube mob can randomly wander/jump around on its own
      *
      * @return {@code true} if can wander
+     * @since 26.2
      */
     boolean canWander();
 
@@ -35,6 +40,7 @@ public interface AbstractCubeMob extends Creature {
      * Set whether this cube mob can randomly wander/jump around on its own
      *
      * @param canWander {@code true} if can wander
+     * @since 26.2
      */
     void setWander(boolean canWander);
 }

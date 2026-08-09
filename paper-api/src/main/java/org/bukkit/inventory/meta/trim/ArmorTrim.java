@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
  * Represents an armor trim that may be applied to an item.
  *
  * @see ArmorMeta#setTrim(ArmorTrim)
+ * @since 1.19.4
  */
 public class ArmorTrim {
 
@@ -21,6 +22,7 @@ public class ArmorTrim {
      *
      * @param material the material
      * @param pattern the pattern
+     * @since 1.19.4
      */
     public ArmorTrim(@NotNull TrimMaterial material, @NotNull TrimPattern pattern) {
         Preconditions.checkArgument(material != null, "material must not be null");
@@ -34,6 +36,7 @@ public class ArmorTrim {
      * Get the {@link TrimMaterial} for this armor trim.
      *
      * @return the material
+     * @since 1.19.4
      */
     @NotNull
     public TrimMaterial getMaterial() {
@@ -44,6 +47,7 @@ public class ArmorTrim {
      * Get the {@link TrimPattern} for this armor trim.
      *
      * @return the pattern
+     * @since 1.19.4
      */
     @NotNull
     public TrimPattern getPattern() {

@@ -9,6 +9,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * A data-centric version-specific registry entry for the {@link Sound} type.
+ *
+ * @since 1.21.6
  */
 @ApiStatus.NonExtendable
 public interface SoundEventRegistryEntry {
@@ -17,6 +19,7 @@ public interface SoundEventRegistryEntry {
      * Gets the resource pack location for this sound event.
      *
      * @return the location
+     * @since 1.21.6
      */
     @Contract(pure = true)
     Key location();
@@ -25,6 +28,7 @@ public interface SoundEventRegistryEntry {
      * Gets the fixed range for this sound event, if present.
      *
      * @return the fixed range, or {@code null} if not present
+     * @since 1.21.6
      */
     @Contract(pure = true)
     @Nullable Float fixedRange();
@@ -36,6 +40,8 @@ public interface SoundEventRegistryEntry {
      * <ul>
      *     <li>{@link #location(Key)}</li>
      * </ul>
+     *
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     interface Builder extends SoundEventRegistryEntry, RegistryBuilder<Sound> {
@@ -45,6 +51,7 @@ public interface SoundEventRegistryEntry {
          *
          * @param location the location
          * @return this builder instance
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder location(Key location);
@@ -54,6 +61,7 @@ public interface SoundEventRegistryEntry {
          *
          * @param fixedRange the fixed range
          * @return this builder instance
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder fixedRange(@Nullable Float fixedRange);

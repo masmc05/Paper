@@ -12,11 +12,15 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Holds the pages for a writable book.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#WRITABLE_BOOK_CONTENT
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface WritableBookContent extends BookLike {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static WritableBookContent.Builder writeableBookContent() {
         return ItemComponentTypesBridge.bridge().writeableBookContent();
@@ -26,12 +30,15 @@ public interface WritableBookContent extends BookLike {
      * Holds the pages that can be written to for this component.
      *
      * @return pages, as filtered objects
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<Filtered<String>> pages();
 
     /**
      * Builder for {@link WritableBookContent}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<WritableBookContent> {
@@ -42,6 +49,7 @@ public interface WritableBookContent extends BookLike {
          * @param page page
          * @return the builder for chaining
          * @see #pages()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addPage(String page);
@@ -52,6 +60,7 @@ public interface WritableBookContent extends BookLike {
          * @param pages pages
          * @return the builder for chaining
          * @see #pages()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addPages(List<String> pages);
@@ -62,6 +71,7 @@ public interface WritableBookContent extends BookLike {
          * @param page page
          * @return the builder for chaining
          * @see #pages()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addFilteredPage(Filtered<String> page);
@@ -72,6 +82,7 @@ public interface WritableBookContent extends BookLike {
          * @param pages pages
          * @return the builder for chaining
          * @see #pages()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addFilteredPages(List<Filtered<String>> pages);

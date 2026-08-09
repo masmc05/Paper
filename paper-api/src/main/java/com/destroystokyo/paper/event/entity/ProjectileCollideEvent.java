@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
  * This event is called <b>before</b> {@link EntityDamageByEntityEvent}, and cancelling it will allow the projectile to continue flying
  *
  * @deprecated Deprecated, use {@link org.bukkit.event.entity.ProjectileHitEvent} and check if there is a hit entity
+ * @since 1.11
  */
 @Deprecated(since = "1.19.3")
 public class ProjectileCollideEvent extends EntityEvent implements Cancellable {
@@ -35,6 +36,7 @@ public class ProjectileCollideEvent extends EntityEvent implements Cancellable {
      * Get the projectile that collided
      *
      * @return the projectile that collided
+     * @since 1.11
      */
     @NotNull
     public Projectile getEntity() {
@@ -45,27 +47,40 @@ public class ProjectileCollideEvent extends EntityEvent implements Cancellable {
      * Get the entity the projectile collided with
      *
      * @return the entity collided with
+     * @since 1.11
      */
     @NotNull
     public Entity getCollidedWith() {
         return this.collidedWith;
     }
 
+    /**
+     * @since 1.11
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.11
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.11
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.11
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {

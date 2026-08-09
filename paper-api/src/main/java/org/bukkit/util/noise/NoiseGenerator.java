@@ -2,6 +2,8 @@ package org.bukkit.util.noise;
 
 /**
  * Base class for all noise generators
+ *
+ * @since 1.0.0
  */
 public abstract class NoiseGenerator {
     protected final int[] perm = new int[512];
@@ -14,6 +16,7 @@ public abstract class NoiseGenerator {
      *
      * @param x Value to floor
      * @return Floored value
+     * @since 1.0.0
      */
     public static int floor(double x) {
         return x >= 0 ? (int) x : (int) x - 1;
@@ -39,6 +42,7 @@ public abstract class NoiseGenerator {
      *
      * @param x X coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public double noise(double x) {
         return noise(x, 0, 0);
@@ -50,6 +54,7 @@ public abstract class NoiseGenerator {
      * @param x X coordinate
      * @param y Y coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public double noise(double x, double y) {
         return noise(x, y, 0);
@@ -62,6 +67,7 @@ public abstract class NoiseGenerator {
      * @param y Y coordinate
      * @param z Z coordinate
      * @return Noise at given location, from range -1 to 1
+     * @since 1.0.0
      */
     public abstract double noise(double x, double y, double z);
 
@@ -74,6 +80,7 @@ public abstract class NoiseGenerator {
      * @param frequency How much to alter the frequency by each octave
      * @param amplitude How much to alter the amplitude by each octave
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, int octaves, double frequency, double amplitude) {
         return noise(x, 0, 0, octaves, frequency, amplitude);
@@ -89,6 +96,7 @@ public abstract class NoiseGenerator {
      * @param amplitude How much to alter the amplitude by each octave
      * @param normalized If true, normalize the value to [-1, 1]
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, int octaves, double frequency, double amplitude, boolean normalized) {
         return noise(x, 0, 0, octaves, frequency, amplitude, normalized);
@@ -104,6 +112,7 @@ public abstract class NoiseGenerator {
      * @param frequency How much to alter the frequency by each octave
      * @param amplitude How much to alter the amplitude by each octave
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, double y, int octaves, double frequency, double amplitude) {
         return noise(x, y, 0, octaves, frequency, amplitude);
@@ -120,6 +129,7 @@ public abstract class NoiseGenerator {
      * @param amplitude How much to alter the amplitude by each octave
      * @param normalized If true, normalize the value to [-1, 1]
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, double y, int octaves, double frequency, double amplitude, boolean normalized) {
         return noise(x, y, 0, octaves, frequency, amplitude, normalized);
@@ -136,6 +146,7 @@ public abstract class NoiseGenerator {
      * @param frequency How much to alter the frequency by each octave
      * @param amplitude How much to alter the amplitude by each octave
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, double y, double z, int octaves, double frequency, double amplitude) {
         return noise(x, y, z, octaves, frequency, amplitude, false);
@@ -153,6 +164,7 @@ public abstract class NoiseGenerator {
      * @param amplitude How much to alter the amplitude by each octave
      * @param normalized If true, normalize the value to [-1, 1]
      * @return Resulting noise
+     * @since 1.0.0
      */
     public double noise(double x, double y, double z, int octaves, double frequency, double amplitude, boolean normalized) {
         double result = 0;

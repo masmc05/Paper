@@ -17,6 +17,8 @@ import org.jetbrains.annotations.NotNull;
  * <br>
  * As this is a physics based event it may be called multiple times for "the
  * same" changes.
+ *
+ * @since 1.13
  */
 public class SpongeAbsorbEvent extends BlockEvent implements Cancellable {
 
@@ -38,28 +40,41 @@ public class SpongeAbsorbEvent extends BlockEvent implements Cancellable {
      * having a type of {@link Material#AIR} or not waterlogged.
      *
      * @return list of the cleared blocks.
+     * @since 1.13
      */
     @NotNull
     public List<BlockState> getBlocks() {
         return this.blocks;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

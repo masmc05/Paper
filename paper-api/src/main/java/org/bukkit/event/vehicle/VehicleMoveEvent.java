@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Raised when a vehicle moves.
+ *
+ * @since 1.0.0
  */
 public class VehicleMoveEvent extends VehicleEvent {
 
@@ -28,6 +30,7 @@ public class VehicleMoveEvent extends VehicleEvent {
      * Get the previous position.
      *
      * @return Old position.
+     * @since 1.0.0
      */
     @NotNull
     public Location getFrom() {
@@ -38,18 +41,25 @@ public class VehicleMoveEvent extends VehicleEvent {
      * Get the next position.
      *
      * @return New position.
+     * @since 1.0.0
      */
     @NotNull
     public Location getTo() {
         return this.to.clone();
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

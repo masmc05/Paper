@@ -14,6 +14,8 @@ import org.jspecify.annotations.NullMarked;
  * Your bootstrap class will be on the same classloader as your JavaPlugin.
  * <p>
  * <b>All calls to Bukkit may throw a NullPointerExceptions or return null unexpectedly. You should only call api methods that are explicitly documented to work in the bootstrapper</b>
+ *
+ * @since 1.19.3
  */
 @ApiStatus.Experimental
 @NullMarked
@@ -24,6 +26,7 @@ public interface PluginBootstrap {
      * Called by the server, allowing you to bootstrap the plugin with a context that provides things like a logger and your shared plugin configuration file.
      *
      * @param context the server provided context
+     * @since 1.19.4
      */
     void bootstrap(BootstrapContext context);
 
@@ -34,6 +37,7 @@ public interface PluginBootstrap {
      *
      * @param context the server created bootstrap object
      * @return the server requested instance of the plugins main class.
+     * @since 1.19.3
      */
     default JavaPlugin createPlugin(final PluginProviderContext context) {
         return ProviderUtil.loadClass(context.getConfiguration().getMainClass(), JavaPlugin.class, this.getClass().getClassLoader());

@@ -12,6 +12,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a projectile hits an object
+ *
+ * @since 1.0.0
  */
 public class ProjectileHitEvent extends EntityEvent implements Cancellable {
 
@@ -55,6 +57,9 @@ public class ProjectileHitEvent extends EntityEvent implements Cancellable {
         this.hitFace = hitFace;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public Projectile getEntity() {
@@ -65,6 +70,7 @@ public class ProjectileHitEvent extends EntityEvent implements Cancellable {
      * Gets the entity that was hit, if it was an entity that was hit.
      *
      * @return hit entity or else {@code null}
+     * @since 1.10.2
      */
     @Nullable
     public Entity getHitEntity() {
@@ -75,6 +81,7 @@ public class ProjectileHitEvent extends EntityEvent implements Cancellable {
      * Gets the block that was hit, if it was a block that was hit.
      *
      * @return hit block or else {@code null}
+     * @since 1.11
      */
     @Nullable
     public Block getHitBlock() {
@@ -86,12 +93,16 @@ public class ProjectileHitEvent extends EntityEvent implements Cancellable {
      * face was provided in the event.
      *
      * @return hit face or else {@code null}
+     * @since 1.12.2
      */
     @Nullable
     public BlockFace getHitBlockFace() {
         return this.hitFace;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -108,18 +119,26 @@ public class ProjectileHitEvent extends EntityEvent implements Cancellable {
      * <p>
      * This does NOT prevent block collisions, and explosions will still occur
      * unless their respective events are cancelled.
+     *
+     * @since 1.16.5
      */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

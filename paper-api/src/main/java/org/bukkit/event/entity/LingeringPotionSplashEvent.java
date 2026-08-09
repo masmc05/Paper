@@ -13,6 +13,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a splash potion hits an area
+ *
+ * @since 1.9.4
  */
 public class LingeringPotionSplashEvent extends ProjectileHitEvent implements Cancellable {
 
@@ -35,6 +37,9 @@ public class LingeringPotionSplashEvent extends ProjectileHitEvent implements Ca
         this.effectCloud = effectCloud;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public ThrownPotion getEntity() {
@@ -45,6 +50,7 @@ public class LingeringPotionSplashEvent extends ProjectileHitEvent implements Ca
      * Gets the AreaEffectCloud spawned
      *
      * @return The spawned AreaEffectCloud
+     * @since 1.9.4
      */
     @NotNull
     public AreaEffectCloud getAreaEffectCloud() {
@@ -55,6 +61,7 @@ public class LingeringPotionSplashEvent extends ProjectileHitEvent implements Ca
      * Sets if an Empty AreaEffectCloud may be created
      *
      * @param allowEmptyAreaEffectCreation If an Empty AreaEffectCloud may be created
+     * @since 1.20.2
      */
     public void allowsEmptyCreation(boolean allowEmptyAreaEffectCreation) {
         this.allowEmptyAreaEffectCreation = allowEmptyAreaEffectCreation;
@@ -64,27 +71,40 @@ public class LingeringPotionSplashEvent extends ProjectileHitEvent implements Ca
      * Gets if an empty AreaEffectCloud may be created
      *
      * @return if an empty AreaEffectCloud may be created
+     * @since 1.20.2
      */
     public boolean allowsEmptyCreation() {
         return this.allowEmptyAreaEffectCreation;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

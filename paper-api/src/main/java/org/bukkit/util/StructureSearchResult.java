@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @see World#locateNearestStructure(Location, Structure, int, boolean)
  * @see World#locateNearestStructure(Location, StructureType, int, boolean)
+ * @since 1.19
  */
 public interface StructureSearchResult {
 
@@ -18,6 +19,7 @@ public interface StructureSearchResult {
      * Return the structure which was found.
      *
      * @return the found structure.
+     * @since 1.19
      */
     @NotNull
     Structure getStructure();
@@ -26,6 +28,7 @@ public interface StructureSearchResult {
      * Return the location of the structure.
      *
      * @return the location the structure was found.
+     * @since 1.19
      */
     @NotNull
     Location getLocation();

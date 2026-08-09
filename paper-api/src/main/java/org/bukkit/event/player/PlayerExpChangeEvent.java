@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a players experience changes naturally
+ *
+ * @since 1.1.0
  */
 public class PlayerExpChangeEvent extends PlayerEvent {
 
@@ -34,6 +36,7 @@ public class PlayerExpChangeEvent extends PlayerEvent {
      * Get the source that provided the experience.
      *
      * @return The source of the experience
+     * @since 1.11
      */
     @Nullable
     public Entity getSource() {
@@ -44,6 +47,7 @@ public class PlayerExpChangeEvent extends PlayerEvent {
      * Get the amount of experience the player will receive
      *
      * @return The amount of experience
+     * @since 1.1.0
      */
     public int getAmount() {
         return this.exp;
@@ -53,17 +57,24 @@ public class PlayerExpChangeEvent extends PlayerEvent {
      * Set the amount of experience the player will receive
      *
      * @param amount The amount of experience to set
+     * @since 1.1.0
      */
     public void setAmount(int amount) {
         this.exp = amount;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

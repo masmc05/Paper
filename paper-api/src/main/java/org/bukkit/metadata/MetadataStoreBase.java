@@ -17,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
  * removed. It is recommended that when wanting persistent metadata, you use {@link org.bukkit.persistence.PersistentDataContainer}.
  * <p>
  * If you want temporary values on an entity, use the entity lifecycle events and a {@link java.util.Map} of your own. (See {@link com.destroystokyo.paper.event.entity.EntityAddToWorldEvent} and {@link com.destroystokyo.paper.event.entity.EntityRemoveFromWorldEvent})
+ * @since 1.1.0
  */
 @Deprecated
 public abstract class MetadataStoreBase<T> {
@@ -43,6 +44,7 @@ public abstract class MetadataStoreBase<T> {
      * @throws IllegalArgumentException If value is null, or the owning plugin
      *     is null
      * @see MetadataStore#setMetadata(Object, String, MetadataValue)
+     * @since 1.1.0
      */
     public synchronized void setMetadata(@NotNull T subject, @NotNull String metadataKey, @NotNull MetadataValue newMetadataValue) {
         Preconditions.checkArgument(newMetadataValue != null, "Value cannot be null");
@@ -68,6 +70,7 @@ public abstract class MetadataStoreBase<T> {
      * @return A list of values, one for each plugin that has set the
      *     requested value.
      * @see MetadataStore#getMetadata(Object, String)
+     * @since 1.1.0
      */
     @NotNull
     public List<MetadataValue> getMetadata(@NotNull T subject, @NotNull String metadataKey) { // Paper
@@ -88,6 +91,7 @@ public abstract class MetadataStoreBase<T> {
      *     performed.
      * @param metadataKey the unique metadata key being queried.
      * @return the existence of the metadataKey within subject.
+     * @since 1.1.0
      */
     public boolean hasMetadata(@NotNull T subject, @NotNull String metadataKey) { // Paper
         String key = disambiguate(subject, metadataKey);
@@ -104,6 +108,7 @@ public abstract class MetadataStoreBase<T> {
      * @throws IllegalArgumentException If plugin is null
      * @see MetadataStore#removeMetadata(Object, String,
      *     org.bukkit.plugin.Plugin)
+     * @since 1.1.0
      */
     public void removeMetadata(@NotNull T subject, @NotNull String metadataKey, @NotNull Plugin owningPlugin) { // Paper
         Preconditions.checkArgument(owningPlugin != null, "Plugin cannot be null");
@@ -128,6 +133,7 @@ public abstract class MetadataStoreBase<T> {
      * @param owningPlugin the plugin requesting the invalidation.
      * @throws IllegalArgumentException If plugin is null
      * @see MetadataStore#invalidateAll(org.bukkit.plugin.Plugin)
+     * @since 1.1.0
      */
     public void invalidateAll(@NotNull Plugin owningPlugin) { // Paper
         Preconditions.checkArgument(owningPlugin != null, "Plugin cannot be null");
@@ -144,6 +150,7 @@ public abstract class MetadataStoreBase<T> {
      *
      * @param owningPlugin the plugin requesting the invalidation.
      * @throws IllegalArgumentException If plugin is null
+     * @since 1.9.4
      */
     public void removeAll(@NotNull Plugin owningPlugin) {
         Preconditions.checkNotNull(owningPlugin, "Plugin cannot be null");

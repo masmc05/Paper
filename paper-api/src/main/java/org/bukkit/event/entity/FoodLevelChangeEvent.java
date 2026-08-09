@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a human entity's food level changes
+ *
+ * @since 1.0.0
  */
 public class FoodLevelChangeEvent extends EntityEvent implements Cancellable {
 
@@ -33,6 +35,9 @@ public class FoodLevelChangeEvent extends EntityEvent implements Cancellable {
         this.item = item;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HumanEntity getEntity() {
@@ -43,6 +48,7 @@ public class FoodLevelChangeEvent extends EntityEvent implements Cancellable {
      * Gets the item that triggered this event, if any.
      *
      * @return an ItemStack for the item being consumed
+     * @since 1.14.2
      */
     @Nullable
     public ItemStack getItem() {
@@ -56,6 +62,7 @@ public class FoodLevelChangeEvent extends EntityEvent implements Cancellable {
      * Where 20 is a full food bar and 0 is an empty one.
      *
      * @return The resultant food level
+     * @since 1.0.0
      */
     public int getFoodLevel() {
         return this.level;
@@ -67,6 +74,7 @@ public class FoodLevelChangeEvent extends EntityEvent implements Cancellable {
      *
      * @param level the resultant food level that the entity involved in this
      *     event should be set to
+     * @since 1.0.0
      */
     public void setFoodLevel(int level) {
         if (level < 0) level = 0;
@@ -74,22 +82,34 @@ public class FoodLevelChangeEvent extends EntityEvent implements Cancellable {
         this.level = level;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

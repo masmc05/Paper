@@ -11,17 +11,22 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Handles pathfinding operations for an Entity
+ *
+ * @since 1.13.1
  */
 @NullMarked
 public interface Pathfinder {
 
     /**
      * @return The entity that is controlled by this pathfinder
+     * @since 1.13.1
      */
     Mob getEntity();
 
     /**
      * Instructs the Entity to stop trying to navigate to its current desired location
+     *
+     * @since 1.13.1
      */
     void stopPathfinding();
 
@@ -29,11 +34,13 @@ public interface Pathfinder {
      * If the entity is currently trying to navigate to a destination, this will return true
      *
      * @return true if the entity is navigating to a destination
+     * @since 1.13.1
      */
     boolean hasPath();
 
     /**
      * @return The location the entity is trying to navigate to, or null if there is no destination
+     * @since 1.13.1
      */
     @Nullable PathResult getCurrentPath();
 
@@ -43,6 +50,7 @@ public interface Pathfinder {
      *
      * @param loc Location to navigate to
      * @return The closest Location the Entity can get to for this navigation, or null if no path could be calculated
+     * @since 1.13.1
      */
     default @Nullable PathResult findPath(Location loc) {
         return this.findPath(loc, 0);
@@ -56,6 +64,7 @@ public interface Pathfinder {
      * @param reachRange The <a href="https://cp-algorithms.com/geometry/manhattan-distance.html">Manhattan-distance</a> threshold
      *                   from the target position at which the path is considered reached, where {@code 0} requires the exact target position
      * @return The closest Location the Entity can get to for this navigation, or null if no path could be calculated
+     * @since 26.2
      */
     @Nullable PathResult findPath(final Location loc, final @NonNegative int reachRange);
 
@@ -71,6 +80,7 @@ public interface Pathfinder {
      *
      * @param target the Entity to navigate to
      * @return The closest Location the Entity can get to for this navigation, or null if no path could be calculated
+     * @since 1.13.1
      */
     @Nullable
     default PathResult findPath(LivingEntity target) {
@@ -89,6 +99,7 @@ public interface Pathfinder {
      *
      * @param target the Entity to navigate to
      * @return The closest Location the Entity can get to for this navigation, or null if no path could be calculated
+     * @since 1.21.11
      */
     default @Nullable PathResult findPath(Entity target) {
         return this.findPath(target, 0);
@@ -108,6 +119,7 @@ public interface Pathfinder {
      * @param reachRange The <a href="https://cp-algorithms.com/geometry/manhattan-distance.html">Manhattan-distance</a> threshold
      *                   from the target position at which the path is considered reached, where {@code 0} requires the exact target position
      * @return The closest Location the Entity can get to for this navigation, or null if no path could be calculated
+     * @since 26.2
      */
     @Nullable PathResult findPath(final Entity target, final @NonNegative int reachRange);
 
@@ -117,6 +129,7 @@ public interface Pathfinder {
      *
      * @param loc Location to navigate to
      * @return If the pathfinding was successfully started
+     * @since 1.13.1
      */
     default boolean moveTo(Location loc) {
         return this.moveTo(loc, 1);
@@ -129,6 +142,7 @@ public interface Pathfinder {
      * @param loc   Location to navigate to
      * @param speed Speed multiplier to navigate at, where 1 is 'normal'
      * @return If the pathfinding was successfully started
+     * @since 1.13.1
      */
     default boolean moveTo(Location loc, double speed) {
         PathResult path = this.findPath(loc);
@@ -146,6 +160,7 @@ public interface Pathfinder {
      *
      * @param target the Entity to navigate to
      * @return If the pathfinding was successfully started
+     * @since 1.13.1
      */
     default boolean moveTo(LivingEntity target) {
         return this.moveTo(target, 1);
@@ -163,6 +178,7 @@ public interface Pathfinder {
      * @param target the Entity to navigate to
      * @param speed  Speed multiplier to navigate at, where 1 is 'normal'
      * @return If the pathfinding was successfully started
+     * @since 1.13.1
      */
     default boolean moveTo(LivingEntity target, double speed) {
         return this.moveTo((Entity) target, speed);
@@ -179,6 +195,7 @@ public interface Pathfinder {
      *
      * @param target the Entity to navigate to
      * @return If the pathfinding was successfully started
+     * @since 1.21.11
      */
     default boolean moveTo(Entity target) {
         return this.moveTo(target, 1);
@@ -196,6 +213,7 @@ public interface Pathfinder {
      * @param target the Entity to navigate to
      * @param speed  Speed multiplier to navigate at, where 1 is 'normal'
      * @return If the pathfinding was successfully started
+     * @since 1.21.11
      */
     default boolean moveTo(Entity target, double speed) {
         PathResult path = this.findPath(target);
@@ -208,6 +226,7 @@ public interface Pathfinder {
      *
      * @param path The Path to start following
      * @return If the pathfinding was successfully started
+     * @since 1.13.1
      */
     default boolean moveTo(PathResult path) {
         return this.moveTo(path, 1);
@@ -220,6 +239,7 @@ public interface Pathfinder {
      * @param path  The Path to start following
      * @param speed Speed multiplier to navigate at, where 1 is 'normal'
      * @return If the pathfinding was successfully started
+     * @since 1.13.1
      */
     boolean moveTo(PathResult path, double speed);
 
@@ -227,6 +247,7 @@ public interface Pathfinder {
      * Checks if this pathfinder allows passing through closed doors.
      *
      * @return if this pathfinder allows passing through closed doors
+     * @since 1.15.2
      */
     boolean canOpenDoors();
 
@@ -234,6 +255,7 @@ public interface Pathfinder {
      * Allows this pathfinder to pass through closed doors, or not
      *
      * @param canOpenDoors if the mob can pass through closed doors, or not
+     * @since 1.15.2
      */
     void setCanOpenDoors(boolean canOpenDoors);
 
@@ -241,6 +263,7 @@ public interface Pathfinder {
      * Checks if this pathfinder allows passing through open doors.
      *
      * @return if this pathfinder allows passing through open doors
+     * @since 1.15.2
      */
     boolean canPassDoors();
 
@@ -248,6 +271,7 @@ public interface Pathfinder {
      * Allows this pathfinder to pass through open doors, or not
      *
      * @param canPassDoors if the mob can pass through open doors, or not
+     * @since 1.15.2
      */
     void setCanPassDoors(boolean canPassDoors);
 
@@ -255,6 +279,7 @@ public interface Pathfinder {
      * Checks if this pathfinder assumes that the mob can float
      *
      * @return if this pathfinder assumes that the mob can float
+     * @since 1.15.2
      */
     boolean canFloat();
 
@@ -262,11 +287,14 @@ public interface Pathfinder {
      * Makes this pathfinder assume that the mob can float, or not
      *
      * @param canFloat if the mob can float, or not
+     * @since 1.15.2
      */
     void setCanFloat(boolean canFloat);
 
     /**
      * Represents the result of a pathfinding calculation
+     *
+     * @since 1.13.1
      */
     interface PathResult {
 
@@ -276,22 +304,26 @@ public interface Pathfinder {
          * Will return points the entity has already moved past, see {@link #getNextPointIndex()}
          *
          * @return List of points
+         * @since 1.13.1
          */
         List<Location> getPoints();
 
         /**
          * @return Returns the index of the current point along the points returned in {@link #getPoints()} the entity
          * is trying to reach. This value will be higher than the maximum index of {@link #getPoints()} if this path finding is done.
+         * @since 1.13.1
          */
         int getNextPointIndex();
 
         /**
          * @return The next location in the path points the entity is trying to reach, or null if there is no next point
+         * @since 1.13.1
          */
         @Nullable Location getNextPoint();
 
         /**
          * @return The closest point the path can get to the target location
+         * @since 1.13.1
          */
         @Nullable Location getFinalPoint();
 
@@ -300,6 +332,7 @@ public interface Pathfinder {
          *
          * @return whether the final point can be reached
          * @see #getFinalPoint()
+         * @since 1.20.6
          */
         boolean canReachFinalPoint();
     }

@@ -12,6 +12,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when a player toggles the age lock of an entity using an item.
+ *
+ * @since 26.2
  */
 @NullMarked
 public class PlayerToggleEntityAgeLockEvent extends PlayerEvent implements Cancellable {
@@ -34,6 +36,8 @@ public class PlayerToggleEntityAgeLockEvent extends PlayerEvent implements Cance
 
     /**
      * {@return the entity that is having its age locked or unlocked}
+     *
+     * @since 26.2
      */
     public LivingEntity getEntity() {
         return this.entity;
@@ -41,6 +45,8 @@ public class PlayerToggleEntityAgeLockEvent extends PlayerEvent implements Cance
 
     /**
      * {@return the item being used to toggle the age lock of the entity}
+     *
+     * @since 26.2
      */
     public ItemStack getItem() {
         return this.item.clone();
@@ -48,6 +54,8 @@ public class PlayerToggleEntityAgeLockEvent extends PlayerEvent implements Cance
 
     /**
      * {@return the hand being used to toggle the age lock of the entity}
+     *
+     * @since 26.2
      */
     public EquipmentSlot getHand() {
         return this.hand;
@@ -55,26 +63,40 @@ public class PlayerToggleEntityAgeLockEvent extends PlayerEvent implements Cance
 
     /**
      * {@return whether the age of the entity is going to be locked or not}
+     *
+     * @since 26.2
      */
     public boolean isAgeLocked() {
         return this.ageLocked;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 26.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

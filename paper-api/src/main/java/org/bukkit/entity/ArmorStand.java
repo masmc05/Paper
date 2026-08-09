@@ -7,6 +7,9 @@ import org.bukkit.util.EulerAngle;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.8
+ */
 public interface ArmorStand extends LivingEntity {
 
     /**
@@ -15,6 +18,7 @@ public interface ArmorStand extends LivingEntity {
      * @return the held item
      * @see #getEquipment()
      * @deprecated prefer {@link ArmorStand#getItem(EquipmentSlot)}
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.15.2")
@@ -27,6 +31,7 @@ public interface ArmorStand extends LivingEntity {
      * @see #getEquipment()
      * @deprecated prefer
      * {@link ArmorStand#setItem(EquipmentSlot, ItemStack)}
+     * @since 1.8
      */
     @Deprecated(since = "1.15.2")
     void setItemInHand(@Nullable ItemStack item);
@@ -37,6 +42,7 @@ public interface ArmorStand extends LivingEntity {
      * @return the worn item
      * @see #getEquipment()
      * @deprecated prefer {@link EntityEquipment#getBoots()}
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.15.2")
@@ -49,6 +55,7 @@ public interface ArmorStand extends LivingEntity {
      * @see #getEquipment()
      * @deprecated prefer
      * {@link EntityEquipment#setBoots(org.bukkit.inventory.ItemStack)}
+     * @since 1.8
      */
     @Deprecated(since = "1.15.2")
     void setBoots(@Nullable ItemStack item);
@@ -59,6 +66,7 @@ public interface ArmorStand extends LivingEntity {
      * @return the worn item
      * @see #getEquipment()
      * @deprecated prefer {@link EntityEquipment#getLeggings()}
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.15.2")
@@ -71,6 +79,7 @@ public interface ArmorStand extends LivingEntity {
      * @see #getEquipment()
      * @deprecated prefer
      * {@link EntityEquipment#setLeggings(org.bukkit.inventory.ItemStack)}
+     * @since 1.8
      */
     @Deprecated(since = "1.15.2")
     void setLeggings(@Nullable ItemStack item);
@@ -81,6 +90,7 @@ public interface ArmorStand extends LivingEntity {
      * @return the worn item
      * @see #getEquipment()
      * @deprecated prefer {@link EntityEquipment#getChestplate()}
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.15.2")
@@ -93,6 +103,7 @@ public interface ArmorStand extends LivingEntity {
      * @see #getEquipment()
      * @deprecated prefer
      * {@link EntityEquipment#setChestplate(org.bukkit.inventory.ItemStack)}
+     * @since 1.8
      */
     @Deprecated(since = "1.15.2")
     void setChestplate(@Nullable ItemStack item);
@@ -103,6 +114,7 @@ public interface ArmorStand extends LivingEntity {
      * @return the worn item
      * @see #getEquipment()
      * @deprecated prefer {@link EntityEquipment#getHelmet()}
+     * @since 1.8
      */
     @NotNull
     @Deprecated(since = "1.15.2")
@@ -115,6 +127,7 @@ public interface ArmorStand extends LivingEntity {
      * @see #getEquipment()
      * @deprecated prefer
      * {@link EntityEquipment#setHelmet(org.bukkit.inventory.ItemStack)}
+     * @since 1.8
      */
     @Deprecated(since = "1.15.2")
     void setHelmet(@Nullable ItemStack item);
@@ -124,6 +137,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @return the current pose
+     * @since 1.8
      */
     @NotNull
     EulerAngle getBodyPose();
@@ -133,6 +147,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @param pose the current pose
+     * @since 1.8
      */
     void setBodyPose(@NotNull EulerAngle pose);
 
@@ -141,6 +156,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @return the current pose
+     * @since 1.8
      */
     @NotNull
     EulerAngle getLeftArmPose();
@@ -150,6 +166,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @param pose the current pose
+     * @since 1.8
      */
     void setLeftArmPose(@NotNull EulerAngle pose);
 
@@ -158,6 +175,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @return the current pose
+     * @since 1.8
      */
     @NotNull
     EulerAngle getRightArmPose();
@@ -167,6 +185,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @param pose the current pose
+     * @since 1.8
      */
     void setRightArmPose(@NotNull EulerAngle pose);
 
@@ -175,6 +194,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @return the current pose
+     * @since 1.8
      */
     @NotNull
     EulerAngle getLeftLegPose();
@@ -184,6 +204,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @param pose the current pose
+     * @since 1.8
      */
     void setLeftLegPose(@NotNull EulerAngle pose);
 
@@ -192,6 +213,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @return the current pose
+     * @since 1.8
      */
     @NotNull
     EulerAngle getRightLegPose();
@@ -201,6 +223,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @param pose the current pose
+     * @since 1.8
      */
     void setRightLegPose(@NotNull EulerAngle pose);
 
@@ -209,6 +232,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @return the current pose
+     * @since 1.8
      */
     @NotNull
     EulerAngle getHeadPose();
@@ -218,6 +242,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link org.bukkit.util.EulerAngle}.
      *
      * @param pose the current pose
+     * @since 1.8
      */
     void setHeadPose(@NotNull EulerAngle pose);
 
@@ -225,6 +250,7 @@ public interface ArmorStand extends LivingEntity {
      * Returns whether the armor stand has a base plate.
      *
      * @return whether it has a base plate
+     * @since 1.8
      */
     boolean hasBasePlate();
 
@@ -232,6 +258,7 @@ public interface ArmorStand extends LivingEntity {
      * Sets whether the armor stand has a base plate.
      *
      * @param basePlate whether it has a base plate
+     * @since 1.8
      */
     void setBasePlate(boolean basePlate);
 
@@ -239,6 +266,7 @@ public interface ArmorStand extends LivingEntity {
      * Returns whether the armor stand should be visible or not.
      *
      * @return whether the stand is visible or not
+     * @since 1.8
      */
     boolean isVisible();
 
@@ -246,6 +274,7 @@ public interface ArmorStand extends LivingEntity {
      * Sets whether the armor stand should be visible or not.
      *
      * @param visible whether the stand is visible or not
+     * @since 1.8
      */
     void setVisible(boolean visible);
 
@@ -253,6 +282,7 @@ public interface ArmorStand extends LivingEntity {
      * Returns whether this armor stand has arms.
      *
      * @return whether this has arms or not
+     * @since 1.8
      */
     boolean hasArms();
 
@@ -260,6 +290,7 @@ public interface ArmorStand extends LivingEntity {
      * Sets whether this armor stand has arms.
      *
      * @param arms whether this has arms or not
+     * @since 1.8
      */
     void setArms(boolean arms);
 
@@ -267,6 +298,7 @@ public interface ArmorStand extends LivingEntity {
      * Returns whether this armor stand is scaled down.
      *
      * @return whether this is scaled down
+     * @since 1.8
      */
     boolean isSmall();
 
@@ -274,6 +306,7 @@ public interface ArmorStand extends LivingEntity {
      * Sets whether this armor stand is scaled down.
      *
      * @param small whether this is scaled down
+     * @since 1.8
      */
     void setSmall(boolean small);
 
@@ -282,6 +315,7 @@ public interface ArmorStand extends LivingEntity {
      * collision box.
      *
      * @return whether this is a marker
+     * @since 1.8.8
      */
     boolean isMarker();
 
@@ -290,6 +324,7 @@ public interface ArmorStand extends LivingEntity {
      * collision box.
      *
      * @param marker whether this is a marker
+     * @since 1.8.8
      */
     void setMarker(boolean marker);
 
@@ -299,6 +334,7 @@ public interface ArmorStand extends LivingEntity {
      *
      * @param slot the equipment slot to lock
      * @param lockType the LockType to lock the equipment slot with
+     * @since 1.16.2
      */
     void addEquipmentLock(@NotNull EquipmentSlot slot, @NotNull LockType lockType);
 
@@ -307,6 +343,7 @@ public interface ArmorStand extends LivingEntity {
      *
      * @param slot the equipment slot to change
      * @param lockType the LockType to remove
+     * @since 1.16.2
      */
     void removeEquipmentLock(@NotNull EquipmentSlot slot, @NotNull LockType lockType);
 
@@ -317,11 +354,14 @@ public interface ArmorStand extends LivingEntity {
      * @param slot the EquipmentSlot to test
      * @param lockType the LockType to test
      * @return if the ArmorStand has been locked with the parameters specified
+     * @since 1.16.2
      */
     boolean hasEquipmentLock(@NotNull EquipmentSlot slot, @NotNull LockType lockType);
 
     /**
      * Represents types of locking mechanisms for ArmorStand equipment.
+     *
+     * @since 1.16.2
      */
     public enum LockType {
 
@@ -329,18 +369,24 @@ public interface ArmorStand extends LivingEntity {
          * Prevents adding or changing the respective equipment - players cannot
          * replace the empty slot with a new item or swap the items between
          * themselves and the ArmorStand.
+         *
+         * @since 1.16.2
          */
         ADDING_OR_CHANGING,
         /**
          * Prevents removing or changing the respective equipment - players
          * cannot take an item from the slot or swap the items between
          * themselves and the ArmorStand.
+         *
+         * @since 1.16.2
          */
         REMOVING_OR_CHANGING,
         /**
          * Prevents adding the respective equipment - players cannot replace the
          * empty slot with a new item, but can swap items between themselves and
          * the ArmorStand.
+         *
+         * @since 1.16.2
          */
         ADDING;
     }
@@ -351,6 +397,7 @@ public interface ArmorStand extends LivingEntity {
      * <p>The default value is {@code true}.</p>
      *
      * @return {@code true} if this armour stand can move, {@code false} otherwise
+     * @since 1.11.2
      */
     boolean canMove();
 
@@ -358,9 +405,13 @@ public interface ArmorStand extends LivingEntity {
      * Sets if this armor stand can move.
      *
      * @param move {@code true} if this armour stand can move, {@code false} otherwise
+     * @since 1.11.2
      */
     void setCanMove(boolean move);
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     org.bukkit.inventory.@NotNull EntityEquipment getEquipment();
 
@@ -370,6 +421,7 @@ public interface ArmorStand extends LivingEntity {
      * <p>The default value is defined in {@code paper.yml}.</p>
      *
      * @return {@code true} if this armour stand can tick, {@code false} otherwise
+     * @since 1.12.2
      */
     boolean canTick();
 
@@ -377,6 +429,7 @@ public interface ArmorStand extends LivingEntity {
      * Sets if this armor stand can tick.
      *
      * @param tick {@code true} if this armour stand can tick, {@code false} otherwise
+     * @since 1.12.2
      */
     void setCanTick(final boolean tick);
 
@@ -387,6 +440,7 @@ public interface ArmorStand extends LivingEntity {
      * @param slot the equipment slot to get
      * @return the ItemStack in the equipment slot
      * @throws IllegalArgumentException if the slot is invalid for the entity
+     * @since 1.13
      */
     @NotNull
     ItemStack getItem(@NotNull final org.bukkit.inventory.EquipmentSlot slot);
@@ -398,6 +452,7 @@ public interface ArmorStand extends LivingEntity {
      * @param slot the equipment slot to set
      * @param item the item to hold
      * @throws IllegalArgumentException if the slot is invalid for the entity
+     * @since 1.13
      */
     void setItem(@NotNull final org.bukkit.inventory.EquipmentSlot slot, @Nullable final ItemStack item);
 
@@ -405,6 +460,7 @@ public interface ArmorStand extends LivingEntity {
      * Get the list of disabled slots
      *
      * @return list of disabled slots
+     * @since 1.13
      */
     @NotNull
     java.util.Set<org.bukkit.inventory.EquipmentSlot> getDisabledSlots();
@@ -416,6 +472,7 @@ public interface ArmorStand extends LivingEntity {
      * Note: Once a slot is disabled, the only way to get an item back it to break the armor stand.
      *
      * @param slots var-arg array of slots to lock
+     * @since 1.13
      */
     void setDisabledSlots(@NotNull org.bukkit.inventory.EquipmentSlot... slots);
 
@@ -427,6 +484,7 @@ public interface ArmorStand extends LivingEntity {
      * Note: Once a slot is disabled, the only way to get an item back it to break the armor stand.
      *
      * @param slots var-arg array of slots to lock
+     * @since 1.13
      */
     void addDisabledSlots(@NotNull final org.bukkit.inventory.EquipmentSlot... slots);
 
@@ -437,6 +495,7 @@ public interface ArmorStand extends LivingEntity {
      * This makes it so a player is able to interact with the Armor Stand to place, remove, or replace an item in the given slot(s)
      *
      * @param slots var-arg array of slots to unlock
+     * @since 1.13
      */
     void removeDisabledSlots(@NotNull final org.bukkit.inventory.EquipmentSlot... slots);
 
@@ -445,6 +504,7 @@ public interface ArmorStand extends LivingEntity {
      *
      * @param slot The slot to check
      * @return {@code true} if the slot is disabled, else {@code false}.
+     * @since 1.13
      */
     boolean isSlotDisabled(@NotNull org.bukkit.inventory.EquipmentSlot slot);
 
@@ -453,6 +513,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link io.papermc.paper.math.Rotations}.
      *
      * @return the current rotations
+     * @since 1.19.2
      */
     @NotNull io.papermc.paper.math.Rotations getBodyRotations();
 
@@ -461,6 +522,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link io.papermc.paper.math.Rotations}.
      *
      * @param rotations the current rotations
+     * @since 1.19.2
      */
     void setBodyRotations(@NotNull io.papermc.paper.math.Rotations rotations);
 
@@ -469,6 +531,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link io.papermc.paper.math.Rotations}.
      *
      * @return the current rotations
+     * @since 1.19.2
      */
     @NotNull io.papermc.paper.math.Rotations getLeftArmRotations();
 
@@ -477,6 +540,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link io.papermc.paper.math.Rotations}.
      *
      * @param rotations the current rotations
+     * @since 1.19.2
      */
     void setLeftArmRotations(@NotNull io.papermc.paper.math.Rotations rotations);
 
@@ -485,6 +549,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link io.papermc.paper.math.Rotations}.
      *
      * @return the current rotations
+     * @since 1.19.2
      */
     @NotNull io.papermc.paper.math.Rotations getRightArmRotations();
 
@@ -493,6 +558,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link io.papermc.paper.math.Rotations}.
      *
      * @param rotations the current rotations
+     * @since 1.19.2
      */
     void setRightArmRotations(@NotNull io.papermc.paper.math.Rotations rotations);
 
@@ -501,6 +567,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link io.papermc.paper.math.Rotations}.
      *
      * @return the current rotations
+     * @since 1.19.2
      */
     @NotNull io.papermc.paper.math.Rotations getLeftLegRotations();
 
@@ -509,6 +576,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link io.papermc.paper.math.Rotations}.
      *
      * @param rotations the current rotations
+     * @since 1.19.2
      */
     void setLeftLegRotations(@NotNull io.papermc.paper.math.Rotations rotations);
 
@@ -517,6 +585,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link io.papermc.paper.math.Rotations}.
      *
      * @return the current rotations
+     * @since 1.19.2
      */
     @NotNull io.papermc.paper.math.Rotations getRightLegRotations();
 
@@ -525,6 +594,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link io.papermc.paper.math.Rotations}.
      *
      * @param rotations the current rotations
+     * @since 1.19.2
      */
     void setRightLegRotations(@NotNull io.papermc.paper.math.Rotations rotations);
 
@@ -533,6 +603,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link io.papermc.paper.math.Rotations}.
      *
      * @return the current rotations
+     * @since 1.19.2
      */
     @NotNull io.papermc.paper.math.Rotations getHeadRotations();
 
@@ -541,6 +612,7 @@ public interface ArmorStand extends LivingEntity {
      * {@link io.papermc.paper.math.Rotations}.
      *
      * @param rotations the current rotations
+     * @since 1.19.2
      */
     void setHeadRotations(@NotNull io.papermc.paper.math.Rotations rotations);
     // Paper end

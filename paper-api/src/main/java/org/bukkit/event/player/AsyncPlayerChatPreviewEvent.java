@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
  * the same way.
  *
  * @deprecated chat previews have been removed
+ * @since 1.19.1
  */
 @Deprecated(since = "1.19.1")
 @Warning
@@ -25,12 +26,18 @@ public class AsyncPlayerChatPreviewEvent extends AsyncPlayerChatEvent {
         super(async, player, message, players);
     }
 
+    /**
+     * @since 1.19.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

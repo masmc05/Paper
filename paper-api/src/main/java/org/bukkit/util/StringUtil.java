@@ -4,6 +4,9 @@ import com.google.common.base.Preconditions;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.3.2
+ */
 public class StringUtil {
 
     /**
@@ -22,6 +25,7 @@ public class StringUtil {
      * @throws IllegalArgumentException if any parameter is null
      * @throws IllegalArgumentException if originals contains a null element.
      *     <b>Note: the collection may be modified before this is thrown</b>
+     * @since 1.3.2
      */
     @NotNull
     public static <T extends Collection<? super String>> T copyPartialMatches(@NotNull final String token, @NotNull final Iterable<String> originals, @NotNull final T collection) throws UnsupportedOperationException, IllegalArgumentException {
@@ -49,6 +53,7 @@ public class StringUtil {
      *     provided
      * @throws NullPointerException if prefix is null
      * @throws IllegalArgumentException if string is null
+     * @since 1.3.2
      */
     public static boolean startsWithIgnoreCase(@NotNull final String string, @NotNull final String prefix) throws IllegalArgumentException, NullPointerException {
         Preconditions.checkArgument(string != null, "Cannot check a null string for a match");

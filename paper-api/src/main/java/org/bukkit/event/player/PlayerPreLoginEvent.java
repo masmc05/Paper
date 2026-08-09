@@ -23,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
  * @deprecated This event causes synchronization from the login thread; {@link
  *     AsyncPlayerPreLoginEvent} is preferred to keep the secondary threads
  *     asynchronous.
+ * @since 1.0.0
  */
 @Deprecated(since = "1.3.2")
 @Warning(reason = "This event causes a login thread to synchronize with the main thread")
@@ -55,6 +56,7 @@ public class PlayerPreLoginEvent extends Event {
      * Gets the current result of the login, as an enum
      *
      * @return Current Result of the login
+     * @since 1.0.0
      */
     @NotNull
     public Result getResult() {
@@ -65,6 +67,7 @@ public class PlayerPreLoginEvent extends Event {
      * Sets the new result of the login, as an enum
      *
      * @param result New result to set
+     * @since 1.0.0
      */
     public void setResult(@NotNull final Result result) {
         this.result = result;
@@ -74,6 +77,7 @@ public class PlayerPreLoginEvent extends Event {
      * Gets the current kick message that will be used when the outcome is not allowed
      *
      * @return Current kick message
+     * @since 1.16.5
      */
     @NotNull
     public Component kickMessage() {
@@ -84,6 +88,7 @@ public class PlayerPreLoginEvent extends Event {
      * Sets the kick message to display when the outcome is not allowed
      *
      * @param message New kick message
+     * @since 1.16.5
      */
     public void kickMessage(@NotNull final Component message) {
         this.message = message;
@@ -94,6 +99,7 @@ public class PlayerPreLoginEvent extends Event {
      *
      * @param result New result for disallowing the player
      * @param message Kick message to display to the user
+     * @since 1.16.5
      */
     public void disallow(@NotNull final Result result, @NotNull final Component message) {
         this.result = result;
@@ -105,6 +111,7 @@ public class PlayerPreLoginEvent extends Event {
      *
      * @return Current kick message
      * @deprecated in favour of {@link #kickMessage()}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     @NotNull
@@ -117,6 +124,7 @@ public class PlayerPreLoginEvent extends Event {
      *
      * @param message New kick message
      * @deprecated in favour of {@link #kickMessage(Component)}
+     * @since 1.0.0
      */
     @Deprecated
     public void setKickMessage(@NotNull final String message) {
@@ -125,6 +133,8 @@ public class PlayerPreLoginEvent extends Event {
 
     /**
      * Allows the player to log in
+     *
+     * @since 1.0.0
      */
     public void allow() {
         this.result = Result.ALLOWED;
@@ -137,6 +147,7 @@ public class PlayerPreLoginEvent extends Event {
      * @param result New result for disallowing the player
      * @param message Kick message to display to the user
      * @deprecated in favour of {@link #disallow(org.bukkit.event.player.PlayerPreLoginEvent.Result, Component)}
+     * @since 1.0.0
      */
     @Deprecated // Paper
     public void disallow(@NotNull final Result result, @NotNull final String message) {
@@ -148,6 +159,7 @@ public class PlayerPreLoginEvent extends Event {
      * Gets the player's name.
      *
      * @return the player's name
+     * @since 1.0.0
      */
     @NotNull
     public String getName() {
@@ -158,6 +170,7 @@ public class PlayerPreLoginEvent extends Event {
      * Gets the player IP address.
      *
      * @return The IP address
+     * @since 1.0.0
      */
     @NotNull
     public InetAddress getAddress() {
@@ -168,18 +181,25 @@ public class PlayerPreLoginEvent extends Event {
      * Gets the player's unique ID.
      *
      * @return The unique ID
+     * @since 1.7.10
      */
     @NotNull
     public UUID getUniqueId() {
         return this.uniqueId;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
@@ -187,28 +207,40 @@ public class PlayerPreLoginEvent extends Event {
 
     /**
      * Basic kick reasons for communicating to plugins
+     *
+     * @since 1.0.0
      */
     public enum Result {
 
         /**
          * The player is allowed to log in
+         *
+         * @since 1.0.0
          */
         ALLOWED,
         /**
          * The player is not allowed to log in, due to the server being full
+         *
+         * @since 1.0.0
          */
         KICK_FULL,
         /**
          * The player is not allowed to log in, due to them being banned
+         *
+         * @since 1.0.0
          */
         KICK_BANNED,
         /**
          * The player is not allowed to log in, due to them not being on the
          * white list
+         *
+         * @since 1.0.0
          */
         KICK_WHITELIST,
         /**
          * The player is not allowed to log in, for reasons undefined
+         *
+         * @since 1.0.0
          */
         KICK_OTHER
     }

@@ -9,6 +9,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Represents the body of a dialog.
+ *
+ * @since 1.21.7
  */
 public sealed interface DialogBody permits ItemDialogBody, PlainMessageDialogBody {
 
@@ -22,6 +24,7 @@ public sealed interface DialogBody permits ItemDialogBody, PlainMessageDialogBod
      * @param width             the width of the item body
      * @param height            the height of the item body
      * @return a new item body instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_, _, _, _, _, _ -> new")
     static ItemDialogBody item(
@@ -46,6 +49,7 @@ public sealed interface DialogBody permits ItemDialogBody, PlainMessageDialogBod
      *
      * @param item the item to display in the dialog
      * @return a new item dialog body builder instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_ -> new")
     static ItemDialogBody.Builder item(final ItemStack item) {
@@ -57,6 +61,7 @@ public sealed interface DialogBody permits ItemDialogBody, PlainMessageDialogBod
      *
      * @param contents the contents of the message
      * @return a new plain message body instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_ -> new")
     static PlainMessageDialogBody plainMessage(final Component contents) {
@@ -69,6 +74,7 @@ public sealed interface DialogBody permits ItemDialogBody, PlainMessageDialogBod
      * @param contents the contents of the message
      * @param width    the width of the message body
      * @return a new plain message body instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_, _ -> new")
     static PlainMessageDialogBody plainMessage(final Component contents, final @Range(from = 1, to = 1024) int width) {

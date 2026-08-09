@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * An abstract base class for events that describe an interaction between a
  * HumanEntity and the contents of an Inventory.
+ *
+ * @since 1.6.1
  */
 public abstract class InventoryInteractEvent extends InventoryEvent implements Cancellable {
 
@@ -23,6 +25,7 @@ public abstract class InventoryInteractEvent extends InventoryEvent implements C
      * Gets the player who performed the click.
      *
      * @return The clicking player.
+     * @since 1.6.1
      */
     @NotNull
     public HumanEntity getWhoClicked() {
@@ -35,6 +38,7 @@ public abstract class InventoryInteractEvent extends InventoryEvent implements C
      *
      * @param newResult the new {@link org.bukkit.event.Event.Result} for this event
      * @see #isCancelled()
+     * @since 1.6.1
      */
     public void setResult(@NotNull Result newResult) {
         this.result = newResult;
@@ -46,6 +50,7 @@ public abstract class InventoryInteractEvent extends InventoryEvent implements C
      * event.
      *
      * @return the Result of this event.
+     * @since 1.6.1
      */
     @NotNull
     public Result getResult() {
@@ -61,6 +66,7 @@ public abstract class InventoryInteractEvent extends InventoryEvent implements C
      * {@inheritDoc}
      *
      * @return whether the event is cancelled
+     * @since 1.6.1
      */
     @Override
     public boolean isCancelled() {
@@ -75,6 +81,7 @@ public abstract class InventoryInteractEvent extends InventoryEvent implements C
      * {@inheritDoc}
      *
      * @param cancel result becomes {@link Result#DENY} if {@code true}, {@link Result#ALLOW} if {@code false}
+     * @since 1.6.1
      */
     @Override
     public void setCancelled(boolean cancel) {

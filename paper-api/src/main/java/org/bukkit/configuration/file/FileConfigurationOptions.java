@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Various settings for controlling the input and output of a {@link
  * FileConfiguration}
+ *
+ * @since 1.0.0
  */
 public class FileConfigurationOptions extends MemoryConfigurationOptions {
     private List<String> header = Collections.emptyList();
@@ -24,12 +26,18 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
         super(configuration);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public FileConfiguration configuration() {
         return (FileConfiguration) super.configuration();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public FileConfigurationOptions copyDefaults(boolean value) {
@@ -37,6 +45,9 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
         return this;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public FileConfigurationOptions pathSeparator(char value) {
@@ -58,6 +69,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * line.
      *
      * @return Unmodifiable header, every entry represents one line.
+     * @since 1.18.1
      */
     @NotNull
     public List<String> getHeader() {
@@ -68,6 +80,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * @return The string header.
      *
      * @deprecated use getHeader() instead.
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.18.1")
@@ -94,6 +107,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      *
      * @param value New header, every entry represents one line.
      * @return This object, for chaining
+     * @since 1.18.1
      */
     @NotNull
     public FileConfigurationOptions setHeader(@Nullable List<String> value) {
@@ -106,6 +120,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * @return This object, for chaining.
      *
      * @deprecated use setHeader() instead
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.18.1")
@@ -128,6 +143,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * line.
      *
      * @return Unmodifiable footer, every entry represents one line.
+     * @since 1.18.1
      */
     @NotNull
     public List<String> getFooter() {
@@ -149,6 +165,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      *
      * @param value New footer, every entry represents one line.
      * @return This object, for chaining
+     * @since 1.18.1
      */
     @NotNull
     public FileConfigurationOptions setFooter(@Nullable List<String> value) {
@@ -162,6 +179,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * Defaults to true.
      *
      * @return Whether or not comments are parsed.
+     * @since 1.18.1
      */
     public boolean parseComments() {
         return parseComments;
@@ -174,6 +192,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      *
      * @param value Whether or not comments are parsed.
      * @return This object, for chaining
+     * @since 1.18.1
      */
     @NotNull
     public MemoryConfigurationOptions parseComments(boolean value) {
@@ -185,6 +204,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * @return Whether or not comments are parsed.
      *
      * @deprecated Call {@link #parseComments()} instead.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.18.1")
     public boolean copyHeader() {
@@ -196,6 +216,7 @@ public class FileConfigurationOptions extends MemoryConfigurationOptions {
      * @return This object, for chaining
      *
      * @deprecated Call {@link #parseComments(boolean)} instead.
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.18.1")

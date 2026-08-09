@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
  * To learn more about the features surrounding this interface.
  *
  * @see <a href="https://minecraft.wiki/w/Commands/tick">Tick Command</a>
+ * @since 1.20.4
  */
 public interface ServerTickManager {
 
@@ -19,6 +20,7 @@ public interface ServerTickManager {
      * currently frozen.
      *
      * @return true if the server is running normally, otherwise false
+     * @since 1.20.4
      */
     boolean isRunningNormally();
 
@@ -26,6 +28,7 @@ public interface ServerTickManager {
      * Checks if the server is currently stepping.
      *
      * @return true if stepping, otherwise false
+     * @since 1.20.4
      */
     boolean isStepping();
 
@@ -33,6 +36,7 @@ public interface ServerTickManager {
      * Checks if the server is currently sprinting.
      *
      * @return true if sprinting, otherwise false
+     * @since 1.20.4
      */
     boolean isSprinting();
 
@@ -40,6 +44,7 @@ public interface ServerTickManager {
      * Checks if the server is currently frozen.
      *
      * @return true if the server is frozen, otherwise false
+     * @since 1.20.4
      */
     boolean isFrozen();
 
@@ -47,6 +52,7 @@ public interface ServerTickManager {
      * Gets the current tick rate of the server.
      *
      * @return the current tick rate of the server
+     * @since 1.20.4
      */
     float getTickRate();
 
@@ -59,6 +65,7 @@ public interface ServerTickManager {
      * @param tick the tick rate to set the server to
      * @throws IllegalArgumentException if tick rate is too low or too high for
      * the server to handle
+     * @since 1.20.4
      */
     void setTickRate(float tick);
 
@@ -66,6 +73,7 @@ public interface ServerTickManager {
      * Sets the server to a frozen state that does not tick most things.
      *
      * @param frozen true to freeze the server, otherwise false
+     * @since 1.20.4
      */
     void setFrozen(boolean frozen);
 
@@ -80,6 +88,7 @@ public interface ServerTickManager {
      * @param ticks the amount of ticks to step the game for
      * @return true if the game is now stepping. False if the game is not frozen
      * so the request could not be fulfilled.
+     * @since 1.20.4
      */
     boolean stepGameIfFrozen(int ticks);
 
@@ -88,6 +97,7 @@ public interface ServerTickManager {
      *
      * @return true if the game is no-longer stepping. False if the server was
      * not stepping or was already done stepping.
+     * @since 1.20.4
      */
     boolean stopStepping();
 
@@ -98,6 +108,7 @@ public interface ServerTickManager {
      * @param ticks the amount of ticks to sprint for
      * @return true if a sprint was already initiated and was stopped, otherwise
      * false
+     * @since 1.20.4
      */
     boolean requestGameToSprint(int ticks);
 
@@ -106,6 +117,7 @@ public interface ServerTickManager {
      *
      * @return true if the game is no-longer sprinting, false if the server was
      * not sprinting or was already done sprinting
+     * @since 1.20.4
      */
     boolean stopSprinting();
 
@@ -114,6 +126,7 @@ public interface ServerTickManager {
      *
      * @param entity the entity to check if frozen.
      * @return true if the entity is currently frozen otherwise false.
+     * @since 1.20.4
      */
     boolean isFrozen(@NotNull Entity entity);
 
@@ -121,6 +134,7 @@ public interface ServerTickManager {
      * Gets the amount of frozen ticks left to run.
      *
      * @return the amount of frozen ticks left to run
+     * @since 1.20.4
      */
     int getFrozenTicksToRun();
 }

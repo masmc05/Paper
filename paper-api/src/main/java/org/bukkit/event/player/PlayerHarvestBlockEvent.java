@@ -19,6 +19,8 @@ import org.jetbrains.annotations.NotNull;
  * This event is not called for when a block is broken, to handle that, listen
  * for {@link org.bukkit.event.block.BlockBreakEvent} and
  * {@link org.bukkit.event.block.BlockDropItemEvent}.
+ *
+ * @since 1.16.1
  */
 public class PlayerHarvestBlockEvent extends PlayerEvent implements Cancellable {
 
@@ -48,6 +50,7 @@ public class PlayerHarvestBlockEvent extends PlayerEvent implements Cancellable 
      * Gets the block that is being harvested.
      *
      * @return The block that is being harvested
+     * @since 1.16.1
      */
     @NotNull
     public Block getHarvestedBlock() {
@@ -58,6 +61,7 @@ public class PlayerHarvestBlockEvent extends PlayerEvent implements Cancellable 
      * Get the hand used to harvest the block.
      *
      * @return the hand
+     * @since 1.19.2
      */
     @NotNull
     public EquipmentSlot getHand() {
@@ -68,28 +72,41 @@ public class PlayerHarvestBlockEvent extends PlayerEvent implements Cancellable 
      * Gets a list of items that are being harvested from this block.
      *
      * @return A list of items that are being harvested from this block
+     * @since 1.16.1
      */
     @NotNull
     public List<ItemStack> getItemsHarvested() {
         return this.itemsHarvested;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

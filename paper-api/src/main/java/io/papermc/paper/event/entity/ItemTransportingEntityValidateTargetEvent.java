@@ -16,6 +16,8 @@ import org.jspecify.annotations.NullMarked;
  *
  * <p>This may be called multiple times per entity per tick, so listeners
  * should be careful to implement checks in an efficient manner.</p>
+ *
+ * @since 1.21.10
  */
 @NullMarked
 public class ItemTransportingEntityValidateTargetEvent extends EntityEvent {
@@ -37,6 +39,7 @@ public class ItemTransportingEntityValidateTargetEvent extends EntityEvent {
      * Sets if the entity is allowed to use {@link #getBlock()} as a target.
      *
      * @param allowed whether the target is allowed
+     * @since 1.21.10
      */
     public void setAllowed(boolean allowed) {
         this.allowed = allowed;
@@ -46,6 +49,7 @@ public class ItemTransportingEntityValidateTargetEvent extends EntityEvent {
      * Gets if the entity is allowed to use {@link #getBlock()} as a target.
      *
      * @return true if the target is allowed
+     * @since 1.21.10
      */
     public boolean isAllowed() {
         return this.allowed;
@@ -55,15 +59,22 @@ public class ItemTransportingEntityValidateTargetEvent extends EntityEvent {
      * Gets the target block the entity is validating.
      *
      * @return the target block
+     * @since 1.21.10
      */
     public Block getBlock() {
         return this.block;
     }
 
+    /**
+     * @since 1.21.10
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.10
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;

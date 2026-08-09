@@ -20,6 +20,8 @@ import org.jspecify.annotations.Nullable;
  * <p>
  * No guarantees are made about thread execution context for this event. If you need to know, check
  * {@link Event#isAsynchronous()}
+ *
+ * @since 1.12
  */
 @NullMarked
 public class PreLookupProfileEvent extends Event {
@@ -39,6 +41,7 @@ public class PreLookupProfileEvent extends Event {
 
     /**
      * @return Name of the profile
+     * @since 1.12
      */
     public String getName() {
         return this.name;
@@ -50,6 +53,7 @@ public class PreLookupProfileEvent extends Event {
      * {@link LookupProfileEvent}
      *
      * @return The UUID of the profile if it has already been provided by a plugin
+     * @since 1.12
      */
     public @Nullable UUID getUUID() {
         return this.uuid;
@@ -61,6 +65,7 @@ public class PreLookupProfileEvent extends Event {
      * However, if Profile Properties are needed by the server, you must also set them or else an API call might still be made.
      *
      * @param uuid the UUID to set for the profile or {@code null} to reset
+     * @since 1.12
      */
     public void setUUID(final @Nullable UUID uuid) {
         this.uuid = uuid;
@@ -101,11 +106,17 @@ public class PreLookupProfileEvent extends Event {
         this.properties.addAll(properties);
     }
 
+    /**
+     * @since 1.12
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

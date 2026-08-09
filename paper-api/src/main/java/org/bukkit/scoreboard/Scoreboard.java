@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A scoreboard
+ *
+ * @since 1.5.1
  */
 public interface Scoreboard {
 
@@ -21,6 +23,7 @@ public interface Scoreboard {
      * @throws IllegalArgumentException if an objective by that name already
      *     exists
      * @deprecated a displayName should be explicitly specified
+     * @since 1.5.1
      */
     @Deprecated(since = "1.13")
     @NotNull
@@ -40,6 +43,7 @@ public interface Scoreboard {
      * @throws IllegalArgumentException if an objective by that name already
      *     exists
      * @deprecated use {@link #registerNewObjective(String, Criteria, net.kyori.adventure.text.Component)}
+     * @since 1.16.5
      */
     @NotNull
     @Deprecated
@@ -60,6 +64,7 @@ public interface Scoreboard {
      * @throws IllegalArgumentException if an objective by that name already
      *     exists
      * @deprecated use {@link #registerNewObjective(String, Criteria, net.kyori.adventure.text.Component, RenderType)}
+     * @since 1.16.5
      */
     @NotNull
     @Deprecated
@@ -76,6 +81,7 @@ public interface Scoreboard {
      *     characters.
      * @throws IllegalArgumentException if an objective by that name already
      *     exists
+     * @since 1.19.2
      */
     @NotNull
     default Objective registerNewObjective(@NotNull String name, @NotNull Criteria criteria, net.kyori.adventure.text.@Nullable Component displayName) throws IllegalArgumentException {
@@ -94,6 +100,7 @@ public interface Scoreboard {
      *     characters.
      * @throws IllegalArgumentException if an objective by that name already
      *     exists
+     * @since 1.19.2
      */
     @NotNull
     Objective registerNewObjective(@NotNull String name, @NotNull Criteria criteria, net.kyori.adventure.text.@Nullable Component displayName, @NotNull RenderType renderType) throws IllegalArgumentException;
@@ -110,6 +117,7 @@ public interface Scoreboard {
      * @throws IllegalArgumentException if an objective by that name already
      *     exists
      * @deprecated use {@link #registerNewObjective(String, Criteria, net.kyori.adventure.text.Component)}
+     * @since 1.13
      */
     @Deprecated(since = "1.20.5")
     @NotNull
@@ -130,6 +138,7 @@ public interface Scoreboard {
      * @throws IllegalArgumentException if an objective by that name already
      *     exists
      * @deprecated use {@link #registerNewObjective(String, Criteria, net.kyori.adventure.text.Component, RenderType)}
+     * @since 1.13.2
      */
     @Deprecated(since = "1.20.5")
     @NotNull
@@ -147,6 +156,7 @@ public interface Scoreboard {
      * @throws IllegalArgumentException if an objective by that name already
      *     exists
      * @deprecated in favour of {@link #registerNewObjective(String, Criteria, net.kyori.adventure.text.Component)}
+     * @since 1.19.2
      */
     @NotNull
     @Deprecated // Paper
@@ -167,6 +177,7 @@ public interface Scoreboard {
      * @throws IllegalArgumentException if an objective by that name already
      *     exists
      * @deprecated in favour of {@link #registerNewObjective(String, Criteria, net.kyori.adventure.text.Component, RenderType)}
+     * @since 1.19.2
      */
     @NotNull
     @Deprecated // Paper
@@ -179,6 +190,7 @@ public interface Scoreboard {
      *
      * @param name Name of the Objective
      * @return the Objective or null if it does not exist
+     * @since 1.5.1
      */
     @Nullable
     Objective getObjective(@NotNull String name);
@@ -189,6 +201,7 @@ public interface Scoreboard {
      * @param criteria Criteria to search by
      * @return an immutable set of Objectives using the specified Criteria
      * @deprecated use {@link #getObjectivesByCriteria(Criteria)}
+     * @since 1.5.1
      */
     @Deprecated(since = "1.19.2")
     @NotNull
@@ -199,6 +212,7 @@ public interface Scoreboard {
      *
      * @param criteria Criteria to search by
      * @return an immutable set of Objectives using the specified Criteria
+     * @since 1.19.2
      */
     @NotNull
     Set<Objective> getObjectivesByCriteria(@NotNull Criteria criteria);
@@ -207,6 +221,7 @@ public interface Scoreboard {
      * Gets all Objectives on this Scoreboard
      *
      * @return An immutable set of all Objectives on this Scoreboard
+     * @since 1.5.1
      */
     @NotNull
     Set<Objective> getObjectives();
@@ -218,6 +233,7 @@ public interface Scoreboard {
      * @param slot The DisplaySlot
      * @return the Objective currently displayed or null if nothing is
      *     displayed in that DisplaySlot
+     * @since 1.5.1
      */
     @Nullable
     Objective getObjective(@NotNull DisplaySlot slot);
@@ -228,6 +244,7 @@ public interface Scoreboard {
      * @param player the player whose scores are being retrieved
      * @return immutable set of all scores tracked for the player
      * @see #getScores(String)
+     * @since 1.5.1
      */
     // @Deprecated(since = "1.7.8") // Paper
     @NotNull
@@ -238,6 +255,7 @@ public interface Scoreboard {
      *
      * @param entry the entry whose scores are being retrieved
      * @return immutable set of all scores tracked for the entry
+     * @since 1.7.10
      */
     @NotNull
     Set<Score> getScores(@NotNull String entry);
@@ -247,6 +265,7 @@ public interface Scoreboard {
      *
      * @param player the player to drop all current scores for
      * @see #resetScores(String)
+     * @since 1.5.1
      */
     // @Deprecated(since = "1.7.8") // Paper
     void resetScores(@NotNull OfflinePlayer player);
@@ -255,6 +274,7 @@ public interface Scoreboard {
      * Removes all scores for an entry on this Scoreboard
      *
      * @param entry the entry to drop all current scores for
+     * @since 1.7.10
      */
     void resetScores(@NotNull String entry);
 
@@ -264,6 +284,7 @@ public interface Scoreboard {
      * @param player the player to search for
      * @return the player's Team or null if the player is not on a team
      * @see #getEntryTeam(String)
+     * @since 1.5.1
      */
     // @Deprecated(since = "1.8.6") // Paper
     @Nullable
@@ -274,6 +295,7 @@ public interface Scoreboard {
      *
      * @param entry the entry to search for
      * @return the entry's Team or null if the entry is not on a team
+     * @since 1.8.8
      */
     @Nullable
     Team getEntryTeam(@NotNull String entry);
@@ -283,6 +305,7 @@ public interface Scoreboard {
      *
      * @param teamName Team name
      * @return the matching Team or null if no matches
+     * @since 1.5.1
      */
     @Nullable
     Team getTeam(@NotNull String teamName);
@@ -291,6 +314,7 @@ public interface Scoreboard {
      * Gets all teams on this Scoreboard
      *
      * @return an immutable set of Teams
+     * @since 1.5.1
      */
     @NotNull
     Set<Team> getTeams();
@@ -301,6 +325,7 @@ public interface Scoreboard {
      * @param name Team name
      * @return registered Team
      * @throws IllegalArgumentException if team by that name already exists
+     * @since 1.5.1
      */
     @NotNull
     Team registerNewTeam(@NotNull String name);
@@ -311,6 +336,7 @@ public interface Scoreboard {
      * @return immutable set of all tracked players
      * @see #getEntries()
      * @deprecated Scoreboards can contain entries that aren't players
+     * @since 1.5.1
      */
     @Deprecated(since = "1.7.8")
     @NotNull
@@ -320,6 +346,7 @@ public interface Scoreboard {
      * Gets all entries tracked by this Scoreboard
      *
      * @return immutable set of all tracked entries
+     * @since 1.7.10
      */
     @NotNull
     Set<String> getEntries();
@@ -328,6 +355,7 @@ public interface Scoreboard {
      * Clears any objective in the specified slot.
      *
      * @param slot the slot to remove objectives
+     * @since 1.5.1
      */
     void clearSlot(@NotNull DisplaySlot slot);
 
@@ -339,6 +367,7 @@ public interface Scoreboard {
      * @return immutable set of all scores tracked for the entity
      * @throws IllegalArgumentException if entity is null
      * @see #getScores(String)
+     * @since 1.18.1
      */
     @NotNull Set<Score> getScoresFor(@NotNull org.bukkit.entity.Entity entity) throws IllegalArgumentException;
 
@@ -348,6 +377,7 @@ public interface Scoreboard {
      * @param entity the entity to drop all current scores for
      * @throws IllegalArgumentException if entity is null
      * @see #resetScores(String)
+     * @since 1.18.1
      */
     void resetScoresFor(@NotNull org.bukkit.entity.Entity entity) throws IllegalArgumentException;
 
@@ -358,6 +388,7 @@ public interface Scoreboard {
      * @return the entity's Team or null if the entity is not on a team
      * @throws IllegalArgumentException if entity is null
      * @see #getEntryTeam(String)
+     * @since 1.18.1
      */
     @Nullable Team getEntityTeam(@NotNull org.bukkit.entity.Entity entity) throws IllegalArgumentException;
     // Paper end - improve scoreboard entries

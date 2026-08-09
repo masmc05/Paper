@@ -8,6 +8,8 @@ import java.util.Locale;
  * <p>
  * Extend this class if your plugin is not a {@link
  * org.bukkit.plugin.java.JavaPlugin}
+ *
+ * @since 1.1.0
  */
 public abstract class PluginBase implements Plugin {
     @Override
@@ -29,12 +31,18 @@ public abstract class PluginBase implements Plugin {
         return getName().equals(((Plugin) obj).getName());
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     @NotNull
     public final String getName() {
         return getPluginMeta().getName(); // Paper
     }
 
+    /**
+     * @since 1.21.8
+     */
     @Override
     @NotNull
     public String namespace() {

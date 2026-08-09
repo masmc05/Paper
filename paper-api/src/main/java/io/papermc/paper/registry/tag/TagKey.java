@@ -7,6 +7,9 @@ import net.kyori.adventure.key.Keyed;
 import org.jetbrains.annotations.Contract;
 import org.jspecify.annotations.NullMarked;
 
+/**
+ * @since 1.21
+ */
 @NullMarked
 public sealed interface TagKey<T> extends Keyed permits TagKeyImpl {
 
@@ -17,6 +20,7 @@ public sealed interface TagKey<T> extends Keyed permits TagKeyImpl {
      * @param key         the specific key for the tag
      * @param <T>         the registry value type
      * @return a new tag key
+     * @since 1.21
      */
     @Contract(value = "_, _ -> new", pure = true)
     static <T> TagKey<T> create(final RegistryKey<T> registryKey, final Key key) {
@@ -31,6 +35,7 @@ public sealed interface TagKey<T> extends Keyed permits TagKeyImpl {
      * @param <T>         the registry value type
      * @return a new tag key
      * @see Key#key(String)
+     * @since 1.21.4
      */
     static <T> TagKey<T> create(final RegistryKey<T> registryKey, @KeyPattern final String key) {
         return create(registryKey, Key.key(key));
@@ -40,6 +45,7 @@ public sealed interface TagKey<T> extends Keyed permits TagKeyImpl {
      * Get the registry key for this tag key.
      *
      * @return the registry key
+     * @since 1.21
      */
     RegistryKey<T> registryKey();
 }

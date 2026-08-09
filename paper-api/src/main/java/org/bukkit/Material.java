@@ -142,1703 +142,6778 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * An enum of all material IDs accepted by the official server and client
+ *
+ * @since 1.0.0
  */
 @SuppressWarnings({"DeprecatedIsStillUsed", "deprecation"}) // Paper
 public enum Material implements Keyed, Translatable, net.kyori.adventure.translation.Translatable { // Paper
+    /**
+     * @since 1.13
+     */
     //<editor-fold desc="Materials" defaultstate="collapsed">
     // Start generate - Items
     ACACIA_BOAT(-1),
+    /**
+     * @since 1.19
+     */
     ACACIA_CHEST_BOAT(-1),
+    /**
+     * @since 1.0.0
+     */
     AIR(-1),
+    /**
+     * @since 1.19
+     */
     ALLAY_SPAWN_EGG(-1),
+    /**
+     * @since 1.17
+     */
     AMETHYST_SHARD(-1),
+    /**
+     * @since 1.20
+     */
     ANGLER_POTTERY_SHERD(-1),
+    /**
+     * @since 1.0.0
+     */
     APPLE(-1),
+    /**
+     * @since 1.20
+     */
     ARCHER_POTTERY_SHERD(-1),
+    /**
+     * @since 1.20.6
+     */
     ARMADILLO_SCUTE(-1),
+    /**
+     * @since 1.20.6
+     */
     ARMADILLO_SPAWN_EGG(-1),
+    /**
+     * @since 1.8
+     */
     ARMOR_STAND(-1),
+    /**
+     * @since 1.20
+     */
     ARMS_UP_POTTERY_SHERD(-1),
+    /**
+     * @since 1.0.0
+     */
     ARROW(-1),
+    /**
+     * @since 1.17
+     */
     AXOLOTL_BUCKET(-1),
+    /**
+     * @since 1.17
+     */
     AXOLOTL_SPAWN_EGG(-1),
+    /**
+     * @since 1.4.5
+     */
     BAKED_POTATO(-1),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_CHEST_RAFT(-1),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_RAFT(-1),
+    /**
+     * @since 1.13
+     */
     BAT_SPAWN_EGG(-1),
+    /**
+     * @since 1.15
+     */
     BEE_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     BEEF(-1),
+    /**
+     * @since 1.9.4
+     */
     BEETROOT(-1),
+    /**
+     * @since 1.9.4
+     */
     BEETROOT_SEEDS(-1),
+    /**
+     * @since 1.9.4
+     */
     BEETROOT_SOUP(-1),
+    /**
+     * @since 1.13
+     */
     BIRCH_BOAT(-1),
+    /**
+     * @since 1.19
+     */
     BIRCH_CHEST_BOAT(-1),
+    /**
+     * @since 1.21.3
+     */
     BLACK_BUNDLE(-1),
+    /**
+     * @since 1.14
+     */
     BLACK_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     BLACK_HARNESS(-1),
+    /**
+     * @since 1.20
+     */
     BLADE_POTTERY_SHERD(-1),
+    /**
+     * @since 1.0.0
+     */
     BLAZE_POWDER(-1),
+    /**
+     * @since 1.0.0
+     */
     BLAZE_ROD(-1),
+    /**
+     * @since 1.13
+     */
     BLAZE_SPAWN_EGG(-1),
+    /**
+     * @since 1.21.3
+     */
     BLUE_BUNDLE(-1),
+    /**
+     * @since 1.14
+     */
     BLUE_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     BLUE_EGG(-1),
+    /**
+     * @since 1.21.6
+     */
     BLUE_HARNESS(-1),
+    /**
+     * @since 1.20.6
+     */
     BOGGED_SPAWN_EGG(-1),
+    /**
+     * @since 1.20.6
+     */
     BOLT_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.0.0
+     */
     BONE(-1),
+    /**
+     * @since 1.13
+     */
     BONE_MEAL(-1),
+    /**
+     * @since 1.0.0
+     */
     BOOK(-1),
+    /**
+     * @since 1.21.3
+     */
     BORDURE_INDENTED_BANNER_PATTERN(-1),
+    /**
+     * @since 1.0.0
+     */
     BOW(-1),
+    /**
+     * @since 1.0.0
+     */
     BOWL(-1),
+    /**
+     * @since 1.0.0
+     */
     BREAD(-1),
+    /**
+     * @since 1.20.6
+     */
     BREEZE_ROD(-1),
+    /**
+     * @since 1.20.4
+     */
     BREEZE_SPAWN_EGG(-1),
+    /**
+     * @since 1.20
+     */
     BREWER_POTTERY_SHERD(-1),
+    /**
+     * @since 1.0.0
+     */
     BRICK(-1),
+    /**
+     * @since 1.21.3
+     */
     BROWN_BUNDLE(-1),
+    /**
+     * @since 1.14
+     */
     BROWN_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     BROWN_EGG(-1),
+    /**
+     * @since 1.21.6
+     */
     BROWN_HARNESS(-1),
+    /**
+     * @since 1.19.4
+     */
     BRUSH(-1),
+    /**
+     * @since 1.0.0
+     */
     BUCKET(-1),
+    /**
+     * @since 1.17
+     */
     BUNDLE(-1),
+    /**
+     * @since 1.20
+     */
     BURN_POTTERY_SHERD(-1),
+    /**
+     * @since 1.21.11
+     */
     CAMEL_HUSK_SPAWN_EGG(-1),
+    /**
+     * @since 1.19.3
+     */
     CAMEL_SPAWN_EGG(-1),
+    /**
+     * @since 1.4.5
+     */
     CARROT(-1),
+    /**
+     * @since 1.13
+     */
     CARROT_ON_A_STICK(-1),
+    /**
+     * @since 1.14
+     */
     CAT_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     CAVE_SPIDER_SPAWN_EGG(-1),
+    /**
+     * @since 1.0.0
+     */
     CHAINMAIL_BOOTS(-1),
+    /**
+     * @since 1.0.0
+     */
     CHAINMAIL_CHESTPLATE(-1),
+    /**
+     * @since 1.0.0
+     */
     CHAINMAIL_HELMET(-1),
+    /**
+     * @since 1.0.0
+     */
     CHAINMAIL_LEGGINGS(-1),
+    /**
+     * @since 1.13
+     */
     CHARCOAL(-1),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_BOAT(-1),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_CHEST_BOAT(-1),
+    /**
+     * @since 1.13
+     */
     CHEST_MINECART(-1),
+    /**
+     * @since 1.13
+     */
     CHICKEN(-1),
+    /**
+     * @since 1.13
+     */
     CHICKEN_SPAWN_EGG(-1),
+    /**
+     * @since 1.9.4
+     */
     CHORUS_FRUIT(-1),
+    /**
+     * @since 1.0.0
+     */
     CLAY_BALL(-1),
+    /**
+     * @since 1.13
+     */
     CLOCK(-1),
+    /**
+     * @since 1.0.0
+     */
     COAL(-1),
+    /**
+     * @since 1.19.4
+     */
     COAST_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.13
+     */
     COCOA_BEANS(-1),
+    /**
+     * @since 1.13
+     */
     COD(-1),
+    /**
+     * @since 1.13
+     */
     COD_BUCKET(-1),
+    /**
+     * @since 1.13
+     */
     COD_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     COMMAND_BLOCK_MINECART(-1),
+    /**
+     * @since 1.0.0
+     */
     COMPASS(-1),
+    /**
+     * @since 1.0.0
+     */
     COOKED_BEEF(-1),
+    /**
+     * @since 1.0.0
+     */
     COOKED_CHICKEN(-1),
+    /**
+     * @since 1.13
+     */
     COOKED_COD(-1),
+    /**
+     * @since 1.8
+     */
     COOKED_MUTTON(-1),
+    /**
+     * @since 1.13
+     */
     COOKED_PORKCHOP(-1),
+    /**
+     * @since 1.8
+     */
     COOKED_RABBIT(-1),
+    /**
+     * @since 1.13
+     */
     COOKED_SALMON(-1),
+    /**
+     * @since 1.0.0
+     */
     COOKIE(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_AXE(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_BOOTS(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_CHESTPLATE(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_GOLEM_SPAWN_EGG(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_HELMET(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_HOE(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_HORSE_ARMOR(-1),
+    /**
+     * @since 1.17
+     */
     COPPER_INGOT(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_LEGGINGS(-1),
+    /**
+     * @since 1.21.11
+     */
     COPPER_NAUTILUS_ARMOR(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_NUGGET(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_PICKAXE(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_SHOVEL(-1),
+    /**
+     * @since 1.21.11
+     */
     COPPER_SPEAR(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_SWORD(-1),
+    /**
+     * @since 1.13
+     */
     COW_SPAWN_EGG(-1),
+    /**
+     * @since 1.21.3
+     */
     CREAKING_SPAWN_EGG(-1),
+    /**
+     * @since 1.14
+     */
     CREEPER_BANNER_PATTERN(-1),
+    /**
+     * @since 1.13
+     */
     CREEPER_SPAWN_EGG(-1),
+    /**
+     * @since 1.14
+     */
     CROSSBOW(-1),
+    /**
+     * @since 1.21.3
+     */
     CYAN_BUNDLE(-1),
+    /**
+     * @since 1.13
+     */
     CYAN_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     CYAN_HARNESS(-1),
+    /**
+     * @since 1.20
+     */
     DANGER_POTTERY_SHERD(-1),
+    /**
+     * @since 1.13
+     */
     DARK_OAK_BOAT(-1),
+    /**
+     * @since 1.19
+     */
     DARK_OAK_CHEST_BOAT(-1),
+    /**
+     * @since 1.13
+     */
     DEBUG_STICK(-1),
+    /**
+     * @since 1.0.0
+     */
     DIAMOND(-1),
+    /**
+     * @since 1.0.0
+     */
     DIAMOND_AXE(-1),
+    /**
+     * @since 1.0.0
+     */
     DIAMOND_BOOTS(-1),
+    /**
+     * @since 1.0.0
+     */
     DIAMOND_CHESTPLATE(-1),
+    /**
+     * @since 1.0.0
+     */
     DIAMOND_HELMET(-1),
+    /**
+     * @since 1.0.0
+     */
     DIAMOND_HOE(-1),
+    /**
+     * @since 1.13
+     */
     DIAMOND_HORSE_ARMOR(-1),
+    /**
+     * @since 1.0.0
+     */
     DIAMOND_LEGGINGS(-1),
+    /**
+     * @since 1.21.11
+     */
     DIAMOND_NAUTILUS_ARMOR(-1),
+    /**
+     * @since 1.0.0
+     */
     DIAMOND_PICKAXE(-1),
+    /**
+     * @since 1.13
+     */
     DIAMOND_SHOVEL(-1),
+    /**
+     * @since 1.21.11
+     */
     DIAMOND_SPEAR(-1),
+    /**
+     * @since 1.0.0
+     */
     DIAMOND_SWORD(-1),
+    /**
+     * @since 1.19
+     */
     DISC_FRAGMENT_5(-1),
+    /**
+     * @since 1.13
+     */
     DOLPHIN_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     DONKEY_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     DRAGON_BREATH(-1),
+    /**
+     * @since 1.13
+     */
     DRIED_KELP(-1),
+    /**
+     * @since 1.13
+     */
     DROWNED_SPAWN_EGG(-1),
+    /**
+     * @since 1.19.4
+     */
     DUNE_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.19
+     */
     ECHO_SHARD(-1),
+    /**
+     * @since 1.0.0
+     */
     EGG(-1),
+    /**
+     * @since 1.13
+     */
     ELDER_GUARDIAN_SPAWN_EGG(-1),
+    /**
+     * @since 1.9.4
+     */
     ELYTRA(-1),
+    /**
+     * @since 1.3.1
+     */
     EMERALD(-1),
+    /**
+     * @since 1.4.6
+     */
     ENCHANTED_BOOK(-1),
+    /**
+     * @since 1.13
+     */
     ENCHANTED_GOLDEN_APPLE(-1),
+    /**
+     * @since 1.9.4
+     */
     END_CRYSTAL(-1),
+    /**
+     * @since 1.19.3
+     */
     ENDER_DRAGON_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     ENDER_EYE(-1),
+    /**
+     * @since 1.0.0
+     */
     ENDER_PEARL(-1),
+    /**
+     * @since 1.13
+     */
     ENDERMAN_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     ENDERMITE_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     EVOKER_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     EXPERIENCE_BOTTLE(-1),
+    /**
+     * @since 1.20
+     */
     EXPLORER_POTTERY_SHERD(-1),
+    /**
+     * @since 1.19.4
+     */
     EYE_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.0.0
+     */
     FEATHER(-1),
+    /**
+     * @since 1.0.0
+     */
     FERMENTED_SPIDER_EYE(-1),
+    /**
+     * @since 1.21.3
+     */
     FIELD_MASONED_BANNER_PATTERN(-1),
+    /**
+     * @since 1.13
+     */
     FILLED_MAP(-1),
+    /**
+     * @since 1.13
+     */
     FIRE_CHARGE(-1),
+    /**
+     * @since 1.13
+     */
     FIREWORK_ROCKET(-1),
+    /**
+     * @since 1.13
+     */
     FIREWORK_STAR(-1),
+    /**
+     * @since 1.0.0
+     */
     FISHING_ROD(-1),
+    /**
+     * @since 1.0.0
+     */
     FLINT(-1),
+    /**
+     * @since 1.0.0
+     */
     FLINT_AND_STEEL(-1),
+    /**
+     * @since 1.20.6
+     */
     FLOW_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.20.6
+     */
     FLOW_BANNER_PATTERN(-1),
+    /**
+     * @since 1.20.6
+     */
     FLOW_POTTERY_SHERD(-1),
+    /**
+     * @since 1.14
+     */
     FLOWER_BANNER_PATTERN(-1),
+    /**
+     * @since 1.14
+     */
     FOX_SPAWN_EGG(-1),
+    /**
+     * @since 1.20
+     */
     FRIEND_POTTERY_SHERD(-1),
+    /**
+     * @since 1.19
+     */
     FROG_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     FURNACE_MINECART(-1),
+    /**
+     * @since 1.13
+     */
     GHAST_SPAWN_EGG(-1),
+    /**
+     * @since 1.0.0
+     */
     GHAST_TEAR(-1),
+    /**
+     * @since 1.0.0
+     */
     GLASS_BOTTLE(-1),
+    /**
+     * @since 1.13
+     */
     GLISTERING_MELON_SLICE(-1),
+    /**
+     * @since 1.14
+     */
     GLOBE_BANNER_PATTERN(-1),
+    /**
+     * @since 1.17
+     */
     GLOW_BERRIES(-1),
+    /**
+     * @since 1.17
+     */
     GLOW_INK_SAC(-1),
+    /**
+     * @since 1.17
+     */
     GLOW_ITEM_FRAME(-1),
+    /**
+     * @since 1.17
+     */
     GLOW_SQUID_SPAWN_EGG(-1),
+    /**
+     * @since 1.0.0
+     */
     GLOWSTONE_DUST(-1),
+    /**
+     * @since 1.19
+     */
     GOAT_HORN(-1),
+    /**
+     * @since 1.17
+     */
     GOAT_SPAWN_EGG(-1),
+    /**
+     * @since 1.0.0
+     */
     GOLD_INGOT(-1),
+    /**
+     * @since 1.0.0
+     */
     GOLD_NUGGET(-1),
+    /**
+     * @since 1.0.0
+     */
     GOLDEN_APPLE(-1),
+    /**
+     * @since 1.13
+     */
     GOLDEN_AXE(-1),
+    /**
+     * @since 1.13
+     */
     GOLDEN_BOOTS(-1),
+    /**
+     * @since 1.4.5
+     */
     GOLDEN_CARROT(-1),
+    /**
+     * @since 1.13
+     */
     GOLDEN_CHESTPLATE(-1),
+    /**
+     * @since 1.13
+     */
     GOLDEN_HELMET(-1),
+    /**
+     * @since 1.13
+     */
     GOLDEN_HOE(-1),
+    /**
+     * @since 1.13
+     */
     GOLDEN_HORSE_ARMOR(-1),
+    /**
+     * @since 1.13
+     */
     GOLDEN_LEGGINGS(-1),
+    /**
+     * @since 1.21.11
+     */
     GOLDEN_NAUTILUS_ARMOR(-1),
+    /**
+     * @since 1.13
+     */
     GOLDEN_PICKAXE(-1),
+    /**
+     * @since 1.13
+     */
     GOLDEN_SHOVEL(-1),
+    /**
+     * @since 1.21.11
+     */
     GOLDEN_SPEAR(-1),
+    /**
+     * @since 1.13
+     */
     GOLDEN_SWORD(-1),
+    /**
+     * @since 1.21.3
+     */
     GRAY_BUNDLE(-1),
+    /**
+     * @since 1.13
+     */
     GRAY_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     GRAY_HARNESS(-1),
+    /**
+     * @since 1.21.3
+     */
     GREEN_BUNDLE(-1),
+    /**
+     * @since 1.14
+     */
     GREEN_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     GREEN_HARNESS(-1),
+    /**
+     * @since 1.13
+     */
     GUARDIAN_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     GUNPOWDER(-1),
+    /**
+     * @since 1.20.6
+     */
     GUSTER_BANNER_PATTERN(-1),
+    /**
+     * @since 1.20.6
+     */
     GUSTER_POTTERY_SHERD(-1),
+    /**
+     * @since 1.21.6
+     */
     HAPPY_GHAST_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     HEART_OF_THE_SEA(-1),
+    /**
+     * @since 1.20
+     */
     HEART_POTTERY_SHERD(-1),
+    /**
+     * @since 1.20
+     */
     HEARTBREAK_POTTERY_SHERD(-1),
+    /**
+     * @since 1.16.1
+     */
     HOGLIN_SPAWN_EGG(-1),
+    /**
+     * @since 1.15
+     */
     HONEY_BOTTLE(-1),
+    /**
+     * @since 1.15
+     */
     HONEYCOMB(-1),
+    /**
+     * @since 1.5.1
+     */
     HOPPER_MINECART(-1),
+    /**
+     * @since 1.13
+     */
     HORSE_SPAWN_EGG(-1),
+    /**
+     * @since 1.20
+     */
     HOST_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.20
+     */
     HOWL_POTTERY_SHERD(-1),
+    /**
+     * @since 1.13
+     */
     HUSK_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     INK_SAC(-1),
+    /**
+     * @since 1.0.0
+     */
     IRON_AXE(-1),
+    /**
+     * @since 1.0.0
+     */
     IRON_BOOTS(-1),
+    /**
+     * @since 1.0.0
+     */
     IRON_CHESTPLATE(-1),
+    /**
+     * @since 1.19.3
+     */
     IRON_GOLEM_SPAWN_EGG(-1),
+    /**
+     * @since 1.0.0
+     */
     IRON_HELMET(-1),
+    /**
+     * @since 1.0.0
+     */
     IRON_HOE(-1),
+    /**
+     * @since 1.13
+     */
     IRON_HORSE_ARMOR(-1),
+    /**
+     * @since 1.0.0
+     */
     IRON_INGOT(-1),
+    /**
+     * @since 1.0.0
+     */
     IRON_LEGGINGS(-1),
+    /**
+     * @since 1.21.11
+     */
     IRON_NAUTILUS_ARMOR(-1),
+    /**
+     * @since 1.11.1
+     */
     IRON_NUGGET(-1),
+    /**
+     * @since 1.0.0
+     */
     IRON_PICKAXE(-1),
+    /**
+     * @since 1.13
+     */
     IRON_SHOVEL(-1),
+    /**
+     * @since 1.21.11
+     */
     IRON_SPEAR(-1),
+    /**
+     * @since 1.0.0
+     */
     IRON_SWORD(-1),
+    /**
+     * @since 1.4.5
+     */
     ITEM_FRAME(-1),
+    /**
+     * @since 1.13
+     */
     JUNGLE_BOAT(-1),
+    /**
+     * @since 1.19
+     */
     JUNGLE_CHEST_BOAT(-1),
+    /**
+     * @since 1.12
+     */
     KNOWLEDGE_BOOK(-1),
+    /**
+     * @since 1.13
+     */
     LAPIS_LAZULI(-1),
+    /**
+     * @since 1.0.0
+     */
     LAVA_BUCKET(-1),
+    /**
+     * @since 1.13
+     */
     LEAD(-1),
+    /**
+     * @since 1.0.0
+     */
     LEATHER(-1),
+    /**
+     * @since 1.0.0
+     */
     LEATHER_BOOTS(-1),
+    /**
+     * @since 1.0.0
+     */
     LEATHER_CHESTPLATE(-1),
+    /**
+     * @since 1.0.0
+     */
     LEATHER_HELMET(-1),
+    /**
+     * @since 1.14
+     */
     LEATHER_HORSE_ARMOR(-1),
+    /**
+     * @since 1.0.0
+     */
     LEATHER_LEGGINGS(-1),
+    /**
+     * @since 1.21.3
+     */
     LIGHT_BLUE_BUNDLE(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_BLUE_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     LIGHT_BLUE_HARNESS(-1),
+    /**
+     * @since 1.21.3
+     */
     LIGHT_GRAY_BUNDLE(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     LIGHT_GRAY_HARNESS(-1),
+    /**
+     * @since 1.21.3
+     */
     LIME_BUNDLE(-1),
+    /**
+     * @since 1.13
+     */
     LIME_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     LIME_HARNESS(-1),
+    /**
+     * @since 1.9.4
+     */
     LINGERING_POTION(-1),
+    /**
+     * @since 1.13
+     */
     LLAMA_SPAWN_EGG(-1),
+    /**
+     * @since 1.20.6
+     */
     MACE(-1),
+    /**
+     * @since 1.21.3
+     */
     MAGENTA_BUNDLE(-1),
+    /**
+     * @since 1.13
+     */
     MAGENTA_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     MAGENTA_HARNESS(-1),
+    /**
+     * @since 1.0.0
+     */
     MAGMA_CREAM(-1),
+    /**
+     * @since 1.13
+     */
     MAGMA_CUBE_SPAWN_EGG(-1),
+    /**
+     * @since 1.19
+     */
     MANGROVE_BOAT(-1),
+    /**
+     * @since 1.19
+     */
     MANGROVE_CHEST_BOAT(-1),
+    /**
+     * @since 1.0.0
+     */
     MAP(-1),
+    /**
+     * @since 1.0.0
+     */
     MELON_SEEDS(-1),
+    /**
+     * @since 1.13
+     */
     MELON_SLICE(-1),
+    /**
+     * @since 1.0.0
+     */
     MILK_BUCKET(-1),
+    /**
+     * @since 1.0.0
+     */
     MINECART(-1),
+    /**
+     * @since 1.20
+     */
     MINER_POTTERY_SHERD(-1),
+    /**
+     * @since 1.14
+     */
     MOJANG_BANNER_PATTERN(-1),
+    /**
+     * @since 1.13
+     */
     MOOSHROOM_SPAWN_EGG(-1),
+    /**
+     * @since 1.20
+     */
     MOURNER_POTTERY_SHERD(-1),
+    /**
+     * @since 1.13
+     */
     MULE_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     MUSHROOM_STEW(-1),
+    /**
+     * @since 1.19
+     */
     MUSIC_DISC_5(-1),
+    /**
+     * @since 1.13
+     */
     MUSIC_DISC_11(-1),
+    /**
+     * @since 1.13
+     */
     MUSIC_DISC_13(-1),
+    /**
+     * @since 1.13
+     */
     MUSIC_DISC_BLOCKS(-1),
+    /**
+     * @since 26.2
+     */
     MUSIC_DISC_BOUNCE(-1),
+    /**
+     * @since 1.13
+     */
     MUSIC_DISC_CAT(-1),
+    /**
+     * @since 1.13
+     */
     MUSIC_DISC_CHIRP(-1),
+    /**
+     * @since 1.21
+     */
     MUSIC_DISC_CREATOR(-1),
+    /**
+     * @since 1.21
+     */
     MUSIC_DISC_CREATOR_MUSIC_BOX(-1),
+    /**
+     * @since 1.13
+     */
     MUSIC_DISC_FAR(-1),
+    /**
+     * @since 1.21.7
+     */
     MUSIC_DISC_LAVA_CHICKEN(-1),
+    /**
+     * @since 1.13
+     */
     MUSIC_DISC_MALL(-1),
+    /**
+     * @since 1.13
+     */
     MUSIC_DISC_MELLOHI(-1),
+    /**
+     * @since 1.18.1
+     */
     MUSIC_DISC_OTHERSIDE(-1),
+    /**
+     * @since 1.16.1
+     */
     MUSIC_DISC_PIGSTEP(-1),
+    /**
+     * @since 1.21
+     */
     MUSIC_DISC_PRECIPICE(-1),
+    /**
+     * @since 1.20
+     */
     MUSIC_DISC_RELIC(-1),
+    /**
+     * @since 1.13
+     */
     MUSIC_DISC_STAL(-1),
+    /**
+     * @since 1.13
+     */
     MUSIC_DISC_STRAD(-1),
+    /**
+     * @since 1.21.6
+     */
     MUSIC_DISC_TEARS(-1),
+    /**
+     * @since 1.13
+     */
     MUSIC_DISC_WAIT(-1),
+    /**
+     * @since 1.13
+     */
     MUSIC_DISC_WARD(-1),
+    /**
+     * @since 1.8
+     */
     MUTTON(-1),
+    /**
+     * @since 1.6.1
+     */
     NAME_TAG(-1),
+    /**
+     * @since 1.13
+     */
     NAUTILUS_SHELL(-1),
+    /**
+     * @since 1.21.11
+     */
     NAUTILUS_SPAWN_EGG(-1),
+    /**
+     * @since 1.0.0
+     */
     NETHER_BRICK(-1),
+    /**
+     * @since 1.4.5
+     */
     NETHER_STAR(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHERITE_AXE(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHERITE_BOOTS(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHERITE_CHESTPLATE(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHERITE_HELMET(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHERITE_HOE(-1),
+    /**
+     * @since 1.21.11
+     */
     NETHERITE_HORSE_ARMOR(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHERITE_INGOT(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHERITE_LEGGINGS(-1),
+    /**
+     * @since 1.21.11
+     */
     NETHERITE_NAUTILUS_ARMOR(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHERITE_PICKAXE(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHERITE_SCRAP(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHERITE_SHOVEL(-1),
+    /**
+     * @since 1.21.11
+     */
     NETHERITE_SPEAR(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHERITE_SWORD(-1),
+    /**
+     * @since 1.19.4
+     */
     NETHERITE_UPGRADE_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.13
+     */
     OAK_BOAT(-1),
+    /**
+     * @since 1.19
+     */
     OAK_CHEST_BOAT(-1),
+    /**
+     * @since 1.13
+     */
     OCELOT_SPAWN_EGG(-1),
+    /**
+     * @since 1.20.6
+     */
     OMINOUS_BOTTLE(-1),
+    /**
+     * @since 1.20.6
+     */
     OMINOUS_TRIAL_KEY(-1),
+    /**
+     * @since 1.21.3
+     */
     ORANGE_BUNDLE(-1),
+    /**
+     * @since 1.13
+     */
     ORANGE_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     ORANGE_HARNESS(-1),
+    /**
+     * @since 1.0.0
+     */
     PAINTING(-1),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_BOAT(-1),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_CHEST_BOAT(-1),
+    /**
+     * @since 1.14
+     */
     PANDA_SPAWN_EGG(-1),
+    /**
+     * @since 1.0.0
+     */
     PAPER(-1),
+    /**
+     * @since 1.21.11
+     */
     PARCHED_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     PARROT_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     PHANTOM_MEMBRANE(-1),
+    /**
+     * @since 1.13
+     */
     PHANTOM_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     PIG_SPAWN_EGG(-1),
+    /**
+     * @since 1.16.1
+     */
     PIGLIN_BANNER_PATTERN(-1),
+    /**
+     * @since 1.16.2
+     */
     PIGLIN_BRUTE_SPAWN_EGG(-1),
+    /**
+     * @since 1.16.1
+     */
     PIGLIN_SPAWN_EGG(-1),
+    /**
+     * @since 1.14
+     */
     PILLAGER_SPAWN_EGG(-1),
+    /**
+     * @since 1.21.3
+     */
     PINK_BUNDLE(-1),
+    /**
+     * @since 1.13
+     */
     PINK_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     PINK_HARNESS(-1),
+    /**
+     * @since 1.20
+     */
     PITCHER_POD(-1),
+    /**
+     * @since 1.20
+     */
     PLENTY_POTTERY_SHERD(-1),
+    /**
+     * @since 1.4.5
+     */
     POISONOUS_POTATO(-1),
+    /**
+     * @since 1.13
+     */
     POLAR_BEAR_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     POPPED_CHORUS_FRUIT(-1),
+    /**
+     * @since 1.13
+     */
     PORKCHOP(-1),
+    /**
+     * @since 1.4.5
+     */
     POTATO(-1),
+    /**
+     * @since 1.0.0
+     */
     POTION(-1),
+    /**
+     * @since 1.17
+     */
     POWDER_SNOW_BUCKET(-1),
+    /**
+     * @since 1.8
+     */
     PRISMARINE_CRYSTALS(-1),
+    /**
+     * @since 1.8
+     */
     PRISMARINE_SHARD(-1),
+    /**
+     * @since 1.20
+     */
     PRIZE_POTTERY_SHERD(-1),
+    /**
+     * @since 1.13
+     */
     PUFFERFISH(-1),
+    /**
+     * @since 1.13
+     */
     PUFFERFISH_BUCKET(-1),
+    /**
+     * @since 1.13
+     */
     PUFFERFISH_SPAWN_EGG(-1),
+    /**
+     * @since 1.4.5
+     */
     PUMPKIN_PIE(-1),
+    /**
+     * @since 1.0.0
+     */
     PUMPKIN_SEEDS(-1),
+    /**
+     * @since 1.21.3
+     */
     PURPLE_BUNDLE(-1),
+    /**
+     * @since 1.13
+     */
     PURPLE_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     PURPLE_HARNESS(-1),
+    /**
+     * @since 1.5.1
+     */
     QUARTZ(-1),
+    /**
+     * @since 1.8
+     */
     RABBIT(-1),
+    /**
+     * @since 1.8
+     */
     RABBIT_FOOT(-1),
+    /**
+     * @since 1.8
+     */
     RABBIT_HIDE(-1),
+    /**
+     * @since 1.13
+     */
     RABBIT_SPAWN_EGG(-1),
+    /**
+     * @since 1.8
+     */
     RABBIT_STEW(-1),
+    /**
+     * @since 1.20
+     */
     RAISER_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.14
+     */
     RAVAGER_SPAWN_EGG(-1),
+    /**
+     * @since 1.17
+     */
     RAW_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     RAW_GOLD(-1),
+    /**
+     * @since 1.17
+     */
     RAW_IRON(-1),
+    /**
+     * @since 1.19
+     */
     RECOVERY_COMPASS(-1),
+    /**
+     * @since 1.21.3
+     */
     RED_BUNDLE(-1),
+    /**
+     * @since 1.14
+     */
     RED_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     RED_HARNESS(-1),
+    /**
+     * @since 1.0.0
+     */
     REDSTONE(-1),
+    /**
+     * @since 1.21.4
+     */
     RESIN_BRICK(-1),
+    /**
+     * @since 1.19.4
+     */
     RIB_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.0.0
+     */
     ROTTEN_FLESH(-1),
+    /**
+     * @since 1.0.0
+     */
     SADDLE(-1),
+    /**
+     * @since 1.13
+     */
     SALMON(-1),
+    /**
+     * @since 1.13
+     */
     SALMON_BUCKET(-1),
+    /**
+     * @since 1.13
+     */
     SALMON_SPAWN_EGG(-1),
+    /**
+     * @since 1.20.6
+     */
     SCRAPE_POTTERY_SHERD(-1),
+    /**
+     * @since 1.19.4
+     */
     SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.20
+     */
     SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.20
+     */
     SHEAF_POTTERY_SHERD(-1),
+    /**
+     * @since 1.0.0
+     */
     SHEARS(-1),
+    /**
+     * @since 1.13
+     */
     SHEEP_SPAWN_EGG(-1),
+    /**
+     * @since 1.20
+     */
     SHELTER_POTTERY_SHERD(-1),
+    /**
+     * @since 1.9.4
+     */
     SHIELD(-1),
+    /**
+     * @since 1.11
+     */
     SHULKER_SHELL(-1),
+    /**
+     * @since 1.13
+     */
     SHULKER_SPAWN_EGG(-1),
+    /**
+     * @since 1.20
+     */
     SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.13
+     */
     SILVERFISH_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     SKELETON_HORSE_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     SKELETON_SPAWN_EGG(-1),
+    /**
+     * @since 1.14
+     */
     SKULL_BANNER_PATTERN(-1),
+    /**
+     * @since 1.20
+     */
     SKULL_POTTERY_SHERD(-1),
+    /**
+     * @since 1.0.0
+     */
     SLIME_BALL(-1),
+    /**
+     * @since 1.13
+     */
     SLIME_SPAWN_EGG(-1),
+    /**
+     * @since 1.19.4
+     */
     SNIFFER_SPAWN_EGG(-1),
+    /**
+     * @since 1.20
+     */
     SNORT_POTTERY_SHERD(-1),
+    /**
+     * @since 1.19.4
+     */
     SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.19.3
+     */
     SNOW_GOLEM_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     SNOWBALL(-1),
+    /**
+     * @since 1.9.4
+     */
     SPECTRAL_ARROW(-1),
+    /**
+     * @since 1.0.0
+     */
     SPIDER_EYE(-1),
+    /**
+     * @since 1.13
+     */
     SPIDER_SPAWN_EGG(-1),
+    /**
+     * @since 1.19.4
+     */
     SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.9.4
+     */
     SPLASH_POTION(-1),
+    /**
+     * @since 1.13
+     */
     SPRUCE_BOAT(-1),
+    /**
+     * @since 1.19
+     */
     SPRUCE_CHEST_BOAT(-1),
+    /**
+     * @since 1.17
+     */
     SPYGLASS(-1),
+    /**
+     * @since 1.13
+     */
     SQUID_SPAWN_EGG(-1),
+    /**
+     * @since 1.0.0
+     */
     STICK(-1),
+    /**
+     * @since 1.0.0
+     */
     STONE_AXE(-1),
+    /**
+     * @since 1.0.0
+     */
     STONE_HOE(-1),
+    /**
+     * @since 1.0.0
+     */
     STONE_PICKAXE(-1),
+    /**
+     * @since 1.13
+     */
     STONE_SHOVEL(-1),
+    /**
+     * @since 1.21.11
+     */
     STONE_SPEAR(-1),
+    /**
+     * @since 1.0.0
+     */
     STONE_SWORD(-1),
+    /**
+     * @since 1.13
+     */
     STRAY_SPAWN_EGG(-1),
+    /**
+     * @since 1.16.1
+     */
     STRIDER_SPAWN_EGG(-1),
+    /**
+     * @since 1.0.0
+     */
     STRING(-1),
+    /**
+     * @since 1.0.0
+     */
     SUGAR(-1),
+    /**
+     * @since 26.2
+     */
     SULFUR_CUBE_BUCKET(-1),
+    /**
+     * @since 26.2
+     */
     SULFUR_CUBE_SPAWN_EGG(-1),
+    /**
+     * @since 1.14
+     */
     SUSPICIOUS_STEW(-1),
+    /**
+     * @since 1.14
+     */
     SWEET_BERRIES(-1),
+    /**
+     * @since 1.19
+     */
     TADPOLE_BUCKET(-1),
+    /**
+     * @since 1.19
+     */
     TADPOLE_SPAWN_EGG(-1),
+    /**
+     * @since 1.19.4
+     */
     TIDE_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.9.4
+     */
     TIPPED_ARROW(-1),
+    /**
+     * @since 1.13
+     */
     TNT_MINECART(-1),
+    /**
+     * @since 1.19.4
+     */
     TORCHFLOWER_SEEDS(-1),
+    /**
+     * @since 1.13
+     */
     TOTEM_OF_UNDYING(-1),
+    /**
+     * @since 1.14
+     */
     TRADER_LLAMA_SPAWN_EGG(-1),
+    /**
+     * @since 1.20.4
+     */
     TRIAL_KEY(-1),
+    /**
+     * @since 1.13
+     */
     TRIDENT(-1),
+    /**
+     * @since 1.13
+     */
     TROPICAL_FISH(-1),
+    /**
+     * @since 1.13
+     */
     TROPICAL_FISH_BUCKET(-1),
+    /**
+     * @since 1.13
+     */
     TROPICAL_FISH_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     TURTLE_HELMET(-1),
+    /**
+     * @since 1.20.6
+     */
     TURTLE_SCUTE(-1),
+    /**
+     * @since 1.13
+     */
     TURTLE_SPAWN_EGG(-1),
+    /**
+     * @since 1.19.4
+     */
     VEX_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.13
+     */
     VEX_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     VILLAGER_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     VINDICATOR_SPAWN_EGG(-1),
+    /**
+     * @since 1.14
+     */
     WANDERING_TRADER_SPAWN_EGG(-1),
+    /**
+     * @since 1.19.4
+     */
     WARD_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.19
+     */
     WARDEN_SPAWN_EGG(-1),
+    /**
+     * @since 1.16.1
+     */
     WARPED_FUNGUS_ON_A_STICK(-1),
+    /**
+     * @since 1.0.0
+     */
     WATER_BUCKET(-1),
+    /**
+     * @since 1.20
+     */
     WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.13
+     */
     WHEAT_SEEDS(-1),
+    /**
+     * @since 1.21.3
+     */
     WHITE_BUNDLE(-1),
+    /**
+     * @since 1.14
+     */
     WHITE_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     WHITE_HARNESS(-1),
+    /**
+     * @since 1.19.4
+     */
     WILD_ARMOR_TRIM_SMITHING_TEMPLATE(-1),
+    /**
+     * @since 1.20.6
+     */
     WIND_CHARGE(-1),
+    /**
+     * @since 1.13
+     */
     WITCH_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     WITHER_SKELETON_SPAWN_EGG(-1),
+    /**
+     * @since 1.19.3
+     */
     WITHER_SPAWN_EGG(-1),
+    /**
+     * @since 1.20.6
+     */
     WOLF_ARMOR(-1),
+    /**
+     * @since 1.13
+     */
     WOLF_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     WOODEN_AXE(-1),
+    /**
+     * @since 1.13
+     */
     WOODEN_HOE(-1),
+    /**
+     * @since 1.13
+     */
     WOODEN_PICKAXE(-1),
+    /**
+     * @since 1.13
+     */
     WOODEN_SHOVEL(-1),
+    /**
+     * @since 1.21.11
+     */
     WOODEN_SPEAR(-1),
+    /**
+     * @since 1.13
+     */
     WOODEN_SWORD(-1),
+    /**
+     * @since 1.13
+     */
     WRITABLE_BOOK(-1),
+    /**
+     * @since 1.3.1
+     */
     WRITTEN_BOOK(-1),
+    /**
+     * @since 1.21.3
+     */
     YELLOW_BUNDLE(-1),
+    /**
+     * @since 1.14
+     */
     YELLOW_DYE(-1),
+    /**
+     * @since 1.21.6
+     */
     YELLOW_HARNESS(-1),
+    /**
+     * @since 1.16.1
+     */
     ZOGLIN_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     ZOMBIE_HORSE_SPAWN_EGG(-1),
+    /**
+     * @since 1.21.11
+     */
     ZOMBIE_NAUTILUS_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     ZOMBIE_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     ZOMBIE_VILLAGER_SPAWN_EGG(-1),
+    /**
+     * @since 1.16.1
+     */
     ZOMBIFIED_PIGLIN_SPAWN_EGG(-1),
+    /**
+     * @since 1.13
+     */
     // End generate - Items
     // Start generate - Blocks
     ACACIA_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.8
+     */
     ACACIA_DOOR(-1, Door.class),
+    /**
+     * @since 1.8
+     */
     ACACIA_FENCE(-1, Fence.class),
+    /**
+     * @since 1.8
+     */
     ACACIA_FENCE_GATE(-1, Gate.class),
+    /**
+     * @since 1.19.3
+     */
     ACACIA_HANGING_SIGN(-1, HangingSign.class),
+    /**
+     * @since 1.13
+     */
     ACACIA_LEAVES(-1, Leaves.class),
+    /**
+     * @since 1.13
+     */
     ACACIA_LOG(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     ACACIA_PLANKS(-1),
+    /**
+     * @since 1.13
+     */
     ACACIA_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.13
+     */
     ACACIA_SAPLING(-1, Sapling.class),
+    /**
+     * @since 1.21.10
+     */
     ACACIA_SHELF(-1, Shelf.class),
+    /**
+     * @since 1.14
+     */
     ACACIA_SIGN(-1, Sign.class),
+    /**
+     * @since 1.13
+     */
     ACACIA_SLAB(-1, Slab.class),
+    /**
+     * @since 1.7.2
+     */
     ACACIA_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     ACACIA_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.19.3
+     */
     ACACIA_WALL_HANGING_SIGN(-1, WallHangingSign.class),
+    /**
+     * @since 1.14
+     */
     ACACIA_WALL_SIGN(-1, WallSign.class),
+    /**
+     * @since 1.13
+     */
     ACACIA_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.5.1
+     */
     ACTIVATOR_RAIL(-1, RedstoneRail.class),
+    /**
+     * @since 1.13
+     */
     ALLIUM(-1),
+    /**
+     * @since 1.17
+     */
     AMETHYST_BLOCK(-1),
+    /**
+     * @since 1.17
+     */
     AMETHYST_CLUSTER(-1, AmethystCluster.class),
+    /**
+     * @since 1.16.1
+     */
     ANCIENT_DEBRIS(-1),
+    /**
+     * @since 1.13
+     */
     ANDESITE(-1),
+    /**
+     * @since 1.14
+     */
     ANDESITE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     ANDESITE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     ANDESITE_WALL(-1, Wall.class),
+    /**
+     * @since 1.4.5
+     */
     ANVIL(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     ATTACHED_MELON_STEM(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     ATTACHED_PUMPKIN_STEM(-1, Directional.class),
+    /**
+     * @since 1.17
+     */
     AZALEA(-1),
+    /**
+     * @since 1.17
+     */
     AZALEA_LEAVES(-1, Leaves.class),
+    /**
+     * @since 1.13
+     */
     AZURE_BLUET(-1),
+    /**
+     * @since 1.14
+     */
     BAMBOO(-1, Bamboo.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_BLOCK(-1, Orientable.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_DOOR(-1, Door.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_FENCE(-1, Fence.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_FENCE_GATE(-1, Gate.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_HANGING_SIGN(-1, HangingSign.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_MOSAIC(-1),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_MOSAIC_SLAB(-1, Slab.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_MOSAIC_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_PLANKS(-1),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.14
+     */
     BAMBOO_SAPLING(-1),
+    /**
+     * @since 1.21.10
+     */
     BAMBOO_SHELF(-1, Shelf.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_SIGN(-1, Sign.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_SLAB(-1, Slab.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_WALL_HANGING_SIGN(-1, WallHangingSign.class),
+    /**
+     * @since 1.19.3
+     */
     BAMBOO_WALL_SIGN(-1, WallSign.class),
+    /**
+     * @since 1.14
+     */
     BARREL(-1, Barrel.class),
+    /**
+     * @since 1.8
+     */
     BARRIER(-1, Waterlogged.class),
+    /**
+     * @since 1.16.1
+     */
     BASALT(-1, Orientable.class),
+    /**
+     * @since 1.4.5
+     */
     BEACON(-1),
+    /**
+     * @since 1.0.0
+     */
     BEDROCK(-1),
+    /**
+     * @since 1.15
+     */
     BEE_NEST(-1, Beehive.class),
+    /**
+     * @since 1.15
+     */
     BEEHIVE(-1, Beehive.class),
+    /**
+     * @since 1.13
+     */
     BEETROOTS(-1, Ageable.class),
+    /**
+     * @since 1.14
+     */
     BELL(-1, Bell.class),
+    /**
+     * @since 1.17
+     */
     BIG_DRIPLEAF(-1, BigDripleaf.class),
+    /**
+     * @since 1.17
+     */
     BIG_DRIPLEAF_STEM(-1, Dripleaf.class),
+    /**
+     * @since 1.13
+     */
     BIRCH_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.8
+     */
     BIRCH_DOOR(-1, Door.class),
+    /**
+     * @since 1.8
+     */
     BIRCH_FENCE(-1, Fence.class),
+    /**
+     * @since 1.8
+     */
     BIRCH_FENCE_GATE(-1, Gate.class),
+    /**
+     * @since 1.19.3
+     */
     BIRCH_HANGING_SIGN(-1, HangingSign.class),
+    /**
+     * @since 1.13
+     */
     BIRCH_LEAVES(-1, Leaves.class),
+    /**
+     * @since 1.13
+     */
     BIRCH_LOG(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     BIRCH_PLANKS(-1),
+    /**
+     * @since 1.13
+     */
     BIRCH_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.13
+     */
     BIRCH_SAPLING(-1, Sapling.class),
+    /**
+     * @since 1.21.10
+     */
     BIRCH_SHELF(-1, Shelf.class),
+    /**
+     * @since 1.14
+     */
     BIRCH_SIGN(-1, Sign.class),
+    /**
+     * @since 1.13
+     */
     BIRCH_SLAB(-1, Slab.class),
+    /**
+     * @since 1.13
+     */
     BIRCH_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     BIRCH_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.19.3
+     */
     BIRCH_WALL_HANGING_SIGN(-1, WallHangingSign.class),
+    /**
+     * @since 1.14
+     */
     BIRCH_WALL_SIGN(-1, WallSign.class),
+    /**
+     * @since 1.13
+     */
     BIRCH_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     BLACK_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     BLACK_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     BLACK_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     BLACK_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     BLACK_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     BLACK_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     BLACK_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     BLACK_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.11
+     */
     BLACK_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     BLACK_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     BLACK_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     BLACK_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     BLACK_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     BLACK_WOOL(-1),
+    /**
+     * @since 1.16.1
+     */
     BLACKSTONE(-1),
+    /**
+     * @since 1.16.1
+     */
     BLACKSTONE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.16.1
+     */
     BLACKSTONE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.16.1
+     */
     BLACKSTONE_WALL(-1, Wall.class),
+    /**
+     * @since 1.14
+     */
     BLAST_FURNACE(-1, Furnace.class),
+    /**
+     * @since 1.13
+     */
     BLUE_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     BLUE_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     BLUE_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     BLUE_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     BLUE_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     BLUE_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     BLUE_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     BLUE_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     BLUE_ICE(-1),
+    /**
+     * @since 1.13
+     */
     BLUE_ORCHID(-1),
+    /**
+     * @since 1.11
+     */
     BLUE_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     BLUE_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     BLUE_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     BLUE_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     BLUE_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     BLUE_WOOL(-1),
+    /**
+     * @since 1.10.2
+     */
     BONE_BLOCK(-1, Orientable.class),
+    /**
+     * @since 1.0.0
+     */
     BOOKSHELF(-1),
+    /**
+     * @since 1.13
+     */
     BRAIN_CORAL(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     BRAIN_CORAL_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     BRAIN_CORAL_FAN(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     BRAIN_CORAL_WALL_FAN(-1, CoralWallFan.class),
+    /**
+     * @since 1.0.0
+     */
     BREWING_STAND(-1, BrewingStand.class),
+    /**
+     * @since 1.13
+     */
     BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.0.0
+     */
     BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 1.13
+     */
     BRICKS(-1),
+    /**
+     * @since 1.13
+     */
     BROWN_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     BROWN_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     BROWN_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     BROWN_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     BROWN_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     BROWN_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     BROWN_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     BROWN_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.0.0
+     */
     BROWN_MUSHROOM(-1),
+    /**
+     * @since 1.13
+     */
     BROWN_MUSHROOM_BLOCK(-1, MultipleFacing.class),
+    /**
+     * @since 1.11
+     */
     BROWN_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     BROWN_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     BROWN_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     BROWN_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     BROWN_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     BROWN_WOOL(-1),
+    /**
+     * @since 1.13
+     */
     BUBBLE_COLUMN(-1, BubbleColumn.class),
+    /**
+     * @since 1.13
+     */
     BUBBLE_CORAL(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     BUBBLE_CORAL_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     BUBBLE_CORAL_FAN(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     BUBBLE_CORAL_WALL_FAN(-1, CoralWallFan.class),
+    /**
+     * @since 1.17
+     */
     BUDDING_AMETHYST(-1),
+    /**
+     * @since 1.21.6
+     */
     BUSH(-1),
+    /**
+     * @since 1.0.0
+     */
     CACTUS(-1, Ageable.class),
+    /**
+     * @since 1.21.6
+     */
     CACTUS_FLOWER(-1),
+    /**
+     * @since 1.0.0
+     */
     CAKE(-1, Cake.class),
+    /**
+     * @since 1.17
+     */
     CALCITE(-1),
+    /**
+     * @since 1.20
+     */
     CALIBRATED_SCULK_SENSOR(-1, CalibratedSculkSensor.class),
+    /**
+     * @since 1.14
+     */
     CAMPFIRE(-1, Campfire.class),
+    /**
+     * @since 1.17
+     */
     CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     CARROTS(-1, Ageable.class),
+    /**
+     * @since 1.14
+     */
     CARTOGRAPHY_TABLE(-1),
+    /**
+     * @since 1.13
+     */
     CARVED_PUMPKIN(-1, Directional.class),
+    /**
+     * @since 1.0.0
+     */
     CAULDRON(-1),
+    /**
+     * @since 1.13
+     */
     CAVE_AIR(-1),
+    /**
+     * @since 1.17
+     */
     CAVE_VINES(-1, CaveVines.class),
+    /**
+     * @since 1.17
+     */
     CAVE_VINES_PLANT(-1, CaveVinesPlant.class),
+    /**
+     * @since 1.13
+     */
     CHAIN_COMMAND_BLOCK(-1, CommandBlock.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_DOOR(-1, Door.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_FENCE(-1, Fence.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_FENCE_GATE(-1, Gate.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_HANGING_SIGN(-1, HangingSign.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_LEAVES(-1, Leaves.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_LOG(-1, Orientable.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_PLANKS(-1),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_SAPLING(-1, Sapling.class),
+    /**
+     * @since 1.21.10
+     */
     CHERRY_SHELF(-1, Shelf.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_SIGN(-1, Sign.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_SLAB(-1, Slab.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_WALL_HANGING_SIGN(-1, WallHangingSign.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_WALL_SIGN(-1, WallSign.class),
+    /**
+     * @since 1.19.4
+     */
     CHERRY_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.0.0
+     */
     CHEST(-1, Chest.class),
+    /**
+     * @since 1.13
+     */
     CHIPPED_ANVIL(-1, Directional.class),
+    /**
+     * @since 1.19.3
+     */
     CHISELED_BOOKSHELF(-1, ChiseledBookshelf.class),
+    /**
+     * @since 26.2
+     */
     CHISELED_CINNABAR(-1),
+    /**
+     * @since 1.20.4
+     */
     CHISELED_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     CHISELED_DEEPSLATE(-1),
+    /**
+     * @since 1.16.1
+     */
     CHISELED_NETHER_BRICKS(-1),
+    /**
+     * @since 1.16.1
+     */
     CHISELED_POLISHED_BLACKSTONE(-1),
+    /**
+     * @since 1.13
+     */
     CHISELED_QUARTZ_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     CHISELED_RED_SANDSTONE(-1),
+    /**
+     * @since 1.21.4
+     */
     CHISELED_RESIN_BRICKS(-1),
+    /**
+     * @since 1.13
+     */
     CHISELED_SANDSTONE(-1),
+    /**
+     * @since 1.13
+     */
     CHISELED_STONE_BRICKS(-1),
+    /**
+     * @since 26.2
+     */
     CHISELED_SULFUR(-1),
+    /**
+     * @since 1.20.4
+     */
     CHISELED_TUFF(-1),
+    /**
+     * @since 1.20.4
+     */
     CHISELED_TUFF_BRICKS(-1),
+    /**
+     * @since 1.9.4
+     */
     CHORUS_FLOWER(-1, Ageable.class),
+    /**
+     * @since 1.9.4
+     */
     CHORUS_PLANT(-1, MultipleFacing.class),
+    /**
+     * @since 26.2
+     */
     CINNABAR(-1),
+    /**
+     * @since 26.2
+     */
     CINNABAR_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 26.2
+     */
     CINNABAR_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 26.2
+     */
     CINNABAR_BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 26.2
+     */
     CINNABAR_BRICKS(-1),
+    /**
+     * @since 26.2
+     */
     CINNABAR_SLAB(-1, Slab.class),
+    /**
+     * @since 26.2
+     */
     CINNABAR_STAIRS(-1, Stairs.class),
+    /**
+     * @since 26.2
+     */
     CINNABAR_WALL(-1, Wall.class),
+    /**
+     * @since 1.0.0
+     */
     CLAY(-1),
+    /**
+     * @since 1.21.4
+     */
     CLOSED_EYEBLOSSOM(-1),
+    /**
+     * @since 1.6.1
+     */
     COAL_BLOCK(-1),
+    /**
+     * @since 1.0.0
+     */
     COAL_ORE(-1),
+    /**
+     * @since 1.13
+     */
     COARSE_DIRT(-1),
+    /**
+     * @since 1.17
+     */
     COBBLED_DEEPSLATE(-1),
+    /**
+     * @since 1.17
+     */
     COBBLED_DEEPSLATE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.17
+     */
     COBBLED_DEEPSLATE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.17
+     */
     COBBLED_DEEPSLATE_WALL(-1, Wall.class),
+    /**
+     * @since 1.0.0
+     */
     COBBLESTONE(-1),
+    /**
+     * @since 1.13
+     */
     COBBLESTONE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.0.0
+     */
     COBBLESTONE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     COBBLESTONE_WALL(-1, Wall.class),
+    /**
+     * @since 1.13
+     */
     COBWEB(-1),
+    /**
+     * @since 1.3.1
+     */
     COCOA(-1, Cocoa.class),
+    /**
+     * @since 1.13
+     */
     COMMAND_BLOCK(-1, CommandBlock.class),
+    /**
+     * @since 1.13
+     */
     COMPARATOR(-1, Comparator.class),
+    /**
+     * @since 1.14
+     */
     COMPOSTER(-1, Levelled.class),
+    /**
+     * @since 1.13
+     */
     CONDUIT(-1, Waterlogged.class),
+    /**
+     * @since 1.21.10
+     */
     COPPER_BARS(-1, Fence.class),
+    /**
+     * @since 1.17
+     */
     COPPER_BLOCK(-1),
+    /**
+     * @since 1.20.4
+     */
     COPPER_BULB(-1, CopperBulb.class),
+    /**
+     * @since 1.21.10
+     */
     COPPER_CHAIN(-1, Chain.class),
+    /**
+     * @since 1.21.10
+     */
     COPPER_CHEST(-1, Chest.class),
+    /**
+     * @since 1.20.4
+     */
     COPPER_DOOR(-1, Door.class),
+    /**
+     * @since 1.21.10
+     */
     COPPER_GOLEM_STATUE(-1, CopperGolemStatue.class),
+    /**
+     * @since 1.20.4
+     */
     COPPER_GRATE(-1, Waterlogged.class),
+    /**
+     * @since 1.21.10
+     */
     COPPER_LANTERN(-1, Lantern.class),
+    /**
+     * @since 1.17
+     */
     COPPER_ORE(-1),
+    /**
+     * @since 1.21.10
+     */
     COPPER_TORCH(-1),
+    /**
+     * @since 1.20.4
+     */
     COPPER_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.21.10
+     */
     COPPER_WALL_TORCH(-1, Directional.class),
+    /**
+     * @since 1.14
+     */
     CORNFLOWER(-1),
+    /**
+     * @since 1.17
+     */
     CRACKED_DEEPSLATE_BRICKS(-1),
+    /**
+     * @since 1.17
+     */
     CRACKED_DEEPSLATE_TILES(-1),
+    /**
+     * @since 1.16.1
+     */
     CRACKED_NETHER_BRICKS(-1),
+    /**
+     * @since 1.16.1
+     */
     CRACKED_POLISHED_BLACKSTONE_BRICKS(-1),
+    /**
+     * @since 1.13
+     */
     CRACKED_STONE_BRICKS(-1),
+    /**
+     * @since 1.20.4
+     */
     CRAFTER(-1, Crafter.class),
+    /**
+     * @since 1.13
+     */
     CRAFTING_TABLE(-1),
+    /**
+     * @since 1.21.3
+     */
     CREAKING_HEART(-1, CreakingHeart.class),
+    /**
+     * @since 1.13
+     */
     CREEPER_HEAD(-1, Skull.class),
+    /**
+     * @since 1.13
+     */
     CREEPER_WALL_HEAD(-1, WallSkull.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_DOOR(-1, Door.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_FENCE(-1, Fence.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_FENCE_GATE(-1, Gate.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_FUNGUS(-1),
+    /**
+     * @since 1.19.3
+     */
     CRIMSON_HANGING_SIGN(-1, HangingSign.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_HYPHAE(-1, Orientable.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_NYLIUM(-1),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_PLANKS(-1),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_ROOTS(-1),
+    /**
+     * @since 1.21.10
+     */
     CRIMSON_SHELF(-1, Shelf.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_SIGN(-1, Sign.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_SLAB(-1, Slab.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_STEM(-1, Orientable.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.19.3
+     */
     CRIMSON_WALL_HANGING_SIGN(-1, WallHangingSign.class),
+    /**
+     * @since 1.16.1
+     */
     CRIMSON_WALL_SIGN(-1, WallSign.class),
+    /**
+     * @since 1.16.1
+     */
     CRYING_OBSIDIAN(-1),
+    /**
+     * @since 1.17
+     */
     CUT_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     CUT_COPPER_SLAB(-1, Slab.class),
+    /**
+     * @since 1.17
+     */
     CUT_COPPER_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     CUT_RED_SANDSTONE(-1),
+    /**
+     * @since 1.14
+     */
     CUT_RED_SANDSTONE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.13
+     */
     CUT_SANDSTONE(-1),
+    /**
+     * @since 1.14
+     */
     CUT_SANDSTONE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.13
+     */
     CYAN_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     CYAN_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     CYAN_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     CYAN_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     CYAN_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     CYAN_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     CYAN_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     CYAN_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.11
+     */
     CYAN_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     CYAN_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     CYAN_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     CYAN_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     CYAN_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     CYAN_WOOL(-1),
+    /**
+     * @since 1.13
+     */
     DAMAGED_ANVIL(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     DANDELION(-1),
+    /**
+     * @since 1.13
+     */
     DARK_OAK_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.8
+     */
     DARK_OAK_DOOR(-1, Door.class),
+    /**
+     * @since 1.8
+     */
     DARK_OAK_FENCE(-1, Fence.class),
+    /**
+     * @since 1.8
+     */
     DARK_OAK_FENCE_GATE(-1, Gate.class),
+    /**
+     * @since 1.19.3
+     */
     DARK_OAK_HANGING_SIGN(-1, HangingSign.class),
+    /**
+     * @since 1.13
+     */
     DARK_OAK_LEAVES(-1, Leaves.class),
+    /**
+     * @since 1.13
+     */
     DARK_OAK_LOG(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     DARK_OAK_PLANKS(-1),
+    /**
+     * @since 1.13
+     */
     DARK_OAK_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.13
+     */
     DARK_OAK_SAPLING(-1, Sapling.class),
+    /**
+     * @since 1.21.10
+     */
     DARK_OAK_SHELF(-1, Shelf.class),
+    /**
+     * @since 1.14
+     */
     DARK_OAK_SIGN(-1, Sign.class),
+    /**
+     * @since 1.13
+     */
     DARK_OAK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.7.2
+     */
     DARK_OAK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     DARK_OAK_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.19.3
+     */
     DARK_OAK_WALL_HANGING_SIGN(-1, WallHangingSign.class),
+    /**
+     * @since 1.14
+     */
     DARK_OAK_WALL_SIGN(-1, WallSign.class),
+    /**
+     * @since 1.13
+     */
     DARK_OAK_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     DARK_PRISMARINE(-1),
+    /**
+     * @since 1.13
+     */
     DARK_PRISMARINE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.13
+     */
     DARK_PRISMARINE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.5.1
+     */
     DAYLIGHT_DETECTOR(-1, DaylightDetector.class),
+    /**
+     * @since 1.13.1
+     */
     DEAD_BRAIN_CORAL(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     DEAD_BRAIN_CORAL_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     DEAD_BRAIN_CORAL_FAN(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     DEAD_BRAIN_CORAL_WALL_FAN(-1, CoralWallFan.class),
+    /**
+     * @since 1.13.1
+     */
     DEAD_BUBBLE_CORAL(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     DEAD_BUBBLE_CORAL_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     DEAD_BUBBLE_CORAL_FAN(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     DEAD_BUBBLE_CORAL_WALL_FAN(-1, CoralWallFan.class),
+    /**
+     * @since 1.0.0
+     */
     DEAD_BUSH(-1),
+    /**
+     * @since 1.13.1
+     */
     DEAD_FIRE_CORAL(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     DEAD_FIRE_CORAL_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     DEAD_FIRE_CORAL_FAN(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     DEAD_FIRE_CORAL_WALL_FAN(-1, CoralWallFan.class),
+    /**
+     * @since 1.13.1
+     */
     DEAD_HORN_CORAL(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     DEAD_HORN_CORAL_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     DEAD_HORN_CORAL_FAN(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     DEAD_HORN_CORAL_WALL_FAN(-1, CoralWallFan.class),
+    /**
+     * @since 1.13.1
+     */
     DEAD_TUBE_CORAL(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     DEAD_TUBE_CORAL_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     DEAD_TUBE_CORAL_FAN(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     DEAD_TUBE_CORAL_WALL_FAN(-1, CoralWallFan.class),
+    /**
+     * @since 1.19.4
+     */
     DECORATED_POT(-1, DecoratedPot.class),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE(-1, Orientable.class),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_BRICKS(-1),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_COAL_ORE(-1),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_COPPER_ORE(-1),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_DIAMOND_ORE(-1),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_EMERALD_ORE(-1),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_GOLD_ORE(-1),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_IRON_ORE(-1),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_LAPIS_ORE(-1),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_REDSTONE_ORE(-1, Lightable.class),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_TILE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_TILE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_TILE_WALL(-1, Wall.class),
+    /**
+     * @since 1.17
+     */
     DEEPSLATE_TILES(-1),
+    /**
+     * @since 1.0.0
+     */
     DETECTOR_RAIL(-1, RedstoneRail.class),
+    /**
+     * @since 1.0.0
+     */
     DIAMOND_BLOCK(-1),
+    /**
+     * @since 1.0.0
+     */
     DIAMOND_ORE(-1),
+    /**
+     * @since 1.13
+     */
     DIORITE(-1),
+    /**
+     * @since 1.14
+     */
     DIORITE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     DIORITE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     DIORITE_WALL(-1, Wall.class),
+    /**
+     * @since 1.0.0
+     */
     DIRT(-1),
+    /**
+     * @since 1.17
+     */
     DIRT_PATH(-1),
+    /**
+     * @since 1.0.0
+     */
     DISPENSER(-1, Dispenser.class),
+    /**
+     * @since 1.0.0
+     */
     DRAGON_EGG(-1),
+    /**
+     * @since 1.13
+     */
     DRAGON_HEAD(-1, Skull.class),
+    /**
+     * @since 1.13
+     */
     DRAGON_WALL_HEAD(-1, WallSkull.class),
+    /**
+     * @since 1.21.6
+     */
     DRIED_GHAST(-1, DriedGhast.class),
+    /**
+     * @since 1.13
+     */
     DRIED_KELP_BLOCK(-1),
+    /**
+     * @since 1.17
+     */
     DRIPSTONE_BLOCK(-1),
+    /**
+     * @since 1.5.1
+     */
     DROPPER(-1, Dispenser.class),
+    /**
+     * @since 1.3.1
+     */
     EMERALD_BLOCK(-1),
+    /**
+     * @since 1.3.1
+     */
     EMERALD_ORE(-1),
+    /**
+     * @since 1.13
+     */
     ENCHANTING_TABLE(-1),
+    /**
+     * @since 1.9.4
+     */
     END_GATEWAY(-1),
+    /**
+     * @since 1.13
+     */
     END_PORTAL(-1),
+    /**
+     * @since 1.13
+     */
     END_PORTAL_FRAME(-1, EndPortalFrame.class),
+    /**
+     * @since 1.9.4
+     */
     END_ROD(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     END_STONE(-1),
+    /**
+     * @since 1.14
+     */
     END_STONE_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     END_STONE_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     END_STONE_BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 1.13
+     */
     END_STONE_BRICKS(-1),
+    /**
+     * @since 1.3.1
+     */
     ENDER_CHEST(-1, EnderChest.class),
+    /**
+     * @since 1.20.4
+     */
     EXPOSED_CHISELED_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     EXPOSED_COPPER(-1),
+    /**
+     * @since 1.21.10
+     */
     EXPOSED_COPPER_BARS(-1, Fence.class),
+    /**
+     * @since 1.20.4
+     */
     EXPOSED_COPPER_BULB(-1, CopperBulb.class),
+    /**
+     * @since 1.21.10
+     */
     EXPOSED_COPPER_CHAIN(-1, Chain.class),
+    /**
+     * @since 1.21.10
+     */
     EXPOSED_COPPER_CHEST(-1, Chest.class),
+    /**
+     * @since 1.20.4
+     */
     EXPOSED_COPPER_DOOR(-1, Door.class),
+    /**
+     * @since 1.21.10
+     */
     EXPOSED_COPPER_GOLEM_STATUE(-1, CopperGolemStatue.class),
+    /**
+     * @since 1.20.4
+     */
     EXPOSED_COPPER_GRATE(-1, Waterlogged.class),
+    /**
+     * @since 1.21.10
+     */
     EXPOSED_COPPER_LANTERN(-1, Lantern.class),
+    /**
+     * @since 1.20.4
+     */
     EXPOSED_COPPER_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.17
+     */
     EXPOSED_CUT_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     EXPOSED_CUT_COPPER_SLAB(-1, Slab.class),
+    /**
+     * @since 1.17
+     */
     EXPOSED_CUT_COPPER_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.21.10
+     */
     EXPOSED_LIGHTNING_ROD(-1, LightningRod.class),
+    /**
+     * @since 1.13
+     */
     FARMLAND(-1, Farmland.class),
+    /**
+     * @since 1.13
+     */
     FERN(-1),
+    /**
+     * @since 1.0.0
+     */
     FIRE(-1, Fire.class),
+    /**
+     * @since 1.13
+     */
     FIRE_CORAL(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     FIRE_CORAL_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     FIRE_CORAL_FAN(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     FIRE_CORAL_WALL_FAN(-1, CoralWallFan.class),
+    /**
+     * @since 1.21.6
+     */
     FIREFLY_BUSH(-1),
+    /**
+     * @since 1.14
+     */
     FLETCHING_TABLE(-1),
+    /**
+     * @since 1.4.5
+     */
     FLOWER_POT(-1),
+    /**
+     * @since 1.17
+     */
     FLOWERING_AZALEA(-1),
+    /**
+     * @since 1.17
+     */
     FLOWERING_AZALEA_LEAVES(-1, Leaves.class),
+    /**
+     * @since 1.19
+     */
     FROGSPAWN(-1),
+    /**
+     * @since 1.9.4
+     */
     FROSTED_ICE(-1, Ageable.class),
+    /**
+     * @since 1.0.0
+     */
     FURNACE(-1, Furnace.class),
+    /**
+     * @since 1.16.1
+     */
     GILDED_BLACKSTONE(-1),
+    /**
+     * @since 1.0.0
+     */
     GLASS(-1),
+    /**
+     * @since 1.13
+     */
     GLASS_PANE(-1, Fence.class),
+    /**
+     * @since 1.17
+     */
     GLOW_LICHEN(-1, GlowLichen.class),
+    /**
+     * @since 1.0.0
+     */
     GLOWSTONE(-1),
+    /**
+     * @since 1.0.0
+     */
     GOLD_BLOCK(-1),
+    /**
+     * @since 1.0.0
+     */
     GOLD_ORE(-1),
+    /**
+     * @since 26.2
+     */
     GOLDEN_DANDELION(-1),
+    /**
+     * @since 1.13
+     */
     GRANITE(-1),
+    /**
+     * @since 1.14
+     */
     GRANITE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     GRANITE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     GRANITE_WALL(-1, Wall.class),
+    /**
+     * @since 1.13
+     */
     GRASS_BLOCK(-1, Snowable.class),
+    /**
+     * @since 1.0.0
+     */
     GRAVEL(-1),
+    /**
+     * @since 1.13
+     */
     GRAY_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     GRAY_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     GRAY_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     GRAY_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     GRAY_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     GRAY_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     GRAY_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     GRAY_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.11
+     */
     GRAY_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     GRAY_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     GRAY_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     GRAY_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     GRAY_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     GRAY_WOOL(-1),
+    /**
+     * @since 1.13
+     */
     GREEN_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     GREEN_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     GREEN_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     GREEN_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     GREEN_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     GREEN_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     GREEN_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     GREEN_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.11
+     */
     GREEN_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     GREEN_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     GREEN_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     GREEN_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     GREEN_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     GREEN_WOOL(-1),
+    /**
+     * @since 1.14
+     */
     GRINDSTONE(-1, Grindstone.class),
+    /**
+     * @since 1.17
+     */
     HANGING_ROOTS(-1, Waterlogged.class),
+    /**
+     * @since 1.6.1
+     */
     HAY_BLOCK(-1, Orientable.class),
+    /**
+     * @since 1.20.6
+     */
     HEAVY_CORE(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     HEAVY_WEIGHTED_PRESSURE_PLATE(-1, AnaloguePowerable.class),
+    /**
+     * @since 1.15
+     */
     HONEY_BLOCK(-1),
+    /**
+     * @since 1.15
+     */
     HONEYCOMB_BLOCK(-1),
+    /**
+     * @since 1.5.1
+     */
     HOPPER(-1, Hopper.class),
+    /**
+     * @since 1.13
+     */
     HORN_CORAL(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     HORN_CORAL_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     HORN_CORAL_FAN(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     HORN_CORAL_WALL_FAN(-1, CoralWallFan.class),
+    /**
+     * @since 1.0.0
+     */
     ICE(-1),
+    /**
+     * @since 1.13
+     */
     INFESTED_CHISELED_STONE_BRICKS(-1),
+    /**
+     * @since 1.13
+     */
     INFESTED_COBBLESTONE(-1),
+    /**
+     * @since 1.13
+     */
     INFESTED_CRACKED_STONE_BRICKS(-1),
+    /**
+     * @since 1.17
+     */
     INFESTED_DEEPSLATE(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     INFESTED_MOSSY_STONE_BRICKS(-1),
+    /**
+     * @since 1.13
+     */
     INFESTED_STONE(-1),
+    /**
+     * @since 1.13
+     */
     INFESTED_STONE_BRICKS(-1),
+    /**
+     * @since 1.13
+     */
     IRON_BARS(-1, Fence.class),
+    /**
+     * @since 1.0.0
+     */
     IRON_BLOCK(-1),
+    /**
+     * @since 1.21.10
+     */
     IRON_CHAIN(-1, Chain.class),
+    /**
+     * @since 1.0.0
+     */
     IRON_DOOR(-1, Door.class),
+    /**
+     * @since 1.0.0
+     */
     IRON_ORE(-1),
+    /**
+     * @since 1.8
+     */
     IRON_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.0.0
+     */
     JACK_O_LANTERN(-1, Directional.class),
+    /**
+     * @since 1.14
+     */
     JIGSAW(-1, Jigsaw.class),
+    /**
+     * @since 1.0.0
+     */
     JUKEBOX(-1, Jukebox.class),
+    /**
+     * @since 1.13
+     */
     JUNGLE_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.8
+     */
     JUNGLE_DOOR(-1, Door.class),
+    /**
+     * @since 1.8
+     */
     JUNGLE_FENCE(-1, Fence.class),
+    /**
+     * @since 1.8
+     */
     JUNGLE_FENCE_GATE(-1, Gate.class),
+    /**
+     * @since 1.19.3
+     */
     JUNGLE_HANGING_SIGN(-1, HangingSign.class),
+    /**
+     * @since 1.13
+     */
     JUNGLE_LEAVES(-1, Leaves.class),
+    /**
+     * @since 1.13
+     */
     JUNGLE_LOG(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     JUNGLE_PLANKS(-1),
+    /**
+     * @since 1.13
+     */
     JUNGLE_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.13
+     */
     JUNGLE_SAPLING(-1, Sapling.class),
+    /**
+     * @since 1.21.10
+     */
     JUNGLE_SHELF(-1, Shelf.class),
+    /**
+     * @since 1.14
+     */
     JUNGLE_SIGN(-1, Sign.class),
+    /**
+     * @since 1.13
+     */
     JUNGLE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.13
+     */
     JUNGLE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     JUNGLE_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.19.3
+     */
     JUNGLE_WALL_HANGING_SIGN(-1, WallHangingSign.class),
+    /**
+     * @since 1.14
+     */
     JUNGLE_WALL_SIGN(-1, WallSign.class),
+    /**
+     * @since 1.13
+     */
     JUNGLE_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     KELP(-1, Ageable.class),
+    /**
+     * @since 1.13
+     */
     KELP_PLANT(-1),
+    /**
+     * @since 1.0.0
+     */
     LADDER(-1, Ladder.class),
+    /**
+     * @since 1.14
+     */
     LANTERN(-1, Lantern.class),
+    /**
+     * @since 1.0.0
+     */
     LAPIS_BLOCK(-1),
+    /**
+     * @since 1.0.0
+     */
     LAPIS_ORE(-1),
+    /**
+     * @since 1.17
+     */
     LARGE_AMETHYST_BUD(-1, AmethystCluster.class),
+    /**
+     * @since 1.13
+     */
     LARGE_FERN(-1, Bisected.class),
+    /**
+     * @since 1.0.0
+     */
     LAVA(-1, Levelled.class),
+    /**
+     * @since 1.17
+     */
     LAVA_CAULDRON(-1),
+    /**
+     * @since 1.21.6
+     */
     LEAF_LITTER(-1, LeafLitter.class),
+    /**
+     * @since 1.14
+     */
     LECTERN(-1, Lectern.class),
+    /**
+     * @since 1.0.0
+     */
     LEVER(-1, Switch.class),
+    /**
+     * @since 1.17
+     */
     LIGHT(-1, Light.class),
+    /**
+     * @since 1.13
+     */
     LIGHT_BLUE_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     LIGHT_BLUE_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     LIGHT_BLUE_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     LIGHT_BLUE_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     LIGHT_BLUE_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_BLUE_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_BLUE_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     LIGHT_BLUE_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.11
+     */
     LIGHT_BLUE_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     LIGHT_BLUE_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_BLUE_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     LIGHT_BLUE_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_BLUE_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     LIGHT_BLUE_WOOL(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     LIGHT_GRAY_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     LIGHT_GRAY_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     LIGHT_GRAY_WOOL(-1),
+    /**
+     * @since 1.13
+     */
     LIGHT_WEIGHTED_PRESSURE_PLATE(-1, AnaloguePowerable.class),
+    /**
+     * @since 1.17
+     */
     LIGHTNING_ROD(-1, LightningRod.class),
+    /**
+     * @since 1.13
+     */
     LILAC(-1, Bisected.class),
+    /**
+     * @since 1.14
+     */
     LILY_OF_THE_VALLEY(-1),
+    /**
+     * @since 1.13
+     */
     LILY_PAD(-1),
+    /**
+     * @since 1.13
+     */
     LIME_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     LIME_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     LIME_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     LIME_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     LIME_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     LIME_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     LIME_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     LIME_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.11
+     */
     LIME_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     LIME_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     LIME_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     LIME_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     LIME_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     LIME_WOOL(-1),
+    /**
+     * @since 1.16.1
+     */
     LODESTONE(-1),
+    /**
+     * @since 1.14
+     */
     LOOM(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     MAGENTA_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     MAGENTA_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     MAGENTA_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     MAGENTA_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     MAGENTA_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     MAGENTA_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     MAGENTA_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     MAGENTA_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.11
+     */
     MAGENTA_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     MAGENTA_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     MAGENTA_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     MAGENTA_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     MAGENTA_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     MAGENTA_WOOL(-1),
+    /**
+     * @since 1.13
+     */
     MAGMA_BLOCK(-1),
+    /**
+     * @since 1.19
+     */
     MANGROVE_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_DOOR(-1, Door.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_FENCE(-1, Fence.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_FENCE_GATE(-1, Gate.class),
+    /**
+     * @since 1.19.3
+     */
     MANGROVE_HANGING_SIGN(-1, HangingSign.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_LEAVES(-1, Leaves.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_LOG(-1, Orientable.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_PLANKS(-1),
+    /**
+     * @since 1.19
+     */
     MANGROVE_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_PROPAGULE(-1, MangrovePropagule.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_ROOTS(-1, Waterlogged.class),
+    /**
+     * @since 1.21.10
+     */
     MANGROVE_SHELF(-1, Shelf.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_SIGN(-1, Sign.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.19.3
+     */
     MANGROVE_WALL_HANGING_SIGN(-1, WallHangingSign.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_WALL_SIGN(-1, WallSign.class),
+    /**
+     * @since 1.19
+     */
     MANGROVE_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.17
+     */
     MEDIUM_AMETHYST_BUD(-1, AmethystCluster.class),
+    /**
+     * @since 1.0.0
+     */
     MELON(-1),
+    /**
+     * @since 1.0.0
+     */
     MELON_STEM(-1, Ageable.class),
+    /**
+     * @since 1.17
+     */
     MOSS_BLOCK(-1),
+    /**
+     * @since 1.17
+     */
     MOSS_CARPET(-1),
+    /**
+     * @since 1.0.0
+     */
     MOSSY_COBBLESTONE(-1),
+    /**
+     * @since 1.14
+     */
     MOSSY_COBBLESTONE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     MOSSY_COBBLESTONE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     MOSSY_COBBLESTONE_WALL(-1, Wall.class),
+    /**
+     * @since 1.14
+     */
     MOSSY_STONE_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     MOSSY_STONE_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     MOSSY_STONE_BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 1.13
+     */
     MOSSY_STONE_BRICKS(-1),
+    /**
+     * @since 1.13
+     */
     MOVING_PISTON(-1, TechnicalPiston.class),
+    /**
+     * @since 1.19
+     */
     MUD(-1),
+    /**
+     * @since 1.19
+     */
     MUD_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.19
+     */
     MUD_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.19
+     */
     MUD_BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 1.19
+     */
     MUD_BRICKS(-1),
+    /**
+     * @since 1.19
+     */
     MUDDY_MANGROVE_ROOTS(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     MUSHROOM_STEM(-1, MultipleFacing.class),
+    /**
+     * @since 1.13
+     */
     MYCELIUM(-1, Snowable.class),
+    /**
+     * @since 1.13
+     */
     NETHER_BRICK_FENCE(-1, Fence.class),
+    /**
+     * @since 1.13
+     */
     NETHER_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.0.0
+     */
     NETHER_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     NETHER_BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 1.13
+     */
     NETHER_BRICKS(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHER_GOLD_ORE(-1),
+    /**
+     * @since 1.13
+     */
     NETHER_PORTAL(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     NETHER_QUARTZ_ORE(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHER_SPROUTS(-1),
+    /**
+     * @since 1.13
+     */
     NETHER_WART(-1, Ageable.class),
+    /**
+     * @since 1.10.2
+     */
     NETHER_WART_BLOCK(-1),
+    /**
+     * @since 1.16.1
+     */
     NETHERITE_BLOCK(-1),
+    /**
+     * @since 1.0.0
+     */
     NETHERRACK(-1),
+    /**
+     * @since 1.0.0
+     */
     NOTE_BLOCK(-1, NoteBlock.class),
+    /**
+     * @since 1.13
+     */
     OAK_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.13
+     */
     OAK_DOOR(-1, Door.class),
+    /**
+     * @since 1.13
+     */
     OAK_FENCE(-1, Fence.class),
+    /**
+     * @since 1.13
+     */
     OAK_FENCE_GATE(-1, Gate.class),
+    /**
+     * @since 1.19.3
+     */
     OAK_HANGING_SIGN(-1, HangingSign.class),
+    /**
+     * @since 1.13
+     */
     OAK_LEAVES(-1, Leaves.class),
+    /**
+     * @since 1.13
+     */
     OAK_LOG(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     OAK_PLANKS(-1),
+    /**
+     * @since 1.13
+     */
     OAK_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.13
+     */
     OAK_SAPLING(-1, Sapling.class),
+    /**
+     * @since 1.21.10
+     */
     OAK_SHELF(-1, Shelf.class),
+    /**
+     * @since 1.14
+     */
     OAK_SIGN(-1, Sign.class),
+    /**
+     * @since 1.13
+     */
     OAK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.13
+     */
     OAK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     OAK_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.19.3
+     */
     OAK_WALL_HANGING_SIGN(-1, WallHangingSign.class),
+    /**
+     * @since 1.14
+     */
     OAK_WALL_SIGN(-1, WallSign.class),
+    /**
+     * @since 1.13
+     */
     OAK_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.11
+     */
     OBSERVER(-1, Observer.class),
+    /**
+     * @since 1.0.0
+     */
     OBSIDIAN(-1),
+    /**
+     * @since 1.19
+     */
     OCHRE_FROGLIGHT(-1, Orientable.class),
+    /**
+     * @since 1.21.4
+     */
     OPEN_EYEBLOSSOM(-1),
+    /**
+     * @since 1.13
+     */
     ORANGE_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     ORANGE_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     ORANGE_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     ORANGE_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     ORANGE_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     ORANGE_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     ORANGE_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     ORANGE_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.11
+     */
     ORANGE_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     ORANGE_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     ORANGE_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     ORANGE_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     ORANGE_TULIP(-1),
+    /**
+     * @since 1.13
+     */
     ORANGE_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     ORANGE_WOOL(-1),
+    /**
+     * @since 1.13
+     */
     OXEYE_DAISY(-1),
+    /**
+     * @since 1.20.4
+     */
     OXIDIZED_CHISELED_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     OXIDIZED_COPPER(-1),
+    /**
+     * @since 1.21.10
+     */
     OXIDIZED_COPPER_BARS(-1, Fence.class),
+    /**
+     * @since 1.20.4
+     */
     OXIDIZED_COPPER_BULB(-1, CopperBulb.class),
+    /**
+     * @since 1.21.10
+     */
     OXIDIZED_COPPER_CHAIN(-1, Chain.class),
+    /**
+     * @since 1.21.10
+     */
     OXIDIZED_COPPER_CHEST(-1, Chest.class),
+    /**
+     * @since 1.20.4
+     */
     OXIDIZED_COPPER_DOOR(-1, Door.class),
+    /**
+     * @since 1.21.10
+     */
     OXIDIZED_COPPER_GOLEM_STATUE(-1, CopperGolemStatue.class),
+    /**
+     * @since 1.20.4
+     */
     OXIDIZED_COPPER_GRATE(-1, Waterlogged.class),
+    /**
+     * @since 1.21.10
+     */
     OXIDIZED_COPPER_LANTERN(-1, Lantern.class),
+    /**
+     * @since 1.20.4
+     */
     OXIDIZED_COPPER_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.17
+     */
     OXIDIZED_CUT_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     OXIDIZED_CUT_COPPER_SLAB(-1, Slab.class),
+    /**
+     * @since 1.17
+     */
     OXIDIZED_CUT_COPPER_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.21.10
+     */
     OXIDIZED_LIGHTNING_ROD(-1, LightningRod.class),
+    /**
+     * @since 1.7.2
+     */
     PACKED_ICE(-1),
+    /**
+     * @since 1.19
+     */
     PACKED_MUD(-1),
+    /**
+     * @since 1.21.3
+     */
     PALE_HANGING_MOSS(-1, HangingMoss.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_MOSS_BLOCK(-1),
+    /**
+     * @since 1.21.3
+     */
     PALE_MOSS_CARPET(-1, MossyCarpet.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_DOOR(-1, Door.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_FENCE(-1, Fence.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_FENCE_GATE(-1, Gate.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_HANGING_SIGN(-1, HangingSign.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_LEAVES(-1, Leaves.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_LOG(-1, Orientable.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_PLANKS(-1),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_SAPLING(-1, Sapling.class),
+    /**
+     * @since 1.21.10
+     */
     PALE_OAK_SHELF(-1, Shelf.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_SIGN(-1, Sign.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_WALL_HANGING_SIGN(-1, WallHangingSign.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_WALL_SIGN(-1, WallSign.class),
+    /**
+     * @since 1.21.3
+     */
     PALE_OAK_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.19
+     */
     PEARLESCENT_FROGLIGHT(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     PEONY(-1, Bisected.class),
+    /**
+     * @since 1.13
+     */
     PETRIFIED_OAK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.19.3
+     */
     PIGLIN_HEAD(-1, Skull.class),
+    /**
+     * @since 1.19.3
+     */
     PIGLIN_WALL_HEAD(-1, WallSkull.class),
+    /**
+     * @since 1.13
+     */
     PINK_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     PINK_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     PINK_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     PINK_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     PINK_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     PINK_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     PINK_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     PINK_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.19.4
+     */
     PINK_PETALS(-1, FlowerBed.class),
+    /**
+     * @since 1.11
+     */
     PINK_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     PINK_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     PINK_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     PINK_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     PINK_TULIP(-1),
+    /**
+     * @since 1.13
+     */
     PINK_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     PINK_WOOL(-1),
+    /**
+     * @since 1.13
+     */
     PISTON(-1, Piston.class),
+    /**
+     * @since 1.13
+     */
     PISTON_HEAD(-1, PistonHead.class),
+    /**
+     * @since 1.20
+     */
     PITCHER_CROP(-1, PitcherCrop.class),
+    /**
+     * @since 1.20
+     */
     PITCHER_PLANT(-1, Bisected.class),
+    /**
+     * @since 1.13
+     */
     PLAYER_HEAD(-1, Skull.class),
+    /**
+     * @since 1.13
+     */
     PLAYER_WALL_HEAD(-1, WallSkull.class),
+    /**
+     * @since 1.13
+     */
     PODZOL(-1, Snowable.class),
+    /**
+     * @since 1.17
+     */
     POINTED_DRIPSTONE(-1, Speleothem.class),
+    /**
+     * @since 1.13
+     */
     POLISHED_ANDESITE(-1),
+    /**
+     * @since 1.14
+     */
     POLISHED_ANDESITE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     POLISHED_ANDESITE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.16.1
+     */
     POLISHED_BASALT(-1, Orientable.class),
+    /**
+     * @since 1.16.1
+     */
     POLISHED_BLACKSTONE(-1),
+    /**
+     * @since 1.16.1
+     */
     POLISHED_BLACKSTONE_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.16.1
+     */
     POLISHED_BLACKSTONE_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.16.1
+     */
     POLISHED_BLACKSTONE_BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 1.16.1
+     */
     POLISHED_BLACKSTONE_BRICKS(-1),
+    /**
+     * @since 1.16.1
+     */
     POLISHED_BLACKSTONE_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.16.1
+     */
     POLISHED_BLACKSTONE_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.16.1
+     */
     POLISHED_BLACKSTONE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.16.1
+     */
     POLISHED_BLACKSTONE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.16.1
+     */
     POLISHED_BLACKSTONE_WALL(-1, Wall.class),
+    /**
+     * @since 26.2
+     */
     POLISHED_CINNABAR(-1),
+    /**
+     * @since 26.2
+     */
     POLISHED_CINNABAR_SLAB(-1, Slab.class),
+    /**
+     * @since 26.2
+     */
     POLISHED_CINNABAR_STAIRS(-1, Stairs.class),
+    /**
+     * @since 26.2
+     */
     POLISHED_CINNABAR_WALL(-1, Wall.class),
+    /**
+     * @since 1.17
+     */
     POLISHED_DEEPSLATE(-1),
+    /**
+     * @since 1.17
+     */
     POLISHED_DEEPSLATE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.17
+     */
     POLISHED_DEEPSLATE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.17
+     */
     POLISHED_DEEPSLATE_WALL(-1, Wall.class),
+    /**
+     * @since 1.13
+     */
     POLISHED_DIORITE(-1),
+    /**
+     * @since 1.14
+     */
     POLISHED_DIORITE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     POLISHED_DIORITE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     POLISHED_GRANITE(-1),
+    /**
+     * @since 1.14
+     */
     POLISHED_GRANITE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     POLISHED_GRANITE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 26.2
+     */
     POLISHED_SULFUR(-1),
+    /**
+     * @since 26.2
+     */
     POLISHED_SULFUR_SLAB(-1, Slab.class),
+    /**
+     * @since 26.2
+     */
     POLISHED_SULFUR_STAIRS(-1, Stairs.class),
+    /**
+     * @since 26.2
+     */
     POLISHED_SULFUR_WALL(-1, Wall.class),
+    /**
+     * @since 1.20.4
+     */
     POLISHED_TUFF(-1),
+    /**
+     * @since 1.20.4
+     */
     POLISHED_TUFF_SLAB(-1, Slab.class),
+    /**
+     * @since 1.20.4
+     */
     POLISHED_TUFF_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.20.4
+     */
     POLISHED_TUFF_WALL(-1, Wall.class),
+    /**
+     * @since 1.13
+     */
     POPPY(-1),
+    /**
+     * @since 1.13
+     */
     POTATOES(-1, Ageable.class),
+    /**
+     * @since 26.2
+     */
     POTENT_SULFUR(-1, PotentSulfur.class),
+    /**
+     * @since 1.13
+     */
     POTTED_ACACIA_SAPLING(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_ALLIUM(-1),
+    /**
+     * @since 1.17
+     */
     POTTED_AZALEA_BUSH(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_AZURE_BLUET(-1),
+    /**
+     * @since 1.14
+     */
     POTTED_BAMBOO(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_BIRCH_SAPLING(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_BLUE_ORCHID(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_BROWN_MUSHROOM(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_CACTUS(-1),
+    /**
+     * @since 1.19.4
+     */
     POTTED_CHERRY_SAPLING(-1),
+    /**
+     * @since 1.21.4
+     */
     POTTED_CLOSED_EYEBLOSSOM(-1),
+    /**
+     * @since 1.14
+     */
     POTTED_CORNFLOWER(-1),
+    /**
+     * @since 1.16.1
+     */
     POTTED_CRIMSON_FUNGUS(-1),
+    /**
+     * @since 1.16.1
+     */
     POTTED_CRIMSON_ROOTS(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_DANDELION(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_DARK_OAK_SAPLING(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_DEAD_BUSH(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_FERN(-1),
+    /**
+     * @since 1.17
+     */
     POTTED_FLOWERING_AZALEA_BUSH(-1),
+    /**
+     * @since 26.2
+     */
     POTTED_GOLDEN_DANDELION(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_JUNGLE_SAPLING(-1),
+    /**
+     * @since 1.14
+     */
     POTTED_LILY_OF_THE_VALLEY(-1),
+    /**
+     * @since 1.19
+     */
     POTTED_MANGROVE_PROPAGULE(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_OAK_SAPLING(-1),
+    /**
+     * @since 1.21.4
+     */
     POTTED_OPEN_EYEBLOSSOM(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_ORANGE_TULIP(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_OXEYE_DAISY(-1),
+    /**
+     * @since 1.21.3
+     */
     POTTED_PALE_OAK_SAPLING(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_PINK_TULIP(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_POPPY(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_RED_MUSHROOM(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_RED_TULIP(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_SPRUCE_SAPLING(-1),
+    /**
+     * @since 1.19.4
+     */
     POTTED_TORCHFLOWER(-1),
+    /**
+     * @since 1.16.1
+     */
     POTTED_WARPED_FUNGUS(-1),
+    /**
+     * @since 1.16.1
+     */
     POTTED_WARPED_ROOTS(-1),
+    /**
+     * @since 1.13
+     */
     POTTED_WHITE_TULIP(-1),
+    /**
+     * @since 1.14
+     */
     POTTED_WITHER_ROSE(-1),
+    /**
+     * @since 1.17
+     */
     POWDER_SNOW(-1),
+    /**
+     * @since 1.17
+     */
     POWDER_SNOW_CAULDRON(-1, Levelled.class),
+    /**
+     * @since 1.0.0
+     */
     POWERED_RAIL(-1, RedstoneRail.class),
+    /**
+     * @since 1.8
+     */
     PRISMARINE(-1),
+    /**
+     * @since 1.13
+     */
     PRISMARINE_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.13
+     */
     PRISMARINE_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     PRISMARINE_BRICKS(-1),
+    /**
+     * @since 1.13
+     */
     PRISMARINE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.13
+     */
     PRISMARINE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     PRISMARINE_WALL(-1, Wall.class),
+    /**
+     * @since 1.0.0
+     */
     PUMPKIN(-1),
+    /**
+     * @since 1.0.0
+     */
     PUMPKIN_STEM(-1, Ageable.class),
+    /**
+     * @since 1.13
+     */
     PURPLE_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     PURPLE_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     PURPLE_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     PURPLE_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     PURPLE_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     PURPLE_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     PURPLE_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     PURPLE_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.11
+     */
     PURPLE_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     PURPLE_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     PURPLE_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     PURPLE_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     PURPLE_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     PURPLE_WOOL(-1),
+    /**
+     * @since 1.9.4
+     */
     PURPUR_BLOCK(-1),
+    /**
+     * @since 1.9.4
+     */
     PURPUR_PILLAR(-1, Orientable.class),
+    /**
+     * @since 1.9.4
+     */
     PURPUR_SLAB(-1, Slab.class),
+    /**
+     * @since 1.9.4
+     */
     PURPUR_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.5.1
+     */
     QUARTZ_BLOCK(-1),
+    /**
+     * @since 1.16.1
+     */
     QUARTZ_BRICKS(-1),
+    /**
+     * @since 1.13
+     */
     QUARTZ_PILLAR(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     QUARTZ_SLAB(-1, Slab.class),
+    /**
+     * @since 1.5.1
+     */
     QUARTZ_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     RAIL(-1, Rail.class),
+    /**
+     * @since 1.17
+     */
     RAW_COPPER_BLOCK(-1),
+    /**
+     * @since 1.17
+     */
     RAW_GOLD_BLOCK(-1),
+    /**
+     * @since 1.17
+     */
     RAW_IRON_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     RED_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     RED_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     RED_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     RED_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     RED_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     RED_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     RED_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     RED_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.0.0
+     */
     RED_MUSHROOM(-1),
+    /**
+     * @since 1.13
+     */
     RED_MUSHROOM_BLOCK(-1, MultipleFacing.class),
+    /**
+     * @since 1.14
+     */
     RED_NETHER_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     RED_NETHER_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     RED_NETHER_BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 1.13
+     */
     RED_NETHER_BRICKS(-1),
+    /**
+     * @since 1.13
+     */
     RED_SAND(-1),
+    /**
+     * @since 1.8
+     */
     RED_SANDSTONE(-1),
+    /**
+     * @since 1.13
+     */
     RED_SANDSTONE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.8
+     */
     RED_SANDSTONE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     RED_SANDSTONE_WALL(-1, Wall.class),
+    /**
+     * @since 1.11
+     */
     RED_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     RED_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     RED_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     RED_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     RED_TULIP(-1),
+    /**
+     * @since 1.13
+     */
     RED_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     RED_WOOL(-1),
+    /**
+     * @since 1.5.1
+     */
     REDSTONE_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     REDSTONE_LAMP(-1, Lightable.class),
+    /**
+     * @since 1.0.0
+     */
     REDSTONE_ORE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     REDSTONE_TORCH(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     REDSTONE_WALL_TORCH(-1, RedstoneWallTorch.class),
+    /**
+     * @since 1.0.0
+     */
     REDSTONE_WIRE(-1, RedstoneWire.class),
+    /**
+     * @since 1.19
+     */
     REINFORCED_DEEPSLATE(-1),
+    /**
+     * @since 1.13
+     */
     REPEATER(-1, Repeater.class),
+    /**
+     * @since 1.13
+     */
     REPEATING_COMMAND_BLOCK(-1, CommandBlock.class),
+    /**
+     * @since 1.21.4
+     */
     RESIN_BLOCK(-1),
+    /**
+     * @since 1.21.4
+     */
     RESIN_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.21.4
+     */
     RESIN_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.21.4
+     */
     RESIN_BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 1.21.4
+     */
     RESIN_BRICKS(-1),
+    /**
+     * @since 1.21.4
+     */
     RESIN_CLUMP(-1, ResinClump.class),
+    /**
+     * @since 1.16.1
+     */
     RESPAWN_ANCHOR(-1, RespawnAnchor.class),
+    /**
+     * @since 1.17
+     */
     ROOTED_DIRT(-1),
+    /**
+     * @since 1.13
+     */
     ROSE_BUSH(-1, Bisected.class),
+    /**
+     * @since 1.0.0
+     */
     SAND(-1),
+    /**
+     * @since 1.0.0
+     */
     SANDSTONE(-1),
+    /**
+     * @since 1.13
+     */
     SANDSTONE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.3.1
+     */
     SANDSTONE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     SANDSTONE_WALL(-1, Wall.class),
+    /**
+     * @since 1.14
+     */
     SCAFFOLDING(-1, Scaffolding.class),
+    /**
+     * @since 1.19
+     */
     SCULK(-1),
+    /**
+     * @since 1.19
+     */
     SCULK_CATALYST(-1, SculkCatalyst.class),
+    /**
+     * @since 1.17
+     */
     SCULK_SENSOR(-1, SculkSensor.class),
+    /**
+     * @since 1.19
+     */
     SCULK_SHRIEKER(-1, SculkShrieker.class),
+    /**
+     * @since 1.19
+     */
     SCULK_VEIN(-1, SculkVein.class),
+    /**
+     * @since 1.8
+     */
     SEA_LANTERN(-1),
+    /**
+     * @since 1.13
+     */
     SEA_PICKLE(-1, SeaPickle.class),
+    /**
+     * @since 1.13
+     */
     SEAGRASS(-1),
+    /**
+     * @since 1.21.6
+     */
     SHORT_DRY_GRASS(-1),
+    /**
+     * @since 1.20.4
+     */
     SHORT_GRASS(-1),
+    /**
+     * @since 1.16.1
+     */
     SHROOMLIGHT(-1),
+    /**
+     * @since 1.13
+     */
     SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     SKELETON_SKULL(-1, Skull.class),
+    /**
+     * @since 1.13
+     */
     SKELETON_WALL_SKULL(-1, WallSkull.class),
+    /**
+     * @since 1.8
+     */
     SLIME_BLOCK(-1),
+    /**
+     * @since 1.17
+     */
     SMALL_AMETHYST_BUD(-1, AmethystCluster.class),
+    /**
+     * @since 1.17
+     */
     SMALL_DRIPLEAF(-1, SmallDripleaf.class),
+    /**
+     * @since 1.14
+     */
     SMITHING_TABLE(-1),
+    /**
+     * @since 1.14
+     */
     SMOKER(-1, Furnace.class),
+    /**
+     * @since 1.17
+     */
     SMOOTH_BASALT(-1),
+    /**
+     * @since 1.13
+     */
     SMOOTH_QUARTZ(-1),
+    /**
+     * @since 1.14
+     */
     SMOOTH_QUARTZ_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     SMOOTH_QUARTZ_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     SMOOTH_RED_SANDSTONE(-1),
+    /**
+     * @since 1.14
+     */
     SMOOTH_RED_SANDSTONE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     SMOOTH_RED_SANDSTONE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     SMOOTH_SANDSTONE(-1),
+    /**
+     * @since 1.14
+     */
     SMOOTH_SANDSTONE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     SMOOTH_SANDSTONE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     SMOOTH_STONE(-1),
+    /**
+     * @since 1.14
+     */
     SMOOTH_STONE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.20
+     */
     SNIFFER_EGG(-1, Hatchable.class),
+    /**
+     * @since 1.0.0
+     */
     SNOW(-1, Snow.class),
+    /**
+     * @since 1.0.0
+     */
     SNOW_BLOCK(-1),
+    /**
+     * @since 1.16.1
+     */
     SOUL_CAMPFIRE(-1, Campfire.class),
+    /**
+     * @since 1.16.1
+     */
     SOUL_FIRE(-1),
+    /**
+     * @since 1.16.1
+     */
     SOUL_LANTERN(-1, Lantern.class),
+    /**
+     * @since 1.0.0
+     */
     SOUL_SAND(-1),
+    /**
+     * @since 1.16.1
+     */
     SOUL_SOIL(-1),
+    /**
+     * @since 1.16.1
+     */
     SOUL_TORCH(-1),
+    /**
+     * @since 1.16.1
+     */
     SOUL_WALL_TORCH(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     SPAWNER(-1),
+    /**
+     * @since 1.0.0
+     */
     SPONGE(-1),
+    /**
+     * @since 1.17
+     */
     SPORE_BLOSSOM(-1),
+    /**
+     * @since 1.13
+     */
     SPRUCE_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.8
+     */
     SPRUCE_DOOR(-1, Door.class),
+    /**
+     * @since 1.8
+     */
     SPRUCE_FENCE(-1, Fence.class),
+    /**
+     * @since 1.8
+     */
     SPRUCE_FENCE_GATE(-1, Gate.class),
+    /**
+     * @since 1.19.3
+     */
     SPRUCE_HANGING_SIGN(-1, HangingSign.class),
+    /**
+     * @since 1.13
+     */
     SPRUCE_LEAVES(-1, Leaves.class),
+    /**
+     * @since 1.13
+     */
     SPRUCE_LOG(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     SPRUCE_PLANKS(-1),
+    /**
+     * @since 1.13
+     */
     SPRUCE_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.13
+     */
     SPRUCE_SAPLING(-1, Sapling.class),
+    /**
+     * @since 1.21.10
+     */
     SPRUCE_SHELF(-1, Shelf.class),
+    /**
+     * @since 1.14
+     */
     SPRUCE_SIGN(-1, Sign.class),
+    /**
+     * @since 1.13
+     */
     SPRUCE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.13
+     */
     SPRUCE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.13
+     */
     SPRUCE_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.19.3
+     */
     SPRUCE_WALL_HANGING_SIGN(-1, WallHangingSign.class),
+    /**
+     * @since 1.14
+     */
     SPRUCE_WALL_SIGN(-1, WallSign.class),
+    /**
+     * @since 1.13
+     */
     SPRUCE_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     STICKY_PISTON(-1, Piston.class),
+    /**
+     * @since 1.0.0
+     */
     STONE(-1),
+    /**
+     * @since 1.13
+     */
     STONE_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.13
+     */
     STONE_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     STONE_BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 1.13
+     */
     STONE_BRICKS(-1),
+    /**
+     * @since 1.0.0
+     */
     STONE_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.13
+     */
     STONE_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.13
+     */
     STONE_SLAB(-1, Slab.class),
+    /**
+     * @since 1.14
+     */
     STONE_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.14
+     */
     STONECUTTER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     STRIPPED_ACACIA_LOG(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     STRIPPED_ACACIA_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.19.3
+     */
     STRIPPED_BAMBOO_BLOCK(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     STRIPPED_BIRCH_LOG(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     STRIPPED_BIRCH_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.19.4
+     */
     STRIPPED_CHERRY_LOG(-1, Orientable.class),
+    /**
+     * @since 1.19.4
+     */
     STRIPPED_CHERRY_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.16.1
+     */
     STRIPPED_CRIMSON_HYPHAE(-1, Orientable.class),
+    /**
+     * @since 1.16.1
+     */
     STRIPPED_CRIMSON_STEM(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     STRIPPED_DARK_OAK_LOG(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     STRIPPED_DARK_OAK_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     STRIPPED_JUNGLE_LOG(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     STRIPPED_JUNGLE_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.19
+     */
     STRIPPED_MANGROVE_LOG(-1, Orientable.class),
+    /**
+     * @since 1.19
+     */
     STRIPPED_MANGROVE_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     STRIPPED_OAK_LOG(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     STRIPPED_OAK_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.21.3
+     */
     STRIPPED_PALE_OAK_LOG(-1, Orientable.class),
+    /**
+     * @since 1.21.3
+     */
     STRIPPED_PALE_OAK_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     STRIPPED_SPRUCE_LOG(-1, Orientable.class),
+    /**
+     * @since 1.13
+     */
     STRIPPED_SPRUCE_WOOD(-1, Orientable.class),
+    /**
+     * @since 1.16.1
+     */
     STRIPPED_WARPED_HYPHAE(-1, Orientable.class),
+    /**
+     * @since 1.16.1
+     */
     STRIPPED_WARPED_STEM(-1, Orientable.class),
+    /**
+     * @since 1.9.4
+     */
     STRUCTURE_BLOCK(-1, StructureBlock.class),
+    /**
+     * @since 1.10.2
+     */
     STRUCTURE_VOID(-1),
+    /**
+     * @since 1.0.0
+     */
     SUGAR_CANE(-1, Ageable.class),
+    /**
+     * @since 26.2
+     */
     SULFUR(-1),
+    /**
+     * @since 26.2
+     */
     SULFUR_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 26.2
+     */
     SULFUR_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 26.2
+     */
     SULFUR_BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 26.2
+     */
     SULFUR_BRICKS(-1),
+    /**
+     * @since 26.2
+     */
     SULFUR_SLAB(-1, Slab.class),
+    /**
+     * @since 26.2
+     */
     SULFUR_SPIKE(-1, Speleothem.class),
+    /**
+     * @since 26.2
+     */
     SULFUR_STAIRS(-1, Stairs.class),
+    /**
+     * @since 26.2
+     */
     SULFUR_WALL(-1, Wall.class),
+    /**
+     * @since 1.13
+     */
     SUNFLOWER(-1, Bisected.class),
+    /**
+     * @since 1.20
+     */
     SUSPICIOUS_GRAVEL(-1, Brushable.class),
+    /**
+     * @since 1.19.4
+     */
     SUSPICIOUS_SAND(-1, Brushable.class),
+    /**
+     * @since 1.14
+     */
     SWEET_BERRY_BUSH(-1, Ageable.class),
+    /**
+     * @since 1.21.6
+     */
     TALL_DRY_GRASS(-1),
+    /**
+     * @since 1.13
+     */
     TALL_GRASS(-1, Bisected.class),
+    /**
+     * @since 1.13
+     */
     TALL_SEAGRASS(-1, Bisected.class),
+    /**
+     * @since 1.16.1
+     */
     TARGET(-1, AnaloguePowerable.class),
+    /**
+     * @since 1.13
+     */
     TERRACOTTA(-1),
+    /**
+     * @since 1.21.6
+     */
     TEST_BLOCK(-1, TestBlock.class),
+    /**
+     * @since 1.21.6
+     */
     TEST_INSTANCE_BLOCK(-1),
+    /**
+     * @since 1.17
+     */
     TINTED_GLASS(-1),
+    /**
+     * @since 1.0.0
+     */
     TNT(-1, TNT.class),
+    /**
+     * @since 1.0.0
+     */
     TORCH(-1),
+    /**
+     * @since 1.19.4
+     */
     TORCHFLOWER(-1),
+    /**
+     * @since 1.19.4
+     */
     TORCHFLOWER_CROP(-1, Ageable.class),
+    /**
+     * @since 1.5.1
+     */
     TRAPPED_CHEST(-1, Chest.class),
+    /**
+     * @since 1.20.4
+     */
     TRIAL_SPAWNER(-1, TrialSpawner.class),
+    /**
+     * @since 1.3.1
+     */
     TRIPWIRE(-1, Tripwire.class),
+    /**
+     * @since 1.3.1
+     */
     TRIPWIRE_HOOK(-1, TripwireHook.class),
+    /**
+     * @since 1.13
+     */
     TUBE_CORAL(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     TUBE_CORAL_BLOCK(-1),
+    /**
+     * @since 1.13
+     */
     TUBE_CORAL_FAN(-1, Waterlogged.class),
+    /**
+     * @since 1.13
+     */
     TUBE_CORAL_WALL_FAN(-1, CoralWallFan.class),
+    /**
+     * @since 1.17
+     */
     TUFF(-1),
+    /**
+     * @since 1.20.4
+     */
     TUFF_BRICK_SLAB(-1, Slab.class),
+    /**
+     * @since 1.20.4
+     */
     TUFF_BRICK_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.20.4
+     */
     TUFF_BRICK_WALL(-1, Wall.class),
+    /**
+     * @since 1.20.4
+     */
     TUFF_BRICKS(-1),
+    /**
+     * @since 1.20.4
+     */
     TUFF_SLAB(-1, Slab.class),
+    /**
+     * @since 1.20.4
+     */
     TUFF_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.20.4
+     */
     TUFF_WALL(-1, Wall.class),
+    /**
+     * @since 1.13
+     */
     TURTLE_EGG(-1, TurtleEgg.class),
+    /**
+     * @since 1.16.1
+     */
     TWISTING_VINES(-1, Ageable.class),
+    /**
+     * @since 1.16.1
+     */
     TWISTING_VINES_PLANT(-1),
+    /**
+     * @since 1.20.6
+     */
     VAULT(-1, Vault.class),
+    /**
+     * @since 1.19
+     */
     VERDANT_FROGLIGHT(-1, Orientable.class),
+    /**
+     * @since 1.0.0
+     */
     VINE(-1, MultipleFacing.class),
+    /**
+     * @since 1.13
+     */
     VOID_AIR(-1),
+    /**
+     * @since 1.13
+     */
     WALL_TORCH(-1, Directional.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_BUTTON(-1, Switch.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_DOOR(-1, Door.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_FENCE(-1, Fence.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_FENCE_GATE(-1, Gate.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_FUNGUS(-1),
+    /**
+     * @since 1.19.3
+     */
     WARPED_HANGING_SIGN(-1, HangingSign.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_HYPHAE(-1, Orientable.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_NYLIUM(-1),
+    /**
+     * @since 1.16.1
+     */
     WARPED_PLANKS(-1),
+    /**
+     * @since 1.16.1
+     */
     WARPED_PRESSURE_PLATE(-1, Powerable.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_ROOTS(-1),
+    /**
+     * @since 1.21.10
+     */
     WARPED_SHELF(-1, Shelf.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_SIGN(-1, Sign.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_SLAB(-1, Slab.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_STEM(-1, Orientable.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.19.3
+     */
     WARPED_WALL_HANGING_SIGN(-1, WallHangingSign.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_WALL_SIGN(-1, WallSign.class),
+    /**
+     * @since 1.16.1
+     */
     WARPED_WART_BLOCK(-1),
+    /**
+     * @since 1.0.0
+     */
     WATER(-1, Levelled.class),
+    /**
+     * @since 1.17
+     */
     WATER_CAULDRON(-1, Levelled.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_CHISELED_COPPER(-1),
+    /**
+     * @since 1.21.10
+     */
     WAXED_COPPER_BARS(-1, Fence.class),
+    /**
+     * @since 1.17
+     */
     WAXED_COPPER_BLOCK(-1),
+    /**
+     * @since 1.20.4
+     */
     WAXED_COPPER_BULB(-1, CopperBulb.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_COPPER_CHAIN(-1, Chain.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_COPPER_CHEST(-1, Chest.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_COPPER_DOOR(-1, Door.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_COPPER_GOLEM_STATUE(-1, CopperGolemStatue.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_COPPER_GRATE(-1, Waterlogged.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_COPPER_LANTERN(-1, Lantern.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_COPPER_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.17
+     */
     WAXED_CUT_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     WAXED_CUT_COPPER_SLAB(-1, Slab.class),
+    /**
+     * @since 1.17
+     */
     WAXED_CUT_COPPER_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_EXPOSED_CHISELED_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     WAXED_EXPOSED_COPPER(-1),
+    /**
+     * @since 1.21.10
+     */
     WAXED_EXPOSED_COPPER_BARS(-1, Fence.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_EXPOSED_COPPER_BULB(-1, CopperBulb.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_EXPOSED_COPPER_CHAIN(-1, Chain.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_EXPOSED_COPPER_CHEST(-1, Chest.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_EXPOSED_COPPER_DOOR(-1, Door.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_EXPOSED_COPPER_GOLEM_STATUE(-1, CopperGolemStatue.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_EXPOSED_COPPER_GRATE(-1, Waterlogged.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_EXPOSED_COPPER_LANTERN(-1, Lantern.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_EXPOSED_COPPER_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.17
+     */
     WAXED_EXPOSED_CUT_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     WAXED_EXPOSED_CUT_COPPER_SLAB(-1, Slab.class),
+    /**
+     * @since 1.17
+     */
     WAXED_EXPOSED_CUT_COPPER_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_EXPOSED_LIGHTNING_ROD(-1, LightningRod.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_LIGHTNING_ROD(-1, LightningRod.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_OXIDIZED_CHISELED_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     WAXED_OXIDIZED_COPPER(-1),
+    /**
+     * @since 1.21.10
+     */
     WAXED_OXIDIZED_COPPER_BARS(-1, Fence.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_OXIDIZED_COPPER_BULB(-1, CopperBulb.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_OXIDIZED_COPPER_CHAIN(-1, Chain.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_OXIDIZED_COPPER_CHEST(-1, Chest.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_OXIDIZED_COPPER_DOOR(-1, Door.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_OXIDIZED_COPPER_GOLEM_STATUE(-1, CopperGolemStatue.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_OXIDIZED_COPPER_GRATE(-1, Waterlogged.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_OXIDIZED_COPPER_LANTERN(-1, Lantern.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_OXIDIZED_COPPER_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.17
+     */
     WAXED_OXIDIZED_CUT_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     WAXED_OXIDIZED_CUT_COPPER_SLAB(-1, Slab.class),
+    /**
+     * @since 1.17
+     */
     WAXED_OXIDIZED_CUT_COPPER_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_OXIDIZED_LIGHTNING_ROD(-1, LightningRod.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_WEATHERED_CHISELED_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     WAXED_WEATHERED_COPPER(-1),
+    /**
+     * @since 1.21.10
+     */
     WAXED_WEATHERED_COPPER_BARS(-1, Fence.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_WEATHERED_COPPER_BULB(-1, CopperBulb.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_WEATHERED_COPPER_CHAIN(-1, Chain.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_WEATHERED_COPPER_CHEST(-1, Chest.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_WEATHERED_COPPER_DOOR(-1, Door.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_WEATHERED_COPPER_GOLEM_STATUE(-1, CopperGolemStatue.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_WEATHERED_COPPER_GRATE(-1, Waterlogged.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_WEATHERED_COPPER_LANTERN(-1, Lantern.class),
+    /**
+     * @since 1.20.4
+     */
     WAXED_WEATHERED_COPPER_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.17
+     */
     WAXED_WEATHERED_CUT_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     WAXED_WEATHERED_CUT_COPPER_SLAB(-1, Slab.class),
+    /**
+     * @since 1.17
+     */
     WAXED_WEATHERED_CUT_COPPER_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.21.10
+     */
     WAXED_WEATHERED_LIGHTNING_ROD(-1, LightningRod.class),
+    /**
+     * @since 1.20.4
+     */
     WEATHERED_CHISELED_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     WEATHERED_COPPER(-1),
+    /**
+     * @since 1.21.10
+     */
     WEATHERED_COPPER_BARS(-1, Fence.class),
+    /**
+     * @since 1.20.4
+     */
     WEATHERED_COPPER_BULB(-1, CopperBulb.class),
+    /**
+     * @since 1.21.10
+     */
     WEATHERED_COPPER_CHAIN(-1, Chain.class),
+    /**
+     * @since 1.21.10
+     */
     WEATHERED_COPPER_CHEST(-1, Chest.class),
+    /**
+     * @since 1.20.4
+     */
     WEATHERED_COPPER_DOOR(-1, Door.class),
+    /**
+     * @since 1.21.10
+     */
     WEATHERED_COPPER_GOLEM_STATUE(-1, CopperGolemStatue.class),
+    /**
+     * @since 1.20.4
+     */
     WEATHERED_COPPER_GRATE(-1, Waterlogged.class),
+    /**
+     * @since 1.21.10
+     */
     WEATHERED_COPPER_LANTERN(-1, Lantern.class),
+    /**
+     * @since 1.20.4
+     */
     WEATHERED_COPPER_TRAPDOOR(-1, TrapDoor.class),
+    /**
+     * @since 1.17
+     */
     WEATHERED_CUT_COPPER(-1),
+    /**
+     * @since 1.17
+     */
     WEATHERED_CUT_COPPER_SLAB(-1, Slab.class),
+    /**
+     * @since 1.17
+     */
     WEATHERED_CUT_COPPER_STAIRS(-1, Stairs.class),
+    /**
+     * @since 1.21.10
+     */
     WEATHERED_LIGHTNING_ROD(-1, LightningRod.class),
+    /**
+     * @since 1.16.1
+     */
     WEEPING_VINES(-1, Ageable.class),
+    /**
+     * @since 1.16.1
+     */
     WEEPING_VINES_PLANT(-1),
+    /**
+     * @since 1.13
+     */
     WET_SPONGE(-1),
+    /**
+     * @since 1.0.0
+     */
     WHEAT(-1, Ageable.class),
+    /**
+     * @since 1.13
+     */
     WHITE_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     WHITE_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     WHITE_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     WHITE_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     WHITE_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     WHITE_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     WHITE_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     WHITE_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.11
+     */
     WHITE_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     WHITE_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     WHITE_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     WHITE_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     WHITE_TULIP(-1),
+    /**
+     * @since 1.13
+     */
     WHITE_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     WHITE_WOOL(-1),
+    /**
+     * @since 1.21.6
+     */
     WILDFLOWERS(-1, FlowerBed.class),
+    /**
+     * @since 1.14
+     */
     WITHER_ROSE(-1),
+    /**
+     * @since 1.13
+     */
     WITHER_SKELETON_SKULL(-1, Skull.class),
+    /**
+     * @since 1.13
+     */
     WITHER_SKELETON_WALL_SKULL(-1, WallSkull.class),
+    /**
+     * @since 1.13
+     */
     YELLOW_BANNER(-1, Rotatable.class),
+    /**
+     * @since 1.13
+     */
     YELLOW_BED(-1, Bed.class),
+    /**
+     * @since 1.17
+     */
     YELLOW_CANDLE(-1, Candle.class),
+    /**
+     * @since 1.17
+     */
     YELLOW_CANDLE_CAKE(-1, Lightable.class),
+    /**
+     * @since 1.13
+     */
     YELLOW_CARPET(-1),
+    /**
+     * @since 1.13
+     */
     YELLOW_CONCRETE(-1),
+    /**
+     * @since 1.13
+     */
     YELLOW_CONCRETE_POWDER(-1),
+    /**
+     * @since 1.12
+     */
     YELLOW_GLAZED_TERRACOTTA(-1, Directional.class),
+    /**
+     * @since 1.11
+     */
     YELLOW_SHULKER_BOX(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     YELLOW_STAINED_GLASS(-1),
+    /**
+     * @since 1.13
+     */
     YELLOW_STAINED_GLASS_PANE(-1, GlassPane.class),
+    /**
+     * @since 1.13
+     */
     YELLOW_TERRACOTTA(-1),
+    /**
+     * @since 1.13
+     */
     YELLOW_WALL_BANNER(-1, Directional.class),
+    /**
+     * @since 1.13
+     */
     YELLOW_WOOL(-1),
+    /**
+     * @since 1.13
+     */
     ZOMBIE_HEAD(-1, Skull.class),
+    /**
+     * @since 1.13
+     */
     ZOMBIE_WALL_HEAD(-1, WallSkull.class),
     // End generate - Blocks
     // ----- Legacy Separator -----
@@ -2781,6 +7856,9 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     private final int id;
     private final Constructor<? extends MaterialData> ctor;
     private static final Map<String, Material> BY_NAME = Maps.newHashMap();
+    /**
+     * @since 1.0.0
+     */
     public final Class<?> data;
     private final boolean legacy;
     private final NamespacedKey key;
@@ -2825,6 +7903,10 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
         });
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.17.1
+     */
     // Paper start - add Translatable
     @Override
     public @NotNull String translationKey() {
@@ -2874,6 +7956,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return true if collidable
      * @throws IllegalArgumentException if {@link #isBlock()} is false
+     * @since 1.17.1
      */
     public boolean isCollidable() {
         if (this.isBlock()) {
@@ -2899,12 +7982,16 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Checks if this constant is a legacy material.
      *
      * @return legacy status
+     * @since 1.13
      */
     // @Deprecated(since = "1.13", forRemoval = true) // Paper - this is useful, don't deprecate
     public boolean isLegacy() {
         return legacy;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -2921,6 +8008,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * is available, {@link ItemStack#getMaxStackSize()} may be preferred.
      *
      * @return Maximum stack size for this material
+     * @since 1.0.0
      */
     public int getMaxStackSize() {
         if (this == LEGACY_AIR) {
@@ -2934,6 +8022,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Gets the maximum durability of this material
      *
      * @return Maximum durability for this material
+     * @since 1.0.0
      */
     public short getMaxDurability() {
         ItemType type = asItemType();
@@ -2945,6 +8034,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * properties initialized to unspecified defaults.
      *
      * @return new data instance
+     * @since 1.13
      */
     @NotNull
     public BlockData createBlockData() {
@@ -2957,6 +8047,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @param consumer consumer to run on new instance before returning
      * @return new data instance
+     * @since 1.13
      */
     @NotNull
     public BlockData createBlockData(@Nullable Consumer<? super BlockData> consumer) {
@@ -2971,6 +8062,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @param data data string
      * @return new data instance
      * @throws IllegalArgumentException if the specified data is not valid
+     * @since 1.13
      */
     @NotNull
     public BlockData createBlockData(@Nullable String data) throws IllegalArgumentException {
@@ -2982,6 +8074,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return MaterialData associated with this Material
      * @deprecated use {@link #createBlockData()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated // Paper
@@ -2997,6 +8090,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @param raw Initial data to construct the MaterialData with
      * @return New MaterialData with the given data
      * @deprecated Magic value
+     * @since 1.0.0
      */
     @Deprecated(since = "1.6.2")
     @NotNull
@@ -3022,6 +8116,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Checks if this Material is a placable block
      *
      * @return true if this material is a block
+     * @since 1.0.0
      */
     public boolean isBlock() {
         return asBlockType() != null;
@@ -3032,6 +8127,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * {@link io.papermc.paper.datacomponent.DataComponentTypes#CONSUMABLE} and, thereby, is edible by a player.
      *
      * @return true if this Material is edible.
+     * @since 1.1.0
      */
     public boolean isEdible() {
         ItemType type = asItemType();
@@ -3046,6 +8142,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @param name Name of the material to get
      * @return Material if found, or null
+     * @since 1.0.0
      */
     @Nullable
     public static Material getMaterial(@NotNull final String name) {
@@ -3066,6 +8163,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @param name Name of the material to get
      * @param legacyName whether this is a legacy name lookup
      * @return Material if found, or null
+     * @since 1.13
      */
     @Nullable
     public static Material getMaterial(@NotNull String name, boolean legacyName) {
@@ -3090,6 +8188,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @param name Name of the material to get
      * @return Material if found, or null
+     * @since 1.0.0
      */
     @Nullable
     public static Material matchMaterial(@NotNull final String name) {
@@ -3107,6 +8206,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @param legacyName whether this is a legacy name (see
      * {@link #getMaterial(java.lang.String, boolean)}
      * @return Material if found, or null
+     * @since 1.13
      */
     @Nullable
     public static Material matchMaterial(@NotNull final String name, boolean legacyName) {
@@ -3131,6 +8231,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
 
     /**
      * @return True if this material represents a playable music disk.
+     * @since 1.1.0
      */
     public boolean isRecord() {
         ItemType type = asItemType();
@@ -3141,6 +8242,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Check if the material is a block and solid (can be built upon)
      *
      * @return True if this material is a block and solid
+     * @since 1.4.5
      */
     public boolean isSolid() {
         BlockType type = asBlockType();
@@ -3151,6 +8253,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Check if the material is an air block.
      *
      * @return True if this material is an air block.
+     * @since 1.14.4
      */
     public boolean isAir() {
         BlockType type = asBlockType();
@@ -3160,6 +8263,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
     /**
      * @return If the type is either AIR, CAVE_AIR or VOID_AIR
      * @deprecated use {@link #isAir()}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.5")
     public boolean isEmpty() {
@@ -3372,6 +8476,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Check if the material is a block and can catch fire
      *
      * @return True if this material is a block and can catch fire
+     * @since 1.4.5
      */
     public boolean isFlammable() {
         BlockType type = asBlockType();
@@ -3382,6 +8487,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Check if the material is a block and can burn away
      *
      * @return True if this material is a block and can burn away
+     * @since 1.4.5
      */
     public boolean isBurnable() {
         BlockType type = asBlockType();
@@ -3392,6 +8498,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Checks if this Material can be used as fuel in a Furnace
      *
      * @return true if this Material can be used as fuel.
+     * @since 1.11.2
      */
     public boolean isFuel() {
         ItemType type = asItemType();
@@ -3415,6 +8522,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * block, see the <a href="https://minecraft.wiki/w/Opacity">Minecraft Wiki</a>.
      *
      * @return True if this material is a block and occludes light
+     * @since 1.4.5
      */
     public boolean isOccluding() {
         BlockType type = asBlockType();
@@ -3423,6 +8531,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
 
     /**
      * @return True if this material is affected by gravity.
+     * @since 1.5.1
      */
     public boolean hasGravity() {
         BlockType type = asBlockType();
@@ -3433,6 +8542,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Checks if this Material is an obtainable item.
      *
      * @return true if this material is an item
+     * @since 1.12.2
      */
     public boolean isItem() {
         return asItemType() != null;
@@ -3456,6 +8566,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @deprecated This method is not comprehensive and does not accurately reflect what block types are
      * interactable. Many "interactions" are defined on the item not block, and many are conditional on some other world state
      * checks being true.
+     * @since 1.13
      */
     @Deprecated // Paper
     public boolean isInteractable() {
@@ -3471,6 +8582,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Only available when {@link #isBlock()} is true.
      *
      * @return the hardness of that material.
+     * @since 1.13
      */
     public float getHardness() {
         BlockType type = asBlockType();
@@ -3488,6 +8600,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Only available when {@link #isBlock()} is true.
      *
      * @return the blast resistance of that material.
+     * @since 1.13
      */
     public float getBlastResistance() {
         BlockType type = asBlockType();
@@ -3506,6 +8619,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Only available when {@link #isBlock()} is true.
      *
      * @return the slipperiness of this block
+     * @since 1.17
      */
     public float getSlipperiness() {
         BlockType type = asBlockType();
@@ -3520,6 +8634,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Only available when {@link #isItem()} is true.
      *
      * @return the item left behind when crafting, or null if nothing is.
+     * @since 1.15.2
      */
     @Nullable
     public Material getCraftingRemainingItem() {
@@ -3534,6 +8649,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * For most items this will be {@link EquipmentSlot#HAND}.
      *
      * @return the best EquipmentSlot for this Material
+     * @since 1.16.5
      */
     @NotNull
     public EquipmentSlot getEquipmentSlot() {
@@ -3555,6 +8671,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return the immutable {@link Multimap} with the respective default
      * Attributes and modifiers, or an empty map if no attributes are set.
+     * @since 1.20.6
      */
     public @NotNull @org.jetbrains.annotations.Unmodifiable Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers() {
         final ItemType type = this.asItemType();
@@ -3576,6 +8693,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @param slot the {@link EquipmentSlot} to check
      * @return the immutable {@link Multimap} with the respective default
      * Attributes and modifiers, or an empty map if no attributes are set.
+     * @since 1.18.1
      */
     @NotNull
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(@NotNull EquipmentSlot slot) {
@@ -3627,6 +8745,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return the translation key of the block associated with this material,
      * or null if this material does not have an associated block
+     * @since 1.19.3
      */
     @Nullable
     public String getBlockTranslationKey() {
@@ -3640,6 +8759,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return the translation key of the item associated with this material, or
      * null if this material does not have an associated item.
+     * @since 1.19.3
      */
     @Nullable
     public String getItemTranslationKey() {
@@ -3653,6 +8773,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return true if this material is compostable
      * @see #getCompostChance()
+     * @since 1.20.6
      */
     public boolean isCompostable() {
         return isItem() && asItemType().isCompostable();
@@ -3671,6 +8792,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @return the chance that this material will successfully compost
      * @throws IllegalArgumentException if the material is not compostable
      * @see #isCompostable()
+     * @since 1.20.6
      */
     public float getCompostChance() {
         ItemType type = asItemType();
@@ -3682,6 +8804,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Tries to convert this Material to an item type
      *
      * @return the converted item type or null
+     * @since 1.20.6
      */
     @Nullable
     @org.jetbrains.annotations.Contract(pure = true) // Paper
@@ -3693,6 +8816,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * Tries to convert this Material to a block type
      *
      * @return the converted block type or null
+     * @since 1.20.6
      */
     @Nullable
     @org.jetbrains.annotations.Contract(pure = true) // Paper
@@ -3709,6 +8833,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @return the default value or {@code null} if there is none
      * @see #hasDefaultData(io.papermc.paper.datacomponent.DataComponentType) for DataComponentType.NonValued
      * @throws IllegalArgumentException if {@link #isItem()} is {@code false}
+     * @since 1.21.3
      */
     public @Nullable <T> T getDefaultData(final io.papermc.paper.datacomponent.DataComponentType.@NotNull Valued<T> type) {
         Preconditions.checkArgument(this.asItemType() != null);
@@ -3721,6 +8846,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      * @param type the data component type
      * @return {@code true} if there is a default value
      * @throws IllegalArgumentException if {@link #isItem()} is {@code false}
+     * @since 1.21.3
      */
     public boolean hasDefaultData(final io.papermc.paper.datacomponent.@NotNull DataComponentType type) {
         Preconditions.checkArgument(this.asItemType() != null);
@@ -3732,6 +8858,7 @@ public enum Material implements Keyed, Translatable, net.kyori.adventure.transla
      *
      * @return an immutable set of data component types
      * @throws IllegalArgumentException if {@link #isItem()} is {@code false}
+     * @since 1.21.3
      */
     public java.util.@org.jetbrains.annotations.Unmodifiable @NotNull Set<io.papermc.paper.datacomponent.DataComponentType> getDefaultDataTypes() {
         Preconditions.checkArgument(this.asItemType() != null);

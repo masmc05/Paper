@@ -9,12 +9,16 @@ import org.jetbrains.annotations.NotNull;
  * BlockVector in WorldEdit. BlockVectors can be used in hash sets and
  * hash maps. Be aware that BlockVectors are mutable, but it is important
  * that BlockVectors are never changed once put into a hash set or hash map.
+ *
+ * @since 1.0.0
  */
 @SerializableAs("BlockVector")
 public class BlockVector extends Vector {
 
     /**
      * Construct the vector with all components as 0.
+     *
+     * @since 1.0.0
      */
     public BlockVector() {
         this.x = 0;
@@ -26,6 +30,7 @@ public class BlockVector extends Vector {
      * Construct the vector with another vector.
      *
      * @param vec The other vector.
+     * @since 1.0.0
      */
     public BlockVector(@NotNull Vector vec) {
         this.x = vec.getX();
@@ -39,6 +44,7 @@ public class BlockVector extends Vector {
      * @param x X component
      * @param y Y component
      * @param z Z component
+     * @since 1.0.0
      */
     public BlockVector(int x, int y, int z) {
         this.x = x;
@@ -52,6 +58,7 @@ public class BlockVector extends Vector {
      * @param x X component
      * @param y Y component
      * @param z Z component
+     * @since 1.0.0
      */
     public BlockVector(double x, double y, double z) {
         this.x = x;
@@ -65,6 +72,7 @@ public class BlockVector extends Vector {
      * @param x X component
      * @param y Y component
      * @param z Z component
+     * @since 1.0.0
      */
     public BlockVector(float x, float y, float z) {
         this.x = x;
@@ -109,6 +117,9 @@ public class BlockVector extends Vector {
         return (BlockVector) super.clone();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static BlockVector deserialize(@NotNull Map<String, Object> args) {
         double x = 0;

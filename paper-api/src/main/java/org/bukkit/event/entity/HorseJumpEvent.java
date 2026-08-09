@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a horse jumps.
+ *
+ * @since 1.6.2
  */
 public class HorseJumpEvent extends EntityEvent implements Cancellable {
 
@@ -23,6 +25,9 @@ public class HorseJumpEvent extends EntityEvent implements Cancellable {
         this.power = power;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @NotNull
     @Override
     public AbstractHorse getEntity() {
@@ -45,6 +50,7 @@ public class HorseJumpEvent extends EntityEvent implements Cancellable {
      * AbstractHorse#setJumpStrength(double)}.
      *
      * @return jump strength
+     * @since 1.6.2
      */
     public float getPower() {
         return this.power;
@@ -62,12 +68,16 @@ public class HorseJumpEvent extends EntityEvent implements Cancellable {
      *
      * @param power power of the jump
      * @deprecated horse jumping was moved client side.
+     * @since 1.6.2
      */
     @Deprecated(since = "1.9")
     public void setPower(float power) {
         this.power = power;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -75,6 +85,7 @@ public class HorseJumpEvent extends EntityEvent implements Cancellable {
 
     /**
      * @deprecated horse jumping was moved client side.
+     * @since 1.6.2
      */
     @Override
     @Deprecated(since = "1.9")
@@ -82,12 +93,18 @@ public class HorseJumpEvent extends EntityEvent implements Cancellable {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.6.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

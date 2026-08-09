@@ -13,6 +13,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * Cancelling the event results in the item being allowed to exist for 5 more
  * minutes. This behavior is not guaranteed and may change in future versions.
+ *
+ * @since 1.1.0
  */
 public class ItemDespawnEvent extends EntityEvent implements Cancellable {
 
@@ -28,6 +30,9 @@ public class ItemDespawnEvent extends EntityEvent implements Cancellable {
         this.location = location;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public Item getEntity() {
@@ -38,28 +43,41 @@ public class ItemDespawnEvent extends EntityEvent implements Cancellable {
      * Gets the location at which the item is despawning.
      *
      * @return The location at which the item is despawning
+     * @since 1.1.0
      */
     @NotNull
     public Location getLocation() {
         return this.location.clone();
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

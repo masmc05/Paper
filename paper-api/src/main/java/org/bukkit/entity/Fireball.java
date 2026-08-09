@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a Fireball.
+ *
+ * @since 1.0.0
  */
 public interface Fireball extends Projectile, Explosive {
 
@@ -24,6 +26,7 @@ public interface Fireball extends Projectile, Explosive {
      * @param direction the direction this fireball should be flying towards
      * @see #setVelocity(Vector)
      * @see #setAcceleration(Vector)
+     * @since 1.0.0
      */
     public void setDirection(@NotNull Vector direction);
 
@@ -35,6 +38,7 @@ public interface Fireball extends Projectile, Explosive {
      * @see #getAcceleration()
      * @deprecated badly named method, returns the value of
      * {@link #getAcceleration()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.20.6")
@@ -52,6 +56,7 @@ public interface Fireball extends Projectile, Explosive {
      * visual stutter.
      *
      * @param acceleration the acceleration
+     * @since 1.20.6
      */
     void setAcceleration(@NotNull Vector acceleration);
 
@@ -59,6 +64,7 @@ public interface Fireball extends Projectile, Explosive {
      * Retrieve the acceleration of this fireball.
      *
      * @return the acceleration
+     * @since 1.20.6
      */
     @NotNull
     Vector getAcceleration();
@@ -69,6 +75,7 @@ public interface Fireball extends Projectile, Explosive {
      *
      * @param power the power
      * @deprecated use #setAcceleration(Vector) instead.
+     * @since 1.20.4
      */
     @Deprecated
     public void setPower(@NotNull Vector power);
@@ -78,6 +85,7 @@ public interface Fireball extends Projectile, Explosive {
      *
      * @return the power
      * @deprecated Use #getAcceleration instead.
+     * @since 1.20.4
      */
     @Deprecated
     @NotNull

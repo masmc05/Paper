@@ -4,6 +4,8 @@ import org.bukkit.block.data.BlockData;
 
 /**
  * 'charges' represents the amount of times the anchor may still be used.
+ *
+ * @since 1.16.1
  */
 public interface RespawnAnchor extends BlockData {
 
@@ -11,6 +13,7 @@ public interface RespawnAnchor extends BlockData {
      * Gets the value of the 'charges' property.
      *
      * @return the 'charges' value
+     * @since 1.16.1
      */
     int getCharges();
 
@@ -18,6 +21,7 @@ public interface RespawnAnchor extends BlockData {
      * Sets the value of the 'charges' property.
      *
      * @param charges the new 'charges' value
+     * @since 1.16.1
      */
     void setCharges(int charges);
 
@@ -25,6 +29,7 @@ public interface RespawnAnchor extends BlockData {
      * Gets the maximum allowed value of the 'charges' property.
      *
      * @return the maximum 'charges' value
+     * @since 1.16.1
      */
     int getMaximumCharges();
 }

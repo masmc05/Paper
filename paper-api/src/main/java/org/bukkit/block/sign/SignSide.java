@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a side of a sign.
+ *
+ * @since 1.19.4
  */
 public interface SignSide extends Colorable {
     // Paper start
@@ -12,6 +14,7 @@ public interface SignSide extends Colorable {
      * Gets all the lines of text currently on the sign.
      *
      * @return List of components containing each line of text
+     * @since 1.19.4
      */
     @NotNull
     public java.util.List<net.kyori.adventure.text.Component> lines();
@@ -24,6 +27,7 @@ public interface SignSide extends Colorable {
      * @param index Line number to get the text from, starting at 0
      * @throws IndexOutOfBoundsException Thrown when the line does not exist
      * @return Text on the given line
+     * @since 1.19.4
      */
     @NotNull
     public net.kyori.adventure.text.Component line(int index) throws IndexOutOfBoundsException;
@@ -37,6 +41,7 @@ public interface SignSide extends Colorable {
      * @param index Line number to set the text at, starting from 0
      * @param line New text to set at the specified index
      * @throws IndexOutOfBoundsException If the index is out of the range 0..3
+     * @since 1.19.4
      */
     public void line(int index, net.kyori.adventure.text.@NotNull Component line) throws IndexOutOfBoundsException;
     // Paper end
@@ -46,6 +51,7 @@ public interface SignSide extends Colorable {
      *
      * @return Array of Strings containing each line of text
      * @deprecated in favour of {@link #lines()}
+     * @since 1.19.4
      */
     @NotNull
     @Deprecated // Paper
@@ -60,6 +66,7 @@ public interface SignSide extends Colorable {
      * @return Text on the given line
      * @throws IndexOutOfBoundsException Thrown when the line does not exist
      * @deprecated in favour of {@link #line(int)}
+     * @since 1.19.4
      */
     @NotNull
     @Deprecated // Paper
@@ -75,6 +82,7 @@ public interface SignSide extends Colorable {
      * @param line New text to set at the specified index
      * @throws IndexOutOfBoundsException If the index is out of the range 0..3
      * @deprecated in favour of {@link #line(int, net.kyori.adventure.text.Component)}
+     * @since 1.19.4
      */
     @Deprecated // Paper
     public void setLine(int index, @NotNull String line) throws IndexOutOfBoundsException;
@@ -83,6 +91,7 @@ public interface SignSide extends Colorable {
      * Gets whether this side of the sign has glowing text.
      *
      * @return if this side of the sign has glowing text
+     * @since 1.19.4
      */
     public boolean isGlowingText();
 
@@ -90,6 +99,7 @@ public interface SignSide extends Colorable {
      * Sets whether this side of the sign has glowing text.
      *
      * @param glowing if this side of the sign has glowing text
+     * @since 1.19.4
      */
     public void setGlowingText(boolean glowing);
 }

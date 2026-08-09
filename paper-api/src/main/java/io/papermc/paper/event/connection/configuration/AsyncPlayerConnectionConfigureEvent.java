@@ -11,6 +11,8 @@ import org.jetbrains.annotations.ApiStatus;
  * Once this event has finished execution, the player connection will continue.
  * <p>
  * This occurs after configuration, but before the player has entered the world.
+ *
+ * @since 1.21.7
  */
 public class AsyncPlayerConnectionConfigureEvent extends Event {
 
@@ -24,15 +26,24 @@ public class AsyncPlayerConnectionConfigureEvent extends Event {
         this.connection = connection;
     }
 
+    /**
+     * @since 1.21.7
+     */
     public PlayerConfigurationConnection getConnection() {
         return this.connection;
     }
 
+    /**
+     * @since 1.21.7
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.7
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a sheep's wool is dyed
+ *
+ * @since 1.1.0
  */
 public class SheepDyeWoolEvent extends EntityDyeEvent {
 
@@ -24,6 +26,9 @@ public class SheepDyeWoolEvent extends EntityDyeEvent {
         super(sheep, color, player);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public Sheep getEntity() {

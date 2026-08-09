@@ -7,6 +7,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a collections of links which may be sent to a client.
+ *
+ * @since 1.21
  */
 public interface ServerLinks {
 
@@ -15,6 +17,7 @@ public interface ServerLinks {
      *
      * @param type link type
      * @return link or null
+     * @since 1.21
      */
     @Nullable
     ServerLink getLink(@NotNull Type type);
@@ -23,6 +26,7 @@ public interface ServerLinks {
      * Gets an immutable list of all links.
      *
      * @return immutable list
+     * @since 1.21
      */
     @NotNull
     List<ServerLink> getLinks();
@@ -34,6 +38,7 @@ public interface ServerLinks {
      * @param type link type
      * @param url link url
      * @return the added link
+     * @since 1.21
      */
     @NotNull
     ServerLink setLink(@NotNull Type type, @NotNull URI url);
@@ -44,6 +49,7 @@ public interface ServerLinks {
      * @param type link type
      * @param url link url
      * @return the added link
+     * @since 1.21
      */
     @NotNull
     ServerLink addLink(@NotNull Type type, @NotNull URI url);
@@ -55,6 +61,7 @@ public interface ServerLinks {
      * @param displayName link name / display text Component
      * @param url link url
      * @return the added link
+     * @since 1.21
      */
     @NotNull
     ServerLink addLink(@NotNull net.kyori.adventure.text.Component displayName, @NotNull URI url);
@@ -67,6 +74,7 @@ public interface ServerLinks {
      * @param url link url
      * @return the added link
      * @deprecated in favour of {@link ServerLinks#addLink(net.kyori.adventure.text.Component, URI)}
+     * @since 1.21
      */
     @Deprecated // Paper - Adventure
     @NotNull
@@ -77,6 +85,7 @@ public interface ServerLinks {
      *
      * @param link the link to remove
      * @return if the link existed and was removed
+     * @since 1.21
      */
     boolean removeLink(@NotNull ServerLink link);
 
@@ -84,12 +93,15 @@ public interface ServerLinks {
      * Returns a copy of this link collection, unassociated from the server.
      *
      * @return copied links
+     * @since 1.21
      */
     @NotNull
     ServerLinks copy();
 
     /**
      * Represents a server link.
+     *
+     * @since 1.21
      */
     public interface ServerLink {
 
@@ -97,6 +109,7 @@ public interface ServerLinks {
          * Gets the type of this link if it is a known special type.
          *
          * @return type or null
+         * @since 1.21
          */
         @Nullable
         Type getType();
@@ -106,6 +119,7 @@ public interface ServerLinks {
          * Gets the display name/text Component of this link.
          *
          * @return display name Component
+         * @since 1.21
          */
         @NotNull
         net.kyori.adventure.text.Component displayName();
@@ -116,6 +130,7 @@ public interface ServerLinks {
          *
          * @return display name
          * @deprecated in favour of {@link ServerLink#displayName()}
+         * @since 1.21
          */
         @Deprecated // Paper - Adventure
         @NotNull
@@ -125,6 +140,7 @@ public interface ServerLinks {
          * Gets the url of this link.
          *
          * @return link url
+         * @since 1.21
          */
         @NotNull
         URI getUrl();
@@ -133,21 +149,52 @@ public interface ServerLinks {
     /**
      * Represents a known type of link which will be translated by the client
      * and may have special functionality.
+     *
+     * @since 1.21
      */
     public enum Type {
 
         /**
          * Bug report links which may appear on disconnect/crash screens.
+         *
+         * @since 1.21
          */
         REPORT_BUG,
+        /**
+         * @since 1.21
+         */
         COMMUNITY_GUIDELINES,
+        /**
+         * @since 1.21
+         */
         SUPPORT,
+        /**
+         * @since 1.21
+         */
         STATUS,
+        /**
+         * @since 1.21
+         */
         FEEDBACK,
+        /**
+         * @since 1.21
+         */
         COMMUNITY,
+        /**
+         * @since 1.21
+         */
         WEBSITE,
+        /**
+         * @since 1.21
+         */
         FORUMS,
+        /**
+         * @since 1.21
+         */
         NEWS,
+        /**
+         * @since 1.21
+         */
         ANNOUNCEMENTS;
     }
 }

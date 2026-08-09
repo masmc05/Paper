@@ -6,6 +6,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents an {@link Entity} that can experience friction with the air and ground.
+ *
+ * @since 1.19.2
  */
 @NullMarked
 public interface Frictional {
@@ -17,6 +19,7 @@ public interface Frictional {
      * When set to {@link TriState#NOT_SET}, the entity will fall back to Minecraft's default behaviour.
      *
      * @return the entity's friction state
+     * @since 1.19.2
      */
     TriState getFrictionState();
 
@@ -29,6 +32,7 @@ public interface Frictional {
      * Please note that changing this value will do nothing for a player.
      *
      * @param state the new friction state to set for the entity
+     * @since 1.19.2
      */
     void setFrictionState(TriState state);
 

@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a villager NPC
+ *
+ * @since 1.14
  */
 public interface AbstractVillager extends Breedable, NPC, InventoryHolder, Merchant {
 
@@ -17,6 +19,8 @@ public interface AbstractVillager extends Breedable, NPC, InventoryHolder, Merch
      * items that a villager might have collected (from harvesting crops, etc.)
      *
      * {@inheritDoc}
+     *
+     * @since 1.14
      */
     @NotNull
     @Override
@@ -30,6 +34,8 @@ public interface AbstractVillager extends Breedable, NPC, InventoryHolder, Merch
      * created, rather than the number of trades expected for the villager's
      * level. You should use {@link org.bukkit.entity.Villager#addTrades(int)}
      * to add the remaining trades.
+     *
+     * @since 1.16.4
      */
     public void resetOffers();
     // Paper end

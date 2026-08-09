@@ -3,6 +3,8 @@ package org.bukkit.plugin;
 /**
  * Thrown when a plugin attempts to interact with the server when it is not
  * enabled
+ *
+ * @since 1.0.0
  */
 @SuppressWarnings("serial")
 public class IllegalPluginAccessException extends RuntimeException {
@@ -10,6 +12,8 @@ public class IllegalPluginAccessException extends RuntimeException {
     /**
      * Creates a new instance of <code>IllegalPluginAccessException</code>
      * without detail message.
+     *
+     * @since 1.0.0
      */
     public IllegalPluginAccessException() {}
 
@@ -18,6 +22,7 @@ public class IllegalPluginAccessException extends RuntimeException {
      * with the specified detail message.
      *
      * @param msg the detail message.
+     * @since 1.0.0
      */
     public IllegalPluginAccessException(String msg) {
         super(msg);

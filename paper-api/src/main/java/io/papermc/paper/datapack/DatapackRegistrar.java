@@ -43,6 +43,7 @@ import org.jspecify.annotations.Nullable;
  * }</pre>
  *
  * @see io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents#DATAPACK_DISCOVERY
+ * @since 1.21.4
  */
 @ApiStatus.NonExtendable
 @ApiStatus.Experimental
@@ -55,6 +56,7 @@ public interface DatapackRegistrar extends Registrar {
      * @param name the name of the pack
      * @return true if the pack has been discovered
      * @see Datapack#getName()
+     * @since 1.21.4
      */
     @Contract(pure = true)
     boolean hasPackDiscovered(String name);
@@ -66,6 +68,7 @@ public interface DatapackRegistrar extends Registrar {
      * @return the datapack
      * @throws java.util.NoSuchElementException if the pack is not discovered
      * @see Datapack#getName()
+     * @since 1.21.4
      */
     @Contract(pure = true)
     DiscoveredDatapack getDiscoveredPack(String name);
@@ -76,6 +79,7 @@ public interface DatapackRegistrar extends Registrar {
      * @param name the name of the pack
      * @return true if the pack was removed
      * @see Datapack#getName()
+     * @since 1.21.4
      */
     @Contract(mutates = "this")
     boolean removeDiscoveredPack(String name);
@@ -84,6 +88,7 @@ public interface DatapackRegistrar extends Registrar {
      * Gets all discovered datapacks.
      *
      * @return an unmodifiable map of discovered packs
+     * @since 1.21.4
      */
     @Contract(pure = true)
     @Unmodifiable Map<String, DiscoveredDatapack> getDiscoveredPacks();
@@ -96,6 +101,7 @@ public interface DatapackRegistrar extends Registrar {
      * @param id a unique id (will be combined with plugin for the datapacks name)
      * @return the discovered datapack (or null if it failed)
      * @throws IOException if any IO error occurs
+     * @since 1.21.4
      */
     default @Nullable DiscoveredDatapack discoverPack(final URI uri, final String id) throws IOException {
         return this.discoverPack(uri, id, c -> {});
@@ -110,6 +116,7 @@ public interface DatapackRegistrar extends Registrar {
      * @param configurer a configurer for extra options
      * @return the discovered datapack (or null if it failed)
      * @throws IOException if any IO error occurs
+     * @since 1.21.4
      */
     @Nullable DiscoveredDatapack discoverPack(URI uri, String id, Consumer<Configurer> configurer) throws IOException;
 
@@ -121,6 +128,7 @@ public interface DatapackRegistrar extends Registrar {
      * @param id a unique id (will be combined with plugin for the datapacks name)
      * @return the discovered datapack (or null if it failed)
      * @throws IOException if any IO error occurs
+     * @since 1.21.4
      */
     default @Nullable DiscoveredDatapack discoverPack(final Path path, final String id) throws IOException {
         return this.discoverPack(path, id, c -> {});
@@ -135,6 +143,7 @@ public interface DatapackRegistrar extends Registrar {
      * @param configurer a configurer for extra options
      * @return the discovered datapack (or null if it failed)
      * @throws IOException if any IO error occurs
+     * @since 1.21.4
      */
     @Nullable DiscoveredDatapack discoverPack(Path path, String id, Consumer<Configurer> configurer) throws IOException;
 
@@ -148,6 +157,7 @@ public interface DatapackRegistrar extends Registrar {
      * @param configurer a configurer for extra options
      * @return the discovered datapack (or null if it failed)
      * @throws IOException if any IO error occurs
+     * @since 1.21.4
      */
     @Nullable DiscoveredDatapack discoverPack(PluginMeta pluginMeta, URI uri, String id, Consumer<Configurer> configurer) throws IOException;
 
@@ -161,11 +171,14 @@ public interface DatapackRegistrar extends Registrar {
      * @param configurer a configurer for extra options
      * @return the discovered datapack (or null if it failed)
      * @throws IOException if any IO error occurs
+     * @since 1.21.4
      */
     @Nullable DiscoveredDatapack discoverPack(PluginMeta pluginMeta, Path path, String id, Consumer<Configurer> configurer) throws IOException;
 
     /**
      * Configures additional, optional, details about a datapack.
+     *
+     * @since 1.21.4
      */
     @ApiStatus.NonExtendable
     interface Configurer {
@@ -176,6 +189,7 @@ public interface DatapackRegistrar extends Registrar {
          *
          * @param title the new title
          * @return the configurer for chaining
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         Configurer title(Component title);
@@ -186,6 +200,7 @@ public interface DatapackRegistrar extends Registrar {
          *
          * @param autoEnableOnServerStart true to ensure the pack is enabled on server starts.
          * @return the configurer for chaining
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         Configurer autoEnableOnServerStart(boolean autoEnableOnServerStart);
@@ -197,6 +212,7 @@ public interface DatapackRegistrar extends Registrar {
          * @param fixed won't move around in the load order as packs are added/removed
          * @param position try to insert at the top of the order or bottom
          * @return the configurer for chaining
+         * @since 1.21.4
          */
         @Contract(value = "_, _ -> this", mutates = "this")
         Configurer position(boolean fixed, Datapack.Position position);

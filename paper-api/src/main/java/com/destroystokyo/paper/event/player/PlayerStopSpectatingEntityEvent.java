@@ -10,6 +10,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Triggered when a player stops spectating an entity in spectator mode.
+ *
+ * @since 1.13.1
  */
 @NullMarked
 public class PlayerStopSpectatingEntityEvent extends PlayerEvent implements Cancellable {
@@ -29,26 +31,39 @@ public class PlayerStopSpectatingEntityEvent extends PlayerEvent implements Canc
      * Gets the entity that the player is spectating
      *
      * @return The entity the player is currently spectating (before they will stop).
+     * @since 1.13.1
      */
     public Entity getSpectatorTarget() {
         return this.spectatorTarget;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -13,6 +13,7 @@ import org.jspecify.annotations.Nullable;
 /**
  * Called when a world's gamerule is changed, either by command, world options menu, or by api.
  * @see <a href="https://minecraft.wiki/w/Game_rule#Modifying_game_rules">Modifying game rules - Minecraft wiki</a>
+ * @since 1.16.4
  */
 @NullMarked
 public class WorldGameRuleChangeEvent extends WorldEvent implements Cancellable {
@@ -36,6 +37,7 @@ public class WorldGameRuleChangeEvent extends WorldEvent implements Cancellable 
      * Gets the command sender associated with this event.
      *
      * @return {@code null} if the gamerule was changed via api, otherwise the {@link CommandSender}.
+     * @since 1.16.4
      */
     public @Nullable CommandSender getCommandSender() {
         return this.commandSender;
@@ -45,6 +47,7 @@ public class WorldGameRuleChangeEvent extends WorldEvent implements Cancellable 
      * Gets the game rule associated with this event.
      *
      * @return the gamerule being changed.
+     * @since 1.16.4
      */
     public GameRule<?> getGameRule() {
         return this.gameRule;
@@ -54,6 +57,7 @@ public class WorldGameRuleChangeEvent extends WorldEvent implements Cancellable 
      * Gets the new value of the gamerule.
      *
      * @return the new value of the gamerule.
+     * @since 1.16.4
      */
     public String getValue() {
         return this.value;
@@ -63,26 +67,39 @@ public class WorldGameRuleChangeEvent extends WorldEvent implements Cancellable 
      * Sets the new value of this gamerule.
      *
      * @param value the new value of the gamerule.
+     * @since 1.16.4
      */
     public void setValue(final String value) {
         this.value = value;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

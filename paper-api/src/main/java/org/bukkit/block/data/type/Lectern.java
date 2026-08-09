@@ -6,6 +6,8 @@ import org.bukkit.block.data.Powerable;
 /**
  * 'has_book' is a quick flag to check whether this lectern has a book inside
  * it.
+ *
+ * @since 1.14
  */
 public interface Lectern extends Directional, Powerable {
 
@@ -13,6 +15,7 @@ public interface Lectern extends Directional, Powerable {
      * Gets the value of the 'has_book' property.
      *
      * @return the 'has_book' value
+     * @since 1.14
      */
     boolean hasBook();
 
@@ -20,6 +23,7 @@ public interface Lectern extends Directional, Powerable {
      * Sets the value of the 'has_book' property.
      *
      * @param hasBook the new 'has_book' value
+     * @since 1.21.6
      */
     void setHasBook(boolean hasBook);
 }

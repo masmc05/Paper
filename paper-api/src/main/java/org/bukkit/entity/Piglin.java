@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a Piglin.
+ *
+ * @since 1.16.1
  */
 public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystokyo.paper.entity.RangedEntity { // Paper
 
@@ -14,6 +16,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * Get whether the piglin is able to hunt hoglins.
      *
      * @return Whether the piglin is able to hunt hoglins
+     * @since 1.16.1
      */
     public boolean isAbleToHunt();
 
@@ -21,6 +24,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * Sets whether the piglin is able to hunt hoglins.
      *
      * @param flag Whether the piglin is able to hunt hoglins.
+     * @since 1.16.1
      */
     public void setIsAbleToHunt(boolean flag);
 
@@ -30,6 +34,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * @param material The material to add
      *
      * @return true if the item has been added successfully, false otherwise
+     * @since 1.16.5
      */
     public boolean addBarterMaterial(@NotNull Material material);
 
@@ -43,6 +48,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * @param material The material to remove
      *
      * @return true if the item has been removed successfully, false otherwise
+     * @since 1.16.5
      */
     public boolean removeBarterMaterial(@NotNull Material material);
 
@@ -52,6 +58,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * @param material The material you want the piglin to be interested in
      *
      * @return true if the item has been added successfully, false otherwise
+     * @since 1.16.5
      */
     public boolean addMaterialOfInterest(@NotNull Material material);
 
@@ -64,6 +71,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      *
      * @param material The material you want removed from the interest list
      * @return true if the item has been removed successfully, false otherwise
+     * @since 1.16.5
      */
     public boolean removeMaterialOfInterest(@NotNull Material material);
 
@@ -75,6 +83,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * {@link org.bukkit.event.entity.EntityPickupItemEvent}.
      *
      * @return An immutable materials set
+     * @since 1.16.5
      */
     @NotNull
     public Set<Material> getInterestList();
@@ -87,6 +96,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * {@link org.bukkit.event.entity.PiglinBarterEvent}.
      *
      * @return An immutable materials set
+     * @since 1.16.5
      */
     @NotNull
     public Set<Material> getBarterList();
@@ -98,6 +108,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * This works with any item currently held in the piglin's hand.
      *
      * @param chargingCrossbow is charging
+     * @since 1.18.2
      */
     void setChargingCrossbow(boolean chargingCrossbow);
 
@@ -106,6 +117,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * item in their hand.
      *
      * @return is charging
+     * @since 1.18.2
      */
     boolean isChargingCrossbow();
 
@@ -113,6 +125,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * Sets whether the Piglin is dancing or not
      *
      * @param dancing is dancing
+     * @since 1.20.1
      */
     void setDancing(boolean dancing);
 
@@ -121,6 +134,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * specified amount of time
      *
      * @param duration duration of the dance in ticks
+     * @since 1.20.1
      */
     void setDancing(long duration);
 
@@ -128,6 +142,7 @@ public interface Piglin extends PiglinAbstract, InventoryHolder, com.destroystok
      * Gets if the piglin is currently dancing
      *
      * @return is dancing
+     * @since 1.20.1
      */
     boolean isDancing();
 

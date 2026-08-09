@@ -11,6 +11,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Represents an action that can be performed in a dialog.
+ *
+ * @since 1.21.7
  */
 public sealed interface DialogAction permits DialogAction.CommandTemplateAction, DialogAction.CustomClickAction, DialogAction.StaticAction {
 
@@ -21,6 +23,7 @@ public sealed interface DialogAction permits DialogAction.CommandTemplateAction,
      *
      * @param template the command template to execute
      * @return a new command template action instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_ -> new")
     static CommandTemplateAction commandTemplate(final String template) {
@@ -32,6 +35,7 @@ public sealed interface DialogAction permits DialogAction.CommandTemplateAction,
      *
      * @param value the click event to perform
      * @return a new static action instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_ -> new")
     static StaticAction staticAction(final ClickEvent value) {
@@ -46,6 +50,7 @@ public sealed interface DialogAction permits DialogAction.CommandTemplateAction,
      * @param id the identifier of the custom action
      * @param additions additional data to be sent with the action, or null if not needed
      * @return a new custom click action instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_, _ -> new")
     static CustomClickAction customClick(final Key id, final @Nullable BinaryTagHolder additions) {
@@ -58,6 +63,7 @@ public sealed interface DialogAction permits DialogAction.CommandTemplateAction,
      * @param callback the custom action to execute
      * @param options the options for the custom action
      * @return a new custom click action instance
+     * @since 1.21.7
      */
     @Contract(pure = true, value = "_, _ -> new")
     static CustomClickAction customClick(final DialogActionCallback callback, final ClickCallback.Options options) {
@@ -66,6 +72,8 @@ public sealed interface DialogAction permits DialogAction.CommandTemplateAction,
 
     /**
      * Represents an action that executes a command template.
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     non-sealed interface CommandTemplateAction extends DialogAction {
@@ -74,6 +82,7 @@ public sealed interface DialogAction permits DialogAction.CommandTemplateAction,
          * The command template to execute.
          *
          * @return the command template
+         * @since 1.21.7
          */
         @Contract(pure = true)
         String template();
@@ -81,6 +90,8 @@ public sealed interface DialogAction permits DialogAction.CommandTemplateAction,
 
     /**
      * Represents an action that performs a static click event.
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     non-sealed interface StaticAction extends DialogAction {
@@ -89,6 +100,7 @@ public sealed interface DialogAction permits DialogAction.CommandTemplateAction,
          * The click event to perform.
          *
          * @return the click event
+         * @since 1.21.7
          */
         @Contract(pure = true)
         ClickEvent value();
@@ -96,6 +108,8 @@ public sealed interface DialogAction permits DialogAction.CommandTemplateAction,
 
     /**
      * Represents an action that executes a custom action with additional data.
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     non-sealed interface CustomClickAction extends DialogAction {
@@ -104,6 +118,7 @@ public sealed interface DialogAction permits DialogAction.CommandTemplateAction,
          * The identifier of the custom action.
          *
          * @return the identifier
+         * @since 1.21.7
          */
         @Contract(pure = true)
         Key id();
@@ -114,6 +129,7 @@ public sealed interface DialogAction permits DialogAction.CommandTemplateAction,
          * various data related to the action.
          *
          * @return the additional data, or null if not needed
+         * @since 1.21.7
          */
         @Contract(pure = true)
         @Nullable BinaryTagHolder additions();

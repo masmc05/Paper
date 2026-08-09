@@ -17,6 +17,8 @@ import org.jspecify.annotations.Nullable;
  * original message somewhere in the final message.
  * <br>
  * See {@link AsyncChatCommandDecorateEvent} for the decoration of messages sent via commands
+ *
+ * @since 1.19.1
  */
 @ApiStatus.Experimental
 @NullMarked
@@ -45,6 +47,7 @@ public class AsyncChatDecorateEvent extends ServerEvent implements Cancellable {
      * which is why this is possibly {@code null}.
      *
      * @return the player or {@code null}
+     * @since 1.19.1
      */
     public @Nullable Player player() {
         return this.player;
@@ -54,6 +57,7 @@ public class AsyncChatDecorateEvent extends ServerEvent implements Cancellable {
      * Gets the original decoration input
      *
      * @return the input
+     * @since 1.19.1
      */
     public Component originalMessage() {
         return this.originalMessage;
@@ -65,6 +69,7 @@ public class AsyncChatDecorateEvent extends ServerEvent implements Cancellable {
      * changed the result.
      *
      * @return the result
+     * @since 1.19.1
      */
     public Component result() {
         return this.result;
@@ -74,11 +79,15 @@ public class AsyncChatDecorateEvent extends ServerEvent implements Cancellable {
      * Sets the resulting decorated component.
      *
      * @param result the result
+     * @since 1.19.1
      */
     public void result(final Component result) {
         this.result = result;
     }
 
+    /**
+     * @since 1.19.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -88,17 +97,25 @@ public class AsyncChatDecorateEvent extends ServerEvent implements Cancellable {
      * A cancelled decorating event means that no changes to the result component
      * will have any effect. The decorated component will be equal to the original
      * component.
+     *
+     * @since 1.19.1
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.19.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

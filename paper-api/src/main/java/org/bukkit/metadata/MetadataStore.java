@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
  * removed. It is recommended that when wanting persistent metadata, you use {@link org.bukkit.persistence.PersistentDataContainer}.
  * <p>
  * If you want temporary values on an entity, use the entity lifecycle events and a {@link java.util.Map} of your own. (See {@link com.destroystokyo.paper.event.entity.EntityAddToWorldEvent} and {@link com.destroystokyo.paper.event.entity.EntityRemoveFromWorldEvent})
+ * @since 1.1.0
  */
 @Deprecated
 public interface MetadataStore<T> {
@@ -20,6 +21,7 @@ public interface MetadataStore<T> {
      * @param newMetadataValue The metadata value to apply.
      * @throws IllegalArgumentException If value is null, or the owning plugin
      *     is null
+     * @since 1.1.0
      */
     public void setMetadata(@NotNull T subject, @NotNull String metadataKey, @NotNull MetadataValue newMetadataValue);
 
@@ -31,6 +33,7 @@ public interface MetadataStore<T> {
      * @param metadataKey the unique metadata key being sought.
      * @return A list of values, one for each plugin that has set the
      *     requested value.
+     * @since 1.1.0
      */
     @NotNull
     public List<MetadataValue> getMetadata(@NotNull T subject, @NotNull String metadataKey);
@@ -42,6 +45,7 @@ public interface MetadataStore<T> {
      *     performed.
      * @param metadataKey the unique metadata key being queried.
      * @return the existence of the metadataKey within subject.
+     * @since 1.1.0
      */
     public boolean hasMetadata(@NotNull T subject, @NotNull String metadataKey);
 
@@ -53,6 +57,7 @@ public interface MetadataStore<T> {
      *     remove.
      * @param owningPlugin the plugin attempting to remove a metadata item.
      * @throws IllegalArgumentException If plugin is null
+     * @since 1.1.0
      */
     public void removeMetadata(@NotNull T subject, @NotNull String metadataKey, @NotNull Plugin owningPlugin);
 
@@ -63,6 +68,7 @@ public interface MetadataStore<T> {
      *
      * @param owningPlugin the plugin requesting the invalidation.
      * @throws IllegalArgumentException If plugin is null
+     * @since 1.1.0
      */
     public void invalidateAll(@NotNull Plugin owningPlugin);
 }

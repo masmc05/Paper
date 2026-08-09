@@ -12,6 +12,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Represents a type of dialog.
+ *
+ * @since 1.21.7
  */
 public sealed interface DialogType permits ConfirmationType, DialogListType, MultiActionType, NoticeType, ServerLinksType {
 
@@ -21,6 +23,7 @@ public sealed interface DialogType permits ConfirmationType, DialogListType, Mul
      * @param yesButton the button to confirm the action
      * @param noButton  the button to cancel the action
      * @return a new instance
+     * @since 1.21.7
      */
     @Contract(value = "_, _ -> new", pure = true)
     static ConfirmationType confirmation(final ActionButton yesButton, final ActionButton noButton) {
@@ -35,6 +38,7 @@ public sealed interface DialogType permits ConfirmationType, DialogListType, Mul
      * @param columns      the number of columns to display in the dialog
      * @param buttonWidth  the width of each button in the dialog
      * @return a new instance
+     * @since 1.21.7
      */
     @Contract(value = "_, _, _, _ -> new", pure = true)
     static DialogListType dialogList(
@@ -51,6 +55,7 @@ public sealed interface DialogType permits ConfirmationType, DialogListType, Mul
      *
      * @param dialogs the set of dialogs to display
      * @return a new builder instance
+     * @since 1.21.7
      */
     @Contract(value = "_ -> new", pure = true)
     static DialogListType.Builder dialogList(final RegistrySet<Dialog> dialogs) {
@@ -64,6 +69,7 @@ public sealed interface DialogType permits ConfirmationType, DialogListType, Mul
      * @param exitAction   the action button to exit the dialog
      * @param columns      the number of columns to display in the dialog
      * @return a new instance
+     * @since 1.21.7
      */
     @Contract(value = "_, _, _ -> new", pure = true)
     static MultiActionType multiAction(
@@ -79,6 +85,7 @@ public sealed interface DialogType permits ConfirmationType, DialogListType, Mul
      *
      * @param actions the list of action buttons to display
      * @return a new builder instance
+     * @since 1.21.7
      */
     @Contract(value = "_ -> new", pure = true)
     static MultiActionType.Builder multiAction(final List<ActionButton> actions) {
@@ -89,6 +96,7 @@ public sealed interface DialogType permits ConfirmationType, DialogListType, Mul
      * Creates a notice dialog with the default action button.
      *
      * @return a new instance
+     * @since 1.21.7
      */
     @Contract(value = "-> new", pure = true)
     static NoticeType notice() {
@@ -100,6 +108,7 @@ public sealed interface DialogType permits ConfirmationType, DialogListType, Mul
      *
      * @param action the action button to display in the notice
      * @return a new instance
+     * @since 1.21.7
      */
     @Contract(value = "_ -> new", pure = true)
     static NoticeType notice(final ActionButton action) {
@@ -113,6 +122,7 @@ public sealed interface DialogType permits ConfirmationType, DialogListType, Mul
      * @param columns      the number of columns to display in the dialog
      * @param buttonWidth  the width of each button in the dialog
      * @return a new instance
+     * @since 1.21.7
      */
     @Contract(value = "_, _, _ -> new", pure = true)
     static ServerLinksType serverLinks(

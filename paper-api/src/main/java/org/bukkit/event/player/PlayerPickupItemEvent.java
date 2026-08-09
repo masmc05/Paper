@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Thrown when a player picks an item up from the ground
  * @deprecated {@link EntityPickupItemEvent}
+ * @since 1.0.0
  */
 @Deprecated(since = "1.12")
 @Warning
@@ -36,6 +37,7 @@ public class PlayerPickupItemEvent extends PlayerEvent implements Cancellable {
      * Gets the Item picked up by the player.
      *
      * @return Item
+     * @since 1.0.0
      */
     @NotNull
     public Item getItem() {
@@ -46,6 +48,7 @@ public class PlayerPickupItemEvent extends PlayerEvent implements Cancellable {
      * Gets the amount remaining on the ground, if any
      *
      * @return amount remaining on the ground
+     * @since 1.0.0
      */
     public int getRemaining() {
         return this.remaining;
@@ -57,6 +60,7 @@ public class PlayerPickupItemEvent extends PlayerEvent implements Cancellable {
      * Cancelling the event will set this value to {@code false}.
      *
      * @param flyAtPlayer {@code true} for item to fly at player
+     * @since 1.12
      */
     public void setFlyAtPlayer(boolean flyAtPlayer) {
         this.flyAtPlayer = flyAtPlayer;
@@ -66,28 +70,41 @@ public class PlayerPickupItemEvent extends PlayerEvent implements Cancellable {
      * Gets if the item will fly at the player
      *
      * @return {@code true} if the item will fly at the player
+     * @since 1.12
      */
     public boolean getFlyAtPlayer() {
         return this.flyAtPlayer;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
         this.flyAtPlayer = !cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

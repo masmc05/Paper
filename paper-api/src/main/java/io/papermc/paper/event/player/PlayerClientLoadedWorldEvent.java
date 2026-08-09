@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * This either happens when the player notifies the server after loading the world (closing the downloading terrain screen)
  * or when the player has not done so for 60 ticks after joining the server or respawning.
+ *
+ * @since 1.21.4
  */
 @NullMarked
 public class PlayerClientLoadedWorldEvent extends PlayerEvent {
@@ -30,16 +32,23 @@ public class PlayerClientLoadedWorldEvent extends PlayerEvent {
      * for 60 ticks after the player joined the server or respawned.
      *
      * @return true if the event was triggered because of a timeout
+     * @since 1.21.4
      */
     public boolean isTimeout() {
         return timeout;
     }
 
+    /**
+     * @since 1.21.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

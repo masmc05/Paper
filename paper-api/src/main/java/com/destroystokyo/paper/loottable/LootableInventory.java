@@ -15,6 +15,8 @@ import org.jspecify.annotations.Nullable;
  * <p>
  * The behavior of how the Inventory is filled based on the loot table may vary based
  * on Minecraft versions and the Loot Table feature.
+ *
+ * @since 1.9.4
  */
 @NullMarked
 public interface LootableInventory extends Lootable {
@@ -23,6 +25,7 @@ public interface LootableInventory extends Lootable {
      * Server owners have to enable whether an object in a world should refill
      *
      * @return If the world this inventory is currently in has Replenishable Lootables enabled
+     * @since 1.9.4
      */
     boolean isRefillEnabled();
 
@@ -30,6 +33,7 @@ public interface LootableInventory extends Lootable {
      * Whether this object has ever been filled
      *
      * @return Has ever been filled
+     * @since 1.9.4
      */
     boolean hasBeenFilled();
 
@@ -38,6 +42,7 @@ public interface LootableInventory extends Lootable {
      *
      * @param player The player to check
      * @return Whether this player has looted this block
+     * @since 1.9.4
      */
     default boolean hasPlayerLooted(final Player player) {
         return this.hasPlayerLooted(player.getUniqueId());
@@ -48,6 +53,7 @@ public interface LootableInventory extends Lootable {
      *
      * @param player the player to check
      * @return Whether this player can loot this block
+     * @since 1.20.1
      */
     boolean canPlayerLoot(UUID player);
 
@@ -56,6 +62,7 @@ public interface LootableInventory extends Lootable {
      *
      * @param player The player to check
      * @return Whether this player has looted this block
+     * @since 1.9.4
      */
     boolean hasPlayerLooted(UUID player);
 
@@ -64,6 +71,7 @@ public interface LootableInventory extends Lootable {
      *
      * @param player The player to check
      * @return Timestamp last looted, or null if player has not looted this object
+     * @since 1.9.4
      */
     default @Nullable Long getLastLooted(final Player player) {
         return this.getLastLooted(player.getUniqueId());
@@ -74,6 +82,7 @@ public interface LootableInventory extends Lootable {
      *
      * @param player The player to check
      * @return Timestamp last looted, or null if player has not looted this object
+     * @since 1.9.4
      */
     @Nullable Long getLastLooted(UUID player);
 
@@ -83,6 +92,7 @@ public interface LootableInventory extends Lootable {
      * @param player The player to change state for
      * @param looted true to add player to looted list, false to remove
      * @return The previous state of whether the player had looted this or not
+     * @since 1.9.4
      */
     default boolean setHasPlayerLooted(final Player player, final boolean looted) {
         return this.setHasPlayerLooted(player.getUniqueId(), looted);
@@ -94,6 +104,7 @@ public interface LootableInventory extends Lootable {
      * @param player The player to change state for
      * @param looted true to add player to looted list, false to remove
      * @return The previous state of whether the player had looted this or not
+     * @since 1.9.4
      */
     boolean setHasPlayerLooted(UUID player, boolean looted);
 
@@ -101,6 +112,7 @@ public interface LootableInventory extends Lootable {
      * Returns Whether this object has been filled and now has a pending refill
      *
      * @return Has pending refill
+     * @since 1.9.4
      */
     boolean hasPendingRefill();
 
@@ -108,6 +120,7 @@ public interface LootableInventory extends Lootable {
      * Gets the timestamp in milliseconds that the Lootable object was last refilled
      *
      * @return -1 if it was never refilled, or timestamp in milliseconds
+     * @since 1.9.4
      */
     long getLastFilled();
 
@@ -115,6 +128,7 @@ public interface LootableInventory extends Lootable {
      * Gets the timestamp in milliseconds that the Lootable object will refill
      *
      * @return -1 if it is not scheduled for refill, or timestamp in milliseconds
+     * @since 1.9.4
      */
     long getNextRefill();
 
@@ -123,6 +137,7 @@ public interface LootableInventory extends Lootable {
      *
      * @param refillAt timestamp in milliseconds. -1 to clear next refill
      * @return The previous scheduled time to refill, or -1 if was not scheduled
+     * @since 1.9.4
      */
     long setNextRefill(long refillAt);
 }

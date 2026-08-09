@@ -7,6 +7,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Thrown when a command throws an exception
+ *
+ * @since 1.9.4
  */
 public class ServerCommandException extends ServerException {
 
@@ -14,6 +16,9 @@ public class ServerCommandException extends ServerException {
     private final CommandSender commandSender;
     private final String[] arguments;
 
+    /**
+     * @since 1.9.4
+     */
     public ServerCommandException(String message, Throwable cause, Command command, CommandSender commandSender, String[] arguments) {
         super(message, cause);
         this.commandSender = checkNotNull(commandSender, "commandSender");
@@ -21,6 +26,9 @@ public class ServerCommandException extends ServerException {
         this.command = checkNotNull(command, "command");
     }
 
+    /**
+     * @since 1.9.4
+     */
     public ServerCommandException(Throwable cause, Command command, CommandSender commandSender, String[] arguments) {
         super(cause);
         this.commandSender = checkNotNull(commandSender, "commandSender");
@@ -39,6 +47,7 @@ public class ServerCommandException extends ServerException {
      * Gets the command which threw the exception
      *
      * @return exception throwing command
+     * @since 1.9.4
      */
     public Command getCommand() {
         return command;
@@ -48,6 +57,7 @@ public class ServerCommandException extends ServerException {
      * Gets the command sender which executed the command request
      *
      * @return command sender of exception thrown command request
+     * @since 1.9.4
      */
     public CommandSender getCommandSender() {
         return commandSender;
@@ -57,6 +67,7 @@ public class ServerCommandException extends ServerException {
      * Gets the arguments which threw the exception for the command
      *
      * @return arguments of exception thrown command request
+     * @since 1.9.4
      */
     public String[] getArguments() {
         return arguments;

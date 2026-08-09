@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
  * Thrown when a Living Entity creates a portal in a world.
  *
  * @deprecated Use {@link PortalCreateEvent}
+ * @since 1.1.0
  */
 @Deprecated(since = "1.14.1")
 public class EntityCreatePortalEvent extends EntityEvent implements Cancellable {
@@ -33,6 +34,9 @@ public class EntityCreatePortalEvent extends EntityEvent implements Cancellable 
         this.type = type;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public LivingEntity getEntity() {
@@ -43,6 +47,7 @@ public class EntityCreatePortalEvent extends EntityEvent implements Cancellable 
      * Gets a list of all blocks associated with the portal.
      *
      * @return List of blocks that will be changed.
+     * @since 1.1.0
      */
     @NotNull
     public List<BlockState> getBlocks() {
@@ -53,28 +58,41 @@ public class EntityCreatePortalEvent extends EntityEvent implements Cancellable 
      * Gets the type of portal that is trying to be created.
      *
      * @return Type of portal.
+     * @since 1.1.0
      */
     @NotNull
     public PortalType getPortalType() {
         return this.type;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

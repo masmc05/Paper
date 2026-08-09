@@ -13,6 +13,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Represents a Mob. Mobs are living entities with simple AI.
+ *
+ * @since 1.13
  */
 @NullMarked
 public interface Mob extends LivingEntity, Lootable, Leashable {
@@ -21,6 +23,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * Check if a mob should be despawned when the world is set to peaceful difficulty.
      *
      * @return True if the entity should be removed in peaceful
+     * @since 1.21.8
      */
     boolean shouldDespawnInPeaceful();
 
@@ -34,6 +37,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      *
      * @param state a TriState representing the state of the override
      * @deprecated the client no longer allow to change that setting and will not render the entity
+     * @since 1.21.8
      */
     @Deprecated(since = "26.2")
     void setDespawnInPeacefulOverride(TriState state);
@@ -49,16 +53,21 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * @return a TriState representing the state of the override
      * @see Mob#setDespawnInPeacefulOverride(TriState)
      * @deprecated the client no longer allow to change that setting and will not render the entity
+     * @since 1.21.8
      */
     @Deprecated(since = "26.2")
     TriState getDespawnInPeacefulOverride();
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     EntityEquipment getEquipment();
 
     /**
      * Enables access to control the pathing of an Entity
      * @return Pathfinding Manager for this entity
+     * @since 1.13.1
      */
     Pathfinder getPathfinder();
 
@@ -66,6 +75,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * Check if this mob is exposed to daylight
      *
      * @return True if mob is exposed to daylight
+     * @since 1.13.1
      */
     boolean isInDaylight();
 
@@ -75,6 +85,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * Useful when implementing custom mob goals
      *
      * @param location location to look at
+     * @since 1.16.5
      */
     void lookAt(Location location);
 
@@ -86,6 +97,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * @param location location to look at
      * @param headRotationSpeed head rotation speed
      * @param maxHeadPitch max head pitch rotation
+     * @since 1.16.5
      */
     void lookAt(Location location, float headRotationSpeed, float maxHeadPitch);
 
@@ -97,6 +109,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * Useful when implementing custom mob goals
      *
      * @param entity entity to look at
+     * @since 1.16.5
      */
     void lookAt(Entity entity);
 
@@ -110,6 +123,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * @param entity entity to look at
      * @param headRotationSpeed head rotation speed
      * @param maxHeadPitch max head pitch rotation
+     * @since 1.16.5
      */
     void lookAt(Entity entity, float headRotationSpeed, float maxHeadPitch);
 
@@ -121,6 +135,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * @param x x coordinate
      * @param y y coordinate
      * @param z z coordinate
+     * @since 1.16.5
      */
     void lookAt(double x, double y, double z);
 
@@ -134,6 +149,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * @param z z coordinate
      * @param headRotationSpeed head rotation speed
      * @param maxHeadPitch max head pitch rotation
+     * @since 1.16.5
      */
     void lookAt(double x, double y, double z, float headRotationSpeed, float maxHeadPitch);
 
@@ -141,6 +157,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * Gets the head rotation speed
      *
      * @return the head rotation speed
+     * @since 1.16.5
      */
     int getHeadRotationSpeed();
 
@@ -148,6 +165,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * Gets the max head pitch rotation
      *
      * @return the max head pitch rotation
+     * @since 1.16.5
      */
     int getMaxHeadPitch();
 
@@ -158,6 +176,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * follow their target.
      *
      * @param target New LivingEntity to target, or null to clear the target
+     * @since 1.13
      */
     void setTarget(@Nullable LivingEntity target);
 
@@ -165,6 +184,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * Gets the current target of this Mob
      *
      * @return Current target of this creature, or null if none exists
+     * @since 1.13
      */
     @Nullable LivingEntity getTarget();
 
@@ -176,6 +196,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * unspecified behaviours disabled, such as drowning.
      *
      * @param aware whether the mob is aware
+     * @since 1.15.2
      */
     void setAware(boolean aware);
 
@@ -187,6 +208,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * unspecified behaviours disabled, such as drowning.
      *
      * @return whether the mob is aware
+     * @since 1.15.2
      */
     boolean isAware();
 
@@ -199,9 +221,13 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * ambient noise while sleeping.
      *
      * @return the ambient sound, or null if this entity is ambiently quiet
+     * @since 1.19.2
      */
     @Nullable Sound getAmbientSound();
 
+    /**
+     * @since 1.20.6
+     */
     @Override
     default void setLootTable(final @Nullable LootTable table, final long seed) {
         this.setLootTable(table);
@@ -228,6 +254,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * aggressive if their combined {@link Panda.Gene} is {@link Panda.Gene#AGGRESSIVE}.
      *
      * @return whether the mob is aggressive or not
+     * @since 1.20.2
      */
     boolean isAggressive();
 
@@ -237,6 +264,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      *
      * @param aggressive whether the mob should be aggressive or not
      * @see #isAggressive()
+     * @since 1.20.2
      */
     void setAggressive(boolean aggressive);
 
@@ -244,6 +272,7 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
      * Check if Mob is left-handed
      *
      * @return True if left-handed
+     * @since 1.17.1
      */
     boolean isLeftHanded();
 
@@ -251,13 +280,15 @@ public interface Mob extends LivingEntity, Lootable, Leashable {
       * Set if Mob is left-handed
       *
       * @param leftHanded True if left-handed
-      */
+      * @since 1.17.1
+     */
     void setLeftHanded(boolean leftHanded);
 
     /**
      * Gets the amount of experience the mob will possibly drop. This value is randomized and it can give different results
      *
      * @return the amount of experience the mob will possibly drop
+     * @since 1.19.4
      */
     int getPossibleExperienceReward();
 }

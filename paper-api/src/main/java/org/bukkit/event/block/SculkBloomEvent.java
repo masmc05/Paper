@@ -25,6 +25,8 @@ import org.jetbrains.annotations.NotNull;
  * </ul>
  *
  * The result of {@link #getBlock()} is the location that the cursor is spawning at.
+ *
+ * @since 1.20.1
  */
 public class SculkBloomEvent extends BlockEvent implements Cancellable {
 
@@ -43,6 +45,7 @@ public class SculkBloomEvent extends BlockEvent implements Cancellable {
      * Returns the charge of the cursor, &lt; 1000 by default.
      *
      * @return the charge of the cursor
+     * @since 1.20.1
      */
     public int getCharge() {
         return this.charge;
@@ -61,28 +64,41 @@ public class SculkBloomEvent extends BlockEvent implements Cancellable {
      * sculk block will be placed.
      *
      * @param charge the charge of the cursor.
+     * @since 1.20.1
      */
     public void setCharge(int charge) {
         Preconditions.checkArgument(charge >= 0 && charge <= 1000, charge + " is not in range [0, 1000]");
         this.charge = charge;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.20.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

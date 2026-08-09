@@ -10,6 +10,7 @@ import org.jspecify.annotations.NullMarked;
  * Represents a key for a value in a specific registry.
  *
  * @param <T> the value type for the registry
+ * @since 1.20.2
  */
 @NullMarked
 public sealed interface TypedKey<T> extends Key permits TypedKeyImpl {
@@ -18,6 +19,7 @@ public sealed interface TypedKey<T> extends Key permits TypedKeyImpl {
      * Gets the key for the value in the registry.
      *
      * @return the value's key
+     * @since 1.20.2
      */
     @Override
     Key key();
@@ -27,6 +29,7 @@ public sealed interface TypedKey<T> extends Key permits TypedKeyImpl {
      * represents.
      *
      * @return the registry key
+     * @since 1.20.2
      */
     RegistryKey<T> registryKey();
 
@@ -37,6 +40,7 @@ public sealed interface TypedKey<T> extends Key permits TypedKeyImpl {
      * @param key the key for the value in the registry
      * @param <T> value type
      * @return a new key for the value key and registry key
+     * @since 1.20.2
      */
     static <T> TypedKey<T> create(final RegistryKey<T> registryKey, final Key key) {
         return new TypedKeyImpl<>(key, registryKey);
@@ -50,6 +54,7 @@ public sealed interface TypedKey<T> extends Key permits TypedKeyImpl {
      * @param <T>         value type
      * @return a new key for the value key and registry key
      * @see Key#key(String)
+     * @since 1.21.4
      */
     static <T> TypedKey<T> create(final RegistryKey<T> registryKey, @KeyPattern final String key) {
         return create(registryKey, Key.key(key));

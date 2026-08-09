@@ -8,6 +8,8 @@ import org.bukkit.block.data.BlockData;
  * <br>
  * A value of 0 indicates that the cake has not been eaten, whilst a value of
  * {@link #getMaximumBites()} indicates that it is all gone :(
+ *
+ * @since 1.13
  */
 public interface Cake extends BlockData {
 
@@ -15,6 +17,7 @@ public interface Cake extends BlockData {
      * Gets the value of the 'bites' property.
      *
      * @return the 'bites' value
+     * @since 1.13
      */
     int getBites();
 
@@ -22,6 +25,7 @@ public interface Cake extends BlockData {
      * Sets the value of the 'bites' property.
      *
      * @param bites the new 'bites' value
+     * @since 1.13
      */
     void setBites(int bites);
 
@@ -29,6 +33,7 @@ public interface Cake extends BlockData {
      * Gets the maximum allowed value of the 'bites' property.
      *
      * @return the maximum 'bites' value
+     * @since 1.13
      */
     int getMaximumBites();
 }

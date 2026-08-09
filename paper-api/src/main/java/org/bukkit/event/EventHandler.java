@@ -7,6 +7,8 @@ import java.lang.annotation.Target;
 
 /**
  * An annotation to mark methods as being event handler methods
+ *
+ * @since 1.1.0
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
@@ -26,6 +28,7 @@ public @interface EventHandler {
      * </ol>
      *
      * @return the priority
+     * @since 1.1.0
      */
     EventPriority priority() default EventPriority.NORMAL;
 
@@ -36,6 +39,7 @@ public @interface EventHandler {
      * not called. Otherwise, the method is always called.
      *
      * @return whether cancelled events should be ignored
+     * @since 1.1.0
      */
     boolean ignoreCancelled() default false;
 }

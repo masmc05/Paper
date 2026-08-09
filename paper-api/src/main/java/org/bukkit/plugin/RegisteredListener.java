@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Stores relevant information for plugin listeners
+ *
+ * @since 1.0.0
  */
 public class RegisteredListener {
 
@@ -18,6 +20,9 @@ public class RegisteredListener {
     private final EventExecutor executor;
     private final boolean ignoreCancelled;
 
+    /**
+     * @since 1.1.0
+     */
     public RegisteredListener(@NotNull final Listener listener, @NotNull final EventExecutor executor, @NotNull final EventPriority priority, @NotNull final Plugin plugin, final boolean ignoreCancelled) {
         this.listener = listener;
         this.priority = priority;
@@ -30,6 +35,7 @@ public class RegisteredListener {
      * Gets the listener for this registration
      *
      * @return Registered Listener
+     * @since 1.0.0
      */
     @NotNull
     public Listener getListener() {
@@ -40,6 +46,7 @@ public class RegisteredListener {
      * Gets the plugin for this registration
      *
      * @return Registered Plugin
+     * @since 1.0.0
      */
     @NotNull
     public Plugin getPlugin() {
@@ -50,6 +57,7 @@ public class RegisteredListener {
      * Gets the priority for this registration
      *
      * @return Registered Priority
+     * @since 1.0.0
      */
     @NotNull
     public EventPriority getPriority() {
@@ -61,6 +69,7 @@ public class RegisteredListener {
      *
      * @param event The event
      * @throws EventException If an event handler throws an exception.
+     * @since 1.0.0
      */
     public void callEvent(@NotNull final Event event) throws EventException {
         if (event instanceof Cancellable) {
@@ -75,6 +84,7 @@ public class RegisteredListener {
      * Whether this listener accepts cancelled events
      *
      * @return True when ignoring cancelled events
+     * @since 1.1.0
      */
     public boolean isIgnoringCancelled() {
         return ignoreCancelled;
@@ -84,6 +94,7 @@ public class RegisteredListener {
      * Get the executor for this registration.
      *
      * @return executor
+     * @since 1.19.2
      */
     @NotNull
     public EventExecutor getExecutor() {

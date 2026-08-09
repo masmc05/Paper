@@ -46,6 +46,8 @@ import org.slf4j.LoggerFactory;
  * }</pre>
  * <p>
  * Plugins may create and register a {@link MavenLibraryResolver} after configuring it.
+ *
+ * @since 1.19.3
  */
 @NullMarked
 public class MavenLibraryResolver implements ClassPathLibrary {
@@ -57,6 +59,8 @@ public class MavenLibraryResolver implements ClassPathLibrary {
      * rate limits.
      *
      * <p>This repository is also used by the legacy {@link org.bukkit.plugin.java.LibraryLoader}.</p>
+     *
+     * @since 1.21.4
      */
     public static final String MAVEN_CENTRAL_DEFAULT_MIRROR = getDefaultMavenCentralMirror();
     private static final List<String> MAVEN_CENTRAL_URLS = List.of(
@@ -79,6 +83,8 @@ public class MavenLibraryResolver implements ClassPathLibrary {
      * Notably, the resolver is created without any repository, not even maven central.
      * It is hence crucial that plugins which aim to use this api register all required repositories before
      * submitting the {@link MavenLibraryResolver} to the {@link io.papermc.paper.plugin.loader.PluginClasspathBuilder}.
+     *
+     * @since 1.19.3
      */
     public MavenLibraryResolver() {
         final DefaultServiceLocator locator = MavenRepositorySystemUtils.newServiceLocator();
@@ -106,6 +112,7 @@ public class MavenLibraryResolver implements ClassPathLibrary {
      *
      * @param dependency the definition of the dependency the maven library resolver should resolve when running
      * @see MavenLibraryResolver#addRepository(RemoteRepository)
+     * @since 1.19.3
      */
     public void addDependency(final Dependency dependency) {
         this.dependencies.add(dependency);
@@ -118,6 +125,7 @@ public class MavenLibraryResolver implements ClassPathLibrary {
      *
      * @param remoteRepository the configuration that defines the maven repository this library resolver should fetch
      * dependencies from
+     * @since 1.19.3
      */
     public void addRepository(final RemoteRepository remoteRepository) {
         if (MAVEN_CENTRAL_URLS.stream().anyMatch(remoteRepository.getUrl()::startsWith)) {
@@ -134,6 +142,7 @@ public class MavenLibraryResolver implements ClassPathLibrary {
      *
      * @param store the library store the then resolved and downloaded dependencies are registered into
      * @throws LibraryLoadingException if resolving a dependency failed
+     * @since 1.19.3
      */
     @Override
     public void register(final LibraryStore store) throws LibraryLoadingException {

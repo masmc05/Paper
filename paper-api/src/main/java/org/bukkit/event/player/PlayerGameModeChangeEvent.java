@@ -16,6 +16,8 @@ import org.jetbrains.annotations.Nullable;
  * the Player from {@link #getPlayer()} might not be fully online at
  * the time this event is fired. Plugins should use {@link Player#isOnline()}
  * to check before changing player state.
+ *
+ * @since 1.0.0
  */
 public class PlayerGameModeChangeEvent extends PlayerEvent implements Cancellable {
 
@@ -45,6 +47,7 @@ public class PlayerGameModeChangeEvent extends PlayerEvent implements Cancellabl
      * Gets the GameMode the player is switched to.
      *
      * @return player's new GameMode
+     * @since 1.0.0
      */
     @NotNull
     public GameMode getNewGameMode() {
@@ -55,6 +58,7 @@ public class PlayerGameModeChangeEvent extends PlayerEvent implements Cancellabl
      * Gets the cause of this gamemode change.
      *
      * @return the cause
+     * @since 1.16.5
      */
     @NotNull
     public Cause getCause() {
@@ -67,6 +71,7 @@ public class PlayerGameModeChangeEvent extends PlayerEvent implements Cancellabl
      * as a notification that a player's gamemode was not changed.
      *
      * @return the error message shown to the command user, {@code null} by default
+     * @since 1.16.5
      */
     @Nullable
     public Component cancelMessage() {
@@ -79,41 +84,61 @@ public class PlayerGameModeChangeEvent extends PlayerEvent implements Cancellabl
      * or the gamemode switcher.</b>
      *
      * @param message the error message shown to the command user, {@code null} to show no message.
+     * @since 1.16.5
      */
     public void cancelMessage(@Nullable Component message) {
         this.cancelMessage = message;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public enum Cause {
 
         /**
          * A plugin changed the player's gamemode with
          * {@link Player#setGameMode(GameMode)}.
+         *
+         * @since 1.16.5
          */
         PLUGIN,
         /**
          * The {@code /gamemode} command was used.
+         *
+         * @since 1.16.5
          */
         COMMAND,
         /**
@@ -121,22 +146,30 @@ public class PlayerGameModeChangeEvent extends PlayerEvent implements Cancellabl
          * the {@code /defaultgamemode} command, or they joined
          * with a gamemode that was not the default gamemode and
          * {@code force-gamemode} in {@code server.properties} is set to {@code true}.
+         *
+         * @since 1.16.5
          */
         DEFAULT_GAMEMODE,
         /**
          * When the player dies in a hardcore world and has their gamemode
          * changed to {@link GameMode#SPECTATOR}.
+         *
+         * @since 1.16.5
          */
         HARDCORE_DEATH,
         /**
          * A player changed their gamemode using the gamemode switcher (F3+F4)
          * or spectator hotkey (F3+N).
+         *
+         * @since 1.21.10
          */
         GAMEMODE_SWITCHER,
         /**
          * This cause is only used if a plugin fired their own
          * {@link PlayerGameModeChangeEvent} and did not include a
          * cause. Can usually be ignored.
+         *
+         * @since 1.16.5
          */
         UNKNOWN
     }

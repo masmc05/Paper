@@ -16,6 +16,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a villager NPC
+ *
+ * @since 1.0.0
  */
 public interface Villager extends AbstractVillager {
 
@@ -23,6 +25,7 @@ public interface Villager extends AbstractVillager {
      * Gets the current profession of this villager.
      *
      * @return Current profession.
+     * @since 1.3.1
      */
     @NotNull
     public Profession getProfession();
@@ -31,6 +34,7 @@ public interface Villager extends AbstractVillager {
      * Sets the new profession of this villager.
      *
      * @param profession New profession.
+     * @since 1.3.1
      */
     public void setProfession(@NotNull Profession profession);
 
@@ -38,6 +42,7 @@ public interface Villager extends AbstractVillager {
      * Gets the current type of this villager.
      *
      * @return Current type.
+     * @since 1.14
      */
     @NotNull
     public Type getVillagerType();
@@ -46,6 +51,7 @@ public interface Villager extends AbstractVillager {
      * Sets the new type of this villager.
      *
      * @param type New type.
+     * @since 1.14
      */
     public void setVillagerType(@NotNull Type type);
 
@@ -56,6 +62,7 @@ public interface Villager extends AbstractVillager {
      * profession.
      *
      * @return this villager's level
+     * @since 1.14
      */
     public int getVillagerLevel();
 
@@ -70,6 +77,7 @@ public interface Villager extends AbstractVillager {
      * @param level the new level
      * @throws IllegalArgumentException if level not between [1, 5]
      * @see #increaseLevel(int)
+     * @since 1.14
      */
     public void setVillagerLevel(int level);
 
@@ -77,6 +85,7 @@ public interface Villager extends AbstractVillager {
      * Gets the trading experience of this villager.
      *
      * @return trading experience
+     * @since 1.14
      */
     public int getVillagerExperience();
 
@@ -85,6 +94,7 @@ public interface Villager extends AbstractVillager {
      *
      * @param experience new experience
      * @throws IllegalArgumentException if experience &lt; 0
+     * @since 1.14
      */
     public void setVillagerExperience(int experience);
 
@@ -102,6 +112,7 @@ public interface Villager extends AbstractVillager {
      * @return Whether level got increased
      * @throws IllegalArgumentException if the amount is not positive
      * @see #setVillagerLevel(int)
+     * @since 1.19.2
      */
     boolean increaseLevel(int amount);
 
@@ -111,18 +122,21 @@ public interface Villager extends AbstractVillager {
      * @param amount The amount of trades to give
      * @return Whether trades are added
      * @throws IllegalArgumentException if the amount isn't positive
+     * @since 1.19.2
      */
     boolean addTrades(int amount);
 
     /**
      * Gets the amount of times a villager has restocked their trades today
      * @return The amount of trade restocks.
+     * @since 1.15.2
      */
     public int getRestocksToday();
 
     /**
      * Sets the amount of times a villager has restocked their trades today
      * @param restocksToday new restock count
+     * @since 1.15.2
      */
     public void setRestocksToday(int restocksToday);
 
@@ -135,6 +149,7 @@ public interface Villager extends AbstractVillager {
      *
      * @param location the location of the bed
      * @return whether the sleep was successful
+     * @since 1.14.4
      */
     public boolean sleep(@NotNull Location location);
 
@@ -142,11 +157,14 @@ public interface Villager extends AbstractVillager {
      * Causes this villager to wake up if he's currently sleeping.
      *
      * @throws IllegalStateException if not sleeping
+     * @since 1.14.4
      */
     public void wakeup();
 
     /**
      * Causes this villager to shake his head.
+     *
+     * @since 1.17
      */
     public void shakeHead();
 
@@ -158,6 +176,7 @@ public interface Villager extends AbstractVillager {
      *
      * @return the converted entity {@link ZombieVillager} or null if the
      * conversion its cancelled
+     * @since 1.18.2
      */
     @Nullable
     public ZombieVillager zombify();
@@ -165,22 +184,45 @@ public interface Villager extends AbstractVillager {
     /**
      * Represents Villager type, usually corresponding to what biome they spawn
      * in.
+     *
+     * @since 1.14
      */
     interface Type extends OldEnum<Type>, Keyed {
 
+        /**
+         * @since 1.14
+         */
         // Start generate - VillagerType
         Type DESERT = getType("desert");
 
+        /**
+         * @since 1.14
+         */
         Type JUNGLE = getType("jungle");
 
+        /**
+         * @since 1.14
+         */
         Type PLAINS = getType("plains");
 
+        /**
+         * @since 1.14
+         */
         Type SAVANNA = getType("savanna");
 
+        /**
+         * @since 1.14
+         */
         Type SNOW = getType("snow");
 
+        /**
+         * @since 1.14
+         */
         Type SWAMP = getType("swamp");
 
+        /**
+         * @since 1.14
+         */
         Type TAIGA = getType("taiga");
         // End generate - VillagerType
 
@@ -217,6 +259,8 @@ public interface Villager extends AbstractVillager {
     /**
      * Represents the various different Villager professions there may be.
      * Villagers have different trading options depending on their profession,
+     *
+     * @since 1.3.1
      */
     interface Profession extends OldEnum<Profession>, Keyed, net.kyori.adventure.translation.Translatable {
 
@@ -224,18 +268,24 @@ public interface Villager extends AbstractVillager {
         /**
          * Armorer profession. Wears a black apron. Armorers primarily trade for
          * iron armor, chainmail armor, and sometimes diamond armor.
+         *
+         * @since 1.14
          */
         Profession ARMORER = getProfession("armorer");
 
         /**
          * Butcher profession. Wears a white apron. Butchers primarily trade for
          * raw and cooked food.
+         *
+         * @since 1.3.1
          */
         Profession BUTCHER = getProfession("butcher");
 
         /**
          * Cartographer profession. Wears a white robe. Cartographers primarily
          * trade for explorer maps and some paper.
+         *
+         * @since 1.14
          */
         Profession CARTOGRAPHER = getProfession("cartographer");
 
@@ -243,67 +293,92 @@ public interface Villager extends AbstractVillager {
          * Cleric profession. Wears a purple robe. Clerics primarily trade for
          * rotten flesh, gold ingot, redstone, lapis, ender pearl, glowstone,
          * and bottle o' enchanting.
+         *
+         * @since 1.14
          */
         Profession CLERIC = getProfession("cleric");
 
         /**
          * Farmer profession. Wears a brown robe. Farmers primarily trade for
          * food-related items.
+         *
+         * @since 1.3.1
          */
         Profession FARMER = getProfession("farmer");
 
         /**
          * Fisherman profession. Wears a brown robe. Fisherman primarily trade
          * for fish, as well as possibly selling string and/or coal.
+         *
+         * @since 1.14
          */
         Profession FISHERMAN = getProfession("fisherman");
 
         /**
          * Fletcher profession. Wears a brown robe. Fletchers primarily trade
          * for string, bows, and arrows.
+         *
+         * @since 1.14
          */
         Profession FLETCHER = getProfession("fletcher");
 
         /**
          * Leatherworker profession. Wears a white apron. Leatherworkers
          * primarily trade for leather, and leather armor, as well as saddles.
+         *
+         * @since 1.14
          */
         Profession LEATHERWORKER = getProfession("leatherworker");
 
         /**
          * Librarian profession. Wears a white robe. Librarians primarily trade
          * for paper, books, and enchanted books.
+         *
+         * @since 1.3.1
          */
         Profession LIBRARIAN = getProfession("librarian");
 
         /**
          * Mason profession.
+         *
+         * @since 1.14
          */
         Profession MASON = getProfession("mason");
 
         /**
          * Nitwit profession. Wears a green apron, cannot trade. Nitwit
          * villagers do not do anything. They do not have any trades by default.
+         *
+         * @since 1.11
          */
         Profession NITWIT = getProfession("nitwit");
 
+        /**
+         * @since 1.14
+         */
         Profession NONE = getProfession("none");
 
         /**
          * Shepherd profession. Wears a brown robe. Shepherds primarily trade for
          * wool items, and shears.
+         *
+         * @since 1.14
          */
         Profession SHEPHERD = getProfession("shepherd");
 
         /**
          * Toolsmith profession. Wears a black apron. Tool smiths primarily
          * trade for iron and diamond tools.
+         *
+         * @since 1.14
          */
         Profession TOOLSMITH = getProfession("toolsmith");
 
         /**
          * Weaponsmith profession. Wears a black apron. Weapon smiths primarily
          * trade for iron and diamond weapons, sometimes enchanted.
+         *
+         * @since 1.14
          */
         Profession WEAPONSMITH = getProfession("weaponsmith");
         // End generate - VillagerProfession
@@ -337,6 +412,10 @@ public interface Villager extends AbstractVillager {
             return Registry.VILLAGER_PROFESSION.stream().toArray(Profession[]::new);
         }
 
+        /**
+         * {@inheritDoc}
+         * @since 1.17.1
+         */
         // Paper start
         @Override
         default @NotNull String translationKey() {
@@ -351,6 +430,7 @@ public interface Villager extends AbstractVillager {
      *
      * @param uniqueId The {@link UUID} of the player to get the reputation of.
      * @return The player's copied reputation with this villager.
+     * @since 1.15.2
      */
     @NotNull
     public com.destroystokyo.paper.entity.villager.Reputation getReputation(@NotNull UUID uniqueId);
@@ -361,6 +441,7 @@ public interface Villager extends AbstractVillager {
      *
      * @return All {@link com.destroystokyo.paper.entity.villager.Reputation reputations} for all players
      * in a copied map.
+     * @since 1.15.2
      */
     @NotNull
     public Map<UUID, com.destroystokyo.paper.entity.villager.Reputation> getReputations();
@@ -371,6 +452,7 @@ public interface Villager extends AbstractVillager {
      *
      * @param uniqueId The {@link UUID} of the player to set the reputation of.
      * @param reputation The {@link com.destroystokyo.paper.entity.villager.Reputation reputation} to set.
+     * @since 1.15.2
      */
     public void setReputation(@NotNull UUID uniqueId, @NotNull com.destroystokyo.paper.entity.villager.Reputation reputation);
 
@@ -380,12 +462,15 @@ public interface Villager extends AbstractVillager {
      *
      * @param reputations All {@link com.destroystokyo.paper.entity.villager.Reputation reputations}
      * for all players mapped by their {@link UUID unique IDs}.
+     * @since 1.15.2
      */
     public void setReputations(@NotNull Map<UUID, com.destroystokyo.paper.entity.villager.Reputation> reputations);
 
     /**
      * Clear all reputations from this villager. This removes every single
      * reputation regardless of its impact and the player associated.
+     *
+     * @since 1.15.2
      */
     public void clearReputations();
 
@@ -396,6 +481,8 @@ public interface Villager extends AbstractVillager {
      * Demand is used to calculate the price of items in the Villager's offers.
      * <br>
      * <b>Note: Demand is stored per item and not per Villager.</b>
+     *
+     * @since 1.21.6
      */
     public void updateDemand();
 
@@ -403,6 +490,8 @@ public interface Villager extends AbstractVillager {
      * Resets uses of all offers for the Villager. This also internally calls {@link #updateDemand()}.
      * Calling this will trigger a {@link org.bukkit.event.entity.VillagerReplenishTradeEvent} for each offer that is restocked.
      * Demand is still updated even if all events are canceled.
+     *
+     * @since 1.21.6
      */
     public void restock();
 }

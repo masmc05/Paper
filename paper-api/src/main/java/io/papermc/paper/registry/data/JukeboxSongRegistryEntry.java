@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Range;
 
 /**
  * A data-centric version-specific registry entry for the {@link JukeboxSong} type.
+ *
+ * @since 1.21.6
  */
 @ApiStatus.NonExtendable
 public interface JukeboxSongRegistryEntry {
@@ -23,6 +25,7 @@ public interface JukeboxSongRegistryEntry {
      * Gets the sound event for this song.
      *
      * @return the sound event
+     * @since 1.21.6
      */
     @Contract(pure = true)
     RegistryHolder<Sound, SoundEventRegistryEntry> soundEvent();
@@ -31,6 +34,7 @@ public interface JukeboxSongRegistryEntry {
      * Gets the description for this song.
      *
      * @return the description
+     * @since 1.21.6
      */
     @Contract(pure = true)
     Component description();
@@ -39,6 +43,7 @@ public interface JukeboxSongRegistryEntry {
      * Gets the length in seconds for this song.
      *
      * @return the length in seconds
+     * @since 1.21.6
      */
     @Contract(pure = true)
     @Positive float lengthInSeconds();
@@ -47,6 +52,7 @@ public interface JukeboxSongRegistryEntry {
      * Gets the comparator output for this song.
      *
      * @return the comparator output
+     * @since 1.21.6
      */
     @Contract(pure = true)
     @Range(from = 0, to = 15) int comparatorOutput();
@@ -63,6 +69,8 @@ public interface JukeboxSongRegistryEntry {
      *     <li>{@link #lengthInSeconds(float)}</li>
      *     <li>{@link #comparatorOutput(int)}</li>
      * </ul>
+     *
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     interface Builder extends JukeboxSongRegistryEntry, RegistryBuilder<JukeboxSong> {
@@ -75,6 +83,7 @@ public interface JukeboxSongRegistryEntry {
          * @param soundEvent the sound event
          * @return this builder instance
          * @see #soundEvent(Consumer)
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder soundEvent(TypedKey<Sound> soundEvent);
@@ -86,6 +95,7 @@ public interface JukeboxSongRegistryEntry {
          * @param soundEvent the sound event
          * @return this builder instance
          * @see #soundEvent(TypedKey)
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder soundEvent(Consumer<RegistryBuilderFactory<Sound, ? extends SoundEventRegistryEntry.Builder>> soundEvent);
@@ -98,6 +108,7 @@ public interface JukeboxSongRegistryEntry {
          * @return this builder instance
          * @see #soundEvent(TypedKey)
          * @see #soundEvent(Consumer)
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder soundEvent(RegistryHolder<Sound, SoundEventRegistryEntry> soundEvent);
@@ -107,6 +118,7 @@ public interface JukeboxSongRegistryEntry {
          *
          * @param description the description
          * @return this builder instance
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder description(Component description);
@@ -116,6 +128,7 @@ public interface JukeboxSongRegistryEntry {
          *
          * @param lengthInSeconds the length in seconds (positive)
          * @return this builder instance
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder lengthInSeconds(@Positive float lengthInSeconds);
@@ -125,6 +138,7 @@ public interface JukeboxSongRegistryEntry {
          *
          * @param comparatorOutput the comparator output [0-15]
          * @return this builder instance
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder comparatorOutput(@Range(from = 0, to = 15) int comparatorOutput);

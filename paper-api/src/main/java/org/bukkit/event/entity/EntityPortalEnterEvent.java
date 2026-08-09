@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * Cancelling this event prevents any further processing of the portal for that tick.
  * @see io.papermc.paper.event.entity.EntityInsideBlockEvent
+ * @since 1.0.0
  */
 public class EntityPortalEnterEvent extends EntityEvent implements Cancellable {
 
@@ -40,6 +41,7 @@ public class EntityPortalEnterEvent extends EntityEvent implements Cancellable {
      * Gets the portal block the entity is touching
      *
      * @return The portal block the entity is touching
+     * @since 1.0.0
      */
     @NotNull
     public Location getLocation() {
@@ -50,27 +52,40 @@ public class EntityPortalEnterEvent extends EntityEvent implements Cancellable {
      * Get the portal type.
      *
      * @return the portal type
+     * @since 1.21
      */
     public org.bukkit.@NotNull PortalType getPortalType() {
         return this.portalType;
     }
 
+    /**
+     * @since 1.21
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.21
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

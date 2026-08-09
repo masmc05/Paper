@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when an EnderDragon switches controller phase.
+ *
+ * @since 1.9.4
  */
 public class EnderDragonChangePhaseEvent extends EntityEvent implements Cancellable {
 
@@ -27,6 +29,9 @@ public class EnderDragonChangePhaseEvent extends EntityEvent implements Cancella
         this.newPhase = newPhase;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public EnderDragon getEntity() {
@@ -38,6 +43,7 @@ public class EnderDragonChangePhaseEvent extends EntityEvent implements Cancella
      * when a dragon is first spawned and hasn't yet been assigned a phase.
      *
      * @return the current dragon phase
+     * @since 1.9.4
      */
     @Nullable
     public EnderDragon.Phase getCurrentPhase() {
@@ -48,6 +54,7 @@ public class EnderDragonChangePhaseEvent extends EntityEvent implements Cancella
      * Gets the new phase that the dragon will switch to.
      *
      * @return the new dragon phase
+     * @since 1.9.4
      */
     @NotNull
     public EnderDragon.Phase getNewPhase() {
@@ -58,28 +65,41 @@ public class EnderDragonChangePhaseEvent extends EntityEvent implements Cancella
      * Sets the new phase for the ender dragon.
      *
      * @param newPhase the new dragon phase
+     * @since 1.9.4
      */
     public void setNewPhase(@NotNull EnderDragon.Phase newPhase) {
         Preconditions.checkArgument(newPhase != null, "New dragon phase cannot be null");
         this.newPhase = newPhase;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

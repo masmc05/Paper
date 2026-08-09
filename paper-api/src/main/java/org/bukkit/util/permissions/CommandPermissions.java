@@ -4,12 +4,18 @@ import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.0.0
+ */
 public final class CommandPermissions {
     private static final String ROOT = "bukkit.command";
     private static final String PREFIX = ROOT + ".";
 
     private CommandPermissions() {}
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static Permission registerPermissions(@NotNull Permission parent) {
         Permission commands = DefaultPermissions.registerPermission(ROOT, "Gives the user the ability to use all CraftBukkit commands", parent);

@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Called when a note block is being played through player interaction or a
  * redstone current.
+ *
+ * @since 1.3.1
  */
 public class NotePlayEvent extends BlockEvent implements Cancellable {
 
@@ -33,6 +35,7 @@ public class NotePlayEvent extends BlockEvent implements Cancellable {
      * Gets the {@link Instrument} to be used.
      *
      * @return the Instrument
+     * @since 1.3.1
      */
     @NotNull
     public Instrument getInstrument() {
@@ -43,6 +46,7 @@ public class NotePlayEvent extends BlockEvent implements Cancellable {
      * Gets the {@link Note} to be played.
      *
      * @return the Note
+     * @since 1.3.1
      */
     @NotNull
     public Note getNote() {
@@ -57,6 +61,7 @@ public class NotePlayEvent extends BlockEvent implements Cancellable {
      * player head state takes the priority.
      *
      * @param instrument the Instrument.
+     * @since 1.3.1
      */
     public void setInstrument(@NotNull Instrument instrument) {
         Preconditions.checkArgument(instrument != null, "instrument cannot be null");
@@ -67,28 +72,41 @@ public class NotePlayEvent extends BlockEvent implements Cancellable {
      * Overrides the {@link Note} to be played.
      *
      * @param note the Note.
+     * @since 1.3.1
      */
     public void setNote(@NotNull Note note) {
         Preconditions.checkArgument(note != null, "note cannot be null");
         this.note = note;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

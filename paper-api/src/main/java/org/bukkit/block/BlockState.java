@@ -24,6 +24,8 @@ import java.util.Collection;
  * can exist multiple times for any given Block. Note that another plugin may
  * change the state of the block and you will not know, or they may change the
  * block to another type entirely, causing your BlockState to become invalid.
+ *
+ * @since 1.0.0
  */
 public interface BlockState extends Metadatable {
 
@@ -32,6 +34,7 @@ public interface BlockState extends Metadatable {
      *
      * @return the block represented by this block state
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.0.0
      */
     @NotNull
     Block getBlock();
@@ -50,6 +53,7 @@ public interface BlockState extends Metadatable {
      * Gets the data for this block state.
      *
      * @return block specific data
+     * @since 1.13
      */
     @NotNull
     BlockData getBlockData();
@@ -58,6 +62,7 @@ public interface BlockState extends Metadatable {
      * Returns a copy of this BlockState as an unplaced BlockState.
      *
      * @return a copy of the block state
+     * @since 1.20.2
      */
     @NotNull
     BlockState copy();
@@ -67,6 +72,7 @@ public interface BlockState extends Metadatable {
      *
      * @param location the location to copy the block state to
      * @return the new block state
+     * @since 1.20.6
      */
     @NotNull
     BlockState copy(@NotNull Location location);
@@ -75,6 +81,7 @@ public interface BlockState extends Metadatable {
      * Gets the type of this block state.
      *
      * @return block type
+     * @since 1.0.0
      */
     @NotNull
     Material getType();
@@ -84,6 +91,7 @@ public interface BlockState extends Metadatable {
      *
      * @return the light level between 0-15
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.0.0
      */
     byte getLightLevel();
 
@@ -92,6 +100,7 @@ public interface BlockState extends Metadatable {
      *
      * @return the world containing the block represented by this block state
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.0.0
      */
     @NotNull
     World getWorld();
@@ -100,6 +109,7 @@ public interface BlockState extends Metadatable {
      * Gets the x-coordinate of this block state.
      *
      * @return x-coordinate
+     * @since 1.0.0
      */
     int getX();
 
@@ -107,6 +117,7 @@ public interface BlockState extends Metadatable {
      * Gets the y-coordinate of this block state.
      *
      * @return y-coordinate
+     * @since 1.0.0
      */
     int getY();
 
@@ -114,6 +125,7 @@ public interface BlockState extends Metadatable {
      * Gets the z-coordinate of this block state.
      *
      * @return z-coordinate
+     * @since 1.0.0
      */
     int getZ();
 
@@ -123,6 +135,7 @@ public interface BlockState extends Metadatable {
      * If this block state is not placed the location's world will be null!
      *
      * @return the location
+     * @since 1.1.0
      */
     @NotNull
     Location getLocation();
@@ -137,6 +150,7 @@ public interface BlockState extends Metadatable {
      *
      * @param loc the location to copy into
      * @return The Location object provided or null
+     * @since 1.4.5
      */
     @Contract("null -> null; !null -> !null")
     @Nullable
@@ -147,6 +161,7 @@ public interface BlockState extends Metadatable {
      *
      * @return the containing Chunk
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.0.0
      */
     @NotNull
     Chunk getChunk();
@@ -164,6 +179,7 @@ public interface BlockState extends Metadatable {
      * Sets the data for this block state.
      *
      * @param data New block specific data
+     * @since 1.13
      */
     void setBlockData(@NotNull BlockData data);
 
@@ -171,6 +187,7 @@ public interface BlockState extends Metadatable {
      * Sets the type of this block state.
      *
      * @param type Material to change this block state to
+     * @since 1.0.0
      */
     void setType(@NotNull Material type);
 
@@ -185,6 +202,7 @@ public interface BlockState extends Metadatable {
      *
      * @return true if the update was successful, otherwise false
      * @see #update(boolean)
+     * @since 1.0.0
      */
     boolean update();
 
@@ -197,6 +215,7 @@ public interface BlockState extends Metadatable {
      *
      * @param force true to forcefully set the state
      * @return true if the update was successful, otherwise false
+     * @since 1.0.0
      */
     boolean update(boolean force);
 
@@ -220,6 +239,7 @@ public interface BlockState extends Metadatable {
      * @param applyPhysics false to cancel updating physics on surrounding
      *     blocks
      * @return true if the update was successful, otherwise false
+     * @since 1.5.1
      */
     boolean update(boolean force, boolean applyPhysics);
 
@@ -245,6 +265,7 @@ public interface BlockState extends Metadatable {
      *
      * @return whether the state is placed in the world
      *         or 'virtual' (e.g. on an itemstack)
+     * @since 1.8.8
      */
     boolean isPlaced();
 
@@ -252,6 +273,7 @@ public interface BlockState extends Metadatable {
      * Checks if this block state is collidable.
      *
      * @return true if collidable
+     * @since 1.17.1
      */
     boolean isCollidable();
 
@@ -260,6 +282,7 @@ public interface BlockState extends Metadatable {
      *
      * @return an immutable list of dropped items for the block state
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.19.2
      */
     @NotNull
     default @Unmodifiable Collection<ItemStack> getDrops() {
@@ -273,6 +296,7 @@ public interface BlockState extends Metadatable {
      * @param tool The tool or item in hand used for digging
      * @return an immutable list of dropped items for the block state
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.19.2
      */
     @NotNull
     default @Unmodifiable Collection<ItemStack> getDrops(@Nullable ItemStack tool) {
@@ -287,6 +311,7 @@ public interface BlockState extends Metadatable {
      * @param entity the entity destroying the block
      * @return an immutable list of dropped items for the block state
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.19.2
      */
     @NotNull
     @Unmodifiable
@@ -297,6 +322,7 @@ public interface BlockState extends Metadatable {
      *
      * @return {@code true} if the block state can suffocate
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.21.6
      */
     boolean isSuffocating();
 }

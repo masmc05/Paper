@@ -7,71 +7,105 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * All supported color values for dyes and cloth
+ *
+ * @since 1.0.0
  */
 public enum DyeColor {
 
     /**
      * Represents white dye.
+     *
+     * @since 1.0.0
      */
     WHITE(0x0, 0xF, Color.fromRGB(0xF9FFFE), Color.fromRGB(0xF0F0F0)),
     /**
      * Represents orange dye.
+     *
+     * @since 1.0.0
      */
     ORANGE(0x1, 0xE, Color.fromRGB(0xF9801D), Color.fromRGB(0xEB8844)),
     /**
      * Represents magenta dye.
+     *
+     * @since 1.0.0
      */
     MAGENTA(0x2, 0xD, Color.fromRGB(0xC74EBD), Color.fromRGB(0xC354CD)),
     /**
      * Represents light blue dye.
+     *
+     * @since 1.0.0
      */
     LIGHT_BLUE(0x3, 0xC, Color.fromRGB(0x3AB3DA), Color.fromRGB(0x6689D3)),
     /**
      * Represents yellow dye.
+     *
+     * @since 1.0.0
      */
     YELLOW(0x4, 0xB, Color.fromRGB(0xFED83D), Color.fromRGB(0xDECF2A)),
     /**
      * Represents lime dye.
+     *
+     * @since 1.0.0
      */
     LIME(0x5, 0xA, Color.fromRGB(0x80C71F), Color.fromRGB(0x41CD34)),
     /**
      * Represents pink dye.
+     *
+     * @since 1.0.0
      */
     PINK(0x6, 0x9, Color.fromRGB(0xF38BAA), Color.fromRGB(0xD88198)),
     /**
      * Represents gray dye.
+     *
+     * @since 1.0.0
      */
     GRAY(0x7, 0x8, Color.fromRGB(0x474F52), Color.fromRGB(0x434343)),
     /**
      * Represents light gray dye.
+     *
+     * @since 1.13
      */
     LIGHT_GRAY(0x8, 0x7, Color.fromRGB(0x9D9D97), Color.fromRGB(0xABABAB)),
     /**
      * Represents cyan dye.
+     *
+     * @since 1.0.0
      */
     CYAN(0x9, 0x6, Color.fromRGB(0x169C9C), Color.fromRGB(0x287697)),
     /**
      * Represents purple dye.
+     *
+     * @since 1.0.0
      */
     PURPLE(0xA, 0x5, Color.fromRGB(0x8932B8), Color.fromRGB(0x7B2FBE)),
     /**
      * Represents blue dye.
+     *
+     * @since 1.0.0
      */
     BLUE(0xB, 0x4, Color.fromRGB(0x3C44AA), Color.fromRGB(0x253192)),
     /**
      * Represents brown dye.
+     *
+     * @since 1.0.0
      */
     BROWN(0xC, 0x3, Color.fromRGB(0x835432), Color.fromRGB(0x51301A)),
     /**
      * Represents green dye.
+     *
+     * @since 1.0.0
      */
     GREEN(0xD, 0x2, Color.fromRGB(0x5E7C16), Color.fromRGB(0x3B511A)),
     /**
      * Represents red dye.
+     *
+     * @since 1.0.0
      */
     RED(0xE, 0x1, Color.fromRGB(0xB02E26), Color.fromRGB(0xB3312C)),
     /**
      * Represents black dye.
+     *
+     * @since 1.0.0
      */
     BLACK(0xF, 0x0, Color.fromRGB(0x1D1D21), Color.fromRGB(0x1E1B1B));
 
@@ -109,6 +143,7 @@ public enum DyeColor {
      * @return A byte containing the dye data value of this color
      * @see #getWoolData()
      * @deprecated Magic value
+     * @since 1.4.6
      */
     @Deprecated(since = "1.6.2")
     public byte getDyeData() {
@@ -119,6 +154,7 @@ public enum DyeColor {
      * Gets the color that this dye represents.
      *
      * @return The {@link Color} that this dye represents
+     * @since 1.4.5
      */
     @NotNull
     public Color getColor() {
@@ -129,6 +165,7 @@ public enum DyeColor {
      * Gets the firework color that this dye represents.
      *
      * @return The {@link Color} that this dye represents
+     * @since 1.4.6
      */
     @NotNull
     public Color getFireworkColor() {
@@ -162,6 +199,7 @@ public enum DyeColor {
      *     it doesn't exist
      * @see #getByWoolData(byte)
      * @deprecated Magic value
+     * @since 1.4.6
      */
     @Deprecated(since = "1.6.2")
     @Nullable
@@ -179,6 +217,7 @@ public enum DyeColor {
      * @param color Color value to get the dye by
      * @return The {@link DyeColor} representing the given value, or null if
      *     it doesn't exist
+     * @since 1.4.5
      */
     @Nullable
     public static DyeColor getByColor(@NotNull final Color color) {
@@ -191,6 +230,7 @@ public enum DyeColor {
      * @param color Color value to get dye by
      * @return The {@link DyeColor} representing the given value, or null if
      *     it doesn't exist
+     * @since 1.4.6
      */
     @Nullable
     public static DyeColor getByFireworkColor(@NotNull final Color color) {

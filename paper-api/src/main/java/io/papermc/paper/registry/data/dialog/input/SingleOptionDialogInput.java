@@ -12,6 +12,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * A single option dialog input.
  * <p>Created via {@link DialogInput#singleOption(String, int, List, Component, boolean)}</p>
+ *
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public non-sealed interface SingleOptionDialogInput extends DialogInput {
@@ -20,6 +22,7 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
      * The width of the input.
      *
      * @return the width
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Range(from = 1, to = 1024) int width();
@@ -28,6 +31,7 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
      * The list of options for the input.
      *
      * @return the list of option entries
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Unmodifiable List<OptionEntry> entries();
@@ -36,6 +40,7 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
      * The label for the input.
      *
      * @return the label component
+     * @since 1.21.7
      */
     @Contract(pure = true)
     Component label();
@@ -44,6 +49,7 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
      * Whether the label should be visible.
      *
      * @return true if the label is visible, false otherwise
+     * @since 1.21.7
      */
     @Contract(pure = true)
     boolean labelVisible();
@@ -51,6 +57,8 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
     /**
      * Represents a single option entry in a single option dialog input.
      * <p>Only 1 option is allowed to have initial selected.</p>
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     interface OptionEntry {
@@ -62,6 +70,7 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
          * @param display the display name for the option, or null if not set
          * @param initial whether this option is initially selected
          * @return a new option entry instance
+         * @since 1.21.7
          */
         @Contract(pure = true, value = "_, _, _ -> new")
         static OptionEntry create(final String id, final @Nullable Component display, final boolean initial) {
@@ -72,6 +81,7 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
          * The unique identifier for the option.
          *
          * @return the option ID
+         * @since 1.21.7
          */
         @Contract(pure = true)
         String id();
@@ -80,6 +90,7 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
          * The display name for the option, or null if not set.
          *
          * @return the display component, or null
+         * @since 1.21.7
          */
         @Contract(pure = true)
         @Nullable Component display();
@@ -89,6 +100,7 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
          * <p>Only 1 option is allowed to have initial selected.</p>
          *
          * @return true if the option is initially selected, false otherwise
+         * @since 1.21.7
          */
         @Contract(pure = true)
         boolean initial();
@@ -97,6 +109,8 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
     /**
      * A builder for creating a {@link SingleOptionDialogInput}.
      * <p>Created via {@link DialogInput#singleOption(String, Component, List)}</p>
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     interface Builder {
@@ -106,6 +120,7 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
          *
          * @param width the width
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder width(@Range(from = 1, to = 1024) int width);
@@ -115,6 +130,7 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
          *
          * @param labelVisible whether the label should be visible
          * @return this builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder labelVisible(boolean labelVisible);
@@ -123,6 +139,7 @@ public non-sealed interface SingleOptionDialogInput extends DialogInput {
          * Builds the {@link SingleOptionDialogInput}.
          *
          * @return the built dialog input
+         * @since 1.21.7
          */
         @Contract(value = "-> new", pure = true)
         SingleOptionDialogInput build();

@@ -9,6 +9,7 @@ import org.jetbrains.annotations.ApiStatus;
  * a rotation argument value using a {@link CommandSourceStack}.
  *
  * @see io.papermc.paper.command.brigadier.argument.ArgumentTypes#rotation()
+ * @since 1.21.4
  */
 @ApiStatus.NonExtendable
 public interface RotationResolver extends ArgumentResolver<Rotation> {

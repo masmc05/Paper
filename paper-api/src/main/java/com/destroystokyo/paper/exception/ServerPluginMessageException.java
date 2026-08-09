@@ -7,6 +7,8 @@ import static com.google.common.base.Preconditions.*;
 
 /**
  * Thrown when an incoming plugin message channel throws an exception
+ *
+ * @since 1.9.4
  */
 public class ServerPluginMessageException extends ServerPluginException {
 
@@ -14,6 +16,9 @@ public class ServerPluginMessageException extends ServerPluginException {
     private final String channel;
     private final byte[] data;
 
+    /**
+     * @since 1.9.4
+     */
     public ServerPluginMessageException(String message, Throwable cause, Plugin responsiblePlugin, Player player, String channel, byte[] data) {
         super(message, cause, responsiblePlugin);
         this.player = checkNotNull(player, "player");
@@ -21,6 +26,9 @@ public class ServerPluginMessageException extends ServerPluginException {
         this.data = checkNotNull(data, "data");
     }
 
+    /**
+     * @since 1.9.4
+     */
     public ServerPluginMessageException(Throwable cause, Plugin responsiblePlugin, Player player, String channel, byte[] data) {
         super(cause, responsiblePlugin);
         this.player = checkNotNull(player, "player");
@@ -39,6 +47,7 @@ public class ServerPluginMessageException extends ServerPluginException {
      * Gets the channel to which the error occurred from receiving data from
      *
      * @return exception channel
+     * @since 1.9.4
      */
     public String getChannel() {
         return channel;
@@ -48,6 +57,7 @@ public class ServerPluginMessageException extends ServerPluginException {
      * Gets the data to which the error occurred from
      *
      * @return exception data
+     * @since 1.9.4
      */
     public byte[] getData() {
         return data;
@@ -57,6 +67,7 @@ public class ServerPluginMessageException extends ServerPluginException {
      * Gets the player which the plugin message causing the exception originated from
      *
      * @return exception player
+     * @since 1.9.4
      */
     public Player getPlayer() {
         return player;

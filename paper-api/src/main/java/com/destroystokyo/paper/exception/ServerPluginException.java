@@ -6,13 +6,21 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Wrapper exception for all cases to which a plugin can be immediately blamed for
+ *
+ * @since 1.9.4
  */
 public class ServerPluginException extends ServerException {
+    /**
+     * @since 1.9.4
+     */
     public ServerPluginException(String message, Throwable cause, Plugin responsiblePlugin) {
         super(message, cause);
         this.responsiblePlugin = checkNotNull(responsiblePlugin, "responsiblePlugin");
     }
 
+    /**
+     * @since 1.9.4
+     */
     public ServerPluginException(Throwable cause, Plugin responsiblePlugin) {
         super(cause);
         this.responsiblePlugin = checkNotNull(responsiblePlugin, "responsiblePlugin");
@@ -29,6 +37,7 @@ public class ServerPluginException extends ServerException {
      * Gets the plugin which is directly responsible for the exception being thrown
      *
      * @return plugin which is responsible for the exception throw
+     * @since 1.9.4
      */
     public Plugin getResponsiblePlugin() {
         return responsiblePlugin;

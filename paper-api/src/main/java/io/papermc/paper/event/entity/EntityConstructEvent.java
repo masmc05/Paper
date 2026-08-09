@@ -16,6 +16,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * Note: This event is fired before {@link EntitySpawnEvent}, before the entity is added to the world,
  * the success of this event does not guarantee the entity will actually spawn.
+ *
+ * @since 26.2
  */
 @NullMarked
 public class EntityConstructEvent extends EntityEvent implements Cancellable {
@@ -36,26 +38,39 @@ public class EntityConstructEvent extends EntityEvent implements Cancellable {
      * any required air blocks.
      *
      * @return the blocks
+     * @since 26.2
      */
     public @Unmodifiable List<Block> getBlocks() {
         return this.blocks;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 26.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

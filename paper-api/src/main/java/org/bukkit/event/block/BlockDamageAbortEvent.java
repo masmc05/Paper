@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
  * Called when a player stops damaging a Block.
  *
  * @see BlockDamageEvent
+ * @since 1.18.1
  */
 public class BlockDamageAbortEvent extends BlockEvent {
 
@@ -18,6 +19,9 @@ public class BlockDamageAbortEvent extends BlockEvent {
     private final Player player;
     private final ItemStack itemstack;
 
+    /**
+     * @since 1.18.1
+     */
     public BlockDamageAbortEvent(@NotNull final Player player, @NotNull final Block block, @NotNull final ItemStack itemInHand) {
         super(block);
         this.player = player;
@@ -28,6 +32,7 @@ public class BlockDamageAbortEvent extends BlockEvent {
      * Gets the player that stopped damaging the block involved in this event.
      *
      * @return The player that stopped damaging the block
+     * @since 1.18.1
      */
     @NotNull
     public Player getPlayer() {
@@ -38,18 +43,25 @@ public class BlockDamageAbortEvent extends BlockEvent {
      * Gets the ItemStack for the item currently in the player's hand.
      *
      * @return The ItemStack for the item currently in the player's hand
+     * @since 1.18.1
      */
     @NotNull
     public ItemStack getItemInHand() {
         return this.itemstack;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

@@ -4,12 +4,16 @@ import java.util.List;
 import org.bukkit.NamespacedKey;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.12
+ */
 public interface KnowledgeBookMeta extends ItemMeta {
 
     /**
      * Checks for the existence of recipes in the book.
      *
      * @return true if the book has recipes
+     * @since 1.12
      */
     boolean hasRecipes();
 
@@ -17,6 +21,7 @@ public interface KnowledgeBookMeta extends ItemMeta {
      * Gets all the recipes in the book.
      *
      * @return list of all the recipes in the book
+     * @since 1.12
      */
     @NotNull
     List<NamespacedKey> getRecipes();
@@ -26,6 +31,7 @@ public interface KnowledgeBookMeta extends ItemMeta {
      * recipes.
      *
      * @param recipes A list of recipes to set the book to use
+     * @since 1.12
      */
     void setRecipes(@NotNull List<NamespacedKey> recipes);
 
@@ -33,6 +39,7 @@ public interface KnowledgeBookMeta extends ItemMeta {
      * Adds new recipe to the end of the book.
      *
      * @param recipes A list of recipe keys
+     * @since 1.12
      */
     void addRecipe(@NotNull NamespacedKey... recipes);
 

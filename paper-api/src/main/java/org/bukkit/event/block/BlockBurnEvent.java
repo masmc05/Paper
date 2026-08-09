@@ -12,6 +12,8 @@ import org.jetbrains.annotations.Nullable;
  * <p>
  * If this event is cancelled, the block will not be destroyed as a
  * result of being burnt by fire.
+ *
+ * @since 1.0.0
  */
 public class BlockBurnEvent extends BlockEvent implements Cancellable {
 
@@ -37,28 +39,41 @@ public class BlockBurnEvent extends BlockEvent implements Cancellable {
      *
      * @return The Block that ignited and burned this block, or {@code null} if no
      * source block exists
+     * @since 1.11.2
      */
     @Nullable
     public Block getIgnitingBlock() {
         return this.ignitingBlock;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * A class for the available enchantment offers in the enchantment table.
+ *
+ * @since 1.11
  */
 public class EnchantmentOffer {
 
@@ -12,6 +14,9 @@ public class EnchantmentOffer {
     private int enchantmentLevel;
     private int cost;
 
+    /**
+     * @since 1.11
+     */
     public EnchantmentOffer(@NotNull Enchantment enchantment, int enchantmentLevel, int cost) {
         this.enchantment = enchantment;
         this.enchantmentLevel = enchantmentLevel;
@@ -22,6 +27,7 @@ public class EnchantmentOffer {
      * Get the type of the enchantment.
      *
      * @return type of enchantment
+     * @since 1.11
      */
     @NotNull
     public Enchantment getEnchantment() {
@@ -32,6 +38,7 @@ public class EnchantmentOffer {
      * Sets the type of the enchantment.
      *
      * @param enchantment type of the enchantment
+     * @since 1.11
      */
     public void setEnchantment(@NotNull Enchantment enchantment) {
         Preconditions.checkArgument(enchantment != null, "The enchantment may not be null!");
@@ -43,6 +50,7 @@ public class EnchantmentOffer {
      * Gets the level of the enchantment.
      *
      * @return level of the enchantment
+     * @since 1.11
      */
     public int getEnchantmentLevel() {
         return enchantmentLevel;
@@ -52,6 +60,7 @@ public class EnchantmentOffer {
      * Sets the level of the enchantment.
      *
      * @param enchantmentLevel level of the enchantment
+     * @since 1.11
      */
     public void setEnchantmentLevel(int enchantmentLevel) {
         Preconditions.checkArgument(enchantmentLevel > 0, "The enchantment level must be greater than 0!");
@@ -64,6 +73,7 @@ public class EnchantmentOffer {
      * hand side of the enchantment offer.
      *
      * @return cost for this enchantment
+     * @since 1.11
      */
     public int getCost() {
         return cost;
@@ -74,6 +84,7 @@ public class EnchantmentOffer {
      * hand side of the enchantment offer.
      *
      * @param cost cost for this enchantment
+     * @since 1.11
      */
     public void setCost(int cost) {
         Preconditions.checkArgument(cost > 0, "The cost must be greater than 0!");

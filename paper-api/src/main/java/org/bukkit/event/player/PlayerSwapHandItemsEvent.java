@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Called when a player swap items between main hand and off-hand using the
  * hotkey.
+ *
+ * @since 1.9.4
  */
 public class PlayerSwapHandItemsEvent extends PlayerEvent implements Cancellable {
 
@@ -33,6 +35,7 @@ public class PlayerSwapHandItemsEvent extends PlayerEvent implements Cancellable
      * Gets the item switched to the main hand.
      *
      * @return item in the main hand
+     * @since 1.9.4
      */
     @NotNull
     public ItemStack getMainHandItem() {
@@ -43,6 +46,7 @@ public class PlayerSwapHandItemsEvent extends PlayerEvent implements Cancellable
      * Sets the item in the main hand.
      *
      * @param mainHandItem new item in the main hand
+     * @since 1.9.4
      */
     public void setMainHandItem(@Nullable ItemStack mainHandItem) {
         this.mainHandItem = mainHandItem == null ? ItemStack.empty() : mainHandItem;
@@ -52,6 +56,7 @@ public class PlayerSwapHandItemsEvent extends PlayerEvent implements Cancellable
      * Gets the item switched to the off-hand.
      *
      * @return item in the off-hand
+     * @since 1.9.4
      */
     @NotNull // Paper
     public ItemStack getOffHandItem() {
@@ -62,27 +67,40 @@ public class PlayerSwapHandItemsEvent extends PlayerEvent implements Cancellable
      * Sets the item in the off-hand.
      *
      * @param offHandItem new item in the off-hand
+     * @since 1.9.4
      */
     public void setOffHandItem(@Nullable ItemStack offHandItem) {
         this.offHandItem = offHandItem == null ? ItemStack.empty() : offHandItem;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

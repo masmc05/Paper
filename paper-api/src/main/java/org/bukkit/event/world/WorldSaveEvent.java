@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a World is saved.
+ *
+ * @since 1.0.0
  */
 public class WorldSaveEvent extends WorldEvent {
 
@@ -17,12 +19,18 @@ public class WorldSaveEvent extends WorldEvent {
         super(world);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

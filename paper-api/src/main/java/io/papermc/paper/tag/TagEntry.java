@@ -13,6 +13,7 @@ import org.jspecify.annotations.NullMarked;
  *
  * @param <T> the type of value in the tag
  * @see PreFlattenTagRegistrar
+ * @since 1.21.1
  */
 @ApiStatus.Experimental
 @NullMarked
@@ -25,6 +26,7 @@ public interface TagEntry<T> extends Keyed {
      * @param entryKey the key of the entry
      * @return a new tag entry for a value
      * @param <T> the type of value
+     * @since 1.21.1
      */
     @Contract(value = "_ -> new", pure = true)
     static <T> TagEntry<T> valueEntry(final TypedKey<T> entryKey) {
@@ -38,6 +40,7 @@ public interface TagEntry<T> extends Keyed {
      * @param isRequired if this entry is required (see {@link #isRequired()})
      * @return a new tag entry for a value
      * @param <T> the type of value
+     * @since 1.21.1
      */
     @Contract(value = "_, _ -> new", pure = true)
     static <T> TagEntry<T> valueEntry(final TypedKey<T> entryKey, final boolean isRequired) {
@@ -50,6 +53,7 @@ public interface TagEntry<T> extends Keyed {
      * @param tagKey they key for the tag
      * @return a new tag entry for a tag
      * @param <T> the type of value
+     * @since 1.21.1
      */
     @Contract(value = "_ -> new", pure = true)
     static <T> TagEntry<T> tagEntry(final TagKey<T> tagKey) {
@@ -63,6 +67,7 @@ public interface TagEntry<T> extends Keyed {
      * @param isRequired if this entry is required (see {@link #isRequired()})
      * @return a new tag entry for a tag
      * @param <T> the type of value
+     * @since 1.21.1
      */
     @Contract(value = "_, _ -> new", pure = true)
     static <T> TagEntry<T> tagEntry(final TagKey<T> tagKey, final boolean isRequired) {
@@ -73,6 +78,7 @@ public interface TagEntry<T> extends Keyed {
      * Returns if this entry represents a tag.
      *
      * @return true if this entry is a tag, false if it is an individual entry
+     * @since 1.21.1
      */
     @Contract(pure = true)
     boolean isTag();
@@ -84,6 +90,7 @@ public interface TagEntry<T> extends Keyed {
      * that missing value from being created.
      *
      * @return true if this entry is required, false if it is optional
+     * @since 1.21.1
      */
     @Contract(pure = true)
     boolean isRequired();

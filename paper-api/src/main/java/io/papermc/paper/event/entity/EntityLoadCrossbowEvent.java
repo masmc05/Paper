@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when a LivingEntity loads a crossbow with a projectile.
+ *
+ * @since 1.16.4
  */
 @NullMarked
 public class EntityLoadCrossbowEvent extends EntityEvent implements Cancellable {
@@ -30,6 +32,9 @@ public class EntityLoadCrossbowEvent extends EntityEvent implements Cancellable 
         this.hand = hand;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public LivingEntity getEntity() {
         return (LivingEntity) super.getEntity();
@@ -39,6 +44,7 @@ public class EntityLoadCrossbowEvent extends EntityEvent implements Cancellable 
      * Gets the crossbow {@link ItemStack} being loaded.
      *
      * @return the crossbow involved in this event
+     * @since 1.16.4
      */
     public ItemStack getCrossbow() {
         return this.crossbow;
@@ -48,6 +54,7 @@ public class EntityLoadCrossbowEvent extends EntityEvent implements Cancellable 
      * Gets the hand from which the crossbow was loaded.
      *
      * @return the hand
+     * @since 1.16.4
      */
     public EquipmentSlot getHand() {
         return this.hand;
@@ -55,6 +62,7 @@ public class EntityLoadCrossbowEvent extends EntityEvent implements Cancellable 
 
     /**
      * @return should the itemstack be consumed
+     * @since 1.16.4
      */
     public boolean shouldConsumeItem() {
         return this.consumeItem;
@@ -62,11 +70,15 @@ public class EntityLoadCrossbowEvent extends EntityEvent implements Cancellable 
 
     /**
      * @param consume should the item be consumed
+     * @since 1.16.4
      */
     public void setConsumeItem(final boolean consume) {
         this.consumeItem = consume;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -75,17 +87,25 @@ public class EntityLoadCrossbowEvent extends EntityEvent implements Cancellable 
     /**
      * Set whether to cancel the crossbow being loaded. If canceled, the
      * projectile that would be loaded into the crossbow will not be consumed.
+     *
+     * @since 1.16.4
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

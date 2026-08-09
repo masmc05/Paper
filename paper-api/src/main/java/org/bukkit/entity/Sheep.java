@@ -4,6 +4,8 @@ import org.bukkit.material.Colorable;
 
 /**
  * Represents a Sheep.
+ *
+ * @since 1.0.0
  */
 public interface Sheep extends Animals, Colorable, Shearable, io.papermc.paper.entity.Shearable { // Paper - Shear API
 
@@ -11,6 +13,7 @@ public interface Sheep extends Animals, Colorable, Shearable, io.papermc.paper.e
      * Gets whether the sheep is in its sheared state.
      *
      * @return Whether the sheep is sheared.
+     * @since 1.0.0
      */
     boolean isSheared();
 
@@ -18,6 +21,7 @@ public interface Sheep extends Animals, Colorable, Shearable, io.papermc.paper.e
      * Sets whether the sheep is in its sheared state.
      *
      * @param flag Whether to shear the sheep
+     * @since 1.0.0
      */
     void setSheared(boolean flag);
 }

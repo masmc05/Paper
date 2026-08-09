@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
  * Material#LEATHER_LEGGINGS}, {@link Material#LEATHER_CHESTPLATE}, {@link
  * Material#LEATHER_HELMET}, {@link Material#LEATHER_HORSE_ARMOR} or {@link
  * Material#WOLF_ARMOR}) that can be colored.
+ *
+ * @since 1.4.5
  */
 public interface LeatherArmorMeta extends ItemMeta {
 
@@ -22,6 +24,7 @@ public interface LeatherArmorMeta extends ItemMeta {
      * @apiNote The method yielding {@link ItemFactory#getDefaultLeatherColor()} is incorrect
      * for {@link Material#WOLF_ARMOR} as its default color differs. Generally, it is recommended to check
      * {@link #isDyed()} to determine if this leather armor is dyed than to compare this color to the default.
+     * @since 1.4.5
      */
     @NotNull
     Color getColor();
@@ -30,6 +33,7 @@ public interface LeatherArmorMeta extends ItemMeta {
      * Sets the color of the armor.
      *
      * @param color the color to set.
+     * @since 1.4.5
      */
     void setColor(@Nullable Color color);
 
@@ -42,6 +46,7 @@ public interface LeatherArmorMeta extends ItemMeta {
      * Checks whether this leather armor is dyed.
      *
      * @return whether this leather armor is dyed
+     * @since 1.20.6
      */
     boolean isDyed();
     // Paper end - Expose #hasColor to leather armor

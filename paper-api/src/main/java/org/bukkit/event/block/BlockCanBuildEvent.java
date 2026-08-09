@@ -19,6 +19,8 @@ import org.jetbrains.annotations.Nullable;
  * <li>If you want to figure out what is being placed, use {@link
  *     #getMaterial()} instead.
  * </ul>
+ *
+ * @since 1.0.0
  */
 public class BlockCanBuildEvent extends BlockEvent {
 
@@ -56,6 +58,7 @@ public class BlockCanBuildEvent extends BlockEvent {
      * May be {@code null} for legacy calls of the event.
      *
      * @return The Player who placed the block involved in this event
+     * @since 1.13.2
      */
     @Nullable
     public Player getPlayer() {
@@ -66,6 +69,7 @@ public class BlockCanBuildEvent extends BlockEvent {
      * Gets the Material that we are trying to place.
      *
      * @return The Material that we are trying to place
+     * @since 1.0.0
      */
     @NotNull
     public Material getMaterial() {
@@ -76,6 +80,7 @@ public class BlockCanBuildEvent extends BlockEvent {
      * Gets the BlockData that we are trying to place.
      *
      * @return The BlockData that we are trying to place
+     * @since 1.13
      */
     @NotNull
     public BlockData getBlockData() {
@@ -86,6 +91,7 @@ public class BlockCanBuildEvent extends BlockEvent {
      * Gets the hand the player will use to place the block
      *
      * @return the EquipmentSlot representing the players hand.
+     * @since 1.20.1
      */
     @NotNull
     public org.bukkit.inventory.EquipmentSlot getHand() {
@@ -99,6 +105,7 @@ public class BlockCanBuildEvent extends BlockEvent {
      * built here or not.
      *
      * @return boolean whether the block can be built
+     * @since 1.0.0
      */
     public boolean isBuildable() {
         return this.buildable;
@@ -109,17 +116,24 @@ public class BlockCanBuildEvent extends BlockEvent {
      *
      * @param cancel {@code true} if you want to allow the block to be built here
      *     despite Minecraft's default behaviour
+     * @since 1.0.0
      */
     public void setBuildable(boolean cancel) {
         this.buildable = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

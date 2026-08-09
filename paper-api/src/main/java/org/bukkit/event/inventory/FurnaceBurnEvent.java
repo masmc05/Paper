@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
  * Called when an ItemStack is successfully burned as fuel in a furnace-like block such as a
  * {@link org.bukkit.block.Furnace}, {@link org.bukkit.block.Smoker}, or
  * {@link org.bukkit.block.BlastFurnace}.
+ *
+ * @since 1.0.0
  */
 public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
 
@@ -35,6 +37,7 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
      * Gets the fuel ItemStack for this event
      *
      * @return the fuel ItemStack
+     * @since 1.0.0
      */
     @NotNull
     public ItemStack getFuel() {
@@ -45,6 +48,7 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
      * Gets the burn time for this fuel
      *
      * @return the burn time for this fuel
+     * @since 1.0.0
      */
     public int getBurnTime() {
         return this.burnTime;
@@ -54,6 +58,7 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
      * Sets the burn time for this fuel
      *
      * @param burnTime the burn time for this fuel
+     * @since 1.0.0
      */
     public void setBurnTime(@org.jetbrains.annotations.Range(from = Short.MIN_VALUE, to = Short.MAX_VALUE) int burnTime) {
         this.burnTime = Math.clamp(burnTime, Short.MIN_VALUE, Short.MAX_VALUE);
@@ -63,6 +68,7 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
      * Gets whether the furnace's fuel is burning or not.
      *
      * @return whether the furnace's fuel is burning or not.
+     * @since 1.0.0
      */
     public boolean isBurning() {
         return this.burning;
@@ -72,6 +78,7 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
      * Sets whether the furnace's fuel is burning or not.
      *
      * @param burning {@code true} if the furnace's fuel is burning
+     * @since 1.0.0
      */
     public void setBurning(boolean burning) {
         this.burning = burning;
@@ -81,6 +88,7 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
      * Gets whether the furnace's fuel will be consumed or not.
      *
      * @return whether the furnace's fuel will be consumed
+     * @since 1.16.5
      */
     public boolean willConsumeFuel() {
         return this.consumeFuel;
@@ -90,27 +98,40 @@ public class FurnaceBurnEvent extends BlockEvent implements Cancellable {
      * Sets whether the furnace's fuel will be consumed or not.
      *
      * @param consumeFuel {@code true} to consume the fuel
+     * @since 1.16.5
      */
     public void setConsumeFuel(boolean consumeFuel) {
         this.consumeFuel = consumeFuel;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

@@ -10,6 +10,7 @@ import org.jetbrains.annotations.ApiStatus;
  * from event types in {@link io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents}
  *
  * @param <O>
+ * @since 1.20.4
  */
 @SuppressWarnings("unused")
 @ApiStatus.NonExtendable

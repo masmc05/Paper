@@ -12,10 +12,18 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Interface which defines the class for event call backs to plugins
+ *
+ * @since 1.0.0
  */
 public interface EventExecutor {
+    /**
+     * @since 1.0.0
+     */
     public void execute(@NotNull Listener listener, @NotNull Event event) throws EventException;
 
+    /**
+     * @since 1.9.4
+     */
     // Paper start
     @NotNull
     static EventExecutor create(@NotNull Method m, @NotNull Class<? extends Event> eventClass) {

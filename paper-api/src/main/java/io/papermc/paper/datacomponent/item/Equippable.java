@@ -14,6 +14,7 @@ import org.jspecify.annotations.Nullable;
 /**
  * Holds the equippable properties of an item.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#EQUIPPABLE
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
@@ -24,6 +25,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      *
      * @param slot The slot for the new equippable to be equippable in.
      * @return a new builder
+     * @since 1.21.3
      */
     @Contract(value = "_ -> new", pure = true)
     static Equippable.Builder equippable(final EquipmentSlot slot) {
@@ -34,6 +36,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Gets the equipment slot this item can be equipped in.
      *
      * @return the equipment slot
+     * @since 1.21.3
      */
     @Contract(pure = true)
     EquipmentSlot slot();
@@ -42,6 +45,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Gets the equip sound key.
      *
      * @return the equip sound key
+     * @since 1.21.3
      */
     @Contract(pure = true)
     Key equipSound();
@@ -50,6 +54,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Gets the asset id if present.
      *
      * @return the asset id or null
+     * @since 1.21.4
      */
     @Contract(pure = true)
     @Nullable Key assetId();
@@ -58,6 +63,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Gets the camera overlay key if present.
      *
      * @return the camera overlay key or null
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable Key cameraOverlay();
@@ -67,6 +73,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * May be null if all entities are allowed.
      *
      * @return the set of allowed entities
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable RegistryKeySet<EntityType> allowedEntities();
@@ -75,6 +82,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Checks if the item is dispensable.
      *
      * @return true if dispensable, false otherwise
+     * @since 1.21.3
      */
     @Contract(pure = true)
     boolean dispensable();
@@ -83,6 +91,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Checks if the item is swappable.
      *
      * @return true if swappable, false otherwise
+     * @since 1.21.3
      */
     @Contract(pure = true)
     boolean swappable();
@@ -91,6 +100,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Checks if the item takes damage when the wearer is hurt.
      *
      * @return true if it damages on hurt, false otherwise
+     * @since 1.21.3
      */
     @Contract(pure = true)
     boolean damageOnHurt();
@@ -99,6 +109,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Checks if the item should be equipped when interacting with an entity.
      *
      * @return true if it equips on interact, false otherwise
+     * @since 1.21.6
      */
     @Contract(pure = true)
     boolean equipOnInteract();
@@ -107,6 +118,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Checks if the item can be sheared off an entity.
      *
      * @return true if can be sheared off an entity, false otherwise
+     * @since 1.21.6
      */
     @Contract(pure = true)
     boolean canBeSheared();
@@ -115,12 +127,15 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
      * Returns the sound that is played when shearing this equipment off an entity.
      *
      * @return shear sound
+     * @since 1.21.6
      */
     @Contract(pure = true)
     Key shearSound();
 
     /**
      * Builder for {@link Equippable}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<Equippable> {
@@ -130,6 +145,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param sound the equip sound key
          * @return the builder for chaining
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder equipSound(Key sound);
@@ -139,6 +155,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param assetId the asset id, nullable
          * @return the builder for chaining
+         * @since 1.21.4
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder assetId(@Nullable Key assetId);
@@ -148,6 +165,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param cameraOverlay the camera overlay key, nullable
          * @return the builder for chaining
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder cameraOverlay(@Nullable Key cameraOverlay);
@@ -157,6 +175,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param allowedEntities the set of allowed entity types, or null if any
          * @return the builder for chaining
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder allowedEntities(@Nullable RegistryKeySet<EntityType> allowedEntities);
@@ -166,6 +185,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param dispensable true if dispensable
          * @return the builder for chaining
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder dispensable(boolean dispensable);
@@ -175,6 +195,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param swappable true if swappable
          * @return the builder for chaining
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder swappable(boolean swappable);
@@ -184,6 +205,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param damageOnHurt true if it damages on hurt
          * @return the builder for chaining
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder damageOnHurt(boolean damageOnHurt);
@@ -193,6 +215,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param equipOnInteract true if it equips on interact
          * @return the builder for chaining
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder equipOnInteract(boolean equipOnInteract);
@@ -202,6 +225,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param canBeSheared true if can be sheared off an entity
          * @return the builder for chaining
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder canBeSheared(boolean canBeSheared);
@@ -211,6 +235,7 @@ public interface Equippable extends BuildableDataComponent<Equippable, Equippabl
          *
          * @param shearSound the shear sound key
          * @return the builder for chaining
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder shearSound(Key shearSound);

@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when a living entity tries to lunge with a spear.
+ *
+ * @since 26.2
  */
 @NullMarked
 public class EntityLungeEvent extends EntityEvent implements Cancellable {
@@ -28,6 +30,7 @@ public class EntityLungeEvent extends EntityEvent implements Cancellable {
      * Gets the lunge power, which when initially passed, matches the enchantment level of the item, but can be higher.
      *
      * @return the lunge power
+     * @since 26.2
      */
     public int getLungePower() {
         return this.lungePower;
@@ -40,11 +43,15 @@ public class EntityLungeEvent extends EntityEvent implements Cancellable {
      * level is higher.
      *
      * @param lungePower the new lunge power
+     * @since 26.2
      */
     public void setLungePower(final int lungePower) {
         this.lungePower = lungePower;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -54,17 +61,24 @@ public class EntityLungeEvent extends EntityEvent implements Cancellable {
      * Set whether to cancel the lunge. If cancelled, the living entity will not lunge forward.
      *
      * @param cancel {@code true} if you wish to cancel this event
+     * @since 26.2
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 26.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

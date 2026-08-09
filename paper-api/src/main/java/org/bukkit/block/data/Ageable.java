@@ -7,6 +7,8 @@ package org.bukkit.block.data;
  * A value of 0 indicates that the crop was freshly planted, whilst a value
  * equal to {@link #getMaximumAge()} indicates that the crop is ripe and ready
  * to be harvested.
+ *
+ * @since 1.13
  */
 public interface Ageable extends BlockData {
 
@@ -14,6 +16,7 @@ public interface Ageable extends BlockData {
      * Gets the value of the 'age' property.
      *
      * @return the 'age' value
+     * @since 1.13
      */
     int getAge();
 
@@ -21,6 +24,7 @@ public interface Ageable extends BlockData {
      * Sets the value of the 'age' property.
      *
      * @param age the new 'age' value
+     * @since 1.13
      */
     void setAge(int age);
 
@@ -28,6 +32,7 @@ public interface Ageable extends BlockData {
      * Gets the maximum allowed value of the 'age' property.
      *
      * @return the maximum 'age' value
+     * @since 1.13
      */
     int getMaximumAge();
 }

@@ -7,10 +7,16 @@ import org.jetbrains.annotations.Contract;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
+/**
+ * @since 1.21.3
+ */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface BlockPredicate {
 
+    /**
+     * @since 1.21.3
+     */
     static Builder predicate() {
         //<editor-fold desc="implementations" defaultstate="collapsed">
         record BlockPredicateImpl(@Nullable RegistryKeySet<BlockType> blocks) implements BlockPredicate {
@@ -35,14 +41,26 @@ public interface BlockPredicate {
         return new BuilderImpl();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Nullable RegistryKeySet<BlockType> blocks();
 
+    /**
+     * @since 1.21.3
+     */
     @ApiStatus.NonExtendable
     interface Builder {
 
+        /**
+         * @since 1.21.3
+         */
         @Contract(value = "_ -> this", mutates = "this")
         Builder blocks(@Nullable RegistryKeySet<BlockType> blocks);
 
+        /**
+         * @since 1.21.3
+         */
         BlockPredicate build();
     }
 }

@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
  * removed. It is recommended that when wanting persistent metadata, you use {@link org.bukkit.persistence.PersistentDataContainer}.
  * <p>
  * If you want temporary values on an entity, use the entity lifecycle events and a {@link java.util.Map} of your own. (See {@link com.destroystokyo.paper.event.entity.EntityAddToWorldEvent} and {@link com.destroystokyo.paper.event.entity.EntityRemoveFromWorldEvent})
+ * @since 1.1.0
  */
 @Deprecated
 public class FixedMetadataValue extends LazyMetadataValue {
@@ -31,17 +32,24 @@ public class FixedMetadataValue extends LazyMetadataValue {
      *
      * @param owningPlugin the {@link Plugin} that created this metadata value
      * @param value the value assigned to this metadata value
+     * @since 1.1.0
      */
     public FixedMetadataValue(@NotNull Plugin owningPlugin, @Nullable final Object value) {
         super(owningPlugin);
         this.internalValue = value;
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Override
     public void invalidate() {
 
     }
 
+    /**
+     * @since 1.5.1
+     */
     @Nullable
     @Override
     public Object value() {

@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a player empties a bucket
+ *
+ * @since 1.0.0
  */
 public class PlayerBucketEmptyEvent extends PlayerBucketEvent {
 
@@ -34,12 +36,18 @@ public class PlayerBucketEmptyEvent extends PlayerBucketEvent {
         super(player, block, blockClicked, blockFace, bucket, itemInHand, hand);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

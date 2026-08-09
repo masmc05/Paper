@@ -58,6 +58,7 @@ import org.jspecify.annotations.Nullable;
  * was registered with.</p>
  *
  * @see io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents#COMMANDS
+ * @since 1.20.6
  */
 @ApiStatus.NonExtendable
 public interface Commands extends Registrar {
@@ -67,6 +68,7 @@ public interface Commands extends Registrar {
      *
      * @param literal literal name
      * @return a new builder instance
+     * @since 1.20.6
      */
     static LiteralArgumentBuilder<CommandSourceStack> literal(final String literal) {
         return LiteralArgumentBuilder.literal(literal);
@@ -79,6 +81,7 @@ public interface Commands extends Registrar {
      * @param argumentType the type of the argument
      * @param <T>          the generic type of the argument value
      * @return a new required argument builder
+     * @since 1.20.6
      */
     static <T> RequiredArgumentBuilder<CommandSourceStack, T> argument(final String name, final ArgumentType<T> argumentType) {
         return RequiredArgumentBuilder.argument(name, argumentType);
@@ -95,6 +98,7 @@ public interface Commands extends Registrar {
      *
      * @param predicate the original predicate to wrap
      * @return a new predicate with restricted execution behavior
+     * @since 1.21.6
      */
     static Predicate<CommandSourceStack> restricted(final Predicate<CommandSourceStack> predicate) {
         return InternalAPIBridge.get().restricted(predicate);
@@ -118,6 +122,7 @@ public interface Commands extends Registrar {
      * </ul>
      *
      * @return the dispatcher instance
+     * @since 1.20.6
      */
     CommandDispatcher<CommandSourceStack> getDispatcher();
 
@@ -133,6 +138,7 @@ public interface Commands extends Registrar {
      *
      * @param node the built literal command node
      * @return successfully registered root command labels (including aliases and namespaced variants)
+     * @since 1.20.6
      */
     default @Unmodifiable Set<String> register(final LiteralCommandNode<CommandSourceStack> node) {
         return this.register(node, null, Collections.emptyList());
@@ -151,6 +157,7 @@ public interface Commands extends Registrar {
      * @param node        the built literal command node
      * @param description the help description for the root literal node
      * @return successfully registered root command labels (including aliases and namespaced variants)
+     * @since 1.20.6
      */
     default @Unmodifiable Set<String> register(final LiteralCommandNode<CommandSourceStack> node, final @Nullable String description) {
         return this.register(node, description, Collections.emptyList());
@@ -169,6 +176,7 @@ public interface Commands extends Registrar {
      * @param node the built literal command node
      * @param aliases a collection of aliases to register the literal node's command to
      * @return successfully registered root command labels (including aliases and namespaced variants)
+     * @since 1.20.6
      */
     default @Unmodifiable Set<String> register(final LiteralCommandNode<CommandSourceStack> node, final Collection<String> aliases) {
         return this.register(node, null, aliases);
@@ -188,6 +196,7 @@ public interface Commands extends Registrar {
      * @param description the help description for the root literal node
      * @param aliases     a collection of aliases to register the literal node's command to
      * @return successfully registered root command labels (including aliases and namespaced variants)
+     * @since 1.20.6
      */
     @Unmodifiable Set<String> register(LiteralCommandNode<CommandSourceStack> node, @Nullable String description, Collection<String> aliases);
 
@@ -206,6 +215,7 @@ public interface Commands extends Registrar {
      * @param description the help description for the root literal node
      * @param aliases     a collection of aliases to register the literal node's command to
      * @return successfully registered root command labels (including aliases and namespaced variants)
+     * @since 1.20.6
      */
     @Unmodifiable Set<String> register(PluginMeta pluginMeta, LiteralCommandNode<CommandSourceStack> node, @Nullable String description, Collection<String> aliases);
 
@@ -232,6 +242,7 @@ public interface Commands extends Registrar {
      * @param label        the label of the to-be-registered command
      * @param basicCommand the basic command instance to register
      * @return successfully registered root command labels (including aliases and namespaced variants)
+     * @since 1.20.6
      */
     default @Unmodifiable Set<String> register(final String label, final BasicCommand basicCommand) {
         return this.register(label, null, Collections.emptyList(), basicCommand);
@@ -244,6 +255,7 @@ public interface Commands extends Registrar {
      * @param description  the help description for the root literal node
      * @param basicCommand the basic command instance to register
      * @return successfully registered root command labels (including aliases and namespaced variants)
+     * @since 1.20.6
      */
     default @Unmodifiable Set<String> register(final String label, final @Nullable String description, final BasicCommand basicCommand) {
         return this.register(label, description, Collections.emptyList(), basicCommand);
@@ -256,6 +268,7 @@ public interface Commands extends Registrar {
      * @param aliases      a collection of aliases to register the basic command under.
      * @param basicCommand the basic command instance to register
      * @return successfully registered root command labels (including aliases and namespaced variants)
+     * @since 1.20.6
      */
     default @Unmodifiable Set<String> register(final String label, final Collection<String> aliases, final BasicCommand basicCommand) {
         return this.register(label, null, aliases, basicCommand);
@@ -269,6 +282,7 @@ public interface Commands extends Registrar {
      * @param aliases      a collection of aliases to register the basic command under.
      * @param basicCommand the basic command instance to register
      * @return successfully registered root command labels (including aliases and namespaced variants)
+     * @since 1.20.6
      */
     @Unmodifiable Set<String> register(String label, @Nullable String description, Collection<String> aliases, BasicCommand basicCommand);
 
@@ -281,6 +295,7 @@ public interface Commands extends Registrar {
      * @param aliases      a collection of aliases to register the basic command under.
      * @param basicCommand the basic command instance to register
      * @return successfully registered root command labels (including aliases and namespaced variants)
+     * @since 1.20.6
      */
     @Unmodifiable Set<String> register(PluginMeta pluginMeta, String label, @Nullable String description, Collection<String> aliases, BasicCommand basicCommand);
 }

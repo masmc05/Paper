@@ -2,6 +2,8 @@ package org.bukkit.plugin;
 
 /**
  * Thrown when attempting to load an invalid Plugin file
+ *
+ * @since 1.0.0
  */
 public class InvalidPluginException extends Exception {
     private static final long serialVersionUID = -8242141640709409544L;
@@ -10,6 +12,7 @@ public class InvalidPluginException extends Exception {
      * Constructs a new InvalidPluginException based on the given Exception
      *
      * @param cause Exception that triggered this Exception
+     * @since 1.0.0
      */
     public InvalidPluginException(final Throwable cause) {
         super(cause);
@@ -17,6 +20,8 @@ public class InvalidPluginException extends Exception {
 
     /**
      * Constructs a new InvalidPluginException
+     *
+     * @since 1.0.0
      */
     public InvalidPluginException() {
 
@@ -31,6 +36,7 @@ public class InvalidPluginException extends Exception {
      * @param cause the cause (which is saved for later retrieval by the
      *     getCause() method). (A null value is permitted, and indicates that
      *     the cause is nonexistent or unknown.)
+     * @since 1.1.0
      */
     public InvalidPluginException(final String message, final Throwable cause) {
         super(message, cause);
@@ -42,6 +48,7 @@ public class InvalidPluginException extends Exception {
      *
      * @param message TThe detail message is saved for later retrieval by the
      *     getMessage() method.
+     * @since 1.1.0
      */
     public InvalidPluginException(final String message) {
         super(message);

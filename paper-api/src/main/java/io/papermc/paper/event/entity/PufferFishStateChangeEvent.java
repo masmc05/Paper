@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called just before a {@link PufferFish} inflates or deflates.
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public class PufferFishStateChangeEvent extends EntityEvent implements Cancellable {
@@ -24,6 +26,9 @@ public class PufferFishStateChangeEvent extends EntityEvent implements Cancellab
         this.newPuffState = newPuffState;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public PufferFish getEntity() {
         return (PufferFish) super.getEntity();
@@ -36,6 +41,7 @@ public class PufferFishStateChangeEvent extends EntityEvent implements Cancellab
      * Refer to {@link PufferFish#getPuffState()} to get the current puff state.
      *
      * @return The <strong>new</strong> puff state, 0 being not inflated, 1 being slightly inflated and 2 being fully inflated
+     * @since 1.16.5
      */
     public int getNewPuffState() {
         return this.newPuffState;
@@ -45,6 +51,7 @@ public class PufferFishStateChangeEvent extends EntityEvent implements Cancellab
      * Get if the {@link PufferFish} is going to inflate.
      *
      * @return If it's going to inflate
+     * @since 1.16.5
      */
     public boolean isInflating() {
         return this.newPuffState > this.getEntity().getPuffState();
@@ -54,6 +61,7 @@ public class PufferFishStateChangeEvent extends EntityEvent implements Cancellab
      * Get if the {@link PufferFish} is going to deflate.
      *
      * @return If it's going to deflate
+     * @since 1.16.5
      */
     public boolean isDeflating() {
         return this.newPuffState < this.getEntity().getPuffState();
@@ -63,22 +71,32 @@ public class PufferFishStateChangeEvent extends EntityEvent implements Cancellab
      * Set whether to cancel the {@link PufferFish} (in/de)flating.
      *
      * @param cancel {@code true} if you wish to cancel the (in/de)flation
+     * @since 1.16.5
      */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

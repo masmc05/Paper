@@ -8,6 +8,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
+/**
+ * @since 1.4.6
+ */
 @NullMarked
 public interface Firework extends Projectile {
 
@@ -16,6 +19,7 @@ public interface Firework extends Projectile {
      *
      * @return A copy of the current Firework meta
      * @apiNote obsolete in favor of {@link #getItem()} / {@link #setItem(ItemStack)} with the equivalent {@link DataComponentTypes#FIREWORKS} component
+     * @since 1.4.6
      */
     @ApiStatus.Obsolete
     FireworkMeta getFireworkMeta();
@@ -27,6 +31,7 @@ public interface Firework extends Projectile {
      *
      * @param meta The FireworkMeta to apply
      * @apiNote obsolete in favor of {@link #getItem()} / {@link #setItem(ItemStack)} with the equivalent {@link DataComponentTypes#FIREWORKS} component
+     * @since 1.4.6
      */
     @ApiStatus.Obsolete
     void setFireworkMeta(FireworkMeta meta);
@@ -43,6 +48,7 @@ public interface Firework extends Projectile {
      * null to remove the attached entity
      * @return true if the entity could be attached, false if the firework was
      * already detonated
+     * @since 1.19.2
      */
     boolean setAttachedTo(@Nullable LivingEntity entity);
 
@@ -55,6 +61,7 @@ public interface Firework extends Projectile {
      * they are looking.
      *
      * @return the attached entity, or null if none
+     * @since 1.19.2
      */
     @Nullable LivingEntity getAttachedTo();
 
@@ -105,6 +112,8 @@ public interface Firework extends Projectile {
     /**
      * Cause this firework to explode at earliest opportunity, as if it has no
      * remaining fuse.
+     *
+     * @since 1.7.2
      */
     void detonate();
 
@@ -112,6 +121,7 @@ public interface Firework extends Projectile {
      * Check whether or not this firework has detonated.
      *
      * @return true if detonated, false if still in the world
+     * @since 1.19.2
      */
     boolean isDetonated();
 
@@ -121,6 +131,7 @@ public interface Firework extends Projectile {
      * A firework which was not shot at an angle will fly straight upwards.
      *
      * @return shot at angle status
+     * @since 1.14.4
      */
     boolean isShotAtAngle();
 
@@ -130,6 +141,7 @@ public interface Firework extends Projectile {
      * A firework which was not shot at an angle will fly straight upwards.
      *
      * @param shotAtAngle the new shotAtAngle
+     * @since 1.14.4
      */
     void setShotAtAngle(boolean shotAtAngle);
 
@@ -137,6 +149,7 @@ public interface Firework extends Projectile {
      * Retrieves the UUID of the entity responsible for spawning this firework.
      *
      * @return the UUID of the spawning entity, or null if no spawning entity is associated
+     * @since 1.11.2
      */
     @Nullable UUID getSpawningEntity();
 
@@ -145,6 +158,7 @@ public interface Firework extends Projectile {
      * @deprecated use {@link #getAttachedTo()}
      * @see #setAttachedTo(LivingEntity)
      * @return The entity being boosted
+     * @since 1.11.2
      */
     @Deprecated(since = "1.18.2")
     default @Nullable LivingEntity getBoostedEntity() {
@@ -155,6 +169,7 @@ public interface Firework extends Projectile {
      * Gets the item used in the firework.
      *
      * @return firework item
+     * @since 1.18.2
      */
     ItemStack getItem();
 
@@ -164,6 +179,7 @@ public interface Firework extends Projectile {
      * Firework explosion effects are used from this item.
      *
      * @param itemStack item to set
+     * @since 1.18.2
      */
     void setItem(@Nullable ItemStack itemStack);
 
@@ -171,6 +187,7 @@ public interface Firework extends Projectile {
      * Gets the number of ticks the firework has flown.
      *
      * @return ticks flown
+     * @since 1.18.2
      */
     int getTicksFlown();
 
@@ -179,6 +196,7 @@ public interface Firework extends Projectile {
      * Setting this greater than detonation ticks will cause the firework to explode.
      *
      * @param ticks ticks flown
+     * @since 1.18.2
      */
     void setTicksFlown(int ticks);
 
@@ -186,6 +204,7 @@ public interface Firework extends Projectile {
      * Gets the number of ticks the firework will detonate on.
      *
      * @return the tick to detonate on
+     * @since 1.18.2
      */
     int getTicksToDetonate();
 
@@ -193,6 +212,7 @@ public interface Firework extends Projectile {
      * Set the amount of ticks the firework will detonate on.
      *
      * @param ticks ticks to detonate on
+     * @since 1.18.2
      */
     void setTicksToDetonate(int ticks);
 }

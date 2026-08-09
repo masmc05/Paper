@@ -15,6 +15,8 @@ import static java.util.Objects.requireNonNull;
 
 /**
  * An abstract implementation of a chat event, handling shared logic.
+ *
+ * @since 1.16.5
  */
 @ApiStatus.NonExtendable
 @NullMarked
@@ -44,6 +46,7 @@ public abstract class AbstractChatEvent extends PlayerEvent implements Cancellab
      * it may reduce performance for a lazy set implementation.
      *
      * @return a mutable set of {@link Audience audiences} who will receive the chat message
+     * @since 1.16.5
      */
     public final Set<Audience> viewers() {
         return this.viewers;
@@ -54,6 +57,7 @@ public abstract class AbstractChatEvent extends PlayerEvent implements Cancellab
      *
      * @param renderer the chat renderer
      * @throws NullPointerException if {@code renderer} is {@code null}
+     * @since 1.16.5
      */
     public final void renderer(final ChatRenderer renderer) {
         this.renderer = requireNonNull(renderer, "renderer");
@@ -63,6 +67,7 @@ public abstract class AbstractChatEvent extends PlayerEvent implements Cancellab
      * Gets the chat renderer.
      *
      * @return the chat renderer
+     * @since 1.16.5
      */
     public final ChatRenderer renderer() {
         return this.renderer;
@@ -73,6 +78,7 @@ public abstract class AbstractChatEvent extends PlayerEvent implements Cancellab
      * The return value will reflect changes made using {@link #message(Component)}.
      *
      * @return the user-supplied message
+     * @since 1.16.5
      */
     public final Component message() {
         return this.message;
@@ -83,6 +89,7 @@ public abstract class AbstractChatEvent extends PlayerEvent implements Cancellab
      *
      * @param message the user-supplied message
      * @throws NullPointerException if {@code message} is {@code null}
+     * @since 1.16.5
      */
     public final void message(final Component message) {
         this.message = requireNonNull(message, "message");
@@ -94,6 +101,7 @@ public abstract class AbstractChatEvent extends PlayerEvent implements Cancellab
      * {@link #message(Component)}.
      *
      * @return the original user-supplied message
+     * @since 1.16.5
      */
     public final Component originalMessage() {
         return this.originalMessage;
@@ -105,16 +113,23 @@ public abstract class AbstractChatEvent extends PlayerEvent implements Cancellab
      * the signed message.
      *
      * @return the signed message
+     * @since 1.19.3
      */
     public final SignedMessage signedMessage() {
         return this.signedMessage;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public final boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public final void setCancelled(final boolean cancel) {
         this.cancelled = cancel;

@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when the amount of air an entity has remaining changes.
+ *
+ * @since 1.10.2
  */
 public class EntityAirChangeEvent extends EntityEvent implements Cancellable {
 
@@ -26,6 +28,7 @@ public class EntityAirChangeEvent extends EntityEvent implements Cancellable {
      * Gets the amount of air the entity has left (measured in ticks).
      *
      * @return amount of air remaining
+     * @since 1.10.2
      */
     public int getAmount() {
         return this.amount;
@@ -35,27 +38,40 @@ public class EntityAirChangeEvent extends EntityEvent implements Cancellable {
      * Sets the amount of air remaining for the entity (measured in ticks).
      *
      * @param amount amount of air remaining
+     * @since 1.10.2
      */
     public void setAmount(int amount) {
         this.amount = amount;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.10.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

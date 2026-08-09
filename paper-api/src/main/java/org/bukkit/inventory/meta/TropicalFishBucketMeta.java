@@ -6,6 +6,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents a bucket of tropical fish.
+ *
+ * @since 1.13
  */
 @NullMarked
 public interface TropicalFishBucketMeta extends ItemMeta {
@@ -18,6 +20,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      *
      * @return pattern color
      * @throws IllegalStateException if no pattern color is set
+     * @since 1.13
      */
     DyeColor getPatternColor();
 
@@ -25,6 +28,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      * Sets the color of the fish's pattern.
      *
      * @param color new pattern color
+     * @since 1.13
      */
     void setPatternColor(DyeColor color);
 
@@ -36,6 +40,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      *
      * @return body color
      * @throws IllegalStateException if no body color is set
+     * @since 1.13
      */
     DyeColor getBodyColor();
 
@@ -43,6 +48,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      * Sets the color of the fish's body.
      *
      * @param color new body color
+     * @since 1.13
      */
     void setBodyColor(DyeColor color);
 
@@ -54,6 +60,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      *
      * @return pattern
      * @throws IllegalStateException if no pattern is set
+     * @since 1.13
      */
     TropicalFish.Pattern getPattern();
 
@@ -61,6 +68,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      * Sets the fish's pattern.
      *
      * @param pattern new pattern
+     * @since 1.13
      */
     void setPattern(TropicalFish.Pattern pattern);
 
@@ -68,6 +76,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      * Checks for the existence of a pattern.
      *
      * @return if there is a pattern
+     * @since 26.2
      */
     boolean hasPattern();
 
@@ -75,6 +84,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      * Checks for the existence of a body color.
      *
      * @return if there is a body color
+     * @since 26.2
      */
     boolean hasBodyColor();
 
@@ -82,6 +92,7 @@ public interface TropicalFishBucketMeta extends ItemMeta {
      * Checks for the existence of a pattern color.
      *
      * @return if there is a pattern color
+     * @since 26.2
      */
     boolean hasPatternColor();
 

@@ -5,6 +5,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a captured state of a sculk shrieker.
+ *
+ * @since 1.19
  */
 public interface SculkShrieker extends TileState {
 
@@ -15,6 +17,7 @@ public interface SculkShrieker extends TileState {
      * Warden.
      *
      * @return current warning level
+     * @since 1.19
      */
     int getWarningLevel();
 
@@ -25,6 +28,7 @@ public interface SculkShrieker extends TileState {
      * Warden.
      *
      * @param level new warning level
+     * @since 1.19
      */
     void setWarningLevel(int level);
 
@@ -32,6 +36,7 @@ public interface SculkShrieker extends TileState {
      * Simulates a player causing a vibration.
      *
      * @param player the player that "caused" the shriek
+     * @since 1.20.1
      */
     void tryShriek(@Nullable Player player);
 }

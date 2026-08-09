@@ -20,6 +20,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * A RegionAccessor gives access to getting, modifying and spawning {@link Biome}, {@link BlockState} and {@link Entity},
  * as well as generating some basic structures.
+ *
+ * @since 1.17.1
  */
 public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.FeatureFlagSetHolder { // Paper - feature flag API
 
@@ -29,6 +31,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param location the location of the biome
      * @return Biome at the given location
      * @see #getComputedBiome(int, int, int)
+     * @since 1.17.1
      */
     @NotNull
     default Biome getBiome(@NotNull Location location) {
@@ -43,6 +46,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param z Z-coordinate of the block
      * @return Biome at the given coordinates
      * @see #getComputedBiome(int, int, int)
+     * @since 1.17.1
      */
     @NotNull
     Biome getBiome(int x, int y, int z);
@@ -64,6 +68,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param y Y-coordinate of the block
      * @param z Z-coordinate of the block
      * @return Biome at the given coordinates
+     * @since 1.18.2
      */
     @NotNull
     Biome getComputedBiome(int x, int y, int z);
@@ -74,6 +79,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param location the location of the biome
      * @param biome New Biome type for this block
+     * @since 1.17.1
      */
     default void setBiome(@NotNull Location location, @NotNull Biome biome) {
         this.setBiome(location.getBlockX(), location.getBlockY(), location.getBlockZ(), biome);
@@ -86,6 +92,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param y Y-coordinate of the block
      * @param z Z-coordinate of the block
      * @param biome New Biome type for this block
+     * @since 1.17.1
      */
     void setBiome(int x, int y, int z, @NotNull Biome biome);
 
@@ -94,6 +101,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param location The location of the block state
      * @return Block state at the given location
+     * @since 1.17.1
      */
     @NotNull
     default BlockState getBlockState(@NotNull Location location) {
@@ -105,6 +113,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param location The location of the block state
      * @return Block state at the given location
+     * @since 26.2
      */
     @NotNull
     default BlockState getBlockState(@NotNull Vector location) {
@@ -118,6 +127,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param y Y-coordinate of the block state
      * @param z Z-coordinate of the block state
      * @return Block state at the given coordinates
+     * @since 1.17.1
      */
     @NotNull
     BlockState getBlockState(int x, int y, int z);
@@ -130,6 +140,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param y The y-coordinate of the position
      * @param z The z-coordinate of the position
      * @return The {@link io.papermc.paper.block.fluid.FluidData} at the specified position
+     * @since 1.20.4
      */
     @NotNull
     io.papermc.paper.block.fluid.FluidData getFluidData(int x, int y, int z);
@@ -139,6 +150,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param position The position of the fluid
      * @return The fluid data at the given position
+     * @since 1.20.4
      */
     @NotNull
     default io.papermc.paper.block.fluid.FluidData getFluidData(@NotNull io.papermc.paper.math.Position position) {
@@ -150,6 +162,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param location The location of the fluid
      * @return The fluid data at the given position
+     * @since 1.20.4
      */
     @NotNull
     default io.papermc.paper.block.fluid.FluidData getFluidData(@NotNull Location location) {
@@ -162,6 +175,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param location The location of the block data
      * @return Block data at the given location
+     * @since 1.17.1
      */
     @NotNull
     default BlockData getBlockData(@NotNull Location location) {
@@ -173,6 +187,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param location The location of the block data
      * @return Block data at the given location
+     * @since 26.2
      */
     @NotNull
     default BlockData getBlockData(@NotNull Vector location) {
@@ -186,6 +201,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param y Y-coordinate of the block data
      * @param z Z-coordinate of the block data
      * @return Block data at the given coordinates
+     * @since 1.17.1
      */
     @NotNull
     BlockData getBlockData(int x, int y, int z);
@@ -195,6 +211,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param location The location of the block
      * @return Material at the given coordinates
+     * @since 1.17.1
      */
     @NotNull
     default Material getType(@NotNull Location location) {
@@ -208,6 +225,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param y Y-coordinate of the block
      * @param z Z-coordinate of the block
      * @return Material at the given coordinates
+     * @since 1.17.1
      */
     @NotNull
     Material getType(int x, int y, int z);
@@ -217,6 +235,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param location The location of the block
      * @param blockData The block data to set the block to
+     * @since 1.17.1
      */
     default void setBlockData(@NotNull Location location, @NotNull BlockData blockData) {
         this.setBlockData(location.getBlockX(), location.getBlockY(), location.getBlockZ(), blockData);
@@ -227,6 +246,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param location The location of the block
      * @param blockData The block data to set the block to
+     * @since 26.2
      */
     default void setBlockData(@NotNull Vector location, @NotNull BlockData blockData) {
         this.setBlockData(location.getBlockX(), location.getBlockY(), location.getBlockZ(), blockData);
@@ -239,6 +259,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param y Y-coordinate of the block
      * @param z Z-coordinate of the block
      * @param blockData The block data to set the block to
+     * @since 1.17.1
      */
     void setBlockData(int x, int y, int z, @NotNull BlockData blockData);
 
@@ -247,6 +268,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param location The location of the block
      * @param material The type to set the block to
+     * @since 1.17.1
      */
     default void setType(@NotNull Location location, @NotNull Material material) {
         this.setType(location.getBlockX(), location.getBlockY(), location.getBlockZ(), material);
@@ -259,6 +281,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param y Y-coordinate of the block
      * @param z Z-coordinate of the block
      * @param material The type to set the block to
+     * @since 1.17.1
      */
     default void setType(int x, int y, int z, @NotNull Material material) {
         this.setBlockData(x, y, z, material.createBlockData());
@@ -271,6 +294,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param random Random to use to generate the tree
      * @param type Type of the tree to create
      * @return true if the tree was created successfully, otherwise false
+     * @since 1.17.1
      */
     boolean generateTree(@NotNull Location location, @NotNull Random random, @NotNull TreeType type);
 
@@ -291,6 +315,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param type Type of the tree to create
      * @param stateConsumer The consumer which should get called for every block which gets changed
      * @return true if the tree was created successfully, otherwise false
+     * @since 1.17.1
      */
     boolean generateTree(@NotNull Location location, @NotNull Random random, @NotNull TreeType type, @Nullable Consumer<? super BlockState> stateConsumer);
 
@@ -311,6 +336,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param type Type of the tree to create
      * @param statePredicate The predicate which should get used to test if a block should be set or not.
      * @return true if the tree was created successfully, otherwise false
+     * @since 1.18.1
      */
     boolean generateTree(@NotNull Location location, @NotNull Random random, @NotNull TreeType type, @Nullable Predicate<? super BlockState> statePredicate);
 
@@ -320,6 +346,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param location The location to spawn the entity
      * @param type The entity to spawn
      * @return Resulting Entity of this method
+     * @since 1.17.1
      */
     @NotNull
     default Entity spawnEntity(@NotNull Location location, @NotNull EntityType type) {
@@ -348,6 +375,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *                      This parameter is hence useless for any other type
      *                      of entity.
      * @return the spawned entity instance.
+     * @since 1.17.1
      */
     @NotNull
     public Entity spawnEntity(@NotNull Location loc, @NotNull EntityType type, boolean randomizeData);
@@ -356,6 +384,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * Get a list of all entities in this RegionAccessor
      *
      * @return A List of all Entities currently residing in this world accessor
+     * @since 1.17.1
      */
     @NotNull
     List<Entity> getEntities();
@@ -364,6 +393,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * Get a list of all living entities in this RegionAccessor
      *
      * @return A List of all LivingEntities currently residing in this world accessor
+     * @since 1.17.1
      */
     @NotNull
     List<LivingEntity> getLivingEntities();
@@ -376,6 +406,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param cls The class representing the type of entity to match
      * @return A List of all Entities currently residing in this world accessor
      *     that match the given class/interface
+     * @since 1.17.1
      */
     @NotNull
     <T extends Entity> Collection<T> getEntitiesByClass(@NotNull Class<T> cls);
@@ -387,6 +418,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param classes The classes representing the types of entity to match
      * @return A List of all Entities currently residing in this world accessor
      *     that match one or more of the given classes/interfaces
+     * @since 1.17.1
      */
     @NotNull
     Collection<Entity> getEntitiesByClasses(@NotNull Class<?>... classes);
@@ -405,6 +437,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @return an instance of the created {@link Entity}
      * @see #addEntity(Entity)
      * @see Entity#createSnapshot()
+     * @since 1.20.4
      */
     @NotNull
     <T extends Entity> T createEntity(@NotNull Location location, @NotNull Class<T> clazz);
@@ -418,6 +451,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @return an instance of the spawned {@link Entity}
      * @throws IllegalArgumentException if either parameter is null or the
      *     {@link Entity} requested cannot be spawned
+     * @since 1.17.1
      */
     @NotNull
     default <T extends Entity> T spawn(@NotNull Location location, @NotNull Class<T> clazz) throws IllegalArgumentException {
@@ -439,30 +473,46 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @return an instance of the spawned {@link Entity}
      * @throws IllegalArgumentException if either parameter is null or the
      *     {@link Entity} requested cannot be spawned
+     * @since 1.17.1
      */
     // Paper start
     default <T extends Entity> @NotNull T spawn(final @NotNull Location location, final @NotNull Class<T> clazz, final @Nullable Consumer<? super T> function) throws IllegalArgumentException {
         return this.spawn(location, clazz, org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason.CUSTOM, function);
     }
 
+    /**
+     * @since 1.17.1
+     */
     default @NotNull <T extends Entity> T spawn(final @NotNull Location location, final @NotNull Class<T> clazz, final org.bukkit.event.entity.CreatureSpawnEvent.@NotNull SpawnReason reason) throws IllegalArgumentException {
         return this.spawn(location, clazz, reason, null);
     }
 
+    /**
+     * @since 1.17.1
+     */
     default @NotNull <T extends Entity> T spawn(final @NotNull Location location, final @NotNull Class<T> clazz, final org.bukkit.event.entity.CreatureSpawnEvent.@NotNull SpawnReason reason, final @Nullable Consumer<? super T> function) throws IllegalArgumentException {
         return this.spawn(location, clazz, function, reason);
     }
 
+    /**
+     * @since 1.17.1
+     */
     default @NotNull Entity spawnEntity(final @NotNull Location loc, final @NotNull EntityType type, final org.bukkit.event.entity.CreatureSpawnEvent.@NotNull SpawnReason reason) {
         com.google.common.base.Preconditions.checkArgument(type.getEntityClass() != null, "%s is not a valid EntityType, must have an entity class", type);
         return this.spawn(loc, type.getEntityClass(), reason, null);
     }
 
+    /**
+     * @since 1.17.1
+     */
     default @NotNull Entity spawnEntity(final @NotNull Location loc, final @NotNull EntityType type, final org.bukkit.event.entity.CreatureSpawnEvent.@NotNull SpawnReason reason, final @Nullable Consumer<? super Entity> function) {
         com.google.common.base.Preconditions.checkArgument(type.getEntityClass() != null, "%s is not a valid EntityType, must have an entity class", type);
         return this.spawn(loc, type.getEntityClass(), reason, function);
     }
 
+    /**
+     * @since 1.17.1
+     */
     <T extends Entity> @NotNull T spawn(@NotNull Location location, @NotNull Class<T> clazz, @Nullable Consumer<? super T> function, org.bukkit.event.entity.CreatureSpawnEvent.@NotNull SpawnReason reason) throws IllegalArgumentException;
     // Paper end
 
@@ -500,6 +550,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param function      the function to be run before the entity is spawned.
      * @return the spawned entity instance.
      * @throws IllegalArgumentException if either the world or clazz parameter are null.
+     * @since 1.17.1
      */
     @NotNull
     public <T extends Entity> T spawn(@NotNull Location location, @NotNull Class<T> clazz, boolean randomizeData, @Nullable Consumer<? super T> function) throws IllegalArgumentException;
@@ -511,6 +562,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param x X-coordinate of the blocks
      * @param z Z-coordinate of the blocks
      * @return Y-coordinate of the highest non-empty block
+     * @since 1.19.4
      */
     public int getHighestBlockYAt(int x, int z);
 
@@ -520,6 +572,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param location Location of the blocks
      * @return Y-coordinate of the highest non-empty block
+     * @since 1.19.4
      */
     public int getHighestBlockYAt(@NotNull Location location);
 
@@ -534,6 +587,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @return Y-coordinate of the highest block corresponding to the
      * {@link HeightMap}
+     * @since 1.19.4
      */
     public int getHighestBlockYAt(int x, int z, @NotNull HeightMap heightMap);
 
@@ -546,6 +600,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * point
      * @return Y-coordinate of the highest block corresponding to the
      * {@link HeightMap}
+     * @since 1.19.4
      */
     public int getHighestBlockYAt(@NotNull Location location, @NotNull HeightMap heightMap);
 
@@ -556,6 +611,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param <T> the generic type of the entity that is being added.
      * @param entity the entity to add
      * @return the entity now in the world
+     * @since 1.20.4
      */
     @NotNull
     public <T extends Entity> T addEntity(@NotNull T entity);
@@ -563,6 +619,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
     /**
      * @return the current moon phase at the current time in the world
      * @apiNote the returned value may be inaccurate in custom biome using environmental attribute override
+     * @since 1.18.2
      */
     @NotNull
     MoonPhase getMoonPhase();
@@ -571,6 +628,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * Get the world's key
      *
      * @return the world's key
+     * @since 1.18.2
      */
     @NotNull
     @Override
@@ -581,6 +639,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      * @param from Location to start at
      * @param to target Location
      * @return whether a line of sight exists between {@code from} and {@code to}
+     * @since 1.18.2
      */
     public boolean lineOfSightExists(@NotNull Location from, @NotNull Location to);
 
@@ -591,6 +650,7 @@ public interface RegionAccessor extends Keyed, io.papermc.paper.world.flag.Featu
      *
      * @param boundingBox the box to check collisions in
      * @return collides or not
+     * @since 1.19.1
      */
     boolean hasCollisionsIn(@NotNull org.bukkit.util.BoundingBox boundingBox);
 }

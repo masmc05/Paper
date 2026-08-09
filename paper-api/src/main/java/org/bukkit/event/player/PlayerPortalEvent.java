@@ -14,6 +14,8 @@ import java.util.Set;
  * portal which will generate an exit portal.
  * <p>
  * For other entities see {@link org.bukkit.event.entity.EntityPortalEvent}
+ *
+ * @since 1.0.0
  */
 public class PlayerPortalEvent extends PlayerTeleportEvent {
 
@@ -50,6 +52,7 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
      * either, the world spawn for <i>end->any world</i> or end spawn for <i>any world->end</i>.
      *
      * @return starting point for search or exact destination
+     * @since 1.19.3
      */
     @Override
     public @NotNull Location getTo() {
@@ -60,6 +63,7 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
      * See the description of {@link #getTo()}.
      *
      * @param to starting point for search or exact destination
+     * @since 1.19.3
      */
     @Override
     public void setTo(@NotNull final Location to) {
@@ -71,6 +75,7 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
      *
      * @param searchRadius the radius in which to search for a portal from the
      * location
+     * @since 1.15.1
      */
     public void setSearchRadius(int searchRadius) {
         this.searchRadius = searchRadius;
@@ -80,6 +85,7 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
      * Gets the search radius value for finding an available portal.
      *
      * @return the currently set search radius
+     * @since 1.15.1
      */
     public int getSearchRadius() {
         return this.searchRadius;
@@ -90,6 +96,7 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
      * not.
      *
      * @return whether there should create be a destination portal created
+     * @since 1.15.1
      */
     public boolean getCanCreatePortal() {
         return this.canCreatePortal;
@@ -101,6 +108,7 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
      *
      * @param canCreatePortal Sets whether there should be a destination portal
      * created
+     * @since 1.15.1
      */
     public void setCanCreatePortal(boolean canCreatePortal) {
         this.canCreatePortal = canCreatePortal;
@@ -118,6 +126,7 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
      *
      * @param creationRadius the radius in which to create a portal from the
      * location
+     * @since 1.15.1
      */
     public void setCreationRadius(int creationRadius) {
         this.creationRadius = creationRadius;
@@ -134,6 +143,7 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
      * the target location.
      *
      * @return the currently set creation radius
+     * @since 1.15.1
      */
     public int getCreationRadius() {
         return this.creationRadius;
@@ -163,12 +173,18 @@ public class PlayerPortalEvent extends PlayerTeleportEvent {
         return super.getRelativeTeleportationFlags();
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

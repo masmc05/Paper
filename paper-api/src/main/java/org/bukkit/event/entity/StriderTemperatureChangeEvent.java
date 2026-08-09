@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Called when a {@link Strider}'s temperature has changed as a result of
  * entering or exiting blocks it considers warm.
+ *
+ * @since 1.16.1
  */
 public class StriderTemperatureChangeEvent extends EntityEvent implements Cancellable {
 
@@ -23,6 +25,9 @@ public class StriderTemperatureChangeEvent extends EntityEvent implements Cancel
         this.shivering = shivering;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     @Override
     public Strider getEntity() {
@@ -33,27 +38,40 @@ public class StriderTemperatureChangeEvent extends EntityEvent implements Cancel
      * Get the Strider's new shivering state.
      *
      * @return the new shivering state
+     * @since 1.16.1
      */
     public boolean isShivering() {
         return this.shivering;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.17.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @Override
     @NotNull
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

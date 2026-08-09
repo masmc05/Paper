@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents a potion mix made in a Brewing Stand.
+ *
+ * @since 1.18.1
  */
 @NullMarked
 public final class PotionMix implements Keyed {
@@ -27,6 +29,7 @@ public final class PotionMix implements Keyed {
      * @param result the resulting itemstack that will appear in the 3 bottom slots
      * @param input the input placed into the bottom 3 slots
      * @param ingredient the ingredient placed into the top slot
+     * @since 1.18.1
      */
     public PotionMix(final NamespacedKey key, final ItemStack result, final RecipeChoice input, final RecipeChoice ingredient) {
         this.key = key;
@@ -41,12 +44,16 @@ public final class PotionMix implements Keyed {
      *
      * @param stackPredicate a predicate for an itemstack.
      * @return a new RecipeChoice
+     * @since 1.20.2
      */
     @Contract(value = "_ -> new", pure = true)
     public static RecipeChoice createPredicateChoice(final Predicate<? super ItemStack> stackPredicate) {
         return new PredicateRecipeChoice(stackPredicate);
     }
 
+    /**
+     * @since 1.18.1
+     */
     @Override
     public NamespacedKey getKey() {
         return this.key;
@@ -56,6 +63,7 @@ public final class PotionMix implements Keyed {
      * Gets the resulting itemstack after the brew has finished.
      *
      * @return the result itemstack
+     * @since 1.18.1
      */
     public ItemStack getResult() {
         return this.result.clone();
@@ -65,6 +73,7 @@ public final class PotionMix implements Keyed {
      * Gets the input for the bottom 3 slots in the brewing stand.
      *
      * @return the bottom 3 slot ingredients
+     * @since 1.18.1
      */
     public RecipeChoice getInput() {
         return this.input.clone();
@@ -74,6 +83,7 @@ public final class PotionMix implements Keyed {
      * Gets the ingredient in the top slot of the brewing stand.
      *
      * @return the top slot input
+     * @since 1.18.1
      */
     public RecipeChoice getIngredient() {
         return this.ingredient.clone();

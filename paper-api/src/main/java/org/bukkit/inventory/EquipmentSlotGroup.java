@@ -11,21 +11,56 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a group of {@link EquipmentSlot}.
+ *
+ * @since 1.20.6
  */
 public final class EquipmentSlotGroup implements Predicate<EquipmentSlot> {
 
     private static final Map<String, EquipmentSlotGroup> BY_NAME = new HashMap<>();
 
+    /**
+     * @since 1.20.6
+     */
     public static final EquipmentSlotGroup ANY = get("any", (test) -> true, EquipmentSlot.HAND);
+    /**
+     * @since 1.20.6
+     */
     public static final EquipmentSlotGroup MAINHAND = get("mainhand", EquipmentSlot.HAND);
+    /**
+     * @since 1.20.6
+     */
     public static final EquipmentSlotGroup OFFHAND = get("offhand", EquipmentSlot.OFF_HAND);
+    /**
+     * @since 1.20.6
+     */
     public static final EquipmentSlotGroup HAND = get("hand", (test) -> test == EquipmentSlot.HAND || test == EquipmentSlot.OFF_HAND, EquipmentSlot.HAND);
+    /**
+     * @since 1.20.6
+     */
     public static final EquipmentSlotGroup FEET = get("feet", EquipmentSlot.FEET);
+    /**
+     * @since 1.20.6
+     */
     public static final EquipmentSlotGroup LEGS = get("legs", EquipmentSlot.LEGS);
+    /**
+     * @since 1.20.6
+     */
     public static final EquipmentSlotGroup CHEST = get("chest", EquipmentSlot.CHEST);
+    /**
+     * @since 1.20.6
+     */
     public static final EquipmentSlotGroup HEAD = get("head", EquipmentSlot.HEAD);
+    /**
+     * @since 1.20.6
+     */
     public static final EquipmentSlotGroup ARMOR = get("armor", (test) -> test == EquipmentSlot.FEET || test == EquipmentSlot.LEGS || test == EquipmentSlot.CHEST || test == EquipmentSlot.HEAD || test == EquipmentSlot.BODY, EquipmentSlot.CHEST); // Paper - add missing slot type
+    /**
+     * @since 1.20.6
+     */
     public static final EquipmentSlotGroup BODY = get("body", EquipmentSlot.BODY);
+    /**
+     * @since 1.21.6
+     */
     public static final EquipmentSlotGroup SADDLE = get("saddle", EquipmentSlot.SADDLE);
 
     private final String key;
@@ -40,6 +75,10 @@ public final class EquipmentSlotGroup implements Predicate<EquipmentSlot> {
         BY_NAME.put(key, this);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.20.6
+     */
     @Override
     public boolean test(@NotNull EquipmentSlot test) {
         return this.predicate.test(test);

@@ -6,6 +6,8 @@ import org.bukkit.block.data.Powerable;
 /**
  * Similar to {@link Powerable}, 'triggered' indicates whether or not the
  * dispenser is currently activated.
+ *
+ * @since 1.13
  */
 public interface Dispenser extends Directional {
 
@@ -13,6 +15,7 @@ public interface Dispenser extends Directional {
      * Gets the value of the 'triggered' property.
      *
      * @return the 'triggered' value
+     * @since 1.13
      */
     boolean isTriggered();
 
@@ -20,6 +23,7 @@ public interface Dispenser extends Directional {
      * Sets the value of the 'triggered' property.
      *
      * @param triggered the new 'triggered' value
+     * @since 1.13
      */
     void setTriggered(boolean triggered);
 }

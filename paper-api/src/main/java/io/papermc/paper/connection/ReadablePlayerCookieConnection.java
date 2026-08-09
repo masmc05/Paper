@@ -3,6 +3,9 @@ package io.papermc.paper.connection;
 import java.util.concurrent.CompletableFuture;
 import org.bukkit.NamespacedKey;
 
+/**
+ * @since 1.21.7
+ */
 public interface ReadablePlayerCookieConnection extends PlayerConnection {
 
     /**
@@ -13,6 +16,7 @@ public interface ReadablePlayerCookieConnection extends PlayerConnection {
      * Cookie response is received or otherwise available. If the cookie is not
      * set in the client, the {@link CompletableFuture} will complete with a
      * null value.
+     * @since 1.21.7
      */
     CompletableFuture<byte[]> retrieveCookie(NamespacedKey key);
 }

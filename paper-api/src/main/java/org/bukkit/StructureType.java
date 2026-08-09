@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
  * @deprecated This class does not represent the structures of a world well. Use
  * {@link org.bukkit.generator.structure.Structure} or
  * {@link org.bukkit.generator.structure.StructureType} instead.
+ * @since 1.13.1
  */
 // Order is retrieved from WorldGenFactory
 @Deprecated(since = "1.19")
@@ -34,6 +35,8 @@ public final class StructureType implements Keyed {
      * <br>
      * They are the only place where cave spider spawners and minecarts with
      * chests can be found naturally.
+     *
+     * @since 1.13.1
      */
     public static final StructureType MINESHAFT = register(new StructureType("mineshaft", MapCursor.Type.RED_X));
 
@@ -42,6 +45,8 @@ public final class StructureType implements Keyed {
      * <br>
      * They are usually generated in desert, plains, taiga, and savanna biomes
      * and are a site for villager spawns, with whom the player can trade.
+     *
+     * @since 1.13.1
      */
     public static final StructureType VILLAGE = register(new StructureType("village", MapCursor.Type.MANSION));
 
@@ -51,6 +56,8 @@ public final class StructureType implements Keyed {
      * <br>
      * They contain blaze spawners, nether wart farms, and loot chests. They are
      * only generated in the nether dimension.
+     *
+     * @since 1.13.1
      */
     public static final StructureType NETHER_FORTRESS = register(new StructureType("fortress", MapCursor.Type.RED_X));
 
@@ -59,6 +66,8 @@ public final class StructureType implements Keyed {
      * libraries, and an end portal room.
      * <br>
      * They can be found using an {@link Material#ENDER_EYE}.
+     *
+     * @since 1.13.1
      */
     public static final StructureType STRONGHOLD = register(new StructureType("stronghold", MapCursor.Type.MANSION));
 
@@ -68,6 +77,8 @@ public final class StructureType implements Keyed {
      * They are usually composed of cobblestone and mossy cobblestone. They
      * consist of three floors, with the bottom floor containing treasure
      * chests.
+     *
+     * @since 1.13.1
      */
     public static final StructureType JUNGLE_PYRAMID = register(new StructureType("jungle_pyramid", MapCursor.Type.RED_X));
 
@@ -77,6 +88,8 @@ public final class StructureType implements Keyed {
      * <br>
      * They come in my different variations. The cold variants consist primarily
      * of stone brick, and the warm variants consist of sandstone.
+     *
+     * @since 1.13.1
      */
     public static final StructureType OCEAN_RUIN = register(new StructureType("ocean_ruin", MapCursor.Type.MONUMENT));
 
@@ -84,6 +97,8 @@ public final class StructureType implements Keyed {
      * Desert pyramids (also known as desert temples) are found in deserts.
      * <br>
      * They are usually composed of sandstone and stained terracotta.
+     *
+     * @since 1.13.1
      */
     public static final StructureType DESERT_PYRAMID = register(new StructureType("desert_pyramid", MapCursor.Type.RED_X));
 
@@ -91,12 +106,16 @@ public final class StructureType implements Keyed {
      * Igloos are structures that generate in snowy biomes.
      * <br>
      * They consist of the house, as well as a basement.
+     *
+     * @since 1.13.1
      */
     public static final StructureType IGLOO = register(new StructureType("igloo", MapCursor.Type.RED_X));
 
     /**
      * Swamp huts (also known as witch huts) generate in swamp biomes and have
      * the ability to spawn witches.
+     *
+     * @since 1.13.1
      */
     public static final StructureType SWAMP_HUT = register(new StructureType("swamp_hut", MapCursor.Type.RED_X));
 
@@ -106,6 +125,8 @@ public final class StructureType implements Keyed {
      * They are usually composed on all three different prismarine types and sea
      * lanterns. They are the only place guardians and elder guardians spawn
      * naturally.
+     *
+     * @since 1.13.1
      */
     public static final StructureType OCEAN_MONUMENT = register(new StructureType("monument", MapCursor.Type.MONUMENT));
 
@@ -115,6 +136,8 @@ public final class StructureType implements Keyed {
      * <br>
      * They consist primarily of end stone bricks, purpur blocks, and end rods.
      * They are the only place where shulkers can be found.
+     *
+     * @since 1.13.1
      */
     public static final StructureType END_CITY = register(new StructureType("end_city", MapCursor.Type.RED_X));
 
@@ -124,12 +147,16 @@ public final class StructureType implements Keyed {
      * <br>
      * They are the only place where evokers, vindicators, and vexes spawn
      * naturally (but only once)
+     *
+     * @since 1.13.1
      */
     public static final StructureType WOODLAND_MANSION = register(new StructureType("mansion", MapCursor.Type.MANSION));
 
     /**
      * Buried treasure consists of a single chest buried in the beach sand or
      * gravel, with random loot in it.
+     *
+     * @since 1.13.1
      */
     public static final StructureType BURIED_TREASURE = register(new StructureType("buried_treasure", MapCursor.Type.RED_X));
 
@@ -139,26 +166,36 @@ public final class StructureType implements Keyed {
      * <br>
      * They are made up of wood materials, and contain 1-3 loot chests. They can
      * generate sideways, upside-down, or upright.
+     *
+     * @since 1.13.1
      */
     public static final StructureType SHIPWRECK = register(new StructureType("shipwreck", MapCursor.Type.RED_X));
 
     /**
      * Pillager outposts may contain crossbows.
+     *
+     * @since 1.14
      */
     public static final StructureType PILLAGER_OUTPOST = register(new StructureType("pillager_outpost", MapCursor.Type.RED_X));
 
     /**
      * Nether fossils.
+     *
+     * @since 1.16.1
      */
     public static final StructureType NETHER_FOSSIL = register(new StructureType("nether_fossil", MapCursor.Type.RED_X));
 
     /**
      * Ruined portal.
+     *
+     * @since 1.16.1
      */
     public static final StructureType RUINED_PORTAL = register(new StructureType("ruined_portal", MapCursor.Type.RED_X));
 
     /**
      * Bastion remnant.
+     *
+     * @since 1.16.1
      */
     public static final StructureType BASTION_REMNANT = register(new StructureType("bastion_remnant", MapCursor.Type.RED_X));
 
@@ -190,6 +227,7 @@ public final class StructureType implements Keyed {
      * commands.
      *
      * @return the name of this structure
+     * @since 1.13.1
      */
     @NotNull
     public String getName() {
@@ -201,6 +239,7 @@ public final class StructureType implements Keyed {
      * this is null, this structure will not appear on explorer maps.
      *
      * @return the {@link org.bukkit.map.MapCursor.Type} or null.
+     * @since 1.13.1
      */
     @Nullable
     public MapCursor.Type getMapIcon() {
@@ -244,12 +283,16 @@ public final class StructureType implements Keyed {
      * Get all registered {@link StructureType}s.
      *
      * @return an immutable copy of registered structure types.
+     * @since 1.13.1
      */
     @NotNull
     public static Map<String, StructureType> getStructureTypes() {
         return ImmutableMap.copyOf(structureTypeMap);
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {

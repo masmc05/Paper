@@ -9,11 +9,15 @@ import org.jetbrains.annotations.ApiStatus;
 
 /**
  * Information about the current server build.
+ *
+ * @since 1.20.6
  */
 @ApiStatus.NonExtendable
 public interface ServerBuildInfo {
     /**
      * The brand id for Paper.
+     *
+     * @since 1.20.6
      */
     Key BRAND_PAPER_ID = Key.key("papermc", "paper");
 
@@ -21,6 +25,7 @@ public interface ServerBuildInfo {
      * Gets the {@code ServerBuildInfo}.
      *
      * @return the {@code ServerBuildInfo}
+     * @since 1.20.6
      */
     static ServerBuildInfo buildInfo() {
         //<editor-fold defaultstate="collapsed" desc="Holder">
@@ -36,6 +41,7 @@ public interface ServerBuildInfo {
      * Gets the brand id of the server.
      *
      * @return the brand id of the server (e.g. "papermc:paper")
+     * @since 1.20.6
      */
     Key brandId();
 
@@ -44,6 +50,7 @@ public interface ServerBuildInfo {
      *
      * @param brandId the brand to check (e.g. "papermc:folia")
      * @return {@code true} if the server supports the specified brand
+     * @since 1.20.6
      */
     boolean isBrandCompatible(Key brandId);
 
@@ -51,6 +58,7 @@ public interface ServerBuildInfo {
      * Gets the brand name of the server.
      *
      * @return the brand name of the server (e.g. "Paper")
+     * @since 1.20.6
      */
     String brandName();
 
@@ -58,6 +66,7 @@ public interface ServerBuildInfo {
      * Gets the Minecraft version id.
      *
      * @return the Minecraft version id (e.g. "1.20.4", "1.20.2-pre2", "23w31a")
+     * @since 1.20.6
      */
     String minecraftVersionId();
 
@@ -65,6 +74,7 @@ public interface ServerBuildInfo {
      * Gets the Minecraft version name.
      *
      * @return the Minecraft version name (e.g. "1.20.4", "1.20.2 Pre-release 2", "23w31a")
+     * @since 1.20.6
      */
     String minecraftVersionName();
 
@@ -72,6 +82,7 @@ public interface ServerBuildInfo {
      * Gets the build number.
      *
      * @return the build number
+     * @since 1.20.6
      */
     OptionalInt buildNumber();
 
@@ -79,6 +90,7 @@ public interface ServerBuildInfo {
      * Gets the build time.
      *
      * @return the build time
+     * @since 1.20.6
      */
     Instant buildTime();
 
@@ -86,6 +98,7 @@ public interface ServerBuildInfo {
      * Gets the git commit branch.
      *
      * @return the git commit branch
+     * @since 1.20.6
      */
     Optional<String> gitBranch();
 
@@ -93,6 +106,7 @@ public interface ServerBuildInfo {
      * Gets the git commit hash.
      *
      * @return the git commit hash
+     * @since 1.20.6
      */
     Optional<String> gitCommit();
 
@@ -101,19 +115,26 @@ public interface ServerBuildInfo {
      *
      * @param representation the type of representation
      * @return a string
+     * @since 1.20.6
      */
     String asString(StringRepresentation representation);
 
     /**
      * String representation types.
+     *
+     * @since 1.20.6
      */
     enum StringRepresentation {
         /**
          * A simple version string, in format {@code <minecraftVersionId>-<buildNumber>-<gitCommit>}.
+         *
+         * @since 1.20.6
          */
         VERSION_SIMPLE,
         /**
          * A simple version string, in format {@code <minecraftVersionId>-<buildNumber>-<gitBranch>@<gitCommit> (<buildTime>)}.
+         *
+         * @since 1.20.6
          */
         VERSION_FULL,
     }

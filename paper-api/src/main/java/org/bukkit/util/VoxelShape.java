@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
  * A shape made out of voxels.
  *
  * For example, used to represent the detailed collision shape of blocks.
+ *
+ * @since 1.17
  */
 public interface VoxelShape {
 
@@ -16,6 +18,7 @@ public interface VoxelShape {
      * intersects with any of the shape's bounding boxes.
      *
      * @return shape converted to bounding boxes
+     * @since 1.17
      */
     @NotNull
     public Collection<BoundingBox> getBoundingBoxes();
@@ -25,6 +28,7 @@ public interface VoxelShape {
      *
      * @param other bounding box to test
      * @return true if other overlaps this, false otherwise
+     * @since 1.17
      */
     public boolean overlaps(@NotNull BoundingBox other);
 }

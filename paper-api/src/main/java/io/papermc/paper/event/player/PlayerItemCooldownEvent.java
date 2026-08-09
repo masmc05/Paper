@@ -11,6 +11,7 @@ import org.jspecify.annotations.NullMarked;
  * Fired when a player receives an item cooldown when using an item.
  *
  * @see PlayerItemGroupCooldownEvent for a more general event when applied to a group of items
+ * @since 1.16.4
  */
 @NullMarked
 public class PlayerItemCooldownEvent extends PlayerItemGroupCooldownEvent {
@@ -27,6 +28,7 @@ public class PlayerItemCooldownEvent extends PlayerItemGroupCooldownEvent {
      * Get the material of the item affected by the cooldown.
      *
      * @return material affected by the cooldown
+     * @since 1.16.4
      */
     public Material getType() {
         return this.type;

@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * 'sculk_sensor_phase' indicates the current operational phase of the sensor.
+ *
+ * @since 1.17
  */
 public interface SculkSensor extends AnaloguePowerable, Waterlogged {
 
@@ -14,6 +16,7 @@ public interface SculkSensor extends AnaloguePowerable, Waterlogged {
      *
      * @return the 'sculk_sensor_phase' value
      * @deprecated bad name, use {@link #getSculkSensorPhase()}
+     * @since 1.17
      */
     @NotNull
     @Deprecated
@@ -26,6 +29,7 @@ public interface SculkSensor extends AnaloguePowerable, Waterlogged {
      *
      * @param phase the new 'sculk_sensor_phase' value
      * @deprecated bad name, use {@link #setSculkSensorPhase(Phase)}
+     * @since 1.17
      */
     @Deprecated
     default void setPhase(@NotNull Phase phase) {
@@ -36,6 +40,7 @@ public interface SculkSensor extends AnaloguePowerable, Waterlogged {
      * Gets the value of the 'sculk_sensor_phase' property.
      *
      * @return the 'sculk_sensor_phase' value
+     * @since 1.21.6
      */
     @NotNull
     Phase getSculkSensorPhase();
@@ -44,24 +49,33 @@ public interface SculkSensor extends AnaloguePowerable, Waterlogged {
      * Sets the value of the 'sculk_sensor_phase' property.
      *
      * @param phase the new 'sculk_sensor_phase' value
+     * @since 1.21.6
      */
     void setSculkSensorPhase(@NotNull Phase phase);
 
     /**
      * The Phase of the sensor.
+     *
+     * @since 1.17
      */
     public enum Phase {
 
         /**
          * The sensor is inactive.
+         *
+         * @since 1.17
          */
         INACTIVE,
         /**
          * The sensor is active.
+         *
+         * @since 1.17
          */
         ACTIVE,
         /**
          * The sensor is cooling down.
+         *
+         * @since 1.17
          */
         COOLDOWN;
     }

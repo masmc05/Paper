@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a firework explodes.
+ *
+ * @since 1.8.8
  */
 public class FireworkExplodeEvent extends EntityEvent implements Cancellable {
 
@@ -20,12 +22,18 @@ public class FireworkExplodeEvent extends EntityEvent implements Cancellable {
         super(firework);
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     @Override
     public Firework getEntity() {
         return (Firework) super.getEntity();
     }
 
+    /**
+     * @since 1.8.8
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
@@ -36,18 +44,26 @@ public class FireworkExplodeEvent extends EntityEvent implements Cancellable {
      * <p>
      * If the firework explosion is cancelled, the firework will
      * still be removed, but no particles will be displayed.
+     *
+     * @since 1.8.8
      */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

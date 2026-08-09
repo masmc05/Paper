@@ -18,6 +18,7 @@ import static org.bukkit.Material.*;
  * <p>
  * Not currently called for environmental factors though it <strong>MAY BE IN THE FUTURE</strong>
  * @apiNote Use {@link io.papermc.paper.event.entity.EntityEquipmentChangedEvent} for all entity equipment changes
+ * @since 1.12.2
  */
 @NullMarked
 @ApiStatus.Obsolete(since = "1.21.4")
@@ -42,6 +43,7 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
      *
      * @return type of slot being altered
      * @deprecated {@link SlotType} does not accurately represent what item types are valid in each slot. Use {@link #getSlot()} instead.
+     * @since 1.12.2
      */
     @Deprecated(since = "1.21.4")
     public SlotType getSlotType() {
@@ -52,6 +54,7 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
      * Gets the slot being altered.
      *
      * @return slot being altered
+     * @since 1.21.4
      */
     public EquipmentSlot getSlot() {
         return switch (this.slotType) {
@@ -66,6 +69,7 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
      * Gets the existing item that's being replaced
      *
      * @return old item
+     * @since 1.12.2
      */
     public ItemStack getOldItem() {
         return this.oldItem;
@@ -75,28 +79,48 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
      * Gets the new item that's replacing the old
      *
      * @return new item
+     * @since 1.12.2
      */
     public ItemStack getNewItem() {
         return this.newItem;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
     /**
      * @deprecated {@link SlotType} does not accurately represent what item types are valid in each slot.
+     * @since 1.12.2
      */
     @Deprecated(since = "1.21.4")
     public enum SlotType {
+        /**
+         * @since 1.12.2
+         */
         HEAD(COPPER_HELMET, NETHERITE_HELMET, DIAMOND_HELMET, GOLDEN_HELMET, IRON_HELMET, CHAINMAIL_HELMET, LEATHER_HELMET, CARVED_PUMPKIN, PLAYER_HEAD, SKELETON_SKULL, ZOMBIE_HEAD, CREEPER_HEAD, WITHER_SKELETON_SKULL, TURTLE_HELMET, DRAGON_HEAD, PIGLIN_HEAD),
+        /**
+         * @since 1.12.2
+         */
         CHEST(COPPER_CHESTPLATE, NETHERITE_CHESTPLATE, DIAMOND_CHESTPLATE, GOLDEN_CHESTPLATE, IRON_CHESTPLATE, CHAINMAIL_CHESTPLATE, LEATHER_CHESTPLATE, ELYTRA),
+        /**
+         * @since 1.12.2
+         */
         LEGS(COPPER_LEGGINGS, NETHERITE_LEGGINGS, DIAMOND_LEGGINGS, GOLDEN_LEGGINGS, IRON_LEGGINGS, CHAINMAIL_LEGGINGS, LEATHER_LEGGINGS),
+        /**
+         * @since 1.12.2
+         */
         FEET(COPPER_BOOTS, NETHERITE_BOOTS, DIAMOND_BOOTS, GOLDEN_BOOTS, IRON_BOOTS, CHAINMAIL_BOOTS, LEATHER_BOOTS);
 
         private final Set<Material> types;
@@ -110,6 +134,7 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
          * armor slot.
          *
          * @return immutable set of material types
+         * @since 1.12.2
          */
         public Set<Material> getTypes() {
             return this.types;
@@ -120,6 +145,7 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
          *
          * @param material material to get slot by
          * @return slot type the material will go in, or {@code null} if it won't
+         * @since 1.12.2
          */
         public static @Nullable SlotType getByMaterial(final Material material) {
             for (final SlotType slotType : values()) {
@@ -135,6 +161,7 @@ public class PlayerArmorChangeEvent extends PlayerEvent {
          *
          * @param material material to check
          * @return whether this material can be equipped
+         * @since 1.12.2
          */
         public static boolean isEquipable(final Material material) {
             return getByMaterial(material) != null;

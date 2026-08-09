@@ -6,6 +6,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents an AI goal of an entity
+ *
+ * @since 1.15.2
  */
 @NullMarked
 public interface Goal<T extends Mob> {
@@ -14,6 +16,7 @@ public interface Goal<T extends Mob> {
      * Checks if this goal should be activated
      *
      * @return if this goal should be activated
+     * @since 1.15.2
      */
     boolean shouldActivate();
 
@@ -21,6 +24,7 @@ public interface Goal<T extends Mob> {
      * Checks if this goal should stay active, defaults to {@link Goal#shouldActivate()}
      *
      * @return if this goal should stay active
+     * @since 1.15.2
      */
     default boolean shouldStayActive() {
         return this.shouldActivate();
@@ -28,18 +32,24 @@ public interface Goal<T extends Mob> {
 
     /**
      * Called when this goal gets activated
+     *
+     * @since 1.15.2
      */
     default void start() {
     }
 
     /**
      * Called when this goal gets stopped
+     *
+     * @since 1.15.2
      */
     default void stop() {
     }
 
     /**
      * Called each tick the goal is activated
+     *
+     * @since 1.15.2
      */
     default void tick() {
     }
@@ -49,6 +59,7 @@ public interface Goal<T extends Mob> {
      * namespace. Additionally, this key also specifies to what mobs this goal can be applied to
      *
      * @return the goal key
+     * @since 1.15.2
      */
     GoalKey<T> getKey();
 
@@ -58,6 +69,7 @@ public interface Goal<T extends Mob> {
      * This method is only called on construction.
      *
      * @return the subtypes.
+     * @since 1.15.2
      */
     EnumSet<GoalType> getTypes();
 }

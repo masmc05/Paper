@@ -13,6 +13,8 @@ import org.jspecify.annotations.NullMarked;
 /**
  * A builder for configuring a raytrace with a starting location
  * and direction.
+ *
+ * @since 1.21.4
  */
 @NullMarked
 public interface PositionedRayTraceConfigurationBuilder {
@@ -22,6 +24,7 @@ public interface PositionedRayTraceConfigurationBuilder {
      *
      * @param start the new starting location
      * @return a reference to this object
+     * @since 1.21.4
      */
     @Contract(value = "_ -> this", mutates = "this")
     PositionedRayTraceConfigurationBuilder start(Location start);
@@ -31,6 +34,7 @@ public interface PositionedRayTraceConfigurationBuilder {
      *
      * @param direction the new direction
      * @return a reference to this object
+     * @since 1.21.4
      */
     @Contract(value = "_ -> this", mutates = "this")
     PositionedRayTraceConfigurationBuilder direction(Vector direction);
@@ -40,6 +44,7 @@ public interface PositionedRayTraceConfigurationBuilder {
      *
      * @param maxDistance the new maxDistance
      * @return a reference to this object
+     * @since 1.21.4
      */
     @Contract(value = "_ -> this", mutates = "this")
     PositionedRayTraceConfigurationBuilder maxDistance(@NonNegative double maxDistance);
@@ -49,6 +54,7 @@ public interface PositionedRayTraceConfigurationBuilder {
      *
      * @param fluidCollisionMode the new FluidCollisionMode
      * @return a reference to this object
+     * @since 1.21.4
      */
     @Contract(value = "_ -> this", mutates = "this")
     PositionedRayTraceConfigurationBuilder fluidCollisionMode(FluidCollisionMode fluidCollisionMode);
@@ -58,6 +64,7 @@ public interface PositionedRayTraceConfigurationBuilder {
      *
      * @param blockCollisionMode the new BlockCollisionMode
      * @return a reference to this object
+     * @since 1.21.11
      */
     @Contract(value = "_ -> this", mutates = "this")
     PositionedRayTraceConfigurationBuilder blockCollisionMode(BlockCollisionMode blockCollisionMode);
@@ -68,6 +75,7 @@ public interface PositionedRayTraceConfigurationBuilder {
      *
      * @param ignorePassableBlocks if the raytrace should ignore passable blocks
      * @return a reference to this object
+     * @since 1.21.4
      */
     @Contract(value = "_ -> this", mutates = "this")
     PositionedRayTraceConfigurationBuilder ignorePassableBlocks(boolean ignorePassableBlocks);
@@ -77,6 +85,7 @@ public interface PositionedRayTraceConfigurationBuilder {
      *
      * @param raySize the new raytrace size
      * @return a reference to this object
+     * @since 1.21.4
      */
     @Contract(value = "_ -> this", mutates = "this")
     PositionedRayTraceConfigurationBuilder raySize(@NonNegative double raySize);
@@ -86,6 +95,7 @@ public interface PositionedRayTraceConfigurationBuilder {
      *
      * @param entityFilter predicate for entities the ray can potentially collide with
      * @return a reference to this object
+     * @since 1.21.4
      */
     @Contract(value = "_ -> this", mutates = "this")
     PositionedRayTraceConfigurationBuilder entityFilter(Predicate<? super Entity> entityFilter);
@@ -95,6 +105,7 @@ public interface PositionedRayTraceConfigurationBuilder {
      *
      * @param blockFilter predicate for blocks the ray can potentially collide with
      * @return a reference to this object
+     * @since 1.21.4
      */
     @Contract(value = "_ -> this", mutates = "this")
     PositionedRayTraceConfigurationBuilder blockFilter(Predicate<? super Block> blockFilter);
@@ -105,6 +116,7 @@ public interface PositionedRayTraceConfigurationBuilder {
      * @param first the first target
      * @param others the other targets
      * @return a reference to this object
+     * @since 1.21.4
      */
     @Contract(value = "_, _ -> this", mutates = "this")
     PositionedRayTraceConfigurationBuilder targets(RayTraceTarget first, RayTraceTarget... others);

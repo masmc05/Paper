@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * 'hinge' indicates which hinge this door is attached to and will rotate around
  * when opened.
+ *
+ * @since 1.13
  */
 public interface Door extends Bisected, Directional, Openable, Powerable {
 
@@ -16,6 +18,7 @@ public interface Door extends Bisected, Directional, Openable, Powerable {
      * Gets the value of the 'hinge' property.
      *
      * @return the 'hinge' value
+     * @since 1.13
      */
     @NotNull
     Hinge getHinge();
@@ -24,19 +27,26 @@ public interface Door extends Bisected, Directional, Openable, Powerable {
      * Sets the value of the 'hinge' property.
      *
      * @param hinge the new 'hinge' value
+     * @since 1.13
      */
     void setHinge(@NotNull Hinge hinge);
 
     /**
      * The hinge of a door.
+     *
+     * @since 1.13
      */
     public enum Hinge {
         /**
          * Door is attached to the left side.
+         *
+         * @since 1.13
          */
         LEFT,
         /**
          * Door is attached to the right side.
+         *
+         * @since 1.13
          */
         RIGHT;
     }

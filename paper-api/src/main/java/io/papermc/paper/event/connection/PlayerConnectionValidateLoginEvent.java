@@ -20,6 +20,8 @@ import org.jspecify.annotations.Nullable;
  * Note: Since 1.21.7, during these phases, the {@link #getConnection() connection}
  * is either {@link PlayerLoginConnection} or {@link PlayerConfigurationConnection},
  * allowing access to phase-specific API.
+ *
+ * @since 1.21.7
  */
 public class PlayerConnectionValidateLoginEvent extends Event {
 
@@ -47,6 +49,7 @@ public class PlayerConnectionValidateLoginEvent extends Event {
      * @return connection
      * @apiNote disconnecting the player through this connection
      * or using any methods that may send packets is not supported
+     * @since 1.21.7
      */
     public PlayerConnection getConnection() {
         return this.connection;
@@ -55,6 +58,8 @@ public class PlayerConnectionValidateLoginEvent extends Event {
     /**
      * Allows the player to log in.
      * This skips any login validation checks.
+     *
+     * @since 1.21.7
      */
     public void allow() {
         this.kickMessage = null;
@@ -64,6 +69,7 @@ public class PlayerConnectionValidateLoginEvent extends Event {
      * Disallows the player from logging in, with the given reason
      *
      * @param message Kick message to display to the user
+     * @since 1.21.7
      */
     public void kickMessage(final Component message) {
         this.kickMessage = message;
@@ -74,6 +80,7 @@ public class PlayerConnectionValidateLoginEvent extends Event {
      * This will be null in the case that the player is allowed to log in.
      *
      * @return disallow reason
+     * @since 1.21.7
      */
     public @Nullable Component getKickMessage() {
         return this.kickMessage;
@@ -83,16 +90,23 @@ public class PlayerConnectionValidateLoginEvent extends Event {
      * Gets if the player is allowed to enter the next stage.
      *
      * @return if allowed
+     * @since 1.21.7
      */
     public boolean isAllowed() {
         return this.kickMessage == null;
     }
 
+    /**
+     * @since 1.21.7
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.7
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

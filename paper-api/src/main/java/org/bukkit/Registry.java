@@ -54,6 +54,7 @@ import org.jspecify.annotations.Nullable;
  * {@link NamespacedKey}.
  *
  * @param <T> type of item in the registry
+ * @since 1.14
  */
 @NullMarked
 public interface Registry<T extends Keyed> extends Iterable<T> {
@@ -93,6 +94,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see Art
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#PAINTING_VARIANT}
+     * @since 1.14
      */
     @Deprecated(since = "1.21.3") // Paper
     Registry<Art> ART = legacyRegistryFor(Art.class);
@@ -100,6 +102,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * Attribute.
      *
      * @see Attribute
+     * @since 1.16.1
      */
     Registry<Attribute> ATTRIBUTE = registryFor(RegistryKey.ATTRIBUTE);
     /**
@@ -107,6 +110,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see PatternType
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#BANNER_PATTERN}
+     * @since 1.20.4
      */
     @Deprecated(since = "1.21") // Paper
     Registry<PatternType> BANNER_PATTERN = legacyRegistryFor(PatternType.class);
@@ -115,6 +119,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see Biome
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#BIOME}
+     * @since 1.14
      */
     @Deprecated(since = "1.21.3") // Paper
     Registry<Biome> BIOME = legacyRegistryFor(Biome.class);
@@ -122,6 +127,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * Server block types.
      *
      * @see BlockType
+     * @since 1.20.6
      */
     Registry<BlockType> BLOCK = registryFor(RegistryKey.BLOCK);
     /**
@@ -149,6 +155,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see Cat.Type
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#CAT_VARIANT}
+     * @since 1.20.4
      */
     @Deprecated(since = "1.21.5")
     Registry<Cat.Type> CAT_VARIANT = legacyRegistryFor(Cat.Type.class);
@@ -157,6 +164,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see Enchantment
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#ENCHANTMENT}
+     * @since 1.14
      */
     @Deprecated(since = "1.21")
     Registry<Enchantment> ENCHANTMENT = legacyRegistryFor(Enchantment.class);
@@ -164,6 +172,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * Server entity types.
      *
      * @see EntityType
+     * @since 1.14
      */
     Registry<EntityType> ENTITY_TYPE = registryFor(RegistryKey.ENTITY_TYPE);
     /**
@@ -171,6 +180,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see MusicInstrument
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#INSTRUMENT}
+     * @since 1.20.1
      */
     @Deprecated(since = "1.21.2")
     Registry<MusicInstrument> INSTRUMENT = legacyRegistryFor(MusicInstrument.class);
@@ -178,48 +188,56 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * Server item types.
      *
      * @see ItemType
+     * @since 1.20.6
      */
     Registry<ItemType> ITEM = registryFor(RegistryKey.ITEM);
     /**
      * Default server loot tables.
      *
      * @see LootTables
+     * @since 1.14
      */
     Registry<LootTables> LOOT_TABLES = new SimpleRegistry<>(LootTables.class);
     /**
      * Server materials.
      *
      * @see Material
+     * @since 1.14
      */
     Registry<Material> MATERIAL = new SimpleRegistry<>(Material.class, (mat) -> !mat.isLegacy());
     /**
      * Server menus.
      *
      * @see MenuType
+     * @since 1.21.1
      */
     Registry<MenuType> MENU = registryFor(RegistryKey.MENU);
     /**
      * Server mob effects.
      *
      * @see PotionEffectType
+     * @since 1.21.4
      */
     Registry<PotionEffectType> MOB_EFFECT = registryFor(RegistryKey.MOB_EFFECT);
     /**
      * Server particles.
      *
      * @see Particle
+     * @since 1.20.2
      */
     Registry<Particle> PARTICLE_TYPE = registryFor(RegistryKey.PARTICLE_TYPE); // Paper
     /**
      * Server potions.
      *
      * @see PotionType
+     * @since 1.20.2
      */
     Registry<PotionType> POTION = registryFor(RegistryKey.POTION); // Paper
     /**
      * Server statistics.
      *
      * @see Statistic
+     * @since 1.14
      */
     Registry<Statistic> STATISTIC = new SimpleRegistry<>(Statistic.class);
     /**
@@ -227,6 +245,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see Structure
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#STRUCTURE}
+     * @since 1.19
      */
     @Deprecated(since = "1.20.6") // Paper
     Registry<Structure> STRUCTURE = legacyRegistryFor(Structure.class);
@@ -234,12 +253,14 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * Server structure types.
      *
      * @see StructureType
+     * @since 1.18.1
      */
     Registry<StructureType> STRUCTURE_TYPE = registryFor(RegistryKey.STRUCTURE_TYPE);
     /**
      * Sound events.
      *
      * @see Sound
+     * @since 1.21.4
      */
     Registry<Sound> SOUND_EVENT = registryFor(RegistryKey.SOUND_EVENT);
     /**
@@ -247,6 +268,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see TrimMaterial
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#TRIM_MATERIAL}
+     * @since 1.19.4
      */
     @Deprecated(since = "1.20.6") // Paper
     Registry<TrimMaterial> TRIM_MATERIAL = legacyRegistryFor(TrimMaterial.class);
@@ -255,6 +277,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see TrimPattern
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#TRIM_PATTERN}
+     * @since 1.19.4
      */
     @Deprecated(since = "1.20.6")
     Registry<TrimPattern> TRIM_PATTERN = legacyRegistryFor(TrimPattern.class);
@@ -263,6 +286,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see DamageType
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#DAMAGE_TYPE}
+     * @since 1.20.4
      */
     @Deprecated(since = "1.20.6")
     Registry<DamageType> DAMAGE_TYPE = legacyRegistryFor(DamageType.class);
@@ -271,6 +295,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see JukeboxSong
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#JUKEBOX_SONG}
+     * @since 1.21
      */
     @Deprecated(since = "1.21")
     Registry<JukeboxSong> JUKEBOX_SONG = legacyRegistryFor(JukeboxSong.class);
@@ -278,24 +303,28 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * Villager profession.
      *
      * @see Villager.Profession
+     * @since 1.14
      */
     Registry<Villager.Profession> VILLAGER_PROFESSION = registryFor(RegistryKey.VILLAGER_PROFESSION);
     /**
      * Point of interest types.
      *
      * @see PoiType
+     * @since 26.2
      */
     Registry<PoiType> POINT_OF_INTEREST_TYPE = registryFor(RegistryKey.POINT_OF_INTEREST_TYPE);
     /**
      * Villager type.
      *
      * @see Villager.Type
+     * @since 1.14
      */
     Registry<Villager.Type> VILLAGER_TYPE = registryFor(RegistryKey.VILLAGER_TYPE);
     /**
      * Memory Keys.
      *
      * @see MemoryKey
+     * @since 1.14.1
      */
     Registry<MemoryKey<?>> MEMORY_MODULE_TYPE = new NotARegistry<>() {
 
@@ -318,6 +347,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * Server fluids.
      *
      * @see Fluid
+     * @since 1.16.3
      */
     Registry<Fluid> FLUID = registryFor(RegistryKey.FLUID);
     /**
@@ -325,6 +355,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see Frog.Variant
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#FROG_VARIANT}
+     * @since 1.19
      */
     @Deprecated(since = "1.21.5")
     Registry<Frog.Variant> FROG_VARIANT = legacyRegistryFor(Frog.Variant.class);
@@ -333,6 +364,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see Wolf.Variant
      * @deprecated use {@link RegistryAccess#getRegistry(RegistryKey)} with {@link RegistryKey#WOLF_VARIANT}
+     * @since 1.20.6
      */
     @Deprecated(since = "1.20.6")
     Registry<Wolf.Variant> WOLF_VARIANT = legacyRegistryFor(Wolf.Variant.class);
@@ -340,6 +372,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * Map cursor types.
      *
      * @see MapCursor.Type
+     * @since 1.20.6
      */
     Registry<MapCursor.Type> MAP_DECORATION_TYPE = registryFor(RegistryKey.MAP_DECORATION_TYPE);
     /**
@@ -347,18 +380,21 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @see GameEvent
      * @see io.papermc.paper.registry.event.RegistryEvents#GAME_EVENT
+     * @since 1.17
      */
     Registry<GameEvent> GAME_EVENT = registryFor(RegistryKey.GAME_EVENT);
     /**
      * Data component types.
      *
      * @see DataComponentType
+     * @since 1.21.3
      */
     Registry<DataComponentType> DATA_COMPONENT_TYPE = registryFor(RegistryKey.DATA_COMPONENT_TYPE);
     /**
      * Game rules.
      *
      * @see GameRule
+     * @since 1.21.11
      */
     Registry<GameRule<?>> GAME_RULE = registryFor(RegistryKey.GAME_RULE);
 
@@ -366,18 +402,21 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
     /**
      * @apiNote use {@link #MOB_EFFECT} instead
      * @hidden
+     * @since 1.20.4
      */
     @ApiStatus.Obsolete(since = "1.21.4")
     Registry<PotionEffectType> EFFECT = MOB_EFFECT;
     /**
      * @apiNote use {@link #MOB_EFFECT} instead
      * @hidden
+     * @since 1.18.1
      */
     @ApiStatus.Obsolete(since = "1.21.4")
     Registry<org.bukkit.potion.PotionEffectType> POTION_EFFECT_TYPE = EFFECT;
     /**
      * @apiNote use {@link #SOUND_EVENT}
      * @hidden
+     * @since 1.16.4
      */
     @ApiStatus.Obsolete(since = "1.21.4")
     Registry<Sound> SOUNDS = registryFor(RegistryKey.SOUND_EVENT);
@@ -388,6 +427,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @param key non-null key
      * @return item or null if it does not exist
+     * @since 1.14
      */
     @Nullable T get(NamespacedKey key);
     // Paper start
@@ -397,6 +437,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @param key non-null key
      * @return item or null if it does not exist
+     * @since 1.21
      */
     default @Nullable T get(final Key key) {
         return key instanceof final NamespacedKey nsKey ? this.get(nsKey) : this.get(new NamespacedKey(key.namespace(), key.value()));
@@ -407,6 +448,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @param typedKey non-null typed key
      * @return item or null if it does not exist
+     * @since 1.21
      */
     default @Nullable T get(final TypedKey<T> typedKey) {
         Preconditions.checkArgument(typedKey != null, "typedKey cannot be null");
@@ -422,6 +464,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * @param key the key to get the object of in this registry
      * @return the object for the key
      * @throws NoSuchElementException if the key doesn't point to an object in the registry
+     * @since 1.21
      */
     default T getOrThrow(final net.kyori.adventure.key.Key key) {
         Preconditions.checkArgument(key != null, "key cannot be null");
@@ -438,6 +481,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * @param key the key to get the object of in this registry
      * @return the object for the key
      * @throws NoSuchElementException if the key doesn't point to an object in the registry
+     * @since 1.21
      */
     default T getOrThrow(final TypedKey<T> key) {
         final T value = this.get(key);
@@ -458,6 +502,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * @return the key for the value
      * @throws NoSuchElementException if the value doesn't exist in this registry
      * @see #getKey(Keyed)
+     * @since 1.20.4
      */
     default NamespacedKey getKeyOrThrow(final T value) {
         final NamespacedKey key = this.getKey(value);
@@ -477,6 +522,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * @param value the value to get the key of in this registry
      * @return the key for the value or null if not in the registry
      * @see #getKeyOrThrow(Keyed)
+     * @since 1.20.4
      */
     @Nullable NamespacedKey getKey(T value);
     // Paper end - improve Registry
@@ -489,6 +535,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * @return true if this registry has a tag with the given key, false otherwise
      * @throws UnsupportedOperationException if this registry doesn't have or support tags
      * @see #getTag(TagKey)
+     * @since 1.21
      */
     boolean hasTag(TagKey<T> key);
 
@@ -501,6 +548,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * @throws UnsupportedOperationException    if this registry doesn't have or support tags
      * @see #hasTag(TagKey)
      * @see #getTagValues(TagKey)
+     * @since 1.21
      */
     Tag<T> getTag(TagKey<T> key);
 
@@ -513,6 +561,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * @throws UnsupportedOperationException if this registry doesn't have or support tags
      * @see #getTag(TagKey)
      * @see Tag#resolve(Registry)
+     * @since 1.21.6
      */
     default Collection<T> getTagValues(final TagKey<T> key) {
         Tag<T> tag = this.getTag(key);
@@ -524,6 +573,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      *
      * @return a stream of all tags in this registry
      * @throws UnsupportedOperationException if this registry doesn't have or support tags
+     * @since 1.21.4
      */
     Collection<Tag<T>> getTags();
     // Paper end - RegistrySet API
@@ -536,6 +586,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * @param key to get the object from
      * @return object with the given key
      * @throws NoSuchElementException if there is no object with the given key
+     * @since 1.21.1
      */
     default T getOrThrow(final NamespacedKey key) {
         return this.getOrThrow((Key) key);
@@ -545,6 +596,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * Returns a new stream, which contains all registry items, which are registered to the registry.
      *
      * @return a stream of all registry items
+     * @since 1.20.1
      */
     Stream<T> stream();
 
@@ -552,6 +604,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * Returns a new stream, which contains all registry keys, which are registered to the registry.
      *
      * @return a stream of all registry keys
+     * @since 1.21.6
      */
     Stream<NamespacedKey> keyStream();
 
@@ -579,6 +632,7 @@ public interface Registry<T extends Keyed> extends Iterable<T> {
      * Gets the size of the registry.
      *
      * @return the size of the registry
+     * @since 1.21.4
      */
     int size();
 

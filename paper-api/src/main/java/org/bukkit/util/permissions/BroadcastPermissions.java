@@ -4,12 +4,18 @@ import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.0.0
+ */
 public final class BroadcastPermissions {
     private static final String ROOT = "bukkit.broadcast";
     private static final String PREFIX = ROOT + ".";
 
     private BroadcastPermissions() {}
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public static Permission registerPermissions(@NotNull Permission parent) {
         Permission broadcasts = DefaultPermissions.registerPermission(ROOT, "Allows the user to receive all broadcast messages", parent);

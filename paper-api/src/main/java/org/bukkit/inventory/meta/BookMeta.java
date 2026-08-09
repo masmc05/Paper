@@ -16,27 +16,39 @@ import org.jetbrains.annotations.Nullable;
  * {@link org.bukkit.inventory.ItemStack#getType()}. {@code instanceof} on
  * the meta instance is not sufficient due to unusual inheritance
  * with relation to {@link WritableBookMeta}.
+ *
+ * @since 1.4.5
  */
 public interface BookMeta extends WritableBookMeta {
 
     /**
      * Represents the generation (or level of copying) of a written book
+     *
+     * @since 1.9.4
      */
     enum Generation {
         /**
          * Book written into a book-and-quill. Can be copied. (Default value)
+         *
+         * @since 1.9.4
          */
         ORIGINAL,
         /**
          * Book that was copied from an original. Can be copied.
+         *
+         * @since 1.9.4
          */
         COPY_OF_ORIGINAL,
         /**
          * Book that was copied from a copy of an original. Can't be copied.
+         *
+         * @since 1.9.4
          */
         COPY_OF_COPY,
         /**
          * Unused; unobtainable by players. Can't be copied.
+         *
+         * @since 1.9.4
          */
         TATTERED;
     }
@@ -45,6 +57,7 @@ public interface BookMeta extends WritableBookMeta {
      * Checks for the existence of a title in the book.
      *
      * @return true if the book has a title
+     * @since 1.4.5
      */
     boolean hasTitle();
 
@@ -55,6 +68,7 @@ public interface BookMeta extends WritableBookMeta {
      * method.
      *
      * @return the title of the book
+     * @since 1.4.5
      */
     @Nullable
     String getTitle();
@@ -66,6 +80,7 @@ public interface BookMeta extends WritableBookMeta {
      *
      * @param title the title to set
      * @return true if the title was successfully set
+     * @since 1.4.5
      */
     boolean setTitle(@Nullable String title);
 
@@ -73,6 +88,7 @@ public interface BookMeta extends WritableBookMeta {
      * Checks for the existence of an author in the book.
      *
      * @return true if the book has an author
+     * @since 1.4.5
      */
     boolean hasAuthor();
 
@@ -83,6 +99,7 @@ public interface BookMeta extends WritableBookMeta {
      * method.
      *
      * @return the author of the book
+     * @since 1.4.5
      */
     @Nullable
     String getAuthor();
@@ -91,6 +108,7 @@ public interface BookMeta extends WritableBookMeta {
      * Sets the author of the book. Removes author when given null.
      *
      * @param author the author to set
+     * @since 1.4.5
      */
     void setAuthor(@Nullable String author);
 
@@ -98,6 +116,7 @@ public interface BookMeta extends WritableBookMeta {
      * Checks for the existence of generation level in the book.
      *
      * @return true if the book has a generation level
+     * @since 1.10.2
      */
     boolean hasGeneration();
 
@@ -108,6 +127,7 @@ public interface BookMeta extends WritableBookMeta {
      * this method.
      *
      * @return the generation of the book
+     * @since 1.9.4
      */
     @Nullable
     Generation getGeneration();
@@ -116,6 +136,7 @@ public interface BookMeta extends WritableBookMeta {
      * Sets the generation of the book. Removes generation when given null.
      *
      * @param generation the generation to set
+     * @since 1.9.4
      */
     void setGeneration(@Nullable Generation generation);
 
@@ -127,6 +148,7 @@ public interface BookMeta extends WritableBookMeta {
     //<editor-fold desc="deprecations" defaultstate="collapsed">
     /**
      * @deprecated use {@link #page(int)}
+     * @since 1.4.5
      */
     @Deprecated
     @Override
@@ -134,6 +156,7 @@ public interface BookMeta extends WritableBookMeta {
 
     /**
      * @deprecated use {@link #page(int, net.kyori.adventure.text.Component)}
+     * @since 1.4.5
      */
     @Deprecated
     @Override
@@ -141,6 +164,7 @@ public interface BookMeta extends WritableBookMeta {
 
     /**
      * @deprecated use {@link #pages()}
+     * @since 1.4.5
      */
     @Deprecated
     @Override
@@ -148,6 +172,7 @@ public interface BookMeta extends WritableBookMeta {
 
     /**
      * @deprecated use {@link #pages(List)}
+     * @since 1.4.5
      */
     @Deprecated
     @Override
@@ -155,6 +180,7 @@ public interface BookMeta extends WritableBookMeta {
 
     /**
      * @deprecated use {@link #pages(net.kyori.adventure.text.Component...)}
+     * @since 1.4.5
      */
     @Deprecated
     @Override
@@ -162,6 +188,7 @@ public interface BookMeta extends WritableBookMeta {
 
     /**
      * @deprecated use {@link #addPages(net.kyori.adventure.text.Component...)}
+     * @since 1.4.5
      */
     @Deprecated
     @Override
@@ -175,6 +202,7 @@ public interface BookMeta extends WritableBookMeta {
      * method.
      *
      * @return the title of the book
+     * @since 1.16.5
      */
     net.kyori.adventure.text.@Nullable Component title();
 
@@ -185,6 +213,7 @@ public interface BookMeta extends WritableBookMeta {
      *
      * @param title the title to set
      * @return the same {@link BookMeta} instance
+     * @since 1.16.5
      */
     @org.jetbrains.annotations.Contract(value = "_ -> this")
     @NotNull BookMeta title(net.kyori.adventure.text.@Nullable Component title);
@@ -196,6 +225,7 @@ public interface BookMeta extends WritableBookMeta {
      * method.
      *
      * @return the author of the book
+     * @since 1.16.5
      */
     net.kyori.adventure.text.@Nullable Component author();
 
@@ -204,6 +234,7 @@ public interface BookMeta extends WritableBookMeta {
      *
      * @param author the author to set
      * @return the same {@link BookMeta} instance
+     * @since 1.16.5
      */
     @org.jetbrains.annotations.Contract(value = "_ -> this")
     @NotNull BookMeta author(net.kyori.adventure.text.@Nullable Component author);
@@ -216,6 +247,7 @@ public interface BookMeta extends WritableBookMeta {
      *
      * @param page the page number to get, in range [1, getPageCount()]
      * @return the page from the book
+     * @since 1.16.5
      */
     net.kyori.adventure.text.@NotNull Component page(int page);
 
@@ -230,6 +262,7 @@ public interface BookMeta extends WritableBookMeta {
      *
      * @param page the page number to set, in range [1, getPageCount()]
      * @param data the data to set for that page
+     * @since 1.16.5
      */
     void page(int page, net.kyori.adventure.text.@NotNull Component data);
 
@@ -238,6 +271,7 @@ public interface BookMeta extends WritableBookMeta {
      * 1024 characters per page.
      *
      * @param pages A list of strings, each being a page
+     * @since 1.16.5
      */
     void addPages(net.kyori.adventure.text.@NotNull Component @NotNull ... pages);
 
@@ -247,7 +281,8 @@ public interface BookMeta extends WritableBookMeta {
     * <p>The returned collection will be unmodifiable.</p>
     *
     * @return the list of pages
-    */
+    * @since 26.2
+     */
     @NotNull List<Component> pages();
 
     /**
@@ -255,6 +290,7 @@ public interface BookMeta extends WritableBookMeta {
      *
      * @param pages the pages to set
      * @return this book instance
+     * @since 26.2
      */
     @Contract(value = "_ -> this")
     @NotNull BookMeta pages(final @NotNull List<Component> pages);
@@ -264,13 +300,17 @@ public interface BookMeta extends WritableBookMeta {
     *
     * @param pages the pages to set
     * @return this book instance
-    */
+    * @since 26.2
+     */
     @Contract(value = "_ -> this")
     default @NotNull BookMeta pages(final @NotNull Component @NotNull... pages) {
         return this.pages(List.of(pages));
     }
     // Paper end
 
+    /**
+     * @since 1.12.2
+     */
     // Spigot start
     public class Spigot {
 
@@ -280,6 +320,7 @@ public interface BookMeta extends WritableBookMeta {
          * @param page the page number to get
          * @return the page from the book
          * @deprecated in favour of {@link #page(int)}
+         * @since 1.12.2
          */
         @NotNull
         @Deprecated // Paper
@@ -297,6 +338,7 @@ public interface BookMeta extends WritableBookMeta {
          * @param page the page number to set
          * @param data the data to set for that page
          * @deprecated in favour of {@link #page(int, net.kyori.adventure.text.Component)}
+         * @since 1.12.2
          */
         @Deprecated // Paper
         public void setPage(int page, @Nullable BaseComponent... data) {
@@ -308,6 +350,7 @@ public interface BookMeta extends WritableBookMeta {
          *
          * @return list of all the pages in the book
          * @deprecated in favour of {@link #pages()}
+         * @since 1.12.2
          */
         @NotNull
         @Deprecated // Paper
@@ -321,6 +364,7 @@ public interface BookMeta extends WritableBookMeta {
          *
          * @param pages A list of pages to set the book to use
          * @deprecated in favour of {@link #pages(java.util.List)}
+         * @since 1.12.2
          */
         @Deprecated // Paper
         public void setPages(@NotNull List<BaseComponent[]> pages) {
@@ -333,6 +377,7 @@ public interface BookMeta extends WritableBookMeta {
          *
          * @param pages A list of component arrays, each being a page
          * @deprecated in favour of {@link #pages(net.kyori.adventure.text.Component...)}
+         * @since 1.12.2
          */
         @Deprecated // Paper
         public void setPages(@NotNull BaseComponent[]... pages) {
@@ -345,6 +390,7 @@ public interface BookMeta extends WritableBookMeta {
          *
          * @param pages A list of component arrays, each being a page
          * @deprecated in favour of {@link #addPages(net.kyori.adventure.text.Component...)}
+         * @since 1.12.2
          */
         @Deprecated // Paper
         public void addPage(@NotNull BaseComponent[]... pages) {
@@ -352,6 +398,9 @@ public interface BookMeta extends WritableBookMeta {
         }
     }
 
+    /**
+     * @since 1.12.2
+     */
     @NotNull
     Spigot spigot();
     // Spigot end

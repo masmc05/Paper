@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Range;
 
 /**
  * Called when a brewing stand starts to brew.
+ *
+ * @since 1.19.3
  */
 public class BrewingStartEvent extends InventoryBlockStartEvent {
 
@@ -49,6 +51,7 @@ public class BrewingStartEvent extends InventoryBlockStartEvent {
      * {@link #getBrewingTime()}.
      *
      * @return recipe brew time (in ticks)
+     * @since 1.21.1
      */
     public @Range(from = 1, to = Integer.MAX_VALUE) int getRecipeBrewTime() {
         return this.recipeBrewTime;
@@ -61,6 +64,7 @@ public class BrewingStartEvent extends InventoryBlockStartEvent {
      *
      * @param recipeBrewTime recipe brew time (in ticks)
      * @throws IllegalArgumentException if the recipe brew time is non-positive
+     * @since 1.21.1
      */
     public void setRecipeBrewTime(@Range(from = 1, to = Integer.MAX_VALUE) int recipeBrewTime) {
         Preconditions.checkArgument(recipeBrewTime > 0, "recipeBrewTime must be positive");
@@ -71,6 +75,7 @@ public class BrewingStartEvent extends InventoryBlockStartEvent {
      * Gets the amount of brewing ticks left.
      *
      * @return The amount of ticks left for the brewing task
+     * @since 1.21.1
      */
     public @Range(from = 0, to = Integer.MAX_VALUE) int getBrewingTime() {
         return this.brewingTime;
@@ -81,6 +86,7 @@ public class BrewingStartEvent extends InventoryBlockStartEvent {
      *
      * @param brewTime the ticks left, which is no less than 0
      * @throws IllegalArgumentException if the ticks are less than 0
+     * @since 1.21.1
      */
     public void setBrewingTime(@Range(from = 0, to = Integer.MAX_VALUE) int brewTime) {
         Preconditions.checkArgument(brewTime >= 0, "brewTime must be non-negative");

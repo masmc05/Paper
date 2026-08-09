@@ -9,6 +9,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Thrown when a player attempts to pick an item up from the ground
+ *
+ * @since 1.12
  */
 @NullMarked
 public class PlayerAttemptPickupItemEvent extends PlayerEvent implements Cancellable {
@@ -38,6 +40,7 @@ public class PlayerAttemptPickupItemEvent extends PlayerEvent implements Cancell
      * Gets the Item attempted by the player.
      *
      * @return Item
+     * @since 1.12
      */
     public Item getItem() {
         return this.item;
@@ -47,6 +50,7 @@ public class PlayerAttemptPickupItemEvent extends PlayerEvent implements Cancell
      * Gets the amount that will remain on the ground, if any
      *
      * @return amount that will remain on the ground
+     * @since 1.12.2
      */
     public int getRemaining() {
         return this.remaining;
@@ -57,6 +61,7 @@ public class PlayerAttemptPickupItemEvent extends PlayerEvent implements Cancell
      * <p>Cancelling the event will set this value to {@code false}.</p>
      *
      * @param flyAtPlayer {@code true} for item to fly at player
+     * @since 1.12.2
      */
     public void setFlyAtPlayer(boolean flyAtPlayer) {
         this.flyAtPlayer = flyAtPlayer;
@@ -66,28 +71,41 @@ public class PlayerAttemptPickupItemEvent extends PlayerEvent implements Cancell
      * Gets if the item will fly at the player
      *
      * @return {@code true} if the item will fly at the player
+     * @since 1.12.2
      */
     public boolean getFlyAtPlayer() {
         return this.flyAtPlayer;
     }
 
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
         this.flyAtPlayer = !cancel;
     }
 
+    /**
+     * @since 1.12
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.12
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

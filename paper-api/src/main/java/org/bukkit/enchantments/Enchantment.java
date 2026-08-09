@@ -17,222 +17,310 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * The various type of enchantments that may be added to armour or weapons
+ *
+ * @since 1.1.0
  */
 public abstract class Enchantment implements Keyed, Translatable, net.kyori.adventure.translation.Translatable { // Paper - Adventure translations
     /**
      * Provides protection against environmental damage
+     *
+     * @since 1.20.6
      */
     public static final Enchantment PROTECTION = getEnchantment("protection");
 
     /**
      * Provides protection against fire damage
+     *
+     * @since 1.20.6
      */
     public static final Enchantment FIRE_PROTECTION = getEnchantment("fire_protection");
 
     /**
      * Provides protection against fall damage
+     *
+     * @since 1.20.6
      */
     public static final Enchantment FEATHER_FALLING = getEnchantment("feather_falling");
 
     /**
      * Provides protection against explosive damage
+     *
+     * @since 1.20.6
      */
     public static final Enchantment BLAST_PROTECTION = getEnchantment("blast_protection");
 
     /**
      * Provides protection against projectile damage
+     *
+     * @since 1.20.6
      */
     public static final Enchantment PROJECTILE_PROTECTION = getEnchantment("projectile_protection");
 
     /**
      * Decreases the rate of air loss whilst underwater
+     *
+     * @since 1.20.6
      */
     public static final Enchantment RESPIRATION = getEnchantment("respiration");
 
     /**
      * Increases the speed at which a player may mine underwater
+     *
+     * @since 1.20.6
      */
     public static final Enchantment AQUA_AFFINITY = getEnchantment("aqua_affinity");
 
     /**
      * Damages the attacker
+     *
+     * @since 1.4.6
      */
     public static final Enchantment THORNS = getEnchantment("thorns");
 
     /**
      * Increases walking speed while in water
+     *
+     * @since 1.8
      */
     public static final Enchantment DEPTH_STRIDER = getEnchantment("depth_strider");
 
     /**
      * Freezes any still water adjacent to ice / frost which player is walking on
+     *
+     * @since 1.9.4
      */
     public static final Enchantment FROST_WALKER = getEnchantment("frost_walker");
 
     /**
      * Item cannot be removed
+     *
+     * @since 1.11
      */
     public static final Enchantment BINDING_CURSE = getEnchantment("binding_curse");
 
     /**
      * Increases damage against all targets
+     *
+     * @since 1.20.6
      */
     public static final Enchantment SHARPNESS = getEnchantment("sharpness");
 
     /**
      * Increases damage against undead targets
+     *
+     * @since 1.20.6
      */
     public static final Enchantment SMITE = getEnchantment("smite");
 
     /**
      * Increases damage against arthropod targets
+     *
+     * @since 1.20.6
      */
     public static final Enchantment BANE_OF_ARTHROPODS = getEnchantment("bane_of_arthropods");
 
     /**
      * All damage to other targets will knock them back when hit
+     *
+     * @since 1.1.0
      */
     public static final Enchantment KNOCKBACK = getEnchantment("knockback");
 
     /**
      * When attacking a target, has a chance to set them on fire
+     *
+     * @since 1.1.0
      */
     public static final Enchantment FIRE_ASPECT = getEnchantment("fire_aspect");
 
     /**
      * Provides a chance of gaining extra loot when killing monsters
+     *
+     * @since 1.20.6
      */
     public static final Enchantment LOOTING = getEnchantment("looting");
 
     /**
      * Increases damage against targets when using a sweep attack
+     *
+     * @since 1.11.1
      */
     public static final Enchantment SWEEPING_EDGE = getEnchantment("sweeping_edge");
 
     /**
      * Increases the rate at which you mine/dig
+     *
+     * @since 1.20.6
      */
     public static final Enchantment EFFICIENCY = getEnchantment("efficiency");
 
     /**
      * Allows blocks to drop themselves instead of fragments (for example,
      * stone instead of cobblestone)
+     *
+     * @since 1.1.0
      */
     public static final Enchantment SILK_TOUCH = getEnchantment("silk_touch");
 
     /**
      * Decreases the rate at which a tool looses durability
+     *
+     * @since 1.20.6
      */
     public static final Enchantment UNBREAKING = getEnchantment("unbreaking");
 
     /**
      * Provides a chance of gaining extra loot when destroying blocks
+     *
+     * @since 1.20.6
      */
     public static final Enchantment FORTUNE = getEnchantment("fortune");
 
     /**
      * Provides extra damage when shooting arrows from bows
+     *
+     * @since 1.20.6
      */
     public static final Enchantment POWER = getEnchantment("power");
 
     /**
      * Provides a knockback when an entity is hit by an arrow from a bow
+     *
+     * @since 1.20.6
      */
     public static final Enchantment PUNCH = getEnchantment("punch");
 
     /**
      * Sets entities on fire when hit by arrows shot from a bow
+     *
+     * @since 1.20.6
      */
     public static final Enchantment FLAME = getEnchantment("flame");
 
     /**
      * Provides infinite arrows when shooting a bow
+     *
+     * @since 1.20.6
      */
     public static final Enchantment INFINITY = getEnchantment("infinity");
 
     /**
      * Decreases odds of catching worthless junk
+     *
+     * @since 1.20.6
      */
     public static final Enchantment LUCK_OF_THE_SEA = getEnchantment("luck_of_the_sea");
 
     /**
      * Increases rate of fish biting your hook
+     *
+     * @since 1.7.2
      */
     public static final Enchantment LURE = getEnchantment("lure");
 
     /**
      * Causes a thrown trident to return to the player who threw it
+     *
+     * @since 1.13
      */
     public static final Enchantment LOYALTY = getEnchantment("loyalty");
 
     /**
      * Deals more damage to mobs that live in the ocean
+     *
+     * @since 1.13
      */
     public static final Enchantment IMPALING = getEnchantment("impaling");
 
     /**
      * When it is rainy, launches the player in the direction their trident is thrown
+     *
+     * @since 1.13
      */
     public static final Enchantment RIPTIDE = getEnchantment("riptide");
 
     /**
      * Strikes lightning when a mob is hit with a trident if conditions are
      * stormy
+     *
+     * @since 1.13
      */
     public static final Enchantment CHANNELING = getEnchantment("channeling");
 
     /**
      * Shoot multiple arrows from crossbows
+     *
+     * @since 1.14
      */
     public static final Enchantment MULTISHOT = getEnchantment("multishot");
 
     /**
      * Charges crossbows quickly
+     *
+     * @since 1.14
      */
     public static final Enchantment QUICK_CHARGE = getEnchantment("quick_charge");
 
     /**
      * Crossbow projectiles pierce entities
+     *
+     * @since 1.14
      */
     public static final Enchantment PIERCING = getEnchantment("piercing");
 
     /**
      * Increases fall damage of maces
+     *
+     * @since 1.20.6
      */
     public static final Enchantment DENSITY = getEnchantment("density");
 
     /**
      * Reduces armor effectiveness against maces
+     *
+     * @since 1.20.6
      */
     public static final Enchantment BREACH = getEnchantment("breach");
 
     /**
      * Emits wind burst upon hitting enemy
+     *
+     * @since 1.20.6
      */
     public static final Enchantment WIND_BURST = getEnchantment("wind_burst");
 
     /**
      * Allows mending the item using experience orbs
+     *
+     * @since 1.9.4
      */
     public static final Enchantment MENDING = getEnchantment("mending");
 
     /**
      * Item disappears instead of dropping
+     *
+     * @since 1.11
      */
     public static final Enchantment VANISHING_CURSE = getEnchantment("vanishing_curse");
 
     /**
      * Walk quicker on soul blocks
+     *
+     * @since 1.16.1
      */
     public static final Enchantment SOUL_SPEED = getEnchantment("soul_speed");
 
     /**
      * Walk quicker while sneaking
+     *
+     * @since 1.19
      */
     public static final Enchantment SWIFT_SNEAK = getEnchantment("swift_sneak");
 
     /**
      * Causes a jab attack from a spear to propel the user into the air
+     *
+     * @since 1.21.11
      */
     public static final Enchantment LUNGE = getEnchantment("lunge");
 
@@ -255,6 +343,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * Gets the maximum level that this Enchantment may become.
      *
      * @return Maximum level of the Enchantment
+     * @since 1.1.0
      */
     public abstract int getMaxLevel();
 
@@ -262,6 +351,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * Gets the level that this Enchantment should start at
      *
      * @return Starting level of the Enchantment
+     * @since 1.1.0
      */
     public abstract int getStartLevel();
 
@@ -283,6 +373,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      *
      * @return true if the enchantment is a treasure enchantment
      * @deprecated enchantment types are now managed by tags
+     * @since 1.10.2
      */
     @Deprecated(since = "1.21")
     public abstract boolean isTreasure();
@@ -293,6 +384,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * Cursed enchantments are found the same way treasure enchantments are
      *
      * @return true if the enchantment is cursed
+     * @since 1.11
      */
     public abstract boolean isCursed();
 
@@ -301,6 +393,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      *
      * @param other The enchantment to check against
      * @return True if there is a conflict.
+     * @since 1.3.1
      */
     public abstract boolean conflictsWith(@NotNull Enchantment other);
 
@@ -313,6 +406,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      *
      * @param item Item to test
      * @return True if the enchantment may be applied, otherwise False
+     * @since 1.1.0
      */
     public abstract boolean canEnchantItem(@NotNull ItemStack item);
     // Paper start
@@ -325,6 +419,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      *
      * @param level the level of the enchantment to show
      * @return the name of the enchantment with {@code level} applied
+     * @since 1.16.5
      */
     public abstract net.kyori.adventure.text.@NotNull Component displayName(int level);
     // Paper end
@@ -334,6 +429,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * Checks if this enchantment can be found in villager trades.
      *
      * @return true if the enchantment can be found in trades
+     * @since 1.16.5
      */
     public abstract boolean isTradeable();
 
@@ -342,6 +438,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * or use to enchant items generated by loot tables.
      *
      * @return true if the enchantment can be found in a table or by loot tables
+     * @since 1.16.5
      */
     public abstract boolean isDiscoverable();
 
@@ -354,6 +451,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * </p>
      * @param level The level of the enchantment
      * @return The modified cost of this enchantment
+     * @since 1.20.2
      */
     public abstract int getMinModifiedCost(int level);
 
@@ -366,6 +464,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * </p>
      * @param level The level of the enchantment
      * @return The modified cost of this enchantment
+     * @since 1.20.2
      */
     public abstract int getMaxModifiedCost(int level);
 
@@ -376,6 +475,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * See <a href="https://minecraft.wiki/w/Anvil_mechanics">https://minecraft.wiki/w/Anvil_mechanics</a> for more information.
      * </p>
      * @return The anvil cost of this enchantment
+     * @since 1.20.6
      */
     public abstract int getAnvilCost();
 
@@ -436,6 +536,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * Gets the equipment slots where this enchantment is considered "active".
      *
      * @return the equipment slots
+     * @since 1.21
      */
     @NotNull
     public abstract java.util.Set<org.bukkit.inventory.EquipmentSlotGroup> getActiveSlotGroups();
@@ -447,6 +548,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * enchantment.
      *
      * @return the description component.
+     * @since 1.21.1
      */
     public abstract net.kyori.adventure.text.@NotNull Component description();
 
@@ -454,6 +556,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * Provides the registry key set referencing the items this enchantment is supported on.
      *
      * @return the registry key set.
+     * @since 1.21.1
      */
     @org.jetbrains.annotations.ApiStatus.Experimental
     public abstract io.papermc.paper.registry.set.@NotNull RegistryKeySet<org.bukkit.inventory.ItemType> getSupportedItems();
@@ -467,6 +570,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * which enchantments can even show up in an enchantment table.
      *
      * @return the registry key set.
+     * @since 1.21.1
      */
     @org.jetbrains.annotations.ApiStatus.Experimental
     public abstract io.papermc.paper.registry.set.@Nullable RegistryKeySet<org.bukkit.inventory.ItemType> getPrimaryItems();
@@ -476,6 +580,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      *
      * @return the weight value.
      * @see <a href="https://minecraft.wiki/w/Enchanting">https://minecraft.wiki/w/Enchanting</a> for examplary weights.
+     * @since 1.21.1
      */
     public abstract int getWeight();
 
@@ -486,6 +591,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * said item.
      *
      * @return a registry set of enchantments exclusive to this one.
+     * @since 1.21.1
      */
     @ApiStatus.Experimental
     public abstract io.papermc.paper.registry.set.@NotNull RegistryKeySet<Enchantment> getExclusiveWith();
@@ -507,6 +613,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * @param key key to fetch
      * @return Resulting Enchantment, or null if not found
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead
+     * @since 1.13
      */
     @Contract("null -> null")
     @Nullable
@@ -524,6 +631,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      * @param name Name to fetch
      * @return Resulting Enchantment, or null if not found
      * @deprecated enchantments are badly named, use {@link #getByKey(org.bukkit.NamespacedKey)}.
+     * @since 1.1.0
      */
     @Deprecated(since = "1.13")
     @Contract("null -> null")
@@ -541,6 +649,7 @@ public abstract class Enchantment implements Keyed, Translatable, net.kyori.adve
      *
      * @return Array of enchantments
      * @deprecated use {@link Registry#iterator() Registry.ENCHANTMENT.iterator()}
+     * @since 1.1.0
      */
     @NotNull
     @Deprecated(since = "1.20.3")

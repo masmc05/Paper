@@ -5,6 +5,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Interface to the inventory of an Anvil.
+ *
+ * @since 1.4.5
  */
 public interface AnvilInventory extends Inventory {
 
@@ -84,6 +86,7 @@ public interface AnvilInventory extends Inventory {
      * Gets the item in the left input slot.
      *
      * @return item in the first slot
+     * @since 1.15.2
      */
     @Nullable
     default ItemStack getFirstItem() {
@@ -94,6 +97,7 @@ public interface AnvilInventory extends Inventory {
      * Sets the item in the left input slot.
      *
      * @param firstItem item to set
+     * @since 1.15.2
      */
     default void setFirstItem(@Nullable ItemStack firstItem) {
         setItem(0, firstItem);
@@ -103,6 +107,7 @@ public interface AnvilInventory extends Inventory {
      * Gets the item in the right input slot.
      *
      * @return item in the second slot
+     * @since 1.15.2
      */
     @Nullable
     default ItemStack getSecondItem() {
@@ -113,6 +118,7 @@ public interface AnvilInventory extends Inventory {
      * Sets the item in the right input slot.
      *
      * @param secondItem item to set
+     * @since 1.15.2
      */
     default void setSecondItem(@Nullable ItemStack secondItem) {
         setItem(1, secondItem);
@@ -122,6 +128,7 @@ public interface AnvilInventory extends Inventory {
      * Gets the item in the result slot.
      *
      * @return item in the result slot
+     * @since 1.15.2
      */
     @Nullable
     default ItemStack getResult() {
@@ -133,6 +140,7 @@ public interface AnvilInventory extends Inventory {
      * Note that the client might not be able to take out the item if it does not match the input items.
      *
      * @param result item to set
+     * @since 1.15.2
      */
     default void setResult(@Nullable ItemStack result) {
         setItem(2, result);

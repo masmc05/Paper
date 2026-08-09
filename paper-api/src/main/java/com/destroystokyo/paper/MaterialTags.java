@@ -34,6 +34,8 @@ import org.bukkit.Tag;
  * <p>
  * All tags in this class are unmodifiable, attempting to modify them will throw an
  * {@link UnsupportedOperationException}.
+ *
+ * @since 1.13.1
  */
 @SuppressWarnings({"NonFinalUtilityClass", "unused", "WeakerAccess"})
 public class MaterialTags {
@@ -54,6 +56,7 @@ public class MaterialTags {
 
     /**
      * @deprecated in favour of {@link Tag#ITEMS_ARROWS}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag ARROWS = replacedBy(Tag.ITEMS_ARROWS);
@@ -62,12 +65,15 @@ public class MaterialTags {
      * Covers all colors of beds.
      *
      * @deprecated in favour of {@link Tag#BEDS}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag BEDS = replacedBy(Tag.BEDS);
 
     /**
      * Covers all bucket items.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag BUCKETS = new MaterialSetTag(keyFor("buckets"))
         .endsWith("BUCKET")
@@ -77,12 +83,15 @@ public class MaterialTags {
      * Covers coal and charcoal.
      *
      * @deprecated in favour of {@link Tag#ITEMS_COALS}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag COALS = replacedBy(Tag.ITEMS_COALS);
 
     /**
      * Covers both cobblestone wall variants.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag COBBLESTONE_WALLS = new MaterialSetTag(keyFor("cobblestone_walls"))
         .endsWith("COBBLESTONE_WALL")
@@ -90,6 +99,8 @@ public class MaterialTags {
 
     /**
      * Covers both cobblestone and mossy Cobblestone.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag COBBLESTONES = new MaterialSetTag(keyFor("cobblestones"))
         .add(Material.COBBLESTONE, Material.MOSSY_COBBLESTONE).lock();
@@ -98,6 +109,7 @@ public class MaterialTags {
      * Covers all colors of concrete.
      *
      * @deprecated in favour of {@link Tag#CONCRETE}
+     * @since 1.13.1
      */
     @Deprecated(since = "26.2")
     public static final MaterialSetTag CONCRETES = replacedBy(Tag.CONCRETE, "concretes");
@@ -106,12 +118,15 @@ public class MaterialTags {
      * Covers all colors of concrete powder.
      *
      * @deprecated in favour of {@link Tag#CONCRETE_POWDERS}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag CONCRETE_POWDER = replacedBy(Tag.CONCRETE_POWDERS);
 
     /**
      * Covers the two types of cooked fish.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag COOKED_FISH = new MaterialSetTag(keyFor("cooked_fish"))
         .add(Material.COOKED_COD, Material.COOKED_SALMON).lock();
@@ -120,6 +135,7 @@ public class MaterialTags {
      * Covers all variants of doors.
      *
      * @deprecated in favour of {@link Tag#DOORS}
+     * @since 1.16.4
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag DOORS = replacedBy(Tag.DOORS);
@@ -128,6 +144,7 @@ public class MaterialTags {
      * Covers all dyes.
      *
      * @deprecated in favour of {@link Tag#ITEMS_DYES}
+     * @since 1.13.1
      */
     @Deprecated(since = "26.1")
     public static final MaterialSetTag DYES = replacedBy(Tag.ITEMS_DYES);
@@ -136,6 +153,7 @@ public class MaterialTags {
      * Covers all variants of gates.
      *
      * @deprecated in favour of {@link Tag#FENCE_GATES}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag FENCE_GATES = replacedBy(Tag.FENCE_GATES);
@@ -144,18 +162,23 @@ public class MaterialTags {
      * Covers all variants of fences.
      *
      * @deprecated in favour of {@link Tag#FENCES}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag FENCES = replacedBy(Tag.FENCES);
 
     /**
      * Covers all variants of fish buckets.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag FISH_BUCKETS = new MaterialSetTag(keyFor("fish_buckets"))
         .add(Material.COD_BUCKET, Material.PUFFERFISH_BUCKET, Material.SALMON_BUCKET, Material.TROPICAL_FISH_BUCKET).lock();
 
     /**
      * Covers the non-colored glass and 16 stained glasses (not panes).
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag GLASS = new MaterialSetTag(keyFor("glass"))
         .endsWith("_GLASS")
@@ -164,6 +187,8 @@ public class MaterialTags {
 
     /**
      * Covers the non-colored glass panes and stained glass panes (panes only).
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag GLASS_PANES = new MaterialSetTag(keyFor("glass_panes"))
         .endsWith("GLASS_PANE")
@@ -173,12 +198,15 @@ public class MaterialTags {
      * Covers all glazed terracotta blocks.
      *
      * @deprecated in favour of {@link Tag#GLAZED_TERRACOTTA}
+     * @since 1.13.1
      */
     @Deprecated(since = "26.2")
     public static final MaterialSetTag GLAZED_TERRACOTTA = replacedBy(Tag.GLAZED_TERRACOTTA);
 
     /**
      * Covers the colors of stained terracotta.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag STAINED_TERRACOTTA = new MaterialSetTag(keyFor("stained_terracotta"))
         .endsWith("TERRACOTTA")
@@ -188,6 +216,8 @@ public class MaterialTags {
 
     /**
      * Covers terracotta along with the stained variants.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag TERRACOTTA = new MaterialSetTag(keyFor("terracotta"))
         .endsWith("TERRACOTTA")
@@ -195,6 +225,8 @@ public class MaterialTags {
 
     /**
      * Covers both golden apples.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag GOLDEN_APPLES = new MaterialSetTag(keyFor("golden_apples"))
         .endsWith("GOLDEN_APPLE")
@@ -202,6 +234,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of horse armor.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag HORSE_ARMORS = new MaterialSetTag(keyFor("horse_armors"))
         .endsWith("_HORSE_ARMOR")
@@ -209,6 +243,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of infested blocks.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag INFESTED_BLOCKS = new MaterialSetTag(keyFor("infested_blocks"))
         .startsWith("INFESTED_")
@@ -216,6 +252,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of mushroom blocks.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag MUSHROOM_BLOCKS = new MaterialSetTag(keyFor("mushroom_blocks"))
         .endsWith("MUSHROOM_BLOCK")
@@ -224,18 +262,24 @@ public class MaterialTags {
 
     /**
      * Covers all mushrooms.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag MUSHROOMS = new MaterialSetTag(keyFor("mushrooms"))
         .add(Material.BROWN_MUSHROOM, Material.RED_MUSHROOM).lock();
 
     /**
      * Covers all music disc items.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag MUSIC_DISCS = new MaterialSetTag(keyFor("music_discs"))
         .startsWith("MUSIC_DISC_").lock();
 
     /**
      * Covers all ores.
+     *
+     * @since 1.13.1
      */
     @SuppressWarnings("unchecked")
     public static final MaterialSetTag ORES = new MaterialSetTag(keyFor("ores"))
@@ -245,6 +289,8 @@ public class MaterialTags {
 
     /**
      * Covers all piston typed items and blocks including the piston head and moving piston.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag PISTONS = new MaterialSetTag(keyFor("pistons"))
         .contains("PISTON")
@@ -252,6 +298,8 @@ public class MaterialTags {
 
     /**
      * Covers all potato items.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag POTATOES = new MaterialSetTag(keyFor("potatoes"))
         .endsWith("POTATO")
@@ -261,48 +309,63 @@ public class MaterialTags {
      * Covers all wooden pressure plates and the weighted pressure plates and the stone pressure plate.
      *
      * @deprecated in favour of {@link Tag#PRESSURE_PLATES}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag PRESSURE_PLATES = replacedBy(Tag.PRESSURE_PLATES);
 
     /**
      * Covers the variants of prismarine blocks.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag PRISMARINE = new MaterialSetTag(keyFor("prismarine"))
         .add(Material.PRISMARINE, Material.PRISMARINE_BRICKS, Material.DARK_PRISMARINE).lock();
 
     /**
      * Covers the variants of prismarine slabs.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag PRISMARINE_SLABS = new MaterialSetTag(keyFor("prismarine_slabs"))
         .add(Material.PRISMARINE_SLAB, Material.PRISMARINE_BRICK_SLAB, Material.DARK_PRISMARINE_SLAB).lock();
 
     /**
      * Covers the variants of prismarine stairs.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag PRISMARINE_STAIRS = new MaterialSetTag(keyFor("prismarine_stairs"))
         .add(Material.PRISMARINE_STAIRS, Material.PRISMARINE_BRICK_STAIRS, Material.DARK_PRISMARINE_STAIRS).lock();
 
     /**
      * Covers the variants of pumpkins.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag PUMPKINS = new MaterialSetTag(keyFor("pumpkins"))
         .add(Material.CARVED_PUMPKIN, Material.JACK_O_LANTERN, Material.PUMPKIN).lock();
 
     /**
      * Covers the variants of quartz blocks.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag QUARTZ_BLOCKS = new MaterialSetTag(keyFor("quartz_blocks"))
         .add(Material.QUARTZ_BLOCK, Material.QUARTZ_PILLAR, Material.CHISELED_QUARTZ_BLOCK, Material.SMOOTH_QUARTZ).lock();
 
     /**
      * Covers all uncooked fish items.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag RAW_FISH = new MaterialSetTag(keyFor("raw_fish"))
         .add(Material.COD, Material.PUFFERFISH, Material.SALMON, Material.TROPICAL_FISH).lock();
 
     /**
      * Covers the variants of red sandstone blocks.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag RED_SANDSTONES = new MaterialSetTag(keyFor("red_sandstones"))
         .endsWith("RED_SANDSTONE")
@@ -310,12 +373,16 @@ public class MaterialTags {
 
     /**
      * Covers the variants of sandstone blocks.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag SANDSTONES = new MaterialSetTag(keyFor("sandstones"))
         .add(Material.SANDSTONE, Material.CHISELED_SANDSTONE, Material.CUT_SANDSTONE, Material.SMOOTH_SANDSTONE).lock();
 
     /**
      * Covers sponge and wet sponge.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag SPONGES = new MaterialSetTag(keyFor("sponges"))
         .endsWith("SPONGE")
@@ -325,12 +392,15 @@ public class MaterialTags {
      * Covers the non-colored and colored shulker boxes.
      *
      * @deprecated in favour of {@link Tag#SHULKER_BOXES}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag SHULKER_BOXES = replacedBy(Tag.SHULKER_BOXES);
 
     /**
      * Covers zombie, creeper, skeleton, dragon, and player heads.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag SKULLS = new MaterialSetTag(keyFor("skulls"))
         .endsWith("_HEAD")
@@ -340,6 +410,8 @@ public class MaterialTags {
 
     /**
      * Covers all spawn egg items.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag SPAWN_EGGS = new MaterialSetTag(keyFor("spawn_eggs"))
         .endsWith("_SPAWN_EGG")
@@ -347,6 +419,8 @@ public class MaterialTags {
 
     /**
      * Covers all colors of stained glass.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag STAINED_GLASS = new MaterialSetTag(keyFor("stained_glass"))
         .endsWith("_STAINED_GLASS")
@@ -354,6 +428,8 @@ public class MaterialTags {
 
     /**
      * Covers all colors of stained glass panes.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag STAINED_GLASS_PANES = new MaterialSetTag(keyFor("stained_glass_panes"))
         .endsWith("STAINED_GLASS_PANE")
@@ -363,6 +439,7 @@ public class MaterialTags {
      * Covers all variants of trapdoors.
      *
      * @deprecated in favour of {@link Tag#TRAPDOORS}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag TRAPDOORS = replacedBy(Tag.TRAPDOORS);
@@ -371,6 +448,7 @@ public class MaterialTags {
      * Covers all wood variants of doors.
      *
      * @deprecated in favour of {@link Tag#WOODEN_DOORS}
+     * @since 1.16.4
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag WOODEN_DOORS = replacedBy(Tag.WOODEN_DOORS);
@@ -379,6 +457,7 @@ public class MaterialTags {
      * Covers all wood variants of fences.
      *
      * @deprecated in favour of {@link Tag#WOODEN_FENCES}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag WOODEN_FENCES = replacedBy(Tag.WOODEN_FENCES);
@@ -387,6 +466,7 @@ public class MaterialTags {
      * Covers all wood variants of trapdoors.
      *
      * @deprecated in favour of {@link Tag#WOODEN_TRAPDOORS}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag WOODEN_TRAPDOORS = replacedBy(Tag.WOODEN_TRAPDOORS);
@@ -395,12 +475,15 @@ public class MaterialTags {
      * Covers the wood variants of gates.
      *
      * @deprecated in favour of {@link Tag#FENCE_GATES}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag WOODEN_GATES = replacedBy(Tag.FENCE_GATES, "wooden_gates");
 
     /**
      * Covers the variants of purpur.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag PURPUR = new MaterialSetTag(keyFor("purpur"))
         .startsWith("PURPUR_")
@@ -410,12 +493,15 @@ public class MaterialTags {
      * Covers the variants of signs.
      *
      * @deprecated in favour of {@link Tag#ALL_SIGNS}
+     * @since 1.13.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag SIGNS = replacedBy(Tag.ALL_SIGNS, "signs");
 
     /**
      * Covers the variants of a regular torch.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag TORCH = new MaterialSetTag(keyFor("torch"))
         .add(Material.TORCH, Material.WALL_TORCH)
@@ -423,6 +509,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of a redstone torch.
+     *
+     * @since 1.13.1
      */
     public static final MaterialSetTag REDSTONE_TORCH = new MaterialSetTag(keyFor("redstone_torch"))
         .add(Material.REDSTONE_TORCH, Material.REDSTONE_WALL_TORCH)
@@ -430,6 +518,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of a soul torch.
+     *
+     * @since 1.16.1
      */
     public static final MaterialSetTag SOUL_TORCH = new MaterialSetTag(keyFor("soul_torch"))
         .add(Material.SOUL_TORCH, Material.SOUL_WALL_TORCH)
@@ -437,6 +527,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of a copper torch.
+     *
+     * @since 1.21.10
      */
     public static final MaterialSetTag COPPER_TORCH = new MaterialSetTag(keyFor("copper_torch"))
         .add(Material.COPPER_TORCH, Material.COPPER_WALL_TORCH)
@@ -444,6 +536,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of torches.
+     *
+     * @since 1.16.1
      */
     public static final MaterialSetTag TORCHES = new MaterialSetTag(keyFor("torches"))
         .add(TORCH, REDSTONE_TORCH, SOUL_TORCH, COPPER_TORCH)
@@ -453,6 +547,7 @@ public class MaterialTags {
      * Covers the variants of lanterns.
      *
      * @deprecated in favour of {@link Tag#LANTERNS}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.9")
     public static final MaterialSetTag LANTERNS = replacedBy(Tag.LANTERNS);
@@ -461,6 +556,7 @@ public class MaterialTags {
      * Covers the variants of rails.
      *
      * @deprecated in favour of {@link Tag#RAILS}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag RAILS = replacedBy(Tag.RAILS);
@@ -469,6 +565,7 @@ public class MaterialTags {
      * Covers the variants of swords.
      *
      * @deprecated in favour of {@link Tag#ITEMS_SWORDS}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag SWORDS = replacedBy(Tag.ITEMS_SWORDS);
@@ -477,6 +574,7 @@ public class MaterialTags {
      * Covers the variants of shovels.
      *
      * @deprecated in favour of {@link Tag#ITEMS_SHOVELS}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag SHOVELS = replacedBy(Tag.ITEMS_SHOVELS);
@@ -485,6 +583,7 @@ public class MaterialTags {
      * Covers the variants of pickaxes.
      *
      * @deprecated in favour of {@link Tag#ITEMS_PICKAXES}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag PICKAXES = replacedBy(Tag.ITEMS_PICKAXES);
@@ -493,6 +592,7 @@ public class MaterialTags {
      * Covers the variants of axes.
      *
      * @deprecated in favour of {@link Tag#ITEMS_AXES}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag AXES = replacedBy(Tag.ITEMS_AXES);
@@ -501,6 +601,7 @@ public class MaterialTags {
      * Covers the variants of hoes.
      *
      * @deprecated in favour of {@link Tag#ITEMS_HOES}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag HOES = replacedBy(Tag.ITEMS_HOES);
@@ -509,6 +610,7 @@ public class MaterialTags {
      * Covers the variants of helmets.
      *
      * @deprecated in favour of {@link Tag#ITEMS_HEAD_ARMOR}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag HELMETS = replacedBy(Tag.ITEMS_HEAD_ARMOR, "helmets");
@@ -517,6 +619,7 @@ public class MaterialTags {
      * Covers the variants of items that can be equipped in the helmet slot.
      *
      * @deprecated any item can be equippable with the right data component set on it
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.8")
     @SuppressWarnings("unchecked")
@@ -528,6 +631,7 @@ public class MaterialTags {
      * Covers the variants of chestplate.
      *
      * @deprecated in favour of {@link Tag#ITEMS_CHEST_ARMOR}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag CHESTPLATES = replacedBy(Tag.ITEMS_CHEST_ARMOR, "chestplates");
@@ -536,6 +640,7 @@ public class MaterialTags {
      * Covers the variants of items that can be equipped in the chest slot.
      *
      * @deprecated any item can be equippable with the right data component set on it
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.8")
     @SuppressWarnings("unchecked")
@@ -547,6 +652,7 @@ public class MaterialTags {
      * Covers the variants of leggings.
      *
      * @deprecated in favour of {@link Tag#ITEMS_LEG_ARMOR}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag LEGGINGS = replacedBy(Tag.ITEMS_LEG_ARMOR, "leggings");
@@ -555,12 +661,15 @@ public class MaterialTags {
      * Covers the variants of boots.
      *
      * @deprecated in favour of {@link Tag#ITEMS_FOOT_ARMOR}
+     * @since 1.16.1
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag BOOTS = replacedBy(Tag.ITEMS_FOOT_ARMOR, "boots");
 
     /**
      * Covers all variants of armor.
+     *
+     * @since 1.18.2
      */
     @SuppressWarnings("unchecked")
     public static final MaterialSetTag ARMOR = new MaterialSetTag(keyFor("armor"))
@@ -569,6 +678,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of bows.
+     *
+     * @since 1.16.1
      */
     public static final MaterialSetTag BOWS = new MaterialSetTag(keyFor("bows"))
         .add(Material.BOW)
@@ -577,6 +688,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of player-throwable projectiles (not requiring a bow or any other "assistance").
+     *
+     * @since 1.16.1
      */
     @SuppressWarnings("unchecked")
     public static final MaterialSetTag THROWABLE_PROJECTILES = new MaterialSetTag(keyFor("throwable_projectiles"))
@@ -588,6 +701,8 @@ public class MaterialTags {
 
     /**
      * Covers materials that can be colored, such as wool, shulker boxes, stained glasses etc.
+     *
+     * @since 1.13.1
      */
     @SuppressWarnings("unchecked")
     public static final MaterialSetTag COLORABLE = new MaterialSetTag(keyFor("colorable"))
@@ -597,6 +712,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of coral.
+     *
+     * @since 1.16.4
      */
     public static final MaterialSetTag CORAL = new MaterialSetTag(keyFor("coral"))
         .endsWith("_CORAL")
@@ -604,6 +721,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of coral fans.
+     *
+     * @since 1.16.4
      */
     public static final MaterialSetTag CORAL_FANS = new MaterialSetTag(keyFor("coral_fans"))
         .endsWith("_CORAL_FAN")
@@ -612,6 +731,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of coral blocks.
+     *
+     * @since 1.16.4
      */
     public static final MaterialSetTag CORAL_BLOCKS = new MaterialSetTag(keyFor("coral_blocks"))
         .endsWith("_CORAL_BLOCK")
@@ -621,18 +742,23 @@ public class MaterialTags {
      * Covers all items that can be enchanted from the enchantment table or anvil.
      *
      * @deprecated in favour of {@link Tag#ITEMS_ENCHANTABLE_VANISHING} and other similar enchantable tags
+     * @since 1.16.4
      */
     @Deprecated(since = "1.21.8")
     public static final MaterialSetTag ENCHANTABLE = replacedBy(Tag.ITEMS_ENCHANTABLE_VANISHING, "enchantable"); // this tag already cover the others
 
     /**
      * Covers the variants of raw ores.
+     *
+     * @since 1.17.1
      */
     public static final MaterialSetTag RAW_ORES = new MaterialSetTag(keyFor("raw_ores"))
         .add(Material.RAW_COPPER, Material.RAW_GOLD, Material.RAW_IRON).lock();
 
     /**
      * Covers all command block types.
+     *
+     * @since 1.21.4
      */
     public static final MaterialSetTag COMMAND_BLOCKS = new MaterialSetTag(keyFor("command_blocks"))
         .endsWith("COMMAND_BLOCK")
@@ -640,6 +766,8 @@ public class MaterialTags {
 
     /**
      * Covers the variants of deepslate ores.
+     *
+     * @since 1.18.1
      */
     public static final MaterialSetTag DEEPSLATE_ORES = new MaterialSetTag(keyFor("deepslate_ores"))
         .add(material -> material.name().startsWith("DEEPSLATE_") && material.name().endsWith("_ORE"))
@@ -647,30 +775,40 @@ public class MaterialTags {
 
     /**
      * Covers the variants of raw ore blocks.
+     *
+     * @since 1.17.1
      */
     public static final MaterialSetTag RAW_ORE_BLOCKS = new MaterialSetTag(keyFor("raw_ore_blocks"))
         .add(Material.RAW_COPPER_BLOCK, Material.RAW_GOLD_BLOCK, Material.RAW_IRON_BLOCK).lock();
 
     /**
      * Covers all oxidized copper blocks.
+     *
+     * @since 1.18.1
      */
     public static final MaterialSetTag OXIDIZED_COPPER_BLOCKS = new MaterialSetTag(keyFor("oxidized_copper_blocks"))
         .startsWith("OXIDIZED_").startsWith("WAXED_OXIDIZED_").ensureSize("OXIDIZED_COPPER_BLOCKS", 30).lock();
 
     /**
      * Covers all weathered copper blocks.
+     *
+     * @since 1.18.1
      */
     public static final MaterialSetTag WEATHERED_COPPER_BLOCKS = new MaterialSetTag(keyFor("weathered_copper_blocks"))
         .startsWith("WEATHERED_").startsWith("WAXED_WEATHERED_").ensureSize("WEATHERED_COPPER_BLOCKS", 30).lock();
 
     /**
      * Covers all exposed copper blocks.
+     *
+     * @since 1.18.1
      */
     public static final MaterialSetTag EXPOSED_COPPER_BLOCKS = new MaterialSetTag(keyFor("exposed_copper_blocks"))
         .startsWith("EXPOSED_").startsWith("WAXED_EXPOSED_").ensureSize("EXPOSED_COPPER_BLOCKS", 30).lock();
 
     /**
      * Covers all un-weathered copper blocks.
+     *
+     * @since 1.18.1
      */
     public static final MaterialSetTag UNAFFECTED_COPPER_BLOCKS = new MaterialSetTag(keyFor("unaffected_copper_blocks"))
         .startsWith("CUT_COPPER").startsWith("WAXED_CUT_COPPER")
@@ -687,6 +825,8 @@ public class MaterialTags {
      * Covers all waxed copper blocks.
      * <p>
      * Combine with other copper-related tags to filter is-waxed or not.
+     *
+     * @since 1.18.1
      */
     public static final MaterialSetTag WAXED_COPPER_BLOCKS = new MaterialSetTag(keyFor("waxed_copper_blocks"))
         .add(m -> m.name().startsWith("WAXED_") && m.name().contains("COPPER")).ensureSize("WAXED_COPPER_BLOCKS", 56).lock();
@@ -695,6 +835,8 @@ public class MaterialTags {
      * Covers all un-waxed copper blocks.
      * <p>
      * Combine with other copper-related tags to filter is-un-waxed or not.
+     *
+     * @since 1.18.1
      */
     public static final MaterialSetTag UNWAXED_COPPER_BLOCKS = new MaterialSetTag(keyFor("unwaxed_copper_blocks"))
         .startsWith("EXPOSED_").startsWith("WEATHERED_").startsWith("OXIDIZED_")
@@ -705,12 +847,16 @@ public class MaterialTags {
 
     /**
      * Covers all copper block variants.
+     *
+     * @since 1.18.1
      */
     public static final MaterialSetTag COPPER_BLOCKS = new MaterialSetTag(keyFor("copper_blocks"))
         .add(WAXED_COPPER_BLOCKS).add(UNWAXED_COPPER_BLOCKS).ensureSize("COPPER_BLOCKS", 117).lock();
 
     /**
      * Covers all weathering/waxed states of the plain copper block.
+     *
+     * @since 1.18.1
      */
     public static final MaterialSetTag FULL_COPPER_BLOCKS = new MaterialSetTag(keyFor("full_copper_blocks"))
         .endsWith("OXIDIZED_COPPER")
@@ -722,24 +868,32 @@ public class MaterialTags {
 
     /**
      * Covers all weathering/waxed states of the cut copper block.
+     *
+     * @since 1.18.1
      */
     public static final MaterialSetTag CUT_COPPER_BLOCKS = new MaterialSetTag(keyFor("cut_copper_blocks"))
         .endsWith("CUT_COPPER").ensureSize("CUT_COPPER_BLOCKS", 8).lock();
 
     /**
      * Covers all weathering/waxed states of the cut copper stairs.
+     *
+     * @since 1.18.1
      */
     public static final MaterialSetTag CUT_COPPER_STAIRS = new MaterialSetTag(keyFor("cut_copper_stairs"))
         .endsWith("CUT_COPPER_STAIRS").ensureSize("CUT_COPPER_STAIRS", 8).lock();
 
     /**
      * Covers all weathering/waxed states of the cut copper slab.
+     *
+     * @since 1.18.1
      */
     public static final MaterialSetTag CUT_COPPER_SLABS = new MaterialSetTag(keyFor("cut_copper_slabs"))
         .endsWith("CUT_COPPER_SLAB").ensureSize("CUT_COPPER_SLABS", 8).lock();
 
     /**
      * Covers all Wooden Tools.
+     *
+     * @since 1.19.2
      */
     public static final MaterialSetTag WOODEN_TOOLS = new MaterialSetTag(keyFor("wooden_tools"))
         .add(Material.WOODEN_AXE, Material.WOODEN_HOE, Material.WOODEN_PICKAXE, Material.WOODEN_SHOVEL, Material.WOODEN_SWORD, Material.WOODEN_SPEAR)
@@ -747,6 +901,8 @@ public class MaterialTags {
 
     /**
      * Covers all Stone Tools.
+     *
+     * @since 1.19.2
      */
     public static final MaterialSetTag STONE_TOOLS = new MaterialSetTag(keyFor("stone_tools"))
         .add(Material.STONE_AXE, Material.STONE_HOE, Material.STONE_PICKAXE, Material.STONE_SHOVEL, Material.STONE_SWORD, Material.STONE_SPEAR)
@@ -754,6 +910,8 @@ public class MaterialTags {
 
     /**
      * Covers all copper Tools.
+     *
+     * @since 1.21.10
      */
     public static final MaterialSetTag COPPER_TOOLS = new MaterialSetTag(keyFor("copper_tools"))
         .add(Material.COPPER_AXE, Material.COPPER_HOE, Material.COPPER_PICKAXE, Material.COPPER_SHOVEL, Material.COPPER_SWORD, Material.COPPER_SPEAR)
@@ -761,6 +919,8 @@ public class MaterialTags {
 
     /**
      * Covers all Iron Tools.
+     *
+     * @since 1.19.2
      */
     public static final MaterialSetTag IRON_TOOLS = new MaterialSetTag(keyFor("iron_tools"))
         .add(Material.IRON_AXE, Material.IRON_HOE, Material.IRON_PICKAXE, Material.IRON_SHOVEL, Material.IRON_SWORD, Material.IRON_SPEAR)
@@ -768,6 +928,8 @@ public class MaterialTags {
 
     /**
      * Covers all Gold Tools.
+     *
+     * @since 1.19.2
      */
     public static final MaterialSetTag GOLDEN_TOOLS = new MaterialSetTag(keyFor("golden_tools"))
         .add(Material.GOLDEN_AXE, Material.GOLDEN_HOE, Material.GOLDEN_PICKAXE, Material.GOLDEN_SHOVEL, Material.GOLDEN_SWORD, Material.GOLDEN_SPEAR)
@@ -775,6 +937,8 @@ public class MaterialTags {
 
     /**
      * Covers all Diamond Tools.
+     *
+     * @since 1.19.2
      */
     public static final MaterialSetTag DIAMOND_TOOLS = new MaterialSetTag(keyFor("diamond_tools"))
         .add(Material.DIAMOND_AXE, Material.DIAMOND_HOE, Material.DIAMOND_PICKAXE, Material.DIAMOND_SHOVEL, Material.DIAMOND_SWORD, Material.DIAMOND_SPEAR)
@@ -782,6 +946,8 @@ public class MaterialTags {
 
     /**
      * Covers all Netherite Tools.
+     *
+     * @since 1.19.2
      */
     public static final MaterialSetTag NETHERITE_TOOLS = new MaterialSetTag(keyFor("netherite_tools"))
         .add(Material.NETHERITE_AXE, Material.NETHERITE_HOE, Material.NETHERITE_PICKAXE, Material.NETHERITE_SHOVEL, Material.NETHERITE_SWORD, Material.NETHERITE_SPEAR)

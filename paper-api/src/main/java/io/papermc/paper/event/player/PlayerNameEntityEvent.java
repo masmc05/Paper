@@ -12,6 +12,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Called when the player is attempting to rename a mob
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public class PlayerNameEntityEvent extends PlayerEvent implements Cancellable {
@@ -36,6 +38,7 @@ public class PlayerNameEntityEvent extends PlayerEvent implements Cancellable {
      * Gets the name to be given to the entity.
      *
      * @return the name
+     * @since 1.16.5
      */
     public @Nullable Component getName() {
         return this.name;
@@ -45,6 +48,7 @@ public class PlayerNameEntityEvent extends PlayerEvent implements Cancellable {
      * Sets the name to be given to the entity.
      *
      * @param name the name
+     * @since 1.16.5
      */
     public void setName(final @Nullable Component name) {
         this.name = name;
@@ -54,6 +58,7 @@ public class PlayerNameEntityEvent extends PlayerEvent implements Cancellable {
      * Gets the entity involved in this event.
      *
      * @return the entity
+     * @since 1.16.5
      */
     public LivingEntity getEntity() {
         return this.entity;
@@ -63,6 +68,7 @@ public class PlayerNameEntityEvent extends PlayerEvent implements Cancellable {
      * Sets the entity involved in this event.
      *
      * @param entity the entity
+     * @since 1.16.5
      */
     public void setEntity(final LivingEntity entity) {
         this.entity = entity;
@@ -72,6 +78,7 @@ public class PlayerNameEntityEvent extends PlayerEvent implements Cancellable {
      * Gets whether this will set the mob to be persistent.
      *
      * @return persistent
+     * @since 1.16.5
      */
     public boolean isPersistent() {
         return this.persistent;
@@ -81,26 +88,39 @@ public class PlayerNameEntityEvent extends PlayerEvent implements Cancellable {
      * Sets whether this will set the mob to be persistent.
      *
      * @param persistent persistent
+     * @since 1.16.5
      */
     public void setPersistent(final boolean persistent) {
         this.persistent = persistent;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

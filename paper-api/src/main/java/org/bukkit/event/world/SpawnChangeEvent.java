@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * An event that is called when a world's spawn changes. The world's previous
  * spawn location is included.
+ *
+ * @since 1.0.0
  */
 public class SpawnChangeEvent extends WorldEvent {
 
@@ -26,18 +28,25 @@ public class SpawnChangeEvent extends WorldEvent {
      * Gets the previous spawn location
      *
      * @return Location that used to be spawn
+     * @since 1.0.0
      */
     @NotNull
     public Location getPreviousLocation() {
         return this.previousLocation.clone();
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

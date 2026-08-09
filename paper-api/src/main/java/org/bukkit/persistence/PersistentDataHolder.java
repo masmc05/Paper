@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
  * custom persistent meta data on it.
  * <p>Prefer using {@link io.papermc.paper.persistence.PersistentDataViewHolder} for read-only operations
  * as it covers more types.</p>
+ *
+ * @since 1.14
  */
 public interface PersistentDataHolder extends io.papermc.paper.persistence.PersistentDataViewHolder { // Paper
 
@@ -18,6 +20,7 @@ public interface PersistentDataHolder extends io.papermc.paper.persistence.Persi
      * {@link PersistentDataHolder} is impossible.
      *
      * @return the persistent metadata container
+     * @since 1.14
      */
     @NotNull
     PersistentDataContainer getPersistentDataContainer();

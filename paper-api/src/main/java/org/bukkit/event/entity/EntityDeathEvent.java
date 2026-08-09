@@ -12,6 +12,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Thrown whenever a LivingEntity dies
+ *
+ * @since 1.0.0
  */
 public class EntityDeathEvent extends EntityEvent implements Cancellable {
 
@@ -43,6 +45,9 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
         this.dropExp = droppedExp;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public LivingEntity getEntity() {
@@ -53,6 +58,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Gets the source of damage which caused the death.
      *
      * @return a DamageSource detailing the source of the damage for the death.
+     * @since 1.20.6
      */
     @NotNull
     public DamageSource getDamageSource() {
@@ -66,6 +72,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * question, merely how much should be created after its death.
      *
      * @return Amount of EXP to drop.
+     * @since 1.0.0
      */
     public int getDroppedExp() {
         return this.dropExp;
@@ -78,6 +85,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * question, merely how much should be created after its death.
      *
      * @param exp Amount of EXP to drop.
+     * @since 1.0.0
      */
     public void setDroppedExp(int exp) {
         this.dropExp = exp;
@@ -87,6 +95,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Gets all the items which will drop when the entity dies
      *
      * @return Items to drop when the entity dies
+     * @since 1.0.0
      */
     @NotNull
     public List<ItemStack> getDrops() {
@@ -98,6 +107,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Set to the entity's max health by default.
      *
      * @return The amount of health
+     * @since 1.12.2
      */
     public double getReviveHealth() {
         return this.reviveHealth;
@@ -109,6 +119,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      *
      * @param reviveHealth The amount of health
      * @throws IllegalArgumentException Thrown if the health is {@literal <= 0 or >} max health
+     * @since 1.12.2
      */
     public void setReviveHealth(double reviveHealth) throws IllegalArgumentException {
         double maxHealth = ((LivingEntity) this.entity).getAttribute(org.bukkit.attribute.Attribute.MAX_HEALTH).getValue();
@@ -122,6 +133,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Whether the death sound should play when the entity dies. If the event is cancelled it does not play!
      *
      * @return Whether the death sound should play. Event is called with this set to {@code false} if the entity is silent.
+     * @since 1.12.2
      */
     public boolean shouldPlayDeathSound() {
         return this.shouldPlayDeathSound;
@@ -131,6 +143,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Set whether the death sound should play when the entity dies. If the event is cancelled it does not play!
      *
      * @param playDeathSound Enable or disable the death sound
+     * @since 1.12.2
      */
     public void setShouldPlayDeathSound(boolean playDeathSound) {
         this.shouldPlayDeathSound = playDeathSound;
@@ -140,6 +153,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Get the sound that the entity makes when dying
      *
      * @return The sound that the entity makes
+     * @since 1.12.2
      */
     @Nullable
     public org.bukkit.Sound getDeathSound() {
@@ -150,6 +164,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Set the sound that the entity makes when dying
      *
      * @param sound The sound that the entity should make when dying
+     * @since 1.12.2
      */
     public void setDeathSound(@Nullable org.bukkit.Sound sound) {
         this.deathSound = sound;
@@ -159,6 +174,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Get the sound category that the death sound should play in
      *
      * @return The sound category
+     * @since 1.12.2
      */
     @Nullable
     public org.bukkit.SoundCategory getDeathSoundCategory() {
@@ -169,6 +185,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Set the sound category that the death sound should play in.
      *
      * @param soundCategory The sound category
+     * @since 1.12.2
      */
     public void setDeathSoundCategory(@Nullable org.bukkit.SoundCategory soundCategory) {
         this.deathSoundCategory = soundCategory;
@@ -178,6 +195,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Get the volume that the death sound will play at.
      *
      * @return The volume the death sound will play at
+     * @since 1.12.2
      */
     public float getDeathSoundVolume() {
         return this.deathSoundVolume;
@@ -187,6 +205,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Set the volume the death sound should play at. If the event is cancelled this will not play the sound!
      *
      * @param volume The volume the death sound should play at
+     * @since 1.12.2
      */
     public void setDeathSoundVolume(float volume) {
         this.deathSoundVolume = volume;
@@ -196,6 +215,7 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Get the pitch that the death sound will play with.
      *
      * @return The pitch the death sound will play with
+     * @since 1.12.2
      */
     public float getDeathSoundPitch() {
         return this.deathSoundPitch;
@@ -205,27 +225,40 @@ public class EntityDeathEvent extends EntityEvent implements Cancellable {
      * Set the pitch that the death sound should play with.
      *
      * @param pitch The pitch the death sound should play with
+     * @since 1.12.2
      */
     public void setDeathSoundPitch(float pitch) {
         this.deathSoundPitch = pitch;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.12.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

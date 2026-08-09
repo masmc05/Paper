@@ -4,6 +4,9 @@ package org.bukkit.inventory.meta;
 import org.bukkit.block.BlockState;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.8.8
+ */
 public interface BlockStateMeta extends ItemMeta {
 
     /**
@@ -11,12 +14,15 @@ public interface BlockStateMeta extends ItemMeta {
      * attached to it.
      *
      * @return whether a block state is already attached
+     * @since 1.8.8
      */
     boolean hasBlockState();
 
     // Paper start - add method to clear block state
     /**
      * Clears the block state currently attached to this item.
+     *
+     * @since 1.20.4
      */
     void clearBlockState();
     // Paper end - add method to clear block state
@@ -29,6 +35,7 @@ public interface BlockStateMeta extends ItemMeta {
      * item) with {@link #setBlockState(org.bukkit.block.BlockState)}
      *
      * @return the attached state or a new state
+     * @since 1.8.8
      */
     @NotNull
     BlockState getBlockState();
@@ -44,6 +51,7 @@ public interface BlockStateMeta extends ItemMeta {
      * As such, setting the block state via this method will reset secondary deviations of the item meta.
      * This can manifest in the addition to an existing lore failing or a change of a previously added display name.
      * It is hence recommended to first mutate the block state, set it back, and then mutate the item meta.
+     * @since 1.8.8
      */
     void setBlockState(@NotNull BlockState blockState);
 }

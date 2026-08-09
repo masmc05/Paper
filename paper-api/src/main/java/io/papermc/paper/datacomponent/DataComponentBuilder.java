@@ -8,6 +8,7 @@ import org.jspecify.annotations.NullMarked;
  * Base builder type for all component builders.
  *
  * @param <C> built component type
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
@@ -17,6 +18,7 @@ public interface DataComponentBuilder<C> {
      * Builds the immutable component value.
      *
      * @return a new component value
+     * @since 1.21.3
      */
     @Contract(value = "-> new", pure = true)
     C build();

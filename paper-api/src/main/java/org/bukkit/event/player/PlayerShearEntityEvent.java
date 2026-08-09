@@ -14,6 +14,8 @@ import java.util.List;
 
 /**
  * Called when a player shears an entity
+ *
+ * @since 1.1.0
  */
 public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
 
@@ -45,6 +47,7 @@ public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
      * Gets the entity the player is shearing
      *
      * @return the entity the player is shearing
+     * @since 1.1.0
      */
     @NotNull
     public Entity getEntity() {
@@ -55,6 +58,7 @@ public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
      * Gets the item used to shear the entity.
      *
      * @return the shears
+     * @since 1.15.2
      */
     @NotNull
     public ItemStack getItem() {
@@ -65,6 +69,7 @@ public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
      * Gets the hand used to shear the entity.
      *
      * @return the hand
+     * @since 1.15.2
      */
     @NotNull
     public EquipmentSlot getHand() {
@@ -76,6 +81,7 @@ public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
      *
      * @return the shearing drops
      * @see #setDrops(java.util.List)
+     * @since 1.20.4
      */
     public @NotNull @Unmodifiable List<ItemStack> getDrops() {
         return this.drops;
@@ -85,27 +91,40 @@ public class PlayerShearEntityEvent extends PlayerEvent implements Cancellable {
      * Sets the drops for the shearing.
      *
      * @param drops the shear drops
+     * @since 1.20.4
      */
     public void setDrops(final @NotNull List<ItemStack> drops) {
         this.drops = List.copyOf(drops);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

@@ -9,6 +9,7 @@ import org.jetbrains.annotations.Contract;
  *
  * @param <R> the registrar type
  * @see RegistrarEvent
+ * @since 1.20.4
  */
 @ApiStatus.NonExtendable
 public interface ReloadableRegistrarEvent<R extends Registrar> extends RegistrarEvent<R> {
@@ -17,18 +18,26 @@ public interface ReloadableRegistrarEvent<R extends Registrar> extends Registrar
      * Get the cause of this reload.
      *
      * @return the cause
+     * @since 1.20.4
      */
     @Contract(pure = true)
     Cause cause();
 
+    /**
+     * @since 1.20.4
+     */
     enum Cause {
         /**
          * The initial load of the server.
+         *
+         * @since 1.20.4
          */
         INITIAL,
         /**
          * A reload, triggered via one of the various mechanisms like
          * the bukkit or minecraft reload commands.
+         *
+         * @since 1.20.4
          */
         RELOAD
     }

@@ -10,6 +10,7 @@ import org.jetbrains.annotations.ApiStatus;
  *
  * @see io.papermc.paper.command.brigadier.argument.ArgumentTypes#columnFinePosition()
  * @see io.papermc.paper.command.brigadier.argument.ArgumentTypes#columnFinePosition(boolean)
+ * @since 1.21.8
  */
 @ApiStatus.Experimental
 @ApiStatus.NonExtendable

@@ -14,11 +14,15 @@ import org.jspecify.annotations.Nullable;
  *
  * @see io.papermc.paper.datacomponent.DataComponentTypes#BLOCKS_ATTACKS
  * @see io.papermc.paper.datacomponent.item.BlocksAttacks#damageReductions()
+ * @since 1.21.6
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface DamageReduction {
 
+    /**
+     * @since 1.21.6
+     */
     @Contract(value = "-> new", pure = true)
     static DamageReduction.Builder damageReduction() {
         return BlocksAttacksBridge.bridge().blocksAttacksDamageReduction();
@@ -28,6 +32,7 @@ public interface DamageReduction {
      * The damage types to block.
      *
      * @return the set of damage type
+     * @since 1.21.6
      */
     @Nullable RegistryKeySet<DamageType> type();
 
@@ -35,6 +40,7 @@ public interface DamageReduction {
      * Get the maximum angle between the users facing direction and the direction of the incoming attack to be blocked.
      *
      * @return the angle
+     * @since 1.21.6
      */
     @Positive float horizontalBlockingAngle();
 
@@ -42,6 +48,7 @@ public interface DamageReduction {
      * Get the constant amount of damage to be blocked.
      *
      * @return the base
+     * @since 1.21.6
      */
     float base();
 
@@ -49,24 +56,39 @@ public interface DamageReduction {
      * Get the fraction of the dealt damage to be blocked.
      *
      * @return the factor
+     * @since 1.21.6
      */
     float factor();
 
     /**
      * Builder for {@link DamageReduction}.
+     *
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<DamageReduction> {
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         DamageReduction.Builder type(RegistryKeySet<DamageType> type);
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         DamageReduction.Builder horizontalBlockingAngle(@Positive float horizontalBlockingAngle);
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         DamageReduction.Builder base(float base);
 
+        /**
+         * @since 1.21.6
+         */
         @Contract(value = "_ -> this", mutates = "this")
         DamageReduction.Builder factor(float factor);
     }

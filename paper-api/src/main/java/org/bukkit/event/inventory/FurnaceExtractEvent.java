@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
  * This event is called when a player takes items out of a furnace-like block such as a
  * {@link org.bukkit.block.Furnace}, {@link org.bukkit.block.Smoker}, or
  * {@link org.bukkit.block.BlastFurnace}.
+ *
+ * @since 1.4.5
  */
 public class FurnaceExtractEvent extends BlockExpEvent {
 
@@ -31,6 +33,7 @@ public class FurnaceExtractEvent extends BlockExpEvent {
      * Get the player that triggered the event
      *
      * @return the relevant player
+     * @since 1.4.5
      */
     @NotNull
     public Player getPlayer() {
@@ -41,6 +44,7 @@ public class FurnaceExtractEvent extends BlockExpEvent {
      * Get the Material of the item being retrieved
      *
      * @return the material of the item
+     * @since 1.4.5
      */
     @NotNull
     public Material getItemType() {
@@ -51,6 +55,7 @@ public class FurnaceExtractEvent extends BlockExpEvent {
      * Get the ItemStack of the item triggering the event
      *
      * @return the item stack
+     * @since 1.21.11
      */
     @NotNull
     public ItemStack getItemStack() {
@@ -61,6 +66,7 @@ public class FurnaceExtractEvent extends BlockExpEvent {
      * Get the item count being retrieved
      *
      * @return the amount of the item
+     * @since 1.4.5
      */
     public int getItemAmount() {
         return this.itemAmount;

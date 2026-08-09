@@ -16,6 +16,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Called when an entity is dyed. Currently, this is called for {@link Sheep}
  * being dyed, and {@link Wolf}/{@link Cat} collars being dyed.
+ *
+ * @since 1.18.2
  */
 @NullMarked
 public class EntityDyeEvent extends EntityEvent implements Cancellable {
@@ -38,6 +40,7 @@ public class EntityDyeEvent extends EntityEvent implements Cancellable {
      * Gets the DyeColor the entity is being dyed
      *
      * @return the DyeColor the entity is being dyed
+     * @since 1.18.2
      */
     public DyeColor getColor() {
         return this.dyeColor;
@@ -47,6 +50,7 @@ public class EntityDyeEvent extends EntityEvent implements Cancellable {
      * Sets the DyeColor the entity is being dyed
      *
      * @param dyeColor the DyeColor the entity will be dyed
+     * @since 1.18.2
      */
     public void setColor(final DyeColor dyeColor) {
         this.dyeColor = dyeColor;
@@ -56,26 +60,39 @@ public class EntityDyeEvent extends EntityEvent implements Cancellable {
      * Returns the player dyeing the entity, if available.
      *
      * @return player or {@code null}
+     * @since 1.18.2
      */
     public @Nullable Player getPlayer() {
         return this.player;
     }
 
+    /**
+     * @since 1.18.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.18.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.18.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.18.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

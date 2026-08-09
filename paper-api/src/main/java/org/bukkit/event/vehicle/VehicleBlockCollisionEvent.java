@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Raised when a vehicle collides with a block.
+ *
+ * @since 1.0.0
  */
 public class VehicleBlockCollisionEvent extends VehicleCollisionEvent {
 
@@ -31,6 +33,7 @@ public class VehicleBlockCollisionEvent extends VehicleCollisionEvent {
      * Gets the block the vehicle collided with
      *
      * @return the block the vehicle collided with
+     * @since 1.0.0
      */
     @NotNull
     public Block getBlock() {
@@ -41,6 +44,7 @@ public class VehicleBlockCollisionEvent extends VehicleCollisionEvent {
      * Gets velocity at which the vehicle collided with the block
      *
      * @return pre-collision moving velocity
+     * @since 1.19.3
      */
     @NotNull
     public Vector getVelocity() {

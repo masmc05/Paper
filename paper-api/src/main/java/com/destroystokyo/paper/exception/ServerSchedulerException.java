@@ -6,16 +6,24 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Thrown when a plugin's scheduler fails with an exception
+ *
+ * @since 1.9.4
  */
 public class ServerSchedulerException extends ServerPluginException {
 
     private final BukkitTask task;
 
+    /**
+     * @since 1.9.4
+     */
     public ServerSchedulerException(String message, Throwable cause, BukkitTask task) {
         super(message, cause, task.getOwner());
         this.task = checkNotNull(task, "task");
     }
 
+    /**
+     * @since 1.9.4
+     */
     public ServerSchedulerException(Throwable cause, BukkitTask task) {
         super(cause, task.getOwner());
         this.task = checkNotNull(task, "task");
@@ -30,6 +38,7 @@ public class ServerSchedulerException extends ServerPluginException {
      * Gets the task which threw the exception
      *
      * @return exception throwing task
+     * @since 1.9.4
      */
     public BukkitTask getTask() {
         return task;

@@ -16,6 +16,7 @@ import org.jetbrains.annotations.Nullable;
  * {@link org.bukkit.entity.LivingEntity}.
  *
  * @param <T> the class type of the memory value
+ * @since 1.14.1
  */
 public final class MemoryKey<T> implements Keyed {
 
@@ -28,6 +29,9 @@ public final class MemoryKey<T> implements Keyed {
         MEMORY_KEYS.put(namespacedKey, this);
     }
 
+    /**
+     * @since 1.14.1
+     */
     @NotNull
     @Override
     public NamespacedKey getKey() {
@@ -38,6 +42,7 @@ public final class MemoryKey<T> implements Keyed {
      * Gets the class of values associated with this memory.
      *
      * @return the class of value objects
+     * @since 1.14.1
      */
     @NotNull
     public Class<T> getMemoryClass() {
@@ -46,101 +51,237 @@ public final class MemoryKey<T> implements Keyed {
 
     private static final Map<NamespacedKey, MemoryKey<?>> MEMORY_KEYS = new HashMap<>();
 
+    /**
+     * @since 1.16.1
+     */
     // Start generate - MemoryKey
     public static final MemoryKey<Boolean> ADMIRING_DISABLED = new MemoryKey<>(NamespacedKey.minecraft("admiring_disabled"), Boolean.class);
 
+    /**
+     * @since 1.16.1
+     */
     public static final MemoryKey<Boolean> ADMIRING_ITEM = new MemoryKey<>(NamespacedKey.minecraft("admiring_item"), Boolean.class);
 
+    /**
+     * @since 1.16.1
+     */
     public static final MemoryKey<UUID> ANGRY_AT = new MemoryKey<>(NamespacedKey.minecraft("angry_at"), UUID.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Boolean> ATE_RECENTLY = new MemoryKey<>(NamespacedKey.minecraft("ate_recently"), Boolean.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Boolean> ATTACK_COOLING_DOWN = new MemoryKey<>(NamespacedKey.minecraft("attack_cooling_down"), Boolean.class);
 
+    /**
+     * @since 1.21.11
+     */
     public static final MemoryKey<Integer> ATTACK_TARGET_COOLDOWN = new MemoryKey<>(NamespacedKey.minecraft("attack_target_cooldown"), Integer.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Long> CANT_REACH_WALK_TARGET_SINCE = new MemoryKey<>(NamespacedKey.minecraft("cant_reach_walk_target_since"), Long.class);
 
+    /**
+     * @since 1.21.11
+     */
     public static final MemoryKey<Integer> CHARGE_COOLDOWN_TICKS = new MemoryKey<>(NamespacedKey.minecraft("charge_cooldown_ticks"), Integer.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Boolean> DANCING = new MemoryKey<>(NamespacedKey.minecraft("dancing"), Boolean.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Boolean> DANGER_DETECTED_RECENTLY = new MemoryKey<>(NamespacedKey.minecraft("danger_detected_recently"), Boolean.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Boolean> DISABLE_WALK_TO_ADMIRE_ITEM = new MemoryKey<>(NamespacedKey.minecraft("disable_walk_to_admire_item"), Boolean.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Integer> GAZE_COOLDOWN_TICKS = new MemoryKey<>(NamespacedKey.minecraft("gaze_cooldown_ticks"), Integer.class);
 
+    /**
+     * @since 1.16.2
+     */
     public static final MemoryKey<Boolean> GOLEM_DETECTED_RECENTLY = new MemoryKey<>(NamespacedKey.minecraft("golem_detected_recently"), Boolean.class);
 
+    /**
+     * @since 1.17
+     */
     public static final MemoryKey<Boolean> HAS_HUNTING_COOLDOWN = new MemoryKey<>(NamespacedKey.minecraft("has_hunting_cooldown"), Boolean.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Long> HEARD_BELL_TIME = new MemoryKey<>(NamespacedKey.minecraft("heard_bell_time"), Long.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Location> HIDING_PLACE = new MemoryKey<>(NamespacedKey.minecraft("hiding_place"), Location.class);
 
+    /**
+     * @since 1.14.1
+     */
     public static final MemoryKey<Location> HOME = new MemoryKey<>(NamespacedKey.minecraft("home"), Location.class);
 
+    /**
+     * @since 1.16.1
+     */
     public static final MemoryKey<Boolean> HUNTED_RECENTLY = new MemoryKey<>(NamespacedKey.minecraft("hunted_recently"), Boolean.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Boolean> IS_PANICKING = new MemoryKey<>(NamespacedKey.minecraft("is_panicking"), Boolean.class);
 
+    /**
+     * @since 1.17
+     */
     public static final MemoryKey<Boolean> IS_TEMPTED = new MemoryKey<>(NamespacedKey.minecraft("is_tempted"), Boolean.class);
 
+    /**
+     * @since 1.19
+     */
     public static final MemoryKey<Integer> ITEM_PICKUP_COOLDOWN_TICKS = new MemoryKey<>(NamespacedKey.minecraft("item_pickup_cooldown_ticks"), Integer.class);
 
+    /**
+     * @since 1.14.1
+     */
     public static final MemoryKey<Location> JOB_SITE = new MemoryKey<>(NamespacedKey.minecraft("job_site"), Location.class);
 
+    /**
+     * @since 1.14.3
+     */
     public static final MemoryKey<Long> LAST_SLEPT = new MemoryKey<>(NamespacedKey.minecraft("last_slept"), Long.class);
 
+    /**
+     * @since 1.15
+     */
     public static final MemoryKey<Long> LAST_WOKEN = new MemoryKey<>(NamespacedKey.minecraft("last_woken"), Long.class);
 
+    /**
+     * @since 1.14.3
+     */
     public static final MemoryKey<Long> LAST_WORKED_AT_POI = new MemoryKey<>(NamespacedKey.minecraft("last_worked_at_poi"), Long.class);
 
+    /**
+     * @since 1.19
+     */
     public static final MemoryKey<Location> LIKED_NOTEBLOCK_POSITION = new MemoryKey<>(NamespacedKey.minecraft("liked_noteblock"), Location.class);
 
+    /**
+     * @since 1.19
+     */
     public static final MemoryKey<Integer> LIKED_NOTEBLOCK_COOLDOWN_TICKS = new MemoryKey<>(NamespacedKey.minecraft("liked_noteblock_cooldown_ticks"), Integer.class);
 
+    /**
+     * @since 1.19
+     */
     public static final MemoryKey<UUID> LIKED_PLAYER = new MemoryKey<>(NamespacedKey.minecraft("liked_player"), UUID.class);
 
+    /**
+     * @since 1.17
+     */
     public static final MemoryKey<Integer> LONG_JUMP_COOLING_DOWN = new MemoryKey<>(NamespacedKey.minecraft("long_jump_cooling_down"), Integer.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Boolean> LONG_JUMP_MID_JUMP = new MemoryKey<>(NamespacedKey.minecraft("long_jump_mid_jump"), Boolean.class);
 
+    /**
+     * @since 1.14.1
+     */
     public static final MemoryKey<Location> MEETING_POINT = new MemoryKey<>(NamespacedKey.minecraft("meeting_point"), Location.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Boolean> PACIFIED = new MemoryKey<>(NamespacedKey.minecraft("pacified"), Boolean.class);
 
+    /**
+     * @since 1.17
+     */
     public static final MemoryKey<Integer> PLAY_DEAD_TICKS = new MemoryKey<>(NamespacedKey.minecraft("play_dead_ticks"), Integer.class);
 
+    /**
+     * @since 1.16.1
+     */
     public static final MemoryKey<Location> POTENTIAL_JOB_SITE = new MemoryKey<>(NamespacedKey.minecraft("potential_job_site"), Location.class);
 
+    /**
+     * @since 1.17
+     */
     public static final MemoryKey<Integer> RAM_COOLDOWN_TICKS = new MemoryKey<>(NamespacedKey.minecraft("ram_cooldown_ticks"), Integer.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Boolean> SNIFFER_DIGGING = new MemoryKey<>(NamespacedKey.minecraft("sniffer_digging"), Boolean.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Boolean> SNIFFER_HAPPY = new MemoryKey<>(NamespacedKey.minecraft("sniffer_happy"), Boolean.class);
 
+    /**
+     * @since 1.21.11
+     */
     public static final MemoryKey<Integer> SPEAR_ENGAGE_TIME = new MemoryKey<>(NamespacedKey.minecraft("spear_engage_time"), Integer.class);
 
+    /**
+     * @since 1.21.11
+     */
     public static final MemoryKey<Integer> SPEAR_FLEEING_TIME = new MemoryKey<>(NamespacedKey.minecraft("spear_fleeing_time"), Integer.class);
 
+    /**
+     * @since 1.17
+     */
     public static final MemoryKey<Integer> TEMPTATION_COOLDOWN_TICKS = new MemoryKey<>(NamespacedKey.minecraft("temptation_cooldown_ticks"), Integer.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Integer> TIME_TRYING_TO_REACH_ADMIRE_ITEM = new MemoryKey<>(NamespacedKey.minecraft("time_trying_to_reach_admire_item"), Integer.class);
 
+    /**
+     * @since 1.21.10
+     */
     public static final MemoryKey<Integer> TRANSPORT_ITEMS_COOLDOWN_TICKS = new MemoryKey<>(NamespacedKey.minecraft("transport_items_cooldown_ticks"), Integer.class);
 
+    /**
+     * @since 1.16.1
+     */
     public static final MemoryKey<Boolean> UNIVERSAL_ANGER = new MemoryKey<>(NamespacedKey.minecraft("universal_anger"), Boolean.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Integer> VISIBLE_ADULT_HOGLIN_COUNT = new MemoryKey<>(NamespacedKey.minecraft("visible_adult_hoglin_count"), Integer.class);
 
+    /**
+     * @since 1.21.6
+     */
     public static final MemoryKey<Integer> VISIBLE_ADULT_PIGLIN_COUNT = new MemoryKey<>(NamespacedKey.minecraft("visible_adult_piglin_count"), Integer.class);
     // End generate - MemoryKey
     /**
      * @deprecated this constant uses the wrong generic type, the sniffer now stores different positions
      * from possibly different worlds. Use the relevant methods in {@link org.bukkit.entity.Sniffer} directly
      * for now.
+     * @since 1.19.4
      */
     @Deprecated // Paper
     public static final MemoryKey<Location> SNIFFER_EXPLORED_POSITIONS = new MemoryKey<>(NamespacedKey.minecraft("sniffer_explored_positions"), Location.class);
@@ -152,6 +293,7 @@ public final class MemoryKey<T> implements Keyed {
      * {@link MemoryKey}
      * @return the {@link MemoryKey} or null when no {@link MemoryKey} is
      * available under that key
+     * @since 1.14.1
      */
     @Nullable
     public static MemoryKey<?> getByKey(@NotNull NamespacedKey namespacedKey) {
@@ -162,6 +304,7 @@ public final class MemoryKey<T> implements Keyed {
      * Returns the set of all MemoryKeys.
      *
      * @return the memoryKeys
+     * @since 1.14.1
      */
     @NotNull
     public static Set<MemoryKey<?>> values() {

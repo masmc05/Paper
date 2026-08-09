@@ -8,11 +8,15 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Holds the ominous bottle amplifier.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#OMINOUS_BOTTLE_AMPLIFIER
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface OminousBottleAmplifier {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static OminousBottleAmplifier amplifier(final @IntRange(from = 0, to = 4) int amplifier) {
         return ItemComponentTypesBridge.bridge().ominousBottleAmplifier(amplifier);
@@ -22,6 +26,7 @@ public interface OminousBottleAmplifier {
      * Gets the bottle amplifier.
      *
      * @return the amplifier
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @IntRange(from = 0, to = 4) int amplifier();

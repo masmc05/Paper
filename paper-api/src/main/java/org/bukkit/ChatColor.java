@@ -11,11 +11,14 @@ import org.jetbrains.annotations.Nullable;
 /**
  * All supported color values for chat
  * @deprecated ChatColor has been deprecated in favor of <a href="https://docs.advntr.dev/text.html">Adventure</a> API. See {@link net.kyori.adventure.text.format.NamedTextColor} for the adventure equivalent of pre-defined text colors
+ * @since 1.0.0
  */
 @Deprecated // Paper
 public enum ChatColor {
     /**
      * Represents black
+     *
+     * @since 1.0.0
      */
     BLACK('0', 0x00) {
         @NotNull
@@ -26,6 +29,8 @@ public enum ChatColor {
     },
     /**
      * Represents dark blue
+     *
+     * @since 1.0.0
      */
     DARK_BLUE('1', 0x1) {
         @NotNull
@@ -36,6 +41,8 @@ public enum ChatColor {
     },
     /**
      * Represents dark green
+     *
+     * @since 1.0.0
      */
     DARK_GREEN('2', 0x2) {
         @NotNull
@@ -46,6 +53,8 @@ public enum ChatColor {
     },
     /**
      * Represents dark blue (aqua)
+     *
+     * @since 1.0.0
      */
     DARK_AQUA('3', 0x3) {
         @NotNull
@@ -56,6 +65,8 @@ public enum ChatColor {
     },
     /**
      * Represents dark red
+     *
+     * @since 1.0.0
      */
     DARK_RED('4', 0x4) {
         @NotNull
@@ -66,6 +77,8 @@ public enum ChatColor {
     },
     /**
      * Represents dark purple
+     *
+     * @since 1.0.0
      */
     DARK_PURPLE('5', 0x5) {
         @NotNull
@@ -76,6 +89,8 @@ public enum ChatColor {
     },
     /**
      * Represents gold
+     *
+     * @since 1.0.0
      */
     GOLD('6', 0x6) {
         @NotNull
@@ -86,6 +101,8 @@ public enum ChatColor {
     },
     /**
      * Represents gray
+     *
+     * @since 1.0.0
      */
     GRAY('7', 0x7) {
         @NotNull
@@ -96,6 +113,8 @@ public enum ChatColor {
     },
     /**
      * Represents dark gray
+     *
+     * @since 1.0.0
      */
     DARK_GRAY('8', 0x8) {
         @NotNull
@@ -106,6 +125,8 @@ public enum ChatColor {
     },
     /**
      * Represents blue
+     *
+     * @since 1.0.0
      */
     BLUE('9', 0x9) {
         @NotNull
@@ -116,6 +137,8 @@ public enum ChatColor {
     },
     /**
      * Represents green
+     *
+     * @since 1.0.0
      */
     GREEN('a', 0xA) {
         @NotNull
@@ -126,6 +149,8 @@ public enum ChatColor {
     },
     /**
      * Represents aqua
+     *
+     * @since 1.0.0
      */
     AQUA('b', 0xB) {
         @NotNull
@@ -136,6 +161,8 @@ public enum ChatColor {
     },
     /**
      * Represents red
+     *
+     * @since 1.0.0
      */
     RED('c', 0xC) {
         @NotNull
@@ -146,6 +173,8 @@ public enum ChatColor {
     },
     /**
      * Represents light purple
+     *
+     * @since 1.0.0
      */
     LIGHT_PURPLE('d', 0xD) {
         @NotNull
@@ -156,6 +185,8 @@ public enum ChatColor {
     },
     /**
      * Represents yellow
+     *
+     * @since 1.0.0
      */
     YELLOW('e', 0xE) {
         @NotNull
@@ -166,6 +197,8 @@ public enum ChatColor {
     },
     /**
      * Represents white
+     *
+     * @since 1.0.0
      */
     WHITE('f', 0xF) {
         @NotNull
@@ -176,6 +209,8 @@ public enum ChatColor {
     },
     /**
      * Represents magical characters that change around randomly
+     *
+     * @since 1.1.0
      */
     MAGIC('k', 0x10, true) {
         @NotNull
@@ -186,6 +221,8 @@ public enum ChatColor {
     },
     /**
      * Makes the text bold.
+     *
+     * @since 1.3.1
      */
     BOLD('l', 0x11, true) {
         @NotNull
@@ -196,6 +233,8 @@ public enum ChatColor {
     },
     /**
      * Makes a line appear through the text.
+     *
+     * @since 1.3.1
      */
     STRIKETHROUGH('m', 0x12, true) {
         @NotNull
@@ -206,6 +245,8 @@ public enum ChatColor {
     },
     /**
      * Makes the text appear underlined.
+     *
+     * @since 1.3.1
      */
     UNDERLINE('n', 0x13, true) {
         @NotNull
@@ -216,6 +257,8 @@ public enum ChatColor {
     },
     /**
      * Makes the text italic.
+     *
+     * @since 1.3.1
      */
     ITALIC('o', 0x14, true) {
         @NotNull
@@ -226,6 +269,8 @@ public enum ChatColor {
     },
     /**
      * Resets all previous chat colors or formats.
+     *
+     * @since 1.3.1
      */
     RESET('r', 0x15) {
         @NotNull
@@ -238,6 +283,8 @@ public enum ChatColor {
     /**
      * The special character which prefixes all chat colour codes. Use this if
      * you need to dynamically convert colour codes from your custom format.
+     *
+     * @since 1.1.0
      */
     public static final char COLOR_CHAR = '\u00A7';
     private static final Pattern STRIP_COLOR_PATTERN = Pattern.compile("(?i)" + String.valueOf(COLOR_CHAR) + "[0-9A-FK-ORX]");
@@ -260,6 +307,9 @@ public enum ChatColor {
         this.toString = new String(new char[] {COLOR_CHAR, code});
     }
 
+    /**
+     * @since 1.8.8
+     */
     @NotNull
     public net.md_5.bungee.api.ChatColor asBungee() {
         return net.md_5.bungee.api.ChatColor.RESET;
@@ -269,6 +319,7 @@ public enum ChatColor {
      * Gets the char value associated with this color
      *
      * @return A char value of this color code
+     * @since 1.1.0
      */
     public char getChar() {
         return code;
@@ -284,6 +335,7 @@ public enum ChatColor {
      * Checks if this code is a format code as opposed to a color code.
      *
      * @return whether this ChatColor is a format code
+     * @since 1.3.1
      */
     public boolean isFormat() {
         return isFormat;
@@ -293,6 +345,7 @@ public enum ChatColor {
      * Checks if this code is a color code as opposed to a format code.
      *
      * @return whether this ChatColor is a color code
+     * @since 1.3.1
      */
     public boolean isColor() {
         return !isFormat && this != RESET;
@@ -304,6 +357,7 @@ public enum ChatColor {
      * @param code Code to check
      * @return Associative {@link org.bukkit.ChatColor} with the given code,
      *     or null if it doesn't exist
+     * @since 1.1.0
      */
     @Nullable
     public static ChatColor getByChar(char code) {
@@ -316,6 +370,7 @@ public enum ChatColor {
      * @param code Code to check
      * @return Associative {@link org.bukkit.ChatColor} with the given code,
      *     or null if it doesn't exist
+     * @since 1.1.0
      */
     @Nullable
     public static ChatColor getByChar(@NotNull String code) {
@@ -330,6 +385,7 @@ public enum ChatColor {
      *
      * @param input String to strip of color
      * @return A copy of the input string, without any coloring
+     * @since 1.0.0
      */
     @Contract("!null -> !null; null -> null")
     @Nullable
@@ -350,6 +406,7 @@ public enum ChatColor {
      * @param altColorChar The alternate color code character to replace. Ex: {@literal &}
      * @param textToTranslate Text containing the alternate color code character.
      * @return Text containing the ChatColor.COLOR_CODE color code character.
+     * @since 1.3.1
      */
     @NotNull
     public static String translateAlternateColorCodes(char altColorChar, @NotNull String textToTranslate) {
@@ -370,6 +427,7 @@ public enum ChatColor {
      *
      * @param input Input string to retrieve the colors from.
      * @return Any remaining ChatColors to pass onto the next line.
+     * @since 1.3.1
      */
     @NotNull
     public static String getLastColors(@NotNull String input) {

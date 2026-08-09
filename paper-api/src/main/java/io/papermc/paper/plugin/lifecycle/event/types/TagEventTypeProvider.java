@@ -12,6 +12,7 @@ import org.jetbrains.annotations.ApiStatus;
  *
  * @see PreFlattenTagRegistrar
  * @see PostFlattenTagRegistrar
+ * @since 1.21.1
  */
 @ApiStatus.NonExtendable
 public interface TagEventTypeProvider {
@@ -23,6 +24,7 @@ public interface TagEventTypeProvider {
      * @return the registry event type
      * @param <T> the type of value in the tag
      * @see PreFlattenTagRegistrar
+     * @since 1.21.1
      */
     <T> LifecycleEventType.Prioritizable<BootstrapContext, ReloadableRegistrarEvent<PreFlattenTagRegistrar<T>>> preFlatten(RegistryKey<T> registryKey);
 
@@ -33,6 +35,7 @@ public interface TagEventTypeProvider {
      * @return the registry event type
      * @param <T> the type of value in the tag
      * @see PostFlattenTagRegistrar
+     * @since 1.21.1
      */
     <T> LifecycleEventType.Prioritizable<BootstrapContext, ReloadableRegistrarEvent<PostFlattenTagRegistrar<T>>> postFlatten(RegistryKey<T> registryKey);
 }

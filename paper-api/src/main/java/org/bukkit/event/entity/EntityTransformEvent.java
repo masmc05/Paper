@@ -10,6 +10,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when an entity is about to be replaced by another entity.
+ *
+ * @since 1.13.2
  */
 @NullMarked
 public class EntityTransformEvent extends EntityEvent implements Cancellable {
@@ -34,6 +36,7 @@ public class EntityTransformEvent extends EntityEvent implements Cancellable {
      * Gets the entities that the original entity was transformed to.
      *
      * @return The transformed entities.
+     * @since 1.13.2
      */
     public List<Entity> getTransformedEntities() {
         return this.transformedEntities;
@@ -46,6 +49,7 @@ public class EntityTransformEvent extends EntityEvent implements Cancellable {
      *
      * @return The transformed entity.
      * @see #getTransformedEntities()
+     * @since 1.13.2
      */
     public Entity getTransformedEntity() {
         return this.converted;
@@ -55,69 +59,105 @@ public class EntityTransformEvent extends EntityEvent implements Cancellable {
      * Gets the reason for the conversion that has occurred.
      *
      * @return The reason for conversion that has occurred.
+     * @since 1.13.2
      */
     public TransformReason getTransformReason() {
         return this.transformReason;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.2
+     */
     public enum TransformReason {
         /**
          * When a zombie gets cured and a villager is spawned.
+         *
+         * @since 1.13.2
          */
         CURED,
         /**
          * When an entity is shaking in Powder Snow and a new entity spawns.
+         *
+         * @since 1.17.1
          */
         FROZEN,
         /**
          * When a villager gets infected and a zombie villager spawns.
+         *
+         * @since 1.13.2
          */
         INFECTION,
         /**
          * When an entity drowns in water and a new entity spawns.
+         *
+         * @since 1.13.2
          */
         DROWNED,
         /**
          * When a mooshroom (or MUSHROOM_COW) is sheared and a cow spawns.
+         *
+         * @since 1.13.2
          */
         SHEARED,
         /**
          * When lightning strikes a entity.
+         *
+         * @since 1.13.2
          */
         LIGHTNING,
         /**
          * When a slime splits into multiple smaller slimes.
+         *
+         * @since 1.13.2
          */
         SPLIT,
         /**
          * When a piglin (or hoglin) converts to a zombified version from overworld presence.
+         *
+         * @since 1.16.5
          */
         PIGLIN_ZOMBIFIED,
         /**
          * When a tadpole converts to a frog
+         *
+         * @since 1.19
          */
         METAMORPHOSIS,
         /**
          * When reason is unknown.
+         *
+         * @since 1.16.2
          */
         UNKNOWN
     }

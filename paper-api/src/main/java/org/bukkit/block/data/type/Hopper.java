@@ -9,6 +9,8 @@ import org.bukkit.block.data.Powerable;
  * <br>
  * Unlike most other blocks, a hopper is only enabled when it is <b>not</b>
  * receiving any power.
+ *
+ * @since 1.13
  */
 public interface Hopper extends Directional {
 
@@ -16,6 +18,7 @@ public interface Hopper extends Directional {
      * Gets the value of the 'enabled' property.
      *
      * @return the 'enabled' value
+     * @since 1.13
      */
     boolean isEnabled();
 
@@ -23,6 +26,7 @@ public interface Hopper extends Directional {
      * Sets the value of the 'enabled' property.
      *
      * @param enabled the new 'enabled' value
+     * @since 1.13
      */
     void setEnabled(boolean enabled);
 }

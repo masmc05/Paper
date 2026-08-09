@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
  * A registered service provider.
  *
  * @param <T> Service
+ * @since 1.0.0
  */
 public class RegisteredServiceProvider<T> implements Comparable<RegisteredServiceProvider<?>> {
 
@@ -14,6 +15,9 @@ public class RegisteredServiceProvider<T> implements Comparable<RegisteredServic
     private T provider;
     private ServicePriority priority;
 
+    /**
+     * @since 1.0.0
+     */
     public RegisteredServiceProvider(@NotNull Class<T> service, @NotNull T provider, @NotNull ServicePriority priority, @NotNull Plugin plugin) {
         this.service = service;
         this.plugin = plugin;
@@ -21,26 +25,42 @@ public class RegisteredServiceProvider<T> implements Comparable<RegisteredServic
         this.priority = priority;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public Class<T> getService() {
         return service;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public Plugin getPlugin() {
         return plugin;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public T getProvider() {
         return provider;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     public ServicePriority getPriority() {
         return priority;
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.0.0
+     */
     @Override
     public int compareTo(@NotNull RegisteredServiceProvider<?> other) {
         if (priority.ordinal() == other.getPriority().ordinal()) {

@@ -10,6 +10,8 @@ import org.jspecify.annotations.Nullable;
  * There are no guarantees that this is an actual response to a
  * dialog form. It is on the plugin to validate that the response
  * is valid.
+ *
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public interface DialogResponseView {
@@ -18,6 +20,7 @@ public interface DialogResponseView {
      * Gets the raw payload of the response.
      *
      * @return the raw payload
+     * @since 1.21.7
      */
     @Contract(pure = true)
     BinaryTagHolder payload();
@@ -27,6 +30,7 @@ public interface DialogResponseView {
      *
      * @param key the key
      * @return the value (or null if it doesn't exist)
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Nullable String getText(String key);
@@ -36,6 +40,7 @@ public interface DialogResponseView {
      *
      * @param key the key
      * @return the value (or null if it doesn't exist)
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Nullable Boolean getBoolean(String key);
@@ -45,6 +50,7 @@ public interface DialogResponseView {
      *
      * @param key the key
      * @return the value (or null if it doesn't exist)
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Nullable Float getFloat(String key);

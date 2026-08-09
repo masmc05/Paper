@@ -12,16 +12,23 @@ import org.jspecify.annotations.NullMarked;
 /**
  * Stores all explosions crafted into a Firework Rocket, as well as flight duration.
  * @see io.papermc.paper.datacomponent.DataComponentTypes#FIREWORKS
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface Fireworks {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_, _ -> new", pure = true)
     static Fireworks fireworks(final List<FireworkEffect> effects, final int flightDuration) {
         return fireworks().addEffects(effects).flightDuration(flightDuration).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static Fireworks.Builder fireworks() {
         return ItemComponentTypesBridge.bridge().fireworks();
@@ -31,6 +38,7 @@ public interface Fireworks {
      * Lists the effects stored in this component.
      *
      * @return the effects
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable List<FireworkEffect> effects();
@@ -39,12 +47,15 @@ public interface Fireworks {
      * Number of gunpowder in this component.
      *
      * @return the flight duration
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @IntRange(from = 0, to = 255) int flightDuration();
 
     /**
      * Builder for {@link Fireworks}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<Fireworks> {
@@ -55,6 +66,7 @@ public interface Fireworks {
          * @param duration duration
          * @return the builder for chaining
          * @see #flightDuration()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder flightDuration(@IntRange(from = 0, to = 255) int duration);
@@ -65,6 +77,7 @@ public interface Fireworks {
          * @param effect effect
          * @return the builder for chaining
          * @see #effects()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addEffect(FireworkEffect effect);
@@ -75,6 +88,7 @@ public interface Fireworks {
          * @param effects effects
          * @return the builder for chaining
          * @see #effects()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder addEffects(List<FireworkEffect> effects);

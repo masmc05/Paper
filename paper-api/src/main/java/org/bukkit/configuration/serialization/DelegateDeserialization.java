@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Applies to a {@link ConfigurationSerializable} that will delegate all
  * deserialization to another {@link ConfigurationSerializable}.
+ *
+ * @since 1.0.0
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
@@ -18,6 +20,7 @@ public @interface DelegateDeserialization {
      * deserialization
      *
      * @return Delegate class
+     * @since 1.0.0
      */
     @NotNull
     public Class<? extends ConfigurationSerializable> value();

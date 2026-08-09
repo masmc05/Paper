@@ -16,6 +16,8 @@ import org.jspecify.annotations.Nullable;
  * <br>
  * This event may be called multiple times per interaction with different interaction hands
  * and with or without the clicked position.
+ *
+ * @since 1.9.4
  */
 @NullMarked
 public class PlayerUseUnknownEntityEvent extends PlayerEvent {
@@ -40,6 +42,7 @@ public class PlayerUseUnknownEntityEvent extends PlayerEvent {
      * Returns the entity id of the unknown entity that was interacted with.
      *
      * @return the entity id of the entity that was interacted with
+     * @since 1.9.4
      */
     public int getEntityId() {
         return this.entityId;
@@ -49,6 +52,7 @@ public class PlayerUseUnknownEntityEvent extends PlayerEvent {
      * Returns whether the interaction was an attack.
      *
      * @return {@code true} if the player is attacking the entity, {@code false} if the player is interacting with the entity
+     * @since 1.9.4
      */
     public boolean isAttack() {
         return this.attack;
@@ -58,6 +62,7 @@ public class PlayerUseUnknownEntityEvent extends PlayerEvent {
      * Returns the hand used to perform this interaction.
      *
      * @return the hand used to interact
+     * @since 1.9.4
      */
     public EquipmentSlot getHand() {
         return this.hand;
@@ -69,16 +74,23 @@ public class PlayerUseUnknownEntityEvent extends PlayerEvent {
      *
      * @return the position relative to the entity that was clicked, or {@code null} if not available
      * @see PlayerInteractAtEntityEvent
+     * @since 1.20.1
      */
     public @Nullable Vector getClickedRelativePosition() {
         return this.clickedPosition != null ? this.clickedPosition.clone() : null;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

@@ -21,6 +21,8 @@ import org.jspecify.annotations.Nullable;
  * instance of {@link CommandSender} in cases where the server either doesn't
  * exist yet, or no specific sender is available. Methods on such a {@link CommandSender}
  * will either have no effect or throw an {@link UnsupportedOperationException}.</p>
+ *
+ * @since 1.20.6
  */
 @ApiStatus.NonExtendable
 public interface CommandSourceStack {
@@ -29,6 +31,7 @@ public interface CommandSourceStack {
      * Gets the location that this command is being executed at.
      *
      * @return a cloned location instance.
+     * @since 1.20.6
      */
     Location getLocation();
 
@@ -38,6 +41,7 @@ public interface CommandSourceStack {
      * It differs to {@link #getExecutor()} as the executor can be changed by a command, e.g. {@literal /execute}.
      *
      * @return the command sender instance
+     * @since 1.20.6
      */
     CommandSender getSender();
 
@@ -47,18 +51,21 @@ public interface CommandSourceStack {
      * than the one that triggered the command.
      *
      * @return entity that executes this command
+     * @since 1.20.6
      */
     @Nullable Entity getExecutor();
 
     /**
      * {@return the {@link Player} that is executing this command}
      * @throws CommandSyntaxException if the {@link #getExecutor() executor} of this command is not a {@link Player}
+     * @since 26.2
      */
     Player getPlayerOrThrow() throws CommandSyntaxException;
 
     /**
      * {@return the {@link Entity} that is executing this command}
      * @throws CommandSyntaxException if the {@link #getExecutor() executor} of this command is not an {@link Entity}
+     * @since 26.2
      */
     Entity getEntityOrThrow() throws CommandSyntaxException;
 
@@ -69,6 +76,7 @@ public interface CommandSourceStack {
      * @return The newly created CommandSourceStack
      * @see #getLocation()
      * @see com.mojang.brigadier.builder.ArgumentBuilder#fork(CommandNode, RedirectModifier)
+     * @since 1.21.4
      */
     CommandSourceStack withLocation(Location location);
 
@@ -79,6 +87,7 @@ public interface CommandSourceStack {
      * @return The newly created CommandSourceStack
      * @see #getExecutor()
      * @see com.mojang.brigadier.builder.ArgumentBuilder#fork(CommandNode, RedirectModifier)
+     * @since 1.21.4
      */
     CommandSourceStack withExecutor(Entity executor);
 }

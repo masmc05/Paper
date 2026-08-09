@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Thrown when a LivingEntity is tamed
+ *
+ * @since 1.0.0
  */
 public class EntityTameEvent extends EntityEvent implements Cancellable {
 
@@ -23,6 +25,9 @@ public class EntityTameEvent extends EntityEvent implements Cancellable {
         this.owner = owner;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public LivingEntity getEntity() {
@@ -33,28 +38,41 @@ public class EntityTameEvent extends EntityEvent implements Cancellable {
      * Gets the owning AnimalTamer
      *
      * @return the owning AnimalTamer
+     * @since 1.0.0
      */
     @NotNull
     public AnimalTamer getOwner() {
         return this.owner;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

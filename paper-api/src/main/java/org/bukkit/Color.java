@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
  * A container for a color palette. This class is immutable; the set methods
  * return a new color. The color names listed as fields are HTML4 standards,
  * but subject to change.
+ *
+ * @since 1.4.5
  */
 @SerializableAs("Color")
 public final class Color implements ConfigurationSerializable {
@@ -23,86 +25,120 @@ public final class Color implements ConfigurationSerializable {
 
     /**
      * White, or (0xFF,0xFF,0xFF) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color WHITE = fromRGB(0xFFFFFF);
 
     /**
      * Silver, or (0xC0,0xC0,0xC0) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color SILVER = fromRGB(0xC0C0C0);
 
     /**
      * Gray, or (0x80,0x80,0x80) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color GRAY = fromRGB(0x808080);
 
     /**
      * Black, or (0x00,0x00,0x00) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color BLACK = fromRGB(0x000000);
 
     /**
      * Red, or (0xFF,0x00,0x00) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color RED = fromRGB(0xFF0000);
 
     /**
      * Maroon, or (0x80,0x00,0x00) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color MAROON = fromRGB(0x800000);
 
     /**
      * Yellow, or (0xFF,0xFF,0x00) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color YELLOW = fromRGB(0xFFFF00);
 
     /**
      * Olive, or (0x80,0x80,0x00) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color OLIVE = fromRGB(0x808000);
 
     /**
      * Lime, or (0x00,0xFF,0x00) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color LIME = fromRGB(0x00FF00);
 
     /**
      * Green, or (0x00,0x80,0x00) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color GREEN = fromRGB(0x008000);
 
     /**
      * Aqua, or (0x00,0xFF,0xFF) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color AQUA = fromRGB(0x00FFFF);
 
     /**
      * Teal, or (0x00,0x80,0x80) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color TEAL = fromRGB(0x008080);
 
     /**
      * Blue, or (0x00,0x00,0xFF) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color BLUE = fromRGB(0x0000FF);
 
     /**
      * Navy, or (0x00,0x00,0x80) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color NAVY = fromRGB(0x000080);
 
     /**
      * Fuchsia, or (0xFF,0x00,0xFF) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color FUCHSIA = fromRGB(0xFF00FF);
 
     /**
      * Purple, or (0x80,0x00,0x80) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color PURPLE = fromRGB(0x800080);
 
     /**
      * Orange, or (0xFF,0xA5,0x00) in (R,G,B)
+     *
+     * @since 1.4.5
      */
     public static final Color ORANGE = fromRGB(0xFFA500);
 
@@ -120,6 +156,7 @@ public final class Color implements ConfigurationSerializable {
      * @param blue integer from 0-255
      * @return a new Color object for the alpha, red, green, blue
      * @throws IllegalArgumentException if any value is strictly {@literal >255 or <0}
+     * @since 1.19.4
      */
     @NotNull
     public static Color fromARGB(int alpha, int red, int green, int blue) throws IllegalArgumentException {
@@ -134,6 +171,7 @@ public final class Color implements ConfigurationSerializable {
      * @param blue integer from 0-255
      * @return a new Color object for the red, green, blue
      * @throws IllegalArgumentException if any value is strictly {@literal >255 or <0}
+     * @since 1.4.5
      */
     @NotNull
     public static Color fromRGB(int red, int green, int blue) throws IllegalArgumentException {
@@ -148,6 +186,7 @@ public final class Color implements ConfigurationSerializable {
      * @param red integer from 0-255
      * @return a new Color object for the blue, green, red
      * @throws IllegalArgumentException if any value is strictly {@literal >255 or <0}
+     * @since 1.4.5
      */
     @NotNull
     public static Color fromBGR(int blue, int green, int red) throws IllegalArgumentException {
@@ -162,6 +201,7 @@ public final class Color implements ConfigurationSerializable {
      * @return a new color object for specified values
      * @throws IllegalArgumentException if any data is in the highest order 8
      *     bits
+     * @since 1.4.5
      */
     @NotNull
     public static Color fromRGB(int rgb) throws IllegalArgumentException {
@@ -175,6 +215,7 @@ public final class Color implements ConfigurationSerializable {
      *
      * @param argb the integer storing the alpha, red, green, and blue values
      * @return a new color object for specified values
+     * @since 1.19.4
      */
     @NotNull
     public static Color fromARGB(int argb) {
@@ -189,6 +230,7 @@ public final class Color implements ConfigurationSerializable {
      * @return a new color object for specified values
      * @throws IllegalArgumentException if any data is in the highest order 8
      *     bits
+     * @since 1.4.5
      */
     @NotNull
     public static Color fromBGR(int bgr) throws IllegalArgumentException {
@@ -216,6 +258,7 @@ public final class Color implements ConfigurationSerializable {
      * Gets the alpha component
      *
      * @return alpha component, from 0 to 255
+     * @since 1.19.4
      */
     public int getAlpha() {
         return BIT_MASK & alpha;
@@ -226,6 +269,7 @@ public final class Color implements ConfigurationSerializable {
      *
      * @param alpha the alpha component, from 0 to 255
      * @return a new color object with the alpha component
+     * @since 1.19.4
      */
     @NotNull
     public Color setAlpha(int alpha) {
@@ -236,6 +280,7 @@ public final class Color implements ConfigurationSerializable {
      * Gets the red component
      *
      * @return red component, from 0 to 255
+     * @since 1.4.5
      */
     public int getRed() {
         return BIT_MASK & red;
@@ -246,6 +291,7 @@ public final class Color implements ConfigurationSerializable {
      *
      * @param red the red component, from 0 to 255
      * @return a new color object with the red component
+     * @since 1.4.5
      */
     @NotNull
     public Color setRed(int red) {
@@ -256,6 +302,7 @@ public final class Color implements ConfigurationSerializable {
      * Gets the green component
      *
      * @return green component, from 0 to 255
+     * @since 1.4.5
      */
     public int getGreen() {
         return BIT_MASK & green;
@@ -266,6 +313,7 @@ public final class Color implements ConfigurationSerializable {
      *
      * @param green the green component, from 0 to 255
      * @return a new color object with the green component
+     * @since 1.4.5
      */
     @NotNull
     public Color setGreen(int green) {
@@ -276,6 +324,7 @@ public final class Color implements ConfigurationSerializable {
      * Gets the blue component
      *
      * @return blue component, from 0 to 255
+     * @since 1.4.5
      */
     public int getBlue() {
         return BIT_MASK & blue;
@@ -286,6 +335,7 @@ public final class Color implements ConfigurationSerializable {
      *
      * @param blue the blue component, from 0 to 255
      * @return a new color object with the blue component
+     * @since 1.4.5
      */
     @NotNull
     public Color setBlue(int blue) {
@@ -296,6 +346,7 @@ public final class Color implements ConfigurationSerializable {
      * Gets the color as an RGB integer.
      *
      * @return An integer representation of this color, as 0xRRGGBB
+     * @since 1.4.5
      */
     public int asRGB() {
         return getRed() << 16 | getGreen() << 8 | getBlue();
@@ -305,6 +356,7 @@ public final class Color implements ConfigurationSerializable {
      * Gets the color as an ARGB integer.
      *
      * @return An integer representation of this color, as 0xAARRGGBB
+     * @since 1.19.4
      */
     public int asARGB() {
         return getAlpha() << 24 | getRed() << 16 | getGreen() << 8 | getBlue();
@@ -314,6 +366,7 @@ public final class Color implements ConfigurationSerializable {
      * Gets the color as an BGR integer.
      *
      * @return An integer representation of this color, as 0xBBGGRR
+     * @since 1.4.5
      */
     public int asBGR() {
         return getBlue() << 16 | getGreen() << 8 | getRed();
@@ -325,6 +378,7 @@ public final class Color implements ConfigurationSerializable {
      *
      * @param colors The DyeColors to dye with
      * @return A new color with the changed rgb components
+     * @since 1.4.5
      */
     // TODO: Javadoc what this method does, not what it mimics. API != Implementation
     @NotNull
@@ -348,6 +402,7 @@ public final class Color implements ConfigurationSerializable {
      *
      * @param colors The colors to dye with
      * @return A new color with the changed rgb components
+     * @since 1.4.5
      */
     // TODO: Javadoc what this method does, not what it mimics. API != Implementation
     @NotNull
@@ -390,6 +445,9 @@ public final class Color implements ConfigurationSerializable {
         return asARGB() ^ Color.class.hashCode();
     }
 
+    /**
+     * @since 1.4.5
+     */
     @Override
     @NotNull
     public Map<String, Object> serialize() {
@@ -401,6 +459,9 @@ public final class Color implements ConfigurationSerializable {
         );
     }
 
+    /**
+     * @since 1.4.5
+     */
     @NotNull
     public static Color deserialize(@NotNull Map<String, Object> map) {
         return fromARGB(

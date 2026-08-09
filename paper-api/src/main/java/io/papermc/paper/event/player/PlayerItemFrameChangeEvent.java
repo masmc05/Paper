@@ -12,6 +12,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Called when an {@link ItemFrame} is having an item rotated, added, or removed from it.
+ *
+ * @since 1.18.1
  */
 @NullMarked
 public class PlayerItemFrameChangeEvent extends PlayerEvent implements Cancellable {
@@ -36,6 +38,7 @@ public class PlayerItemFrameChangeEvent extends PlayerEvent implements Cancellab
      * Gets the {@link ItemFrame} involved in this event.
      *
      * @return the {@link ItemFrame}
+     * @since 1.18.1
      */
     public ItemFrame getItemFrame() {
         return this.itemFrame;
@@ -48,6 +51,7 @@ public class PlayerItemFrameChangeEvent extends PlayerEvent implements Cancellab
      * If this method returns air, then the resulting item in the ItemFrame will be empty.
      *
      * @return the {@link ItemStack} being added, rotated, or removed
+     * @since 1.18.1
      */
     public ItemStack getItemStack() {
         return this.itemStack;
@@ -58,6 +62,7 @@ public class PlayerItemFrameChangeEvent extends PlayerEvent implements Cancellab
      * If {@code null} is provided, the ItemStack will become air and the result in the ItemFrame will be empty.
      *
      * @param itemStack {@link ItemFrame} item
+     * @since 1.18.1
      */
     public void setItemStack(final @Nullable ItemStack itemStack) {
         this.itemStack = itemStack == null ? ItemStack.empty() : itemStack;
@@ -67,33 +72,58 @@ public class PlayerItemFrameChangeEvent extends PlayerEvent implements Cancellab
      * Gets the action that was performed on this {@link ItemFrame}.
      *
      * @return action performed on the item frame in this event
+     * @since 1.18.1
      */
     public ItemFrameChangeAction getAction() {
         return this.action;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.18.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.18.1
+     */
     public enum ItemFrameChangeAction {
+        /**
+         * @since 1.18.1
+         */
         PLACE,
+        /**
+         * @since 1.18.1
+         */
         REMOVE,
+        /**
+         * @since 1.18.1
+         */
         ROTATE
     }
 }

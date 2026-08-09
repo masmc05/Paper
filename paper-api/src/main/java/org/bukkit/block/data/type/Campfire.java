@@ -7,6 +7,8 @@ import org.bukkit.block.data.Waterlogged;
 /**
  * 'signal_fire' denotes whether the fire is extra smokey due to having a hay
  * bale placed beneath it.
+ *
+ * @since 1.14
  */
 public interface Campfire extends Directional, Lightable, Waterlogged {
 
@@ -14,6 +16,7 @@ public interface Campfire extends Directional, Lightable, Waterlogged {
      * Gets the value of the 'signal_fire' property.
      *
      * @return the 'signal_fire' value
+     * @since 1.14
      */
     boolean isSignalFire();
 
@@ -21,6 +24,7 @@ public interface Campfire extends Directional, Lightable, Waterlogged {
      * Sets the value of the 'signal_fire' property.
      *
      * @param signalFire the new 'signal_fire' value
+     * @since 1.14
      */
     void setSignalFire(boolean signalFire);
 }

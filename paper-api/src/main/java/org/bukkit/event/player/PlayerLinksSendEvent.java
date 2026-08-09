@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * This event is called when the list of links is sent to the player.
+ *
+ * @since 1.21
  */
 public class PlayerLinksSendEvent extends Event {
 
@@ -27,6 +29,7 @@ public class PlayerLinksSendEvent extends Event {
     /**
      * Gets the connection that received the links.
      * @return connection
+     * @since 1.21.7
      */
     @NotNull
     public PlayerCommonConnection getConnection() {
@@ -37,18 +40,25 @@ public class PlayerLinksSendEvent extends Event {
      * Gets the links to be sent, for modification.
      *
      * @return the links
+     * @since 1.21
      */
     @NotNull
     public ServerLinks getLinks() {
         return this.links;
     }
 
+    /**
+     * @since 1.21
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

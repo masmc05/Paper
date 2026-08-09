@@ -14,6 +14,8 @@ import java.util.List;
  * <p>
  * Note that even if cancelled, the client may still run its own collision unless
  * disabled via player teams.
+ *
+ * @since 26.2
  */
 public class EntityCollideWithEntityEvent extends Event implements Cancellable {
 
@@ -30,26 +32,39 @@ public class EntityCollideWithEntityEvent extends Event implements Cancellable {
      * Returns the entities involved in this event
      *
      * @return entities that are involved in this event
+     * @since 26.2
      */
     public @NotNull List<Entity> getEntities() {
         return entities;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public @NotNull HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 26.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public boolean isCancelled() {
         return cancelled;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;

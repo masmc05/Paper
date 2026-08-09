@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
  * Called when an entity is spawned into a world by a trial spawner.
  * <p>
  * If this event is cancelled, the entity will not spawn.
+ *
+ * @since 1.21
  */
 public class TrialSpawnerSpawnEvent extends EntitySpawnEvent {
 
@@ -20,6 +22,9 @@ public class TrialSpawnerSpawnEvent extends EntitySpawnEvent {
         this.spawner = spawner;
     }
 
+    /**
+     * @since 1.21
+     */
     @NotNull
     public TrialSpawner getTrialSpawner() {
         return this.spawner;

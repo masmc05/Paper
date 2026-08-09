@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @apiNote this event is no longer called without being a {@link PlayerInteractAtEntityEvent}, it's therefore
  * recommended to listen to that event instead which hold more informations.
+ * @since 1.0.0
  */
 @ApiStatus.Obsolete
 public class PlayerInteractEntityEvent extends PlayerEvent implements Cancellable {
@@ -40,6 +41,7 @@ public class PlayerInteractEntityEvent extends PlayerEvent implements Cancellabl
      * Gets the entity that was right-clicked by the player.
      *
      * @return entity right clicked by player
+     * @since 1.0.0
      */
     @NotNull
     public Entity getRightClicked() {
@@ -50,28 +52,41 @@ public class PlayerInteractEntityEvent extends PlayerEvent implements Cancellabl
      * The hand used to perform this interaction.
      *
      * @return the hand used to interact
+     * @since 1.9.4
      */
     @NotNull
     public EquipmentSlot getHand() {
         return this.hand;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

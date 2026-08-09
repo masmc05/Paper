@@ -12,6 +12,7 @@ import org.jspecify.annotations.Nullable;
 /**
  * Represents a dialog that displays a list of dialogs.
  * @see DialogType#dialogList(RegistrySet, ActionButton, int, int)
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public non-sealed interface DialogListType extends DialogType {
@@ -20,6 +21,7 @@ public non-sealed interface DialogListType extends DialogType {
      * Returns the set of dialogs to display in the dialog list.
      *
      * @return the set of dialogs
+     * @since 1.21.7
      */
     @Contract(pure = true)
     RegistrySet<Dialog> dialogs();
@@ -28,6 +30,7 @@ public non-sealed interface DialogListType extends DialogType {
      * Returns the action button to exit the dialog, or null if there is no exit action.
      *
      * @return the exit action button, or null
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Nullable ActionButton exitAction();
@@ -36,6 +39,7 @@ public non-sealed interface DialogListType extends DialogType {
      * Returns the number of columns to display in the dialog list.
      *
      * @return the number of columns
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Positive int columns();
@@ -44,12 +48,15 @@ public non-sealed interface DialogListType extends DialogType {
      * Returns the width of each button in the dialog list.
      *
      * @return the width of the buttons
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Range(from = 1, to = 1024) int buttonWidth();
 
     /**
      * A builder for creating a dialog list type.
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     interface Builder {
@@ -59,6 +66,7 @@ public non-sealed interface DialogListType extends DialogType {
          *
          * @param exitAction the exit action button, or null
          * @return the builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder exitAction(final @Nullable ActionButton exitAction);
@@ -68,6 +76,7 @@ public non-sealed interface DialogListType extends DialogType {
          *
          * @param columns the number of columns
          * @return the builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder columns(final @Positive int columns);
@@ -77,6 +86,7 @@ public non-sealed interface DialogListType extends DialogType {
          *
          * @param buttonWidth the width of the buttons
          * @return the builder
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder buttonWidth(final @Range(from = 1, to = 1024) int buttonWidth);
@@ -85,6 +95,7 @@ public non-sealed interface DialogListType extends DialogType {
          * Builds the dialog list type.
          *
          * @return the built dialog list type
+         * @since 1.21.7
          */
         @Contract(value = "-> new", pure = true)
         DialogListType build();

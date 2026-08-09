@@ -10,6 +10,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when a player creates a filled map by right-clicking an empty map.
+ *
+ * @since 1.21.6
  */
 @NullMarked
 public class PlayerMapFilledEvent extends PlayerEvent {
@@ -29,6 +31,7 @@ public class PlayerMapFilledEvent extends PlayerEvent {
      * Returns a copy of the empty map before it was consumed.
      *
      * @return cloned original item
+     * @since 1.21.6
      */
     public ItemStack getOriginalItem() {
         return this.originalItem.clone();
@@ -38,6 +41,7 @@ public class PlayerMapFilledEvent extends PlayerEvent {
      * Returns a copy of the filled map which was created.
      *
      * @return cloned created map item
+     * @since 1.21.6
      */
     public ItemStack getCreatedMap() {
         return this.createdMap.clone();
@@ -47,16 +51,23 @@ public class PlayerMapFilledEvent extends PlayerEvent {
      * Sets the filled map that will be created.
      *
      * @param createdMap map item
+     * @since 1.21.6
      */
     public void setCreatedMap(final ItemStack createdMap) {
         this.createdMap = createdMap.clone();
     }
 
+    /**
+     * @since 1.21.6
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.21.6
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

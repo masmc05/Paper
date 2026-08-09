@@ -17,6 +17,7 @@ import org.bukkit.configuration.serialization.ConfigurationSerializable;
  * @deprecated Object streams on their own are not safe. For safer and more consistent serialization of items,
  * use {@link org.bukkit.inventory.ItemStack#serializeAsBytes()} or
  * {@link org.bukkit.inventory.ItemStack#serializeItemsAsBytes(java.util.Collection)}.
+ * @since 1.6.2
  */
 @Deprecated(since = "1.21") // Paper
 public class BukkitObjectOutputStream extends ObjectOutputStream {
@@ -40,6 +41,7 @@ public class BukkitObjectOutputStream extends ObjectOutputStream {
      * @param out the stream to wrap
      * @throws IOException if an I/O error occurs while writing stream header
      * @see ObjectOutputStream#ObjectOutputStream(OutputStream)
+     * @since 1.6.2
      */
     public BukkitObjectOutputStream(OutputStream out) throws IOException {
         super(out);

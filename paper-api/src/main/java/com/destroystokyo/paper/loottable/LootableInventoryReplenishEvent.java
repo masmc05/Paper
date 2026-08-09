@@ -7,6 +7,9 @@ import org.bukkit.event.player.PlayerEvent;
 import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 
+/**
+ * @since 1.9.4
+ */
 @NullMarked
 public class LootableInventoryReplenishEvent extends PlayerEvent implements Cancellable {
 
@@ -21,25 +24,40 @@ public class LootableInventoryReplenishEvent extends PlayerEvent implements Canc
         this.inventory = inventory;
     }
 
+    /**
+     * @since 1.9.4
+     */
     public LootableInventory getInventory() {
         return this.inventory;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.9.4
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

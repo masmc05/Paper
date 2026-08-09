@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * Stores data for pigs being zapped
  *
  * @deprecated use {@link EntityZapEvent}
+ * @since 1.0.0
  */
 @Deprecated(since = "26.2")
 @Warning(reason = "This event has become obsolete, the more generic EntityZapEvent should be used instead.")
@@ -22,6 +23,9 @@ public class PigZapEvent extends EntityZapEvent {
         super(pig, bolt, zombifiedPiglin);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public Pig getEntity() {
@@ -33,6 +37,7 @@ public class PigZapEvent extends EntityZapEvent {
      *
      * @return lightning entity
      * @deprecated use {@link EntityZapEvent#getBolt()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "26.2")
@@ -46,6 +51,7 @@ public class PigZapEvent extends EntityZapEvent {
      *
      * @return resulting entity
      * @deprecated use {@link EntityZapEvent#getReplacementEntity()}
+     * @since 1.0.0
      */
     @NotNull
     @Deprecated(since = "1.13.2")
@@ -53,11 +59,17 @@ public class PigZapEvent extends EntityZapEvent {
         return (PigZombie) super.getReplacementEntity();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public boolean isCancelled() {
         return super.isCancelled();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public void setCancelled(boolean cancel) {
         super.setCancelled(cancel);

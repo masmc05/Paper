@@ -2,12 +2,15 @@ package org.bukkit.entity;
 
 /**
  * Represents an entity that can age.
+ *
+ * @since 1.3.1
  */
 public interface Ageable extends Creature {
     /**
      * Gets the age of this creature.
      *
      * @return Age
+     * @since 1.3.1
      */
     public int getAge();
 
@@ -15,6 +18,7 @@ public interface Ageable extends Creature {
      * Sets the age of this creature.
      *
      * @param age New age
+     * @since 1.3.1
      */
     public void setAge(int age);
 
@@ -24,6 +28,7 @@ public interface Ageable extends Creature {
      * manually, however.
      *
      * @param lock new lock state
+     * @since 1.3.1
      */
     public void setAgeLock(boolean lock);
 
@@ -32,6 +37,7 @@ public interface Ageable extends Creature {
      *
      * @return the current lock state
      * @see #setAgeLock(boolean)
+     * @since 1.3.1
      */
     public boolean getAgeLock();
 
@@ -46,6 +52,7 @@ public interface Ageable extends Creature {
      * for general purpose use.
      * @see #setAdult()
      * @see #setAge(int)
+     * @since 1.3.1
      */
     public void setBaby();
 
@@ -57,6 +64,7 @@ public interface Ageable extends Creature {
      *
      * @see #setBaby()
      * @see #setAge(int)
+     * @since 1.3.1
      */
     public void setAdult();
 
@@ -65,6 +73,7 @@ public interface Ageable extends Creature {
      *
      * @return if the creature is an adult
      * @see #getAge()
+     * @since 1.3.1
      */
     public boolean isAdult();
 
@@ -73,6 +82,7 @@ public interface Ageable extends Creature {
      *
      * @return the ability to breed of the creature
      * @deprecated see {@link Breedable#canBreed()}
+     * @since 1.3.1
      */
     @Deprecated(since = "1.16.2")
     public boolean canBreed();
@@ -83,6 +93,7 @@ public interface Ageable extends Creature {
      *
      * @param breed breedability of the creature
      * @deprecated see {@link Breedable#setBreed(boolean)}
+     * @since 1.3.1
      */
     @Deprecated(since = "1.16.2")
     public void setBreed(boolean breed);

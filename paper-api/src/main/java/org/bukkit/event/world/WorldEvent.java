@@ -6,6 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents events within a world
+ *
+ * @since 1.0.0
  */
 public abstract class WorldEvent extends Event {
 
@@ -24,6 +26,7 @@ public abstract class WorldEvent extends Event {
      * Gets the world primarily involved with this event
      *
      * @return World which caused this event
+     * @since 1.0.0
      */
     @NotNull
     public World getWorld() {

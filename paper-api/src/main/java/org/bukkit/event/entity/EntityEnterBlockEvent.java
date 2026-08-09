@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
  * <br>
  * It is not called when a silverfish "enters" a stone block. For that listen to
  * the {@link EntityChangeBlockEvent}.
+ *
+ * @since 1.15.2
  */
 public class EntityEnterBlockEvent extends EntityEvent implements Cancellable {
 
@@ -34,28 +36,41 @@ public class EntityEnterBlockEvent extends EntityEvent implements Cancellable {
      * Get the block the entity will enter.
      *
      * @return the block
+     * @since 1.15.2
      */
     @NotNull
     public Block getBlock() {
         return this.block;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.15.2
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

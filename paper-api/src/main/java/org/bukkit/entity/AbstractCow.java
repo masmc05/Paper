@@ -7,6 +7,8 @@ import org.jspecify.annotations.NullMarked;
  * entities on the server. The interface is hence not a direct representation
  * of an entity but rather serves as a parent to interfaces/entity types like
  * {@link Cow} or {@link MushroomCow}.
+ *
+ * @since 1.21.6
  */
 @NullMarked
 public interface AbstractCow extends Animals {

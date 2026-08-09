@@ -10,6 +10,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Fired when a Turtle starts digging to lay eggs
+ *
+ * @since 1.13.1
  */
 @NullMarked
 public class TurtleStartDiggingEvent extends EntityEvent implements Cancellable {
@@ -29,6 +31,7 @@ public class TurtleStartDiggingEvent extends EntityEvent implements Cancellable 
      * The turtle digging
      *
      * @return The turtle
+     * @since 1.13.1
      */
     @Override
     public Turtle getEntity() {
@@ -39,26 +42,39 @@ public class TurtleStartDiggingEvent extends EntityEvent implements Cancellable 
      * Get the location where the turtle is digging
      *
      * @return Location where digging
+     * @since 1.13.1
      */
     public Location getLocation() {
         return this.location.clone();
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

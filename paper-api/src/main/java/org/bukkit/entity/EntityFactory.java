@@ -3,6 +3,9 @@ package org.bukkit.entity;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * @since 1.20.6
+ */
 @ApiStatus.Experimental
 public interface EntityFactory {
 
@@ -13,6 +16,7 @@ public interface EntityFactory {
      * @param input the input string
      * @return the created EntitySnapshot
      * @throws IllegalArgumentException if the input string was provided in an invalid or unsupported format
+     * @since 1.20.6
      */
     @NotNull
     EntitySnapshot createEntitySnapshot(@NotNull String input) throws IllegalArgumentException;

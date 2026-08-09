@@ -8,21 +8,29 @@ import org.jetbrains.annotations.Contract;
 
 /**
  * A data-centric version-specific registry entry for the {@link Pig.Variant} type.
+ *
+ * @since 1.21.6
  */
 @ApiStatus.NonExtendable
 public interface PigVariantRegistryEntry {
 
     /**
      * The model of the pig variant to render the configured texture on.
+     *
+     * @since 1.21.6
      */
     enum Model {
         /**
          * The normal pig model.
+         *
+         * @since 1.21.6
          */
         NORMAL,
 
         /**
          * The cold pig model.
+         *
+         * @since 1.21.6
          */
         COLD,
     }
@@ -31,6 +39,7 @@ public interface PigVariantRegistryEntry {
      * Provides the client texture asset of the pig variant, which represents the texture to use.
      *
      * @return the client texture asset
+     * @since 1.21.6
      */
     ClientTextureAsset clientTextureAsset();
 
@@ -38,6 +47,7 @@ public interface PigVariantRegistryEntry {
      * Provides the client texture asset of the baby pig variant, which represents the texture to use.
      *
      * @return the baby client texture asset
+     * @since 26.2
      */
     ClientTextureAsset babyClientTextureAsset();
 
@@ -45,6 +55,7 @@ public interface PigVariantRegistryEntry {
      * Provides the model of the pig variant.
      *
      * @return the model
+     * @since 1.21.6
      */
     Model model();
 
@@ -57,6 +68,8 @@ public interface PigVariantRegistryEntry {
      *     <li>{@link #babyClientTextureAsset(ClientTextureAsset)}</li>
      *     <li>{@link #model(Model)}</li>
      * </ul>
+     *
+     * @since 1.21.6
      */
     @ApiStatus.NonExtendable
     interface Builder extends PigVariantRegistryEntry, RegistryBuilder<Pig.Variant> {
@@ -67,6 +80,7 @@ public interface PigVariantRegistryEntry {
          * @param clientTextureAsset the client texture asset
          * @return this builder instance
          * @see PigVariantRegistryEntry#clientTextureAsset()
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder clientTextureAsset(ClientTextureAsset clientTextureAsset);
@@ -77,6 +91,7 @@ public interface PigVariantRegistryEntry {
          * @param babyClientTextureAsset the baby client texture asset
          * @return this builder instance
          * @see PigVariantRegistryEntry#babyClientTextureAsset()
+         * @since 26.2
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder babyClientTextureAsset(ClientTextureAsset babyClientTextureAsset);
@@ -87,6 +102,7 @@ public interface PigVariantRegistryEntry {
          * @param model the model
          * @return this builder instance
          * @see PigVariantRegistryEntry#model()
+         * @since 1.21.6
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder model(Model model);

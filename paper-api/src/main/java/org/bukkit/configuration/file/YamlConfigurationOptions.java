@@ -8,6 +8,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Various settings for controlling the input and output of a {@link
  * YamlConfiguration}
+ *
+ * @since 1.0.0
  */
 public class YamlConfigurationOptions extends FileConfigurationOptions {
     private int indent = 2;
@@ -18,12 +20,18 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
         super(configuration);
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public YamlConfiguration configuration() {
         return (YamlConfiguration) super.configuration();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public YamlConfigurationOptions copyDefaults(boolean value) {
@@ -31,6 +39,9 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
         return this;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     public YamlConfigurationOptions pathSeparator(char value) {
@@ -38,6 +49,9 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
         return this;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     @Override
     public YamlConfigurationOptions setHeader(@Nullable List<String> value) {
@@ -45,6 +59,9 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
         return this;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     @Deprecated(since = "1.18.1")
@@ -53,6 +70,9 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
         return this;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     @Override
     public YamlConfigurationOptions setFooter(@Nullable List<String> value) {
@@ -60,6 +80,9 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
         return this;
     }
 
+    /**
+     * @since 1.18.1
+     */
     @NotNull
     @Override
     public YamlConfigurationOptions parseComments(boolean value) {
@@ -67,6 +90,9 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
         return this;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @NotNull
     @Override
     @Deprecated(since = "1.18.1")
@@ -81,6 +107,7 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
      * The minimum value this may be is 2, and the maximum is 9.
      *
      * @return How much to indent by
+     * @since 1.0.0
      */
     public int indent() {
         return indent;
@@ -93,6 +120,7 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
      *
      * @param value New indent
      * @return This object, for chaining
+     * @since 1.0.0
      */
     @NotNull
     public YamlConfigurationOptions indent(int value) {
@@ -107,6 +135,7 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
      * Gets how long a line can be, before it gets split.
      *
      * @return How the max line width
+     * @since 1.18.1
      */
     public int width() {
         return width;
@@ -117,6 +146,7 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
      *
      * @param value New width
      * @return This object, for chaining
+     * @since 1.18.1
      */
     @NotNull
     public YamlConfigurationOptions width(int value) {
@@ -130,6 +160,7 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
      * in which the loader will read
      *
      * @return The current value
+     * @since 1.19.2
      */
     public int codePointLimit() {
         return codePointLimit;
@@ -141,6 +172,7 @@ public class YamlConfigurationOptions extends FileConfigurationOptions {
      *
      * @param codePointLimit new codepoint limit
      * @return This object, for chaining
+     * @since 1.19.2
      */
     @NotNull
     public YamlConfigurationOptions codePointLimit(int codePointLimit) {

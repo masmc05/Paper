@@ -27,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
  * appropriately.
  *
  * @deprecated use {@link io.papermc.paper.event.player.AsyncChatEvent} instead
+ * @since 1.3.1
  */
 @Deprecated
 @Warning(reason = "Don't nag on old event yet") // Paper
@@ -52,6 +53,7 @@ public class AsyncPlayerChatEvent extends PlayerEvent implements Cancellable {
      * will be used with {@link #getFormat()}.
      *
      * @return Message the player is attempting to send
+     * @since 1.3.1
      */
     @NotNull
     public String getMessage() {
@@ -63,6 +65,7 @@ public class AsyncPlayerChatEvent extends PlayerEvent implements Cancellable {
      * with {@link #getFormat()}.
      *
      * @param message New message that the player will send
+     * @since 1.3.1
      */
     public void setMessage(@NotNull String message) {
         this.message = message;
@@ -77,6 +80,7 @@ public class AsyncPlayerChatEvent extends PlayerEvent implements Cancellable {
      *
      * @return {@link String#format(String, Object...)} compatible format
      *     string
+     * @since 1.3.1
      */
     @NotNull
     public String getFormat() {
@@ -95,6 +99,7 @@ public class AsyncPlayerChatEvent extends PlayerEvent implements Cancellable {
      * @throws IllegalFormatException if the underlying API throws the
      *     exception
      * @see String#format(String, Object...)
+     * @since 1.3.1
      */
     public void setFormat(@NotNull final String format) throws IllegalFormatException, NullPointerException {
         Preconditions.checkArgument(format != null, "format cannot be null");
@@ -121,28 +126,41 @@ public class AsyncPlayerChatEvent extends PlayerEvent implements Cancellable {
      * unmodifiable set.
      *
      * @return All Players who will see this chat message
+     * @since 1.3.1
      */
     @NotNull
     public Set<Player> getRecipients() {
         return this.recipients;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

@@ -17,110 +17,265 @@ import org.jetbrains.annotations.Nullable;
  * or can be enabled via a {@link FeatureFlag}.
  * There may be additional arts present in the server, for example from a {@link io.papermc.paper.datapack.Datapack}
  * which can be accessed via {@link RegistryAccess#registryAccess()} and {@link RegistryKey#PAINTING_VARIANT}.
+ *
+ * @since 1.0.0
  */
 public interface Art extends OldEnum<Art>, Keyed {
 
+    /**
+     * @since 1.0.0
+     */
     // Start generate - Art
     Art ALBAN = getArt("alban");
 
+    /**
+     * @since 1.0.0
+     */
     Art AZTEC = getArt("aztec");
 
+    /**
+     * @since 1.0.0
+     */
     Art AZTEC2 = getArt("aztec2");
 
+    /**
+     * @since 1.21
+     */
     Art BACKYARD = getArt("backyard");
 
+    /**
+     * @since 1.21
+     */
     Art BAROQUE = getArt("baroque");
 
+    /**
+     * @since 1.0.0
+     */
     Art BOMB = getArt("bomb");
 
+    /**
+     * @since 1.21
+     */
     Art BOUQUET = getArt("bouquet");
 
+    /**
+     * @since 1.13
+     */
     Art BURNING_SKULL = getArt("burning_skull");
 
+    /**
+     * @since 1.0.0
+     */
     Art BUST = getArt("bust");
 
+    /**
+     * @since 1.21
+     */
     Art CAVEBIRD = getArt("cavebird");
 
+    /**
+     * @since 1.21
+     */
     Art CHANGING = getArt("changing");
 
+    /**
+     * @since 1.21
+     */
     Art COTAN = getArt("cotan");
 
+    /**
+     * @since 1.0.0
+     */
     Art COURBET = getArt("courbet");
 
+    /**
+     * @since 1.0.0
+     */
     Art CREEBET = getArt("creebet");
 
+    /**
+     * @since 1.21.7
+     */
     Art DENNIS = getArt("dennis");
 
+    /**
+     * @since 1.13
+     */
     Art DONKEY_KONG = getArt("donkey_kong");
 
+    /**
+     * @since 1.19
+     */
     Art EARTH = getArt("earth");
 
+    /**
+     * @since 1.21
+     */
     Art ENDBOSS = getArt("endboss");
 
+    /**
+     * @since 1.21
+     */
     Art FERN = getArt("fern");
 
+    /**
+     * @since 1.0.0
+     */
     Art FIGHTERS = getArt("fighters");
 
+    /**
+     * @since 1.21
+     */
     Art FINDING = getArt("finding");
 
+    /**
+     * @since 1.19
+     */
     Art FIRE = getArt("fire");
 
+    /**
+     * @since 1.0.0
+     */
     Art GRAHAM = getArt("graham");
 
+    /**
+     * @since 1.21
+     */
     Art HUMBLE = getArt("humble");
 
+    /**
+     * @since 1.0.0
+     */
     Art KEBAB = getArt("kebab");
 
+    /**
+     * @since 1.21
+     */
     Art LOWMIST = getArt("lowmist");
 
+    /**
+     * @since 1.0.0
+     */
     Art MATCH = getArt("match");
 
+    /**
+     * @since 1.21
+     */
     Art MEDITATIVE = getArt("meditative");
 
+    /**
+     * @since 1.21
+     */
     Art ORB = getArt("orb");
 
+    /**
+     * @since 1.21
+     */
     Art OWLEMONS = getArt("owlemons");
 
+    /**
+     * @since 1.21
+     */
     Art PASSAGE = getArt("passage");
 
+    /**
+     * @since 1.0.0
+     */
     Art PIGSCENE = getArt("pigscene");
 
+    /**
+     * @since 1.0.0
+     */
     Art PLANT = getArt("plant");
 
+    /**
+     * @since 1.0.0
+     */
     Art POINTER = getArt("pointer");
 
+    /**
+     * @since 1.21
+     */
     Art POND = getArt("pond");
 
+    /**
+     * @since 1.0.0
+     */
     Art POOL = getArt("pool");
 
+    /**
+     * @since 1.21
+     */
     Art PRAIRIE_RIDE = getArt("prairie_ride");
 
+    /**
+     * @since 1.0.0
+     */
     Art SEA = getArt("sea");
 
+    /**
+     * @since 1.0.0
+     */
     Art SKELETON = getArt("skeleton");
 
+    /**
+     * @since 1.0.0
+     */
     Art SKULL_AND_ROSES = getArt("skull_and_roses");
 
+    /**
+     * @since 1.0.0
+     */
     Art STAGE = getArt("stage");
 
+    /**
+     * @since 1.21
+     */
     Art SUNFLOWERS = getArt("sunflowers");
 
+    /**
+     * @since 1.0.0
+     */
     Art SUNSET = getArt("sunset");
 
+    /**
+     * @since 1.21
+     */
     Art TIDES = getArt("tides");
 
+    /**
+     * @since 1.21
+     */
     Art UNPACKED = getArt("unpacked");
 
+    /**
+     * @since 1.0.0
+     */
     Art VOID = getArt("void");
 
+    /**
+     * @since 1.0.0
+     */
     Art WANDERER = getArt("wanderer");
 
+    /**
+     * @since 1.0.0
+     */
     Art WASTELAND = getArt("wasteland");
 
+    /**
+     * @since 1.19
+     */
     Art WATER = getArt("water");
 
+    /**
+     * @since 1.19
+     */
     Art WIND = getArt("wind");
 
+    /**
+     * @since 1.4.5
+     */
     Art WITHER = getArt("wither");
     // End generate - Art
 
@@ -133,6 +288,7 @@ public interface Art extends OldEnum<Art>, Keyed {
      * Gets the width of the painting, in blocks
      *
      * @return The width of the painting, in blocks
+     * @since 1.0.0
      */
     int getBlockWidth();
 
@@ -140,6 +296,7 @@ public interface Art extends OldEnum<Art>, Keyed {
      * Gets the height of the painting, in blocks
      *
      * @return The height of the painting, in blocks
+     * @since 1.0.0
      */
     int getBlockHeight();
 
@@ -177,6 +334,7 @@ public interface Art extends OldEnum<Art>, Keyed {
      * Get the painting's title.
      *
      * @return the title
+     * @since 1.21.3
      */
     net.kyori.adventure.text.@Nullable Component title();
 
@@ -184,6 +342,7 @@ public interface Art extends OldEnum<Art>, Keyed {
      * Get the painting's author.
      *
      * @return the author
+     * @since 1.21.3
      */
     net.kyori.adventure.text.@Nullable Component author();
 
@@ -191,6 +350,7 @@ public interface Art extends OldEnum<Art>, Keyed {
      * Get the painting's asset id
      *
      * @return the asset id
+     * @since 1.21.3
      */
     net.kyori.adventure.key.@NotNull Key assetId();
     // Paper end - name and author components, assetId key
@@ -222,6 +382,7 @@ public interface Art extends OldEnum<Art>, Keyed {
      * @param name The name
      * @return The painting
      * @deprecated only for backwards compatibility, use {@link Registry#get(NamespacedKey)} instead.
+     * @since 1.0.0
      */
     @Deprecated(since = "1.21.3")
     @Nullable

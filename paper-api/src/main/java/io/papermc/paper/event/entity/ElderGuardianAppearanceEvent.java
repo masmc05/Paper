@@ -10,6 +10,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Is called when an {@link ElderGuardian} appears in front of a {@link Player}.
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public class ElderGuardianAppearanceEvent extends EntityEvent implements Cancellable {
@@ -29,6 +31,7 @@ public class ElderGuardianAppearanceEvent extends EntityEvent implements Cancell
      * Get the player affected by the guardian appearance.
      *
      * @return Player affected by the appearance
+     * @since 1.16.5
      */
     public Player getAffectedPlayer() {
         return this.affectedPlayer;
@@ -38,27 +41,40 @@ public class ElderGuardianAppearanceEvent extends EntityEvent implements Cancell
      * The elder guardian playing the effect.
      *
      * @return The elder guardian
+     * @since 1.16.5
      */
     @Override
     public ElderGuardian getEntity() {
         return (ElderGuardian) super.getEntity();
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

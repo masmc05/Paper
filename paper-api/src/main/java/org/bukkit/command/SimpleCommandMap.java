@@ -19,6 +19,9 @@ import org.bukkit.util.StringUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * @since 1.0.0
+ */
 public class SimpleCommandMap implements CommandMap {
     protected final Map<String, Command> knownCommands;
     private final Server server;
@@ -37,12 +40,17 @@ public class SimpleCommandMap implements CommandMap {
         register("bukkit", new co.aikar.timings.TimingsCommand("timings"));
     }
 
+    /**
+     * @since 1.7.10
+     */
     public void setFallbackCommands() {
         register("bukkit", new HelpCommand());
     }
 
     /**
      * {@inheritDoc}
+     *
+     * @since 1.0.0
      */
     @Override
     public void registerAll(@NotNull String fallbackPrefix, @NotNull List<Command> commands) {
@@ -55,6 +63,8 @@ public class SimpleCommandMap implements CommandMap {
 
     /**
      * {@inheritDoc}
+     *
+     * @since 1.0.0
      */
     @Override
     public boolean register(@NotNull String fallbackPrefix, @NotNull Command command) {
@@ -63,6 +73,8 @@ public class SimpleCommandMap implements CommandMap {
 
     /**
      * {@inheritDoc}
+     *
+     * @since 1.0.0
      */
     @Override
     public boolean register(@NotNull String label, @NotNull String fallbackPrefix, @NotNull Command command) {
@@ -132,6 +144,8 @@ public class SimpleCommandMap implements CommandMap {
 
     /**
      * {@inheritDoc}
+     *
+     * @since 1.0.0
      */
     @Override
     public boolean dispatch(@NotNull CommandSender sender, @NotNull String commandLine) throws CommandException {
@@ -174,6 +188,9 @@ public class SimpleCommandMap implements CommandMap {
         return true;
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     public synchronized void clearCommands() {
         for (Map.Entry<String, Command> entry : knownCommands.entrySet()) {
@@ -183,6 +200,9 @@ public class SimpleCommandMap implements CommandMap {
         setDefaultCommands();
     }
 
+    /**
+     * @since 1.0.0
+     */
     @Override
     @Nullable
     public Command getCommand(@NotNull String name) {
@@ -190,12 +210,18 @@ public class SimpleCommandMap implements CommandMap {
         return target;
     }
 
+    /**
+     * @since 1.3.2
+     */
     @Override
     @Nullable
     public List<String> tabComplete(@NotNull CommandSender sender, @NotNull String cmdLine) {
         return tabComplete(sender, cmdLine, null);
     }
 
+    /**
+     * @since 1.9.4
+     */
     @Override
     @Nullable
     public List<String> tabComplete(@NotNull CommandSender sender, @NotNull String cmdLine, @Nullable Location location) {
@@ -252,11 +278,17 @@ public class SimpleCommandMap implements CommandMap {
         }
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public Collection<Command> getCommands() {
         return Collections.unmodifiableCollection(knownCommands.values());
     }
 
+    /**
+     * @since 1.0.0
+     */
     public void registerServerAliases() {
         Map<String, String[]> values = server.getCommandAliases();
 
@@ -299,6 +331,9 @@ public class SimpleCommandMap implements CommandMap {
         }
     }
 
+    /**
+     * @since 1.11
+     */
     // Paper start - Expose Known Commands
     @NotNull
     public Map<String, Command> getKnownCommands() {

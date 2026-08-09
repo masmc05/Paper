@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Called when a player opens an inventory
+ *
+ * @since 1.1.0
  */
 public class InventoryOpenEvent extends InventoryEvent implements Cancellable {
 
@@ -28,6 +30,7 @@ public class InventoryOpenEvent extends InventoryEvent implements Cancellable {
      * Returns the player involved in this event
      *
      * @return Player who is involved in this event
+     * @since 1.1.0
      */
     @NotNull
     public final HumanEntity getPlayer() {
@@ -39,6 +42,7 @@ public class InventoryOpenEvent extends InventoryEvent implements Cancellable {
      * if not set.
      *
      * @return the title override or {@code null}
+     * @since 1.20.1
      */
     public @Nullable Component titleOverride() {
         return this.titleOverride;
@@ -54,6 +58,7 @@ public class InventoryOpenEvent extends InventoryEvent implements Cancellable {
      * have no effect. These inventory titles are set by the entity's display name.
      *
      * @param titleOverride the title override or {@code null}
+     * @since 1.20.1
      */
     public void titleOverride(@Nullable Component titleOverride) {
         this.titleOverride = titleOverride;
@@ -64,6 +69,8 @@ public class InventoryOpenEvent extends InventoryEvent implements Cancellable {
      * <p>
      * If this event is cancelled, the inventory screen will not
      * show.
+     *
+     * @since 1.1.0
      */
     @Override
     public boolean isCancelled() {
@@ -75,18 +82,26 @@ public class InventoryOpenEvent extends InventoryEvent implements Cancellable {
      * <p>
      * If this event is cancelled, the inventory screen will not
      * show.
+     *
+     * @since 1.1.0
      */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

@@ -6,6 +6,8 @@ import org.jspecify.annotations.Nullable;
 
 /**
  * Represents a client connected to the server.
+ *
+ * @since 1.12.2
  */
 @NullMarked
 public interface NetworkClient {
@@ -14,6 +16,7 @@ public interface NetworkClient {
      * Returns the socket address of the client.
      *
      * @return The client's socket address
+     * @since 1.12.2
      */
     InetSocketAddress getAddress();
 
@@ -23,6 +26,7 @@ public interface NetworkClient {
      * @return The client's protocol version, or {@code -1} if unknown
      * @see <a href="https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/Protocol_version_numbers">List of protocol
      *     version numbers</a>
+     * @since 1.12.2
      */
     int getProtocolVersion();
 
@@ -33,6 +37,7 @@ public interface NetworkClient {
      * connect to the server.</p>
      *
      * @return The client's virtual host, or {@code null} if unknown
+     * @since 1.12.2
      */
     @Nullable InetSocketAddress getVirtualHost();
 

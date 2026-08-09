@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
  *
  * @param <T> type of rule (Boolean or Integer)
  * @see GameRules
+ * @since 1.13
  */
 @ApiStatus.NonExtendable
 public abstract class GameRule<T> implements net.kyori.adventure.translation.Translatable, FeatureDependant, Keyed {
@@ -484,6 +485,7 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
      * Get the type of this rule.
      *
      * @return the rule type; Integer or Boolean
+     * @since 1.13
      */
     @NotNull
     public abstract Class<T> getType();
@@ -492,6 +494,7 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
      * Get the default value of this rule.
      *
      * @return the default value
+     * @since 26.2
      */
     @NotNull
     public abstract T getDefaultValue();
@@ -528,6 +531,10 @@ public abstract class GameRule<T> implements net.kyori.adventure.translation.Tra
         return Registry.GAME_RULE.stream().toArray(GameRule[]::new);
     }
 
+    /**
+     * {@inheritDoc}
+     * @since 1.17.1
+     */
     @Override
     public abstract @NotNull String translationKey();
 

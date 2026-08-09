@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Contract;
 
 /**
  * A data-centric version-specific registry entry for the {@link io.papermc.paper.dialog.Dialog} type.
+ *
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public interface DialogRegistryEntry {
@@ -18,6 +20,7 @@ public interface DialogRegistryEntry {
      * The base dialog for this entry.
      *
      * @return the base dialog
+     * @since 1.21.7
      */
     @Contract(pure = true)
     DialogBase base();
@@ -26,6 +29,7 @@ public interface DialogRegistryEntry {
      * The type of dialog for this entry.
      *
      * @return the dialog type
+     * @since 1.21.7
      */
     @Contract(pure = true)
     DialogType type();
@@ -38,6 +42,8 @@ public interface DialogRegistryEntry {
      *     <li>{@link #base(DialogBase)}</li>
      *     <li>{@link #type(DialogType)}</li>
      * </ul>
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     interface Builder extends DialogRegistryEntry, RegistryBuilder<Dialog> {
@@ -48,6 +54,7 @@ public interface DialogRegistryEntry {
          * <p>Not a part of the registry entry.</p>
          *
          * @return a new registry value set builder
+         * @since 1.21.7
          */
         @Contract(value = "-> new", pure = true)
         RegistryValueSetBuilder<Dialog, DialogRegistryEntry.Builder> registryValueSet();
@@ -58,6 +65,7 @@ public interface DialogRegistryEntry {
          * @param dialogBase the base dialog
          * @return this builder instance
          * @see DialogRegistryEntry#base()
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder base(DialogBase dialogBase);
@@ -68,6 +76,7 @@ public interface DialogRegistryEntry {
          * @param dialogType the type of dialog
          * @return this builder instance
          * @see DialogRegistryEntry#type()
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder type(DialogType dialogType);

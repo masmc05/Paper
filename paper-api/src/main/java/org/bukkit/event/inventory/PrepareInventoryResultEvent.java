@@ -12,6 +12,7 @@ import org.jetbrains.annotations.Nullable;
  * Called when an item is put in a slot and the result is calculated.
  *
  * @deprecated use {@link com.destroystokyo.paper.event.inventory.PrepareResultEvent}
+ * @since 1.19.3
  */
 @Deprecated @Warning
 public class PrepareInventoryResultEvent extends InventoryEvent {
@@ -30,6 +31,7 @@ public class PrepareInventoryResultEvent extends InventoryEvent {
      * Get result item, may be {@code null}.
      *
      * @return result item
+     * @since 1.19.3
      */
     @Nullable
     public ItemStack getResult() {
@@ -40,17 +42,24 @@ public class PrepareInventoryResultEvent extends InventoryEvent {
      * Set result item, may be {@code null}.
      *
      * @param result result item
+     * @since 1.19.3
      */
     public void setResult(@Nullable ItemStack result) {
         this.result = result;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.3
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

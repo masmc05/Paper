@@ -7,6 +7,9 @@ import org.jetbrains.annotations.ApiStatus;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
+/**
+ * @since 1.19.1
+ */
 @ApiStatus.Experimental
 @NullMarked
 public class AsyncChatCommandDecorateEvent extends AsyncChatDecorateEvent {
@@ -18,11 +21,17 @@ public class AsyncChatCommandDecorateEvent extends AsyncChatDecorateEvent {
         super(player, originalMessage);
     }
 
+    /**
+     * @since 1.19.1
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.1
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

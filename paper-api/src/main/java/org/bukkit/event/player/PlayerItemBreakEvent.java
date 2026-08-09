@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * After this event, the item's amount will be set to {@code item amount - 1}
  * and its durability will be reset to 0.
+ *
+ * @since 1.3.1
  */
 public class PlayerItemBreakEvent extends PlayerEvent {
 
@@ -28,18 +30,25 @@ public class PlayerItemBreakEvent extends PlayerEvent {
      * Gets the item that broke
      *
      * @return The broken item
+     * @since 1.3.1
      */
     @NotNull
     public ItemStack getBrokenItem() {
         return this.brokenItem;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

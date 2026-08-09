@@ -5,6 +5,8 @@ import org.bukkit.loot.Lootable;
 
 /**
  * Represents a captured state of a dropper.
+ *
+ * @since 1.5.1
  */
 public interface Dropper extends Container, LootableBlockInventory { // Paper
 
@@ -27,6 +29,7 @@ public interface Dropper extends Container, LootableBlockInventory { // Paper
      * do nothing.
      *
      * @throws IllegalStateException if this block state is not placed
+     * @since 1.5.1
      */
     public void drop();
 }

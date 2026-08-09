@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
  * Represents an individual part of a {@link GeneratedStructure}.
  *
  * @see GeneratedStructure
+ * @since 1.20.4
  */
 public interface StructurePiece {
 
@@ -14,6 +15,7 @@ public interface StructurePiece {
      * Gets the bounding box of this structure piece.
      *
      * @return bounding box of this structure piece
+     * @since 1.20.4
      */
     @NotNull
     public BoundingBox getBoundingBox();

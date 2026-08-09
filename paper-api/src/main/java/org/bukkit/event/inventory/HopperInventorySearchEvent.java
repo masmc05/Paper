@@ -11,6 +11,8 @@ import org.jetbrains.annotations.Nullable;
 /**
  * Event that gets called each time a Hopper attempts to find its
  * source/attached containers.
+ *
+ * @since 1.19.4
  */
 public class HopperInventorySearchEvent extends BlockEvent {
 
@@ -20,18 +22,25 @@ public class HopperInventorySearchEvent extends BlockEvent {
     private final ContainerType containerType;
     private final Block searchBlock;
 
+    /**
+     * @since 1.19.4
+     */
     public enum ContainerType {
 
         /**
          * The source container the hopper is looking for.
          *
          * This is the Inventory above the Hopper where it extracts items from.
+         *
+         * @since 1.19.4
          */
         SOURCE,
         /**
          * The container the hopper is attached to.
          *
          * This is the Inventory the Hopper pushes items into.
+         *
+         * @since 1.19.4
          */
         DESTINATION;
     }
@@ -49,6 +58,7 @@ public class HopperInventorySearchEvent extends BlockEvent {
      * source/attached Container.
      *
      * @param inventory the inventory to use
+     * @since 1.19.4
      */
     public void setInventory(@Nullable Inventory inventory) {
         this.inventory = inventory;
@@ -59,6 +69,7 @@ public class HopperInventorySearchEvent extends BlockEvent {
      * source/attached Container.
      *
      * @return the inventory which will be used
+     * @since 1.19.4
      */
     @Nullable
     public Inventory getInventory() {
@@ -69,6 +80,7 @@ public class HopperInventorySearchEvent extends BlockEvent {
      * Gets the Container type the Hopper is searching for.
      *
      * @return the container type being searched for
+     * @since 1.19.4
      */
     @NotNull
     public ContainerType getContainerType() {
@@ -79,18 +91,25 @@ public class HopperInventorySearchEvent extends BlockEvent {
      * Gets the Block that is being searched for an inventory.
      *
      * @return block being searched for an inventory
+     * @since 1.19.4
      */
     @NotNull
     public Block getSearchBlock() {
         return this.searchBlock;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.19.4
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

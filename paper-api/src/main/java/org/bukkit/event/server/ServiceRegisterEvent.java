@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
  * <p>
  * Warning: The order in which register and unregister events are called
  * should not be relied upon.
+ *
+ * @since 1.1.0
  */
 public class ServiceRegisterEvent extends ServiceEvent {
 
@@ -20,12 +22,18 @@ public class ServiceRegisterEvent extends ServiceEvent {
         super(registeredProvider);
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

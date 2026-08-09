@@ -11,6 +11,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when the recipe of an Item is completed inside a cartography table.
+ *
+ * @since 1.20.4
  */
 @NullMarked
 public class CartographyItemEvent extends InventoryClickEvent {
@@ -25,6 +27,9 @@ public class CartographyItemEvent extends InventoryClickEvent {
         super(view, type, slot, click, action, key);
     }
 
+    /**
+     * @since 1.20.4
+     */
     @Override
     public CartographyInventory getInventory() {
         return (CartographyInventory) super.getInventory();

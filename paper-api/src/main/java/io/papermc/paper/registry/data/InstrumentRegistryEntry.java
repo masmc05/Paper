@@ -14,6 +14,8 @@ import java.util.function.Consumer;
 
 /**
  * A data-centric version-specific registry entry for the {@link org.bukkit.MusicInstrument} type.
+ *
+ * @since 1.21.7
  */
 @ApiStatus.NonExtendable
 public interface InstrumentRegistryEntry {
@@ -23,6 +25,7 @@ public interface InstrumentRegistryEntry {
      *
      * @return the sound event
      * @see MusicInstrument#getSound()
+     * @since 1.21.7
      */
     @Contract(pure = true)
     RegistryHolder<Sound, SoundEventRegistryEntry> soundEvent();
@@ -32,6 +35,7 @@ public interface InstrumentRegistryEntry {
      *
      * @return the duration
      * @see MusicInstrument#getDuration()
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Positive float duration();
@@ -41,6 +45,7 @@ public interface InstrumentRegistryEntry {
      *
      * @return the range
      * @see MusicInstrument#getRange()
+     * @since 1.21.7
      */
     @Contract(pure = true)
     @Positive float range();
@@ -50,6 +55,7 @@ public interface InstrumentRegistryEntry {
      *
      * @return the description
      * @see MusicInstrument#description()
+     * @since 1.21.7
      */
     @Contract(pure = true)
     Component description();
@@ -66,6 +72,8 @@ public interface InstrumentRegistryEntry {
      *     <li>{@link #range(float)}</li>
      *     <li>{@link #description(Component)}</li>
      * </ul>
+     *
+     * @since 1.21.7
      */
     @ApiStatus.NonExtendable
     interface Builder extends InstrumentRegistryEntry, RegistryBuilder<MusicInstrument> {
@@ -80,6 +88,7 @@ public interface InstrumentRegistryEntry {
          * @see #soundEvent(Consumer)
          * @see InstrumentRegistryEntry#soundEvent()
          * @see MusicInstrument#getSound()
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder soundEvent(TypedKey<Sound> soundEvent);
@@ -93,6 +102,7 @@ public interface InstrumentRegistryEntry {
          * @see #soundEvent(TypedKey)
          * @see InstrumentRegistryEntry#soundEvent()
          * @see MusicInstrument#getSound()
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder soundEvent(Consumer<RegistryBuilderFactory<Sound, ? extends SoundEventRegistryEntry.Builder>> soundEvent);
@@ -107,6 +117,7 @@ public interface InstrumentRegistryEntry {
          * @see #soundEvent(Consumer)
          * @see InstrumentRegistryEntry#soundEvent()
          * @see MusicInstrument#getSound()
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder soundEvent(RegistryHolder<Sound, SoundEventRegistryEntry> soundEvent);
@@ -118,6 +129,7 @@ public interface InstrumentRegistryEntry {
          * @return this builder instance
          * @see InstrumentRegistryEntry#duration()
          * @see MusicInstrument#getDuration()
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder duration(@Positive float duration);
@@ -129,6 +141,7 @@ public interface InstrumentRegistryEntry {
          * @return this builder instance
          * @see InstrumentRegistryEntry#range()
          * @see MusicInstrument#getRange()
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder range(@Positive float range);
@@ -140,6 +153,7 @@ public interface InstrumentRegistryEntry {
          * @return this builder instance
          * @see InstrumentRegistryEntry#description()
          * @see MusicInstrument#description()
+         * @since 1.21.7
          */
         @Contract(value = "_ -> this", mutates = "this")
         Builder description(Component description);

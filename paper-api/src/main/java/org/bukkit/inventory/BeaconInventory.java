@@ -4,6 +4,8 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Interface to the inventory of a Beacon.
+ *
+ * @since 1.4.5
  */
 public interface BeaconInventory extends Inventory {
 
@@ -11,6 +13,7 @@ public interface BeaconInventory extends Inventory {
      * Set the item powering the beacon.
      *
      * @param item The new item
+     * @since 1.4.5
      */
     void setItem(@Nullable ItemStack item);
 
@@ -18,6 +21,7 @@ public interface BeaconInventory extends Inventory {
      * Get the item powering the beacon.
      *
      * @return The current item.
+     * @since 1.4.5
      */
     @Nullable
     ItemStack getItem();

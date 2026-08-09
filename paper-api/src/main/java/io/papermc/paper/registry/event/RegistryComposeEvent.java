@@ -13,6 +13,7 @@ import org.jetbrains.annotations.ApiStatus;
  *
  * @param <T> registry entry type
  * @param <B> registry entry builder type
+ * @since 1.21.6
  */
 @ApiStatus.NonExtendable
 public interface RegistryComposeEvent<T, B extends RegistryBuilder<T>> extends RegistryEvent<T> {
@@ -21,6 +22,7 @@ public interface RegistryComposeEvent<T, B extends RegistryBuilder<T>> extends R
      * Get the writable registry.
      *
      * @return a writable registry
+     * @since 1.21.6
      */
     WritableRegistry<T, B> registry();
 
@@ -32,6 +34,7 @@ public interface RegistryComposeEvent<T, B extends RegistryBuilder<T>> extends R
      * @param tagKey the tag key
      * @return the tag
      * @param <V> the tag value type
+     * @since 1.21.6
      */
     <V extends Keyed> Tag<V> getOrCreateTag(TagKey<V> tagKey); // TODO remove Keyed
 }

@@ -12,6 +12,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Fired when a player boosts elytra flight with a firework
+ *
+ * @since 1.13
  */
 @NullMarked
 public class PlayerElytraBoostEvent extends PlayerEvent implements Cancellable {
@@ -37,6 +39,7 @@ public class PlayerElytraBoostEvent extends PlayerEvent implements Cancellable {
      * Get the firework itemstack used
      *
      * @return ItemStack of firework
+     * @since 1.13
      */
     public ItemStack getItemStack() {
         return this.itemStack;
@@ -46,6 +49,7 @@ public class PlayerElytraBoostEvent extends PlayerEvent implements Cancellable {
      * Get the firework entity that was spawned
      *
      * @return Firework entity
+     * @since 1.13
      */
     public Firework getFirework() {
         return this.firework;
@@ -55,6 +59,7 @@ public class PlayerElytraBoostEvent extends PlayerEvent implements Cancellable {
      * Get whether to consume the firework or not
      *
      * @return {@code true} to consume
+     * @since 1.13
      */
     public boolean shouldConsume() {
         return this.consume;
@@ -64,6 +69,7 @@ public class PlayerElytraBoostEvent extends PlayerEvent implements Cancellable {
      * Set whether to consume the firework or not
      *
      * @param consume {@code true} to consume
+     * @since 1.13
      */
     public void setShouldConsume(final boolean consume) {
         this.consume = consume;
@@ -73,26 +79,39 @@ public class PlayerElytraBoostEvent extends PlayerEvent implements Cancellable {
      * Gets the hand holding the firework used for boosting this player.
      *
      * @return interaction hand
+     * @since 1.20.4
      */
     public EquipmentSlot getHand() {
         return this.hand;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

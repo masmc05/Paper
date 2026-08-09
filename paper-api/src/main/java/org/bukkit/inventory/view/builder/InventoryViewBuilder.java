@@ -9,6 +9,7 @@ import org.jspecify.annotations.Nullable;
  * Generic Builder for InventoryView's with no special attributes or parameters
  *
  * @param <V> the type of InventoryView created from this builder
+ * @since 1.21.4
  */
 public interface InventoryViewBuilder<V extends InventoryView> {
 
@@ -16,6 +17,7 @@ public interface InventoryViewBuilder<V extends InventoryView> {
      * Makes a copy of this builder
      *
      * @return a copy of this builder
+     * @since 1.21.4
      */
     InventoryViewBuilder<V> copy();
 
@@ -24,6 +26,7 @@ public interface InventoryViewBuilder<V extends InventoryView> {
      *
      * @param title the title, or null for a default title
      * @return this builder
+     * @since 1.21.4
      */
     InventoryViewBuilder<V> title(@Nullable final Component title);
 
@@ -32,6 +35,7 @@ public interface InventoryViewBuilder<V extends InventoryView> {
      *
      * @param player the player to assign to the view
      * @return the created InventoryView
+     * @since 1.21.4
      */
     V build(final HumanEntity player);
 }

@@ -11,6 +11,7 @@ import org.jspecify.annotations.Nullable;
  * methods on this interface mutate the holder.
  *
  * @see DataComponentHolder
+ * @since 1.21.6
  */
 @NullMarked
 @ApiStatus.NonExtendable
@@ -22,6 +23,7 @@ public interface DataComponentView {
      * @param <T> the value type
      * @return the value for the data component type, or {@code null} if not set or marked as removed
      * @see #hasData(DataComponentType) for DataComponentType.NonValued
+     * @since 1.21.6
      */
     @Contract(pure = true)
     <T> @Nullable T getData(final DataComponentType.Valued<T> type);
@@ -34,6 +36,7 @@ public interface DataComponentView {
      * @param fallback the fallback value if the value isn't present
      * @param <T> the value type
      * @return the value for the data component type or the fallback value
+     * @since 1.21.6
      */
     @Utility
     @Contract(value = "_, !null -> !null", pure = true)
@@ -44,6 +47,7 @@ public interface DataComponentView {
      *
      * @param type the data component type
      * @return {@code true} if set, {@code false} otherwise
+     * @since 1.21.6
      */
     @Contract(pure = true)
     boolean hasData(final DataComponentType type);

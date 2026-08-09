@@ -8,6 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Called when a player toggles their flying state
+ *
+ * @since 1.3.1
  */
 public class PlayerToggleFlightEvent extends PlayerEvent implements Cancellable {
 
@@ -26,27 +28,40 @@ public class PlayerToggleFlightEvent extends PlayerEvent implements Cancellable 
      * Returns whether the player is trying to start or stop flying.
      *
      * @return flying state
+     * @since 1.3.1
      */
     public boolean isFlying() {
         return this.isFlying;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.3.1
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

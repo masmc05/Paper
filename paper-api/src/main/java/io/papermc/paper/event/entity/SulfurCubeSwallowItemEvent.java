@@ -17,6 +17,8 @@ import org.jspecify.annotations.NullMarked;
  * <p>
  * If the event is cancelled, the SulfurCube will not swallow the item, and
  * it will not be removed from the player's inventory.
+ *
+ * @since 26.2
  */
 @NullMarked
 public class SulfurCubeSwallowItemEvent extends EntityEvent implements Cancellable {
@@ -41,6 +43,7 @@ public class SulfurCubeSwallowItemEvent extends EntityEvent implements Cancellab
      * Gets the player interacting with the SulfurCube.
      *
      * @return the player that interacted with the SulfurCube
+     * @since 26.2
      */
     public Player getPlayer() {
         return this.player;
@@ -50,6 +53,7 @@ public class SulfurCubeSwallowItemEvent extends EntityEvent implements Cancellab
      * Gets the item that is currently swallowed by the SulfurCube.
      *
      * @return an ItemStack for the item currently swallowed
+     * @since 26.2
      */
     public ItemStack getOldItem() {
         return this.oldItem.clone();
@@ -61,6 +65,7 @@ public class SulfurCubeSwallowItemEvent extends EntityEvent implements Cancellab
      * #setNewItem(org.bukkit.inventory.ItemStack)} instead.
      *
      * @return an ItemStack for the item being swallowed
+     * @since 26.2
      */
     public ItemStack getNewItem() {
         return this.newItem.clone();
@@ -70,31 +75,47 @@ public class SulfurCubeSwallowItemEvent extends EntityEvent implements Cancellab
      * Set the item being swallowed.
      *
      * @param newItem the item being swallowed
+     * @since 26.2
      */
     public void setNewItem(ItemStack newItem) {
         this.newItem = newItem;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public SulfurCube getEntity() {
         return (SulfurCube) super.getEntity();
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 26.2
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 26.2
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

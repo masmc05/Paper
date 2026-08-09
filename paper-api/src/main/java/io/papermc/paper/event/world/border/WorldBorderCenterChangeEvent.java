@@ -10,6 +10,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Called when a world border's center is changed.
+ *
+ * @since 1.16.5
  */
 @NullMarked
 public class WorldBorderCenterChangeEvent extends WorldBorderEvent implements Cancellable {
@@ -32,6 +34,7 @@ public class WorldBorderCenterChangeEvent extends WorldBorderEvent implements Ca
      * Gets the original center location of the world border.
      *
      * @return the old center
+     * @since 1.16.5
      */
     public Location getOldCenter() {
         return this.oldCenter.clone();
@@ -41,6 +44,7 @@ public class WorldBorderCenterChangeEvent extends WorldBorderEvent implements Ca
      * Gets the new center location for the world border.
      *
      * @return the new center
+     * @since 1.16.5
      */
     public Location getNewCenter() {
         return this.newCenter;
@@ -50,26 +54,39 @@ public class WorldBorderCenterChangeEvent extends WorldBorderEvent implements Ca
      * Sets the new center location for the world border. Y coordinate is ignored.
      *
      * @param newCenter the new center
+     * @since 1.16.5
      */
     public void setNewCenter(final Location newCenter) {
         this.newCenter = newCenter.clone();
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public void setCancelled(final boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.16.5
+     */
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.16.5
+     */
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;
     }

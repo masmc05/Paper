@@ -12,21 +12,31 @@ import org.jspecify.annotations.Nullable;
 /**
  * Holds a list of markers to be placed on a Filled Map (used for Explorer Maps).
  * @see io.papermc.paper.datacomponent.DataComponentTypes#MAP_DECORATIONS
+ * @since 1.21.3
  */
 @NullMarked
 @ApiStatus.NonExtendable
 public interface MapDecorations {
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_ -> new", pure = true)
     static MapDecorations mapDecorations(final Map<String, DecorationEntry> entries) {
         return mapDecorations().putAll(entries).build();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "-> new", pure = true)
     static MapDecorations.Builder mapDecorations() {
         return ItemComponentTypesBridge.bridge().mapDecorations();
     }
 
+    /**
+     * @since 1.21.3
+     */
     @Contract(value = "_, _, _, _ -> new", pure = true)
     static DecorationEntry decorationEntry(final MapCursor.Type type, final double x, final double z, final float rotation) {
         return ItemComponentTypesBridge.bridge().decorationEntry(type, x, z, rotation);
@@ -37,6 +47,7 @@ public interface MapDecorations {
      *
      * @param id id
      * @return decoration entry, or {@code null} if not present
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Nullable DecorationEntry decoration(String id);
@@ -45,12 +56,15 @@ public interface MapDecorations {
      * Gets the decoration entries.
      *
      * @return the decoration entries
+     * @since 1.21.3
      */
     @Contract(pure = true)
     @Unmodifiable Map<String, DecorationEntry> decorations();
 
     /**
      * Decoration present on the map.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface DecorationEntry {
@@ -59,6 +73,7 @@ public interface MapDecorations {
          * Type of decoration.
          *
          * @return type
+         * @since 1.21.3
          */
         @Contract(pure = true)
         MapCursor.Type type();
@@ -67,6 +82,7 @@ public interface MapDecorations {
          * X world coordinate of the decoration.
          *
          * @return x coordinate
+         * @since 1.21.3
          */
         @Contract(pure = true)
         double x();
@@ -75,6 +91,7 @@ public interface MapDecorations {
          * Z world coordinate of the decoration.
          *
          * @return z coordinate
+         * @since 1.21.3
          */
         @Contract(pure = true)
         double z();
@@ -83,6 +100,7 @@ public interface MapDecorations {
          * Clockwise rotation from north in degrees.
          *
          * @return rotation
+         * @since 1.21.3
          */
         @Contract(pure = true)
         float rotation();
@@ -90,6 +108,8 @@ public interface MapDecorations {
 
     /**
      * Builder for {@link MapDecorations}.
+     *
+     * @since 1.21.3
      */
     @ApiStatus.NonExtendable
     interface Builder extends DataComponentBuilder<MapDecorations> {
@@ -101,6 +121,7 @@ public interface MapDecorations {
          * @param entry decoration
          * @return the builder for chaining
          * @see #decorations()
+         * @since 1.21.3
          */
         @Contract(value = "_, _ -> this", mutates = "this")
         MapDecorations.Builder put(String id, DecorationEntry entry);
@@ -111,6 +132,7 @@ public interface MapDecorations {
          * @param entries decorations
          * @return the builder for chaining
          * @see #decorations()
+         * @since 1.21.3
          */
         @Contract(value = "_ -> this", mutates = "this")
         MapDecorations.Builder putAll(Map<String, DecorationEntry> entries);

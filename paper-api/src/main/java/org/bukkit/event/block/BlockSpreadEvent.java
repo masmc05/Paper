@@ -21,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
  * If this event is cancelled, the block will not spread.
  *
  * @see BlockFormEvent
+ * @since 1.0.0
  */
 public class BlockSpreadEvent extends BlockFormEvent {
 
@@ -38,18 +39,25 @@ public class BlockSpreadEvent extends BlockFormEvent {
      * Gets the source block involved in this event.
      *
      * @return the Block for the source block involved in this event.
+     * @since 1.0.0
      */
     @NotNull
     public Block getSource() {
         return this.source;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.1.0
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

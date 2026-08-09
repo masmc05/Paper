@@ -10,18 +10,35 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Represents a fluid type.
+ *
+ * @since 1.16.3
  */
 public interface Fluid extends OldEnum<Fluid>, Keyed {
 
+    /**
+     * @since 1.19.2
+     */
     // Start generate - Fluid
     Fluid EMPTY = getFluid("empty");
 
+    /**
+     * @since 1.16.3
+     */
     Fluid FLOWING_LAVA = getFluid("flowing_lava");
 
+    /**
+     * @since 1.16.3
+     */
     Fluid FLOWING_WATER = getFluid("flowing_water");
 
+    /**
+     * @since 1.16.3
+     */
     Fluid LAVA = getFluid("lava");
 
+    /**
+     * @since 1.16.3
+     */
     Fluid WATER = getFluid("water");
     // End generate - Fluid
 

@@ -12,6 +12,8 @@ import org.jetbrains.annotations.Nullable;
  * Called when a Zombified piglin is angered by another entity.
  * <p>
  * If the event is cancelled, the zombified piglin will not be angered.
+ *
+ * @since 1.13
  */
 public class PigZombieAngerEvent extends EntityEvent implements Cancellable {
 
@@ -33,6 +35,7 @@ public class PigZombieAngerEvent extends EntityEvent implements Cancellable {
      * Gets the entity (if any) which triggered this anger update.
      *
      * @return triggering entity, or {@code null}
+     * @since 1.13
      */
     @Nullable
     public Entity getTarget() {
@@ -44,6 +47,7 @@ public class PigZombieAngerEvent extends EntityEvent implements Cancellable {
      *
      * @return new anger
      * @see PigZombie#getAnger()
+     * @since 1.13
      */
     public int getNewAnger() {
         return this.newAnger;
@@ -54,33 +58,49 @@ public class PigZombieAngerEvent extends EntityEvent implements Cancellable {
      *
      * @param newAnger the new anger
      * @see PigZombie#setAnger(int)
+     * @since 1.13
      */
     public void setNewAnger(int newAnger) {
         this.newAnger = newAnger;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public PigZombie getEntity() {
         return (PigZombie) this.entity;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public boolean isCancelled() {
         return this.cancelled;
     }
 
+    /**
+     * @since 1.13
+     */
     @Override
     public void setCancelled(boolean cancel) {
         this.cancelled = cancel;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     @Override
     public HandlerList getHandlers() {
         return HANDLER_LIST;
     }
 
+    /**
+     * @since 1.13
+     */
     @NotNull
     public static HandlerList getHandlerList() {
         return HANDLER_LIST;

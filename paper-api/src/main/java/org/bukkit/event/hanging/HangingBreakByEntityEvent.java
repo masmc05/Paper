@@ -8,6 +8,8 @@ import org.jspecify.annotations.NullMarked;
 
 /**
  * Triggered when a hanging entity is removed by an entity
+ *
+ * @since 1.4.5
  */
 @NullMarked
 public class HangingBreakByEntityEvent extends HangingBreakEvent {
@@ -31,6 +33,7 @@ public class HangingBreakByEntityEvent extends HangingBreakEvent {
      * Gets the entity that removed the hanging entity.
      *
      * @return the entity that removed the hanging entity
+     * @since 1.4.5
      */
     public Entity getRemover() {
         return this.remover;
@@ -40,6 +43,7 @@ public class HangingBreakByEntityEvent extends HangingBreakEvent {
      * Gets the {@link DamageSource} that caused the hanging entity to be removed.
      *
      * @return the damage source
+     * @since 26.2
      */
     public DamageSource getDamageSource() {
         return this.damageSource;
